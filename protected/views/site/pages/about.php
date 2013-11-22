@@ -1,0 +1,1 @@
+<?php$this->pageTitle=Yii::app()->name . ' - 公司简介';$this->breadcrumbs=array(	'公司简介',);?><div class="box">    <div class="box-title">公司简介</div>    <div class="box-content">            </div></div>

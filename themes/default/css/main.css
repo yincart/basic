@@ -1,0 +1,15 @@
+/* 
+    Document   : main
+    Created on : 2012-5-7, 19:33:18
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+a:hover{
+    color:#ff5500;
+}
+.breadcrumbs{
+    width:990px;
+    margin:5px auto;
+}

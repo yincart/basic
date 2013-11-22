@@ -1,0 +1,1 @@
+<?php$this->breadcrumbs=array(	'留言反馈'=>array('index'),	$model->name=>array('view','id'=>$model->id),	'回复',);$this->menu=array(	array('label'=>'查看留言', 'url'=>array('view', 'id'=>$model->id)),	array('label'=>'管理留言', 'icon'=>'cog','url'=>array('admin')),);?><h1>回复留言 <?php echo $model->id; ?></h1><?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

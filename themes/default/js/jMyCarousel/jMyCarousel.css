@@ -1,0 +1,61 @@
+/**********************************************/
+/* @name: style.css                           */
+/* @date: 19/11/07                            */
+/* @desc: JMyCarousel css                     */
+/* @auth: kevin@enova-tech.net                */
+/**********************************************/
+/** General Elements && arrows description  ***/
+
+
+div.jMyCarousel .prev{
+	background: url('left.png') center center no-repeat;
+	width:47px;
+	height:61px;
+	border:0px;
+}
+
+div.jMyCarousel .next{
+	background: url('right.png') center center no-repeat;
+	width:40px;
+	height:61px;
+	border:0px;
+}
+
+div.jMyCarousel .up{
+	background: url('up.png') center center no-repeat;
+	width:61px;
+	height:40px;
+	border:0px;
+}
+
+div.jMyCarousel .down{
+	background: url('down.png') center center no-repeat;
+	width:47px;
+	height:61px;
+	border:0px;
+}
+
+
+div.jMyCarousel{
+	border:1px solid #1c6f8e;
+}
+
+div.jMyCarousel ul{
+	
+}
+
+div.jMyCarousel ul li{
+	margin:0px;
+	border:1px solid #ccc;
+	line-height:0px;
+	padding:0px;
+}
+
+div.jMyCarousel ul li a{ /* in case of link */
+	display:block;
+}
+
+div.jMyCarousel ul li img{
+	display:block;
+	border:0px;
+}

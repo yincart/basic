@@ -1,0 +1,187 @@
+/* 
+    Document   : ei18n.style
+    Created on : Feb 21, 2012, 7:50:41 PM
+    Author     : Antonio Ramirez <antonio@ramirezcobos.com>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#wtranslator-footerSlideContainer {
+	position: fixed;
+	bottom:0;
+	width: 100%;
+	/*z-index: 1021;*/
+	z-index: 1002;
+}
+#wtranslator-footerSlideButton {
+	background: url(sliderButton.png) top left no-repeat transparent;
+	position: absolute;
+	top: -55px;
+	right: 20px;
+	width:50px;
+	height:50px;
+	border: none;
+	cursor: pointer;
+}
+
+#wtranslator-footerSlideContent {
+	width: 100%;
+	height: 0px;
+	background: #251b15;
+	color: #CCCCCC;
+	font-size: 0.8em;
+	border: none;
+	font-family: Verdana, Sans-Serif;
+}
+
+#wtranslator-footerSlideContent #one-true { overflow: hidden; }
+#wtranslator-footerSlideContent #one-true .col {
+	width: 27%;
+	padding: 20px 3.15% 0; 
+	float: left;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+}
+#wtranslator-footerSlideContent #one-true .col1 { margin-left: 33.3%; background: #333; display:none; }
+#wtranslator-footerSlideContent #one-true .col2 { margin-left: -66.3%; background: #444; display:none; }
+#wtranslator-footerSlideContent #one-true .col3 { left: 0; background: #444; display:none;}
+#wtranslator-footerSlideContent #one-true p { margin-bottom: 30px; } /* Bottom padding on the column doesn't work */
+
+#wtranslator-footerSlideContent h3 {
+	font-size: 24px;
+	color: #9AC941;
+	margin: 10px 0 10px 0;
+}
+#wtranslator-footerSlideContent h3 span {
+	float:right;
+	font-size: 12px;
+}
+#wtranslator-footerSlideContent h3 span a {
+	text-decoration: none;
+	color: #EE8D40;
+	font-weight: bold;
+}
+#wtranslator-footerSlideContent ul {
+	color: #EE8D40;
+	list-style-type: none;
+	/*line-height: 2em;*/
+}
+
+#wtranslator-footerSlideContent li.item {
+	float: left; 
+	/*border: 1px solid black;*/
+	width: 100%;
+	min-height: 25px;
+	max-height: 25px;
+	
+	
+}
+#wtranslator-footerSlideContent li.item div {
+	padding-left: 20px;
+	height: 20px;
+	padding-top: 5px;
+}
+#wtranslator-footerSlideContent li.item div.edited {
+	background: url(tick.png) no-repeat;
+}
+
+#wtranslator-footerSlideContent li.item div span { float:right }
+
+#wtranslator-footerSlideContent .row { 
+	background-color: #fff;
+	clear:both;
+}
+#wtranslator-footerSlideText {
+	padding: 15px 20px 25px 25px;
+}
+a.wtranslator-button {
+	background-image: url(button-sprite.png);
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+	height: 20px;
+	line-height: 12px;
+	margin: 0 5px 20px;
+	padding: 8px 10px 0;
+	border-radius: 3px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+	display: inline-block;
+}
+
+a.wtranslator-button.large {
+	padding: 11px 10px 0;
+	line-height: 14px;
+	height: 24px;
+}
+a.wtranslator-button.green {
+	background-position: 0 -252px;
+	border: 1px solid #ADC671;
+	color: #5D7731;
+}
+a.wtranslator-button.green:hover {border: 1px solid #8BB14D;background-position: 0 -280px;}
+a.wtranslator-button.large.green {background-position: 0 -308px;}
+a.wtranslator-button.large.green:hover {background-position: 0 -343px;}
+
+
+
+/* override */
+.wysiwyg {
+	width: 754px;
+	margin-bottom: 10px;
+	border: 0px;
+}
+
+.translate-form .translate-row {
+	margin: 5px 0px 5px 0px;
+}
+
+.translate-row label {
+	font-size: 11px;
+	font-family: Verdana, Sans-serif;
+	font-weight: bold;
+}
+.translate-buttons {
+	text-align:right;
+}
+.translate-original {
+	font-family: Verdana;
+	color: grey;
+	font-size: 16px;
+	margin: 10px 0px 10px 0px;
+	padding: 5px;
+	border: 3px dotted silver;
+}
+.translate-category, p.title-translate-original {
+	font-size: 16px;
+	padding: 5px;
+	margin: 10px 0px 10px 0px;
+	color: #333;
+	border-top: 1px solid #EEE;
+}
+.translate-category span {
+	font-weight: bold;
+	color: #9AC941;
+}
+
+h1.translate {
+	font-weight: normal;
+	color: #252525;
+	font-size: 26px;
+	margin: 0;
+	padding: 0 0 10px 0;
+	font-family: Verdana, Sans-serif;
+}
+
+a.wtranslate {
+	text-decoration: none;
+	color: #09c;
+}
+a.wtranslate {
+	color: #9c0;
+}

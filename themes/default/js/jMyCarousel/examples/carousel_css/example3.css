@@ -1,0 +1,41 @@
+div.jMyCarousel .up{
+	background: url('../carousel_img/3/up.png') center center no-repeat;
+	width:16px;
+	height:16px;
+	border:0px;
+}
+
+div.jMyCarousel .down{
+	background: url('../carousel_img/3/down.png') center center no-repeat;
+	width:16px;
+	height:16px;
+	border:0px;
+}
+
+
+/** Carousel 3 **/
+div.jMyCarousel{
+	border:2px solid #aaa;
+}
+
+div.jMyCarousel ul{
+	background-color:#000;	
+}
+
+div.jMyCarousel ul li{
+	margin:5px;
+	border:1px solid #aaa;
+	line-height:0px;
+	padding:3px;
+}
+
+div.jMyCarousel ul li a{ /* in case of link */
+	display:block;
+}
+
+div.jMyCarousel ul li a img{
+	display:block;
+	border:0px;
+}
+
+

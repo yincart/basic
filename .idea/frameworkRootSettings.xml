@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkRootSettings" id="Yii">
+    <option name="typedPaths">
+      <list>
+        <element elementPath="$PROJECT_DIR$/assets" typeId="assets_directory" />
+        <element elementPath="$PROJECT_DIR$/protected" typeId="protected_directory" />
+        <element elementPath="$PROJECT_DIR$/protected/controllers" typeId="protected_controllers_directory" />
+        <element elementPath="$PROJECT_DIR$/protected/extensions" typeId="protected_extensions_directory" />
+        <element elementPath="$PROJECT_DIR$/protected/models" typeId="protected_models_directory" />
+        <element elementPath="$PROJECT_DIR$/protected/runtime" typeId="protected_runtime_directory" />
+        <element elementPath="$PROJECT_DIR$/protected/views" typeId="protected_views_directory" />
+        <element elementPath="$PROJECT_DIR$/protected/views/layouts" typeId="protected_views_layouts_directory" />
+        <element elementPath="$PROJECT_DIR$/themes" typeId="themes_directory" />
+      </list>
+    </option>
+  </component>
+</project>
+

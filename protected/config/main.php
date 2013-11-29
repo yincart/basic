@@ -6,7 +6,7 @@ $frontend = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..';
 $backend = $frontend . DIRECTORY_SEPARATOR . '..';
 Yii::setPathOfAlias('backend', $backend);
 Yii::setPathOfAlias('widgets', $frontend . DIRECTORY_SEPARATOR . 'widgets');
-Yii::setPathOfAlias('bootstrap', $frontend . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'bootstrap');
+//Yii::setPathOfAlias('bootstrap', $frontend . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'bootstrap');
 Yii::setPathOfAlias('xupload', $frontend . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'xupload');
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -15,7 +15,7 @@ return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
     'language' => 'en',
-    'theme' => 'default',
+    'theme' => 'leather',
     // preloading 'log' component
     'preload' => array('log', 'translate'),
     // autoloading model and component classes
@@ -27,7 +27,8 @@ return array(
         'application.modules.mall.models.*',
         'application.modules.user.models.*',
         'application.modules.user.components.*',
-        'application.modules.translate.TranslateModule'
+        'application.modules.translate.TranslateModule',
+        'bootstrap.helpers.TbHtml',
     ),
     // path aliases
     'aliases' => array(
@@ -176,7 +177,7 @@ return array(
                 '<_m:\w+>/<_c:\w+>/<_a:\w+>' => '<_m>/<_c>/<_a>',
             ),
         ),
-        
+
         /* setup message translation method */
         'messages' => array(
             'class' => 'CDbMessageSource',

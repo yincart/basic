@@ -2962,3 +2962,597 @@ Stack trace:
 REQUEST_URI=/backend.php/mall/item/create
 HTTP_REFERER=http://basic.com/backend.php/mall/item/admin
 ---
+2013/11/29 05:54:06 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.components.Bootstrap" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 E:\wamp\www\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\wamp\www\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 E:\wamp\www\yii\framework\YiiBase.php(125): CApplication->__construct(Array)
+#5 E:\wamp\www\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', Array)
+#6 E:\wamp\www\site-yincart\basic\backend.php(14): YiiBase::createWebApplication(Array)
+#7 {main}
+REQUEST_URI=/site-yincart/basic/backend.php
+---
+2013/11/29 09:17:12 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.components.Bootstrap" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 E:\wamp\www\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\wamp\www\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 E:\wamp\www\yii\framework\YiiBase.php(125): CApplication->__construct(Array)
+#5 E:\wamp\www\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', Array)
+#6 E:\wamp\www\site-yincart\basic\backend.php(14): YiiBase::createWebApplication(Array)
+#7 {main}
+REQUEST_URI=/site-yincart/basic/backend.php
+---
+2013/11/29 10:49:00 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.components.Bootstrap" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 E:\wamp\www\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\wamp\www\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 E:\wamp\www\yii\framework\YiiBase.php(125): CApplication->__construct(Array)
+#5 E:\wamp\www\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', Array)
+#6 E:\wamp\www\site-yincart\basic\backend.php(14): YiiBase::createWebApplication(Array)
+#7 {main}
+REQUEST_URI=/site-yincart/basic/backend.php
+---
+2013/11/29 10:49:01 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.components.Bootstrap" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 E:\wamp\www\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\wamp\www\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 E:\wamp\www\yii\framework\YiiBase.php(125): CApplication->__construct(Array)
+#5 E:\wamp\www\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', Array)
+#6 E:\wamp\www\site-yincart\basic\backend.php(14): YiiBase::createWebApplication(Array)
+#7 {main}
+REQUEST_URI=/site-yincart/basic/backend.php
+---
+2013/11/29 11:21:22 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.components.Bootstrap" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 E:\wamp\www\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\wamp\www\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 E:\wamp\www\yii\framework\YiiBase.php(125): CApplication->__construct(Array)
+#5 E:\wamp\www\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', Array)
+#6 E:\wamp\www\site-yincart\basic\backend.php(14): YiiBase::createWebApplication(Array)
+#7 {main}
+REQUEST_URI=/site-yincart/basic/backend.php
+---
+2013/11/29 11:21:48 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.components.Bootstrap" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(196): YiiBase::import('bootstrap.compo...', true)
+#1 E:\wamp\www\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 E:\wamp\www\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 E:\wamp\www\yii\framework\YiiBase.php(125): CApplication->__construct(Array)
+#5 E:\wamp\www\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', Array)
+#6 E:\wamp\www\site-yincart\basic\backend.php(14): YiiBase::createWebApplication(Array)
+#7 {main}
+REQUEST_URI=/site-yincart/basic/backend.php
+---
+2013/11/29 11:51:01 [error] [exception.CException] exception 'CException' with message '属性 "TbNavbar.class" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('class', 'bootstrap.widge...')
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\main.php(24): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#8 E:\wamp\www\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#10 E:\wamp\www\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#11 E:\wamp\www\site-yincart\basic\protected\backend\views\layouts\column1.php(6): CBaseController->endContent()
+#12 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#13 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#14 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#15 E:\wamp\www\site-yincart\basic\protected\backend\controllers\SiteController.php(32): CController->render('index')
+#16 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#17 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#19 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#22 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/site-yincart/basic/backend.php
+---
+2013/11/29 12:07:39 [error] [exception.CException] exception 'CException' with message '属性 "TbActiveForm.type" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('type', 'horizontal')
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(197): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\themes\backend\views\site\login.php(25): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\wamp\www\site-yincart\basic\protected\backend\controllers\SiteController.php(100): CController->render('login', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/site/login
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2013/11/29 12:08:07 [error] [exception.CException] exception 'CException' with message '属性 "TbActiveForm.type" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('type', 'horizontal')
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(197): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\themes\backend\views\site\login.php(25): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\wamp\www\site-yincart\basic\protected\backend\controllers\SiteController.php(100): CController->render('login', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/site/login
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2013/11/29 12:08:46 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\site-yincart\basic\themes\backend\views\site\login.php(29): CComponent->__call('textFieldRow', Array)
+#1 E:\wamp\www\site-yincart\basic\themes\backend\views\site\login.php(29): TbActiveForm->textFieldRow(Object(LoginForm), 'username')
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#6 E:\wamp\www\site-yincart\basic\protected\backend\controllers\SiteController.php(100): CController->render('login', Array)
+#7 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/site/login
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2013/11/29 12:10:44 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbButton" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\themes\backend\views\site\login.php(42): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 E:\wamp\www\site-yincart\basic\protected\backend\controllers\SiteController.php(100): CController->render('login', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/site/login
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2013/11/29 12:13:25 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ContentCategoryController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\cms.php(25): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#14 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2013/11/29 12:15:31 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ContentCategoryController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\cms.php(25): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#14 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2013/11/29 12:15:49 [error] [php] include(TbArray.php): failed to open stream: No such file or directory (E:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\wamp\www\site-yincart\basic\protected\extensions\bootstrap\widgets\TbNav.php(113): spl_autoload_call()
+#1 E:\wamp\www\site-yincart\basic\protected\extensions\bootstrap\widgets\TbNav.php(80): TbNav->normalizeItems()
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbNav->init()
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(180): ContentCategoryController->createWidget()
+#4 E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\cms.php(25): ContentCategoryController->widget()
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(95): ContentCategoryController->renderInternal()
+#7 E:\wamp\www\yii\framework\web\CController.php(784): ContentCategoryController->renderFile()
+#8 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): ContentCategoryController->render()
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 E:\wamp\www\yii\framework\web\CController.php(286): ContentCategoryController->runAction()
+#12 E:\wamp\www\yii\framework\web\CController.php(265): ContentCategoryController->runActionWithFilters()
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ContentCategoryController->run()
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\site-yincart\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+in E:\wamp\www\site-yincart\basic\protected\extensions\bootstrap\widgets\TbNav.php (113)
+in E:\wamp\www\site-yincart\basic\protected\extensions\bootstrap\widgets\TbNav.php (80)
+in E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\cms.php (25)
+2013/11/29 12:27:25 [error] [php] include(TbHtml.php): failed to open stream: No such file or directory (E:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\cms.php(7): spl_autoload_call()
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(95): ContentCategoryController->renderInternal()
+#3 E:\wamp\www\yii\framework\web\CController.php(784): ContentCategoryController->renderFile()
+#4 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): ContentCategoryController->render()
+#5 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#6 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\yii\framework\web\CController.php(286): ContentCategoryController->runAction()
+#8 E:\wamp\www\yii\framework\web\CController.php(265): ContentCategoryController->runActionWithFilters()
+#9 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ContentCategoryController->run()
+#10 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 E:\wamp\www\site-yincart\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+in E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\cms.php (7)
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in E:\wamp\www\site-yincart\basic\backend.php (14)
+2013/11/29 12:28:36 [error] [php] include(TbHtml.php): failed to open stream: No such file or directory (E:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\cms.php(7): spl_autoload_call()
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(95): ContentCategoryController->renderInternal()
+#3 E:\wamp\www\yii\framework\web\CController.php(784): ContentCategoryController->renderFile()
+#4 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): ContentCategoryController->render()
+#5 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#6 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\wamp\www\yii\framework\web\CController.php(286): ContentCategoryController->runAction()
+#8 E:\wamp\www\yii\framework\web\CController.php(265): ContentCategoryController->runActionWithFilters()
+#9 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ContentCategoryController->run()
+#10 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 E:\wamp\www\site-yincart\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+in E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\cms.php (7)
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in E:\wamp\www\site-yincart\basic\backend.php (14)
+2013/11/29 12:30:36 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbBreadcrumbs" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ContentCategoryController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\cms.php(31): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#14 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2013/11/29 12:33:15 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbBreadcrumbs" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ItemCategoryController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\mall.php(42): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\site-yincart\basic\protected\modules\mall\controllers\ItemCategoryController.php(219): CController->render('admin', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemCategoryController->actionAdmin()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemCatego...')
+#19 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/mall/itemCategory/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/cms/article/admin
+---
+2013/11/29 12:35:21 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\site-yincart\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 E:\wamp\www\site-yincart\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#5 E:\wamp\www\site-yincart\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#8 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 E:\wamp\www\site-yincart\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/mall/itemCategory/admin
+---
+2013/11/29 12:35:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/admin')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/mall/item/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/mall/itemProp/admin
+---
+2013/11/29 12:35:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/admin')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/mall/item/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/mall/item/admin
+---
+2013/11/29 12:37:43 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\site-yincart\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 E:\wamp\www\site-yincart\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#5 E:\wamp\www\site-yincart\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#8 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 E:\wamp\www\site-yincart\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/mall/itemCategory/admin
+---
+2013/11/29 12:37:52 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(PluginManageController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\protected\modules\plugin\views\layout\sidebar.php(15): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\site-yincart\basic\protected\modules\plugin\controllers\PluginManageController.php(57): CController->render('index', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PluginManageController->actionIndex()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('plugin/pluginma...')
+#19 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/plugin/pluginmanage/index
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/mall/itemCategory/admin
+---
+2013/11/29 12:37:58 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(PluginManageController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\protected\modules\plugin\views\layout\sidebar.php(15): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\site-yincart\basic\protected\modules\plugin\controllers\PluginManageController.php(57): CController->render('index', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PluginManageController->actionIndex()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('plugin/pluginma...')
+#19 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/plugin/pluginmanage/index
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/category/admin
+---
+2013/11/29 12:38:48 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(PluginManageController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\protected\modules\plugin\views\layout\sidebar.php(15): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\site-yincart\basic\protected\modules\plugin\controllers\PluginManageController.php(57): CController->render('index', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PluginManageController->actionIndex()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('plugin/pluginma...')
+#19 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/plugin/pluginmanage/index
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/category/admin
+---
+2013/11/29 12:41:53 [error] [exception.CException] exception 'CException' with message '属性 "TbActiveForm.type" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('type', 'horizontal')
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(PageController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(197): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\protected\modules\cms\views\page\_form.php(9): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\site-yincart\basic\protected\modules\cms\views\page\update.php(18): CController->renderPartial('_form', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#11 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\PageController.php(67): CController->render('update', Array)
+#13 [internal function]: PageController->actionUpdate('1')
+#14 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PageController), Array)
+#15 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PageController), Object(ReflectionMethod), Array)
+#16 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/page/update...')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/cms/page/update/id/1
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/cms/page/admin
+---
+2013/11/29 12:43:11 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\site-yincart\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 E:\wamp\www\site-yincart\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#5 E:\wamp\www\site-yincart\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#8 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 E:\wamp\www\site-yincart\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/mall/itemCategory/admin
+---
+2013/11/29 12:44:25 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AdminUserController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\site-yincart\basic\themes\backend\views\layouts\user.php(16): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\site-yincart\basic\protected\backend\controllers\AdminUserController.php(141): CController->render('admin', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminUserController->actionAdmin()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('adminUser/admin')
+#19 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\wamp\www\site-yincart\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/adminUser/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/mall/itemCategory/admin
+---

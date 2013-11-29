@@ -27,3 +27,6 @@ switch
 Thumbs.db
 *.DS_Store
 *.empty
+
+# assets
+assets/*

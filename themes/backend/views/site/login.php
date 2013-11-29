@@ -17,7 +17,7 @@ $this->breadcrumbs=array(
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'login-form',
-    'type'=>'horizontal',
+//    'type'=>'horizontal',
 	'enableClientValidation'=>true,
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
@@ -26,19 +26,17 @@ $this->breadcrumbs=array(
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->textFieldRow($model,'username'); ?>
+	<?php echo $form->textFieldControlGroup($model,'username'); ?>
 
-	<?php echo $form->passwordFieldRow($model,'password',array(
+	<?php echo $form->passwordFieldControlGroup($model,'password',array(
         'hint'=>'Hint: You may login with <kbd>demo</kbd>/<kbd>demo123</kbd> or <kbd>admin</kbd>/<kbd>admin123</kbd>',
     )); ?>
 
-	<?php echo $form->checkBoxRow($model,'rememberMe'); ?>
+	<?php echo $form->checkBoxControlGroup($model,'rememberMe'); ?>
 
 	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-            'buttonType'=>'submit',
-            'type'=>'primary',
-            'label'=>'Login',
+        <?php echo TbHtml::formActions(array(
+            TbHtml::submitButton('Login', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
         )); ?>
 	</div>
 

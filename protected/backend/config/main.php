@@ -28,6 +28,7 @@ return array(
         'application.models.*',
         'application.components.*',
         'application.modules.user.models.*',
+        'bootstrap.helpers.TbHtml',
     ),
     'modules' => array(
         // uncomment the following to enable the Gii tool
@@ -52,7 +53,7 @@ return array(
         ),
         'plugin' => array(
             'class' => 'application.modules.plugin.PluginModule',
-            'pluginRoot' => 'application.plugin',	# 插件目录，默认为 application.plugin
+            'pluginRoot' => 'application.plugin', # 插件目录，默认为 application.plugin
             // 'layout' => ''		# 后台插件管理页面主layout文件,默认为 //layouts/main
         ),
     ),
@@ -105,14 +106,21 @@ return array(
             'createTable' => true,
             'dbEngine' => 'InnoDB',
         ),
+//        'bootstrap' => array(
+//            'class' => 'bootstrap.components.Bootstrap',
+//            'responsiveCss' => true,
+//            'fontAwesomeCss' => true,
+////            'enableCdn' => true,
+//        ),
         'bootstrap' => array(
-            'class' => 'bootstrap.components.Bootstrap',
-            'responsiveCss' => true,
-            'fontAwesomeCss' => true,
-//            'enableCdn' => true,
+            'class' => 'bootstrap.components.TbApi',
+        ),
+        // yiiwheels configuration
+        'yiiwheels' => array(
+            'class' => 'yiiwheels.YiiWheels',
         ),
         'plugin' => array(
-            'class' => 'application.modules.plugin.components.HookRender', 	# HookRender 文件目录
+            'class' => 'application.modules.plugin.components.HookRender', # HookRender 文件目录
         ),
 //        'db' => array(
 //            'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/testdrive.db',

@@ -2,8 +2,8 @@
 <div>
 	<div id="sidebar-nav">
 		<?php
-		$this->widget('bootstrap.widgets.TbMenu', array(
-			'type' => 'list',
+		$this->widget('bootstrap.widgets.TbNav', array(
+            'type' => TbHtml::NAV_TYPE_LIST,
 			'items' => array_merge(array(
 				array('label' => '插件管理'),
 				array('label' => '插件列表', 'icon' => 'list', 'url' => array('/plugin/PluginManage/index')),

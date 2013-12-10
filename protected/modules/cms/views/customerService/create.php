@@ -1,14 +1,20 @@
 <?php
+/* @var $this CustomerServiceController */
+/* @var $model CustomerService */
+?>
+
+<?php
 $this->breadcrumbs=array(
-	'客服'=>array('admin'),
-	'创建',
+	'Customer Services'=>array('index'),
+	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'管理客服', 'icon'=>'cog','url'=>array('admin')),
+	array('label'=>'List CustomerService', 'icon'=>'list', 'url'=>array('index')),
+	array('label'=>'Manage CustomerService', 'icon'=>'cog', 'url'=>array('admin')),
 );
 ?>
 
-<h1>创建客服</h1>
+<h1>Create CustomerService</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>

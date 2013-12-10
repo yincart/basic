@@ -43,16 +43,11 @@ foreach ($descendants as $child) {
 echo '</select>';
 ?>
 
-    <?php echo $form->textFieldRow($model, 'name', array('class' => 'span5', 'maxlength' => 50)); ?>
+    <?php echo $form->textFieldControlGroup($model, 'name', array('class' => 'span5', 'maxlength' => 50)); ?>
 
-<div class="form-actions">
-    <?php
-    $this->widget('bootstrap.widgets.TbButton', array(
-        'buttonType' => 'submit',
-        'type' => 'primary',
-        'label' => $model->isNewRecord ? 'Create' : 'Save',
-    ));
-    ?>
-</div>
+<?php echo TbHtml::formActions(array(
+    TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
+    TbHtml::resetButton('Reset'),
+)); ?>
 
 <?php $this->endWidget(); ?>

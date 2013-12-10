@@ -30,6 +30,13 @@ return array(
         'application.modules.user.models.*',
         'bootstrap.helpers.TbHtml',
     ),
+    // path aliases
+    'aliases' => array(
+        // yiistrap configuration
+        'bootstrap' => realpath(__DIR__ . '/../../extensions/bootstrap'), // change if necessary
+        // yiiwheels configuration
+        'yiiwheels' => realpath(__DIR__ . '/../../extensions/yiiwheels'), // change if necessary
+    ),
     'modules' => array(
         // uncomment the following to enable the Gii tool
         'gii' => array(

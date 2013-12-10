@@ -1,67 +1,43 @@
 <?php
-$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-    'id' => 'customer-service-form',
-    'enableAjaxValidation' => false,
-        ));
+/* @var $this CustomerServiceController */
+/* @var $model CustomerService */
+/* @var $form TbActiveForm */
 ?>
 
-<p class="note">Fields with <span class="required">*</span> are required.</p>
+<div class="form">
 
-<?php echo $form->errorSummary($model); ?>
+    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+	'id'=>'customer-service-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+	'enableAjaxValidation'=>false,
+)); ?>
 
-<?php
-echo '<select id="CustomerService_category_id" name="CustomerService[category_id]">';
+    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
-$category = Category::model()->findByPk(104);
-$descendants = $category->descendants()->findAll();
-$level = 1;
-echo '<option value="">请选择分类</option>';
-foreach ($descendants as $child) {
-    $string = '&nbsp;&nbsp;';
-    $string .= str_repeat('&nbsp;&nbsp;', $child->level - $level);
-    if ($child->isLeaf() && !$child->next()->find()) {
-        $string .= '';
-    } else {
+    <?php echo $form->errorSummary($model); ?>
 
-        $string .= '';
-    }
-    $string .= '' . $child->name;
-//		echo $string;
-    if (!$model->isNewRecord) {
-        if ($model->category_id == $child->id) {
-            $selected = 'selected';
+            <?php echo $form->textFieldControlGroup($model,'category_id',array('span'=>5,'maxlength'=>10)); ?>
 
-            echo '<option value="' . $child->id . '" selected="' . $selected . '">' . $string . '</option>';
-        } else {
-            echo '<option value="' . $child->id . '" >' . $string . '</option>';
-        }
-    } else {
-        echo '<option value="' . $child->id . '" >' . $string . '</option>';
-    }
-}
-echo '</select>';
-?>
+            <?php echo $form->textFieldControlGroup($model,'type',array('span'=>5)); ?>
 
+            <?php echo $form->textFieldControlGroup($model,'nick_name',array('span'=>5,'maxlength'=>50)); ?>
 
-<?php echo $form->dropDownListRow($model, 'type', array('1' => 'QQ', '2' => '阿里旺旺', '3' => 'Skype')); ?>
+            <?php echo $form->textFieldControlGroup($model,'account',array('span'=>5,'maxlength'=>100)); ?>
 
-<?php echo $form->textFieldRow($model, 'nick_name', array('size' => 50, 'maxlength' => 50)); ?>
+            <?php echo $form->textFieldControlGroup($model,'is_show',array('span'=>5)); ?>
 
+            <?php echo $form->textFieldControlGroup($model,'sort_order',array('span'=>5)); ?>
 
-<?php echo $form->textFieldRow($model, 'account', array('size' => 60, 'maxlength' => 100)); ?>
+        <div class="form-actions">
+        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
+		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
+		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
+		)); ?>
+    </div>
 
-<?php echo $form->dropDownListRow($model, 'is_show', array('1' => '是', '0' => '否')); ?>
+    <?php $this->endWidget(); ?>
 
-<?php echo $form->textFieldRow($model, 'sort_order'); ?>
-
-<div class="form-actions">
-    <?php
-    $this->widget('bootstrap.widgets.TbButton', array(
-        'buttonType' => 'submit',
-        'type' => 'primary',
-        'label' => $model->isNewRecord ? 'Create' : 'Save',
-    ));
-    ?>
-</div>
-
-<?php $this->endWidget(); ?>
+</div><!-- form -->

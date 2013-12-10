@@ -1,26 +1,32 @@
-<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
+<?php
+/* @var $this NewsletterSubscriberController */
+/* @var $model NewsletterSubscriber */
+/* @var $form CActiveForm */
+?>
+
+<div class="wide form">
+
+    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
 
-	<?php echo $form->textFieldRow($model,'subscriber_id',array('class'=>'span5')); ?>
+                    <?php echo $form->textFieldControlGroup($model,'subscriber_id',array('span'=>5)); ?>
 
-	<?php echo $form->textFieldRow($model,'customer_id',array('class'=>'span5','maxlength'=>10)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'customer_id',array('span'=>5,'maxlength'=>10)); ?>
 
-	<?php echo $form->textFieldRow($model,'email',array('class'=>'span5','maxlength'=>150)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'email',array('span'=>5,'maxlength'=>150)); ?>
 
-	<?php echo $form->textFieldRow($model,'status',array('class'=>'span5')); ?>
+                    <?php echo $form->textFieldControlGroup($model,'status',array('span'=>5)); ?>
 
-	<?php echo $form->textFieldRow($model,'confirm_code',array('class'=>'span5','maxlength'=>32)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'confirm_code',array('span'=>5,'maxlength'=>32)); ?>
 
-	<?php echo $form->textFieldRow($model,'change_status_at',array('class'=>'span5')); ?>
+                    <?php echo $form->textFieldControlGroup($model,'change_status_at',array('span'=>5)); ?>
 
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-			'buttonType' => 'submit',
-			'type'=>'primary',
-			'label'=>'Search',
-		)); ?>
-	</div>
+        <div class="form-actions">
+        <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>
+    </div>
 
-<?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?>
+
+</div><!-- search-form -->

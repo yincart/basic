@@ -1,6 +1,11 @@
+<?php
+/* @var $this NewsletterSubscriberController */
+/* @var $data NewsletterSubscriber */
+?>
+
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('subscriber_id')); ?>:</b>
+    	<b><?php echo CHtml::encode($data->getAttributeLabel('subscriber_id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->subscriber_id),array('view','id'=>$data->subscriber_id)); ?>
 	<br />
 

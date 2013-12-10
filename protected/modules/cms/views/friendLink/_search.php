@@ -1,34 +1,40 @@
+<?php
+/* @var $this FriendLinkController */
+/* @var $model FriendLink */
+/* @var $form CActiveForm */
+?>
+
 <div class="wide form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'link_id',array('span'=>5)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>100)); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'category_id',array('span'=>5)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'website'); ?>
-		<?php echo $form->textField($model,'website',array('size'=>60,'maxlength'=>200)); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'title',array('span'=>5,'maxlength'=>100)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'sort_order'); ?>
-		<?php echo $form->textField($model,'sort_order'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'pic',array('span'=>5,'maxlength'=>255)); ?>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'url',array('span'=>5,'maxlength'=>200)); ?>
 
-<?php $this->endWidget(); ?>
+                    <?php echo $form->textAreaControlGroup($model,'memo',array('rows'=>6,'span'=>8)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'sort_order',array('span'=>5)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'language',array('span'=>5,'maxlength'=>45)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'create_time',array('span'=>5)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'update_time',array('span'=>5)); ?>
+
+        <div class="form-actions">
+        <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>
+    </div>
+
+    <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->

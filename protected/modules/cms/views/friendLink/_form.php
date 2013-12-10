@@ -1,47 +1,49 @@
+<?php
+/* @var $this FriendLinkController */
+/* @var $model FriendLink */
+/* @var $form TbActiveForm */
+?>
+
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'friend-link-form',
-        'htmlOptions'=>array('enctype'=>'multipart/form-data'),
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+    <?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
-        
-        <div class="row">
-		<?php echo $form->labelEx($model,'image'); ?>
-		<?php echo $form->fileField($model,'image'); ?>
-		<?php echo $form->error($model,'image'); ?>
-	</div>
+            <?php echo $form->textFieldControlGroup($model,'category_id',array('span'=>5)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'website'); ?>
-		<?php echo $form->textField($model,'website',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'website'); ?>
-	</div>
+            <?php echo $form->textFieldControlGroup($model,'title',array('span'=>5,'maxlength'=>100)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'sort_order'); ?>
-		<?php echo $form->textField($model,'sort_order'); ?>
-		<?php echo $form->error($model,'sort_order'); ?>
-	</div>
+            <?php echo $form->textFieldControlGroup($model,'pic',array('span'=>5,'maxlength'=>255)); ?>
 
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-			'buttonType'=>'submit',
-			'type'=>'primary',
-			'label'=>$model->isNewRecord ? 'Create' : 'Save',
+            <?php echo $form->textFieldControlGroup($model,'url',array('span'=>5,'maxlength'=>200)); ?>
+
+            <?php echo $form->textAreaControlGroup($model,'memo',array('rows'=>6,'span'=>8)); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'sort_order',array('span'=>5)); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'language',array('span'=>5,'maxlength'=>45)); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'create_time',array('span'=>5)); ?>
+
+            <?php echo $form->textFieldControlGroup($model,'update_time',array('span'=>5)); ?>
+
+        <div class="form-actions">
+        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
+		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
+		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>
-	</div>
+    </div>
 
-<?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?>
 
 </div><!-- form -->

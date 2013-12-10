@@ -1,12 +1,19 @@
 <?php
+/**
+ * This is the template for generating a controller class file for CRUD feature.
+ * The following variables are available in this template:
+ * - $this: the BootstrapCode object
+ */
+?>
+<?php echo "<?php\n"; ?>
 
-class CustomerServiceController extends Controller
+class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseControllerClass . "\n"; ?>
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/cms';
+	public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -62,15 +69,15 @@ class CustomerServiceController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new CustomerService;
+		$model=new <?php echo $this->modelClass; ?>;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['CustomerService'])) {
-			$model->attributes=$_POST['CustomerService'];
+		if (isset($_POST['<?php echo $this->modelClass; ?>'])) {
+			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
 			}
 		}
 
@@ -91,10 +98,10 @@ class CustomerServiceController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['CustomerService'])) {
-			$model->attributes=$_POST['CustomerService'];
+		if (isset($_POST['<?php echo $this->modelClass; ?>'])) {
+			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
 			}
 		}
 
@@ -128,7 +135,7 @@ class CustomerServiceController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('CustomerService');
+		$dataProvider=new CActiveDataProvider('<?php echo $this->modelClass; ?>');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -139,10 +146,10 @@ class CustomerServiceController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new CustomerService('search');
+		$model=new <?php echo $this->modelClass; ?>('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['CustomerService'])) {
-			$model->attributes=$_GET['CustomerService'];
+		if (isset($_GET['<?php echo $this->modelClass; ?>'])) {
+			$model->attributes=$_GET['<?php echo $this->modelClass; ?>'];
 		}
 
 		$this->render('admin',array(
@@ -154,12 +161,12 @@ class CustomerServiceController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return CustomerService the loaded model
+	 * @return <?php echo $this->modelClass; ?> the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=CustomerService::model()->findByPk($id);
+		$model=<?php echo $this->modelClass; ?>::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -168,11 +175,11 @@ class CustomerServiceController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param CustomerService $model the model to be validated
+	 * @param <?php echo $this->modelClass; ?> $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='customer-service-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='<?php echo $this->class2id($this->modelClass); ?>-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

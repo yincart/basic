@@ -407,7 +407,7 @@ class ItemController extends Controller
     /**
      * Manages all models.
      */
-    public function actionList()
+    public function actionAdmin()
     {
         $dataProvider=new CActiveDataProvider('Item', array(
             'criteria'=>array(
@@ -419,7 +419,7 @@ class ItemController extends Controller
             ),
         ));
 
-        $this->render('list', array(
+        $this->render('admin', array(
             'dataProvider' => $dataProvider,
         ));
     }

@@ -1,14 +1,20 @@
 <?php
+/* @var $this FriendLinkController */
+/* @var $model FriendLink */
+?>
+
+<?php
 $this->breadcrumbs=array(
-	'友情链接'=>array('index'),
-	'创建',
+	'Friend Links'=>array('index'),
+	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'管理友情链接', 'icon'=>'cog','url'=>array('admin')),
+	array('label'=>'List FriendLink', 'icon'=>'list', 'url'=>array('index')),
+	array('label'=>'Manage FriendLink', 'icon'=>'cog', 'url'=>array('admin')),
 );
 ?>
 
-<h1>创建友情链接</h1>
+<h1>Create FriendLink</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>

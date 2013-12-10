@@ -48,22 +48,22 @@ foreach ($descendants as $child) {
 }
 echo '</select>';
 ?>
-<?php echo $form->textFieldRow($model, 'title', array('class' => 'span5')); ?>
+<?php echo $form->textFieldControlGroup($model, 'title', array('class' => 'span5')); ?>
 
 
-<?php echo $form->dropDownListRow($model, 'language', array('en_us' => 'English' , 'zh_cn' => '中文')); ?>
+<?php echo $form->dropDownListControlGroup($model, 'language', array('en_us' => 'English' , 'zh_cn' => '中文')); ?>
 
 
-<?php echo $form->textFieldRow($model, 'from', array('class' => 'span5', 'value' => '本站')); ?>
+<?php echo $form->textFieldControlGroup($model, 'from', array('class' => 'span5', 'value' => '本站')); ?>
 
 
-<?php echo $form->textFieldRow($model, 'url', array('class' => 'span5')); ?>
+<?php echo $form->textFieldControlGroup($model, 'url', array('class' => 'span5')); ?>
 
-<?php echo $form->textAreaRow($model, 'summary', array('class' => 'span5', 'style'=>'height:100px')); ?>
+<?php echo $form->textAreaControlGroup($model, 'summary', array('class' => 'span5', 'style'=>'height:100px')); ?>
 
-<?php echo $form->textAreaRow($model, 'content', array('visibility' => 'hidden')); ?>
+<?php echo $form->textAreaControlGroup($model, 'content', array('visibility' => 'hidden')); ?>
 <?php
-$this->widget('comext.kindeditor.KindEditorWidget', array(
+$this->widget('ext.kindeditor.KindEditorWidget', array(
     'id' => 'Article_content', //Textarea id
     'items' => array(
         'width' => '700px',
@@ -83,14 +83,9 @@ $this->widget('comext.kindeditor.KindEditorWidget', array(
 ));
 ?>
 
-<div class="form-actions">
-    <?php
-    $this->widget('bootstrap.widgets.TbButton', array(
-        'buttonType' => 'submit',
-        'type' => 'primary',
-        'label' => $model->isNewRecord ? 'Create' : 'Save',
-    ));
-    ?>
-</div>
+<?php echo TbHtml::formActions(array(
+    TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
+    TbHtml::resetButton('Reset'),
+)); ?>
 
 <?php $this->endWidget(); ?>

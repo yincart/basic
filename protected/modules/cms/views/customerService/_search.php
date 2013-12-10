@@ -1,44 +1,34 @@
+<?php
+/* @var $this CustomerServiceController */
+/* @var $model CustomerService */
+/* @var $form CActiveForm */
+?>
+
 <div class="wide form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'id',array('span'=>5)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'type'); ?>
-		<?php echo $form->textField($model,'type'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'category_id',array('span'=>5,'maxlength'=>10)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'nick_name'); ?>
-		<?php echo $form->textField($model,'nick_name',array('size'=>50,'maxlength'=>50)); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'type',array('span'=>5)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'account'); ?>
-		<?php echo $form->textField($model,'account',array('size'=>60,'maxlength'=>100)); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'nick_name',array('span'=>5,'maxlength'=>50)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'is_show'); ?>
-		<?php echo $form->textField($model,'is_show'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'account',array('span'=>5,'maxlength'=>100)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'sort_order'); ?>
-		<?php echo $form->textField($model,'sort_order'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'is_show',array('span'=>5)); ?>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+                    <?php echo $form->textFieldControlGroup($model,'sort_order',array('span'=>5)); ?>
 
-<?php $this->endWidget(); ?>
+        <div class="form-actions">
+        <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>
+    </div>
+
+    <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->

@@ -11,4 +11,4 @@ $this->menu=array(
 
 <h1>创建商品属性</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'props'=>$props)); ?>

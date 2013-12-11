@@ -8,7 +8,7 @@ $this->menu=array(
 array('label'=>'创建商品','icon'=>'plus','url'=>array('create')),
 array('label'=>'更新商品','icon'=>'pencil','url'=>array('update','id'=>$model->item_id)),
 array('label'=>'删除商品','icon'=>'trash','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->item_id),'confirm'=>'Are you sure you want to delete this item?')),
-array('label'=>'查看商品','icon'=>'cog','url'=>array('list')),
+array('label'=>'查看商品','icon'=>'cog','url'=>array('admin')),
 );
 ?>
 

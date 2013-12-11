@@ -21,28 +21,32 @@
  * @property string $status
  * @property integer $sort_order
  */
-class ItemProp extends CActiveRecord {
+class ItemProp extends CActiveRecord
+{
 
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
      * @return ItemProp the static model class
      */
-    public static function model($className = __CLASS__) {
+    public static function model($className = __CLASS__)
+    {
         return parent::model($className);
     }
 
     /**
      * @return string the associated database table name
      */
-    public function tableName() {
+    public function tableName()
+    {
         return 'item_prop';
     }
 
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules() {
+    public function rules()
+    {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
@@ -61,7 +65,8 @@ class ItemProp extends CActiveRecord {
     /**
      * @return array relational rules.
      */
-    public function relations() {
+    public function relations()
+    {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
@@ -73,7 +78,8 @@ class ItemProp extends CActiveRecord {
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return array(
             'prop_id' => '属性ID',
             'category_id' => '类目',
@@ -99,7 +105,8 @@ class ItemProp extends CActiveRecord {
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
      */
-    public function search() {
+    public function search()
+    {
         // Warning: Please modify the following code to remove attributes that
         // should not be searched.
 
@@ -123,16 +130,17 @@ class ItemProp extends CActiveRecord {
         $criteria->compare('sort_order', $this->sort_order);
 
         return new CActiveDataProvider($this, array(
-                    'criteria' => $criteria,
-                ));
+            'criteria' => $criteria,
+        ));
     }
 
     /**
      * 获取指定id的所有后代，不含指定id
-     * @param type $id 指定id, 有可能是array
-     * @return type 所有后代id的一维数组
+     * @param $id 指定id, 有可能是array
+     * @return array 所有后代id的一维数组
      */
-    public static function getChildsId($id) {
+    public static function getChildsId($id)
+    {
         $data = array();
         $ids = array();
         if (!is_array($id)) {
@@ -156,7 +164,8 @@ class ItemProp extends CActiveRecord {
      * @param mixed $id 指定id, 有可能是array
      * @return array 所有后代的和指定id的一维数组
      */
-    function getMeChildsId($id) {
+    function getMeChildsId($id)
+    {
         if (!is_array($id)) {
             $id = array($id);
         }
@@ -168,29 +177,43 @@ class ItemProp extends CActiveRecord {
      * 群Zend Framework(95700611) zwp(279795206)友情提示
      */
 
-    public function setPropValues($PropValues) {
-        $db = Yii::app()->db;
+    public function setPropValues($PropValues)
+    {
+        if (is_array($PropValues['value_name']) && count($PropValues['value_name'])) {
+            $count = count($PropValues['value_name']);
+            for ($i = 0; $i < $count; $i++) {
+                $model = empty($PropValues['value_id'][$i]) ? new PropValue : PropValue::model()->findByPk($PropValues['value_id'][$i]);
+                $model->prop_id = $this->prop_id;
+                $model->value_name = $PropValues['value_name'][$i];
+//				$model->category_id = $PropValues['category_id'][$i];
+                $model->sort_order = $i;
+                $model->save();
 
-        $db->createCommand()->delete('{{prop_value}}', 'prop_id = :prop_id', array(
-            ':prop_id' => $this->prop_id));
-        
-        if ($PropValues['value_name'] != '') {
-            for ($i = 0; $i < count($PropValues['value_name']); $i++) {
-                $db->createCommand()->insert('{{prop_value}}', array(
-                    'prop_id' => $this->prop_id,
-                    'value_name' => $PropValues['value_name'][$i],
-                    'category_id' => $PropValues['category_id'][$i],
-                    'sort_order' => $PropValues['sort_order'][$i],
-                ));
+                $PropValues['value_id'][$i] = $model->value_id;
             }
+
+            //删除
+            $models = PropValue::model()->findAll('prop_id = ' . $this->prop_id);
+            $delArr = array();
+            foreach ($models as $k1 => $v1) {
+                if (!in_array($v1->value_id, $PropValues['value_id'])) {
+                    $delArr[] = $v1->value_id;
+                }
+            }
+            if (count($delArr)) {
+                PropValue::model()->deleteAll('value_id IN (' . implode(', ', $delArr) . ')');
+            }
+        } else { //已经没有属性了，要清除数据表内容
+            PropValue::model()->deleteAll('prop_id = ' . $this->prop_id);
         }
     }
 
-    public function getPropValues() {
+    public function getPropValues()
+    {
         $cri = new CDbCriteria(array(
-                    'condition' => 'prop_id =' . $this->prop_id,
-                    'order' => 'sort_order asc, value_id asc'
-                ));
+            'condition' => 'prop_id =' . $this->prop_id,
+            'order' => 'sort_order asc, value_id asc'
+        ));
         $PropValues = PropValue::model()->findAll($cri);
 
         foreach ($PropValues as $sv) {
@@ -198,41 +221,135 @@ class ItemProp extends CActiveRecord {
         }
     }
 
-    public function getPropOptionValues($label='', $selected='') {
+    public function getPropOptionValues($label = '', $selected = '')
+    {
         $cri = new CDbCriteria(array(
-                    'condition' => 'prop_id =' . $this->prop_id,
-                    'order' => 'sort_order asc, value_id asc'
-                ));
+            'condition' => 'prop_id =' . $this->prop_id,
+            'order' => 'sort_order asc, value_id asc'
+        ));
         $PropValues = PropValue::model()->findAll($cri);
-
         $list = CHtml::listData($PropValues, 'value_id', 'value_name');
-        echo CHtml::DropDownList('Item[props][' . $this->prop_id.']', $selected, $list, array('empty' => '请选择','label'=>$label));
+        $data = array();
+        foreach ($list as $k => $v) {
+            $data[$this->prop_id . ':' . $k] = $v;
+        }
+        echo CHtml::DropDownList('Item[props][' . $this->prop_id . ']', $selected, $data, array('empty' => '请选择', 'label' => $label));
     }
-    
-    public function getPropTextFieldValues($label='', $value='') {
-        echo CHtml::textField('Item[props][' . $this->prop_id.']', $value, array('label'=>$label));
+
+    public function getPropTextFieldValues($label = '', $value = '')
+    {
+        echo CHtml::textField('Item[props][' . $this->prop_id . ']', $value, array('label' => $label));
     }
-    
-    public function getPropArrayValues() {
+
+    public function getPropArrayValues()
+    {
         $cri = new CDbCriteria(array(
-                    'condition' => 'prop_id =' . $this->prop_id,
-                    'order' => 'sort_order asc, value_id asc'
-                ));
+            'condition' => 'prop_id =' . $this->prop_id,
+            'order' => 'sort_order asc, value_id asc'
+        ));
         $PropValues = PropValue::model()->findAll($cri);
         foreach ($PropValues as $sv) {
-            $array[] =  $sv->value_name;
+            $array[] = $sv->value_name;
         }
         return $array;
     }
-    public function getPropCheckBoxListValues($label='', $selected='') {
+
+    public function getPropCheckBoxListValues($label = '', $selected = '', $class = '', $type = 'props', $child_type = '')
+    {
         $cri = new CDbCriteria(array(
-                    'condition' => 'prop_id =' . $this->prop_id,
-                    'order' => 'sort_order asc, value_id asc'
-                ));
+            'condition' => 'prop_id =' . $this->prop_id,
+            'order' => 'sort_order asc, value_id asc'
+        ));
         $PropValues = PropValue::model()->findAll($cri);
 
         $list = CHtml::listData($PropValues, 'value_id', 'value_name');
-        echo CHtml::checkBoxList('Item[props]['. $this->prop_id.']', $selected, $list, array('label'=>$label, 'separator' => '', 'labelOptions' => array('class' => 'labelForRadio')));
+        foreach ($list as $k => $v) {
+            $data[$this->prop_id . ':' . $k] = $v;
+        }
+        echo '<ul class="sku-list">';
+        if ($child_type) {
+            echo CHtml::checkBoxList('Item[' . $type . '][' . $child_type . '][' . $this->prop_id . ']', $selected, $data,
+                array('template' => '<label class="checkbox inline">{input}{label}</label>', 'label' => $label, 'separator' => '', 'class' => $class, 'labelOptions' => array('class' => 'labelForRadio')));
+        } else {
+            echo CHtml::checkBoxList('Item[' . $type . '][' . $this->prop_id . ']', $selected, $data,
+                array('template' => '<label class="checkbox inline">{input}{label}</label>', 'label' => $label, 'separator' => '', 'class' => $class, 'labelOptions' => array('class' => 'labelForRadio')));
+        }
+        echo '</ul>';
+    }
+
+    /**
+     * 类型
+     *
+     * @param bool $returnAttr false则返回分类列表，true则返回该对象的分类值
+     * @param null $index 结合$returnAttr使用。如果$returnAttr为true，
+     *              若指定$index，则返回指定$index对应的值，否则返回当前对象对应的分类值
+     * @return mixed
+     */
+    public function attrType($returnAttr = false, $index = null)
+    {
+        $data = array(
+            'input' => '输入',
+            'optional' => '单选',
+            'multiCheck' => '多选'
+        );
+
+        if ($returnAttr !== false) {
+            is_null($index) && $index = $this->type;
+            $rs = empty($data[$index]) ? null : $data[$index];
+        } else {
+            $rs = $data;
+        }
+
+        return $rs;
+    }
+
+    /**
+     *
+     * @param string $attr 字段名字
+     * @param bool $returnAttr false则返回分类列表，true则返回该对象的分类值
+     * @param null $index 结合$returnAttr使用。如果$returnAttr为true，
+     *              若指定$index，则返回指定$index对应的值，否则返回当前对象对应的分类值
+     * @return mixed
+     */
+    public function attrBool($attr, $returnAttr = false, $index = null)
+    {
+        $data = array(
+            '1' => '是',
+            '0' => '否'
+        );
+
+        if ($returnAttr !== false) {
+            is_null($index) && $index = $this->$attr;
+            $rs = empty($data[$index]) ? null : $data[$index];
+        } else {
+            $rs = $data;
+        }
+
+        return $rs;
+    }
+
+    /**
+     *
+     * @param bool $returnAttr false则返回分类列表，true则返回该对象的分类值
+     * @param null $index 结合$returnAttr使用。如果$returnAttr为true，
+     *              若指定$index，则返回指定$index对应的值，否则返回当前对象对应的分类值
+     * @return mixed
+     */
+    public function attrStatus($returnAttr = false, $index = null)
+    {
+        $data = array(
+            'normal' => '正常',
+            'deleted' => '删除'
+        );
+
+        if ($returnAttr !== false) {
+            is_null($index) && $index = $this->$attr;
+            $rs = empty($data[$index]) ? null : $data[$index];
+        } else {
+            $rs = $data;
+        }
+
+        return $rs;
     }
 
     /**
@@ -250,26 +367,10 @@ class ItemProp extends CActiveRecord {
         $data = array();
         $category = Category::model()->findByPk($id);
         $descendants = $category->descendants()->findAll();
-        foreach ($descendants as $k1 => $child) {
-            $string = '';
-            $string .= str_repeat('|--', $child->level - $level);
-            if ($child->isLeaf() && !$child->next()->find()) {
-                $string .= '|--';
-            } else {
-                $string .= '';
-            }
-            $string .= '' . $child->name;
-
-            $data[$child->id] = $string;
-        }
-        if ($returnAttr !== false) {
-            is_null($index) && $index = $this->category_id;
-            $rs = empty($data[$index]) ? null : $data[$index];
-        } else {
-            $rs = $data;
-        }
-
-        return $rs;
+        $data = Category::model()->getSelectOptions($descendants);
+        if ($returnAttr && $index && isset($data[$index]))
+            $data = $data[$index];
+        return $data;
     }
-    
+
 }

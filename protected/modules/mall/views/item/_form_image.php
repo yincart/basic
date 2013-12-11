@@ -19,7 +19,6 @@
         foreach($images as $i) {
             echo CHtml::image('http://'.F::sg('site','imageDomain').'/store/'.$id.'/item/image/'.$i->url, '', array('style'=>'width:100px;padding-right:10px'));
         }
-
     }
     ?>
 </div>

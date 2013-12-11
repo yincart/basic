@@ -32,9 +32,9 @@
             <div class="span12">
                 <?php if (isset($this->breadcrumbs)): ?>
                     <?php
-                $this->widget('bootstrap.widgets.TbBreadcrumb', array(
-                    'links' => $this->breadcrumbs,
-                ));
+                    $this->widget('bootstrap.widgets.TbBreadcrumb', array(
+                        'links' => $this->breadcrumbs,
+                    ));
                 ?><!-- breadcrumbs -->
                 <?php endif ?>
                 <?php echo $content; ?>

@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-array('label'=>'管理商品','icon'=>'cog','url'=>array('list')),
+array('label'=>'管理商品','icon'=>'cog','url'=>array('admin')),
 );
 ?>
 

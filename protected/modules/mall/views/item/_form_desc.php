@@ -1,7 +1,7 @@
 
     <?php echo $form->textAreaControlGroup($model, 'desc', array('visibility' => 'hidden')); ?>
     <?php
-    $this->widget('comext.kindeditor.KindEditorWidget', array(
+    $this->widget('ext.kindeditor.KindEditorWidget', array(
 	'id' => 'Item_desc', //Textarea id
 	'language' => 'zh_CN',
 	'items' => array(

@@ -44,4 +44,4 @@
 <table class="table table-striped">
 	<tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody>
 </table>
-<?php if ($this->showForm) echo CHtml::endForm();?>
+<?php //if ($this->showForm) echo CHtml::endForm();?>

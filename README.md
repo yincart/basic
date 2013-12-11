@@ -10,6 +10,14 @@ base on yiiframework , website:yincart.com
 [![Build Status](https://secure.travis-ci.org/yinhe/yincart.png)](http://travis-ci.org/yinhe/yincart) 
 [![Dependency Status](https://www.versioneye.com/php/yinhe:yincart/dev-master/badge.png)](https://www.versioneye.com/php/yinhe:yincart/dev-master)
 
+###Yincart basic 代码说明
+
+* gii生成的model放到models/base，新建类继承原model，并加AR前缀。
+* 前后台都需要用的module，在protected和backend的module目录都建立module代码
+* 所有module的model代码统一放到protected的models目录下公用
+* 代码风格请与yii框架风格统一，函数使用驼峰式命名，函数必须注释，该删除的代码请删除，不要大堆注释，
+* model封装大部分逻辑，controller可以有部分逻辑，view中禁止出现从数据库获取数据的代码，所有view中的数据都应该只从controller传递
+
 ###Yincart项目结构说明
 
 * advanced为中大型项目管理结构分支，前台入口为frontend/www，后台入口为backend/www；定位于B2B2C

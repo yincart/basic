@@ -1,46 +1,44 @@
 <?php
-$this->breadcrumbs=array(
-	'Categories'=>array('admin'),
-	'Manage',
+$this->breadcrumbs = array(
+    'Categories' => array('admin'),
+    'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'创建分类', 'icon'=>'plus', 'url'=>array('create')),
+$this->menu = array(
+    array('label' => '创建分类', 'icon' => 'plus', 'url' => array('create')),
 );
-
 ?>
 
 <h1>管理分类</h1>
 
 <div class="well well-large">
-<?php
-$descendants=Category::model()->findAll(array('condition'=>'root=3','order'=>'lft'));
-$level = 0;
+    <?php $options = array(
+        array(
+            'text' => '商品',
+            'url' => '/mall/item/admin',
+            'id' => 'Item[category_id]',
+        ),
+        array(
+            'text' => '属性',
+            'url' => '/mall/itemProp/admin',
+            'id' => 'ItemProp[category_id]',
+        ),
+        array(
+            'text' => '更新',
+            'url' => '/mall/itemCategory/update',
+        ),
+        array(
+            'text' => '删除',
+            'htmlOptions' => array(
+                'submit' => '/mall/itemCategory/delete',
+                'style' => 'cursor:pointer',
+                'confirm' => 'Are you sure you want to delete this item?'
+            )
+        )
+    );
 
-foreach ($descendants as $category) {
-    if ($category->level == $level)
-        echo CHtml::closeTag('li') . "\n";
-    else if ($category->level > $level)
-        echo CHtml::openTag('ul') . "\n";
-    else {
-        echo CHtml::closeTag('li') . "\n";
-
-        for ($i = $level - $category->level; $i; $i--) {
-            echo CHtml::closeTag('ul') . "\n";
-            echo CHtml::closeTag('li') . "\n";
-        }
-    }
-
-    echo CHtml::openTag('li');
-    echo CHtml::encode($category->name).$category->getLabel().'<span style="float:right;">['.
-            CHtml::link('更新', array('/mall/itemCategory/update', 'id'=>$category->id)).']['.
-            CHtml::link('删除', '', array('submit'=>array('/mall/itemCategory/delete','id'=>$category->id),'style'=>'cursor:pointer', 'confirm'=>'Are you sure you want to delete this item?')).']</span>';
-    $level = $category->level;
-}
-
-for ($i = $level; $i; $i--) {
-    echo CHtml::closeTag('li') . "\n";
-    echo CHtml::closeTag('ul') . "\n";
-}
-?>
+    $root = Category::model()->findByPk('3');
+    $descendants = $root->descendants()->findAll();
+    echo Category::model()->getTree($descendants, $options, 'name');
+    ?>
 </div>

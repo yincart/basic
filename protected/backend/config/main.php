@@ -9,6 +9,7 @@ Yii::setPathOfAlias('root', $root);
 Yii::setPathOfAlias('frontend', $frontend);
 Yii::setPathOfAlias('backend', $backend);
 Yii::setPathOfAlias('bootstrap', $frontend . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'bootstrap');
+Yii::setPathOfAlias('xupload', $frontend . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'xupload');
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
@@ -66,6 +67,10 @@ return array(
     ),
     // application components
     'components' => array(
+        'request' => array(
+            'enableCsrfValidation' => true,
+            'enableCookieValidation' => true,
+        ),
         'user' => array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,

@@ -1,6 +1,6 @@
 <?php
 
-Yii::import("ext.xupload.models.XUploadForm");
+Yii::import("xupload.models.XUploadForm");
 
 class ItemController extends Controller
 {
@@ -9,7 +9,7 @@ class ItemController extends Controller
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = 'mall';
+    public $layout = '//layouts/mall';
 
 //     public function actions() {
 //	return array(
@@ -71,13 +71,14 @@ class ItemController extends Controller
      * @throws CHttpException
      * @author milkyway(yhxxlm@gmail.com)
      */
-    public function actionUpload()
+    public function actionUpload($token)
     {
-        Yii::import("ext.xupload.models.XUploadForm");
+        Yii::import("xupload.models.XUploadForm");
         //Here we define the paths where the files will be stored temporarily
         //remove realpath
-        $path = Yii::app()->getBasePath() . "/../upload/store/" . $_SESSION['store']['store_id'] . "/item/image" . "/";
-        $publicPath = 'http://' . F::sg('site', 'imageDomain') . "/store/" . $_SESSION['store']['store_id'] . "/item/image/";
+        $store_id = isset($_SESSION['store']['store_id']) ? $_SESSION['store']['store_id'] : 0;
+        $path = Yii::app()->getBasePath() . "/../upload/store/" . $store_id . "/item/image" . "/";
+        $publicPath = 'http://' . F::sg('site', 'imageDomain') . "/store/" . $store_id . "/item/image/";
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);
@@ -131,8 +132,8 @@ class ItemController extends Controller
 //here you can also generate the image versions you need 
 //using something like PHPThumb
 //Now we need to save this path to the user's session
-                    if (Yii::app()->user->hasState('images')) {
-                        $userImages = Yii::app()->user->getState('images');
+                    if (Yii::app()->user->hasState('images_' . $token)) {
+                        $userImages = Yii::app()->user->getState('images_' . $token);
                     } else {
                         $userImages = array();
                     }
@@ -146,7 +147,7 @@ class ItemController extends Controller
                         'mime' => $model->mime_type,
                         'name' => $model->name,
                     );
-                    Yii::app()->user->setState('images', $userImages);
+                    Yii::app()->user->setState('images_' . $token, $userImages);
 
 //Now we need to tell our widget that the upload was succesfull
 //We do so, using the json structure defined in
@@ -158,9 +159,9 @@ class ItemController extends Controller
                         "url" => $publicPath . $ymd . '/' . $filename,
                         "thumbnail_url" => $publicPath . $ymd . '/' . "$filename",
                         "delete_url" => $this->createUrl("upload", array(
-                            "_method" => "delete",
-                            "file" => $filename
-                        )),
+                                "_method" => "delete",
+                                "file" => $filename
+                            )),
                         "delete_type" => "POST"
                     )));
                 } else {
@@ -183,7 +184,7 @@ class ItemController extends Controller
      */
     public function actionCreate()
     {
-        Yii::import("ext.xupload.models.XUploadForm");
+        Yii::import("xupload.models.XUploadForm");
         $model = new Item('create');
         $upload = new XUploadForm;
         $image = new ItemImg;
@@ -409,18 +410,13 @@ class ItemController extends Controller
      */
     public function actionAdmin()
     {
-        $dataProvider=new CActiveDataProvider('Item', array(
-            'criteria'=>array(
-                'condition'=>'store_id =' . $_SESSION['store']['store_id'],
-                'order' => 'item_id desc',
-            ),
-            'pagination'=>array(
-                'pageSize'=>15,
-            ),
-        ));
+        $model = new Item('search');
+        $model->unsetAttributes(); // clear any default values
+        if (isset($_GET['Item']))
+            $model->attributes = $_GET['Item'];
 
         $this->render('admin', array(
-            'dataProvider' => $dataProvider,
+            'model' => $model,
         ));
     }
 

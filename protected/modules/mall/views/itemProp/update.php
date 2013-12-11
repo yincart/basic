@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs = array(
     '商品属性' => array('admin'),
-    $model->prop_id => array('view', 'id' => $model->prop_id),
+    $model->prop_name => array('view', 'id' => $model->prop_id),
     '更新',
 );
 
@@ -14,4 +14,4 @@ $this->menu = array(
 
 <h1>更新商品属性 <?php echo $model->prop_id; ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model' => $model)); ?>
+<?php echo $this->renderPartial('_form', array('model' => $model, 'props'=>$props)); ?>

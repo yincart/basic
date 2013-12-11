@@ -14,33 +14,22 @@ $this->menu = array(
 <?php
 $this->widget('bootstrap.widgets.TbGridView', array(
     'id' => 'item-prop-grid',
+    'type' => 'striped bordered condensed',
     'dataProvider' => $model->search(),
     'filter' => $model,
     'columns' => array(
         'prop_id',
-        'itemType.name',
-//        'parent_prop_id',
-//        'parent_value_id',
+        'category.name',
         'prop_name',
-//        'prop_alias',
-        'type',
-//        'is_key_prop',
-//        'is_sale_prop',
-//        'is_color_prop',
-//        'is_enum_prop',
-//        'is_item_prop',
-//        'must',
-//        'multi',
+        array(
+            'name' => 'type',
+            'value' => '$data->attrType(true, $data->type)',
+        ),
         array(
             'name' => 'prop.prop_values',
             'value' => '$data->getPropValues()',
-            'htmlOptions' => array('width'=>'300px')
+            'htmlOptions' => array('width'=>'600')
         ),
-        /*
-          'prop_values',
-          'status',
-          'sort_order',
-         */
         'sort_order',
         array(
             'class' => 'bootstrap.widgets.TbButtonColumn',

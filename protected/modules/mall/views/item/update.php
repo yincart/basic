@@ -8,7 +8,7 @@ $this->breadcrumbs = array(
 $this->menu = array(
     array('label' => '创建商品', 'icon' => 'plus', 'url' => array('create')),
     array('label' => '查看商品', 'icon' => 'eye-open', 'url' => array('view', 'id' => $model->item_id)),
-    array('label' => '管理商品', 'icon' => 'cog', 'url' => array('list')),
+    array('label' => '管理商品', 'icon' => 'cog', 'url' => array('admin')),
 );
 ?>
 

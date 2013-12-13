@@ -54,7 +54,7 @@ return array(
             'class' => 'application.modules.cms.CmsModule',
         ),
         'mall' => array(
-            'class' => 'application.modules.mall.MallModule',
+            'class' => 'backend.modules.mall.MallModule',
         ),
         'user' => array(
             'class' => 'application.modules.user.UserModule',
@@ -159,11 +159,11 @@ return array(
                     'levels' => 'error, warning',
                 ),
                 // uncomment the following to show log messages on web pages
-                /*
-                  array(
-                  'class'=>'CWebLogRoute',
-                  ),
-                 */
+
+                array(
+                    'class' => 'CWebLogRoute',
+                    'showInFireBug' => true,
+                ),
             ),
         ),
     ),

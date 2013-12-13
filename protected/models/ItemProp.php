@@ -72,6 +72,7 @@ class ItemProp extends CActiveRecord
         return array(
 //            'categories'=>array(self::MANY_MANY, 'Category', 'prop_category(prop_id, category_id)'),
             'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
+            'propValues' => array(self::HAS_MANY, 'PropValue', 'prop_id'),
         );
     }
 

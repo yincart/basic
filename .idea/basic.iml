@@ -7,24 +7,10 @@
     <orderEntry type="module-library">
       <library name="PHP">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../../bin/php/php5.4.12" />
+          <root url="file://$MODULE_DIR$/../../yii/framework" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../../../bin/php/php5.4.12" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="PHARS">
-        <CLASSES>
-          <root url="phar://$MODULE_DIR$/../../../bin/php/php5.4.12/go-pear.phar" />
-          <root url="phar://$MODULE_DIR$/../../../bin/php/php5.4.12/phpunit.phar" />
-          <root url="phar://$MODULE_DIR$/../../../bin/php/php5.4.12/pharcommand.phar" />
-        </CLASSES>
-        <SOURCES>
-          <root url="phar://$MODULE_DIR$/../../../bin/php/php5.4.12/go-pear.phar" />
-          <root url="phar://$MODULE_DIR$/../../../bin/php/php5.4.12/phpunit.phar" />
-          <root url="phar://$MODULE_DIR$/../../../bin/php/php5.4.12/pharcommand.phar" />
+          <root url="file://$MODULE_DIR$/../../yii/framework" />
         </SOURCES>
       </library>
     </orderEntry>

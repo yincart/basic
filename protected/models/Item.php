@@ -332,7 +332,7 @@ class Item extends CActiveRecord
         $images = ItemImg::model()->findAllByAttributes(array('item_id' => $this->item_id));
         foreach ($images as $k => $v) {
             if ($v['position'] == 0) {
-                return '/../../upload/store/'.$v['store_id'].'/item/image/' . $v['url'];
+                return '/upload/item/image/' . $v['url'];
             }
         }
     }
@@ -347,7 +347,7 @@ class Item extends CActiveRecord
         $images = ItemImg::model()->findAllByAttributes(array('item_id' => $this->item_id));
         foreach ($images as $k => $v) {
             if ($v['position'] == 0) {
-                return dirname(F::basePath()) . '/upload/store/' . $v['store_id'] . '/item/image/' . $v['url'];
+                return dirname(F::basePath()) . '/upload/item/image/' . $v['url'];
             }
         }
     }
@@ -387,7 +387,7 @@ class Item extends CActiveRecord
         $img = $this->getMainPicPath();
         if (file_exists($this->getMainPicOriginalPath())) {
             $img_thumb = F::baseUrl() . ImageHelper::thumb($width, $height, $img, array('method' => 'resize'));
-            $img_thumb = str_replace('/../../upload', 'http://'.F::sg('site', 'imageDomain'), $img_thumb);
+            $img_thumb = str_replace('/upload', 'http://' . F::sg('site', 'imageDomain'), $img_thumb);
             $img_thumb_now = CHtml::image($img_thumb, $this->title);
             return CHtml::link($img_thumb_now, $this->getUrl(), array('title' => $this->title));
         } else {
@@ -408,7 +408,6 @@ class Item extends CActiveRecord
         }
         return $imageList;
     }
-
 
     /**
      * 分类属性
@@ -436,7 +435,7 @@ class Item extends CActiveRecord
     {
         parent::afterSave();
         $this->addImages();
-        $this->update_props_data();
+//        $this->update_props_data();
     }
 
     /**

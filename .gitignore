@@ -31,8 +31,8 @@ Thumbs.db
 # assets
 assets/*
 
-.idea/*
-
 # runtime
 protected/runtime/*
 protected/backend/runtime/*
+
+upload/*

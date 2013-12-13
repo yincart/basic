@@ -3,7 +3,7 @@ yincart
 
 Why call yincart, not yiicart. Yincart means Yii in cart, or u can call it "yi niu", lol.
 
-base on yiiframework , website:yincart.com
+base on yiiframework , website: http://www.yincart.com
 
 [![Latest Stable Version](https://poser.pugx.org/yinhe/yincart/v/stable.png)](https://packagist.org/packages/yinhe/yincart)
 [![Total Downloads](https://poser.pugx.org/yinhe/yincart/downloads.png)](https://packagist.org/packages/yinhe/yincart)

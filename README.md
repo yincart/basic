@@ -12,7 +12,7 @@ base on yiiframework , website: http://www.yincart.com
 
 ###Yincart basic 代码说明
 
-* gii生成的model放到models/base，新建类继承原model，并加AR前缀。
+* gii生成的model放到``models/base``，新建类继承原model，并加AR前缀。
 * 前后台都需要用的module，在protected和backend的module目录都建立module代码
 * 所有module的model代码统一放到protected的models目录下公用
 * 代码风格请与yii框架风格统一，函数使用驼峰式命名，函数必须注释，该删除的代码请删除，不要大堆注释，
@@ -20,15 +20,15 @@ base on yiiframework , website: http://www.yincart.com
 
 ###Yincart项目结构说明
 
-* advanced为中大型项目管理结构分支，前台入口为frontend/www，后台入口为backend/www；定位于B2B2C
-* basic为小型项目管理结构分支，后台入口为backend.php；定位于B2C
+* advanced为中大型项目管理结构分支，前台入口为``frontend/www``，后台入口为``backend/www``；定位于B2B2C
+* basic为小型项目管理结构分支，后台入口为``backend.php``；定位于B2C
 * 请根据自己的业务需求选择
 * Advanced Install
-* use shopend.com redirect to the shopend/www directory
-* use backend.com redirect to the backend/www directory
-* use frontend.com redirect to the frontend/www directory
+* use shopend.com redirect to the ``shopend/www`` directory
+* use backend.com redirect to the ``backend/www`` directory
+* use frontend.com redirect to the ``frontend/www`` directory
 * use image.com redirect to the upload directory
-* database: common/data/yincart-*(latest).sql
+* database: ``common/data/yincart-*(latest).sql``
 
 ###2013.8.04 1.0.7预览版
 
@@ -70,13 +70,13 @@ base on yiiframework , website: http://www.yincart.com
 
 * 增加了widgets目录，便于对不同皮肤定制widgets
 
-* 增加bootstrap的'fontAwesomeCss' => true属性，可使用更多图标ICON，可自行在后端配置文件关闭
+* 增加bootstrap的``'fontAwesomeCss' => true``属性，可使用更多图标ICON，可自行在后端配置文件关闭
 
 * 增加了新皮肤ultimo，支持国际化，正在完善中。之前皮肤不能正常使用的需要对菜单进行自定义
 
 * 文章和产品URL引入标题进行SEO优化，并支持汉字转拼音
 
-* 增加站点配置模块，可通过F::sg('site', 'name')格式引入
+* 增加站点配置模块，可通过``F::sg('site', 'name')``格式引入
 
 * 评论和SEO模块初步引入，待完善
 
@@ -84,19 +84,19 @@ base on yiiframework , website: http://www.yincart.com
 
 * 前端用户模块更新为最新版本的Yii-user,同时添加测试邮件服务器支持发送注册邮件
 
-* 前端测试用户帐号密码更新为demo demo123,数据库引擎全部更新为innodb
+* 前端测试用户帐号密码更新为``demo/demo123``,数据库引擎全部更新为innodb
 
 ###2013.4.30 1.0.4版本
 
 * 前端集成进入左右值无限分类
 
-* 数据库配置文件在/common/config/main-local.php,便于GIT部署项目时直接忽略提交此文件
+* 数据库配置文件在``/common/config/main-local.php``,便于GIT部署项目时直接忽略提交此文件
 
 ###2013.4.24 1.0.3版本
 
 * 分类换成左右值无限分类，编辑器扩展引入最新的kindeditor
 
-* 数据库完整版位于/common/data/yincart-1.0.3.sql
+* 数据库完整版位于``/common/data/yincart-1.0.3.sql``
 
 * 后台登陆帐号密码修正为admin admin123
 
@@ -104,18 +104,18 @@ base on yiiframework , website: http://www.yincart.com
 
 * 前后台目录结构调整，适合中大型项目开发
 
-* 数据库完整版位于/common/data/yincart.sql
-* 数据库表版本更新位于/common/migrations/
+* 数据库完整版位于``/common/data/yincart.sql``
+* 数据库表版本更新位于``/common/migrations/``
 
-* EER部分核心数据库设计图位于/common/data/
+* EER部分核心数据库设计图位于``/common/data/``
 
-* 后台登陆帐号密码为admin demo
-* 前台登陆帐号密码为demo admin123
+* 后台登陆帐号密码为``admin/demo``
+* 前台登陆帐号密码为``demo/admin123``
 
 * 下载后缺少assets文件，请自行创建
 
-* 前端访问路径webroot/frontend/www
-* 后端访问路径webroot/backend/www
+* 前端访问路径``webroot/frontend/www``
+* 后端访问路径``webroot/backend/www``
 
 * common/main-local.php 本地数据库配置
 
@@ -124,11 +124,11 @@ base on yiiframework , website: http://www.yincart.com
 
 ###2012.5.21 1.0.1版本
 
-* 数据库位于/protected/data/yincart.sql
+* 数据库位于``/protected/data/yincart.sql``
 
-* EER部分核心数据库设计图位于/protected/data/
+* EER部分核心数据库设计图位于``/protected/data/``
 
-* 后台登陆帐号密码为admin admin123
+* 后台登陆帐号密码为``admin/admin123``
 
 * 下载后缺少assets文件，请自行创建
 

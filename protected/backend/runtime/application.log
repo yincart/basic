@@ -9959,3 +9959,120 @@ Stack trace:
 REQUEST_URI=/yincart/basic/backend.php/mall/item/admin
 HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
 ---
+2013/12/16 10:50:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "admin/item/upload/parent_id/1"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/item/uplo...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yincart/basic/backend.php/admin/item/upload/parent_id/1
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/28
+---
+2013/12/16 10:50:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "admin/item/upload/parent_id/1"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/item/uplo...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yincart/basic/backend.php/admin/item/upload/parent_id/1
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/28
+---
+2013/12/16 10:51:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "admin/item/upload/parent_id/1"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/item/uplo...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yincart/basic/backend.php/admin/item/upload/parent_id/1
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/28
+---
+2013/12/16 11:02:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "admin/item/upload/token/34173cb38f07f89ddbebc2ac9128303f"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/item/uplo...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yincart/basic/backend.php/admin/item/upload/token/34173cb38f07f89ddbebc2ac9128303f
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/30
+---
+2013/12/16 11:03:48 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (E:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CBaseController.php(181): TbBreadcrumb->run()
+#1 E:\wamp\www\yincart\basic\themes\backend\views\layouts\mall.php(37): ItemController->widget()
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 E:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(321): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 E:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\wamp\www\yincart\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/yincart/basic/backend.php/mall/item/update/id/29
+in E:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in E:\wamp\www\yincart\basic\themes\backend\views\layouts\mall.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php (321)
+2013/12/16 11:03:53 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (E:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CBaseController.php(181): TbBreadcrumb->run()
+#1 E:\wamp\www\yincart\basic\themes\backend\views\layouts\mall.php(37): ItemController->widget()
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 E:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(321): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 E:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\wamp\www\yincart\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/yincart/basic/backend.php/mall/item/update/id/29
+in E:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in E:\wamp\www\yincart\basic\themes\backend\views\layouts\mall.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php (321)
+2013/12/16 11:04:27 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (E:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CBaseController.php(181): TbBreadcrumb->run()
+#1 E:\wamp\www\yincart\basic\themes\backend\views\layouts\mall.php(37): ItemController->widget()
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 E:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(321): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 E:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\wamp\www\yincart\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/yincart/basic/backend.php/mall/item/update/id/29
+in E:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in E:\wamp\www\yincart\basic\themes\backend\views\layouts\mall.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php (321)

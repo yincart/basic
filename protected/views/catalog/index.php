@@ -4,6 +4,7 @@ $this->breadcrumbs = array(
     '商品列表'=>array('/item-list-all'),
     $category->name
 );
+$this->widget('widgets.default.WCategorySearch', array('category' => $category));
 ?>
 <div class="box" style="margin-top:10px">
     <div class="box-title">热卖商品</div>

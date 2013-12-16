@@ -31,8 +31,8 @@ class ItemController extends MallBaseController
         //Here we define the paths where the files will be stored temporarily
         //remove realpath
         $store_id = isset($_SESSION['store']['store_id']) ? $_SESSION['store']['store_id'] : 0;
-        $path = Yii::app()->getBasePath() . "/../upload/store/" . $store_id . "/item/image" . "/";
-        $publicPath = 'http://' . F::sg('site', 'imageDomain') . "/store/" . $store_id . "/item/image/";
+        $path = Yii::app()->getBasePath() . "/../upload/item/image" . "/";
+        $publicPath = 'http://' . F::sg('site', 'imageDomain') . "/item/image/";
 
         if (!file_exists($path)) {
             mkdir($path, 0777, true);

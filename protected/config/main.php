@@ -162,6 +162,7 @@ return array(
             'rules' => array(
                 'page/<key:\w+>' => 'page/index',
                 'catalog/<key:\w+>' => 'catalog/index',
+                'catalog/<key:\w+>/<prop:.*?>' => 'catalog/index',
                 'list/<category_id:\d+>' => 'item/index',
                 'item-list-<key:\w+>' => 'item/list',
 //                        'item-<id:\d+>' => 'item/view',

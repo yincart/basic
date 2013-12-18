@@ -8,10 +8,10 @@
 return array(
     'components' => array(
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=yincart',
+            'connectionString' => 'mysql:host=192.168.1.230;dbname=yincart-basic',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '',
+            'username' => 'jago',
+            'password' => '123456',
             'charset' => 'utf8',
             'tablePrefix' => ''
         )

@@ -10076,3 +10076,227 @@ REQUEST_URI=/yincart/basic/backend.php/mall/item/update/id/29
 in E:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
 in E:\wamp\www\yincart\basic\themes\backend\views\layouts\mall.php (37)
 in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php (321)
+2013/12/18 14:58:26 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\yincart\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 E:\wamp\www\yincart\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#5 E:\wamp\www\yincart\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#8 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 E:\wamp\www\yincart\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/yincart/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/cms/newsletterSubscriber/admin
+---
+2013/12/18 14:58:32 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\yincart\basic\protected\backend\views\theme\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 E:\wamp\www\yincart\basic\protected\backend\views\theme\_search.php(6): TbActiveForm->textFieldRow(Object(Theme), 'theme', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#5 E:\wamp\www\yincart\basic\protected\backend\views\theme\admin.php(37): CController->renderPartial('_search', Array)
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#8 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 E:\wamp\www\yincart\basic\protected\backend\controllers\ThemeController.php(148): CController->render('admin', Array)
+#11 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#12 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#22 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/yincart/basic/backend.php/theme/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/plugin/pluginmanage/index
+---
+2013/12/18 15:06:35 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft.
+in E:\wamp\www\yincart\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in E:\wamp\www\yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/18 15:06:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1354): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1473): CActiveRecord->query(Object(CDbCriteria), true)
+#3 E:\wamp\www\yincart\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 E:\wamp\www\yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/site/index
+---
+2013/12/18 15:06:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft.
+in E:\wamp\www\yincart\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in E:\wamp\www\yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/18 15:06:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1354): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1473): CActiveRecord->query(Object(CDbCriteria), true)
+#3 E:\wamp\www\yincart\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 E:\wamp\www\yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/cms/article/admin
+---
+2013/12/18 15:19:19 [error] [exception.CException] exception 'CException' with message '属性 "Category.lft" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('lft')
+#1 E:\wamp\www\yincart\basic\protected\extensions\nested-set-behavior\NestedSetBehavior.php(41): CActiveRecord->__get('lft')
+#2 [internal function]: NestedSetBehavior->descendants()
+#3 E:\wamp\www\yii\framework\base\CComponent.php(261): call_user_func_array(Array, Array)
+#4 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('descendants', Array)
+#5 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemCategory\admin.php(48): CActiveRecord->__call('descendants', Array)
+#6 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemCategory\admin.php(48): Category->descendants()
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#11 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemCategoryController.php(154): CController->render('admin', Array)
+#12 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemCategoryController->actionAdmin()
+#13 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemCatego...')
+#23 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#25 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemCategory/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/cms/article/admin
+---
+2013/12/18 16:26:03 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\yincart\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 E:\wamp\www\yincart\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#5 E:\wamp\www\yincart\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#8 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 E:\wamp\www\yincart\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/yincart/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/plugin/pluginmanage/index
+---
+2013/12/18 16:26:07 [error] [exception.CException] exception 'CException' with message '属性 "AdminUser.id" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 E:\wamp\www\yincart\basic\protected\backend\models\AdminUser.php(81): CActiveRecord->__get('id')
+#2 E:\wamp\www\yincart\basic\protected\backend\views\adminUser\admin.php(17): AdminUser->search()
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#7 E:\wamp\www\yincart\basic\protected\backend\controllers\AdminUserController.php(141): CController->render('admin', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminUserController->actionAdmin()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('adminUser/admin')
+#19 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/yincart/basic/backend.php/adminUser/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/plugin/pluginmanage/index
+---
+2013/12/18 16:26:09 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in E:\wamp\www\yii\framework\YiiBase.php:323
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AssignmentController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\yincart\basic\protected\backend\modules\auth\views\layouts\main.php(31): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#7 E:\wamp\www\yincart\basic\protected\backend\modules\auth\controllers\AssignmentController.php(24): CController->render('index', Array)
+#8 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AssignmentController->actionIndex()
+#9 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('auth/assignment...')
+#14 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/yincart/basic/backend.php/auth/assignment/index
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/plugin/pluginmanage/index
+---

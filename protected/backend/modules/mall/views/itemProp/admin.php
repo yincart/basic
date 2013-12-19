@@ -28,7 +28,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         array(
             'name' => 'prop.prop_values',
             'value' => '$data->getPropValues()',
-            'htmlOptions' => array('width'=>'600')
+            'htmlOptions' => array('width'=>'600'),
         ),
         'sort_order',
         array(

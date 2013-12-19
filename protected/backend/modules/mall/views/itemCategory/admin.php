@@ -43,10 +43,7 @@ $this->menu = array(
             )
         )
     );
-
-    $root = Category::model()->findByPk('3');
-    $descendants = $root->descendants()->findAll();
-    echo Category::model()->getTree($descendants, $options, 'name');
+    echo Category::model()->getTree(3, $options, 'name');
     $this->endWidget();
     ?>
 </div>

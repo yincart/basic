@@ -8,12 +8,11 @@ class ItemCategoryController extends MallBaseController {
      */
     public function actionCreate() {
         $model = new Category('create');
-        $action = 'category';
-
-        //Uncomment the following line if AJAX validation is needed
-        $this->performAjaxValidation($model);
 
         if (isset($_POST['Category'])) {
+            //Uncomment the following line if AJAX validation is needed
+            $this->performAjaxValidation($model);
+
             $model->attributes = $_POST['Category'];
             $parent_node = $_POST['Category']['node'];
             if ($parent_node != 0) {
@@ -144,14 +143,7 @@ class ItemCategoryController extends MallBaseController {
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new Category('search');
-        $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['Category']))
-            $model->attributes = $_GET['Category'];
-
-        $this->render('admin', array(
-            'model' => $model,
-        ));
+        $this->render('admin');
     }
 
     /**

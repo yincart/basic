@@ -12,27 +12,18 @@ if ($model->hasErrors()): ?>
     </div>
 <?php endif; ?>
 <div class="control-group"><p class="help-block">带 <span class="required">*</span> 的字段为必填项.</p></div>
-<div class="control-group">
-    <?php echo $form->labelEx($model, 'node', array('class' => 'control-label')); ?>
-    <div class="controls">
-        <?php
-        $parent_id = 0;
-        if (!$model->isNewRecord) {
-            $node = Category::model()->findByPk($model->id);
-            $parent = $node->parent()->find();
-            $parent_id = $parent->id;
-        }
-        $descendants = Category::model()->findAll(array('condition' => 'root=3', 'order' => 'lft'));
-        $data = Category::model()->getSelectOptions($descendants);
-        echo CHtml::dropDownList('Category[node]', $parent_id, $data);
-        echo $form->error($model, 'node');
-        ?>
-    </div>
-</div>
-
 <?php
+$parent_id = 0;
+if (!$model->isNewRecord) {
+    $node = Category::model()->findByPk($model->id);
+    $parent = $node->parent()->find();
+    $parent_id = $parent->id;
+}
+$descendants = Category::model()->findAll(array('condition' => 'root=3', 'order' => '`left`'));
+$data = Category::model()->getSelectOptions($descendants);
+echo TbHtml::dropDownListControlGroup('上级分类', 'Category[node]', $data, array('class' => 'control-label'));
 echo $form->textFieldControlGroup($model, 'name');
-echo $form->inlineRadioButtonListControlGroup($model, 'label', $model->attrLabelHtml());
+echo $form->inlineRadioButtonListControlGroup($model, 'label', $model->getLabelList());
 echo $form->textFieldControlGroup($model, 'url');
 ?>
 <div class="control-group">

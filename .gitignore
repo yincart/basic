@@ -29,7 +29,7 @@ Thumbs.db
 *.empty
 
 # assets
-#assets/*
+assets/*
 
 # runtime
 protected/runtime/*

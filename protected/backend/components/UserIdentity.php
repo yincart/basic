@@ -15,8 +15,7 @@ class UserIdentity extends CUserIdentity {
 	public function authenticate()
 	{
 		$user=AdminUser::model()->find('LOWER(username)=?',array(strtolower($this->username)));
-                var_dump($user);
-                exit;
+
 		if($user===null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		else if(!$user->validatePassword($this->password))

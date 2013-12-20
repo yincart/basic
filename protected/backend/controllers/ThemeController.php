@@ -31,7 +31,7 @@ class ThemeController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','set'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -148,6 +148,51 @@ class ThemeController extends Controller
 		));
 	}
 
+    /**
+     * Set the theme
+     */
+    public function actionSet($id)
+    {
+        $model1=$this->loadModel($id);
+        $model2=new Sys_theme();
+        //var_dump($model1);exit;
+        $cookieDays = 180;
+        $cookie = new CHttpCookie('theme', $model1->theme);
+        $cookie->expire = time() + 60*60*24*$cookieDays;
+        Yii::app()->request->cookies['theme'] = $cookie;
+        if(isset($_POST['Sbt']))
+        {
+            $model2->name=$model1->primaryKey;
+            $newTheme=Sys_theme::model()->find('name=?',array($model2->name));
+           // var_dump($newTheme);exit;
+            if($newTheme!==null)
+            {
+                $oldTheme=Sys_theme::model()->find('status=?',array("2"));
+               // var_dump($oldTheme);exit;
+                if($oldTheme!==null&&$oldTheme!==$newTheme)
+                {
+                    $_oldTheme=Theme::model()->find('theme=?',array($oldTheme->name));
+                    $_newTheme=$model1;
+                    $oldTheme->status="1";
+                    $_oldTheme->desc="";
+                    $newTheme->status="2";
+                    $_newTheme->desc="Now using!";
+                    $oldTheme->save();
+                    $_oldTheme->save();
+                    $newTheme->save();
+                    $_newTheme->save();
+                }
+            }
+            if(isset(Yii::app()->request->cookies['theme']))
+            {
+                unset(Yii::app()->request->cookies['theme']);
+            }
+            $this->redirect(array('admin'));
+        }
+        $this->render('set',array(
+            'model'=>$model1,
+        ));
+    }
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

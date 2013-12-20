@@ -279,8 +279,8 @@
                         
                     </div>
                         <?php
-//                        $this->widget('comext.ThemePicker.EThemePicker', array(
-//                        ));
+                        $this->widget('comext.ThemePicker.EThemePicker', array(
+                        ));
                         ?>
                 </div>
 

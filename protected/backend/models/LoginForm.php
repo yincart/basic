@@ -74,4 +74,22 @@ class LoginForm extends CFormModel
 		else
 			return false;
 	}
+
+    public function validate($attributes=null, $clearErrors=true)
+    {
+        if($clearErrors)
+            $this->clearErrors();
+
+//        if($this->beforeValidate())
+//        {
+        $i=0;
+            foreach($this->getValidators() as $validator){
+                echo $attributes.$i++.'<br>';
+                $validator->validate($this,$attributes);
+            }
+//            $this->afterValidate();
+            return !$this->hasErrors();
+//        }
+       return false;
+    }
 }

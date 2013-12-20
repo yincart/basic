@@ -33,6 +33,7 @@ class EThemePicker extends CPortlet
  		'csrf'=>true, 
  		'class'=>'themeSelector' , 
  		'id'=>'themeSelector',
+        'prompt'=>'Select',
  	);
  	/**
  	 * (non-PHPdoc)
@@ -40,9 +41,8 @@ class EThemePicker extends CPortlet
  	 */
     protected function renderContent()
     {
-      $themesList = array_combine(Yii::app()->themeManager->themeNames, Yii::app()->themeManager->themeNames);
       echo CHtml::form('', 'post', array());
-      echo CHtml::dropDownList('themeSelector' , Yii::app()->theme->name, $themesList, $this->dropDownOptions);
+      echo CHtml::dropDownList('themeSelector' , 'id', SysTheme::model()->getList(), $this->dropDownOptions);
       echo CHtml::endForm();
     }
     /**
@@ -53,17 +53,27 @@ class EThemePicker extends CPortlet
      * @param $cookieDays integer the amount of days the theme choice will be saved, default 180 days
      */
     public static function setTheme($cookieDays = 180){
-    	if(Yii::app()->request->getPost('themeSelector') !== null && in_array($_POST['themeSelector'], Yii::app()->themeManager->themeNames, true)){
-      		Yii::app()->theme = $_POST['themeSelector'];
-      		$cookie = new CHttpCookie('theme', $_POST['themeSelector']);
+    	if(Yii::app()->request->getPost('themeSelector') !== null ){
+            $model=new SysTheme();
+      		$model->id = $_POST['themeSelector'];
+            $theme=$model->find('id=?',array($model->id));//find out the theme from sys_theme table
+            Yii::app()->theme=$theme->name;
+      		$cookie = new CHttpCookie('theme', $theme->name);
 			$cookie->expire = time() + 60*60*24*$cookieDays; 
       		Yii::app()->request->cookies['theme'] = $cookie;
-    	}else if(isset(Yii::app()->request->cookies['theme']) && in_array(Yii::app()->request->cookies['theme']->value, Yii::app()->themeManager->themeNames, true) ){
-    		Yii::app()->theme = Yii::app()->request->cookies['theme']->value;
+    	}else if(isset(Yii::app()->request->cookies['theme']) && in_array(Yii::app()->request->cookies['theme']->value, SysTheme::model()->getList(), true) ){
+            //var_dump(Yii::app()->request->cookies['theme']->value);exit;
+            Yii::app()->theme = Yii::app()->request->cookies['theme']->value;
     	}else if(isset(Yii::app()->request->cookies['theme'])){
     		//if we came to this point, the theme don't exists, so we better unset the cookie
+            //var_dump($_GET['theme']);exit;
     		unset(Yii::app()->request->cookies['theme']);
     		throw new CHttpException(400, Yii::t('app', 'Invalid request. Theme don\'t exist!'));
-    	}
+    	}else
+        {
+
+            $theme=SysTheme::model()->find('status=?',array( '2')); //set the theme which system set for user
+            Yii::app()->theme=$theme->name;
+        }
     }
 }

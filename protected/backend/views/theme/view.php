@@ -1,7 +1,8 @@
 <?php
 $this->breadcrumbs=array(
 	'Themes'=>array('index'),
-	$model->name,
+    $model->name=>array('view','id'=>$model->theme),
+    'View',
 );
 
 $this->menu=array(
@@ -10,6 +11,7 @@ $this->menu=array(
 	array('label'=>'Update Theme','icon'=>'pencil','url'=>array('update','id'=>$model->theme)),
 	array('label'=>'Delete Theme','icon'=>'trash','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->theme),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Theme','icon'=>'cog','url'=>array('admin')),
+    array('label'=>'Set Theme','icon'=>'cog','url'=>array('set','id'=>$model->theme)),
 );
 ?>
 

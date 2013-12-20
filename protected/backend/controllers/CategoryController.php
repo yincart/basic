@@ -71,7 +71,7 @@ class CategoryController extends Controller
             if ($parent_node != 0) {
                 $node = Category::model()->findByPk($parent_node);
                 $model->appendTo($node);
-//            print_r($_POST['DealCategory']);
+//            ($_POST['DealCategory']);
 //            exit;
             }
             if ($model->saveNode())

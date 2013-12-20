@@ -17,19 +17,19 @@ $this->menu=array(
 <h1>Set Theme: <?php echo $model->theme; ?></h1>
 <?php
 $theme=Theme::model()->find('theme=?',array($model->theme));
-//var_dump($theme);exit;
+
 if($theme)
 {
     $_theme=Sys_theme::model()->find('name=?',array($theme->primaryKey));
     if($_theme)
     {
         ?>
-        <?php // var_dump(Yii::app()-r>equest->cookies);exit;?>
+
         <?php $form=$this->beginWidget('CActiveForm',array(
         'enableAjaxValidation'=>false,
     ));?>
         <li>
-<!--            --><?php // var_dump(Yii::app()->request->cookies['theme']->value);exit;?>
+
             <iframe  height="700px" width="80%" src="http://localhost/basic"></iframe>
         </li>
         <br/>

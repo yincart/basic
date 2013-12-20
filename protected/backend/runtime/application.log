@@ -8975,3 +8975,21 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/theme/set/leather
 HTTP_REFERER=http://localhost/basic/backend.php/site/login
 ---
+2013/12/20 05:40:17 [error] [php] Creating default object from empty value (E:\wamp\www\basic\protected\backend\controllers\ThemeController.php:98)
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ThemeController->runAction()
+#3 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 E:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ThemeController->filterAccessControl()
+#6 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 E:\wamp\www\yii\framework\web\CController.php(265): ThemeController->runActionWithFilters()
+#9 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ThemeController->run()
+#10 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 E:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/theme/update/ultimo
+in E:\wamp\www\basic\protected\backend\controllers\ThemeController.php (98)
+in E:\wamp\www\basic\backend.php (14)

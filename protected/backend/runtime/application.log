@@ -6623,3 +6623,33 @@ Stack trace:
 REQUEST_URI=/yincart/basic/backend.php/admin/item/getPropValues
 HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/30
 ---
+2013/12/19 01:54:55 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\yincart\basic\protected\backend\views\theme\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\yincart\basic\protected\backend\views\theme\_search.php(6): TbActiveForm->textFieldRow(Object(Theme), 'theme', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#5 D:\wamp\www\yincart\basic\protected\backend\views\theme\admin.php(37): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\yincart\basic\protected\backend\controllers\ThemeController.php(148): CController->render('admin', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/yincart/basic/backend.php/theme/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php
+---

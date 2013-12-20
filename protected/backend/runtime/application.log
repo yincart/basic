@@ -8993,3 +8993,323 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/theme/update/ultimo
 in E:\wamp\www\basic\protected\backend\controllers\ThemeController.php (98)
 in E:\wamp\www\basic\backend.php (14)
+2013/12/20 07:46:03 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.translate" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\base\CModule.php(105): CComponent->__get('translate')
+#1 E:\wamp\www\basic\protected\components\F.php(538): CModule->__get('translate')
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date('1371681498')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 07:46:19 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.translate" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\base\CModule.php(105): CComponent->__get('translate')
+#1 E:\wamp\www\basic\protected\components\F.php(538): CModule->__get('translate')
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date(NULL)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 07:46:20 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.translate" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\base\CModule.php(105): CComponent->__get('translate')
+#1 E:\wamp\www\basic\protected\components\F.php(538): CModule->__get('translate')
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date(NULL)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 07:46:20 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.translate" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\base\CModule.php(105): CComponent->__get('translate')
+#1 E:\wamp\www\basic\protected\components\F.php(538): CModule->__get('translate')
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date(NULL)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 07:47:25 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.translate" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\base\CModule.php(105): CComponent->__get('translate')
+#1 E:\wamp\www\basic\protected\components\F.php(538): CModule->__get('translate')
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date(NULL)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 07:47:26 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.translate" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\base\CModule.php(105): CComponent->__get('translate')
+#1 E:\wamp\www\basic\protected\components\F.php(538): CModule->__get('translate')
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date(NULL)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 07:47:55 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.translate" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\base\CModule.php(105): CComponent->__get('translate')
+#1 E:\wamp\www\basic\protected\components\F.php(538): CModule->__get('translate')
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date(NULL)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 07:47:56 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.translate" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\base\CModule.php(105): CComponent->__get('translate')
+#1 E:\wamp\www\basic\protected\components\F.php(538): CModule->__get('translate')
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date(NULL)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 07:47:57 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.translate" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\base\CModule.php(105): CComponent->__get('translate')
+#1 E:\wamp\www\basic\protected\components\F.php(538): CModule->__get('translate')
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date(NULL)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 07:48:48 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "language".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\basic\protected\components\F.php(538): CComponent->__call('language', Array)
+#1 E:\wamp\www\basic\protected\components\F.php(538): CWebApplication->language()
+#2 E:\wamp\www\basic\protected\backend\views\theme\view.php(33): F::date(NULL)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#7 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(55): CController->render('view', Array)
+#8 [internal function]: ThemeController->actionView('default')
+#9 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#10 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#21 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/theme/view/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/20 08:05:37 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\basic\protected\backend\views\language\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 E:\wamp\www\basic\protected\backend\views\language\_search.php(6): TbActiveForm->textFieldRow(Object(Language), 'language_id', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#4 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#5 E:\wamp\www\basic\protected\backend\views\language\admin.php(37): CController->renderPartial('_search', Array)
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#8 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 E:\wamp\www\basic\protected\backend\controllers\LanguageController.php(148): CController->render('admin', Array)
+#11 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): LanguageController->actionAdmin()
+#12 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('language/admin')
+#22 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/language/admin
+HTTP_REFERER=http://localhost/basic/backend.php/theme/create
+---

@@ -14,7 +14,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Set Theme: <?php echo $model->theme; ?></h1>
+<h1 style="text-align: center">Set Theme: <?php echo $model->theme; ?></h1>
 <?php
 $theme=Theme::model()->find('theme=?',array($model->theme));
 
@@ -30,7 +30,7 @@ if($theme)
     ));?>
         <li>
 
-            <iframe  height="700px" width="80%" src="http://localhost/basic"></iframe>
+            <iframe  height="700px" width="100%" src="http://localhost/basic"></iframe>
         </li>
         <br/>
         <div class="form-actions">

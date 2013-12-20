@@ -27,7 +27,13 @@ $this->menu=array(
 		'update_url',
 		'desc',
 		'config',
-		'create_time',
-		'update_time',
+        array(
+            'name'=>'create_time',
+            'value'=>date('Y-m-d', $model->create_time)
+        ),
+        array(
+            'name'=>'update_time',
+            'value'=>date('Y-m-d', $model->update_time)
+        ),
 	),
 )); ?>

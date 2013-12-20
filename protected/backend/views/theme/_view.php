@@ -29,11 +29,11 @@
     <br />
 
     <b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
-    <?php echo Time::nice($data->create_time); ?>
+    <?php echo date('Y-m-d',$data->create_time); ?>
     <br />
 
     <b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
-    <?php echo Time::nice($data->update_time); ?>
+    <?php echo date('Y-m-d',$data->update_time); ?>
 	<br />
     <br />
 	<?php /*

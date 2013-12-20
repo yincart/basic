@@ -87,7 +87,7 @@ $cs->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery.blockUI.1.33.
             </div>
         </div>
         <?php $this->widget('widgets.default.WCustomerService') ?>
-        <?php echo Yii::app()->translate->renderMissingTranslationsEditor(); ?>
+        <?php //echo Yii::app()->translate->renderMissingTranslationsEditor(); ?>
         <div style="display:none" id="goTopBtn"><a title="返回顶部" class="ui-scrolltop" id="J_ScrollTopBtn">返回顶部</a></div>
         <script type="text/javascript">goTopEx();</script>
         <script type="text/javascript" src="http://js.tongji.linezing.com/2863871/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2863871/tongji.gif"/></a></noscript>

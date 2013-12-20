@@ -27,7 +27,7 @@ return array(
         'application.modules.mall.models.*',
         'application.modules.user.models.*',
         'application.modules.user.components.*',
-        'application.modules.translate.TranslateModule',
+//        'application.modules.translate.TranslateModule',
         'bootstrap.helpers.TbHtml',
     ),
     // path aliases
@@ -80,7 +80,7 @@ return array(
         ),
         // uncomment the following to enable the Gii tool
         'member',
-        'translate',
+//        'translate',
         'cms' => array(
             'class' => 'application.modules.cms.CmsModule'
         ),
@@ -179,25 +179,25 @@ return array(
         ),
 
         /* setup message translation method */
-        'messages' => array(
-            'class' => 'CDbMessageSource',
-            'onMissingTranslation' => array('Ei18n', 'missingTranslation'),
-            'sourceMessageTable' => 'source_message',
-            'translatedMessageTable' => 'message'
-        ),
+//        'messages' => array(
+//            'class' => 'CDbMessageSource',
+//            'onMissingTranslation' => array('Ei18n', 'missingTranslation'),
+//            'sourceMessageTable' => 'source_message',
+//            'translatedMessageTable' => 'message'
+//        ),
         /* setup global translate application component */
-        'translate' => array(
-            'class' => 'translate.components.Ei18n',
-            'createTranslationTables' => true,
-            'connectionID' => 'db',
-            'languages' => array(
-                'en' => 'English',
-                'de' => 'German',
-                'zh_cn' => 'Chinese',
-                'en_us' => 'America',
-                'ru' => 'Russian'
-            )
-        ),
+//        'translate' => array(
+//            'class' => 'translate.components.Ei18n',
+//            'createTranslationTables' => true,
+//            'connectionID' => 'db',
+//            'languages' => array(
+//                'en' => 'English',
+//                'de' => 'German',
+//                'zh_cn' => 'Chinese',
+//                'en_us' => 'America',
+//                'ru' => 'Russian'
+//            )
+//        ),
         'cache' => array(
             'class' => 'system.caching.CFileCache',
         ),

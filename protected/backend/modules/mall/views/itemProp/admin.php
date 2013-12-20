@@ -18,7 +18,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
     'dataProvider' => $model->search(),
     'filter' => $model,
     'columns' => array(
-        'prop_id',
+        'item_prop_id',
         'category.name',
         'prop_name',
         array(

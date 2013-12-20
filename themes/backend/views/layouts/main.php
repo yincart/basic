@@ -36,6 +36,7 @@
                     array('label' => '商品分类', 'url' => array('/mall/itemCategory/admin')),
                     array('label' => '商品属性', 'url' => array('/mall/itemProp/admin')),
                     array('label' => '商品列表', 'url' => array('/mall/item/admin')),
+                    array('label' => '图片空间', 'url' => array('/mall/elfinder/admin')),
                     array('label' => 'Payment'),
                     array('label' => '支付方式', 'url' => array('/mall/paymentMethod/admin')),
                     array('label' => '物流配送', 'url' => array('/mall/shippingMethod/admin')),

@@ -1,6 +1,5 @@
 <?php
 $action = 'item';
-$base_url = 'http://' . F::sg('site', 'imageDomain');
 $id = $_SESSION['store']['store_id'];
 $type = 'store';
 $token = $model->isNewRecord ? md5(time() . rand(1, 1000)) : md5($model->item_id);
@@ -12,7 +11,6 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 //    'type' => 'horizontal',
 ));
 ?>
-
 
 <?php echo TbHtml::alert(TbHtml::ALERT_COLOR_INFO, '<p class="help-block">带 <span class="required">*</span> 的字段为必填项.</p>'); ?>
 <?php $this->widget('bootstrap.widgets.TbTabs', array(

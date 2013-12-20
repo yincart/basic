@@ -42,12 +42,6 @@ class Category extends CActiveRecord
             array('left, right, root, level', 'length', 'max' => 10),
             array('name, url', 'length', 'max' => 200),
             array('pic', 'length', 'max' => 255),
-            array('pic', 'file',
-                'types' => 'jpg, gif, png',
-                'maxSize' => 1024 * 1024 * 2, // 2MB
-                'tooLarge' => '文件超过 2MB. 请上传小一点儿的文件.',
-                'allowEmpty' => true,
-            ),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('category_id, left, right, root, level, name, label, url, pic, is_show', 'safe', 'on' => 'search'),
@@ -74,16 +68,16 @@ class Category extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'category_id' => 'Category ID',
+            'category_id' => Yii::t('category', 'Category'),
             'left' => 'Left',
             'right' => 'Right',
             'root' => 'Root',
             'level' => 'Level',
-            'name' => '名称',
-            'label' => '标签',
+            'name' => 'Name',
+            'label' => 'Label',
             'url' => 'Url',
-            'pic' => '图片',
-            'is_show' => '是否显示',
+            'pic' => 'Pic',
+            'is_show' => 'Is Show',
         );
     }
 

@@ -13,15 +13,9 @@ if ($model->hasErrors()): ?>
 <?php endif; ?>
 <div class="control-group"><p class="help-block">带 <span class="required">*</span> 的字段为必填项.</p></div>
 <?php
-$parent_id = 0;
-if (!$model->isNewRecord) {
-    $node = Category::model()->findByPk($model->id);
-    $parent = $node->parent()->find();
-    $parent_id = $parent->id;
-}
-$descendants = Category::model()->findAll(array('condition' => 'root=3', 'order' => '`left`'));
-$data = Category::model()->getSelectOptions($descendants);
-echo TbHtml::dropDownListControlGroup('上级分类', 'Category[node]', $data, array('class' => 'control-label'));
+$parent_id = $model->isNewRecord ? 0 : $model->parent()->find()->category_id;
+$data = Category::model()->getSelectOptions(3);
+echo TbHtml::dropDownListControlGroup('Category[node]', $parent_id, $data, array('label' => 'Parent Category'));
 echo $form->textFieldControlGroup($model, 'name');
 echo $form->inlineRadioButtonListControlGroup($model, 'label', $model->getLabelList());
 echo $form->textFieldControlGroup($model, 'url');
@@ -30,14 +24,20 @@ echo $form->textFieldControlGroup($model, 'url');
     <?php echo $form->labelEx($model, 'pic', array('class' => 'control-label')); ?>
     <div class="controls">
         <?php
-        echo CHtml::image(Yii::app()->request->baseUrl . '/upload/category/' . $model->pic, '', array('style'=>'width:100px;padding-right:10px'));
-        echo $form->fileField($model, 'pic');
+        $this->widget('ext.elFinder.ServerFileInput', array(
+                'model' => $model,
+                'attribute' => 'pic',
+                'connectorRoute' => 'mall/elfinder/connector',
+            )
+        );
         ?>
     </div>
 </div>
 <?php
-echo TbHtml::formActions(array(
-    TbHtml::submitButton('Save', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
-    TbHtml::resetButton('Reset'),
-));
+if (!$is_view) {
+    echo TbHtml::formActions(array(
+        TbHtml::submitButton('Save', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
+        TbHtml::resetButton('Reset'),
+    ));
+}
 $this->endWidget(); ?>

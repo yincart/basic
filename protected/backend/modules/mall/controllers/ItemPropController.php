@@ -2,6 +2,16 @@
 
 class ItemPropController extends MallBaseController
 {
+    protected function getProps($category_id = 3)
+    {
+        $item_props = ItemProp::model()->findAllByAttributes(array('category_id' => $category_id));
+        $props = array('请选择');
+        foreach ($item_props as $item_prop) {
+            $props[$item_prop->item_prop_id] = $item_prop->prop_name;
+        }
+        return $props;
+    }
+
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -15,22 +25,16 @@ class ItemPropController extends MallBaseController
 
         if (isset($_POST['ItemProp'])) {
             $model->attributes = $_POST['ItemProp'];
+            if (isset($_POST['PropValue']))
+                $model->setPropValues($_POST['PropValue']);
             if ($model->save()) {
-                if (isset($_POST['PropValue']))
-                    $model->setPropValues($_POST['PropValue']);
-                $this->redirect(array('view', 'id' => $model->prop_id));
+                $this->redirect(array('view', 'id' => $model->item_prop_id));
             }
-        }
-
-        $item_props = ItemProp::model()->findAll();
-        $props = array('请选择');
-        foreach ($item_props as $item_prop) {
-            $props[$item_prop->prop_id] = $item_prop->prop_name;
         }
 
         $this->render('create', array(
             'model' => $model,
-            'props' => $props
+            'props' => $this->getProps(),
         ));
     }
 
@@ -54,19 +58,13 @@ class ItemPropController extends MallBaseController
             }
 
             if ($model->save()) {
-                $this->redirect(array('view', 'id' => $model->prop_id));
+                $this->redirect(array('view', 'id' => $model->item_prop_id));
             }
-        }
-
-        $item_props = ItemProp::model()->findAll();
-        $props = array('请选择');
-        foreach ($item_props as $item_prop) {
-            $props[$item_prop->prop_id] = $item_prop->prop_name;
         }
 
         $this->render('update', array(
             'model' => $model,
-            'props' => $props
+            'props' => $this->getProps(),
         ));
     }
 
@@ -82,6 +80,18 @@ class ItemPropController extends MallBaseController
 
         $this->render('admin', array(
             'model' => $model,
+        ));
+    }
+
+    /**
+     * Displays a particular model.
+     * @param integer $id the ID of the model to be displayed
+     */
+    public function actionView($id)
+    {
+        $this->render('view', array(
+            'model' => $this->loadModel($id),
+            'props' => $this->getProps(),
         ));
     }
 

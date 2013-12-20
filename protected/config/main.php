@@ -4,22 +4,23 @@
  * Alias Definition Area
  ************************/
 $configDir = dirname(__FILE__);
-$appDir = $configDir . DIRECTORY_SEPARATOR . '..'; //Protected folder
-$rootDir = $appDir . DIRECTORY_SEPARATOR . '..'; //Project entry == basePath in Basic Version
-$extDir=$appDir . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR;
-Yii::setPathOfAlias('backend', $rootDir);
-Yii::setPathOfAlias('widgets', $appDir . DIRECTORY_SEPARATOR . 'widgets');
+$frontend = dirname($configDir); //Protected folder
+$backend = $frontend . DIRECTORY_SEPARATOR . 'backend';
+$rootDir = dirname($frontend); //Project entry == basePath in Basic Version
+$extDir = $frontend . DIRECTORY_SEPARATOR . 'extensions';
+Yii::setPathOfAlias('backend', $backend);
+Yii::setPathOfAlias('widgets', $frontend . DIRECTORY_SEPARATOR . 'widgets');
 // Yiistrap configuration
-Yii::setPathOfAlias('bootstrap', $extDir . 'bootstrap'); // Change if necessary
+Yii::setPathOfAlias('bootstrap', $extDir . DIRECTORY_SEPARATOR . 'bootstrap'); // Change if necessary
 // YiiWheels configuration
-Yii::setPathOfAlias('yiiwheels', $extDir . 'yiiwheels'); // Change if necessary
+Yii::setPathOfAlias('yiiwheels', $extDir . DIRECTORY_SEPARATOR . 'yiiwheels'); // Change if necessary
 // Xupload configuration
-Yii::setPathOfAlias('xupload', $extDir . 'xupload'); // Change if necessary
+Yii::setPathOfAlias('xupload', $extDir . DIRECTORY_SEPARATOR . 'xupload'); // Change if necessary
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-    'basePath' => $appDir,
+    'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
     'language' => 'en',
     'theme' => 'leather',

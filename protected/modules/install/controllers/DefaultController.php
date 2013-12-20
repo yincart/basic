@@ -24,7 +24,7 @@ class DefaultController extends Controller
 
         $phpv = phpversion();
         $sp_os = PHP_OS;
-       // $sp_gd = GDversion();
+        $sp_gd =  function_exists("imagecreate");
         $sp_server = $_SERVER['SERVER_SOFTWARE'];
         $sp_host = (empty($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_HOST'] : $_SERVER['REMOTE_ADDR']);
         $sp_name = $_SERVER['SERVER_NAME'];
@@ -32,7 +32,7 @@ class DefaultController extends Controller
         $sp_allow_reference = (ini_get('allow_call_time_pass_reference') ? '<font color=green>[√]On</font>' : '<font color=red>[×]Off</font>');
         $sp_allow_url_fopen = (ini_get('allow_url_fopen') ? '<font color=green>[√]On</font>' : '<font color=red>[×]Off</font>');
         $sp_safe_mode = (ini_get('safe_mode') ? '<font color=red>[×]On</font>' : '<font color=green>[√]Off</font>');
-      //  $sp_gd = ($sp_gd>0 ? '<font color=green>[√]On</font>' : '<font color=red>[×]Off</font>');
+        $sp_gd = ($sp_gd>0 ? '<font color=green>[√]On</font>' : '<font color=red>[×]Off</font>');
         $sp_mysql = (function_exists('mysql_connect') ? '<font color=green>[√]On</font>' : '<font color=red>[×]Off</font>');
 
         if($sp_mysql=='<font color=red>[×]Off</font>')
@@ -61,13 +61,14 @@ class DefaultController extends Controller
                             'sp_mysql_err'=>$sp_mysql_err,
                             'sp_testdirs'=>$sp_testdirs,
                             'sp_mysql'=>$sp_mysql,
+                            'sp_gd'=>$sp_gd,
                             'sp_safe_mode'=>$sp_safe_mode));
 
 
     }
     public function actionStep2()
     {
-        $install_demo_name = 'dedev57demo.txt';
+
 
         $s_lang = 'utf-8';
         if(!empty($_SERVER['REQUEST_URI']))

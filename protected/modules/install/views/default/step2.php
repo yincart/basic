@@ -5,26 +5,9 @@ $this->breadcrumbs=array(
     'Step3',
 );
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 
 <html>
 <head>
-    <title>输入配置信息</title>
-    <script language="javascript" type="text/javascript">
-        <!--
-
-        function GetRemoteDemo()
-        {
-
-            $o('_remotesta').innerHTML='<img src=\'images/ajax-loader.gif\'>';
-            var myajax = new DedeAjax($o('_remotesta'),false,true,'-','-','...');
-            myajax.SendGet2('index.php?step=11');
-            DedeXHTTP = null;
-        }
-
-
-        -->
-    </script>
 </head>
 <body>
 <div id='postloader' class='waitpage'></div>
@@ -123,7 +106,7 @@ $this->breadcrumbs=array(
                 </tr>
                 <tr>
                     <td class="onetd"><strong>密　码：</strong></td>
-                    <td><?php echo CHtml::activeTelField($model, 'adminpwd'); ?> /></td>
+                    <td><?php echo CHtml::activeTelField($model, 'adminpwd'); ?> </td>
                 </tr>
                 <tr>
                     <td class="onetd"><strong>Cookie加密码：</strong></td>
@@ -174,7 +157,7 @@ $this->breadcrumbs=array(
                 <tr>
                     <td colspan="2"><label for="installdemo"><strong>
                                 <input name="installdemo" type="checkbox" id="installdemo" value="1" />
-                                安装初始化数据进行体验</strong>(体验数据将含带DedeCMS大部分功能的应用操作示例)</label></td>
+                                安装初始化数据进行体验</strong>(体验数据将含带大部分功能的应用操作示例)</label></td>
                 </tr>
             </table>
 

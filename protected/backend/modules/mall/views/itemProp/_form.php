@@ -54,7 +54,7 @@ if ($model->hasErrors()): ?>
 <?php endif; ?>
 <div class="control-group"><p class="help-block">带 <span class="required">*</span> 的字段为必填项.</p></div>
 <?php
-echo $form->dropDownListControlGroup($model, 'category_id', $model->attrCategory(3));
+echo $form->dropDownListControlGroup($model, 'category_id', $model->getCategory());
 echo $form->dropDownListControlGroup($model, 'parent_prop_id', $props);
 echo $form->textFieldControlGroup($model, 'prop_name');
 echo $form->textFieldControlGroup($model, 'prop_alias');

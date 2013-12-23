@@ -24,14 +24,14 @@
  * @property Category $category
  * @property PropValue[] $propValues
  */
-class ItemProp extends CActiveRecord
+class ItemProp extends YActiveRecord
 {
     /**
      * @return string the associated database table name
      */
     public function tableName()
     {
-        return 'item_prop';
+        return '{{item_prop}}';
     }
 
     /**
@@ -163,79 +163,50 @@ class ItemProp extends CActiveRecord
         $prefix = substr($name, 0, 3);
         if ($prefix === 'all') {
             $key = strtolower(substr($name, 3));
-            if (in_array($key, array('key', 'sale', 'color', 'must', 'multi'))) {
-                return array(0 => 'No', 1 => 'Yes');
-            }
             switch ($key) {
                 case 'type':
                     return array(1 => 'input', 2 => 'optional', 3 => 'multiCheck');
                 case 'status':
                     return array(1 => 'normal', 0 => 'delete');
+                default:
+                    if (in_array($key, array('key', 'sale', 'color', 'must', 'multi'))) {
+                        return array(0 => 'No', 1 => 'Yes');
+                    }
             }
+        }
+        if ($prefix === 'get') {
+            $key = strtolower(substr($name, 3));
+            switch ($key) {
+                case 'type':
+                    $data = array(1 => 'input', 2 => 'optional', 3 => 'multiCheck');
+                    break;
+                case 'status':
+                    $data = array(1 => 'normal', 0 => 'delete');
+                    break;
+                default:
+                    if (in_array($key, array('key', 'sale', 'color', 'must', 'multi'))) {
+                        $data = array(0 => 'No', 1 => 'Yes');
+                    }
+                    if (in_array($key, array('key', 'sale', 'color'))) {
+                        $key = 'is_' . $key . '_prop';
+                    }
+                    break;
+            }
+            if (isset($data[$this->$key]))
+                return $data[$this->$key];
         }
         return parent::__call($name, $parameters);
     }
 
-    /*
-     * 循环遍历SpecValue[spec_value][]插入数据库
-     * 群Zend Framework(95700611) zwp(279795206)友情提示
-     */
-    public function setPropValues($propValues)
-    {
-        if (is_array($propValues['value_name']) && $count = count($propValues['value_name'])) {
-            $toDelPropValueIds = array();
-            $propValueIds = array_unique($propValues['value_id']);
-            $propValuesList = $this->isNewRecord ? array() : $this->propValues;
-            foreach ($propValuesList as $propValue) {
-                if (!in_array($propValue->prop_value_id, $propValueIds)) {
-                    $toDelPropValueIds[] = $propValue->prop_value_id;
-                }
-            }
-            for ($i = 0; $i < $count; $i++) {
-                $propValue = isset($propValuesList[$propValues['prop_value_id'][$i]]) ? $propValuesList[$propValues['prop_value_id'][$i]] : new PropValue();
-                $propValue->value_name = $propValues['value_name'][$i];
-                $propValue->sort_order = $i;
-            }
-        }
-    }
-
-
     /**
-     * 获取指定id的所有后代，不含指定id
-     * @param $id 指定id, 有可能是array
-     * @return array 所有后代id的一维数组
+     * get category list data
+     * @param int $root
+     * @return mixed
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
-    public static function getChildsId($id)
+    public function getCategory($root = 3)
     {
-        $data = array();
-        $ids = array();
-        if (!is_array($id)) {
-            $id = array($id);
-        }
-        $id = implode(', ', $id);
-        $models = ItemProp::model()->findAll('parent_prop_id in (' . $id . ')');
-        if ($models) {
-            foreach ($models as $model) {
-                $ids[] = $model->item_prop_id;
-            }
-            $ids = array_merge($ids, ItemProp::getChildsId($ids));
-            return $ids;
-        } else {
-            return $ids;
-        }
-    }
-
-    /**
-     * 获得指定id的所有后代，含指定id
-     * @param mixed $id 指定id, 有可能是array
-     * @return array 所有后代的和指定id的一维数组
-     */
-    function getMeChildsId($id)
-    {
-        if (!is_array($id)) {
-            $id = array($id);
-        }
-        return array_merge($id, ItemProp::getChildsId($id));
+        return Category::model()->getSelectOptions($root);
     }
 
     public function getPropValues()
@@ -306,100 +277,4 @@ class ItemProp extends CActiveRecord
         }
         echo '</ul>';
     }
-
-    /**
-     * 类型
-     *
-     * @param bool $returnAttr false则返回分类列表，true则返回该对象的分类值
-     * @param null $index 结合$returnAttr使用。如果$returnAttr为true，
-     *              若指定$index，则返回指定$index对应的值，否则返回当前对象对应的分类值
-     * @return mixed
-     */
-    public function attrType($returnAttr = false, $index = null)
-    {
-        $data = array(
-            'input' => '输入',
-            'optional' => '单选',
-            'multiCheck' => '多选'
-        );
-
-        if ($returnAttr !== false) {
-            is_null($index) && $index = $this->type;
-            $rs = empty($data[$index]) ? null : $data[$index];
-        } else {
-            $rs = $data;
-        }
-
-        return $rs;
-    }
-
-    /**
-     *
-     * @param string $attr 字段名字
-     * @param bool $returnAttr false则返回分类列表，true则返回该对象的分类值
-     * @param null $index 结合$returnAttr使用。如果$returnAttr为true，
-     *              若指定$index，则返回指定$index对应的值，否则返回当前对象对应的分类值
-     * @return mixed
-     */
-    public function attrBool($attr, $returnAttr = false, $index = null)
-    {
-        $data = array(
-            '1' => '是',
-            '0' => '否'
-        );
-
-        if ($returnAttr !== false) {
-            is_null($index) && $index = $this->$attr;
-            $rs = empty($data[$index]) ? null : $data[$index];
-        } else {
-            $rs = $data;
-        }
-
-        return $rs;
-    }
-
-    /**
-     *
-     * @param bool $returnAttr false则返回分类列表，true则返回该对象的分类值
-     * @param null $index 结合$returnAttr使用。如果$returnAttr为true，
-     *              若指定$index，则返回指定$index对应的值，否则返回当前对象对应的分类值
-     * @return mixed
-     */
-    public function attrStatus($returnAttr = false, $index = null)
-    {
-        $data = array(
-            'normal' => '正常',
-            'deleted' => '删除'
-        );
-
-        if ($returnAttr !== false) {
-            is_null($index) && $index = $this->$attr;
-            $rs = empty($data[$index]) ? null : $data[$index];
-        } else {
-            $rs = $data;
-        }
-
-        return $rs;
-    }
-
-    /**
-     * 分类属性
-     *
-     * @param int $id 分类ID
-     * @param bool $returnAttr false则返回分类列表，true则返回该对象的分类值
-     * @param null $index 结合$returnAttr使用。如果$returnAttr为true，
-     *              若指定$index，则返回指定$index对应的值，否则返回当前对象对应的分类值
-     * @param int $level 层级
-     * @return mixed
-     */
-    public function attrCategory($id, $returnAttr = false, $index = null, $level = 1)
-    {
-        $category = Category::model()->findByPk($id);
-        $descendants = $category->descendants()->findAll();
-        $data = Category::model()->getSelectOptions($descendants);
-        if ($returnAttr && $index && isset($data[$index]))
-            $data = $data[$index];
-        return $data;
-    }
-
 }

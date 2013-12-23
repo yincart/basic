@@ -1,10 +1,6 @@
 <?php
-
-Yii::import("xupload.models.XUploadForm");
-
 class ItemController extends MallBaseController
 {
-
     /**
      * Specifies the access control rules.
      * This method is used by the 'accessControl' filter.
@@ -26,95 +22,19 @@ class ItemController extends MallBaseController
      */
     public function actionCreate()
     {
-        Yii::import("xupload.models.XUploadForm");
-        $model = new Item('create');
-        $upload = new XUploadForm;
-        $image = new ItemImg;
-// Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValidation($model);
-        $action = 'item';
+        $model = new Item();
+
         if (isset($_POST['Item'])) {
+            $this->handlePostData();
             $model->attributes = $_POST['Item'];
-//	    $model->sn = 'YC' . date('Ymd') . mt_rand(10000, 99999);
-            $model->store_id = $_SESSION['store']['store_id'];
-            if ($_POST['Item']['props']) {
-//		foreach ($_POST['Item']['props'] as $key => $value) {
-//		    $p = ItemProp::model()->findByPk($key);
-//		    
-//		    if ($p->type == 'multiCheck') {
-////			$values = implode($value, ',');
-//			$p_arr[] = $value;
-//			foreach ($value as $kk => $vv) {
-//			    $v = PropValue::model()->findByPk($vv);
-//			    $value_name[] = $v->value_name;
-//			}
-//			$value_names = implode($value_name, ',');
-//			$v_arr[] = $p->prop_name . ':' . $value_names;
-//		    } elseif ($p->type == 'optional') {
-//			$v_o = $value ? explode(':', $value) : 0;
-//			$p_arr[] = $key . ':' .($v_o != 0 ? $v_o[1] : 0);
-//			$v = PropValue::model()->findByPk($value);
-//			$v_arr[] = $p->prop_name . ':' . $v->value_name;
-//		    } elseif ($p->type == 'input') {
-//		    //如果是文本框输入的话 不纳入搜索
-//		    //也就不纳入到props里 只保存到prop_names里
-//			$p_arr[] = $key . ':' . $value;
-//			$v_arr[] = $p->prop_name . ':' . $value;
-//		    }
-//		}
-//		$props = implode($p_arr, ';');
-                $model->props = CJSON::encode($_POST['Item']['props']);
-//		$props_name = implode($v_arr, ';');
-//		$model->props_name = $props_name;
-            }
 
-            if ($_POST['Item']['skus']) {
-//			foreach ($_POST['Item']['skus'] as $s_key => $s_value) {
-//			    $skus[] = implode($s_value['props'], ';').';'.$s_value['quantity'].';'.$s_value['price'];
-//			}
-                $model->skus = CJSON::encode($_POST['Item']['skus']);
-//			$model->skus = implode($skus, ',');
-            }
-
-            $transaction = Yii::app()->db->beginTransaction();
-
-//	    print_r($_POST);
-//	    exit;
-            try {
-                if ($model->save()) {
-                    $skuIds = array();
-                    if ($_POST['Item']['skus']) {
-                        foreach ($_POST['Item']['skus']['table'] as $s_key => $s_value) {
-                            $sku = new Sku;
-                            $sku->item_id = $model->item_id;
-                            $sku->props = CJSON::encode(($s_value['props']));
-                            $sku->quantity = $s_value['quantity'];
-                            $sku->price = $s_value['price'];
-                            $sku->outer_id = $s_value['outer_id'];
-                            $sku->status = $s_value ? 'normal' : 'deleted';
-                            $sku->save();
-                            if ($sku->sku_id > 0) $skuIds[] = $sku->sku_id;
-                        }
-                    }
-                    $transaction->commit();
-                    $skus_data = implode(",", $skuIds); //储存为淘宝sku[]格式。
-
-                    $sql = 'UPDATE {{item}} SET `skus_data`="' . $skus_data . '" WHERE item_id=' . $model->item_id;
-
-                    Yii::app()->db->createCommand($sql)->execute();
-
-                    $this->redirect(array('view', 'id' => $model->item_id));
-                }
-            } catch (Exception $e) {
-                $transaction->rollback();
-                Yii::app()->handleException($e);
+            if ($model->save()) {
+                $this->redirect(array('view', 'id' => $model->item_id));
             }
         }
 
         $this->render('create', array(
             'model' => $model,
-            'image' => $image,
-            'upload' => $upload
         ));
     }
 
@@ -126,14 +46,20 @@ class ItemController extends MallBaseController
     public function actionUpdate($id)
     {
         $model = $this->loadModel($id);
-        $model->scenario = 'update';
-        $upload = new XUploadForm;
-        $image = new ItemImg;
-// Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValisdation($model);
-// Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValidation($model);
-        $action = 'item';
+
+        if (isset($_POST['Item'])) {
+            $this->handlePostData();
+            $model->attributes = $_POST['Item'];
+
+            if ($model->save()) {
+                $this->redirect(array('view', 'id' => $model->item_id));
+            }
+        }
+
+        $this->render('create', array(
+            'model' => $model,
+        ));
+
 
         $skuIds = array();
 
@@ -142,9 +68,7 @@ class ItemController extends MallBaseController
 
 
             if ($_POST['Item']['props']) {
-
                 $model->props = CJSON::encode($_POST['Item']['props']);
-
             }
 
             if ($_POST['Item']['skus']) {
@@ -175,10 +99,7 @@ class ItemController extends MallBaseController
                         $sku->save();
                         if ($sku->sku_id > 0) $skuIds[] = $sku->sku_id;
                     }
-
-
                 }
-
                 //删除
                 $rawData = Sku::model()->findAll('item_id = ' . $model->item_id);
                 $delArr = array();
@@ -204,8 +125,6 @@ class ItemController extends MallBaseController
 
         $this->render('update', array(
             'model' => $model,
-            'image' => $image,
-            'upload' => $upload
         ));
     }
 
@@ -499,19 +418,6 @@ class ItemController extends MallBaseController
         $item = Item::model()->findByPk($item_id);
         $props_arr = CJSON::decode($item->props, TRUE);
         $skus_arr = CJSON::decode($item->skus, TRUE);
-//	$props_arr = explode(';', $props_list->props);
-//	foreach ($props_arr as $k => $v) {
-//	    $arr[] = explode(':', $v);
-//	    if(is_array($arr)){
-//		
-//	    }
-//	}
-//	foreach ($newarr as $k => $v) {
-//	    $v_arr = explode(',', $v[1]);
-//	    $arr[$v[0]] = $v_arr;
-//	}
-//        $arr = array('3'=>'106', '1'=>'78', '2'=>'82');
-//	关键属性
         $cri = new CDbCriteria(array('condition' => 'is_key_prop=1 and category_id =' . $category_id));
         $props = ItemProp::model()->findAll($cri);
         foreach ($props as $p) {
@@ -571,6 +477,7 @@ class ItemController extends MallBaseController
             echo '<div class="span9">';
             echo '<div class="sku-wrap">';
             $ii = 0;
+            $thead = '';
             foreach ($props as $p) {
 
                 echo '<div class="sku-group"><label class="sku-head">' . $p->prop_name . '</label>';
@@ -702,4 +609,29 @@ EOF;
         Yii::app()->end();
     }
 
+    /**
+     * format post props value
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    protected function handlePostData()
+    {
+        if (isset($_POST['Item'])) {
+            $_POST['Item']['click_count'] = 0;
+            $_POST['Item']['wish_count'] = 0;
+        }
+        if (isset($_POST['ItemImg'])) {
+            $itemImgs = $_POST['ItemImg'];
+            unset($_POST['ItemImg']);
+            $_POST['ItemProp']['ItemImgs'] = array();
+            if (is_array($itemImgs['pic']) && $count = count($itemImgs['value_name'])) {
+                for ($i = 0; $i < $count; $i++) {
+                    $_POST['ItemProp']['ItemImgs'][] = array(
+                        'item_img_id' => $itemImgs['item_img_id'][$i],
+                        'pic' => $itemImgs['pic'][$i],
+                        'position' => $i,
+                    );
+                }
+            }
+        }
+    }
 }

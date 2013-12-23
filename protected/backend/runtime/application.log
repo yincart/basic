@@ -13813,3 +13813,927 @@ HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/update/id/
 2013/12/20 17:48:31 [warning] [application] Failed to set unsafe attribute "node" of "Category".
 in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemCategoryController.php (48)
 in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 09:11:26 [error] [exception.CException] exception 'CException' with message 'ItemProp and its behaviors do not have a method or closure named "attrType".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('attrType', Array)
+#1 E:\wamp\www\yincart\basic\protected\models\ItemProp.php(176): CActiveRecord->__call('attrType', Array)
+#2 E:\wamp\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): ItemProp->__call('attrType', Array)
+#3 E:\wamp\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): ItemProp->attrType(true, '1')
+#4 E:\wamp\www\yii\framework\base\CComponent.php(612): eval()
+#5 E:\wamp\www\yii\framework\zii\widgets\grid\CDataColumn.php(142): CComponent->evaluateExpression('$data->attrType...', Array)
+#6 E:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(231): CDataColumn->getDataCellContent(0)
+#7 E:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(ItemProp))
+#8 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(622): CGridColumn->renderDataCell(0)
+#9 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(578): CGridView->renderTableRow(0)
+#10 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(488): CGridView->renderTableBody()
+#11 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#12 [internal function]: CBaseListView->renderSection(Array)
+#13 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#14 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#15 E:\wamp\www\yii\framework\web\CBaseController.php(181): CBaseListView->run()
+#16 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemProp\admin.php(38): CBaseController->widget('bootstrap.widge...', Array)
+#17 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#18 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#19 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#20 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#21 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php(83): CController->render('admin', Array)
+#22 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemPropController->actionAdmin()
+#23 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#24 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#26 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#30 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#32 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/a...')
+#33 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#34 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#35 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2013/12/23 09:20:03 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (E:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 E:\wamp\www\yii\framework\utils\CFormatter.php(128): CFormatter->formatText()
+#1 E:\wamp\www\yii\framework\zii\widgets\grid\CDataColumn.php(145): CFormatter->format()
+#2 E:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(231): TbDataColumn->getDataCellContent()
+#3 E:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(154): TbDataColumn->renderDataCellContent()
+#4 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(622): TbDataColumn->renderDataCell()
+#5 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(578): TbGridView->renderTableRow()
+#6 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(488): TbGridView->renderTableBody()
+#7 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(167): TbGridView->renderItems()
+#8 unknown(0): TbGridView->renderSection()
+#9 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback()
+#10 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(135): TbGridView->renderContent()
+#11 E:\wamp\www\yii\framework\web\CBaseController.php(181): TbGridView->run()
+#12 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemProp\admin.php(38): ItemPropController->widget()
+#13 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#14 E:\wamp\www\yii\framework\web\CBaseController.php(95): ItemPropController->renderInternal()
+#15 E:\wamp\www\yii\framework\web\CController.php(869): ItemPropController->renderFile()
+#16 E:\wamp\www\yii\framework\web\CController.php(782): ItemPropController->renderPartial()
+#17 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php(83): ItemPropController->render()
+#18 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemPropController->actionAdmin()
+#19 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#20 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemPropController->runAction()
+#21 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 E:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#23 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemPropController->filterAccessControl()
+#24 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#25 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#26 E:\wamp\www\yii\framework\web\CController.php(265): ItemPropController->runActionWithFilters()
+#27 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemPropController->run()
+#28 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#29 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#30 E:\wamp\www\yincart\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/admin
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemProp\admin.php (38)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (83)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 09:21:36 [error] [exception.CException] exception 'CException' with message 'ItemProp and its behaviors do not have a method or closure named "getType".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getType', Array)
+#1 E:\wamp\www\yincart\basic\protected\models\ItemProp.php(193): CActiveRecord->__call('getType', Array)
+#2 E:\wamp\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): ItemProp->__call('getType', Array)
+#3 E:\wamp\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): ItemProp->getType('2')
+#4 E:\wamp\www\yii\framework\base\CComponent.php(612): eval()
+#5 E:\wamp\www\yii\framework\zii\widgets\grid\CDataColumn.php(142): CComponent->evaluateExpression('$data->getType(...', Array)
+#6 E:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(231): CDataColumn->getDataCellContent(2)
+#7 E:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(154): CGridColumn->renderDataCellContent(2, Object(ItemProp))
+#8 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(622): CGridColumn->renderDataCell(2)
+#9 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(578): CGridView->renderTableRow(2)
+#10 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(488): CGridView->renderTableBody()
+#11 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#12 [internal function]: CBaseListView->renderSection(Array)
+#13 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#14 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#15 E:\wamp\www\yii\framework\web\CBaseController.php(181): CBaseListView->run()
+#16 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemProp\admin.php(38): CBaseController->widget('bootstrap.widge...', Array)
+#17 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#18 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#19 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#20 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#21 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php(83): CController->render('admin', Array)
+#22 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemPropController->actionAdmin()
+#23 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#24 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#26 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#30 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#32 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/a...')
+#33 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#34 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#35 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2013/12/23 09:23:13 [error] [exception.CException] exception 'CException' with message 'ItemProp and its behaviors do not have a method or closure named "getType".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getType', Array)
+#1 E:\wamp\www\yincart\basic\protected\models\ItemProp.php(193): CActiveRecord->__call('getType', Array)
+#2 E:\wamp\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): ItemProp->__call('getType', Array)
+#3 E:\wamp\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): ItemProp->getType('2')
+#4 E:\wamp\www\yii\framework\base\CComponent.php(612): eval()
+#5 E:\wamp\www\yii\framework\zii\widgets\grid\CDataColumn.php(142): CComponent->evaluateExpression('$data->getType(...', Array)
+#6 E:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(231): CDataColumn->getDataCellContent(2)
+#7 E:\wamp\www\yii\framework\zii\widgets\grid\CGridColumn.php(154): CGridColumn->renderDataCellContent(2, Object(ItemProp))
+#8 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(622): CGridColumn->renderDataCell(2)
+#9 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(578): CGridView->renderTableRow(2)
+#10 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(488): CGridView->renderTableBody()
+#11 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#12 [internal function]: CBaseListView->renderSection(Array)
+#13 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#14 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#15 E:\wamp\www\yii\framework\web\CBaseController.php(181): CBaseListView->run()
+#16 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemProp\admin.php(38): CBaseController->widget('bootstrap.widge...', Array)
+#17 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#18 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#19 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#20 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#21 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php(83): CController->render('admin', Array)
+#22 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemPropController->actionAdmin()
+#23 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#24 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#26 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#30 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#32 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/a...')
+#33 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#34 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#35 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemCategory/admin
+---
+2013/12/23 09:25:54 [error] [exception.CException] exception 'CException' with message 'ItemProp and its behaviors do not have a method or closure named "attrCategory".' in E:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('attrCategory', Array)
+#1 E:\wamp\www\yincart\basic\protected\models\ItemProp.php(196): CActiveRecord->__call('attrCategory', Array)
+#2 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemProp\_form.php(57): ItemProp->__call('attrCategory', Array)
+#3 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemProp\_form.php(57): ItemProp->attrCategory(3)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#7 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\itemProp\update.php(17): CController->renderPartial('_form', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#11 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php(68): CController->render('update', Array)
+#13 [internal function]: ItemPropController->actionUpdate('1')
+#14 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemPropController), Array)
+#15 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemPropController), Object(ReflectionMethod), Array)
+#16 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#25 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/u...')
+#26 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#28 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/update/id/1
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
+---
+2013/12/23 10:35:30 [warning] [application] Failed to set unsafe attribute "PropValue" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 10:36:48 [error] [exception.CException] exception 'CException' with message '属性 "ItemProp._related" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('_related')
+#1 E:\wamp\www\yincart\basic\protected\models\ItemProp.php(213): CActiveRecord->__get('_related')
+#2 E:\wamp\www\yii\framework\base\CComponent.php(152): ItemProp->setAttributes(Array)
+#3 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('attributes', Array)
+#4 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php(60): CActiveRecord->__set('attributes', Array)
+#5 [internal function]: ItemPropController->actionUpdate('1')
+#6 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemPropController), Array)
+#7 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemPropController), Object(ReflectionMethod), Array)
+#8 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#17 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/u...')
+#18 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/itemProp/update/id/1
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/update/id/1
+---
+2013/12/23 10:37:59 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 10:50:17 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 10:50:31 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 10:53:58 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 10:54:39 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 10:55:25 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 10:59:22 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:00:12 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:01:24 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:01:48 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (254)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:02:05 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (254)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:09:41 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:09:49 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:10:08 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:11:08 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:11:09 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:11:09 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:12:09 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:12:09 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:12:19 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:12:19 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:16:15 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:16:21 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:16:21 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:16:51 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:16:54 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:16:54 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:17:05 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:17:10 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:18:23 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:19:07 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:19:11 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:19:28 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:20:29 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:21:04 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:24:15 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:28:39 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:28:39 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:28:39 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:29:05 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:29:05 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:29:05 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:29:42 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:29:42 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:29:42 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:29:42 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:30:49 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:30:49 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:30:49 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (255)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:43:45 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:43:45 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (260)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:43:45 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (260)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:44:31 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:45:38 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (260)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:46:06 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (260)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:46:07 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (260)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:48:44 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:48:44 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:48:44 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:53:02 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 11:53:02 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:53:02 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 11:53:02 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:04:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "mall/refund/admin"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
+---
+2013/12/23 12:04:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "mall/refund/admin"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
+---
+2013/12/23 12:04:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "mall/refund/admin"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
+---
+2013/12/23 12:04:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "mall/refund/admin"。' in E:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#1 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/itemProp/admin
+---
+2013/12/23 12:47:38 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 12:49:11 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:11 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:12 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:12 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:13 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:13 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:21 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 12:49:22 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:22 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:22 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:22 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:22 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:49:22 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (263)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:53:12 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 12:53:46 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (262)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:53:49 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (262)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:53:51 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (262)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:53:54 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (262)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:53:57 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (262)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:53:58 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (262)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:54:01 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (262)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:55:45 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (216)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (60)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 12:55:49 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (262)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 12:55:49 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (262)
+in E:\wamp\www\yincart\basic\protected\models\ItemProp.php (230)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (62)
+2013/12/23 15:39:33 [error] [exception.CException] exception 'CException' with message '属性 "Item.allShow" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('allShow')
+#1 E:\wamp\www\yii\framework\web\helpers\CHtml.php(2703): CActiveRecord->__get('allShow')
+#2 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\helpers\TbHtml.php(1708): CHtml::resolveValue(Object(Item), 'allShow')
+#3 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\helpers\TbHtml.php(2174): TbHtml::activeRadioButtonList(Object(Item), 'allShow', Array, Array)
+#4 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\helpers\TbHtml.php(2100): TbHtml::createActiveInput('radioButtonList', Object(Item), 'allShow', Array, Array)
+#5 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbActiveForm.php(707): TbHtml::activeControlGroup('radioButtonList', Object(Item), 'allShow', Array, Array)
+#6 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbActiveForm.php(636): TbActiveForm->createControlGroup('radioButtonList', Object(Item), 'allShow', Array, Array)
+#7 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form_other.php(4): TbActiveForm->inlineRadioButtonListControlGroup(Object(Item), 'allShow', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#11 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form.php(20): CController->renderPartial('_form_other', Array, true)
+#12 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#13 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#14 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#15 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\create.php(20): CController->renderPartial('_form', Array)
+#16 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#17 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#18 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#19 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#20 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(118): CController->render('create', Array)
+#21 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemController->actionCreate()
+#22 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#23 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#25 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#29 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#31 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/creat...')
+#32 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#33 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#34 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2013/12/23 15:39:57 [error] [exception.CException] exception 'CException' with message '属性 "Item.allShow" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('allShow')
+#1 E:\wamp\www\yii\framework\web\helpers\CHtml.php(2703): CActiveRecord->__get('allShow')
+#2 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\helpers\TbHtml.php(1708): CHtml::resolveValue(Object(Item), 'allShow')
+#3 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\helpers\TbHtml.php(2174): TbHtml::activeRadioButtonList(Object(Item), 'allShow', Array, Array)
+#4 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\helpers\TbHtml.php(2100): TbHtml::createActiveInput('radioButtonList', Object(Item), 'allShow', Array, Array)
+#5 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbActiveForm.php(707): TbHtml::activeControlGroup('radioButtonList', Object(Item), 'allShow', Array, Array)
+#6 E:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbActiveForm.php(636): TbActiveForm->createControlGroup('radioButtonList', Object(Item), 'allShow', Array, Array)
+#7 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form_other.php(4): TbActiveForm->inlineRadioButtonListControlGroup(Object(Item), 'allShow', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#11 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form.php(20): CController->renderPartial('_form_other', Array, true)
+#12 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#13 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#14 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#15 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\create.php(20): CController->renderPartial('_form', Array)
+#16 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#17 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#18 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#19 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#20 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(118): CController->render('create', Array)
+#21 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemController->actionCreate()
+#22 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#23 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#25 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#29 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#31 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/creat...')
+#32 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#33 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#34 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2013/12/23 15:42:03 [error] [exception.CException] exception 'CException' with message 'XUpload must specify "model" and "attribute" or "name" property values.' in E:\wamp\www\yii\framework\zii\widgets\jui\CJuiInputWidget.php:59
+Stack trace:
+#0 E:\wamp\www\yincart\basic\protected\extensions\xupload\XUpload.php(90): CJuiInputWidget->resolveNameID()
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(181): XUpload->run()
+#2 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form_image.php(9): CBaseController->widget('xupload.XUpload', Array)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#6 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form.php(22): CController->renderPartial('_form_image', Array, true)
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#10 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\create.php(20): CController->renderPartial('_form', Array)
+#11 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#12 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#13 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#14 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(118): CController->render('create', Array)
+#16 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemController->actionCreate()
+#17 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#26 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/creat...')
+#27 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2013/12/23 15:46:19 [error] [exception.CException] exception 'CException' with message '属性 "Item.pic" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pic')
+#1 E:\wamp\www\yii\framework\web\helpers\CHtml.php(2703): CActiveRecord->__get('pic')
+#2 E:\wamp\www\yii\framework\web\helpers\CHtml.php(2426): CHtml::resolveValue(Object(Item), 'pic')
+#3 E:\wamp\www\yii\framework\web\helpers\CHtml.php(1783): CHtml::activeInputField('hidden', Object(Item), 'pic', Array)
+#4 E:\wamp\www\yincart\basic\protected\extensions\elfinder\ServerFileInput.php(79): CHtml::activeHiddenField(Object(Item), 'pic', Array)
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(181): ServerFileInput->run()
+#6 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form_image.php(10): CBaseController->widget('ext.elFinder.Se...', Array)
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#10 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form.php(20): CController->renderPartial('_form_image', Array, true)
+#11 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#12 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#13 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#14 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\create.php(20): CController->renderPartial('_form', Array)
+#15 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#16 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#17 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#18 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#19 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(118): CController->render('create', Array)
+#20 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemController->actionCreate()
+#21 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#25 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#26 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#27 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#28 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#30 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/creat...')
+#31 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#32 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#33 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2013/12/23 15:50:56 [error] [exception.CException] exception 'CException' with message '属性 "Item.pic" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pic')
+#1 E:\wamp\www\yii\framework\web\helpers\CHtml.php(2703): CActiveRecord->__get('pic')
+#2 E:\wamp\www\yii\framework\web\helpers\CHtml.php(2426): CHtml::resolveValue(Object(Item), 'pic')
+#3 E:\wamp\www\yii\framework\web\helpers\CHtml.php(1783): CHtml::activeInputField('hidden', Object(Item), 'pic', Array)
+#4 E:\wamp\www\yincart\basic\protected\extensions\elfinder\ServerFileInput.php(79): CHtml::activeHiddenField(Object(Item), 'pic', Array)
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(181): ServerFileInput->run()
+#6 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form_image.php(16): CBaseController->widget('ext.elFinder.Se...', Array)
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#10 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form.php(20): CController->renderPartial('_form_image', Array, true)
+#11 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#12 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#13 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#14 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\create.php(20): CController->renderPartial('_form', Array)
+#15 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#16 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#17 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#18 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#19 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(118): CController->render('create', Array)
+#20 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemController->actionCreate()
+#21 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#25 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#26 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#27 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#28 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#30 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/creat...')
+#31 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#32 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#33 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2013/12/23 15:51:16 [error] [exception.CException] exception 'CException' with message 'ServerFileInput 必须给定 "model" 与 "attribute" 或 "name" 属性值.' in E:\wamp\www\yii\framework\web\widgets\CInputWidget.php:61
+Stack trace:
+#0 E:\wamp\www\yincart\basic\protected\extensions\elfinder\ServerFileInput.php(63): CInputWidget->resolveNameID()
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(181): ServerFileInput->run()
+#2 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form_image.php(12): CBaseController->widget('ext.elFinder.Se...', Array)
+#3 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#5 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#6 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\_form.php(20): CController->renderPartial('_form_image', Array, true)
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#10 E:\wamp\www\yincart\basic\protected\backend\modules\mall\views\item\create.php(20): CController->renderPartial('_form', Array)
+#11 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\yin...')
+#12 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\yin...', Array, true)
+#13 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\yin...', Array, true)
+#14 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(118): CController->render('create', Array)
+#16 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemController->actionCreate()
+#17 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#26 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/creat...')
+#27 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#29 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/admin
+---
+2013/12/23 15:57:18 [warning] [application] Failed to set unsafe attribute "ItemImg" of "Item".
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php (37)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 15:57:18 [error] [exception.CException] exception 'CException' with message '属性 "Item.store_id" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('store_id', NULL)
+#1 E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemController.php(39): CActiveRecord->__set('store_id', NULL)
+#2 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ItemController->actionCreate()
+#3 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/creat...')
+#13 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 E:\wamp\www\yincart\basic\backend.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/create
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/create
+---
+2013/12/23 17:06:09 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (23)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (55)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 17:06:09 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (57)
+2013/12/23 17:06:09 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (57)
+2013/12/23 17:06:16 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (23)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (55)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 17:06:16 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (57)
+2013/12/23 17:06:16 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (57)
+2013/12/23 17:06:56 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (23)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (31)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 17:06:56 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (33)
+2013/12/23 17:06:56 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (33)
+2013/12/23 17:06:56 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (33)
+2013/12/23 17:06:56 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (33)
+2013/12/23 17:07:25 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (23)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (31)
+in E:\wamp\www\yincart\basic\backend.php (14)
+2013/12/23 17:07:25 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (33)
+2013/12/23 17:07:25 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (33)
+2013/12/23 17:07:25 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (69)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (37)
+in E:\wamp\www\yincart\basic\protected\backend\modules\mall\controllers\ItemPropController.php (33)

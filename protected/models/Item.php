@@ -173,17 +173,19 @@ class Item extends CActiveRecord
         return parent::model($className);
     }
 
-    public function getShow()
-    {
-        echo $this->is_show == 1 ? CHtml::image(Yii::app()->request->baseUrl . '/images/yes.gif') : CHtml::image(Yii::app()->request->baseUrl . '/images/no.gif');
-    }
-
     public function __call($name, $parameters) {
         $prefix = substr($name, 0, 2);
         if ($prefix === 'is') {
             $key = strtolower(substr($name, 2));
             if (in_array($key, array('show', 'promote', 'new', 'hot', 'best'))) {
                 return $this->{'is_' . $key};
+            }
+        }
+        $prefix = substr($name, 0, 3);
+        if ($prefix === 'all') {
+            $key = strtolower(substr($name, 3));
+            if (in_array($key, array('show', 'promote', 'new', 'hot', 'best'))) {
+                return array(0 => 'No', 1 => 'Yes');
             }
         }
         return parent::__call($name, $parameters);
@@ -194,7 +196,6 @@ class Item extends CActiveRecord
         if (parent::beforeSave()) {
             if ($this->isNewRecord) {
                 $this->create_time = $this->update_time = time();
-                //$this->user_id = Yii::app()->user->id;
             } else
                 $this->update_time = time();
             return true;
@@ -417,55 +418,4 @@ class Item extends CActiveRecord
 
         return $data;
     }
-
-    /**
-     * add images
-     * @throws Exception
-     * @author milkyway(yhxxlm@gmail.com)
-     */
-    public function addImages()
-    {
-        //If we have pending images
-        if (Yii::app()->user->hasState('images_' . $_POST['token'])) {
-            $userImages = Yii::app()->user->getState('images_' . $_POST['token']);
-            //Resolve the final path for our images
-//	    $path = Yii::app()->getBasePath() . "/../images/uploads/";
-//	    $path = realpath(Yii::app()->getBasePath() . "/../upload/item/image") . "/";
-//	    //Create the folder and give permissions if it doesnt exists
-//	    if (!is_dir($path)) {
-//		mkdir($path);
-//		chmod($path, 0777);
-//	    }
-            //Now lets create the corresponding models and move the files
-            foreach ($userImages as $k => $image) {
-                if (is_file($image["path"])) {
-//		    if (rename($image["path"], $path . $image["url"])) {
-//			chmod($path . $image["filename"], 0777);
-                    $img = new ItemImg();
-//			$img->size = $image["size"];
-//			$img->mime = $image["mime"];
-//			$img->name = $image["name"];
-                    $img->url = $image["url"];
-                    $img->item_id = $this->item_id;
-                    $img->store_id = $_SESSION['store']['store_id'] ? $_SESSION['store']['store_id'] : 0;
-                    $img->position = $k;
-                    $img->create_time = time();
-                    if (!$img->save()) {
-                        //Its always good to log something
-                        Yii::log("Could not save Image:\n" . CVarDumper::dumpAsString(
-                                $img->getErrors()), CLogger::LEVEL_ERROR);
-                        //this exception will rollback the transaction
-                        throw new Exception('Could not save Image');
-                    }
-//		    }
-                } else {
-                    //You can also throw an execption here to rollback the transaction
-                    Yii::log($image["path"] . " is not a file", CLogger::LEVEL_WARNING);
-                }
-            }
-            //Clear the user's session
-            Yii::app()->user->setState('images_' . $_POST['token'], null);
-        }
-    }
-
 }

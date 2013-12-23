@@ -17,5 +17,5 @@ array('label'=>'管理商品','icon'=>'cog','url'=>array('admin')),
     </div> <!-- /.header-row -->
 </div>
 <div class="col-lg-12 main-content">
-    <?php echo $this->renderPartial('_form', array('model'=>$model, 'image'=>$image, 'upload'=>$upload)); ?>
+    <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>

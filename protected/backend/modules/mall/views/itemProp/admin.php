@@ -23,7 +23,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         'prop_name',
         array(
             'name' => 'type',
-            'value' => '$data->attrType(true, $data->type)',
+            'value' => '$data->getType()',
         ),
         array(
             'name' => 'prop.prop_values',

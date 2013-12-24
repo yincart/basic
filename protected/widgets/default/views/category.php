@@ -18,10 +18,10 @@
 
         <?php
         $cri = new CDbCriteria(array(
-                    'condition' => 'type_id =' . $model->id,
+                    'condition' => 'category_id =' . $model->id,
                     'order'=>'sort_order asc'
                 ));
-        $props = ItemProp::model()->findAll($cri);
+//        $props = ItemProp::model()->findAll($cri);
 
         foreach ($props as $p) {
             ?>

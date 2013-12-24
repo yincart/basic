@@ -1,0 +1,16 @@
+{
+    "name": "z_bodya/yii-elfinder",
+    "description": "Extension to use elFinder 1.x file manager in yii application",
+    "keywords": ["widget", "tinymce", "file manager"],
+    "type": "yii-extension",
+    "extra": {
+        "installer-name": "elFinder"
+    },
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Bogdan Savluk",
+            "email": "savluk.bogdan@gmail.com"
+        }
+    ]
+}

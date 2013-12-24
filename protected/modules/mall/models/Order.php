@@ -37,6 +37,7 @@ class Order extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Order the static model class
 	 */
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -156,4 +157,49 @@ class Order extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public function showRefundState($data = array()) {
+        if (empty($data)) {
+            $order_state = array('0' => '未退款' , '1' => '已退款');
+            return isset($order_state[$this->refund_status]) ? $order_state[$this->refund_status] : $this->refund_status;
+        } else if ($data instanceof Order){
+            return $data->showRefundState();
+        }
+    }
+
+    public function showShipState($data = array()) {
+        if (empty($data)) {
+            $order_state = array('0' => '未发货' , '1' => '已发货');
+            return isset($order_state[$this->ship_status]) ? $order_state[$this->ship_status] : $this->ship_status;
+        } else if ($data instanceof Order){
+            return $data->showShipState();
+        }
+    }
+
+    public function showPayState($data = array()) {
+        if (empty($data)) {
+            $order_state = array('0' => '待支付' , '1' => '已支付');
+            return isset($order_state[$this->pay_status]) ? $order_state[$this->pay_status] : $this->pay_status;
+        } else if ($data instanceof Order){
+            return $data->showPayState();
+        }
+    }
+
+    public function showPayMethod($data = array()) {
+        if (empty($data)) {
+            $order_state = array('0' => '财付通' , '1' => '银行卡支付');
+            return isset($order_state[$this->pay_method]) ? $order_state[$this->pay_method] : $this->pay_method;
+        } else if ($data instanceof Order){
+            return $data->showPayMethod();
+        }
+    }
+
+    public function showShipMethod($data = array()) {
+        if (empty($data)) {
+            $order_state = array('1' => '平邮' , '2' => '快递'  , '3' => 'EMS');
+            return isset($order_state[$this->ship_method]) ? $order_state[$this->ship_method] : $this->ship_method;
+        } else if ($data instanceof Order){
+            return $data->showShipMethod();
+        }
+    }
 }

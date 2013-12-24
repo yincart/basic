@@ -3,8 +3,8 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id' => 'ad-form',
     'htmlOptions' => array('enctype' => 'multipart/form-data'),
     'enableAjaxValidation' => false,
-        ));
-?>
+    ));
+    ?>
 
 <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 

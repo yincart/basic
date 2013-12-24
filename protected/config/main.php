@@ -117,6 +117,7 @@ return array(
         'mall' => array(
             'class' => 'application.modules.mall.MallModule'
         ),
+        'review',
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '123',

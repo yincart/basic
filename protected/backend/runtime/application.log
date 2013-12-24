@@ -9313,3 +9313,1181 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/language/admin
 HTTP_REFERER=http://localhost/basic/backend.php/theme/create
 ---
+2013/12/23 02:21:35 [error] [exception.CException] exception 'CException' with message '属性 "TbButtonColumn.config" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(220): CComponent->__set('config', Array)
+#1 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#3 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 E:\wamp\www\basic\protected\backend\views\theme\admin.php(62): CBaseController->widget('bootstrap.widge...', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#11 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#13 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#14 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#23 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#24 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+HTTP_REFERER=http://localhost/basic/backend.php/theme/set/default
+---
+2013/12/23 02:28:23 [error] [exception.CException] exception 'CException' with message '属性 "TbButtonColumn.config" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(220): CComponent->__set('config', Array)
+#1 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#3 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 E:\wamp\www\basic\protected\backend\views\theme\admin.php(64): CBaseController->widget('bootstrap.widge...', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#11 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#13 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#14 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#23 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#24 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+HTTP_REFERER=http://localhost/basic/backend.php/theme/set/default
+---
+2013/12/23 06:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in E:\wamp\www\basic\protected\backend\controllers\ThemeController.php:210
+Stack trace:
+#0 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(54): ThemeController->loadModel('2222333')
+#1 [internal function]: ThemeController->actionView('2222333')
+#2 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#3 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#4 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#14 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/basic/backend.php/theme/2222333
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 06:55:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in E:\wamp\www\basic\protected\backend\controllers\ThemeController.php:210
+Stack trace:
+#0 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(54): ThemeController->loadModel('2222333')
+#1 [internal function]: ThemeController->actionView('2222333')
+#2 E:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ThemeController), Array)
+#3 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ThemeController), Object(ReflectionMethod), Array)
+#4 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/view')
+#14 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/basic/backend.php/theme/2222333
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 06:57:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "leather" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('leather')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('leather')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/leather')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/leather
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:01:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "ultimo" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('ultimo')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('ultimo')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/ultimo')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/ultimo
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:01:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:01:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:01:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:04:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "leather" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('leather')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('leather')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/leather')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/leather
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:04:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:04:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "默认" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('??????')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('??????')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/??????')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/%E9%BB%98%E8%AE%A4
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:04:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:04:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:04:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "leather" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('leather')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('leather')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/leather')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/leather
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:04:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "默认" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('??????')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('??????')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/??????')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/%E9%BB%98%E8%AE%A4
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "leather" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('leather')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('leather')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/leather')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/leather
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:04:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "ultimo" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('ultimo')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('ultimo')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/ultimo')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/ultimo
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:13:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "ultimo" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('ultimo')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('ultimo')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/ultimo')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/ultimo
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:13:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "默认" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('??????')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('??????')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/??????')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/%E9%BB%98%E8%AE%A4
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:13:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:13:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:13:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:15:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "leather" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('leather')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('leather')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/leather')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/leather
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:15:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:20:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:34:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:34:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "leather" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('leather')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('leather')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/leather')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/leather
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:50:34 [error] [exception.CException] exception 'CException' with message '属性 "TbDataColumn.config" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(220): CComponent->__set('config', Array)
+#1 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#3 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 E:\wamp\www\basic\protected\backend\views\theme\admin.php(74): CBaseController->widget('bootstrap.widge...', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#11 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#13 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#14 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#23 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#24 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+---
+2013/12/23 07:57:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:57:26 [error] [exception.CException] exception 'CException' with message 'CDataColumn 必须指定 "name" 或 "value" 至少一项.' in E:\wamp\www\yii\framework\zii\widgets\grid\CDataColumn.php:84
+Stack trace:
+#0 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(401): CDataColumn->init()
+#1 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#2 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#3 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#6 E:\wamp\www\basic\protected\backend\views\theme\admin.php(72): CBaseController->widget('bootstrap.widge...', Array)
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#11 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#12 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#13 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#23 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#25 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+---
+2013/12/23 07:58:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 07:59:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/23 08:12:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "leather" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('leather')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('leather')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/leather')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/leather
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin?Theme_sort=config
+---
+2013/12/23 08:29:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default.jpg" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default.jpg')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default.jpg')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default.j...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default.jpg
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 00:51:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default.jpg" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default.jpg')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default.jpg')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default.j...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default.jpg
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 00:59:46 [error] [php] include(imgUrl.php): failed to open stream: No such file or directory (E:\wamp\www\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 E:\wamp\www\yii\framework\YiiBase.php(303): class_exists()
+#2 E:\wamp\www\yii\framework\YiiBase.php(196): import()
+#3 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): createComponent()
+#4 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): TbGridView->initColumns()
+#5 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#6 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): TbGridView->init()
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(180): ThemeController->createWidget()
+#9 E:\wamp\www\basic\protected\backend\views\theme\admin.php(74): ThemeController->widget()
+#10 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#11 E:\wamp\www\yii\framework\web\CBaseController.php(95): ThemeController->renderInternal()
+#12 E:\wamp\www\yii\framework\web\CController.php(869): ThemeController->renderFile()
+#13 E:\wamp\www\yii\framework\web\CController.php(782): ThemeController->renderPartial()
+#14 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): ThemeController->render()
+#15 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#16 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ThemeController->runAction()
+#18 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ThemeController->filterAccessControl()
+#21 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 E:\wamp\www\yii\framework\web\CController.php(265): ThemeController->runActionWithFilters()
+#24 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ThemeController->run()
+#25 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 E:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/theme/admin
+in E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (81)
+in E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (50)
+in E:\wamp\www\basic\protected\backend\views\theme\admin.php (74)
+2013/12/24 01:08:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "<a class="sort-link" href="" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('<a class="sort-...')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('<a class="sort-...')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/<a class=...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/%3Ca%20class=%22sort-link%22%20href=%22/basic/backend.php/theme/admin?Theme_sort=config%22%3E%E9%85%8D%E7%BD%AE%3Cspan%20class=%22caret%22%3E%3C/span%3E%3C/a%3E
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:10:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:11:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:16:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:21:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:23:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:25:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:27:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:34:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:46:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:49:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:51:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:51:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:53:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:54:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:59:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 01:59:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:00:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:00:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:00:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:01:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:03:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:05:18 [error] [php] include(imgUrl.php): failed to open stream: No such file or directory (E:\wamp\www\yii\framework\YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 E:\wamp\www\yii\framework\YiiBase.php(303): class_exists()
+#2 E:\wamp\www\yii\framework\YiiBase.php(196): import()
+#3 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): createComponent()
+#4 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): TbGridView->initColumns()
+#5 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#6 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): TbGridView->init()
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(180): ThemeController->createWidget()
+#9 E:\wamp\www\basic\protected\backend\views\theme\admin.php(74): ThemeController->widget()
+#10 E:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#11 E:\wamp\www\yii\framework\web\CBaseController.php(95): ThemeController->renderInternal()
+#12 E:\wamp\www\yii\framework\web\CController.php(869): ThemeController->renderFile()
+#13 E:\wamp\www\yii\framework\web\CController.php(782): ThemeController->renderPartial()
+#14 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): ThemeController->render()
+#15 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#16 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ThemeController->runAction()
+#18 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 E:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ThemeController->filterAccessControl()
+#21 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 E:\wamp\www\yii\framework\web\CController.php(265): ThemeController->runActionWithFilters()
+#24 E:\wamp\www\yii\framework\web\CWebApplication.php(282): ThemeController->run()
+#25 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 E:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/theme/admin
+in E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (81)
+in E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (50)
+in E:\wamp\www\basic\protected\backend\views\theme\admin.php (74)
+2013/12/24 02:05:26 [error] [exception.CException] exception 'CException' with message '属性 "TbDataColumn.data-class" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(220): CComponent->__set('data-class', 'imgUrl')
+#1 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#3 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 E:\wamp\www\basic\protected\backend\views\theme\admin.php(74): CBaseController->widget('bootstrap.widge...', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#11 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#13 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#14 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#23 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#24 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+---
+2013/12/24 02:07:32 [error] [exception.CException] exception 'CException' with message '属性 "TbDataColumn.$htmlOptions" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(220): CComponent->__set('$htmlOptions', Array)
+#1 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#3 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 E:\wamp\www\basic\protected\backend\views\theme\admin.php(72): CBaseController->widget('bootstrap.widge...', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#11 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#13 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#14 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#23 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#24 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+---
+2013/12/24 02:07:43 [error] [exception.CException] exception 'CException' with message 'CDataColumn 必须指定 "name" 或 "value" 至少一项.' in E:\wamp\www\yii\framework\zii\widgets\grid\CDataColumn.php:84
+Stack trace:
+#0 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(401): CDataColumn->init()
+#1 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#2 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#3 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#6 E:\wamp\www\basic\protected\backend\views\theme\admin.php(72): CBaseController->widget('bootstrap.widge...', Array)
+#7 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#9 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#11 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#12 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#13 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#23 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#25 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+---
+2013/12/24 02:07:59 [error] [exception.CException] exception 'CException' with message '属性 "Theme.img" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('img')
+#1 E:\wamp\www\yii\framework\web\helpers\CHtml.php(2703): CActiveRecord->__get('img')
+#2 E:\wamp\www\yii\framework\web\helpers\CHtml.php(2426): CHtml::resolveValue(Object(Theme), 'img')
+#3 E:\wamp\www\yii\framework\web\helpers\CHtml.php(1528): CHtml::activeInputField('text', Object(Theme), 'img', Array)
+#4 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbDataColumn.php(96): CHtml::activeTextField(Object(Theme), 'img', Array)
+#5 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbDataColumn.php(60): TbDataColumn->renderFilterCellContent()
+#6 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(538): TbDataColumn->renderFilterCell()
+#7 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(516): CGridView->renderFilter()
+#8 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(486): CGridView->renderTableHeader()
+#9 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(171): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(154): preg_replace_callback('/{(\w+)}/', Array, '{items}?<div cl...')
+#12 E:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(139): CBaseListView->renderContent()
+#13 E:\wamp\www\yii\framework\web\CBaseController.php(181): CBaseListView->run()
+#14 E:\wamp\www\basic\protected\backend\views\theme\admin.php(73): CBaseController->widget('bootstrap.widge...', Array)
+#15 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#16 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#17 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#18 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#20 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#21 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#25 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#26 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#27 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#28 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#30 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#31 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#32 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#33 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+---
+2013/12/24 02:08:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:08:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:09:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:12:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:12:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:13:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:13:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "[object Object]" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('[object Object]')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('[object Object]')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/[object O...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/[object%20Object]
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:13:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default.jpg" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default.jpg')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default.jpg')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default.j...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default.jpg
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:13:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "leather.jpg" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('leather.jpg')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('leather.jpg')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/leather.j...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/leather.jpg
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:13:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default.jpg" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default.jpg')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default.jpg')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default.j...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default.jpg
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:31:37 [error] [exception.CException] exception 'CException' with message '属性 "TbGridView.filterHtmlOptions" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('filterHtmlOptio...', Array)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ThemeController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\basic\protected\backend\views\theme\admin.php(74): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#20 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+---
+2013/12/24 02:31:51 [error] [exception.CException] exception 'CException' with message '属性 "TbGridView.0" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('0', Array)
+#1 E:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ThemeController), 'bootstrap.widge...', Array)
+#2 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 E:\wamp\www\basic\protected\backend\views\theme\admin.php(74): CBaseController->widget('bootstrap.widge...', Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#20 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+---
+2013/12/24 02:36:54 [error] [exception.CException] exception 'CException' with message '属性 "TbButtonColumn.0" 未被定义.' in E:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\wamp\www\yii\framework\YiiBase.php(220): CComponent->__set('0', Array)
+#1 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#3 E:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 E:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 E:\wamp\www\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 E:\wamp\www\basic\protected\backend\views\theme\admin.php(75): CBaseController->widget('bootstrap.widge...', Array)
+#8 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\bas...')
+#9 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\bas...', Array, true)
+#10 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\bas...', Array, true)
+#11 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 E:\wamp\www\basic\protected\backend\controllers\ThemeController.php(156): CController->render('admin', Array)
+#13 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#14 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 E:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 E:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#23 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#24 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+---
+2013/12/24 02:38:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "default.jpg" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('default.jpg')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('default.jpg')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/default.j...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/default.jpg
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:46:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "basic" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('basic')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('basic')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/basic/ima...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/basic/images/themeImg/default.jpg
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:53:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "basic" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('basic')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('basic')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/basic/ima...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/basic/images/themeImg/default.jpg
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---
+2013/12/24 02:55:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "basic" 动作.' in E:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('basic')
+#1 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('basic')
+#2 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/basic/ima...')
+#3 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/theme/basic/images/themeImg/default.jpg
+HTTP_REFERER=http://localhost/basic/backend.php/theme/admin
+---

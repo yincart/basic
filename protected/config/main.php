@@ -1,16 +1,24 @@
 <?php
 
-// uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
-$frontend = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..';
-$backend = $frontend . DIRECTORY_SEPARATOR . '..';
+/************************
+ * Alias Definition Area
+ ************************/
+$configDir = dirname(__FILE__);
+$frontend = dirname($configDir); //Protected folder
+$backend = $frontend . DIRECTORY_SEPARATOR . 'backend';
+$rootDir = dirname($frontend); //Project entry == basePath in Basic Version
+$extDir = $frontend . DIRECTORY_SEPARATOR . 'extensions';
 Yii::setPathOfAlias('backend', $backend);
 Yii::setPathOfAlias('widgets', $frontend . DIRECTORY_SEPARATOR . 'widgets');
-//Yii::setPathOfAlias('bootstrap', $frontend . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'bootstrap');
-Yii::setPathOfAlias('xupload', $frontend . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'xupload');
+// Yiistrap configuration
+Yii::setPathOfAlias('bootstrap', $extDir . DIRECTORY_SEPARATOR . 'bootstrap'); // Change if necessary
+// YiiWheels configuration
+Yii::setPathOfAlias('yiiwheels', $extDir . DIRECTORY_SEPARATOR . 'yiiwheels'); // Change if necessary
+// Xupload configuration
+Yii::setPathOfAlias('xupload', $extDir . DIRECTORY_SEPARATOR . 'xupload'); // Change if necessary
+
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
-
 return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
@@ -32,10 +40,8 @@ return array(
     ),
     // path aliases
     'aliases' => array(
-        // yiistrap configuration
-        'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change if necessary
-        // yiiwheels configuration
-        'yiiwheels' => realpath(__DIR__ . '/../extensions/yiiwheels'), // change if necessary
+    // Uncomment the following statement to register path alias.
+    //    'alias' => realpath(__DIR__ . '/../extensions/aliasRealPath'), // change it to fit your need
     ),
     'modules' => array(
         'comments' => array(
@@ -78,6 +84,7 @@ return array(
                 'emailProperty' => 'email',
             ),
         ),
+        'install',
         // uncomment the following to enable the Gii tool
         'member',
         'translate',

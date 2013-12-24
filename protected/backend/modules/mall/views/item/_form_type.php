@@ -44,9 +44,6 @@ $cs->registerScript('skusJsD','
 			}
 		    });
 	}
-	
-	
-
 ');
 
 ?>

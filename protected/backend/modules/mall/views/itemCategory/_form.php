@@ -24,7 +24,7 @@ echo $form->textFieldControlGroup($model, 'url');
     <?php echo $form->labelEx($model, 'pic', array('class' => 'control-label')); ?>
     <div class="controls">
         <?php
-        $this->widget('ext.elFinder.ServerFileInput', array(
+        $this->widget('ext.yii-elFinder.ServerFileInput', array(
                 'model' => $model,
                 'attribute' => 'pic',
                 'connectorRoute' => 'mall/elfinder/connector',

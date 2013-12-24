@@ -11,7 +11,7 @@ class ElfinderController extends Controller
     {
         return array(
             'connector' => array(
-                'class' => 'ext.elFinder.ElFinderConnectorAction',
+                'class' => 'ext.yii-elFinder.ElFinderConnectorAction',
                 'settings' => array(
                     'root' => Yii::getPathOfAlias('webroot') . '/upload/',
                     'URL' => Yii::app()->baseUrl . '/upload/',

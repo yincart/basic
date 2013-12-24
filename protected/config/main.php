@@ -123,9 +123,7 @@ return array(
             'password' => '123',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters' => array('127.0.0.1', '::1'),
-            'generatorPaths' => array(
-                'bootstrap.gii'
-            ),
+            'generatorPaths' => array('bootstrap.gii'),
         ),
     ),
     // application components
@@ -172,6 +170,7 @@ return array(
             'rules' => array(
                 'page/<key:\w+>' => 'page/index',
                 'catalog/<key:\w+>' => 'catalog/index',
+                'catalog/<key:\w+>/<prop:.*?>' => 'catalog/index',
                 'list/<category_id:\d+>' => 'item/index',
                 'item-list-<key:\w+>' => 'item/list',
 //                        'item-<id:\d+>' => 'item/view',
@@ -210,7 +209,7 @@ return array(
             'class' => 'system.caching.CFileCache',
         ),
         'settings' => array(
-            'class' => 'CmsSettings',
+            'class' => 'ext.CmsSettings',
             'cacheComponentId' => 'cache',
             'cacheId' => 'global_website_settings',
             'cacheTime' => 0,
@@ -227,21 +226,21 @@ return array(
             'charset' => 'utf8',
             'tablePrefix' => ''
         ),
-//        'log' => array(
-//            'class' => 'CLogRouter',
-//            'routes' => array(
-//                array(
-//                    'class' => 'CFileLogRoute',
-////                    'class' => 'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
-////                    'ipFilters' => array('127.0.0.1', '192.168.0.101'),
-//                    'levels' => 'error, warning',
-//                ),
-//            // uncomment the following to show log messages on web pages
-////              array(
-////              'class'=>'CWebLogRoute',
-////              ),
-//            ),
-//        ),
+        'log' => array(
+            'class' => 'CLogRouter',
+            'routes' => array(
+                array(
+                    'class' => 'CFileLogRoute',
+                    'levels' => 'error, warning',
+                ),
+                // uncomment the following to show log messages on web pages
+                array(
+                    'class' => 'CWebLogRoute',
+                    'levels' => 'error, warning',
+                    'showInFireBug' => true,
+                ),
+            ),
+        ),
     ),
     // application-level parameters that can be accessed
     // using Yii::app()->params['paramName']

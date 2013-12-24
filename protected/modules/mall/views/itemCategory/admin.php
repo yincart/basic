@@ -33,12 +33,9 @@ $this->menu = array(
                 'submit' => '/mall/itemCategory/delete',
                 'style' => 'cursor:pointer',
                 'confirm' => 'Are you sure you want to delete this item?'
-            )
+            ),
         )
     );
-
-    $root = Category::model()->findByPk('3');
-    $descendants = $root->descendants()->findAll();
-    echo Category::model()->getTree($descendants, $options, 'name');
+    echo Category::model()->getTree(3, $options);
     ?>
 </div>

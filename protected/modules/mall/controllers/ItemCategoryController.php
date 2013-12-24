@@ -1,69 +1,27 @@
 <?php
 
-class ItemCategoryController extends Controller {
-
-    /**
-     * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-     * using two-column layout. See 'protected/views/layouts/column2.php'.
-     */
-    public $layout = '//layouts/mall';
-
-    /**
-     * Manages all models.
-     */
-    public function actionAdmin() {
-        $model = new Category('search');
-        $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['Category']))
-            $model->attributes = $_GET['Category'];
-
-        $this->render('admin', array(
-            'model' => $model,
-        ));
-    }
+class ItemCategoryController extends MallBaseController
+{
 
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
-    public function actionCreate() {
+    public function actionCreate()
+    {
         $model = new Category('create');
-
-// Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValidation($model);
+        $action = 'category';
 
         if (isset($_POST['Category'])) {
+            //Uncomment the following line if AJAX validation is needed
+            $this->performAjaxValidation($model);
             $model->attributes = $_POST['Category'];
             $parent_node = $_POST['Category']['node'];
             if ($parent_node != 0) {
                 $node = Category::model()->findByPk($parent_node);
                 $model->appendTo($node);
-//            print_r($_POST['DealCategory']);
-//            exit;
-            }
-            // file handling
-            $imageUploadFile = CUploadedFile::getInstance($model, 'pic');
-            if ($imageUploadFile !== null) { // only do if file is really uploaded
-                $imageFileExt = $imageUploadFile->extensionName;
-
-                $save_path = dirname(Yii::app()->basePath) . '/upload/' . $action . '/';
-                if (!file_exists($save_path)) {
-                    mkdir($save_path, 0777, true);
-                }
-                $ymd = date("Ymd");
-                $save_path .= $ymd . '/';
-                if (!file_exists($save_path)) {
-                    mkdir($save_path, 0777, true);
-                }
-                $img_prefix = date("YmdHis") . '_' . rand(10000, 99999);
-                $imageFileName = $img_prefix . '.' . $imageFileExt;
-                $model->pic = $ymd . '/' . $imageFileName;
-                $save_path .= $imageFileName;
             }
             if ($model->saveNode()) {
-                if ($imageUploadFile !== null) { // validate to save file
-                    $imageUploadFile->saveAs($save_path);
-                }
                 $this->redirect(array('admin'));
             }
         }
@@ -78,24 +36,21 @@ class ItemCategoryController extends Controller {
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
-    public function actionUpdate($id) {
+    public function actionUpdate($id)
+    {
         $model = $this->loadModel($id);
         $model->scenario = 'update';
         $action = 'category';
 
-// Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValidation($model);
-
         if (isset($_POST['Category'])) {
+            // Uncomment the following line if AJAX validation is needed
+            $this->performAjaxValidation($model);
             $model->attributes = $_POST['Category'];
-
-
             $parent_node = $_POST['Category']['node'];
             if ($parent_node != 0) {
                 $node = Category::model()->findByPk($parent_node);
                 $parent = $model->parent()->find();
-                if ($node->id !== $model->id && $node->id !== $parent->id) {
-// move 
+                if ($node->category_id !== $model->category_id && $node->category_id !== $parent->category_id) {
                     $model->moveAsLast($node);
                 }
             } else {
@@ -103,35 +58,8 @@ class ItemCategoryController extends Controller {
                     $model->moveAsRoot();
                 }
             }
-            $imageUploadFile = CUploadedFile::getInstance($model, 'pic');
-            if ($imageUploadFile !== null) { // only do if file is really uploaded
-                $old_image = dirname(Yii::app()->basePath) . '/upload/' . $action . '/' . $model->pic;
-                if (file_exists($old_image)) {
-                    @unlink($old_image);
-                }
-                $imageFileExt = $imageUploadFile->extensionName;
-
-                $save_path = dirname(Yii::app()->basePath) . '/upload/' . $action . '/';
-                if (!file_exists($save_path)) {
-                    mkdir($save_path, 0777, true);
-                }
-                $ymd = date("Ymd");
-                $save_path .= $ymd . '/';
-                if (!file_exists($save_path)) {
-                    mkdir($save_path, 0777, true);
-                }
-                $img_prefix = date("YmdHis") . '_' . rand(10000, 99999);
-                $imageFileName = $img_prefix . '.' . $imageFileExt;
-                $model->pic = $ymd . '/' . $imageFileName;
-                $save_path .= $imageFileName;
-            } else {
-                $model->pic = $model->pic;
-            }
 
             if ($model->saveNode()) {
-                if ($imageUploadFile !== null) { // validate to save file
-                    $imageUploadFile->saveAs($save_path);
-                }
                 $this->redirect(array('admin'));
             }
         }
@@ -146,32 +74,25 @@ class ItemCategoryController extends Controller {
      * If deletion is successful, the browser will be redirected to the 'admin' page.
      * @param integer $id the ID of the model to be deleted
      */
-    public function actionDelete($id) {
+    public function actionDelete($id)
+    {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
-            $model = $this->loadModel($id);
-            $image = dirname(Yii::app()->basePath) . '/upload/category/'. $model->pic;
-            if (file_exists($image)) {
-                @unlink($image);
-            }
-            $model->deleteNode();
+            $this->loadModel($id)->deleteNode();
 
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        }
-        else
+        } else
             throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
     }
 
     /**
-     * Lists all models.
+     * Manages all models.
      */
-    public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('Category');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
+    public function actionAdmin()
+    {
+        $this->render('admin');
     }
 
     /**
@@ -179,22 +100,12 @@ class ItemCategoryController extends Controller {
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer the ID of the model to be loaded
      */
-    public function loadModel($id) {
+    public function loadModel($id)
+    {
         $model = Category::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
-    }
-
-    /**
-     * Performs the AJAX validation.
-     * @param CModel the model to be validated
-     */
-    protected function performAjaxValidation($model) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'category-form') {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
-        }
     }
 
 }

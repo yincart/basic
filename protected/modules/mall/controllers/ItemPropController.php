@@ -1,34 +1,21 @@
 <?php
 
-class ItemPropController extends Controller
+class ItemPropController extends MallBaseController
 {
-
     /**
-     * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-     * using two-column layout. See 'protected/views/layouts/column2.php'.
+     * get prop values by category id
+     * @param int $category_id
+     * @return array
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
-    public $layout = '//layouts/mall';
-    public $parent;
-
-    function init()
+    protected function getProps($category_id = 3)
     {
-        parent::init();
-        //上一级 可支持无限级 分类
-        //上一级 可支持无限级 分类
-        $data = ItemProp::model()->findAll(array('order' => 'sort_order asc, prop_id asc'));
-        $parent = CHtml::tag('option', array('value' => 0), F::t('Please Select'));
-        $this->parent = $parent . F::toTree($data, $model->prop_id, 'prop_id', 'parent_prop_id', 'prop_name', 1);
-    }
-
-    /**
-     * Displays a particular model.
-     * @param integer $id the ID of the model to be displayed
-     */
-    public function actionView($id)
-    {
-        $this->render('view', array(
-            'model' => $this->loadModel($id),
-        ));
+        $item_props = ItemProp::model()->findAllByAttributes(array('category_id' => $category_id));
+        $props = array('请选择');
+        foreach ($item_props as $item_prop) {
+            $props[$item_prop->item_prop_id] = $item_prop->prop_name;
+        }
+        return $props;
     }
 
     /**
@@ -39,27 +26,18 @@ class ItemPropController extends Controller
     {
         $model = new ItemProp;
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-
         if (isset($_POST['ItemProp'])) {
+            $this->handlePostData();
             $model->attributes = $_POST['ItemProp'];
-            if ($model->save()) {
-                if (isset($_POST['PropValue']))
-                    $model->setPropValues($_POST['PropValue']);
-                $this->redirect(array('view', 'id' => $model->prop_id));
-            }
-        }
 
-        $item_props = ItemProp::model()->findAll();
-        $props = array('请选择');
-        foreach ($item_props as $item_prop) {
-            $props[$item_prop->prop_id] = $item_prop->prop_name;
+            if ($model->save()) {
+                $this->redirect(array('view', 'id' => $model->item_prop_id));
+            }
         }
 
         $this->render('create', array(
             'model' => $model,
-            'props' => $props
+            'props' => $this->getProps(),
         ));
     }
 
@@ -72,59 +50,18 @@ class ItemPropController extends Controller
     {
         $model = $this->loadModel($id);
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-
         if (isset($_POST['ItemProp'])) {
+            $this->handlePostData();
             $model->attributes = $_POST['ItemProp'];
 
-            if (isset($_POST['PropValue'])) {
-                $model->setPropValues($_POST['PropValue']);
-            }
-
             if ($model->save()) {
-                $this->redirect(array('view', 'id' => $model->prop_id));
+                $this->redirect(array('view', 'id' => $model->item_prop_id));
             }
-        }
-
-        $item_props = ItemProp::model()->findAll();
-        $props = array('请选择');
-        foreach ($item_props as $item_prop) {
-            $props[$item_prop->prop_id] = $item_prop->prop_name;
         }
 
         $this->render('update', array(
             'model' => $model,
-            'props' => $props
-        ));
-    }
-
-    /**
-     * Deletes a particular model.
-     * If deletion is successful, the browser will be redirected to the 'admin' page.
-     * @param integer $id the ID of the model to be deleted
-     */
-    public function actionDelete($id)
-    {
-        if (Yii::app()->request->isPostRequest) {
-            // we only allow deletion via POST request
-            $this->loadModel($id)->delete();
-
-            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-            if (!isset($_GET['ajax']))
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        } else
-            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
-    }
-
-    /**
-     * Lists all models.
-     */
-    public function actionIndex()
-    {
-        $dataProvider = new CActiveDataProvider('ItemProp');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
+            'props' => $this->getProps(),
         ));
     }
 
@@ -144,6 +81,18 @@ class ItemPropController extends Controller
     }
 
     /**
+     * Displays a particular model.
+     * @param integer $id the ID of the model to be displayed
+     */
+    public function actionView($id)
+    {
+        $this->render('view', array(
+            'model' => $this->loadModel($id),
+            'props' => $this->getProps(),
+        ));
+    }
+
+    /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer the ID of the model to be loaded
@@ -157,15 +106,26 @@ class ItemPropController extends Controller
     }
 
     /**
-     * Performs the AJAX validation.
-     * @param CModel the model to be validated
+     * format post props value
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
-    protected function performAjaxValidation($model)
+    protected function handlePostData()
     {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'item-prop-form') {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
+        if (isset($_POST['PropValue'])) {
+            $propValues = $_POST['PropValue'];
+            unset($_POST['PropValue']);
+            $_POST['ItemProp']['propValues'] = array();
+            if (is_array($propValues['value_name']) && $count = count($propValues['value_name'])) {
+                for ($i = 0; $i < $count; $i++) {
+                    $_POST['ItemProp']['propValues'][] = array(
+                        'prop_value_id' => $propValues['prop_value_id'][$i],
+                        'value_name' => $propValues['value_name'][$i],
+                        'sort_order' => $i,
+                        'value_alias' => $propValues['value_name'][$i],
+                        'status' => 1,
+                    );
+                }
+            }
         }
     }
-
 }

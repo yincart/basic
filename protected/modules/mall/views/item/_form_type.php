@@ -13,7 +13,7 @@ $cs->registerScript('skusJsD','
 		    ({
 			type: "POST",
 			data: {"category_id":Tid, "YII_CSRF_TOKEN":$("[name=YII_CSRF_TOKEN]").val()},
-			url: "' . Yii::app()->createUrl('/admin/item/getPropValues').'",
+			url: "' . Yii::app()->createUrl('/mall/item/getPropValues').'",
 			dataType: "html",
 			success: function(results)
 			{
@@ -33,8 +33,8 @@ $cs->registerScript('skusJsD','
 	    $.ajax
 		    ({
 			type: "POST",
-			data: "category_id=" + Tid + "&item_id='.$model->item_id.'",
-			url: "'.Yii::app()->createUrl('/admin/item/getPropValues').'",
+			data: {"category_id":Tid, "item_id":"' . $model->item_id. '", "YII_CSRF_TOKEN":$("[name=YII_CSRF_TOKEN]").val()},
+			url: "'.Yii::app()->createUrl('/mall/item/getPropValues').'",
 			dataType: "html",
 			success: function(results)
 			{
@@ -44,9 +44,6 @@ $cs->registerScript('skusJsD','
 			}
 		    });
 	}
-	
-	
-
 ');
 
 ?>
@@ -71,7 +68,7 @@ $cs->registerScript('skusJsD','
 
     </div>
     <input type="hidden" id="currentRow"  value="0"/>
-    <input type="hidden" id="skus_info" data-id="<?php echo ($model->item_id)? $model->item_id : 0; ?>" data-url="<?php echo Yii::app()->createUrl('/admin/item/ajaxGetSkus'); ?>" value=""/>
+    <input type="hidden" id="skus_info" data-id="<?php echo ($model->item_id)? $model->item_id : 0; ?>" data-url="<?php echo Yii::app()->createUrl('/mall/item/ajaxGetSkus'); ?>" value=""/>
 </div>  
 
 

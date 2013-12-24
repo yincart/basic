@@ -16,6 +16,7 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
 	'attributes'=>array(
 		'order_id',
         'user_id',
+        'status',
         array(
             'name' => 'ship_status',
             'value' => 'Order::showShipState',
@@ -49,10 +50,22 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
 		'receiver_mobile',
 		'receiver_phone',
 		'memo',
-		'pay_time',
-		'ship_time',
-		'create_time',
-		'update_time',
+        array(
+            'name' => 'pay_time',
+            'value' => date('Y年m月d日 H:i:s',$model->pay_time +(8 * 3600)),
+        ),
+        array(
+            'name' => 'ship_time',
+            'value' => date('Y年m月d日 H:i:s',$model->ship_time +(8 * 3600)),
+        ),
+        array(
+            'name' => 'create_time',
+            'value' => date('Y年m月d日 H:i:s',$model->create_time +(8 * 3600)),
+        ),
+        array(
+            'name' => 'update_time',
+            'value' => date('Y年m月d日 H:i:s',$model->update_time +(8 * 3600)),
+        ),
 	),
     //对应的是订单查看里面的内容，每一条就是一个内容。
 )); ?>

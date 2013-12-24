@@ -23,7 +23,7 @@ return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
     'language' => 'en',
-    'theme' => 'leather',
+    'theme' => 'default',
     // preloading 'log' component
     'preload' => array('log', 'translate'),
     // autoloading model and component classes
@@ -84,6 +84,7 @@ return array(
                 'emailProperty' => 'email',
             ),
         ),
+        'install',
         // uncomment the following to enable the Gii tool
         'member',
         'translate',

@@ -15,7 +15,7 @@ return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
     'language' => 'en',
-    'theme' => 'leather',
+    'theme' => 'default',
     // preloading 'log' component
     'preload' => array('log', 'translate'),
     // autoloading model and component classes

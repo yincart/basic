@@ -16,7 +16,6 @@ $this->breadcrumbs = array(
                 foreach ($hotItems as $hi) {
                     ?>
                     <li>
-                        <div class="image"><?php echo $hi->getRecommendThumb() ?></div>
                         <div class="title"><?php echo $hi->getTitle() ?></div>
                         <div class="clear"></div>
                         <div class="price">零售价：<span class="currency"><?php echo $hi->currency ?></span><em><?php echo $hi->market_price ?></em></div>
@@ -45,7 +44,6 @@ $this->breadcrumbs = array(
                 foreach ($items as $i) {
                     ?>
                     <li>
-                        <div class="image"><?php echo $i->getListThumb() ?></div>
                         <div class="title"><?php echo $i->getTitle() ?></div>
                         <div class="price">零售价：<span class="currency"><?php echo $i->currency ?></span><em><?php echo $i->market_price ?></em></div>
                         <div class="price">批发价：<span class="currency"><?php echo $i->currency ?></span><em><?php echo $i->shop_price ?></em></div>

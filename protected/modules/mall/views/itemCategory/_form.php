@@ -40,11 +40,9 @@ foreach ($descendants as $child) {
     }
 }
 echo '</select>';
-?>
 
-    <?php echo $form->textFieldControlGroup($model, 'name', array('class' => 'span5', 'maxlength' => 50)); ?>
-        
-    <?php echo $form->radioButtonListControlGroup($model, 'label', array(
+echo $form->textFieldControlGroup($model, 'name', array('class' => 'span5', 'maxlength' => 50));
+echo $form->radioButtonListControlGroup($model, 'label', array(
 		'1'=>'<span class="label label-info">New</span>',
 		'2'=>'<span class="label label-important">Hot!</span>',
 	))?>    
@@ -53,9 +51,5 @@ echo '</select>';
         
     <?php echo $form->fileFieldControlGroup($model,'pic'); ?>
 
-    <?php echo TbHtml::formActions(array(
-        TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
-        TbHtml::resetButton('Reset'),
-    )); ?>
 
 <?php $this->endWidget(); ?>

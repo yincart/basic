@@ -11,13 +11,17 @@ Yii::setPathOfAlias('xupload', $frontend . DIRECTORY_SEPARATOR . 'extensions' . 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 
+
+
 return array(
+// 'catchAllRequest'=>array('update/index'),
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
     'language' => 'en',
-    'theme' => 'leather',
+    'theme' => 'default',
     // preloading 'log' component
     'preload' => array('log', 'translate'),
+    // autoloading model and component classes
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
@@ -202,7 +206,7 @@ return array(
             'class' => 'system.caching.CFileCache',
         ),
         'settings' => array(
-            'class' => 'CmsSettings',
+            'class' => 'application.extensions.CmsSettings',
             'cacheComponentId' => 'cache',
             'cacheId' => 'global_website_settings',
             'cacheTime' => 0,

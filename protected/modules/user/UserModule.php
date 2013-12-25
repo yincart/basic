@@ -215,14 +215,14 @@ class UserModule extends CWebModule {
 //        $message = wordwrap($message, 70);
 //        $message = str_replace("\n.", "\n..", $message);
 //        return mail($email, '=?UTF-8?B?' . base64_encode($subject) . '?=', $message, $headers);
-        $adminEmail = 'test@yincart.com';
+        $adminEmail = F::sg('mail','adminEmail');
         header("Content-type:text/html; charset=utf-8");
         $mailer = Yii::app()->mailer;
-        $mailer->Host = 'smtp.exmail.qq.com';
-        $mailer->Port = '25';
+        $mailer->Host = F::sg('mail','server');
+        $mailer->Port = F::sg('mail','port');
         $mailer->SMTPAuth = true;
-        $mailer->Username = 'test@yincart.com';
-        $mailer->Password = 't23145';
+        $mailer->Username = F::sg('mail','user');
+        $mailer->Password = F::sg('mail','password');
         $mailer->IsSMTP();
         $mailer->From = $adminEmail;
 

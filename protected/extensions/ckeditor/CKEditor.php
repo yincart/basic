@@ -108,8 +108,6 @@ Class CKEditor extends CInputWidget
         $baseDir = dirname(__FILE__);
         $assets = Yii::app()->getAssetManager()->publish($baseDir . DIRECTORY_SEPARATOR . 'assets');
 
-        $options = $this->makeOptions();
-
         $cs = Yii::app()->getClientScript();
 
         $cs->registerScriptFile($assets . '/ckeditor.js');
@@ -125,6 +123,8 @@ Class CKEditor extends CInputWidget
         if (!array_key_exists('rows', $this->htmlOptions)) {
             $this->htmlOptions['rows'] = self::ROWS;
         }
+
+        $options = $this->makeOptions();
 
         $js = <<<EOP
 CKEDITOR.replace('{$name}',{$options});

@@ -1,16 +1,24 @@
 <?php
 
-// uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
-$frontend = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..';
-$backend = $frontend . DIRECTORY_SEPARATOR . '..';
+/************************
+ * Alias Definition Area
+ ************************/
+$configDir = dirname(__FILE__);
+$frontend = dirname($configDir); //Protected folder
+$backend = $frontend . DIRECTORY_SEPARATOR . 'backend';
+$rootDir = dirname($frontend); //Project entry == basePath in Basic Version
+$extDir = $frontend . DIRECTORY_SEPARATOR . 'extensions';
 Yii::setPathOfAlias('backend', $backend);
 Yii::setPathOfAlias('widgets', $frontend . DIRECTORY_SEPARATOR . 'widgets');
-//Yii::setPathOfAlias('bootstrap', $frontend . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'bootstrap');
-Yii::setPathOfAlias('xupload', $frontend . DIRECTORY_SEPARATOR . 'extensions' . DIRECTORY_SEPARATOR . 'xupload');
+// Yiistrap configuration
+Yii::setPathOfAlias('bootstrap', $extDir . DIRECTORY_SEPARATOR . 'bootstrap'); // Change if necessary
+// YiiWheels configuration
+Yii::setPathOfAlias('yiiwheels', $extDir . DIRECTORY_SEPARATOR . 'yiiwheels'); // Change if necessary
+// Xupload configuration
+Yii::setPathOfAlias('xupload', $extDir . DIRECTORY_SEPARATOR . 'xupload'); // Change if necessary
+
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
-
 return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
@@ -32,10 +40,8 @@ return array(
     ),
     // path aliases
     'aliases' => array(
-        // yiistrap configuration
-        'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change if necessary
-        // yiiwheels configuration
-        'yiiwheels' => realpath(__DIR__ . '/../extensions/yiiwheels'), // change if necessary
+    // Uncomment the following statement to register path alias.
+    //    'alias' => realpath(__DIR__ . '/../extensions/aliasRealPath'), // change it to fit your need
     ),
     'modules' => array(
         'comments' => array(
@@ -78,6 +84,7 @@ return array(
                 'emailProperty' => 'email',
             ),
         ),
+        'install',
         // uncomment the following to enable the Gii tool
         'member',
         'translate',
@@ -110,14 +117,13 @@ return array(
         'mall' => array(
             'class' => 'application.modules.mall.MallModule'
         ),
+        'review',
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '123',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
             'ipFilters' => array('127.0.0.1', '::1'),
-            'generatorPaths' => array(
-                'bootstrap.gii'
-            ),
+            'generatorPaths' => array('bootstrap.gii'),
         ),
     ),
     // application components
@@ -164,6 +170,7 @@ return array(
             'rules' => array(
                 'page/<key:\w+>' => 'page/index',
                 'catalog/<key:\w+>' => 'catalog/index',
+                'catalog/<key:\w+>/<prop:.*?>' => 'catalog/index',
                 'list/<category_id:\d+>' => 'item/index',
                 'item-list-<key:\w+>' => 'item/list',
 //                        'item-<id:\d+>' => 'item/view',
@@ -202,7 +209,7 @@ return array(
             'class' => 'system.caching.CFileCache',
         ),
         'settings' => array(
-            'class' => 'CmsSettings',
+            'class' => 'ext.CmsSettings',
             'cacheComponentId' => 'cache',
             'cacheId' => 'global_website_settings',
             'cacheTime' => 0,
@@ -219,21 +226,21 @@ return array(
             'charset' => 'utf8',
             'tablePrefix' => ''
         ),
-//        'log' => array(
-//            'class' => 'CLogRouter',
-//            'routes' => array(
-//                array(
-//                    'class' => 'CFileLogRoute',
-////                    'class' => 'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
-////                    'ipFilters' => array('127.0.0.1', '192.168.0.101'),
-//                    'levels' => 'error, warning',
-//                ),
-//            // uncomment the following to show log messages on web pages
-////              array(
-////              'class'=>'CWebLogRoute',
-////              ),
-//            ),
-//        ),
+        'log' => array(
+            'class' => 'CLogRouter',
+            'routes' => array(
+                array(
+                    'class' => 'CFileLogRoute',
+                    'levels' => 'error, warning',
+                ),
+                // uncomment the following to show log messages on web pages
+                array(
+                    'class' => 'CWebLogRoute',
+                    'levels' => 'error, warning',
+                    'showInFireBug' => true,
+                ),
+            ),
+        ),
     ),
     // application-level parameters that can be accessed
     // using Yii::app()->params['paramName']

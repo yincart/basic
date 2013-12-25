@@ -44,6 +44,7 @@ class OrderController extends Controller {
 		if(isset($_POST['Order']))
 		{
 			$model->attributes=$_POST['Order'];
+            $model->create_time=time();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->order_id));
 		}
@@ -68,6 +69,9 @@ class OrderController extends Controller {
 		if(isset($_POST['Order']))
 		{
 			$model->attributes=$_POST['Order'];
+            $model->total_fee=$model->ship_fee + $model->pay_fee;
+            $model->update_time=time();
+
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->order_id));
 		}
@@ -117,7 +121,6 @@ class OrderController extends Controller {
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Order']))
 			$model->attributes=$_GET['Order'];
-
 		$this->render('admin',array(
 			'model'=>$model,
 		));

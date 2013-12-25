@@ -12,6 +12,9 @@ $this->menu=array(
 	array('label'=>'Manage Order', 'icon'=>'cog','url'=>array('admin')),
 );
 ?>
+    <link type="text/css" rel="stylesheet"
+          href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css"/>
+
 
 
     <h1 style="text-align:center">Update Order <?php echo $model->order_id; ?></h1>

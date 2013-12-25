@@ -496,6 +496,7 @@ class ItemController extends MallBaseController
             echo '</div>';
             echo '</div>';
 
+
             echo <<<EOF
 	    <div class="row" style='margin-bottom:10px' style="visibility:hidden">
 	    <div class="span2">&nbsp;</div>

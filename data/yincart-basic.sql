@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2013 年 12 月 24 日 14:07
+-- 生成日期: 2013 年 12 月 25 日 09:54
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -28,6 +28,7 @@ USE `yincart-basic`;
 -- 表的结构 `ad`
 --
 
+DROP TABLE IF EXISTS `ad`;
 CREATE TABLE IF NOT EXISTS `ad` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
@@ -57,6 +58,7 @@ INSERT INTO `ad` (`id`, `title`, `pic`, `url`, `theme`, `content`, `sort_order`)
 -- 表的结构 `address_result`
 --
 
+DROP TABLE IF EXISTS `address_result`;
 CREATE TABLE IF NOT EXISTS `address_result` (
   `contact_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '地址库ID',
   `user_id` int(10) unsigned DEFAULT NULL,
@@ -89,6 +91,7 @@ INSERT INTO `address_result` (`contact_id`, `user_id`, `contact_name`, `country`
 -- 表的结构 `admin_user`
 --
 
+DROP TABLE IF EXISTS `admin_user`;
 CREATE TABLE IF NOT EXISTS `admin_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
@@ -112,6 +115,7 @@ INSERT INTO `admin_user` (`id`, `username`, `password`, `email`, `profile`) VALU
 -- 表的结构 `admin_user2`
 --
 
+DROP TABLE IF EXISTS `admin_user2`;
 CREATE TABLE IF NOT EXISTS `admin_user2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) DEFAULT NULL,
@@ -147,6 +151,7 @@ INSERT INTO `admin_user2` (`id`, `username`, `password`, `salt`, `password_strat
 -- 表的结构 `area`
 --
 
+DROP TABLE IF EXISTS `area`;
 CREATE TABLE IF NOT EXISTS `area` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `language` varchar(20) NOT NULL,
@@ -3880,6 +3885,7 @@ INSERT INTO `area` (`id`, `language`, `parent_id`, `path`, `grade`, `name`) VALU
 -- 表的结构 `article`
 --
 
+DROP TABLE IF EXISTS `article`;
 CREATE TABLE IF NOT EXISTS `article` (
   `article_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) NOT NULL,
@@ -3916,6 +3922,7 @@ INSERT INTO `article` (`article_id`, `category_id`, `author_id`, `title`, `url`,
 -- 表的结构 `authassignment`
 --
 
+DROP TABLE IF EXISTS `authassignment`;
 CREATE TABLE IF NOT EXISTS `authassignment` (
   `itemname` varchar(64) NOT NULL,
   `userid` varchar(64) NOT NULL,
@@ -3930,6 +3937,7 @@ CREATE TABLE IF NOT EXISTS `authassignment` (
 -- 表的结构 `authitem`
 --
 
+DROP TABLE IF EXISTS `authitem`;
 CREATE TABLE IF NOT EXISTS `authitem` (
   `name` varchar(64) NOT NULL,
   `type` int(11) NOT NULL,
@@ -3945,6 +3953,7 @@ CREATE TABLE IF NOT EXISTS `authitem` (
 -- 表的结构 `authitemchild`
 --
 
+DROP TABLE IF EXISTS `authitemchild`;
 CREATE TABLE IF NOT EXISTS `authitemchild` (
   `parent` varchar(64) NOT NULL,
   `child` varchar(64) NOT NULL,
@@ -3958,6 +3967,7 @@ CREATE TABLE IF NOT EXISTS `authitemchild` (
 -- 表的结构 `brand`
 --
 
+DROP TABLE IF EXISTS `brand`;
 CREATE TABLE IF NOT EXISTS `brand` (
   `value_id` int(10) unsigned NOT NULL DEFAULT '0',
   `value_name` varchar(45) DEFAULT NULL COMMENT 'vid的值',
@@ -3974,6 +3984,7 @@ CREATE TABLE IF NOT EXISTS `brand` (
 -- 表的结构 `cache`
 --
 
+DROP TABLE IF EXISTS `cache`;
 CREATE TABLE IF NOT EXISTS `cache` (
   `id` char(128) NOT NULL,
   `expire` int(11) DEFAULT NULL,
@@ -3987,6 +3998,7 @@ CREATE TABLE IF NOT EXISTS `cache` (
 -- 表的结构 `category`
 --
 
+DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `left` int(10) unsigned NOT NULL,
@@ -4046,6 +4058,7 @@ INSERT INTO `category` (`category_id`, `left`, `right`, `root`, `level`, `name`,
 -- 表的结构 `comment`
 --
 
+DROP TABLE IF EXISTS `comment`;
 CREATE TABLE IF NOT EXISTS `comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -4075,6 +4088,7 @@ INSERT INTO `comment` (`id`, `content`, `status`, `create_time`, `author`, `emai
 -- 表的结构 `currency`
 --
 
+DROP TABLE IF EXISTS `currency`;
 CREATE TABLE IF NOT EXISTS `currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(8) DEFAULT NULL,
@@ -4092,6 +4106,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
 -- 表的结构 `customer_service`
 --
 
+DROP TABLE IF EXISTS `customer_service`;
 CREATE TABLE IF NOT EXISTS `customer_service` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(10) unsigned NOT NULL,
@@ -4121,6 +4136,7 @@ INSERT INTO `customer_service` (`id`, `category_id`, `type`, `nick_name`, `accou
 -- 表的结构 `eavattr`
 --
 
+DROP TABLE IF EXISTS `eavattr`;
 CREATE TABLE IF NOT EXISTS `eavattr` (
   `entity` bigint(20) unsigned NOT NULL,
   `attribute` varchar(250) NOT NULL,
@@ -4143,6 +4159,7 @@ INSERT INTO `eavattr` (`entity`, `attribute`, `value`) VALUES
 -- 表的结构 `feedback`
 --
 
+DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE IF NOT EXISTS `feedback` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -4161,6 +4178,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
 -- 表的结构 `friend_link`
 --
 
+DROP TABLE IF EXISTS `friend_link`;
 CREATE TABLE IF NOT EXISTS `friend_link` (
   `link_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) DEFAULT NULL,
@@ -4190,6 +4208,7 @@ INSERT INTO `friend_link` (`link_id`, `category_id`, `title`, `pic`, `url`, `mem
 -- 表的结构 `groupon`
 --
 
+DROP TABLE IF EXISTS `groupon`;
 CREATE TABLE IF NOT EXISTS `groupon` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT '长标题',
@@ -4232,6 +4251,7 @@ CREATE TABLE IF NOT EXISTS `groupon` (
 -- 表的结构 `groupon_attach`
 --
 
+DROP TABLE IF EXISTS `groupon_attach`;
 CREATE TABLE IF NOT EXISTS `groupon_attach` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `relation_id` int(10) unsigned NOT NULL COMMENT '关联表id',
@@ -4250,6 +4270,7 @@ CREATE TABLE IF NOT EXISTS `groupon_attach` (
 -- 表的结构 `groupon_attr`
 --
 
+DROP TABLE IF EXISTS `groupon_attr`;
 CREATE TABLE IF NOT EXISTS `groupon_attr` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `groupon_id` int(10) unsigned NOT NULL COMMENT '团购id',
@@ -4268,6 +4289,7 @@ CREATE TABLE IF NOT EXISTS `groupon_attr` (
 -- 表的结构 `groupon_biz`
 --
 
+DROP TABLE IF EXISTS `groupon_biz`;
 CREATE TABLE IF NOT EXISTS `groupon_biz` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(32) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '用户名',
@@ -4311,6 +4333,7 @@ INSERT INTO `groupon_biz` (`id`, `username`, `password`, `title`, `license_photo
 -- 表的结构 `groupon_biz_shop`
 --
 
+DROP TABLE IF EXISTS `groupon_biz_shop`;
 CREATE TABLE IF NOT EXISTS `groupon_biz_shop` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `biz_id` int(10) unsigned NOT NULL COMMENT '商家id',
@@ -4337,6 +4360,7 @@ CREATE TABLE IF NOT EXISTS `groupon_biz_shop` (
 -- 表的结构 `groupon_cates`
 --
 
+DROP TABLE IF EXISTS `groupon_cates`;
 CREATE TABLE IF NOT EXISTS `groupon_cates` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) CHARACTER SET utf8 NOT NULL COMMENT '分类名',
@@ -4542,6 +4566,7 @@ INSERT INTO `groupon_cates` (`id`, `name`, `ename`, `pid`, `level`, `path`, `is_
 -- 表的结构 `groupon_contract`
 --
 
+DROP TABLE IF EXISTS `groupon_contract`;
 CREATE TABLE IF NOT EXISTS `groupon_contract` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '合同名称',
@@ -4566,6 +4591,7 @@ CREATE TABLE IF NOT EXISTS `groupon_contract` (
 -- 表的结构 `groupon_coupon`
 --
 
+DROP TABLE IF EXISTS `groupon_coupon`;
 CREATE TABLE IF NOT EXISTS `groupon_coupon` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(16) CHARACTER SET utf8 NOT NULL COMMENT '券号',
@@ -4592,6 +4618,7 @@ CREATE TABLE IF NOT EXISTS `groupon_coupon` (
 -- 表的结构 `groupon_shop`
 --
 
+DROP TABLE IF EXISTS `groupon_shop`;
 CREATE TABLE IF NOT EXISTS `groupon_shop` (
   `groupon_id` int(10) unsigned NOT NULL COMMENT '团购id',
   `shop_id` int(10) unsigned NOT NULL COMMENT '分店id',
@@ -4605,6 +4632,7 @@ CREATE TABLE IF NOT EXISTS `groupon_shop` (
 -- 表的结构 `item`
 --
 
+DROP TABLE IF EXISTS `item`;
 CREATE TABLE IF NOT EXISTS `item` (
   `item_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Item ID',
   `outer_id` varchar(45) NOT NULL,
@@ -4640,6 +4668,7 @@ CREATE TABLE IF NOT EXISTS `item` (
 -- 表的结构 `item_img`
 --
 
+DROP TABLE IF EXISTS `item_img`;
 CREATE TABLE IF NOT EXISTS `item_img` (
   `item_img_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Item Img ID',
   `item_id` int(10) unsigned NOT NULL COMMENT 'Item ID',
@@ -4656,6 +4685,7 @@ CREATE TABLE IF NOT EXISTS `item_img` (
 -- 表的结构 `item_prop`
 --
 
+DROP TABLE IF EXISTS `item_prop`;
 CREATE TABLE IF NOT EXISTS `item_prop` (
   `item_prop_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '属性 ID 例：品牌的PID=20000',
   `category_id` int(10) unsigned NOT NULL,
@@ -4691,6 +4721,7 @@ INSERT INTO `item_prop` (`item_prop_id`, `category_id`, `parent_prop_id`, `paren
 -- 表的结构 `language`
 --
 
+DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(10) DEFAULT NULL,
@@ -4715,6 +4746,7 @@ INSERT INTO `language` (`language_id`, `code`, `name`) VALUES
 -- 表的结构 `location`
 --
 
+DROP TABLE IF EXISTS `location`;
 CREATE TABLE IF NOT EXISTS `location` (
   `location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `country` varchar(45) NOT NULL COMMENT '国家',
@@ -4732,6 +4764,7 @@ CREATE TABLE IF NOT EXISTS `location` (
 -- 表的结构 `lookup`
 --
 
+DROP TABLE IF EXISTS `lookup`;
 CREATE TABLE IF NOT EXISTS `lookup` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -4758,6 +4791,7 @@ INSERT INTO `lookup` (`id`, `name`, `code`, `type`, `position`) VALUES
 -- 表的结构 `menu`
 --
 
+DROP TABLE IF EXISTS `menu`;
 CREATE TABLE IF NOT EXISTS `menu` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `root` int(10) unsigned DEFAULT NULL,
@@ -4809,6 +4843,7 @@ INSERT INTO `menu` (`id`, `root`, `lft`, `rgt`, `level`, `name`, `url`, `pic`, `
 -- 表的结构 `message`
 --
 
+DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int(11) NOT NULL,
   `language` varchar(16) NOT NULL,
@@ -4890,6 +4925,7 @@ INSERT INTO `message` (`id`, `language`, `translation`) VALUES
 -- 表的结构 `newsletter_subscriber`
 --
 
+DROP TABLE IF EXISTS `newsletter_subscriber`;
 CREATE TABLE IF NOT EXISTS `newsletter_subscriber` (
   `subscriber_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -4933,6 +4969,7 @@ INSERT INTO `newsletter_subscriber` (`subscriber_id`, `customer_id`, `email`, `s
 -- 表的结构 `order`
 --
 
+DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL,
@@ -4971,6 +5008,7 @@ CREATE TABLE IF NOT EXISTS `order` (
 -- 表的结构 `order_item`
 --
 
+DROP TABLE IF EXISTS `order_item`;
 CREATE TABLE IF NOT EXISTS `order_item` (
   `order_item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` bigint(20) unsigned NOT NULL,
@@ -4993,6 +5031,7 @@ CREATE TABLE IF NOT EXISTS `order_item` (
 -- 表的结构 `order_log`
 --
 
+DROP TABLE IF EXISTS `order_log`;
 CREATE TABLE IF NOT EXISTS `order_log` (
   `log_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` bigint(20) unsigned NOT NULL,
@@ -5012,6 +5051,7 @@ CREATE TABLE IF NOT EXISTS `order_log` (
 -- 表的结构 `page`
 --
 
+DROP TABLE IF EXISTS `page`;
 CREATE TABLE IF NOT EXISTS `page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(10) unsigned NOT NULL,
@@ -5059,6 +5099,7 @@ INSERT INTO `page` (`id`, `store_id`, `category_id`, `key`, `title`, `content`, 
 -- 表的结构 `payment`
 --
 
+DROP TABLE IF EXISTS `payment`;
 CREATE TABLE IF NOT EXISTS `payment` (
   `payment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` bigint(20) unsigned NOT NULL,
@@ -5081,6 +5122,7 @@ CREATE TABLE IF NOT EXISTS `payment` (
 -- 表的结构 `payment_method`
 --
 
+DROP TABLE IF EXISTS `payment_method`;
 CREATE TABLE IF NOT EXISTS `payment_method` (
   `payment_method_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(45) NOT NULL,
@@ -5100,6 +5142,7 @@ CREATE TABLE IF NOT EXISTS `payment_method` (
 -- 表的结构 `plugins`
 --
 
+DROP TABLE IF EXISTS `plugins`;
 CREATE TABLE IF NOT EXISTS `plugins` (
   `plugin_id` int(11) NOT NULL AUTO_INCREMENT,
   `identify` varchar(45) NOT NULL,
@@ -5123,6 +5166,7 @@ INSERT INTO `plugins` (`plugin_id`, `identify`, `path`, `hooks`, `enable`) VALUE
 -- 表的结构 `post`
 --
 
+DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(10) unsigned NOT NULL,
@@ -5253,6 +5297,7 @@ INSERT INTO `post` (`id`, `store_id`, `category_id`, `title`, `url`, `source`, `
 -- 表的结构 `profiles`
 --
 
+DROP TABLE IF EXISTS `profiles`;
 CREATE TABLE IF NOT EXISTS `profiles` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(255) DEFAULT NULL,
@@ -5278,6 +5323,7 @@ INSERT INTO `profiles` (`user_id`, `first_name`, `last_name`, `truename`, `nickn
 -- 表的结构 `profiles_fields`
 --
 
+DROP TABLE IF EXISTS `profiles_fields`;
 CREATE TABLE IF NOT EXISTS `profiles_fields` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `varname` varchar(50) NOT NULL DEFAULT '',
@@ -5315,6 +5361,7 @@ INSERT INTO `profiles_fields` (`id`, `varname`, `title`, `field_type`, `field_si
 -- 表的结构 `prop_category`
 --
 
+DROP TABLE IF EXISTS `prop_category`;
 CREATE TABLE IF NOT EXISTS `prop_category` (
   `prop_id` int(10) unsigned NOT NULL,
   `category_id` int(10) unsigned NOT NULL,
@@ -5337,6 +5384,7 @@ INSERT INTO `prop_category` (`prop_id`, `category_id`) VALUES
 -- 表的结构 `prop_img`
 --
 
+DROP TABLE IF EXISTS `prop_img`;
 CREATE TABLE IF NOT EXISTS `prop_img` (
   `prop_img_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Prop Img ID',
   `item_id` int(10) unsigned NOT NULL COMMENT 'Item ID',
@@ -5353,6 +5401,7 @@ CREATE TABLE IF NOT EXISTS `prop_img` (
 -- 表的结构 `prop_value`
 --
 
+DROP TABLE IF EXISTS `prop_value`;
 CREATE TABLE IF NOT EXISTS `prop_value` (
   `prop_value_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '属性值ID',
   `item_prop_id` int(10) unsigned NOT NULL,
@@ -5385,6 +5434,7 @@ INSERT INTO `prop_value` (`prop_value_id`, `item_prop_id`, `value_name`, `value_
 -- 表的结构 `refund`
 --
 
+DROP TABLE IF EXISTS `refund`;
 CREATE TABLE IF NOT EXISTS `refund` (
   `refund_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` bigint(20) unsigned NOT NULL,
@@ -5408,6 +5458,7 @@ CREATE TABLE IF NOT EXISTS `refund` (
 -- 表的结构 `settings`
 --
 
+DROP TABLE IF EXISTS `settings`;
 CREATE TABLE IF NOT EXISTS `settings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(64) NOT NULL DEFAULT 'system',
@@ -5455,6 +5506,7 @@ INSERT INTO `settings` (`id`, `category`, `key`, `value`) VALUES
 -- 表的结构 `shipping`
 --
 
+DROP TABLE IF EXISTS `shipping`;
 CREATE TABLE IF NOT EXISTS `shipping` (
   `ship_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` bigint(20) unsigned NOT NULL,
@@ -5480,6 +5532,7 @@ CREATE TABLE IF NOT EXISTS `shipping` (
 -- 表的结构 `shipping_item`
 --
 
+DROP TABLE IF EXISTS `shipping_item`;
 CREATE TABLE IF NOT EXISTS `shipping_item` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ship_id` int(10) unsigned NOT NULL,
@@ -5497,6 +5550,7 @@ CREATE TABLE IF NOT EXISTS `shipping_item` (
 -- 表的结构 `shipping_method`
 --
 
+DROP TABLE IF EXISTS `shipping_method`;
 CREATE TABLE IF NOT EXISTS `shipping_method` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(45) DEFAULT NULL,
@@ -5514,6 +5568,7 @@ CREATE TABLE IF NOT EXISTS `shipping_method` (
 -- 表的结构 `sku`
 --
 
+DROP TABLE IF EXISTS `sku`;
 CREATE TABLE IF NOT EXISTS `sku` (
   `sku_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'SKU ID',
   `item_id` int(10) unsigned NOT NULL COMMENT 'Item ID',
@@ -5533,6 +5588,7 @@ CREATE TABLE IF NOT EXISTS `sku` (
 -- 表的结构 `source_message`
 --
 
+DROP TABLE IF EXISTS `source_message`;
 CREATE TABLE IF NOT EXISTS `source_message` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(32) NOT NULL,
@@ -5751,6 +5807,7 @@ INSERT INTO `source_message` (`id`, `category`, `message`) VALUES
 -- 表的结构 `store`
 --
 
+DROP TABLE IF EXISTS `store`;
 CREATE TABLE IF NOT EXISTS `store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '店铺表',
   `user_id` int(11) DEFAULT NULL,
@@ -5782,6 +5839,7 @@ INSERT INTO `store` (`store_id`, `user_id`, `name`, `email`, `password`, `domain
 -- 表的结构 `store_category`
 --
 
+DROP TABLE IF EXISTS `store_category`;
 CREATE TABLE IF NOT EXISTS `store_category` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `store_id` int(10) unsigned NOT NULL,
@@ -5825,6 +5883,7 @@ INSERT INTO `store_category` (`id`, `store_id`, `root`, `lft`, `rgt`, `level`, `
 -- 表的结构 `store_menu`
 --
 
+DROP TABLE IF EXISTS `store_menu`;
 CREATE TABLE IF NOT EXISTS `store_menu` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `store_id` int(10) unsigned NOT NULL,
@@ -5851,6 +5910,7 @@ CREATE TABLE IF NOT EXISTS `store_menu` (
 -- 表的结构 `store_product_category`
 --
 
+DROP TABLE IF EXISTS `store_product_category`;
 CREATE TABLE IF NOT EXISTS `store_product_category` (
   `con_store_product_category_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
   `con_store_product_category_productid` int(10) unsigned DEFAULT NULL COMMENT 'product id',
@@ -5864,6 +5924,7 @@ CREATE TABLE IF NOT EXISTS `store_product_category` (
 -- 表的结构 `tag`
 --
 
+DROP TABLE IF EXISTS `tag`;
 CREATE TABLE IF NOT EXISTS `tag` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -5887,6 +5948,7 @@ INSERT INTO `tag` (`id`, `name`, `frequency`) VALUES
 -- 表的结构 `tbl_migration`
 --
 
+DROP TABLE IF EXISTS `tbl_migration`;
 CREATE TABLE IF NOT EXISTS `tbl_migration` (
   `version` varchar(255) NOT NULL,
   `apply_time` int(11) DEFAULT NULL,
@@ -5907,6 +5969,7 @@ INSERT INTO `tbl_migration` (`version`, `apply_time`) VALUES
 -- 表的结构 `themes`
 --
 
+DROP TABLE IF EXISTS `themes`;
 CREATE TABLE IF NOT EXISTS `themes` (
   `theme` varchar(50) NOT NULL DEFAULT '',
   `name` varchar(45) DEFAULT NULL,
@@ -5934,6 +5997,7 @@ INSERT INTO `themes` (`theme`, `name`, `author`, `site`, `update_url`, `desc`, `
 -- 表的结构 `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL DEFAULT '',
@@ -5964,6 +6028,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `activkey`, `superus
 -- 表的结构 `wishlist`
 --
 
+DROP TABLE IF EXISTS `wishlist`;
 CREATE TABLE IF NOT EXISTS `wishlist` (
   `wishlist_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned DEFAULT NULL,

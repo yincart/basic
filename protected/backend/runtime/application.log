@@ -6623,3 +6623,1078 @@ Stack trace:
 REQUEST_URI=/yincart/basic/backend.php/admin/item/getPropValues
 HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/30
 ---
+2013/12/19 13:18:55 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "D:\wamp\www\basic\assets" 是无效的. 请确定它是一个可被 Web server process 写入资料的目录.' in D:\wamp\www\yii\framework\web\CAssetManager.php:138
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('D:\wamp\www\bas...')
+#1 D:\wamp\www\yii\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 D:\wamp\www\basic\protected\extensions\bootstrap\components\TbApi.php(218): CAssetManager->publish('D:\wamp\www\bas...', false, -1, false)
+#3 D:\wamp\www\basic\protected\extensions\bootstrap\components\TbApi.php(51): TbApi->getAssetsUrl()
+#4 D:\wamp\www\basic\protected\extensions\bootstrap\components\TbApi.php(92): TbApi->registerCoreCss()
+#5 D:\wamp\www\basic\protected\extensions\bootstrap\components\TbApi.php(137): TbApi->registerAllCss()
+#6 D:\wamp\www\basic\themes\backend\views\layouts\main.php(8): TbApi->register()
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#10 D:\wamp\www\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#11 D:\wamp\www\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#12 D:\wamp\www\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#13 D:\wamp\www\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#14 D:\wamp\www\basic\protected\backend\views\layouts\column1.php(6): CBaseController->endContent()
+#15 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#16 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#17 D:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#18 D:\wamp\www\basic\protected\backend\controllers\SiteController.php(32): CController->render('index')
+#19 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#20 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#21 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#22 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#24 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#25 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#26 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#27 {main}
+REQUEST_URI=/basic/backend.php
+---
+2013/12/19 13:20:09 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbButton" 无效。请确认它指向一个存在的PHP文件。' in D:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(OrderController), 'bootstrap.widge...', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(167): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(18): CController->renderPartial('_form', Array)
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#10 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#11 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(65): CController->render('update', Array)
+#13 [internal function]: OrderController->actionUpdate('20130201236640')
+#14 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#15 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#16 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
+#21 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/mall/order/update/id/20130201236640
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2013/12/19 13:39:13 [error] [exception.CException] exception 'CException' with message '属性 "Order.state" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('state')
+#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(59): CActiveRecord->__get('state')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(18): CController->renderPartial('_form', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(65): CController->render('update', Array)
+#11 [internal function]: OrderController->actionUpdate('20130201236640')
+#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/order/update/id/20130201236640
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2013/12/19 13:40:43 [error] [exception.CException] exception 'CException' with message '属性 "Order.city" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('city')
+#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(74): CActiveRecord->__get('city')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(18): CController->renderPartial('_form', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(65): CController->render('update', Array)
+#11 [internal function]: OrderController->actionUpdate('20130201236640')
+#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/order/update/id/20130201236640
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2013/12/19 13:41:16 [error] [exception.CException] exception 'CException' with message '属性 "Order.state" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('state')
+#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(77): CActiveRecord->__get('state')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(18): CController->renderPartial('_form', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(65): CController->render('update', Array)
+#11 [internal function]: OrderController->actionUpdate('20130201236640')
+#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/order/update/id/20130201236640
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2013/12/19 13:41:16 [error] [exception.CException] exception 'CException' with message '属性 "Order.state" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('state')
+#1 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(77): CActiveRecord->__get('state')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(18): CController->renderPartial('_form', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(65): CController->render('update', Array)
+#11 [internal function]: OrderController->actionUpdate('20130201236640')
+#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/order/update/id/20130201236640
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2013/12/19 13:41:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dynamiccities" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('dynamiccities')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('dynamiccities')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dyna...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamiccities?Address_state=110000&_=1387431706838
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/19 13:41:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dynamicdistrict" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('dynamicdistrict')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('dynamicdistrict')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dyna...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamicdistrict?Address_city=130100&_=1387431709748
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/19 13:41:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dynamiccities" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('dynamiccities')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('dynamiccities')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dyna...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamiccities?Address_state=220000&_=1387431712955
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/19 13:41:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dynamicdistrict" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('dynamicdistrict')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('dynamicdistrict')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dyna...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamicdistrict?Address_city=130300&_=1387431713827
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/19 13:43:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dynamicdistrict" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('dynamicdistrict')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('dynamicdistrict')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dyna...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamicdistrict?Address_city=&_=1387431793631
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/19 13:43:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dynamicdistrict" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('dynamicdistrict')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('dynamicdistrict')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dyna...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamicdistrict?Address_city=130400&_=1387431797172
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/19 13:43:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dynamiccities" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('dynamiccities')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('dynamiccities')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dyna...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamiccities?Address_state=360000&_=1387431800532
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/19 13:43:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dynamiccities" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('dynamiccities')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('dynamiccities')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dyna...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamiccities?Address_state=370000&_=1387431838571
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/19 13:44:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dynamiccities" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('dynamiccities')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('dynamiccities')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/dyna...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamiccities?Address_state=220000&_=1387431851668
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/19 13:46:22 [error] [exception.CException] exception 'CException' with message '属性 "Order.zipcode" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('zipcode')
+#1 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('zipcode')
+#2 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Order), 'zipcode')
+#3 D:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Order), 'zipcode', Array)
+#4 D:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Order), 'zipcode', Array)
+#5 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(109): CActiveForm->textField(Object(Order), 'zipcode', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(18): CController->renderPartial('_form', Array)
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#11 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#12 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#13 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#14 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(65): CController->render('update', Array)
+#15 [internal function]: OrderController->actionUpdate('20130201236640')
+#16 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#17 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#18 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#22 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/upda...')
+#23 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#25 {main}
+REQUEST_URI=/basic/backend.php/mall/order/update/id/20130201236640
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2013/12/19 14:07:11 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\helpers\CHtml.php(158): renderAttributes()
+#1 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2255): tag()
+#2 D:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): activeInputField()
+#3 D:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): activeTextField()
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(11): CActiveForm->textField()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#7 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#8 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(18): OrderController->renderPartial()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#11 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#12 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
+#13 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(65): OrderController->render()
+#14 unknown(0): OrderController->actionUpdate()
+#15 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#16 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#17 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#18 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/update/id/20130201236640
+in D:\wamp\www\basic\protected\modules\mall\views\order\_form.php (11)
+in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (18)
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (65)
+2013/12/19 14:09:09 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\helpers\CHtml.php(158): renderAttributes()
+#1 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2255): tag()
+#2 D:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): activeInputField()
+#3 D:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): activeTextField()
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(11): CActiveForm->textField()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#7 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#8 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(18): OrderController->renderPartial()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#11 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#12 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
+#13 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(65): OrderController->render()
+#14 unknown(0): OrderController->actionUpdate()
+#15 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#16 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#17 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#18 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/update/id/20130201236640
+in D:\wamp\www\basic\protected\modules\mall\views\order\_form.php (11)
+in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (18)
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (65)
+2013/12/19 14:09:09 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\helpers\CHtml.php(158): renderAttributes()
+#1 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2255): tag()
+#2 D:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): activeInputField()
+#3 D:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): activeTextField()
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\_form.php(11): CActiveForm->textField()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#7 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#8 D:\wamp\www\basic\protected\modules\mall\views\order\update.php(18): OrderController->renderPartial()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#11 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#12 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
+#13 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(65): OrderController->render()
+#14 unknown(0): OrderController->actionUpdate()
+#15 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#16 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#17 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#18 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/update/id/20130201236640
+in D:\wamp\www\basic\protected\modules\mall\views\order\_form.php (11)
+in D:\wamp\www\basic\protected\modules\mall\views\order\update.php (18)
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (65)
+2013/12/20 08:49:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamiccities
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/20 08:49:25 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamicdistrict
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/20 08:49:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamicdistrict
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/20 08:49:29 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamiccities
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/20 08:49:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamicdistrict
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/20 08:49:33 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamiccities
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/20 08:49:35 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/basic/backend.php/mall/order/dynamicdistrict
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/20130201236640
+---
+2013/12/20 14:53:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'CSRF token 无法被验证.' in D:\wamp\www\yii\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 D:\wamp\www\yii\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 D:\wamp\www\yii\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 D:\wamp\www\yii\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/basic/backend.php/admin/item/getPropValues
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/update/id/28
+---
+2013/12/24 02:43:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'yincart'' in D:\wamp\www\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\wamp\www\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\wamp\www\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\wamp\www\yii\framework\web\auth\CDbAuthManager.php(589): CModule->getComponent('db')
+#4 D:\wamp\www\yii\framework\web\auth\CDbAuthManager.php(59): CDbAuthManager->getDbConnection()
+#5 D:\wamp\www\yii\framework\base\CModule.php(387): CDbAuthManager->init()
+#6 D:\wamp\www\yii\framework\base\CModule.php(103): CModule->getComponent('authManager')
+#7 D:\wamp\www\basic\protected\backend\modules\auth\components\AuthWebUser.php(23): CModule->__get('authManager')
+#8 D:\wamp\www\yii\framework\base\CModule.php(387): AuthWebUser->init()
+#9 D:\wamp\www\yii\framework\base\CModule.php(103): CModule->getComponent('user')
+#10 D:\wamp\www\basic\themes\backend\views\layouts\main.php(22): CModule->__get('user')
+#11 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#12 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#13 D:\wamp\www\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#14 D:\wamp\www\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#15 D:\wamp\www\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#16 D:\wamp\www\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#17 D:\wamp\www\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#18 D:\wamp\www\basic\protected\backend\views\layouts\column1.php(6): CBaseController->endContent()
+#19 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#20 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#21 D:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#22 D:\wamp\www\basic\protected\backend\controllers\SiteController.php(32): CController->render('index')
+#23 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#24 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#25 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#26 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#28 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#29 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#30 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#31 {main}
+REQUEST_URI=/basic/backend.php
+---
+2013/12/24 03:29:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'yincart'' in D:\wamp\www\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\wamp\www\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\wamp\www\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\wamp\www\yii\framework\web\auth\CDbAuthManager.php(589): CModule->getComponent('db')
+#4 D:\wamp\www\yii\framework\web\auth\CDbAuthManager.php(59): CDbAuthManager->getDbConnection()
+#5 D:\wamp\www\yii\framework\base\CModule.php(387): CDbAuthManager->init()
+#6 D:\wamp\www\yii\framework\base\CModule.php(103): CModule->getComponent('authManager')
+#7 D:\wamp\www\basic\protected\backend\modules\auth\components\AuthWebUser.php(23): CModule->__get('authManager')
+#8 D:\wamp\www\yii\framework\base\CModule.php(387): AuthWebUser->init()
+#9 D:\wamp\www\yii\framework\base\CModule.php(103): CModule->getComponent('user')
+#10 D:\wamp\www\basic\themes\backend\views\layouts\main.php(22): CModule->__get('user')
+#11 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#12 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#13 D:\wamp\www\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#14 D:\wamp\www\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#15 D:\wamp\www\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#16 D:\wamp\www\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#17 D:\wamp\www\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#18 D:\wamp\www\basic\protected\backend\views\layouts\column1.php(6): CBaseController->endContent()
+#19 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#20 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#21 D:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#22 D:\wamp\www\basic\protected\backend\controllers\SiteController.php(32): CController->render('index')
+#23 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#24 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#25 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#26 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#28 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#29 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#30 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#31 {main}
+REQUEST_URI=/basic/backend.php
+---
+2013/12/24 03:31:45 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\refund\admin.php(37): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/shipping/admin
+---
+2013/12/24 03:31:51 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbButton" 无效。请确认它指向一个存在的PHP文件。' in D:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ShippingController), 'bootstrap.widge...', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\protected\modules\mall\views\shipping\_form.php(101): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\views\shipping\create.php(15): CController->renderPartial('_form', Array)
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#10 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#11 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 D:\wamp\www\basic\protected\modules\mall\controllers\ShippingController.php(41): CController->render('create', Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ShippingController->actionCreate()
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/shipping/c...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/shipping/create
+HTTP_REFERER=http://localhost/basic/backend.php/mall/shipping/index
+---
+2013/12/24 03:48:13 [error] [exception.CException] exception 'CException' with message '"dataProvider" 属性不能为空.' in D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php:109
+Stack trace:
+#0 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#1 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 03:49:06 [error] [exception.CException] exception 'CException' with message '"dataProvider" 属性不能为空.' in D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php:109
+Stack trace:
+#0 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#1 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 03:49:06 [error] [exception.CException] exception 'CException' with message '"dataProvider" 属性不能为空.' in D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php:109
+Stack trace:
+#0 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#1 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 03:49:56 [error] [exception.CException] exception 'CException' with message '"dataProvider" 属性不能为空.' in D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php:109
+Stack trace:
+#0 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#1 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 03:49:57 [error] [exception.CException] exception 'CException' with message '"dataProvider" 属性不能为空.' in D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php:109
+Stack trace:
+#0 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#1 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 03:51:50 [error] [exception.CException] exception 'CException' with message '"dataProvider" 属性不能为空.' in D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php:109
+Stack trace:
+#0 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#1 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 03:51:51 [error] [exception.CException] exception 'CException' with message '"dataProvider" 属性不能为空.' in D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php:109
+Stack trace:
+#0 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#1 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 03:51:51 [error] [exception.CException] exception 'CException' with message '"dataProvider" 属性不能为空.' in D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php:109
+Stack trace:
+#0 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#1 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#4 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#16 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 03:53:02 [error] [exception.CException] exception 'CException' with message 'Order and its behaviors do not have a method or closure named "getData".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(111): CActiveRecord->__call('getData', Array)
+#2 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(111): Order->getData()
+#3 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#4 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(76): CBaseController->widget('bootstrap.widge...', Array)
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#10 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#11 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 05:18:48 [error] [php] include(btn btn-danger.php): failed to open stream: No such file or directory (D:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\wamp\www\yii\framework\YiiBase.php(196): import()
+#1 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): createComponent()
+#2 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): TbGridView->initColumns()
+#3 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): TbGridView->init()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(172): OrderController->createWidget()
+#7 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(83): OrderController->widget()
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#10 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#11 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
+#12 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): OrderController->render()
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/admin
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (81)
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (50)
+in D:\wamp\www\basic\protected\modules\mall\views\order\admin.php (83)
+2013/12/24 05:19:21 [error] [exception.CException] exception 'CException' with message '属性 "TbDataColumn.style" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\wamp\www\yii\framework\YiiBase.php(220): CComponent->__set('style', 'font-size:44px')
+#1 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#3 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(83): CBaseController->widget('bootstrap.widge...', Array)
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#10 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#11 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/index
+---
+2013/12/24 05:40:47 [error] [exception.CException] exception 'CException' with message '属性 "TbDataColumn.link" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\wamp\www\yii\framework\YiiBase.php(220): CComponent->__set('link', 'ss')
+#1 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#3 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(83): CBaseController->widget('bootstrap.widge...', Array)
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#10 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#11 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php
+---
+2013/12/24 05:52:39 [error] [exception.CException] exception 'CException' with message 'CDataColumn 必须指定 "name" 或 "value" 至少一项.' in D:\wamp\www\yii\framework\zii\widgets\grid\CDataColumn.php:84
+Stack trace:
+#0 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(401): CDataColumn->init()
+#1 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#2 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#3 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#6 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(83): CBaseController->widget('bootstrap.widge...', Array)
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#10 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#11 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#12 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#13 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#18 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php
+---
+2013/12/24 06:09:42 [error] [php] include(sss.php): failed to open stream: No such file or directory (D:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\wamp\www\yii\framework\YiiBase.php(196): import()
+#1 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): createComponent()
+#2 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): TbGridView->initColumns()
+#3 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): TbGridView->init()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(172): OrderController->createWidget()
+#7 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(86): OrderController->widget()
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#10 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#11 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
+#12 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): OrderController->render()
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/admin
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (81)
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (50)
+in D:\wamp\www\basic\protected\modules\mall\views\order\admin.php (86)
+2013/12/24 06:09:54 [error] [php] include(tbnav.php): failed to open stream: No such file or directory (D:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\wamp\www\yii\framework\YiiBase.php(196): import()
+#1 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): createComponent()
+#2 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): TbGridView->initColumns()
+#3 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): TbGridView->init()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(172): OrderController->createWidget()
+#7 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(86): OrderController->widget()
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#10 D:\wamp\www\yii\framework\web\CController.php(869): OrderController->renderFile()
+#11 D:\wamp\www\yii\framework\web\CController.php(782): OrderController->renderPartial()
+#12 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): OrderController->render()
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#15 D:\wamp\www\yii\framework\web\CController.php(286): OrderController->runAction()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/order/admin
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (81)
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php (50)
+in D:\wamp\www\basic\protected\modules\mall\views\order\admin.php (86)
+2013/12/24 06:10:13 [error] [exception.CException] exception 'CException' with message '属性 "TbButtonColumn.name" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\wamp\www\yii\framework\YiiBase.php(220): CComponent->__set('name', 'ship_status')
+#1 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(388): YiiBase::createComponent(Array, Object(TbGridView))
+#2 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(81): CGridView->initColumns()
+#3 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(359): TbGridView->initColumns()
+#4 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 D:\wamp\www\basic\protected\modules\mall\views\order\admin.php(86): CBaseController->widget('bootstrap.widge...', Array)
+#8 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#10 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#11 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#12 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(111): CController->render('admin', Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionAdmin()
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/admi...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/order/admin
+HTTP_REFERER=http://localhost/basic/backend.php
+---
+2013/12/25 01:12:59 [error] [exception.CException] exception 'CException' with message '请指定 "data" 属性.' in D:\wamp\www\yii\framework\zii\widgets\CDetailView.php:137
+Stack trace:
+#0 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbDetailView.php(34): CDetailView->init()
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbDetailView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(47): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(18): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('20130429310210')
+#10 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#17 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20130429310210
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2013/12/25 01:13:33 [error] [exception.CException] exception 'CException' with message '请指定 "data" 属性.' in D:\wamp\www\yii\framework\zii\widgets\CDetailView.php:137
+Stack trace:
+#0 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbDetailView.php(34): CDetailView->init()
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbDetailView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(47): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(18): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('20130429310210')
+#10 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#17 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20130429310210
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2013/12/25 01:13:46 [error] [exception.CException] exception 'CException' with message '请指定 "data" 属性.' in D:\wamp\www\yii\framework\zii\widgets\CDetailView.php:137
+Stack trace:
+#0 D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbDetailView.php(34): CDetailView->init()
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbDetailView->init()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\protected\modules\mall\views\order\view.php(47): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php(18): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('20130429310210')
+#10 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/view...')
+#17 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/order/view/id/20130429310210
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---

@@ -13,6 +13,18 @@ class OrderController extends Controller {
 	 */
 	public function actionView($id)
 	{
+        $ordermodel=$this->loadModel($id);
+        $orderitemmodel=OrderItem::model()->findAllByAttributes(array('order_id'=>$id));
+        $cri = new CDbCriteria();
+        $cri->addCondition('t.order_id = :order_id');
+        $cri->params[':order_id'] = $id;
+        $cri->together = true;
+        $cri->with = array('order','item')
+        $orderItems = OrderItem::model()->findAll($cri);
+     foreach($orderitemmodel as $orderitem)
+     {
+         $itemmodel=Item::model()->findAllByAttributes(array('item_id'=>$orderitem->item_id));
+     }
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -128,12 +140,33 @@ class OrderController extends Controller {
 	 * Performs the AJAX validation.
 	 * @param CModel the model to be validated
 	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='order-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
+    public function actionDynamiccities()
+    {
+        echo $_GET['receiver_state'];
+        $data = Area::model()->findAll("parent_id=:parent_id", array(":parent_id" => $_GET['receiver_state']));
+        $data = CHtml::listData($data, "id", "name");
+        foreach ($data as $value => $name) {
+            echo CHtml::tag("option", array("value" => $value), CHtml::encode($name), true);
+        }
+    }
+
+    public function actionDynamicdistrict()
+    {
+        if ($_GET["receiver_city"]) {
+            $data = Area::model()->findAll("parent_id=:parent_id", array(":parent_id" => $_GET["receiver_city"]));
+            $data = CHtml::listData($data, "id", "name");
+            foreach ($data as $value => $name) {
+                echo CHtml::tag("option", array("value" => $value), CHtml::encode($name), true);
+            }
+        }
+    }
+
+    protected function performAjaxValidation($model)
+    {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'address-form') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+    }
+
 }

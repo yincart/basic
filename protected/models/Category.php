@@ -115,7 +115,7 @@ class Category extends CActiveRecord {
         $criteria->compare('level', $this->level);
         $criteria->compare('name', $this->name, true);
         $criteria->compare('url', $this->url, true);
-        $criteria->compare('pic', $this->pic, true);
+//        $criteria->compare('pic', $this->pic, true);
         $criteria->compare('position', $this->position, true);
         $criteria->compare('if_show', $this->if_show);
         $criteria->compare('memo', $this->memo, true);
@@ -135,18 +135,18 @@ class Category extends CActiveRecord {
                 'hasManyRoots' => true,
         ));
     }
-    
-    public function getThumb() {
-        $img_url = '/../../upload/category/' . $this->pic;
-        $trueimage = Yii::app()->request->hostInfo.Yii::app()->baseUrl.$img_url;
-        if (F::isfile($trueimage)) {
-        $img_thumb = Yii::app()->request->baseUrl . ImageHelper::thumb(750, 368, $img_url, array('method' => 'resize'));
-        $img_thumb_now = CHtml::image($img_thumb, $this->name);
-        return CHtml::link($img_thumb_now, $this->url, array('title' => $this->name));
-        }else{
-            return '没有图片';
-        }
-    }
+//
+//    public function getThumb() {
+//        $img_url = '/../../upload/category/' . $this->pic;
+//        $trueimage = Yii::app()->request->hostInfo.Yii::app()->baseUrl.$img_url;
+//        if (F::isfile($trueimage)) {
+//        $img_thumb = Yii::app()->request->baseUrl . ImageHelper::thumb(750, 368, $img_url, array('method' => 'resize'));
+//        $img_thumb_now = CHtml::image($img_thumb, $this->name);
+//        return CHtml::link($img_thumb_now, $this->url, array('title' => $this->name));
+//        }else{
+//            return '没有图片';
+//        }
+//    }
     
     public function getLabel() {
         if($this->label == '1'){

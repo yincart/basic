@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Order</h1>
+    <h1 style="text-align:center">Create Order</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

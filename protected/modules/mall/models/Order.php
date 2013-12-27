@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -59,15 +58,15 @@ class Order extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('user_id, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_address, receiver_zip, receiver_mobile, receiver_phone, memo, create_time, update_time', 'required'),
-            array('status, pay_status, ship_status, refund_status, comment_status, shipping_method_id', 'numerical', 'integerOnly'=>true),
-            array('user_id, total_fee, ship_fee, pay_fee, payment_method_id, pay_time, ship_time, create_time, update_time', 'length', 'max'=>10),
-            array('receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_zip, receiver_mobile, receiver_phone', 'length', 'max'=>45),
-            array('receiver_address', 'length', 'max'=>255),
+            array('shipping_method_id,receiver_name,receiver_country,receiver_state,receiver_city,receiver_district,receiver_zip,receiver_address', 'required'),
+            array('status, pay_status, ship_status, refund_status, comment_status', 'numerical', 'integerOnly' => true),
+            array('user_id, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, pay_time, ship_time, create_time, update_time', 'length', 'max' => 10),
+            array('receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_zip, receiver_mobile, receiver_phone', 'length', 'max' => 45),
+            array('receiver_address', 'length', 'max' => 255),
+            array('memo', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('order_id, user_id, status, pay_status, ship_status, refund_status, comment_status, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_address, receiver_zip, receiver_mobile, receiver_phone, memo, pay_time, ship_time, create_time, update_time', 'safe', 'on'=>'search'),
-        );
+            array('order_id, user_id, status, pay_status, ship_status, refund_status, comment_status, total_fee, ship_fee, pay_fee, payment_method_id, shipping_method_id, receiver_name, receiver_country, receiver_state, receiver_city, receiver_district, receiver_address, receiver_zip, receiver_mobile, receiver_phone, memo, pay_time, ship_time, create_time, update_time', 'safe', 'on' => 'search'),);
     }
 
     /**
@@ -94,32 +93,34 @@ class Order extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'order_id' => 'Order',
-            'user_id' => 'User',
-            'status' => 'Status',
-            'pay_status' => 'Pay Status',
-            'ship_status' => 'Ship Status',
-            'refund_status' => 'Refund Status',
-            'comment_status' => 'Comment Status',
-            'total_fee' => 'Total Fee',
-            'ship_fee' => 'Ship Fee',
-            'pay_fee' => 'Pay Fee',
-            'payment_method_id' => 'Payment Method',
-            'shipping_method_id' => 'Shipping Method',
-            'receiver_name' => 'Receiver Name',
-            'receiver_country' => 'Receiver Country',
-            'receiver_state' => 'Receiver State',
-            'receiver_city' => 'Receiver City',
-            'receiver_district' => 'Receiver District',
-            'receiver_address' => 'Receiver Address',
-            'receiver_zip' => 'Receiver Zip',
-            'receiver_mobile' => 'Receiver Mobile',
-            'receiver_phone' => 'Receiver Phone',
-            'memo' => 'Memo',
-            'pay_time' => 'Pay Time',
-            'ship_time' => 'Ship Time',
-            'create_time' => 'Create Time',
-            'update_time' => 'Update Time',
+            'order_id' => '订单号',
+            'user_id' => '会员',
+            'status' => '订单状态',
+            'pay_status' => '付款状态',
+            'ship_status' => '配送状态',
+            'refund_status' => '退款状态',
+            'total_fee' => '商品总金额',
+            'ship_fee' => '运费',
+            'pay_fee' => '实付款',
+            'pay_method' => '付款方式',
+            'ship_method' => '配送方式',
+            'receiver_name' => '收货人',
+            'receiver_country' => '国家',
+            'receiver_state' => '省',
+            'receiver_city' => '市',
+            'receiver_district' => '区',
+            'receiver_address' => '详细地址',
+            'receiver_zip' => '邮政编码',
+            'receiver_mobile' => '手机',
+            'receiver_phone' => '电话',
+            'memo' => '备注',
+            'pay_time' => '付款时间',
+            'ship_time' => '发货时间',
+            'create_time' => '下单时间',
+            'update_time' => '更新时间',
+            'comment_status' => '评论状态',
+            'payment_method_id' => '付款方式',
+            'shipping_method_id' => '配送方式',
         );
     }
 
@@ -139,37 +140,37 @@ class Order extends CActiveRecord
     {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
-        $criteria=new CDbCriteria;
+        $criteria = new CDbCriteria;
 
-        $criteria->compare('order_id',$this->order_id,true);
-        $criteria->compare('user_id',$this->user_id,true);
-        $criteria->compare('status',$this->status);
-        $criteria->compare('pay_status',$this->pay_status);
-        $criteria->compare('ship_status',$this->ship_status);
-        $criteria->compare('refund_status',$this->refund_status);
-        $criteria->compare('comment_status',$this->comment_status);
-        $criteria->compare('total_fee',$this->total_fee,true);
-        $criteria->compare('ship_fee',$this->ship_fee,true);
-        $criteria->compare('pay_fee',$this->pay_fee,true);
-        $criteria->compare('payment_method_id',$this->payment_method_id,true);
-        $criteria->compare('shipping_method_id',$this->shipping_method_id);
-        $criteria->compare('receiver_name',$this->receiver_name,true);
-        $criteria->compare('receiver_country',$this->receiver_country,true);
-        $criteria->compare('receiver_state',$this->receiver_state,true);
-        $criteria->compare('receiver_city',$this->receiver_city,true);
-        $criteria->compare('receiver_district',$this->receiver_district,true);
-        $criteria->compare('receiver_address',$this->receiver_address,true);
-        $criteria->compare('receiver_zip',$this->receiver_zip,true);
-        $criteria->compare('receiver_mobile',$this->receiver_mobile,true);
-        $criteria->compare('receiver_phone',$this->receiver_phone,true);
-        $criteria->compare('memo',$this->memo,true);
-        $criteria->compare('pay_time',$this->pay_time,true);
-        $criteria->compare('ship_time',$this->ship_time,true);
-        $criteria->compare('create_time',$this->create_time,true);
-        $criteria->compare('update_time',$this->update_time,true);
+        $criteria->compare('order_id', $this->order_id, true);
+        $criteria->compare('user_id', $this->user_id, true);
+        $criteria->compare('status', $this->status);
+        $criteria->compare('pay_status', $this->pay_status);
+        $criteria->compare('ship_status', $this->ship_status);
+        $criteria->compare('refund_status', $this->refund_status);
+        $criteria->compare('comment_status', $this->comment_status);
+        $criteria->compare('total_fee', $this->total_fee, true);
+        $criteria->compare('ship_fee', $this->ship_fee, true);
+        $criteria->compare('pay_fee', $this->pay_fee, true);
+        $criteria->compare('payment_method_id', $this->payment_method_id, true);
+        $criteria->compare('shipping_method_id', $this->shipping_method_id);
+        $criteria->compare('receiver_name', $this->receiver_name, true);
+        $criteria->compare('receiver_country', $this->receiver_country, true);
+        $criteria->compare('receiver_state', $this->receiver_state, true);
+        $criteria->compare('receiver_city', $this->receiver_city, true);
+        $criteria->compare('receiver_district', $this->receiver_district, true);
+        $criteria->compare('receiver_address', $this->receiver_address, true);
+        $criteria->compare('receiver_zip', $this->receiver_zip, true);
+        $criteria->compare('receiver_mobile', $this->receiver_mobile, true);
+        $criteria->compare('receiver_phone', $this->receiver_phone, true);
+        $criteria->compare('memo', $this->memo, true);
+        $criteria->compare('pay_time', $this->pay_time, true);
+        $criteria->compare('ship_time', $this->ship_time, true);
+        $criteria->compare('create_time', $this->create_time, true);
+        $criteria->compare('update_time', $this->update_time, true);
 
         return new CActiveDataProvider($this, array(
-            'criteria'=>$criteria,
+            'criteria' => $criteria,
         ));
     }
 
@@ -179,8 +180,77 @@ class Order extends CActiveRecord
      * @param string $className active record class name.
      * @return Order the static model class
      */
-    public static function model($className=__CLASS__)
+    public static function model($className = __CLASS__)
     {
         return parent::model($className);
     }
+
+    public function showRefundState($data = array())
+    {
+        if (empty($data)) {
+            $order_state = array('0' => '未退款', '1' => '已退款');
+            return isset($order_state[$this->refund_status]) ? $order_state[$this->refund_status] : $this->refund_status;
+        } else if ($data instanceof Order) {
+            return $data->showRefundState();
+        }
+    }
+
+    public function showShipState($data = array())
+    {
+        if (empty($data)) {
+            $order_state = array('0' => '未发货', '1' => '已发货');
+            return isset($order_state[$this->ship_status]) ? $order_state[$this->ship_status] : $this->ship_status;
+        } else if ($data instanceof Order) {
+            return $data->showShipState();
+        }
+    }
+
+    public function showPayState($data = array())
+    {
+        if (empty($data)) {
+            $order_state = array('0' => '待支付', '1' => '已支付');
+            return isset($order_state[$this->pay_status]) ? $order_state[$this->pay_status] : $this->pay_status;
+        } else if ($data instanceof Order) {
+            return $data->showPayState();
+        }
+    }
+
+    public function showPayMethod($data = array())
+    {
+        if (empty($data)) {
+            $order_state = array('0' => '未设置', '1' => '支付宝', '2' => '银行卡支付');
+            return isset($order_state[$this->payment_method_id]) ? $order_state[$this->payment_method_id] : $this->payment_method_id;
+        } else if ($data instanceof Order) {
+            return $data->showPayMethod();
+        }
+    }
+
+    public function showStatus($data = array())
+    {
+        if (empty($data)) {
+            $order_state = array('0' => '未提交', '1' => '有效');
+            return isset($order_state[$this->status]) ? $order_state[$this->status] : $this->status;
+        } else if ($data instanceof Order) {
+            return $data->showStatus();
+        }
+    }
+
+    public function showShipMethod($data = array())
+    {
+        if (empty($data)) {
+            $order_state = array('0' => '未设置', '1' => '平邮', '2' => '快递', '3' => 'EMS');
+            return isset($order_state[$this->shipping_method_id]) ? $order_state[$this->shipping_method_id] : $this->shipping_method_id;
+        } else if ($data instanceof Order) {
+            return $data->showShipMethod();
+        }
+    }
+    public function showDetailAddress($data = array())
+    {
+        foreach (array('state', 'city', 'district') as $value) {
+            $data->{'receiver_' . $value} = Area::model()->findByPk($data->{'receiver_' . $value})->name;
+        }
+        $detail_address = $data->receiver_country . $data->receiver_state . $data->receiver_city . $data->receiver_district . $data->receiver_address;
+        return $detail_address;
+    }
+
 }

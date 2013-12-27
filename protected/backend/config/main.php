@@ -54,7 +54,7 @@ return array(
             'class' => 'application.modules.cms.CmsModule',
         ),
         'mall' => array(
-            'class' => 'backend.modules.mall.MallModule',
+            'class' => 'application.modules.mall.MallModule',
         ),
         'user' => array(
             'class' => 'application.modules.user.UserModule',

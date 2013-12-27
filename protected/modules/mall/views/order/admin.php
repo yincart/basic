@@ -3,12 +3,6 @@ $this->breadcrumbs=array(
 	'Orders'=>array('index'),
 	'Manage',
 );
-
-$this->menu=array(
-	array('label'=>'List Order', 'icon'=>'list', 'url'=>array('index')),
-	array('label'=>'Create Order', 'icon'=>'plus','url'=>array('create')),
-);
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -30,21 +24,20 @@ $('.search-form form').submit(function(){
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('<div class="btn btn-primary">Create Order</div>','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-<!--上面一大段都是表示界面中的 Advanced Search 用于高级搜索 这里的_search是表示点击 Advanced Search 后会渲染到_search这个界面，然后_search里面的那么多div都是相对应的-->
-
+    <?php $this->renderPartial('select_user',array(
+        'users'=>$users,
+        'usersf'=>$usersf
+    )); ?>
+</div>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'order-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
+
 		'order_id',
         'user_id',
         array(
@@ -62,19 +55,28 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
             'value' => '$data->showRefundState()',
             'filter' => array('0' => '未退货', '1' => '已退货' ),
         ),
+        array(
+            'name' => 'payment_method_id',
+            'value' => '$data->showPayMethod()',
+            'filter' => array('0' => '未设置', '1' => '支付宝','2'=>'银行卡支付' ),
+        ),
         'pay_fee',
         'ship_fee',
         'total_fee',
         array(
-            'name' => 'create_time',
-            'value' => 'date("Y年m月d日 H:i:s",$data->create_time +(8 * 3600))',
+            'name' => 'shipping_method_id',
+            'value' => '$data->showShipMethod()',
+            'filter' => array('1' => '平邮', '2' => '快递','3'=>'EMS' ),
         ),
+ array(
+     'name' => 'create_time',
+     'value' => 'date("Y年m月d日 H:i:s",$data->create_time +(8 * 3600))',
+ ),
 
 		/*
 		'total_fee',
 		'ship_fee',
-		,
-		'pay_method',
+
 		'ship_method',
 		'receiver_name',
 		'receiver_country',

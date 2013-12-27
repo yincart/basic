@@ -1,10 +1,19 @@
 <?php
 
+/**
+ * Yii-Plugin module
+ * 
+ * @author Viking Robin <healthlolicon@gmail.com> 
+ * @link https://github.com/health901/yii-plugin
+ * @license https://github.com/health901/yii-plugins/blob/master/LICENSE
+ * @version 1.0
+ */
 class PluginManageController extends CController {
 
 	public $layout = '/layout/sidebar';
 	public $adminLayout;
 	public $menu = array();
+	public $defaultIcon;
 	private $module;
 	private $folder;
 	private $plugins = array();
@@ -33,6 +42,7 @@ class PluginManageController extends CController {
 		$this->folder = Yii::getPathOfAlias($this->module->pluginRoot);
 		$this->PluginManger = new PluginManger();
 		$this->adminLayout = $this->module->layout;
+		$this->defaultIcon = Yii::app()->getAssetManager()->publish($this->module->moduleDir . DIRECTORY_SEPARATOR . 'default.png');
 	}
 
 	public function actionIndex() {
@@ -78,6 +88,7 @@ class PluginManageController extends CController {
 				exit;
 			}
 			$AdminCp = new $class();
+			$AdminCp->Owner($plugin);
 			ob_start();
 			$AdminCp->run();
 			$content = ob_get_contents();
@@ -93,7 +104,10 @@ class PluginManageController extends CController {
 		
 	}
 
-	public function actionInstall($id) {
+	public function actionInstall() {
+		if (!isset($_POST['id']))
+			$this->_ajax(0);
+		$id = $_POST['id'];
 		$plugin = $this->_loadPluginFromIdentify($id);
 		$result = $this->PluginManger->Install($plugin);
 		if ($result) {
@@ -103,7 +117,10 @@ class PluginManageController extends CController {
 		}
 	}
 
-	public function actionUninstall($id) {
+	public function actionUninstall() {
+		if (!isset($_POST['id']))
+			$this->_ajax(0);
+		$id = $_POST['id'];
 		$plugin = $this->_loadPluginFromIdentify($id);
 		$result = $this->PluginManger->Uninstall($plugin);
 		if ($result) {
@@ -113,7 +130,10 @@ class PluginManageController extends CController {
 		}
 	}
 
-	public function actionEnable($id) {
+	public function actionEnable() {
+		if (!isset($_POST['id']))
+			$this->_ajax(0);
+		$id = $_POST['id'];
 		$plugin = $this->_loadPluginFromIdentify($id);
 		if ($this->PluginManger->Enable($plugin)) {
 			$this->_setMenu(TRUE);
@@ -123,7 +143,10 @@ class PluginManageController extends CController {
 		}
 	}
 
-	public function actionDisable($id) {
+	public function actionDisable() {
+		if (!isset($_POST['id']))
+			$this->_ajax(0);
+		$id = $_POST['id'];
 		$plugin = $this->_loadPluginFromIdentify($id);
 		if ($this->PluginManger->Disable($plugin)) {
 			$this->_setMenu(TRUE);
@@ -132,10 +155,9 @@ class PluginManageController extends CController {
 			$this->_ajax(0);
 		}
 	}
-
 	private function _getPlugins($folder) {
 		if ($handle = opendir($folder)) {
-			while (false !== ($file = readdir($handle))) {
+			while (FALSE !== ($file = readdir($handle))) {
 				if ($file != "." && $file != "..") {
 					if (is_dir($folder . DIRECTORY_SEPARATOR . $file)) {
 						$this->_getPlugins($folder . DIRECTORY_SEPARATOR . $file);
@@ -187,7 +209,7 @@ class PluginManageController extends CController {
 		return FALSE;
 	}
 
-	private function _setMenu($force = false) {
+	private function _setMenu($force = FALSE) {
 		if (!$force)
 			$cache = Yii::app()->cache->get('PluginMenu');
 		if ($cache) {

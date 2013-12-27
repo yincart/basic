@@ -77,6 +77,7 @@ return array(
             'loginUrl' => array('/site/login'),
             'stateKeyPrefix' => 'back_',
             'class' => 'auth.components.AuthWebUser',
+            'admins' => array('admin', 'foo', 'bar'), // users with full access
         ),
         'themeManager' => array(
             'basePath' => $root . '/themes',
@@ -91,7 +92,6 @@ return array(
             'behaviors' => array(
                 'auth' => array(
                     'class' => 'auth.components.AuthBehavior',
-                    'admins' => array('admin'), // users with full access
                 ),
             ),
         ),
@@ -159,11 +159,10 @@ return array(
                     'levels' => 'error, warning',
                 ),
                 // uncomment the following to show log messages on web pages
-
-                array(
-                    'class' => 'CWebLogRoute',
-                    'showInFireBug' => true,
-                ),
+//                array(
+//                    'class' => 'CWebLogRoute',
+//                    'showInFireBug' => true,
+//                ),
             ),
         ),
     ),

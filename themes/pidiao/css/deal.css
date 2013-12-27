@@ -1,0 +1,132 @@
+.deal{
+	margin-top:10px;
+	overflow:hidden;
+}
+.deal_tip{
+	border-bottom:1px solid #a35f23;
+	padding:5px;
+}
+.deal_pic{
+	float:left;
+	width:550px;
+	margin-top:10px;
+	overflow:hidden;
+	margin-right:50px;
+}
+.hdnum{
+	float:left;
+	margin-right:30px;
+}
+.hdnum li{
+	margin-bottom:20px;
+	cursor:pointer;
+}
+.deal_info{
+	float:left;
+	margin-top:10px;
+}
+.deal_tit{
+	font-size:14px;
+	font-weight:700;
+}
+.deal_price{
+	margin:20px 0;
+}
+.font30{
+	font-size:30px;
+	font-family:Arial;
+}
+.deal_sold{
+	padding:5px;
+	border-bottom:1px dotted #CECDCD;
+}
+.deal_size{
+	margin-top:15px;
+}
+.deal_size p{
+	margin:5px;
+	overflow:hidden;
+}
+.deal_size p span{
+	float:left;
+}
+.deal_size p a{
+	float:left;
+	margin-right:15px;
+}
+.deal_num{
+	margin-top:30px;
+	overflow:hidden;
+	padding:0 5px;
+}
+.deal_num span{
+	float:left;
+	overflow:hidden;
+	line-height:21px;
+}
+.deal_num_c{
+	background:url(../image/deal_num.png) no-repeat;
+	width:65px;
+	height:21px;
+	text-align:center;
+	margin:0 10px;
+}
+.minus{
+	width:18px;
+	display:block;
+	float:left;
+	height:21px;
+}
+.add{
+	width:22px;
+	display:block;
+	float:right;
+	height:21px;
+}
+.deal_add_car{
+	margin-top:30px;
+}
+.deal_add_car a{
+	display:block;
+	background:url(../image/add_s_car.png) no-repeat;
+	width:162px;
+	height:44px;
+	text-indent:-9999px;
+}
+.pd_l_intr{
+	border:1px solid #e2dfdf;
+}
+.pd_l_intr h2{
+	border-bottom: 2px solid #a35f23;
+	margin: 5px 0;
+	padding: 5px;
+}
+.pd_intr_list{
+	margin-top:20px;
+}
+.pd_intr_list li{
+	border-bottom:1px dotted #cdcdcd;
+	padding:0 4px 10px 4px;
+	margin-bottom:10px;
+	line-height:25px;
+}
+.deal_describe_tit{
+	border-top:3px solid #2D2D2D;
+	overflow:hidden;
+	border-right:1px solid #D0D0D0;
+	border-bottom:1px solid #D0D0D0;
+	border-left:1px solid #D0D0D0;
+}
+.deal_describe_tit li{
+	float:left;
+	cursor:pointer;
+	padding:5px 15px;
+	border-right:1px solid #D0D0D0;
+}
+.deal_describe_tit li.current{
+	background:#2D2D2D;
+	color:#fff;
+}
+.deal_describe{
+	margin:40px 0;
+}

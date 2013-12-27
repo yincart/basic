@@ -141,6 +141,14 @@ class ItemProp extends YActiveRecord
         return parent::model($className);
     }
 
+    public function defaultScope()
+    {
+        return array(
+            'condition' => 't.`status` = 1',
+            'order' => 't.`sort_order` asc'
+        );
+    }
+
     /**
      * get attribute value for display
      * @param string $name

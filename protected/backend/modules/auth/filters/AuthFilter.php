@@ -1,5 +1,4 @@
 <?php
-
 /**
  * AuthFilter class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>
@@ -11,8 +10,8 @@
 /**
  * Filter that automatically checks if the user has access to the current controller action.
  */
-class AuthFilter extends CFilter {
-
+class AuthFilter extends CFilter
+{
     /**
      * @var array name-value pairs that would be passed to business rules associated
      * with the tasks and roles assigned to the user.
@@ -25,29 +24,35 @@ class AuthFilter extends CFilter {
      * @return boolean whether the filtering process should continue and the action should be executed.
      * @throws CHttpException if the user is denied access.
      */
-    protected function preFilter($filterChain) {
+    protected function preFilter($filterChain)
+    {
         $itemName = '';
         $controller = $filterChain->controller;
-
-        if (($module = $controller->getModule()) !== null)
-            $itemName .= $module->getId() . '.';
-
-        $itemName .= $controller->getId();
 
         /* @var $user CWebUser */
         $user = Yii::app()->getUser();
 
-        if ($user->isGuest)
-            $user->loginRequired();
+        if (($module = $controller->getModule()) !== null) {
+            $itemName .= $module->getId() . '.';
+            if ($user->checkAccess($itemName . '*')) {
+                return true;
+            }
+        }
 
-        if ($user->checkAccess($itemName . '.*'))
+        $itemName .= $controller->getId();
+        if ($user->checkAccess($itemName . '.*')) {
             return true;
+        }
 
         $itemName .= '.' . $controller->action->getId();
-
-        if ($user->checkAccess($itemName, $this->params))
+        if ($user->checkAccess($itemName, $this->params)) {
             return true;
-        throw new CHttpException(401, 'Access denied.');
-    }
+        }
 
+        if ($user->isGuest) {
+            $user->loginRequired();
+        }
+
+        throw new CHttpException(401, Yii::t('yii', 'You are not authorized to perform this action.'));
+    }
 }

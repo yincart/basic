@@ -35,12 +35,14 @@ return array(
     'authManager' => array(
       .....
       'behaviors' => array(
-        'auth.components.AuthBehavior',
-        'admins'=>array('admin', 'foo', 'bar'), // users with full access
+        'auth' => array(
+          'class' => 'auth.components.AuthBehavior',
+        ),
       ),
     ),
     'user' => array(
       'class' => 'auth.components.AuthWebUser',
+      'admins' => array('admin', 'foo', 'bar'), // users with full access
     ),
   ),
 );
@@ -59,7 +61,7 @@ Configure the module to suit your needs. Here's a list of the available configur
   'userClass' => 'User', // the name of the user model class.
   'userIdColumn' => 'id', // the name of the user id column.
   'userNameColumn' => 'name', // the name of the user name column.
-  'appLayout' => 'application.views.layouts.main', // the layout used by the module.
+  'defaultLayout' => 'application.views.layouts.main', // the layout used by the module.
   'viewDir' => null, // the path to view files to use with this module.
 ),
 ```
@@ -94,14 +96,14 @@ For more information on Yii's authorization manager refer to the framework docum
 
 You can also use a filter to automatically check access before controller actions are called.
 Operations used with this filter has to be named as follows ***(moduleId.)controllerId.actionId***, where ***moduleId*** is optional. 
-You can also use a wildcard ***controllerId.**** instead of the actionId to cover all actions in the controller. 
+You can also use a wildcard ***controllerId.**** instead of the actionId to cover all actions in the controller or ***module.**** instead of the controllerId to cover all controllers in the module. 
 
 ```php
 public function filters()
 {
   return array(
-    array('auth.components.AuthFilter'),
-  ),
+    array('auth.filters.AuthFilter'),
+  );
 }
 ```
 
@@ -111,3 +113,7 @@ For more information on how filters work refer to the framework documentation on
 
 Do you wish to provide a translation for Auth? If so, please do a pull request for it. 
 Translations should be placed in the messages folder under a folder named according to its locale (e.g. en_us).
+
+### Note
+
+Note: Version 1.0.6-wip use and require yiistrap!! yiistrap is next generation yii-bootsrap

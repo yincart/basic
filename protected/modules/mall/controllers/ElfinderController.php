@@ -11,12 +11,18 @@ class ElfinderController extends Controller
     {
         return array(
             'connector' => array(
-                'class' => 'ext.yii-elFinder.ElFinderConnectorAction',
+                'class' => 'ext.elFinder.ElFinderConnectorAction',
                 'settings' => array(
-                    'root' => Yii::getPathOfAlias('webroot') . '/upload/',
-                    'URL' => Yii::app()->baseUrl . '/upload/',
-                    'rootAlias' => 'Home',
-                    'mimeDetect' => 'none'
+                    'roots' => array(
+                        array(
+                            'driver' => 'LocalFileSystem', // driver for accessing file system (REQUIRED)
+                            'path' => Yii::getPathOfAlias('webroot') . '/upload/', // path to files (REQUIRED)
+                            'URL' =>  Yii::app()->baseUrl . '/upload/', // URL to files (REQUIRED)
+                            'mimeDetect' => 'internal',
+                            'rootAlias' => 'Home',
+                            'accessControl' => 'access' // disable and hide dot starting files (OPTIONAL)
+                        )
+                    )
                 )
             ),
         );
@@ -25,5 +31,10 @@ class ElfinderController extends Controller
     public function actionAdmin()
     {
         $this->render('admin');
+    }
+
+    public function actionView()
+    {
+        $this->renderPartial('view', array(), false, true);
     }
 }

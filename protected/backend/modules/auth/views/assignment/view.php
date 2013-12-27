@@ -16,7 +16,7 @@ $this->breadcrumbs = array(
     <small><?php echo Yii::t('AuthModule.main', 'Assignments'); ?></small>
 </h1>
 
-<div class="row-fruid">
+<div class="row">
 
     <div class="span6">
 
@@ -25,42 +25,50 @@ $this->breadcrumbs = array(
             <small><?php echo Yii::t('AuthModule.main', 'Items assigned to this user'); ?></small>
         </h3>
 
-        <?php $this->widget('bootstrap.widgets.TbGridView', array(
-              'type' => 'striped condensed hover',
-              'dataProvider' => $authItemDp,
-              'emptyText' => Yii::t('AuthModule.main', 'This user does not have any assignments.'),
-              'hideHeader' => true,
-              'template' => "{items}",
-              'columns' => array(
-                  array(
-                      'class' => 'AuthItemDescriptionColumn',
-                      'active' => true,
-                  ),
-                  array(
-                      'class' => 'AuthItemTypeColumn',
-                      'active' => true,
-                  ),
-                  array(
-                      'class' => 'AuthAssignmentRevokeColumn',
-                      'userId' => $model->{$this->module->userIdColumn},
-                  ),
-              ),
-        )); ?>
+        <?php $this->widget(
+            'bootstrap.widgets.TbGridView',
+            array(
+                'type' => 'striped condensed hover',
+                'dataProvider' => $authItemDp,
+                'emptyText' => Yii::t('AuthModule.main', 'This user does not have any assignments.'),
+                'hideHeader' => true,
+                'template' => "{items}",
+                'columns' => array(
+                    array(
+                        'class' => 'AuthItemDescriptionColumn',
+                        'active' => true,
+                    ),
+                    array(
+                        'class' => 'AuthItemTypeColumn',
+                        'active' => true,
+                    ),
+                    array(
+                        'class' => 'AuthAssignmentRevokeColumn',
+                        'userId' => $model->{$this->module->userIdColumn},
+                    ),
+                ),
+            )
+        ); ?>
 
         <?php if (!empty($assignmentOptions)): ?>
 
             <h4><?php echo Yii::t('AuthModule.main', 'Assign permission'); ?></h4>
 
-            <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-                'type' => 'inline',
-            )); ?>
+            <?php $form = $this->beginWidget(
+                'bootstrap.widgets.TbActiveForm',
+                array(
+                    'layout' => TbHtml::FORM_LAYOUT_INLINE,
+                )
+            ); ?>
 
-            <?php echo $form->dropDownListRow($formModel, 'items', $assignmentOptions, array('label' => false)); ?>
+            <?php echo $form->dropDownList($formModel, 'items', $assignmentOptions, array('label' => false)); ?>
 
-            <?php $this->widget('bootstrap.widgets.TbButton', array(
-              'buttonType' => 'submit',
-              'label' => Yii::t('AuthModule.main', 'Assign'),
-            )); ?>
+            <?php echo TbHtml::submitButton(
+                Yii::t('AuthModule.main', 'Assign'),
+                array(
+                    'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+                )
+            ); ?>
 
             <?php $this->endWidget(); ?>
 

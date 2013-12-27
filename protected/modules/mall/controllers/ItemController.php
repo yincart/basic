@@ -1,4 +1,5 @@
 <?php
+
 class ItemController extends MallBaseController
 {
     /**
@@ -27,12 +28,11 @@ class ItemController extends MallBaseController
         if (isset($_POST['Item'])) {
             $this->handlePostData();
             $model->attributes = $_POST['Item'];
-
             if ($model->save()) {
                 $this->redirect(array('view', 'id' => $model->item_id));
             }
+            print_r($model);
         }
-
         $this->render('create', array(
             'model' => $model,
         ));
@@ -53,73 +53,6 @@ class ItemController extends MallBaseController
 
             if ($model->save()) {
                 $this->redirect(array('view', 'id' => $model->item_id));
-            }
-        }
-
-        $this->render('create', array(
-            'model' => $model,
-        ));
-
-
-        $skuIds = array();
-
-        if (isset($_POST['Item'])) {
-            $model->attributes = $_POST['Item'];
-
-
-            if ($_POST['Item']['props']) {
-                $model->props = CJSON::encode($_POST['Item']['props']);
-            }
-
-            if ($_POST['Item']['skus']) {
-                $model->skus = CJSON::encode($_POST['Item']['skus']);
-                foreach ($_POST['Item']['skus']['table'] as $s_key => $s_value) {
-                    if ($s_value['sku_id'] > 0) {
-                        $sku = Sku::model()->findByPk($s_value['sku_id']);
-                        $sku->props = CJSON::encode(($s_value['props']));
-                        $sku->quantity = $s_value['quantity'];
-                        $sku->price = $s_value['price'];
-                        $sku->outer_id = $s_value['outer_id'];
-                        $sku->status = $s_value ? 'normal' : 'deleted';
-                        $sku->save();
-                        $skuIds[] = $sku->sku_id;
-                    } else {
-                        $jsp = CJSON::encode(($s_value['props']));
-                        $sku = Sku::model()->findByAttributes(array("props" => $jsp, "item_id" => $model->item_id));
-                        if (!$sku) {
-                            $sku = new Sku;
-                            $sku->item_id = $model->item_id;
-                        }
-
-                        $sku->props = $jsp;
-                        $sku->quantity = $s_value['quantity'];
-                        $sku->price = $s_value['price'];
-                        $sku->outer_id = $s_value['outer_id'];
-                        $sku->status = $s_value ? 'normal' : 'deleted';
-                        $sku->save();
-                        if ($sku->sku_id > 0) $skuIds[] = $sku->sku_id;
-                    }
-                }
-                //删除
-                $rawData = Sku::model()->findAll('item_id = ' . $model->item_id);
-                $delArr = array();
-                foreach ($rawData as $k1 => $v1) {
-                    if (!in_array($v1->sku_id, $skuIds)) {
-                        $delArr[] = $v1->sku_id;
-                    }
-                }
-
-                if (count($delArr)) {
-                    Sku::model()->updateAll(array("status" => "deleted"), 'sku_id IN (' . implode(', ', $delArr) . ')');
-                }
-            }
-
-
-            $model->skus_data = implode(",", $skuIds);
-
-            if ($model->save()) {
-
-                //$this->redirect(array('view', 'id' => $model->item_id));
             }
         }
 
@@ -179,17 +112,18 @@ class ItemController extends MallBaseController
      */
     public function loadModel($id)
     {
-        $model = Item::model()->with(array('image' => array('order' => 'position ASC')))->findByPk($id);
+        $model = Item::model()->with(array('itemImgs' => array('order' => 'position ASC')))->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
     }
 
+
 //批量操作
     public function actionBulk()
     {
-//        print_r($_POST);
-
+        print_r($_POST);
+        exit;
         $ids = $_POST['item-grid_c0'];
 //        print_r($ids);
 //        exit;
@@ -406,118 +340,6 @@ class ItemController extends MallBaseController
         }
     }
 
-    /**
-     * ajax 成功后一般返回json数据
-     * 然后jquery读取出来
-     * 在写个function, 转为html
-     */
-    public function actionGetPropValues()
-    {
-        $category_id = $_POST['category_id'] ? $_POST['category_id'] : NULL;
-        $item_id = $_POST['item_id'] ? $_POST['item_id'] : NULL;
-        $item = Item::model()->findByPk($item_id);
-        $props_arr = CJSON::decode($item->props, TRUE);
-        $skus_arr = CJSON::decode($item->skus, TRUE);
-        $cri = new CDbCriteria(array('condition' => 'is_key_prop=1 and category_id =' . $category_id));
-        $props = ItemProp::model()->findAll($cri);
-        foreach ($props as $p) {
-            echo '<div class="row">';
-            if ($p->must == 1) {
-                echo '<label class="span2 control-label" for="">' . $p->prop_name . '<span class="required">*</span></label>';
-            } else {
-                echo '<label class="span2 control-label" for="">' . $p->prop_name . '</label>';
-            }
-            echo '<div class="span10">';
-            if ($p->type == 'input') {
-                echo $p->getPropTextFieldValues($p->prop_name, $props_arr[$p->prop_id]);
-            } elseif ($p->type == 'optional') {
-                echo $p->getPropOptionValues($p->prop_name, $props_arr[$p->prop_id]);
-            } elseif ($p->type == 'multiCheck') {
-                echo $p->getPropCheckBoxListValues($p->prop_name, $props_arr[$p->prop_id]);
-            }
-            echo '</div>';
-            echo '</div>';
-        }
-
-//	非关键属性
-
-        $cri = new CDbCriteria(array(
-            'condition' => 'is_key_prop=0 and is_sale_prop=0 and category_id =' . $category_id,
-        ));
-        $props = ItemProp::model()->findAll($cri);
-
-        foreach ($props as $p) {
-            echo '<div class="row">';
-            if ($p->must == 1) {
-                echo '<label class="span2 control-label" for="">' . $p->prop_name . '<span class="required">*</span></label>';
-            } else {
-                echo '<label class="span2 control-label" for="">' . $p->prop_name . '</label>';
-            }
-            echo '<div class="span9">';
-            if ($p->type == 'input') {
-                echo $p->getPropTextFieldValues($p->prop_name, $props_arr[$p->prop_id][0]);
-            } elseif ($p->type == 'optional') {
-                echo $p->getPropOptionValues($p->prop_name, $props_arr[$p->prop_id]);
-            } elseif ($p->type == 'multiCheck') {
-                echo $p->getPropCheckBoxListValues($p->prop_name, $props_arr[$p->prop_id]);
-            }
-            echo '</div>';
-            echo '</div>';
-        }
-
-        //销售属性
-        $cri = new CDbCriteria(array(
-            'condition' => 'is_sale_prop=1 and category_id =' . $category_id,
-        ));
-        $props = ItemProp::model()->findAll($cri);
-
-        if ($props) {
-            echo '<div class="row">';
-            echo '<label class="span2 control-label" for="">商品规格</label>';
-            echo '<div class="span9">';
-            echo '<div class="sku-wrap">';
-            $ii = 0;
-            $thead = '';
-            foreach ($props as $p) {
-
-                echo '<div class="sku-group"><label class="sku-head">' . $p->prop_name . '</label>';
-                echo '<div class="sku-box  sku-color">';
-                if ($p->type == 'multiCheck') {
-                    echo $p->getPropCheckBoxListValues($p->prop_name, $skus_arr['checkbox'][$p->prop_id], 'change', 'skus', 'checkbox');
-                }
-
-                $thead .= '<th> <span id="thop_' . $ii . '">' . $p->prop_name . '</span></th>';
-                $ii++;
-                echo '</div></div>';
-            }
-
-            echo '<p id="output"></p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-
-
-            echo <<<EOF
-	    <div class="row" style='margin-bottom:10px' style="visibility:hidden">
-	    <div class="span2">&nbsp;</div>
-	    <div class="span9" style="padding-left:0">
-	    <div class="sku-map">
-	    <table id="sku" class="table table-bordered">
-	    <thead>
-	    <tr>
-		{$thead}
-		<th>价格</th><th>数量</th><th>商家编码</th><th>操作</th></tr>
-	    </thead>
-	    <tbody>
-	    </tbody>
-	    </table>
-	    </div>
-	</div>
-    </div>
-EOF;
-        }
-    }
-
     public function actionGetItemSpec()
     {
         $skus = $_POST['Item']['skus'];
@@ -527,71 +349,6 @@ EOF;
         $options = CJavaScript::encode($sku);
 
         echo json_encode($sku);
-//        $config = <<<EOD
-//           var array = {$options}
-//EOD;
-//$cs = Yii::app()->getClientScript();
-//        $cs->registerScript($config, CClientScript::POS_HEAD);
-//	$sku_count = count($sku);
-//	
-//	for($i=0;$i<$sku_count;$i++){
-//	   $sku =  $sku[$i];
-//	}
-//	$ch = $sku[0];
-//	$color = $sku[1];
-//	
-//	$ch = $_POST['Item']['props'][3];
-//	$color = $_POST['Item']['props'][4];
-//	$num = count($color);
-//	if (!$ch || !$color)
-//	    exit;
-//	foreach ($ch as $v) {
-//	    $v_list = PropValue::model()->findByPk($v);
-//	    $out .= "<div class='one'>
-//  	 <tr>
-//    <td rowspan=" . $num . "> $v_list->value_name </td> 
-//";
-//	    if ($color) {
-//		$i = 0;
-//		foreach ($color as $c) {
-//		    $c_list = PropValue::model()->findByPk($c);
-//		    if ($i == 0) {
-//			$out .=" 
-//			    <td> $c_list->value_name </td>
-//			    <td> <input name='price[]'></td>
-//			    <td> <input name='quantity[]'></td>
-//			    <td> <input name='outer_id[]'></td>
-//			   ";
-//		    } else {
-//			$out .="</tr>";
-//			$out .=" 
-//		  	<tr>
-//			    <td> $c_list->value_name </td>
-//			    <td> <input name='price[]'></td>
-//			    <td> <input name='quantity[]'></td>
-//			    <td> <input name='outer_id[]'></td>
-//			  </tr>";
-//		    }
-//		    $i++;
-//		}
-//	    }
-//	    $out .="</tr></div>";
-//	}
-//	echo <<<EOF
-//
-//<table class="table table-bordered">
-//  <tr>
-//    <td>尺寸</td>
-//    <td>颜色</td>
-//    <td style="width:100px">价格</td>
-//    <td style="width:100px">数量</td>
-//    <td style="width:100px">商家编码</td>
-//  </tr>
-//$out
-//  
-//</table>
-//EOF;
-//    }
     }
 
 
@@ -616,23 +373,87 @@ EOF;
      */
     protected function handlePostData()
     {
-        if (isset($_POST['Item'])) {
-            $_POST['Item']['click_count'] = 0;
-            $_POST['Item']['wish_count'] = 0;
+        $itemProps = array();
+        if (isset($_POST['ItemProp']) && is_array($_POST['ItemProp'])) {
+            $itemProps = $_POST['ItemProp'];
+            unset($_POST['ItemProp']);
         }
-        if (isset($_POST['ItemImg'])) {
-            $itemImgs = $_POST['ItemImg'];
-            unset($_POST['ItemImg']);
-            $_POST['ItemProp']['ItemImgs'] = array();
-            if (is_array($itemImgs['pic']) && $count = count($itemImgs['value_name'])) {
-                for ($i = 0; $i < $count; $i++) {
-                    $_POST['ItemProp']['ItemImgs'][] = array(
-                        'item_img_id' => $itemImgs['item_img_id'][$i],
-                        'pic' => $itemImgs['pic'][$i],
+        if (isset($_POST['Item']['skus']['checkbox']) && is_array($_POST['Item']['skus']['checkbox'])) {
+            $itemProps = CMap::mergeArray($itemProps, $_POST['Item']['skus']['checkbox']);
+        }
+        list($_POST['Item']['props'], $_POST['Item']['props_name']) = $this->handleItemProps($itemProps);
+
+        if (isset($_POST['Item']['skus']['table']) && is_array($_POST['Item']['skus']['table'])) {
+            $skus = array();
+            foreach ($_POST['Item']['skus']['table'] as $pid => $sku) {
+                list($sku['props'], $sku['props_name']) = $this->handleItemProps($sku['props']);
+                $sku['status'] = 1;
+                $skus[] = $sku;
+            }
+            $_POST['Item']['skus'] = $skus;
+        }
+
+        if (isset($_POST['ItemImg']['pic']) && isset($_POST['ItemImg']['item_img_id']) && is_array($_POST['ItemImg']['pic']) && is_array($_POST['ItemImg']['item_img_id'])) {
+            $pics = $_POST['ItemImg']['pic'];
+            $ids = $_POST['ItemImg']['item_img_id'];
+            if ($count = count($pics) === count($ids)) {
+                $itemImgs = array();
+                for ($i = 0, $count = count($pics); $i < $count; $i++) {
+                    $itemImgs[] = array(
+                        'item_img_id' => $ids[$i],
+                        'pic' => $pics[$i],
                         'position' => $i,
                     );
                 }
+                unset($_POST['ItemImg']);
+                $_POST['Item']['itemImgs'] = $itemImgs;
             }
         }
+    }
+
+    /**
+     * format item prop data to json format from post
+     * @param $itemProps
+     * @return array
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    protected function handleItemProps($itemProps)
+    {
+        $props = array();
+        $props_name = array();
+        foreach ($itemProps as $pid => $vid) {
+            $itemProp = ItemProp::model()->findByPk($pid);
+            $pname = $itemProp->prop_name;
+            if (is_array($vid)) {
+                $props[$pid] = array();
+                $props_name[$pname] = array();
+                foreach ($vid as $v) {
+                    $props[$pid][] = $pid . ':' . $v;
+                    $propValue = PropValue::model()->findByPk($v);
+                    $vname = $propValue ? $propValue->value_name : $v;
+                    $props_name[$pname][] = $pname . ':' . $vname;
+                }
+            } else {
+                $props[$pid] = $pid . ':' . $vid;
+                $propValue = PropValue::model()->findByPk($v);
+                $vname = $propValue ? $propValue->value_name : $v;
+                $props_name[$pname] = $pname . ':' . $vname;
+            }
+        }
+        return array(json_encode($props), json_encode($props_name));
+    }
+
+    public function actionItemProps($category_id, $item_id)
+    {
+        $itemProps = ItemProp::model()->with(array('propValues'))->findAllByAttributes(array('category_id' => $category_id));
+        $item = Item::model()->findByPk($item_id);
+        $this->renderPartial('_form_prop', array('itemProps' => $itemProps, 'item' => $item), false, true);
+    }
+
+    public function actionGetChildAreas($parent_id)
+    {
+        $areas = Area::model()->findAllByAttributes(array('parent_id' => $parent_id));
+        $areasData = CHtml::listData($areas, 'area_id', 'name');
+        echo json_encode(CMap::mergeArray(array('0' => ''), $areasData));
     }
 }

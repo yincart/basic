@@ -90,7 +90,8 @@ class ElFinderWidget extends CWidget
                 window.opener.CKEDITOR.tools.callFunction(funcNum, file.url);
                 window.close();
             },
-            resizable: false
+            height: "750",
+            resizable: false,
         });
     } else {
         var funcNum = getUrlParam('browse');
@@ -99,10 +100,11 @@ class ElFinderWidget extends CWidget
                 url: '{$this->settings['url']}',
                 customData: $customData,
                 getFileCallback: function (file) {
-                    window.opener.browse.callFunction(funcNum, file.url)
-                    window.close();
+                    window.parent.browse.callFunction(funcNum, file.url)
+                    $(window.parent.document.getElementsByClassName('close')).click();
                 },
-                resizable: false
+                height: "820",
+                resizable: false,
             });
         }
         else {

@@ -103,16 +103,24 @@ class OrderController extends Controller {
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
-	{
-		$model=new Order('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Order']))
-			$model->attributes=$_GET['Order'];
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
+    public function actionAdmin()
+    {
+        $model = new Order('search');
+        $model->unsetAttributes();
+        $users = new Users('search');
+        $users->unsetAttributes();
+        $criteria = new CDbCriteria;
+        $criteria->compare('superuser', 0);
+        if (isset($_GET['Users'])) {
+            print_r($_GET['Users']);
+            $users->attributes = $_GET['Users'];
+        }
+        if (isset($_GET['Order']))
+            $model->attributes = $_GET['Order'];
+        $this->render('admin', array(
+            'model' => $model, 'users' => $users
+        ));
+    }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

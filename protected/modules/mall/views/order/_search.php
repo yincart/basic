@@ -14,7 +14,7 @@ echo $form->textFieldControlGroup($model,'refund_status');
 echo $form->textFieldControlGroup($model,'total_fee');
 echo $form->textFieldControlGroup($model,'ship_fee');
 echo $form->textFieldControlGroup($model,'pay_fee');
-echo $form->textFieldControlGroup($model,'pay_method');
+echo $form->textFieldControlGroup($model,'payment_method_id');
 echo $form->textFieldControlGroup($model,'receiver_name');
 echo $form->textFieldControlGroup($model,'receiver_country');
 echo $form->textFieldControlGroup($model,'receiver_state');

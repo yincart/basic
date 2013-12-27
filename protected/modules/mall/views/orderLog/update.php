@@ -1,9 +1,4 @@
 <?php
-$this->breadcrumbs=array(
-	'Order Logs'=>array('index'),
-	$model->log_id=>array('view','id'=>$model->log_id),
-	'Update',
-);
 
 $this->menu=array(
 	array('label'=>'List OrderLog', 'icon'=>'list', 'url'=>array('index')),

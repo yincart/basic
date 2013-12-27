@@ -1,5 +1,4 @@
 <div class="orderform">
-    <h1 style="text-align:left">Update Order <?php echo $model->order_id; ?></h1>
 
     <?php $form = $this->beginWidget('CActiveForm', array(
         'id' => 'order-form',
@@ -9,12 +8,12 @@
 
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'order_id', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->textField($model, 'order_id', array('size' => 20, 'maxlength' => 20, 'class' => 'form-control form-control1','readonly'=>"true")); ?>
+        <?php echo $form->textField($model, 'order_id', array('size' => 20, 'maxlength' => 20, 'class' => 'form-control form-control1',)); ?>
     </div>
 
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'user_id', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->textField($model, 'user_id', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control form-control1','readonly'=>"true")); ?>
+        <?php echo $form->textField($model, 'user_id', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control form-control1',)); ?>
     </div>
 
     <div class="input-group space">
@@ -105,7 +104,7 @@
                     'url' => CController::createUrl('dynamicdistrict'), //url to call
                     'update' => '#Order_receiver_district', //selector to update
                     'data' => 'js:"receiver_city="+jQuery(this).val()',
-               )));
+                )));
         ?>
     </div>
     <div class="input-group">

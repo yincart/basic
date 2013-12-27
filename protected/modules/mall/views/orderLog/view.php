@@ -20,11 +20,13 @@ $this->menu=array(
 	'attributes'=>array(
 		'log_id',
 		'order_id',
-		'op_id',
+        'user_id',
 		'op_name',
 		'log_text',
-		'action_time',
-		'behavior',
+        array(
+            'name' => 'action_time',
+            'value' => date("Y-m-d H:i:s",$model->action_time +(8 * 3600)),
+        ),
 		'result',
 	),
 )); ?>

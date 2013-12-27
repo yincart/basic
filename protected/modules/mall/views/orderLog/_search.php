@@ -16,11 +16,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'op_id'); ?>
-		<?php echo $form->textField($model,'op_id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'op_name'); ?>
 		<?php echo $form->textField($model,'op_name',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
@@ -36,8 +31,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'behavior'); ?>
-		<?php echo $form->textField($model,'behavior',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->label($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row">

@@ -105,7 +105,7 @@
 		 var mpArr = [];
 		 for (var i = 0; i < arr.length; i++) {
 			 var arr2 = arr[i].split(';');
-			 tmArr.push(arr2[0]);
+			 tmArr.push(arr2[2]+':'+arr2[0]);
 			 mpArr.push(arr2)
 		 }
 		 idArray.push(tmArr);
@@ -219,6 +219,7 @@
 	
 	function updateSkus(res){
 		var json = eval(res);
+        console.log(json);
 		$.each(json, function(i,data){
 			 $("#sku").find("input[type=hidden][data-props='"+data["props"]+"']").val(data["sku_id"]);//更新sku_id 
 			  $("#sku").find("input[class='skus-price'][data-id='"+data["props"]+"']").val(data["price"]);//更新price

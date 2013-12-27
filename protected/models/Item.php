@@ -32,9 +32,9 @@
  *
  * The followings are the available model relations:
  * @property Category $category
- * @property Area $country0
- * @property Area $state0
- * @property Area $city0
+ * @property Area $countryArea
+ * @property Area $stateArea
+ * @property Area $cityArea
  * @property ItemImg[] $itemImgs
  * @property OrderItem[] $orderItems
  * @property PropImg[] $propImgs
@@ -209,11 +209,20 @@ class Item extends YActiveRecord
         return parent::__call($name, $parameters);
     }
 
-    public function getCountryAreas()
+    public function getAreas()
     {
+        $areasData = array();
         $areas = Area::model()->findAllByAttributes(array('grade' => 0));
-        $areasData = CHtml::listData($areas, 'area_id', 'name');
-        return CMap::mergeArray(array('0' => ''), $areasData);
+        $areasData[] = CMap::mergeArray(array('0' => ''), CHtml::listData($areas, 'area_id', 'name'));
+        if (!$this->isNewRecord) {
+            foreach (array('country', 'state') as $area) {
+                $areas = Area::model()->findAllByAttributes(array('parent_id' => $this->{$area}));
+                $areasData[] = CMap::mergeArray(array('0' => ''), CHtml::listData($areas, 'area_id', 'name'));
+            }
+        } else {
+            $areasData = CMap::mergeArray($areasData, array(array('0' => ''),array('0' => '')));
+        }
+        return $areasData;
     }
 
     public function beforeSave()

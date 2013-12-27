@@ -32,4 +32,9 @@ class ElfinderController extends Controller
     {
         $this->render('admin');
     }
+
+    public function actionView()
+    {
+        $this->renderPartial('view', array(), false, true);
+    }
 }

@@ -38,6 +38,7 @@ Class YActiveRecord extends CActiveRecord
             $transaction->commit();
             return $return;
         } catch (Exception $e) {
+            $this->addError('Exception', $e);
             $transaction->rollback();
             return false;
         }
@@ -68,7 +69,8 @@ Class YActiveRecord extends CActiveRecord
                     }
                     $model->attributes = $value;
                     $model->$foreignKey = $this->$foreignKey;
-                    $model->save();
+                    if (!$model->save())
+                        throw new CDbException(Yii::t('base','Save relations fail!'), 0, $model);
                 }
                 if ($savedModelList) {
                     $cri = new CDbCriteria();

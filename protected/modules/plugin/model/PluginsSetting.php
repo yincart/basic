@@ -1,31 +1,20 @@
 <?php
 
 /**
- * Yii-Plugin module
- * 
- * @author Viking Robin <healthlolicon@gmail.com> 
- * @link https://github.com/health901/yii-plugin
- * @license https://github.com/health901/yii-plugins/blob/master/LICENSE
- * @version 1.0
- */
-
-/**
- * This is the model class for table "{{plugins}}".
+ * This is the model class for table "{{plugins_setting}}".
  *
- * The followings are the available columns in table '{{plugins}}':
- * @property integer $plugin_id
- * @property string $identify
- * @property string $path
- * @property string $hooks
- * @property integer $enable
+ * The followings are the available columns in table '{{plugins_setting}}':
+ * @property string $plugin
+ * @property string $key
+ * @property string $value
  */
-class Plugins extends CActiveRecord {
+class PluginsSetting extends CActiveRecord {
 
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName() {
-		return '{{plugins}}';
+		return '{{plugins_setting}}';
 	}
 
 	/**
@@ -35,14 +24,12 @@ class Plugins extends CActiveRecord {
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('identify, path, hooks', 'required'),
-			array('enable', 'numerical', 'integerOnly' => true),
-			array('identify', 'length', 'max' => 45),
-			array('path', 'length', 'max' => 255),
-			array('identify', 'unique'),
+			array('plugin, key', 'required'),
+			array('plugin, key', 'length', 'max' => 45),
+			array('value', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('plugin_id, identify, path, hooks, enable', 'safe', 'on' => 'search'),
+			array('plugin, key, value', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -61,11 +48,9 @@ class Plugins extends CActiveRecord {
 	 */
 	public function attributeLabels() {
 		return array(
-			'plugin_id' => 'Plugin',
-			'identify' => 'Identify',
-			'path' => 'Path',
-			'hooks' => 'Hooks',
-			'enable' => 'Enable',
+			'plugin' => 'Plugin',
+			'key' => 'Key',
+			'value' => 'Value',
 		);
 	}
 
@@ -86,11 +71,9 @@ class Plugins extends CActiveRecord {
 
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('plugin_id', $this->plugin_id);
-		$criteria->compare('identify', $this->identify, true);
-		$criteria->compare('path', $this->path, true);
-		$criteria->compare('hooks', $this->hooks, true);
-		$criteria->compare('enable', $this->enable);
+		$criteria->compare('plugin', $this->plugin, true);
+		$criteria->compare('key', $this->key, true);
+		$criteria->compare('value', $this->value, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,
@@ -101,10 +84,37 @@ class Plugins extends CActiveRecord {
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Plugins the static model class
+	 * @return PluginsSetting the static model class
 	 */
 	public static function model($className = __CLASS__) {
 		return parent::model($className);
+	}
+
+	####################
+
+	public function clear($plugin) {
+		$this->deleteAll("plugin=:plugin", array(':plugin' => $plugin));
+	}
+
+	public function get($plugin, $key) {
+		$row = $this->findByAttributes(array('plugin' => $plugin, 'key' => $key));
+		if (empty($row)) {
+			return FALSE;
+		}
+		return $row->value;
+	}
+
+	public function set($plugin, $key, $value = NULL) {
+		$row = $this->get($plugin, $key);
+		if ($row === FALSE) {
+			$this->setIsNewRecord(true);
+			$this->plugin = $plugin;
+			$this->key = $key;
+			$this->value = $value;
+			return $this->save();
+		} else {
+			return $this->updateByPk(array('plugin' => $plugin, 'key' => $key), array('value' => $value));
+		}
 	}
 
 }

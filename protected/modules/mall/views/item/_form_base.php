@@ -7,10 +7,11 @@ echo $form->dropDownListControlGroup($model, 'currency', array('$' => '美元', 
 echo $form->textFieldControlGroup($model, 'outer_id');
 echo $form->dropDownListControlGroup($model, 'language', array('zh_cn' => '中文', 'en_us' => 'English'));
 $url = Yii::app()->createUrl('mall/item/getChildAreas');
-echo $form->dropDownListControlGroup($model, 'country', $model->getCountryAreas(),
+list($countryAreas, $stateAreas, $citeAreas) = $model->getAreas();
+echo $form->dropDownListControlGroup($model, 'country', $countryAreas,
     array('class' => 'area area-country', 'data-child-area' => 'area-state', 'data-url' => $url));
-echo $form->dropDownListControlGroup($model, 'state', array(), array('class' => 'area area-state', 'data-child-area' => 'area-city', 'data-url' => $url));
-echo $form->dropDownListControlGroup($model, 'city', array(), array('class' => 'area-city'));
+echo $form->dropDownListControlGroup($model, 'state', $stateAreas, array('class' => 'area area-state', 'data-child-area' => 'area-city', 'data-url' => $url));
+echo $form->dropDownListControlGroup($model, 'city', $citeAreas, array('class' => 'area-city'));
 ?>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -21,7 +22,12 @@ echo $form->dropDownListControlGroup($model, 'city', array(), array('class' => '
                 for (var value in options) {
                     html += '<option value="' + value + '">' + options[value] + '</option>';
                 }
-                $('.' + area.data('child-area')).html(html);
+                var childArea = $('.' + area.data('child-area'));
+                childArea.html(html);
+                while(childArea.data('child-area')) {
+                    childArea = $('.' + childArea.data('child-area'));
+                    childArea.html('');
+                }
             }, 'json');
         });
     });

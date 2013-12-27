@@ -115,19 +115,6 @@ class Sku extends CActiveRecord
     {
         return parent::model($className);
     }
-
-    public function beforeSave() {
-	if (parent::beforeSave()) {
-	    if ($this->isNewRecord) {
-		$this->create_time = $this->update_time = time();
-	    }
-	    else
-		$this->update_time = time();
-	    return true;
-	}
-	else
-	    return false;
-    }
 	
 	public static function getSkusData($item_id){
 		$models = self::model()->findAllByAttributes(array("item_id"=>$item_id,"status"=>"normal"));

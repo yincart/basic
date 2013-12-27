@@ -28,12 +28,11 @@ class ItemController extends MallBaseController
         if (isset($_POST['Item'])) {
             $this->handlePostData();
             $model->attributes = $_POST['Item'];
-
             if ($model->save()) {
                 $this->redirect(array('view', 'id' => $model->item_id));
             }
+            print_r($model);
         }
-
         $this->render('create', array(
             'model' => $model,
         ));
@@ -388,6 +387,7 @@ class ItemController extends MallBaseController
             $skus = array();
             foreach ($_POST['Item']['skus']['table'] as $pid => $sku) {
                 list($sku['props'], $sku['props_name']) = $this->handleItemProps($sku['props']);
+                $sku['status'] = 1;
                 $skus[] = $sku;
             }
             $_POST['Item']['skus'] = $skus;

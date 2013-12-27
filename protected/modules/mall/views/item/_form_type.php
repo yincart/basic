@@ -25,7 +25,7 @@ echo $form->dropDownListControlGroup($model, 'category_id', $data);
                 {
                     "category_id": $("#Item_category_id").select().val(),
                     "YII_CSRF_TOKEN": $("[name=YII_CSRF_TOKEN]").val(),
-                    "item_id": "<?php echo $model->item_id; ?>",
+                    "item_id": "<?php echo $model->item_id; ?>"
                 }, function (response) {
                     $('#item_prop_values').empty();
                     $('#item_prop_values').append(response);

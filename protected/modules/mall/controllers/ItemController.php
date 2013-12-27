@@ -24,14 +24,12 @@ class ItemController extends MallBaseController
     public function actionCreate()
     {
         $model = new Item();
-
         if (isset($_POST['Item'])) {
             $this->handlePostData();
             $model->attributes = $_POST['Item'];
             if ($model->save()) {
                 $this->redirect(array('view', 'id' => $model->item_id));
             }
-            print_r($model);
         }
         $this->render('create', array(
             'model' => $model,
@@ -46,16 +44,13 @@ class ItemController extends MallBaseController
     public function actionUpdate($id)
     {
         $model = $this->loadModel($id);
-
         if (isset($_POST['Item'])) {
             $this->handlePostData();
             $model->attributes = $_POST['Item'];
-
             if ($model->save()) {
                 $this->redirect(array('view', 'id' => $model->item_id));
             }
         }
-
         $this->render('update', array(
             'model' => $model,
         ));
@@ -355,16 +350,22 @@ class ItemController extends MallBaseController
     public function actionAjaxGetSkus()
     {
 
-        if (!Yii::app()->request->isAjaxRequest) {
-            exit();
+        if (!Yii::app()->request->isAjaxRequest && empty($_POST['item_id'])) {
+            return;
         }
-
-        $id = $_POST["item_id"];
-        $skus = Sku::getSkusData($id);
-
-        echo CJSON::encode($skus, true);
-
-        Yii::app()->end();
+        $skus = Sku::model()->findAllByAttributes(array("item_id"=>$_POST["item_id"]));
+        $data = array();
+        foreach($skus as $sku){
+            $arr = array();
+            $arr['sku_id'] = $sku->sku_id;
+            $arr['props'] = F::convert_props_js_id($sku->props);
+//            $arr['props'] = str_replace(":","-",$arr['props']);
+            $arr['price'] = $sku->price;
+            $arr['stock'] = $sku->stock;
+            $arr['outer_id'] = $sku->outer_id;
+            $data[] = $arr;
+        }
+        echo json_encode($data);
     }
 
     /**

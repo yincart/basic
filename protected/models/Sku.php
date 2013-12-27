@@ -115,22 +115,4 @@ class Sku extends CActiveRecord
     {
         return parent::model($className);
     }
-	
-	public static function getSkusData($item_id){
-		$models = self::model()->findAllByAttributes(array("item_id"=>$item_id,"status"=>"normal"));
-		$data = array();
-		foreach($models as $model){			
-			$arr = array();
-			$arr['sku_id'] = $model->sku_id;
-			$arr['props'] = F::convert_props_js_id($model->props);
-			//$arr['props'] = str_replace(":","-",$arr['props']);
-			$arr['price'] = $model->price;
-			$arr['quantity'] = $model->quantity;
-			$arr['outer_id'] = $model->outer_id;
-			$data[] = $arr;
-		}
-		
-		return $data;
-	}
-	
 }

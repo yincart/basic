@@ -1,6 +1,6 @@
 <?php
-$itemPropValues = CJSON::decode($item->props, TRUE);
-$itemSkus = CJSON::decode($item->skus, TRUE);
+$itemPropValues = json_decode($item->props, true);
+$itemSkus = $item->skus;
 foreach ($itemProps as $itemProp) {
     if (!$itemProp->is_sale_prop) {
         $itemPropValue = isset($itemPropValues[$itemProp->item_prop_id]) ? $itemPropValues[$itemProp->item_prop_id] : '';
@@ -27,7 +27,7 @@ $thead = '';
 $i = 0;
 foreach ($itemProps as $itemProp) {
     if ($itemProp->is_sale_prop) {
-        $itemSku = isset($itemSkus[$itemProp->item_prop_id]) ? $itemSkus[$itemProp->item_prop_id] : '';
+        $itemSku = isset($itemPropValues[$itemProp->item_prop_id]) ? $itemPropValues[$itemProp->item_prop_id] : '';
         $name = 'Item[skus][checkbox][' . $itemProp->item_prop_id . ']';
         $propValueData = CHtml::listData($itemProp->propValues, 'prop_value_id', 'value_name');
         echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name, 'class' => 'change', 'data-id' => $itemProp->item_prop_id));

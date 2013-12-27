@@ -40,7 +40,7 @@
  * @property PropImg[] $propImgs
  * @property Sku[] $skus
  */
-class Item extends CActiveRecord
+class Item extends YActiveRecord
 {
     /**
      * @return string the associated database table name
@@ -58,12 +58,13 @@ class Item extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('category_id, title, stock, price, currency, props, props_name, desc, create_time, update_time, language, country, state, city', 'required'),
+            array('category_id, title, stock, price, currency, props, props_name, desc, language, country, state, city', 'required'),
             array('is_show, is_promote, is_new, is_hot, is_best', 'numerical', 'integerOnly' => true),
             array('category_id, stock, min_number, price, shipping_fee, click_count, wish_count, create_time, update_time, country, state, city', 'length', 'max' => 10),
             array('outer_id, language', 'length', 'max' => 45),
             array('title', 'length', 'max' => 255),
             array('currency', 'length', 'max' => 20),
+            array('create_time, update_time', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('item_id, category_id, outer_id, title, stock, min_number, price, currency, props, props_name, desc, shipping_fee, is_show, is_promote, is_new, is_hot, is_best, click_count, wish_count, create_time, update_time, language, country, state, city', 'safe', 'on' => 'search'),
@@ -183,6 +184,12 @@ class Item extends CActiveRecord
         return parent::model($className);
     }
 
+    /**
+     * @param string $name
+     * @param array $parameters
+     * @return array|mixed
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
     public function __call($name, $parameters)
     {
         $prefix = substr($name, 0, 2);
@@ -205,7 +212,8 @@ class Item extends CActiveRecord
     public function getCountryAreas()
     {
         $areas = Area::model()->findAllByAttributes(array('grade' => 0));
-        return CHtml::listData($areas, 'area_id', 'name');
+        $areasData = CHtml::listData($areas, 'area_id', 'name');
+        return CMap::mergeArray(array('0' => ''), $areasData);
     }
 
     public function beforeSave()

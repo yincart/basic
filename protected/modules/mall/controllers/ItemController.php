@@ -31,8 +31,6 @@ class ItemController extends MallBaseController
 
             if ($model->save()) {
                 $this->redirect(array('view', 'id' => $model->item_id));
-            } else {
-                var_dump($model);exit;
             }
         }
 
@@ -56,73 +54,6 @@ class ItemController extends MallBaseController
 
             if ($model->save()) {
                 $this->redirect(array('view', 'id' => $model->item_id));
-            }
-        }
-
-        $this->render('create', array(
-            'model' => $model,
-        ));
-
-
-        $skuIds = array();
-
-        if (isset($_POST['Item'])) {
-            $model->attributes = $_POST['Item'];
-
-
-            if ($_POST['Item']['props']) {
-                $model->props = CJSON::encode($_POST['Item']['props']);
-            }
-
-            if ($_POST['Item']['skus']) {
-                $model->skus = CJSON::encode($_POST['Item']['skus']);
-                foreach ($_POST['Item']['skus']['table'] as $s_key => $s_value) {
-                    if ($s_value['sku_id'] > 0) {
-                        $sku = Sku::model()->findByPk($s_value['sku_id']);
-                        $sku->props = CJSON::encode(($s_value['props']));
-                        $sku->quantity = $s_value['quantity'];
-                        $sku->price = $s_value['price'];
-                        $sku->outer_id = $s_value['outer_id'];
-                        $sku->status = $s_value ? 'normal' : 'deleted';
-                        $sku->save();
-                        $skuIds[] = $sku->sku_id;
-                    } else {
-                        $jsp = CJSON::encode(($s_value['props']));
-                        $sku = Sku::model()->findByAttributes(array("props" => $jsp, "item_id" => $model->item_id));
-                        if (!$sku) {
-                            $sku = new Sku;
-                            $sku->item_id = $model->item_id;
-                        }
-
-                        $sku->props = $jsp;
-                        $sku->quantity = $s_value['quantity'];
-                        $sku->price = $s_value['price'];
-                        $sku->outer_id = $s_value['outer_id'];
-                        $sku->status = $s_value ? 'normal' : 'deleted';
-                        $sku->save();
-                        if ($sku->sku_id > 0) $skuIds[] = $sku->sku_id;
-                    }
-                }
-                //删除
-                $rawData = Sku::model()->findAll('item_id = ' . $model->item_id);
-                $delArr = array();
-                foreach ($rawData as $k1 => $v1) {
-                    if (!in_array($v1->sku_id, $skuIds)) {
-                        $delArr[] = $v1->sku_id;
-                    }
-                }
-
-                if (count($delArr)) {
-                    Sku::model()->updateAll(array("status" => "deleted"), 'sku_id IN (' . implode(', ', $delArr) . ')');
-                }
-            }
-
-
-            $model->skus_data = implode(",", $skuIds);
-
-            if ($model->save()) {
-
-                //$this->redirect(array('view', 'id' => $model->item_id));
             }
         }
 
@@ -182,7 +113,7 @@ class ItemController extends MallBaseController
      */
     public function loadModel($id)
     {
-        $model = Item::model()->with(array('image' => array('order' => 'position ASC')))->findByPk($id);
+        $model = Item::model()->with(array('itemImgs' => array('order' => 'position ASC')))->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
@@ -512,13 +443,17 @@ class ItemController extends MallBaseController
         return array(json_encode($props), json_encode($props_name));
     }
 
-    public function actionItemProps()
+    public function actionItemProps($category_id, $item_id)
     {
-        $category_id = empty($_GET['category_id']) ? 0 : $_GET['category_id'];
         $itemProps = ItemProp::model()->with(array('propValues'))->findAllByAttributes(array('category_id' => $category_id));
-        $item_id = empty($_GET['item_id']) ? 0 : $_GET['item_id'];
         $item = Item::model()->findByPk($item_id);
         $this->renderPartial('_form_prop', array('itemProps' => $itemProps, 'item' => $item), false, true);
     }
 
+    public function actionGetChildAreas($parent_id)
+    {
+        $areas = Area::model()->findAllByAttributes(array('parent_id' => $parent_id));
+        $areasData = CHtml::listData($areas, 'area_id', 'name');
+        echo json_encode(CMap::mergeArray(array('0' => ''), $areasData));
+    }
 }

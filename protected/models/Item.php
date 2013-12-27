@@ -5,8 +5,8 @@
  *
  * The followings are the available columns in table 'item':
  * @property string $item_id
- * @property string $outer_id
  * @property string $category_id
+ * @property string $outer_id
  * @property string $title
  * @property string $stock
  * @property string $min_number
@@ -15,7 +15,6 @@
  * @property string $props
  * @property string $props_name
  * @property string $desc
- * @property string $location_id
  * @property string $shipping_fee
  * @property integer $is_show
  * @property integer $is_promote
@@ -27,10 +26,15 @@
  * @property string $create_time
  * @property string $update_time
  * @property string $language
+ * @property string $country
+ * @property string $state
+ * @property string $city
  *
  * The followings are the available model relations:
  * @property Category $category
- * @property Location $location
+ * @property Area $country0
+ * @property Area $state0
+ * @property Area $city0
  * @property ItemImg[] $itemImgs
  * @property OrderItem[] $orderItems
  * @property PropImg[] $propImgs
@@ -54,15 +58,15 @@ class Item extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('outer_id, category_id, title, stock, price, currency, props, props_name, desc, location_id, create_time, update_time, language', 'required'),
-            array('is_show, is_promote, is_new, is_hot, is_best', 'numerical', 'integerOnly'=>true),
-            array('outer_id, language', 'length', 'max'=>45),
-            array('category_id, stock, min_number, price, location_id, shipping_fee, click_count, wish_count, create_time, update_time', 'length', 'max'=>10),
-            array('title', 'length', 'max'=>255),
-            array('currency', 'length', 'max'=>20),
+            array('category_id, title, stock, price, currency, props, props_name, desc, create_time, update_time, language, country, state, city', 'required'),
+            array('is_show, is_promote, is_new, is_hot, is_best', 'numerical', 'integerOnly' => true),
+            array('category_id, stock, min_number, price, shipping_fee, click_count, wish_count, create_time, update_time, country, state, city', 'length', 'max' => 10),
+            array('outer_id, language', 'length', 'max' => 45),
+            array('title', 'length', 'max' => 255),
+            array('currency', 'length', 'max' => 20),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('item_id, outer_id, category_id, title, stock, min_number, price, currency, props, props_name, desc, location_id, shipping_fee, is_show, is_promote, is_new, is_hot, is_best, click_count, wish_count, create_time, update_time, language', 'safe', 'on'=>'search'),
+            array('item_id, category_id, outer_id, title, stock, min_number, price, currency, props, props_name, desc, shipping_fee, is_show, is_promote, is_new, is_hot, is_best, click_count, wish_count, create_time, update_time, language, country, state, city', 'safe', 'on' => 'search'),
         );
     }
 
@@ -75,7 +79,9 @@ class Item extends CActiveRecord
         // class name for the relations automatically generated below.
         return array(
             'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
-            'location' => array(self::BELONGS_TO, 'Location', 'location_id'),
+            'countryArea' => array(self::BELONGS_TO, 'Area', 'country'),
+            'stateArea' => array(self::BELONGS_TO, 'Area', 'state'),
+            'cityArea' => array(self::BELONGS_TO, 'Area', 'city'),
             'itemImgs' => array(self::HAS_MANY, 'ItemImg', 'item_id'),
             'orderItems' => array(self::HAS_MANY, 'OrderItem', 'item_id'),
             'propImgs' => array(self::HAS_MANY, 'PropImg', 'item_id'),
@@ -90,8 +96,8 @@ class Item extends CActiveRecord
     {
         return array(
             'item_id' => 'Item',
-            'outer_id' => 'Outer',
             'category_id' => 'Category',
+            'outer_id' => 'Outer',
             'title' => 'Title',
             'stock' => 'Stock',
             'min_number' => 'Min Number',
@@ -100,7 +106,6 @@ class Item extends CActiveRecord
             'props' => 'Props',
             'props_name' => 'Props Name',
             'desc' => 'Desc',
-            'location_id' => 'Location',
             'shipping_fee' => 'Shipping Fee',
             'is_show' => 'Is Show',
             'is_promote' => 'Is Promote',
@@ -112,6 +117,9 @@ class Item extends CActiveRecord
             'create_time' => 'Create Time',
             'update_time' => 'Update Time',
             'language' => 'Language',
+            'country' => 'Country',
+            'state' => 'State',
+            'city' => 'City',
         );
     }
 
@@ -131,34 +139,36 @@ class Item extends CActiveRecord
     {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
-        $criteria=new CDbCriteria;
+        $criteria = new CDbCriteria;
 
-        $criteria->compare('item_id',$this->item_id,true);
-        $criteria->compare('outer_id',$this->outer_id,true);
-        $criteria->compare('category_id',$this->category_id,true);
-        $criteria->compare('title',$this->title,true);
-        $criteria->compare('stock',$this->stock,true);
-        $criteria->compare('min_number',$this->min_number,true);
-        $criteria->compare('price',$this->price,true);
-        $criteria->compare('currency',$this->currency,true);
-        $criteria->compare('props',$this->props,true);
-        $criteria->compare('props_name',$this->props_name,true);
-        $criteria->compare('desc',$this->desc,true);
-        $criteria->compare('location_id',$this->location_id,true);
-        $criteria->compare('shipping_fee',$this->shipping_fee,true);
-        $criteria->compare('is_show',$this->is_show);
-        $criteria->compare('is_promote',$this->is_promote);
-        $criteria->compare('is_new',$this->is_new);
-        $criteria->compare('is_hot',$this->is_hot);
-        $criteria->compare('is_best',$this->is_best);
-        $criteria->compare('click_count',$this->click_count,true);
-        $criteria->compare('wish_count',$this->wish_count,true);
-        $criteria->compare('create_time',$this->create_time,true);
-        $criteria->compare('update_time',$this->update_time,true);
-        $criteria->compare('language',$this->language,true);
+        $criteria->compare('item_id', $this->item_id, true);
+        $criteria->compare('category_id', $this->category_id, true);
+        $criteria->compare('outer_id', $this->outer_id, true);
+        $criteria->compare('title', $this->title, true);
+        $criteria->compare('stock', $this->stock, true);
+        $criteria->compare('min_number', $this->min_number, true);
+        $criteria->compare('price', $this->price, true);
+        $criteria->compare('currency', $this->currency, true);
+        $criteria->compare('props', $this->props, true);
+        $criteria->compare('props_name', $this->props_name, true);
+        $criteria->compare('desc', $this->desc, true);
+        $criteria->compare('shipping_fee', $this->shipping_fee, true);
+        $criteria->compare('is_show', $this->is_show);
+        $criteria->compare('is_promote', $this->is_promote);
+        $criteria->compare('is_new', $this->is_new);
+        $criteria->compare('is_hot', $this->is_hot);
+        $criteria->compare('is_best', $this->is_best);
+        $criteria->compare('click_count', $this->click_count, true);
+        $criteria->compare('wish_count', $this->wish_count, true);
+        $criteria->compare('create_time', $this->create_time, true);
+        $criteria->compare('update_time', $this->update_time, true);
+        $criteria->compare('language', $this->language, true);
+        $criteria->compare('country', $this->country, true);
+        $criteria->compare('state', $this->state, true);
+        $criteria->compare('city', $this->city, true);
 
         return new CActiveDataProvider($this, array(
-            'criteria'=>$criteria,
+            'criteria' => $criteria,
         ));
     }
 
@@ -168,12 +178,13 @@ class Item extends CActiveRecord
      * @param string $className active record class name.
      * @return Item the static model class
      */
-    public static function model($className=__CLASS__)
+    public static function model($className = __CLASS__)
     {
         return parent::model($className);
     }
 
-    public function __call($name, $parameters) {
+    public function __call($name, $parameters)
+    {
         $prefix = substr($name, 0, 2);
         if ($prefix === 'is') {
             $key = strtolower(substr($name, 2));
@@ -191,16 +202,19 @@ class Item extends CActiveRecord
         return parent::__call($name, $parameters);
     }
 
+    public function getCountryAreas()
+    {
+        $areas = Area::model()->findAllByAttributes(array('grade' => 0));
+        return CHtml::listData($areas, 'area_id', 'name');
+    }
+
     public function beforeSave()
     {
-        if (parent::beforeSave()) {
-            if ($this->isNewRecord) {
-                $this->create_time = $this->update_time = time();
-            } else
-                $this->update_time = time();
-            return true;
-        } else
-            return false;
+        if ($this->isNewRecord)
+            $this->create_time = $this->update_time = time();
+        else
+            $this->update_time = time();
+        return parent::beforeSave();
     }
 
     /**
@@ -355,8 +369,6 @@ class Item extends CActiveRecord
     public function afterSave()
     {
         parent::afterSave();
-        $this->addImages();
-//        $this->update_props_data();
     }
 
     /**

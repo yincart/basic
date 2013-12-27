@@ -10,6 +10,7 @@
  * @property string $root
  * @property string $level
  * @property string $name
+ * @property integer $label
  * @property string $url
  * @property string $pic
  * @property integer $is_show
@@ -17,7 +18,6 @@
  * The followings are the available model relations:
  * @property Item[] $items
  * @property ItemProp[] $itemProps
- * @property PropValue[] $propValues
  */
 class Category extends CActiveRecord
 {
@@ -26,7 +26,7 @@ class Category extends CActiveRecord
      */
     public function tableName()
     {
-        return '{{category}}';
+        return 'category';
     }
 
     /**
@@ -38,13 +38,13 @@ class Category extends CActiveRecord
         // will receive user inputs.
         return array(
             array('left, right, root, level, name, pic', 'required'),
-            array('label, is_show', 'numerical', 'integerOnly' => true),
-            array('left, right, root, level', 'length', 'max' => 10),
-            array('name, url', 'length', 'max' => 200),
-            array('pic', 'length', 'max' => 255),
+            array('label, is_show', 'numerical', 'integerOnly'=>true),
+            array('left, right, root, level', 'length', 'max'=>10),
+            array('name, url', 'length', 'max'=>200),
+            array('pic', 'length', 'max'=>255),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('category_id, left, right, root, level, name, label, url, pic, is_show', 'safe', 'on' => 'search'),
+            array('category_id, left, right, root, level, name, label, url, pic, is_show', 'safe', 'on'=>'search'),
         );
     }
 
@@ -57,8 +57,7 @@ class Category extends CActiveRecord
         // class name for the relations automatically generated below.
         return array(
             'items' => array(self::HAS_MANY, 'Item', 'category_id'),
-            'itemProps' => array(self::MANY_MANY, 'ItemProp', 'item_prop_category(category_id, item_prop_id)'),
-            'propValues' => array(self::HAS_MANY, 'PropValue', 'category_id'),
+            'itemProps' => array(self::HAS_MANY, 'ItemProp', 'category_id'),
         );
     }
 
@@ -68,7 +67,7 @@ class Category extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'category_id' => Yii::t('category', 'Category'),
+            'category_id' => 'Category',
             'left' => 'Left',
             'right' => 'Right',
             'root' => 'Root',
@@ -97,21 +96,21 @@ class Category extends CActiveRecord
     {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
-        $criteria = new CDbCriteria;
+        $criteria=new CDbCriteria;
 
-        $criteria->compare('category_id', $this->category_id, true);
-        $criteria->compare('left', $this->left, true);
-        $criteria->compare('right', $this->right, true);
-        $criteria->compare('root', $this->root, true);
-        $criteria->compare('level', $this->level, true);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('label', $this->label);
-        $criteria->compare('url', $this->url, true);
-        $criteria->compare('pic', $this->pic, true);
-        $criteria->compare('is_show', $this->is_show);
+        $criteria->compare('category_id',$this->category_id,true);
+        $criteria->compare('left',$this->left,true);
+        $criteria->compare('right',$this->right,true);
+        $criteria->compare('root',$this->root,true);
+        $criteria->compare('level',$this->level,true);
+        $criteria->compare('name',$this->name,true);
+        $criteria->compare('label',$this->label);
+        $criteria->compare('url',$this->url,true);
+        $criteria->compare('pic',$this->pic,true);
+        $criteria->compare('is_show',$this->is_show);
 
         return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
+            'criteria'=>$criteria,
         ));
     }
 
@@ -121,7 +120,7 @@ class Category extends CActiveRecord
      * @param string $className active record class name.
      * @return Category the static model class
      */
-    public static function model($className = __CLASS__)
+    public static function model($className=__CLASS__)
     {
         return parent::model($className);
     }

@@ -109,7 +109,7 @@
 			 mpArr.push(arr2)
 		 }
 		 idArray.push(tmArr);
-		 opArray.push( mpArr);
+		 opArray.push(mpArr);
 	  }
   
 	  var body = '';
@@ -119,11 +119,10 @@
 		  arr = opArray[k]
 		  var count = arr.length;
 		  for (var i = 0; i < count; i++) {
-			//var arr2 = arr[i];
-			body += '<td><input data-index="'+i+'" data-id="'+idArray[k].slice(0,i+1).join('_') +'" value="' +  arr[i][0] + '" type="hidden" name="Item[skus][table]['+k+'][props][]">' +  arr[i][1] + '</td>';
+			body += '<td><input data-index="'+i+'" data-id="'+idArray[k].slice(0,i+1).join('_') +'" value="' +  arr[i][0] + '" type="hidden" name="Item[skus][table]['+k+'][props]['+arr[i][2]+']">' +  arr[i][1] + '</td>';
 		  }
 		  var sku_row_id = idArray[k].join('_');
-		  body += '<td><input type="hidden" class="skusid" data-props="'+sku_row_id +'" value="0" name="Item[skus][table]['+k+'][sku_id]"><input label="price" class="skus-price" value="" type="text" data-id="'+sku_row_id +'" name="Item[skus][table]['+k+'][price]"></td><td><input label="quantity" class="skus-qty" data-id="'+sku_row_id +'" value="" type="text" name="Item[skus][table]['+k+'][quantity]"></td><td><input label="outer_id" class="skus-outer_id" value="" data-id="'+sku_row_id +'" type="text" name="Item[skus][table]['+k+'][outer_id]"></td><td class="operation"><a href="javascript:void(0);" data-id="'+sku_row_id+'" ><i class="glyphicon glyphicon-cog"></i></a></td></tr>';
+		  body += '<td><input type="hidden" class="skusid" data-props="'+sku_row_id +'" value="0" name="Item[skus][table]['+k+'][sku_id]"><input label="price" class="skus-price" value="" type="text" data-id="'+sku_row_id +'" name="Item[skus][table]['+k+'][price]"></td><td><input label="stock" class="skus-qty" data-id="'+sku_row_id +'" value="" type="text" name="Item[skus][table]['+k+'][stock]"></td><td><input label="outer_id" class="skus-outer_id" value="" data-id="'+sku_row_id +'" type="text" name="Item[skus][table]['+k+'][outer_id]"></td><td class="operation"><a href="javascript:void(0);" data-id="'+sku_row_id+'" ><i class="icon-cog"></i></a></td></tr>';
 	  }
   
 	  $('#sku').find('tbody').html(body);
@@ -190,8 +189,8 @@
         html.push('<ul class="list">');
 		for (var i = 0; i < count; i++) {
 			html.push('<li>');
-			html.push('<input class="batch-radio" data-type="quantity" data-index="'+i+'" name="batch-quantity" data-optId="'+optArr[i][0]+'" id="batch-quantity-'+i+'" type="radio">');
-			html.push('<label for="batch-quantity-'+i+'">同'+$("#thop_"+i).text()+'数量相同</label>');
+			html.push('<input class="batch-radio" data-type="stock" data-index="'+i+'" name="batch-stock" data-optId="'+optArr[i][0]+'" id="batch-stock-'+i+'" type="radio">');
+			html.push('<label for="batch-stock-'+i+'">同'+$("#thop_"+i).text()+'数量相同</label>');
 			html.push('</li>');			
 		}
 	   html.push('</ul>');
@@ -223,7 +222,7 @@
 		$.each(json, function(i,data){
 			 $("#sku").find("input[type=hidden][data-props='"+data["props"]+"']").val(data["sku_id"]);//更新sku_id 
 			  $("#sku").find("input[class='skus-price'][data-id='"+data["props"]+"']").val(data["price"]);//更新price
-			   $("#sku").find("input[class='skus-qty'][data-id='"+data["props"]+"']").val(data["quantity"]);//更新quantity
+			   $("#sku").find("input[class='skus-qty'][data-id='"+data["props"]+"']").val(data["stock"]);//更新stock
 			    $("#sku").find("input[class='skus-outer_id'][data-id='"+data["props"]+"']").val(data["outer_id"]);//更新outer_id
 		});
 	}
@@ -236,8 +235,9 @@
 	    $('span').filter('[id*="Item_skus_checkbox_"]').each(function() {
 		var $that = $(this);
 		var newArray = new Array();
+		var newArray = new Array();
 		$(this).find('.change').filter(':checked').each(function() {
-		    newArray.push($(this).val()+";"+$(this).next().text());
+		    newArray.push($(this).val()+";"+$(this).parent().text()+";"+$(this).data('id'));
 		});
 		array.push(newArray);
 	    });
@@ -278,7 +278,6 @@
 	
 	$(document).on('click', '.change', function() {	    
 	   renderTable();
-
 	});
 	
 	function apply_same_param(optid,index,type){
@@ -336,7 +335,7 @@
 			apply_same_param(optid,index,0);			
 		});
 		
-		$(".popover-content").find("input[type=radio][data-type=quantity]:checked").each(function(){
+		$(".popover-content").find("input[type=radio][data-type=stock]:checked").each(function(){
 			var optid = $(this).data('optid');
 			var index = $(this).data('index');
 			apply_same_param(optid,index,1);			

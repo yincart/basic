@@ -1,0 +1,55 @@
+<?php
+$itemPropValues = CJSON::decode($item->props, TRUE);
+$itemSkus = CJSON::decode($item->skus, TRUE);
+foreach ($itemProps as $itemProp) {
+    if (!$itemProp->is_sale_prop) {
+        $itemPropValue = isset($itemPropValues[$itemProp->item_prop_id]) ? $itemPropValues[$itemProp->item_prop_id] : '';
+        $name = 'ItemProp[' . $itemProp->item_prop_id . ']';
+        switch ($itemProp->type) {
+            case 1:
+                echo TbHtml::textFieldControlGroup($name, $itemPropValue, array('label' => $itemProp->prop_name));
+                break;
+            case 2:
+                $propValueData = CHtml::listData($itemProp->propValues, 'prop_value_id', 'value_name');
+                echo TbHtml::dropDownListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name));
+                break;
+            case 3:
+                $propValueData = CHtml::listData($itemProp->propValues, 'prop_value_id', 'value_name');
+                echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name));
+                break;
+        }
+    }
+}
+?>
+<hr/>
+<?php
+$thead = '';
+$i = 0;
+foreach ($itemProps as $itemProp) {
+    if ($itemProp->is_sale_prop) {
+        $itemSku = isset($itemSkus[$itemProp->item_prop_id]) ? $itemSkus[$itemProp->item_prop_id] : '';
+        $name = 'Item[skus][checkbox][' . $itemProp->item_prop_id . ']';
+        $propValueData = CHtml::listData($itemProp->propValues, 'prop_value_id', 'value_name');
+        echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name, 'class' => 'change', 'data-id' => $itemProp->item_prop_id));
+        $thead .= '<th><span id="thop_' . $i++ . '">' . $itemProp->prop_name . '</span></th>';
+    }
+}
+?>
+<hr id="output" />
+<div class="control-group">
+    <div class="sku-map">
+        <table id="sku" class="table table-bordered">
+            <thead>
+            <tr>
+                <?php echo $thead; ?>
+                <th>价格</th>
+                <th>数量</th>
+                <th>商家编码</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>

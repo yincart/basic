@@ -5,13 +5,12 @@
         'filter' => $users,
         'columns' => array(
             'id',
-            array(
-                'name' => 'username',
-                'value'=>'$data->userlink()'
-            ),
-
+            'username',
             'email',
             'create_at',
+            array(
+                'value'=>'Tbfunction::add_user($data->id)'
+            ),
 //            array(
 //                'class' => 'bootstrap.widgets.TbButtonColumn',
 //                'template' => 'choose',

@@ -7,4 +7,4 @@
 ?>
 
     <h1 style="text-align:center">Update Order <?php echo $model->order_id; ?></h1>
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'order_item'=>$order_item)); ?>

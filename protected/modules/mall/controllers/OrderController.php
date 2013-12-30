@@ -27,6 +27,8 @@ class OrderController extends Controller
     {
         $model = new Order;
         $model->user_id = $user_id;
+        $order_item = new OrderItem('search');
+        $order_item->unsetAttributes();
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
         if (isset($_POST['Order'])) {
@@ -37,7 +39,7 @@ class OrderController extends Controller
         }
 
         $this->render('create', array(
-            'model' => $model,
+            'model' => $model,'order_item'=>$order_item
         ));
     }
 
@@ -49,19 +51,32 @@ class OrderController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->loadModel($id);
-
+        $order_item = new OrderItem('search');
+        $order_item->unsetAttributes();
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Order'])) {
             $model->attributes = $_POST['Order'];
             $model->update_time = time();
-
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->order_id));
+            $trans = Yii::app()->db->beginTransaction();
+            try
+            {
+                if ($model->save()) {
+                    //save order items
+                    $this->redirect(array('view', 'id' => $model->order_id));
+                } else {
+                    throw new Exception();
+                }
+                $trans->commit();
+            }
+            catch(Exception $e)
+            {
+                $trans->rollback();
+            }
         }
         $this->render('update', array(
-            'model' => $model,
+            'model' => $model,'order_item'=>$order_item
         ));
     }
 
@@ -103,8 +118,6 @@ class OrderController extends Controller
         $model->unsetAttributes();
         $users = new Users('search');
         $users->unsetAttributes();
-        $criteria = new CDbCriteria;
-        $criteria->compare('superuser', 0);
         if (isset($_GET['Users'])) {
             print_r($_GET['Users']);
             $users->attributes = $_GET['Users'];
@@ -138,7 +151,7 @@ class OrderController extends Controller
         echo CHtml::tag("option", array("value" => ''), CHtml::encode(''), true);
         echo $_GET['receiver_state'];
         $data = Area::model()->findAll("parent_id=:parent_id", array(":parent_id" => $_GET['receiver_state']));
-        $data = CHtml::listData($data, "id", "name");
+        $data = CHtml::listData($data, "area_id", "name");
         foreach ($data as $value => $name) {
             echo CHtml::tag("option", array("value" => $value), CHtml::encode($name), true);
         }
@@ -149,7 +162,7 @@ class OrderController extends Controller
 
         if ($_GET["receiver_city"]) {
             $data = Area::model()->findAll("parent_id=:parent_id", array(":parent_id" => $_GET["receiver_city"]));
-            $data = CHtml::listData($data, "id", "name");
+            $data = CHtml::listData($data, "area_id", "name");
             foreach ($data as $value => $name) {
                 echo CHtml::tag("option", array("value" => $value), CHtml::encode($name), true);
             }
@@ -163,7 +176,15 @@ class OrderController extends Controller
             Yii::app()->end();
         }
     }
-    public function actionAdd_goods(){
-$this->render('add_goods');
+
+    public function actionAdd_goods()
+    {
+        $this->layout='/';
+        $goods = new Item('search');
+        $goods->unsetAttributes();
+        if (isset($_GET['Item'])) {
+            $goods->attributes = $_GET['Item'];
+        }
+        $this->render('add_goods', array('goods' => $goods));
     }
 }

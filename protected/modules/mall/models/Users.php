@@ -126,11 +126,6 @@ class Users extends CActiveRecord
             ));
         }
     }
-
-    public function userlink()
-    {
-        echo  CHtml::link($this->username,array('create','user_id'=>$this->id));
-    }
     /**
      * Returns the static model of the specified AR class.
      * Please note that you should have this exact method in all your CActiveRecord descendants!

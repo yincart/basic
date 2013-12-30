@@ -1,0 +1,6 @@
+.add_summary{
+    width:15%;
+    word-wrap:break-word;
+    overflow:hidden;
+text-overflow:ellipsis;
+}

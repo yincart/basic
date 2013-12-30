@@ -29,7 +29,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 
     <?php $this->renderPartial('select_user',array(
         'users'=>$users,
-        'usersf'=>$usersf
     )); ?>
 </div>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(

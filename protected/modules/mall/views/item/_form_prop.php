@@ -40,7 +40,8 @@ foreach ($itemProps as $itemProp) {
         }
         $name = 'Item[skus][checkbox][' . $itemProp->item_prop_id . ']';
         $propValueData = CHtml::listData($itemProp->propValues, 'prop_value_id', 'value_name');
-        echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name, 'class' => 'change', 'data-id' => $itemProp->item_prop_id));
+        $class = $itemProp->is_color_prop ? 'change color-prop' : 'change';
+        echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name, 'class' => $class, 'data-id' => $itemProp->item_prop_id));
         $thead .= '<th><span id="thop_' . $i++ . '">' . $itemProp->prop_name . '</span></th>';
     }
 }
@@ -63,3 +64,11 @@ foreach ($itemProps as $itemProp) {
         </table>
     </div>
 </div>
+<script type="text/javascript">
+    $(function() {
+//        $('.color-prop').click(function() {
+//            var html = '<div id="browse-image-btn" class="img-plus">&#43;</div>';
+//            $(this).parent().after(html);
+//        });
+    });
+</script>

@@ -141,6 +141,17 @@
         left: 0;
         z-index: 2000;
     }
+    .imgtextarea{
+        position:absolute;
+        top:0;
+        left:0;
+        width:60px;
+        height:60px;
+        line-height:40px;
+        font-size:20px;
+        color:red;
+        text-align:center;
+    }
 </style>
 
 <div id="img-area">
@@ -213,7 +224,9 @@
     var browse = {};
     browse.callFunction = function (funcNum, url) {
         if (funcNum == 'addImage') {
-            var html = "<div class='img-item'><img src='" + url + "'><div class='overlay'></div><div class='operater'>" +
+            var html = "<div class='img-item'><img src='" + url + "'>" +
+//                "<div class='imgtextarea'>" + ($imgList.children().length === 1 ? "主图" : "") + "</div>" +
+                "<div class='overlay'></div><div class='operater'>" +
                 "<span class='prev'></span><b class='del'>X</b><span class='next'></span>" +
                 '<input name="ItemImg[item_img_id][]" id="ItemImg_item_img_id" type="hidden" value="0">' +
                 '<input name="ItemImg[pic][]" id="ItemImg_pic" type="hidden" value="' + url + '">' +

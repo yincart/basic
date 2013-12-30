@@ -341,8 +341,6 @@ class ItemController extends MallBaseController
         foreach ($skus as $key => $value) {
             $sku[] = $_POST['Item']['skus'][$key];
         }
-        $options = CJavaScript::encode($sku);
-
         echo json_encode($sku);
     }
 

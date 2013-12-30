@@ -59,11 +59,13 @@ EOF;
                     $itemUrl = Yii::app()->createUrl('item/index', array('id' => $hotItem->item_id));
                     ?>
                     <div class="warp_tab_list">
-                        <div class="tab_img"><a href="<?php echo $itemUrl; ?>"><img alt="<?php echo $hotItem->title; ?>" src="image/" width="220" height="220"></a></div>
+                        <div class="tab_img"><a href="<?php echo $itemUrl; ?>"><img alt="<?php echo $hotItem->title; ?>"
+                                                                                    src="<?php echo $hotItem->getMainPic(); ?>"
+                                                                                    width="220" height="220"></a></div>
                         <div class="tab_name"><a href="<?php echo $itemUrl; ?>"><?php echo $hotItem->title; ?></a></div>
                         <div class="tab_price">
-                            <div class="tab_price_n">￥3000.00</div>
-                            <div class="tab_price_p">￥3000.00</div>
+                            <div class="tab_price_n"><?php echo $hotItem->currency . $hotItem->price ?></div>
+                            <div class="tab_price_p"><?php echo $hotItem->currency . $hotItem->price ?></div>
                             <div class="tab_price_v"><a
                                     href="<?php echo $itemUrl; ?>">详情点击</a>
                             </div>
@@ -80,14 +82,14 @@ EOF;
                 <img alt="" src="" width="180" height="180"/>
             </div>
             <ul class="news_list">
-                <li class="current"><a href="">12月12日公司新闻公司新闻公...</a></li>
-                <li><a href="">12月12日公司新闻公司新闻公...</a></li>
-                <li><a href="">12月12日公司新闻公司新闻公...</a></li>
-                <li><a href="">12月12日公司新闻公司新闻公...</a></li>
-                <li><a href="">12月12日公司新闻公司新闻公...</a></li>
+                <?php
+                $class = 'current';
+                foreach ($articles as $article) {
+                    echo '<li class="'.$class.'"><a href="'.Yii::app()->createUrl('article/view', array('id' => $article->article_id)).'">'.$article->title.'</a></li>';
+                    $class = '';
+                } ?>
             </ul>
         </div>
-
     </div>
 </div>
 <div class="warp_product">

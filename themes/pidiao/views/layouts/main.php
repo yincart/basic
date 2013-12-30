@@ -30,7 +30,7 @@
     </div>
 </div>
 <div class="head">
-    <div class="logo"><a href="#"><img alt="" src="<?php echo Yii::app()->theme->baseUrl; ?>/image/logo.png" width="227" height="80"></a></div>
+    <div class="logo"><a href="<?php echo Yii::app()->baseUrl; ?>"><img alt="" src="<?php echo Yii::app()->theme->baseUrl; ?>/image/logo.png" width="227" height="80"></a></div>
     <div class="search">
         <div class="search_box">
             <input type="text" value=""/>
@@ -46,12 +46,11 @@
 </div>
 <div class="nav">
     <ul class="nav_list">
+        <li class="current"><a href="<?php echo Yii::app()->baseUrl; ?>">首页</a></li>
         <?php
         $categories = Category::model()->findAllByAttributes(array('root' => '3', 'level' => 2));
-        $current = 'current';
         foreach ($categories as $category) {
-            echo '<li class="'.$current.'"><a href="">'.$category->name.'</a></li>';
-            $current = '';
+            echo '<li><a href="'.Yii::app()->createUrl('catalog/index', array('key' => $category->category_id)).'">'.$category->name.'</a></li>';
         }
         ?>
     </ul>

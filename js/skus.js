@@ -72,7 +72,11 @@
     function buildSkuTable( array) {
 
 	  $('#sku').find('tbody').empty();
-  
+
+      if(array.length === 0){
+          return;
+      }
+
 	  for (var i = 0; i < array.length; i++) {
 		  if (array[i].length < 1) {
 		  return;
@@ -105,7 +109,7 @@
 		 var mpArr = [];
 		 for (var i = 0; i < arr.length; i++) {
 			 var arr2 = arr[i].split(';');
-			 tmArr.push(arr2[0]);
+			 tmArr.push(arr2[2]+':'+arr2[0]);
 			 mpArr.push(arr2)
 		 }
 		 idArray.push(tmArr);
@@ -226,7 +230,7 @@
 			    $("#sku").find("input[class='skus-outer_id'][data-id='"+data["props"]+"']").val(data["outer_id"]);//更新outer_id
 		});
 	}
-	
+
 	function renderTable(){
 		 $('.sku-map').show();
 	    //建立sku表格内容
@@ -245,31 +249,39 @@
 
 
 	    var tmp = null;
-	    var count = 0;
-	    $('input[class=change]:checked').each(function() {
-		if (tmp === null) {
-		    tmp = $(this);
-		    count = 1;
-		}
 
-		if (tmp.attr('name') !== $(this).attr('name')) {
-		    count++;
-		}
-	    });
+        var $chb = $('input.change:checked'), nameArr = [];
+        $chb.each(function(){
+            var i;
+            for(i in nameArr){
+                if(this.name === nameArr[i]){
+                    return;
+                }
+            }
+            nameArr.push(this.name);
+        });
+        $(".alert").remove();
+        if(nameArr.length < window.chbGroupCount){
+            //显示
+            $("#output").after('<div class="alert alert-info">您需要选择所有的销售属性，才能组合成完整的规格信息。</div>');
+        }
 
-	    if (count < 2) {
-		//显示
-		$("#output").after('<div class="alert alert-info">您需要选择所有的销售属性，才能组合成完整的规格信息。</div>');
-		if ($('input[class=change]:checked').length >= 1) {
-		    $(".alert").remove();
-		    $("#output").after('<div class="alert alert-info">您需要选择所有的销售属性，才能组合成完整的规格信息。</div>');
-		}
-		if ($('input[class=change]:checked').length === 0) {
-		    $(".alert").remove();
-		}
-	    } else {
-		$(".alert").remove();
-	    }
+//        $(".alert").remove();
+//	    if (count < 2) {
+//
+//            if ($('input[class=change]:checked').length >= 1) {
+//                alert(3333333);
+//                $(".alert").remove();
+//                $("#output").after('<div class="alert alert-info">您需要选择所有的销售属性，才能组合成完整的规格信息。</div>');
+//            }
+////            if ($('input[class=change]:checked').length === 0) {
+////                alert(444444444);
+////                $(".alert").remove();
+////            }
+//	    } else {
+//		    $(".alert").remove();
+//	    }
+
 	}
 	
  $(document).ready(function() {

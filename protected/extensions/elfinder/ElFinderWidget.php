@@ -103,7 +103,7 @@ class ElFinderWidget extends CWidget
                     window.parent.browse.callFunction(funcNum, file.url)
                     $(window.parent.document.getElementsByClassName('close')).click();
                 },
-                height: "820",
+                height: "700",
                 resizable: false,
             });
         }

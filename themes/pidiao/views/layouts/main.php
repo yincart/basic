@@ -4,12 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta http-equiv="content-language"  content="zh"/>
     <meta http-equiv="Cache-Control" content="max-age=7200" />
-    <title><?php echo Yii::app()->params['title']; ?></title>
     <meta content="IE=7" http-equiv="X-UA-Compatible"/>
-    <link type='text/css' rel='stylesheet' href='css/common.css' />
-    <link type='text/css' rel='stylesheet' href='css/product.css' />
-    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
-    <script type="text/javascript" src="js/pptBox.js"></script>
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css' />
+    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
+    <title><?php echo Yii::app()->params['title']; ?></title>
 <body>
 
 <div class="top">
@@ -32,7 +30,7 @@
     </div>
 </div>
 <div class="head">
-    <div class="logo"><a href="#"><img alt="" src="image/logo.png" width="227" height="80"></a></div>
+    <div class="logo"><a href="#"><img alt="" src="<?php echo Yii::app()->theme->baseUrl; ?>/image/logo.png" width="227" height="80"></a></div>
     <div class="search">
         <div class="search_box">
             <input type="text" value=""/>
@@ -48,20 +46,17 @@
 </div>
 <div class="nav">
     <ul class="nav_list">
-        <li class="current"><a href="">分类一</a> </li>
-        <li><a href="">分类二</a> </li>
-        <li><a href="">分类三</a> </li>
-        <li><a href="">分类四</a> </li>
-        <li><a href="">分类五</a> </li>
-        <li><a href="">分类六</a> </li>
-        <li><a href="">分类七</a> </li>
-        <li><a href="">分类八</a> </li>
-        <li><a href="">分类九</a> </li>
+        <?php
+        $categories = Category::model()->findAllByAttributes(array('root' => '3', 'level' => 2));
+        $current = 'current';
+        foreach ($categories as $category) {
+            echo '<li class="'.$current.'"><a href="">'.$category->name.'</a></li>';
+            $current = '';
+        }
+        ?>
     </ul>
 </div>
-<div class="warp_contant">
 <?php echo $content; ?>
-</div>
 <div class="footer">
     <div class="foot_c">
         <div class="foot_new">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2013 年 12 月 27 日 16:40
+-- 生成日期: 2013 年 12 月 30 日 09:23
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -40,11 +40,6 @@ CREATE TABLE IF NOT EXISTS `ad` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
---
--- 插入之前先把表清空（truncate） `ad`
---
-
-TRUNCATE TABLE `ad`;
 --
 -- 转存表中的数据 `ad`
 --
@@ -84,11 +79,6 @@ CREATE TABLE IF NOT EXISTS `address_result` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- 插入之前先把表清空（truncate） `address_result`
---
-
-TRUNCATE TABLE `address_result`;
---
 -- 转存表中的数据 `address_result`
 --
 
@@ -111,11 +101,6 @@ CREATE TABLE IF NOT EXISTS `admin_user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
---
--- 插入之前先把表清空（truncate） `admin_user`
---
-
-TRUNCATE TABLE `admin_user`;
 --
 -- 转存表中的数据 `admin_user`
 --
@@ -153,11 +138,6 @@ CREATE TABLE IF NOT EXISTS `admin_user2` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
--- 插入之前先把表清空（truncate） `admin_user2`
---
-
-TRUNCATE TABLE `admin_user2`;
---
 -- 转存表中的数据 `admin_user2`
 --
 
@@ -183,11 +163,6 @@ CREATE TABLE IF NOT EXISTS `area` (
   KEY `fk_area_area1_idx` (`parent_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=990101 ;
 
---
--- 插入之前先把表清空（truncate） `area`
---
-
-TRUNCATE TABLE `area`;
 --
 -- 转存表中的数据 `area`
 --
@@ -3930,11 +3905,6 @@ CREATE TABLE IF NOT EXISTS `article` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- 插入之前先把表清空（truncate） `article`
---
-
-TRUNCATE TABLE `article`;
---
 -- 转存表中的数据 `article`
 --
 
@@ -3963,11 +3933,6 @@ CREATE TABLE IF NOT EXISTS `authassignment` (
   PRIMARY KEY (`itemname`,`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `authassignment`
---
-
-TRUNCATE TABLE `authassignment`;
 -- --------------------------------------------------------
 
 --
@@ -3984,11 +3949,6 @@ CREATE TABLE IF NOT EXISTS `authitem` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `authitem`
---
-
-TRUNCATE TABLE `authitem`;
 -- --------------------------------------------------------
 
 --
@@ -4003,11 +3963,6 @@ CREATE TABLE IF NOT EXISTS `authitemchild` (
   KEY `child` (`child`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `authitemchild`
---
-
-TRUNCATE TABLE `authitemchild`;
 -- --------------------------------------------------------
 
 --
@@ -4025,11 +3980,6 @@ CREATE TABLE IF NOT EXISTS `brand` (
   KEY `fk_brand_item_prop1` (`prop_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `brand`
---
-
-TRUNCATE TABLE `brand`;
 -- --------------------------------------------------------
 
 --
@@ -4044,11 +3994,6 @@ CREATE TABLE IF NOT EXISTS `cache` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `cache`
---
-
-TRUNCATE TABLE `cache`;
 -- --------------------------------------------------------
 
 --
@@ -4070,11 +4015,6 @@ CREATE TABLE IF NOT EXISTS `category` (
   PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=126 ;
 
---
--- 插入之前先把表清空（truncate） `category`
---
-
-TRUNCATE TABLE `category`;
 --
 -- 转存表中的数据 `category`
 --
@@ -4136,11 +4076,6 @@ CREATE TABLE IF NOT EXISTS `comment` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- 插入之前先把表清空（truncate） `comment`
---
-
-TRUNCATE TABLE `comment`;
---
 -- 转存表中的数据 `comment`
 --
 
@@ -4167,11 +4102,6 @@ CREATE TABLE IF NOT EXISTS `currency` (
   PRIMARY KEY (`currency_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `currency`
---
-
-TRUNCATE TABLE `currency`;
 -- --------------------------------------------------------
 
 --
@@ -4190,11 +4120,6 @@ CREATE TABLE IF NOT EXISTS `customer_service` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
---
--- 插入之前先把表清空（truncate） `customer_service`
---
-
-TRUNCATE TABLE `customer_service`;
 --
 -- 转存表中的数据 `customer_service`
 --
@@ -4221,11 +4146,6 @@ CREATE TABLE IF NOT EXISTS `eavattr` (
   KEY `ikEntity` (`entity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `eavattr`
---
-
-TRUNCATE TABLE `eavattr`;
 --
 -- 转存表中的数据 `eavattr`
 --
@@ -4254,11 +4174,6 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `feedback`
---
-
-TRUNCATE TABLE `feedback`;
 -- --------------------------------------------------------
 
 --
@@ -4280,11 +4195,6 @@ CREATE TABLE IF NOT EXISTS `friend_link` (
   PRIMARY KEY (`link_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
---
--- 插入之前先把表清空（truncate） `friend_link`
---
-
-TRUNCATE TABLE `friend_link`;
 --
 -- 转存表中的数据 `friend_link`
 --
@@ -4337,11 +4247,6 @@ CREATE TABLE IF NOT EXISTS `groupon` (
   KEY `cate_1_id` (`cate_1_id`,`cate_2_id`,`cate_3_id`,`biz_id`,`contract_id`,`price`,`begin_time`,`end_time`,`display`,`sort`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='团购项目主表' AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `groupon`
---
-
-TRUNCATE TABLE `groupon`;
 -- --------------------------------------------------------
 
 --
@@ -4361,11 +4266,6 @@ CREATE TABLE IF NOT EXISTS `groupon_attach` (
   KEY `relation_id` (`relation_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='合同等附件表' AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `groupon_attach`
---
-
-TRUNCATE TABLE `groupon_attach`;
 -- --------------------------------------------------------
 
 --
@@ -4385,11 +4285,6 @@ CREATE TABLE IF NOT EXISTS `groupon_attr` (
   UNIQUE KEY `groupon_id` (`groupon_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='团购属性表' AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `groupon_attr`
---
-
-TRUNCATE TABLE `groupon_attr`;
 -- --------------------------------------------------------
 
 --
@@ -4421,11 +4316,6 @@ CREATE TABLE IF NOT EXISTS `groupon_biz` (
   KEY `examine_status` (`examine_status`,`display`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='团购商家主表' AUTO_INCREMENT=8 ;
 
---
--- 插入之前先把表清空（truncate） `groupon_biz`
---
-
-TRUNCATE TABLE `groupon_biz`;
 --
 -- 转存表中的数据 `groupon_biz`
 --
@@ -4466,11 +4356,6 @@ CREATE TABLE IF NOT EXISTS `groupon_biz_shop` (
   KEY `biz_id` (`biz_id`,`city_id`,`area_id`,`cbd_id`,`is_reservation`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='商家分店' AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `groupon_biz_shop`
---
-
-TRUNCATE TABLE `groupon_biz_shop`;
 -- --------------------------------------------------------
 
 --
@@ -4491,11 +4376,6 @@ CREATE TABLE IF NOT EXISTS `groupon_cates` (
   KEY `pid` (`pid`,`level`,`path`,`is_hot`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='团购分类表' AUTO_INCREMENT=181 ;
 
---
--- 插入之前先把表清空（truncate） `groupon_cates`
---
-
-TRUNCATE TABLE `groupon_cates`;
 --
 -- 转存表中的数据 `groupon_cates`
 --
@@ -4707,11 +4587,6 @@ CREATE TABLE IF NOT EXISTS `groupon_contract` (
   KEY `biz_id` (`biz_id`,`examine_status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='团购商家合同' AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `groupon_contract`
---
-
-TRUNCATE TABLE `groupon_contract`;
 -- --------------------------------------------------------
 
 --
@@ -4739,11 +4614,6 @@ CREATE TABLE IF NOT EXISTS `groupon_coupon` (
   KEY `groupon_id` (`groupon_id`,`biz_id`,`order_id`,`pass`,`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='团购券表' AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `groupon_coupon`
---
-
-TRUNCATE TABLE `groupon_coupon`;
 -- --------------------------------------------------------
 
 --
@@ -4758,11 +4628,6 @@ CREATE TABLE IF NOT EXISTS `groupon_shop` (
   PRIMARY KEY (`groupon_id`,`shop_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='团购项目和分店关系表';
 
---
--- 插入之前先把表清空（truncate） `groupon_shop`
---
-
-TRUNCATE TABLE `groupon_shop`;
 -- --------------------------------------------------------
 
 --
@@ -4804,11 +4669,6 @@ CREATE TABLE IF NOT EXISTS `item` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
--- 插入之前先把表清空（truncate） `item`
---
-
-TRUNCATE TABLE `item`;
---
 -- 转存表中的数据 `item`
 --
 
@@ -4819,8 +4679,8 @@ INSERT INTO `item` (`item_id`, `category_id`, `outer_id`, `title`, `stock`, `min
 (25, 110, '123456', 'aaaaaaaaaaa', 123, 1, '123.00', '$', '{"1":"1:1","2":["2:4","2:5"],"3":["3:7","3:8"]}', '{"\\u54c1\\u724c":"\\u54c1\\u724c:","\\u5c3a\\u5bf8":["\\u5c3a\\u5bf8:L","\\u5c3a\\u5bf8:XL"],"\\u989c\\u8272":["\\u989c\\u8272:\\u7ea2\\u8272","\\u989c\\u8272:\\u9ec4\\u8272"]}', '<p>123</p>\r\n', '0.00', 0, 0, 0, 0, 0, 0, 0, 1388132810, 1388132810, 'zh_cn', 100000, 420000, 429005),
 (26, 110, '123456', 'aaaaaaaaaaa', 123, 1, '123.00', '$', '{"1":"1:1","2":["2:4","2:5"],"3":["3:7","3:8"]}', '{"\\u54c1\\u724c":"\\u54c1\\u724c:","\\u5c3a\\u5bf8":["\\u5c3a\\u5bf8:L","\\u5c3a\\u5bf8:XL"],"\\u989c\\u8272":["\\u989c\\u8272:\\u7ea2\\u8272","\\u989c\\u8272:\\u9ec4\\u8272"]}', '<p>123</p>\r\n', '0.00', 0, 0, 0, 0, 0, 0, 0, 1388132824, 1388132824, 'zh_cn', 100000, 420000, 429005),
 (27, 110, '12364', 'aaaabbbbb', 1000, 1, '1000.00', '$', '{"1":"1:1"}', '{"\\u54c1\\u724c":"\\u54c1\\u724c:"}', '<p>safasfwerf</p>\r\n', '0.00', 0, 0, 0, 0, 0, 0, 0, 1388132903, 1388132903, 'zh_cn', 100000, 120000, 120100),
-(28, 110, '123456', '2012进口面料新品柔倍尔 天丝磨毛面料 四件套', 10000, 1, '123.00', '$', '{"1":"1:2","2":["2:4","2:5"],"3":["3:8"]}', '{"\\u54c1\\u724c":"\\u54c1\\u724c:","\\u5c3a\\u5bf8":["\\u5c3a\\u5bf8:L","\\u5c3a\\u5bf8:XL"],"\\u989c\\u8272":["\\u989c\\u8272:\\u9ec4\\u8272"]}', '<p>asdffdassadf</p>\r\n', '0.12', 1, 1, 1, 1, 1, 0, 0, 1388133167, 1388133167, 'zh_cn', 100000, 370000, 371400),
-(31, 110, '123456', '2012进口面料新品柔倍尔 天丝磨毛面料 四件套', 1000, 1, '123.00', '$', '{"1":"1:1"}', '{"\\u54c1\\u724c":"\\u54c1\\u724c:"}', '<p>sadfasdf</p>\r\n', '0.00', 0, 0, 0, 0, 0, 0, 0, 1388133378, 1388133378, 'zh_cn', 100000, 370000, 371300),
+(28, 110, '123456', '2012进口面料新品柔倍尔 天丝磨毛面料 四件套', 10000, 1, '123.00', '$', '{"1":"1:2","2":["2:4","2:5"],"3":["3:8"]}', '{"\\u54c1\\u724c":"\\u54c1\\u724c:","\\u5c3a\\u5bf8":["\\u5c3a\\u5bf8:L","\\u5c3a\\u5bf8:XL"],"\\u989c\\u8272":["\\u989c\\u8272:\\u9ec4\\u8272"]}', '<p>asdffdassadf</p>\r\n', '0.01', 1, 1, 1, 1, 1, 0, 0, 1388133167, 1388134212, 'zh_cn', 100000, 370000, 371400),
+(31, 110, '123456', '2012进口面料新品柔倍尔 天丝磨毛面料 四件套', 1000, 1, '123.00', '$', '{"1":"1:1","2":["2:5","2:6"],"3":["3:8","3:9"]}', '{"\\u54c1\\u724c":"\\u54c1\\u724c:","\\u5c3a\\u5bf8":["\\u5c3a\\u5bf8:XL","\\u5c3a\\u5bf8:XXL"],"\\u989c\\u8272":["\\u989c\\u8272:\\u9ec4\\u8272","\\u989c\\u8272:\\u84dd\\u8272"]}', '<p>sadfasdfxczxczxc</p>\r\n', '0.01', 1, 1, 1, 1, 1, 0, 0, 1388133378, 1388365633, 'zh_cn', 100000, 130000, 130700),
 (34, 110, '123456', 'asd', 0, 1, '1000.00', '$', '{"1":"1:1"}', '{"\\u54c1\\u724c":"\\u54c1\\u724c:"}', '<p>asd</p>\r\n', '0.00', 0, 0, 0, 0, 0, 0, 0, 1388133496, 1388133496, 'zh_cn', 100000, 430000, 431100);
 
 -- --------------------------------------------------------
@@ -4838,13 +4698,8 @@ CREATE TABLE IF NOT EXISTS `item_img` (
   `create_time` int(10) unsigned NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`item_img_id`),
   KEY `fk_item_img_item1_idx` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
---
--- 插入之前先把表清空（truncate） `item_img`
---
-
-TRUNCATE TABLE `item_img`;
 --
 -- 转存表中的数据 `item_img`
 --
@@ -4852,9 +4707,14 @@ TRUNCATE TABLE `item_img`;
 INSERT INTO `item_img` (`item_img_id`, `item_id`, `pic`, `position`, `create_time`) VALUES
 (1, 6, '', 0, 0),
 (2, 6, '', 1, 0),
-(3, 28, '', 0, 0),
-(4, 28, '', 1, 0),
-(5, 34, '/yincart/basic/upload/ad/20130429/2012111993237921778027.jpg', 0, 1388133496);
+(5, 34, '/yincart/basic/upload/ad/20130429/2012111993237921778027.jpg', 0, 1388133496),
+(6, 28, '/yincart/basic/upload/ad/20130429/2012111993237921778027.jpg', 0, 1388134212),
+(7, 28, '/yincart/basic/upload/ad/20130429/water-landscape-93.jpg', 1, 1388134212),
+(8, 28, '/yincart/basic/upload/ad/20130429/20130429113143_97717.jpg', 2, 1388134212),
+(9, 28, '/yincart/basic/upload/ad/20130429/20130429113153_59268%20copy%201.jpg', 3, 1388134212),
+(10, 31, '/yincart/basic/upload/ad/20130429/fsdfsdf.jpg', 0, 1388365633),
+(12, 31, '/yincart/basic/upload/ad/20130429/water-landscape-93.jpg', 1, 1388365633),
+(13, 31, '/yincart/basic/upload/ad/20130429/Jago%20Desktop%20wallpaper.png', 2, 1388365633);
 
 -- --------------------------------------------------------
 
@@ -4884,11 +4744,6 @@ CREATE TABLE IF NOT EXISTS `item_prop` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- 插入之前先把表清空（truncate） `item_prop`
---
-
-TRUNCATE TABLE `item_prop`;
---
 -- 转存表中的数据 `item_prop`
 --
 
@@ -4911,11 +4766,6 @@ CREATE TABLE IF NOT EXISTS `language` (
   PRIMARY KEY (`language_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
---
--- 插入之前先把表清空（truncate） `language`
---
-
-TRUNCATE TABLE `language`;
 --
 -- 转存表中的数据 `language`
 --
@@ -4945,11 +4795,6 @@ CREATE TABLE IF NOT EXISTS `location` (
   PRIMARY KEY (`location_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `location`
---
-
-TRUNCATE TABLE `location`;
 -- --------------------------------------------------------
 
 --
@@ -4966,11 +4811,6 @@ CREATE TABLE IF NOT EXISTS `lookup` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
---
--- 插入之前先把表清空（truncate） `lookup`
---
-
-TRUNCATE TABLE `lookup`;
 --
 -- 转存表中的数据 `lookup`
 --
@@ -5008,11 +4848,6 @@ CREATE TABLE IF NOT EXISTS `menu` (
   KEY `level` (`level`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
---
--- 插入之前先把表清空（truncate） `menu`
---
-
-TRUNCATE TABLE `menu`;
 --
 -- 转存表中的数据 `menu`
 --
@@ -5053,11 +4888,6 @@ CREATE TABLE IF NOT EXISTS `message` (
   PRIMARY KEY (`id`,`language`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `message`
---
-
-TRUNCATE TABLE `message`;
 --
 -- 转存表中的数据 `message`
 --
@@ -5144,11 +4974,6 @@ CREATE TABLE IF NOT EXISTS `newsletter_subscriber` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
--- 插入之前先把表清空（truncate） `newsletter_subscriber`
---
-
-TRUNCATE TABLE `newsletter_subscriber`;
---
 -- 转存表中的数据 `newsletter_subscriber`
 --
 
@@ -5214,11 +5039,6 @@ CREATE TABLE IF NOT EXISTS `order` (
   KEY `fk_order_shipping_method1_idx` (`shipping_method_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `order`
---
-
-TRUNCATE TABLE `order`;
 -- --------------------------------------------------------
 
 --
@@ -5242,11 +5062,6 @@ CREATE TABLE IF NOT EXISTS `order_item` (
   KEY `fk_order_item_item1_idx` (`item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `order_item`
---
-
-TRUNCATE TABLE `order_item`;
 -- --------------------------------------------------------
 
 --
@@ -5267,11 +5082,6 @@ CREATE TABLE IF NOT EXISTS `order_log` (
   KEY `fk_order_log_order1_idx` (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `order_log`
---
-
-TRUNCATE TABLE `order_log`;
 -- --------------------------------------------------------
 
 --
@@ -5290,11 +5100,6 @@ CREATE TABLE IF NOT EXISTS `page` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
---
--- 插入之前先把表清空（truncate） `page`
---
-
-TRUNCATE TABLE `page`;
 --
 -- 转存表中的数据 `page`
 --
@@ -5348,11 +5153,6 @@ CREATE TABLE IF NOT EXISTS `payment` (
   KEY `fk_payment_order1_idx` (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `payment`
---
-
-TRUNCATE TABLE `payment`;
 -- --------------------------------------------------------
 
 --
@@ -5373,11 +5173,6 @@ CREATE TABLE IF NOT EXISTS `payment_method` (
   PRIMARY KEY (`payment_method_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `payment_method`
---
-
-TRUNCATE TABLE `payment_method`;
 -- --------------------------------------------------------
 
 --
@@ -5395,11 +5190,6 @@ CREATE TABLE IF NOT EXISTS `plugins` (
   UNIQUE KEY `identify_UNIQUE` (`identify`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
---
--- 插入之前先把表清空（truncate） `plugins`
---
-
-TRUNCATE TABLE `plugins`;
 --
 -- 转存表中的数据 `plugins`
 --
@@ -5421,11 +5211,6 @@ CREATE TABLE IF NOT EXISTS `plugins_setting` (
   PRIMARY KEY (`plugin`,`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `plugins_setting`
---
-
-TRUNCATE TABLE `plugins_setting`;
 -- --------------------------------------------------------
 
 --
@@ -5454,11 +5239,6 @@ CREATE TABLE IF NOT EXISTS `post` (
   KEY `FK_post_author` (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
 
---
--- 插入之前先把表清空（truncate） `post`
---
-
-TRUNCATE TABLE `post`;
 --
 -- 转存表中的数据 `post`
 --
@@ -5580,11 +5360,6 @@ CREATE TABLE IF NOT EXISTS `profiles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
--- 插入之前先把表清空（truncate） `profiles`
---
-
-TRUNCATE TABLE `profiles`;
---
 -- 转存表中的数据 `profiles`
 --
 
@@ -5621,11 +5396,6 @@ CREATE TABLE IF NOT EXISTS `profiles_fields` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- 插入之前先把表清空（truncate） `profiles_fields`
---
-
-TRUNCATE TABLE `profiles_fields`;
---
 -- 转存表中的数据 `profiles_fields`
 --
 
@@ -5652,11 +5422,6 @@ CREATE TABLE IF NOT EXISTS `prop_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- 插入之前先把表清空（truncate） `prop_category`
---
-
-TRUNCATE TABLE `prop_category`;
---
 -- 转存表中的数据 `prop_category`
 --
 
@@ -5681,11 +5446,6 @@ CREATE TABLE IF NOT EXISTS `prop_img` (
   KEY `fk_prop_img_item1_idx` (`item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `prop_img`
---
-
-TRUNCATE TABLE `prop_img`;
 -- --------------------------------------------------------
 
 --
@@ -5704,11 +5464,6 @@ CREATE TABLE IF NOT EXISTS `prop_value` (
   KEY `fk_prop_value_item_prop1_idx` (`item_prop_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
---
--- 插入之前先把表清空（truncate） `prop_value`
---
-
-TRUNCATE TABLE `prop_value`;
 --
 -- 转存表中的数据 `prop_value`
 --
@@ -5748,11 +5503,6 @@ CREATE TABLE IF NOT EXISTS `refund` (
   KEY `fk_refund_order1_idx` (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `refund`
---
-
-TRUNCATE TABLE `refund`;
 -- --------------------------------------------------------
 
 --
@@ -5769,11 +5519,6 @@ CREATE TABLE IF NOT EXISTS `settings` (
   KEY `category_key` (`category`,`key`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
---
--- 插入之前先把表清空（truncate） `settings`
---
-
-TRUNCATE TABLE `settings`;
 --
 -- 转存表中的数据 `settings`
 --
@@ -5832,11 +5577,6 @@ CREATE TABLE IF NOT EXISTS `shipping` (
   KEY `fk_shipping_order1_idx` (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='物流数据结构 ' AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `shipping`
---
-
-TRUNCATE TABLE `shipping`;
 -- --------------------------------------------------------
 
 --
@@ -5855,11 +5595,6 @@ CREATE TABLE IF NOT EXISTS `shipping_item` (
   KEY `fk_delivery_item_delivery1_idx` (`ship_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `shipping_item`
---
-
-TRUNCATE TABLE `shipping_item`;
 -- --------------------------------------------------------
 
 --
@@ -5878,11 +5613,6 @@ CREATE TABLE IF NOT EXISTS `shipping_method` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `shipping_method`
---
-
-TRUNCATE TABLE `shipping_method`;
 -- --------------------------------------------------------
 
 --
@@ -5901,13 +5631,8 @@ CREATE TABLE IF NOT EXISTS `sku` (
   `status` tinyint(1) unsigned NOT NULL COMMENT 'sku状态。 normal:正常 ；delete:删除',
   PRIMARY KEY (`sku_id`),
   KEY `fk_sku_item1_idx` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
---
--- 插入之前先把表清空（truncate） `sku`
---
-
-TRUNCATE TABLE `sku`;
 --
 -- 转存表中的数据 `sku`
 --
@@ -5922,8 +5647,12 @@ INSERT INTO `sku` (`sku_id`, `item_id`, `props`, `props_name`, `stock`, `price`,
 (7, 26, '{"2":"2:4","3":"3:8"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 123321, '123321.00', '123321', 1),
 (8, 26, '{"2":"2:5","3":"3:7"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 123321, '123321.00', '123321', 1),
 (9, 26, '{"2":"2:5","3":"3:8"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 123321, '123321.00', '123321', 1),
-(10, 28, '{"2":"2:4","3":"3:8"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 312231, '123321.00', '12314123', 1),
-(11, 28, '{"2":"2:5","3":"3:8"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 3212312, '321123.00', '123124123', 1);
+(12, 28, '{"2":"2:4","3":"3:8"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 321, '123.00', '123', 1),
+(13, 28, '{"2":"2:5","3":"3:8"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 123, '321.00', '321', 1),
+(14, 31, '{"2":"2:5","3":"3:8"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 321, '123.00', '123', 1),
+(15, 31, '{"2":"2:6","3":"3:8"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 123, '321.00', '321', 1),
+(16, 31, '{"2":"2:5","3":"3:9"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 65843, '1654.00', '564613', 1),
+(17, 31, '{"2":"2:6","3":"3:9"}', '{"\\u5c3a\\u5bf8":"\\u5c3a\\u5bf8:","\\u989c\\u8272":"\\u989c\\u8272:"}', 56416, '78456.00', '654968', 1);
 
 -- --------------------------------------------------------
 
@@ -5939,11 +5668,6 @@ CREATE TABLE IF NOT EXISTS `source_message` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=200 ;
 
---
--- 插入之前先把表清空（truncate） `source_message`
---
-
-TRUNCATE TABLE `source_message`;
 --
 -- 转存表中的数据 `source_message`
 --
@@ -6175,11 +5899,6 @@ CREATE TABLE IF NOT EXISTS `store` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- 插入之前先把表清空（truncate） `store`
---
-
-TRUNCATE TABLE `store`;
---
 -- 转存表中的数据 `store`
 --
 
@@ -6214,11 +5933,6 @@ CREATE TABLE IF NOT EXISTS `store_category` (
   KEY `level` (`level`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
---
--- 插入之前先把表清空（truncate） `store_category`
---
-
-TRUNCATE TABLE `store_category`;
 --
 -- 转存表中的数据 `store_category`
 --
@@ -6262,11 +5976,6 @@ CREATE TABLE IF NOT EXISTS `store_menu` (
   KEY `level` (`level`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `store_menu`
---
-
-TRUNCATE TABLE `store_menu`;
 -- --------------------------------------------------------
 
 --
@@ -6281,11 +5990,6 @@ CREATE TABLE IF NOT EXISTS `store_product_category` (
   PRIMARY KEY (`con_store_product_category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- 插入之前先把表清空（truncate） `store_product_category`
---
-
-TRUNCATE TABLE `store_product_category`;
 -- --------------------------------------------------------
 
 --
@@ -6300,11 +6004,6 @@ CREATE TABLE IF NOT EXISTS `tag` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
---
--- 插入之前先把表清空（truncate） `tag`
---
-
-TRUNCATE TABLE `tag`;
 --
 -- 转存表中的数据 `tag`
 --
@@ -6328,11 +6027,6 @@ CREATE TABLE IF NOT EXISTS `tbl_migration` (
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `tbl_migration`
---
-
-TRUNCATE TABLE `tbl_migration`;
 --
 -- 转存表中的数据 `tbl_migration`
 --
@@ -6361,11 +6055,6 @@ CREATE TABLE IF NOT EXISTS `themes` (
   PRIMARY KEY (`theme`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 插入之前先把表清空（truncate） `themes`
---
-
-TRUNCATE TABLE `themes`;
 --
 -- 转存表中的数据 `themes`
 --
@@ -6397,11 +6086,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
--- 插入之前先把表清空（truncate） `users`
---
-
-TRUNCATE TABLE `users`;
---
 -- 转存表中的数据 `users`
 --
 
@@ -6427,11 +6111,6 @@ CREATE TABLE IF NOT EXISTS `wishlist` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
--- 插入之前先把表清空（truncate） `wishlist`
---
-
-TRUNCATE TABLE `wishlist`;
---
 -- 转存表中的数据 `wishlist`
 --
 
@@ -6446,10 +6125,10 @@ INSERT INTO `wishlist` (`wishlist_id`, `user_id`, `item_id`, `desc`, `create_tim
 -- 限制表 `item`
 --
 ALTER TABLE `item`
-  ADD CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_item_area1` FOREIGN KEY (`country`) REFERENCES `area` (`area_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_item_area2` FOREIGN KEY (`state`) REFERENCES `area` (`area_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_item_area3` FOREIGN KEY (`city`) REFERENCES `area` (`area_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_item_area3` FOREIGN KEY (`city`) REFERENCES `area` (`area_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_item_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- 限制表 `item_img`
@@ -6474,8 +6153,8 @@ ALTER TABLE `order`
 -- 限制表 `order_item`
 --
 ALTER TABLE `order_item`
-  ADD CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_order_item_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_order_item_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_order_item_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- 限制表 `order_log`

@@ -19,16 +19,17 @@ echo $form->dropDownListControlGroup($model, 'category_id', $data);
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(function () {
         var getItemProps = function () {
             $.get('<?php echo Yii::app()->createUrl('/mall/item/itemProps'); ?>',
                 {
                     "category_id": $("#Item_category_id").select().val(),
                     "YII_CSRF_TOKEN": $("[name=YII_CSRF_TOKEN]").val(),
-                    "item_id": "<?php echo $model->item_id; ?>",
+                    "item_id": "<?php echo $model->item_id; ?>"
                 }, function (response) {
                     $('#item_prop_values').empty();
                     $('#item_prop_values').append(response);
+                    setChbGroupCount();
                     renderTable();
                 });
         };
@@ -36,6 +37,20 @@ echo $form->dropDownListControlGroup($model, 'category_id', $data);
         $('#Item_category_id').change(function () {
             getItemProps();
         });
+        function setChbGroupCount(){
+            var $chb = $('input.change'),
+                nameArr = [];
+            $chb.each(function(){
+                var i;
+                for(i in nameArr){
+                    if(this.name === nameArr[i]){
+                        return;
+                    }
+                }
+                nameArr.push(this.name);
+            });
+            window.chbGroupCount = nameArr.length;
+        }
     });
 </script>
 

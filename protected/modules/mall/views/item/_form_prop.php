@@ -3,7 +3,11 @@ $itemPropValues = json_decode($item->props, true);
 $itemSkus = $item->skus;
 foreach ($itemProps as $itemProp) {
     if (!$itemProp->is_sale_prop) {
-        $itemPropValue = isset($itemPropValues[$itemProp->item_prop_id]) ? $itemPropValues[$itemProp->item_prop_id] : '';
+        $itemPropValue =  '';
+        if (isset($itemPropValues[$itemProp->item_prop_id])) {
+            $values = explode(':', $itemPropValues[$itemProp->item_prop_id]);
+            $itemPropValue = $values[1];
+        }
         $name = 'ItemProp[' . $itemProp->item_prop_id . ']';
         switch ($itemProp->type) {
             case 1:
@@ -27,10 +31,17 @@ $thead = '';
 $i = 0;
 foreach ($itemProps as $itemProp) {
     if ($itemProp->is_sale_prop) {
-        $itemSku = isset($itemPropValues[$itemProp->item_prop_id]) ? $itemPropValues[$itemProp->item_prop_id] : '';
+        $itemPropValue =  array();
+        if (isset($itemPropValues[$itemProp->item_prop_id])) {
+            foreach ($itemPropValues[$itemProp->item_prop_id] as $value) {
+                $values = explode(':', $value);
+                $itemPropValue[] = $values[1];
+            }
+        }
         $name = 'Item[skus][checkbox][' . $itemProp->item_prop_id . ']';
         $propValueData = CHtml::listData($itemProp->propValues, 'prop_value_id', 'value_name');
-        echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name, 'class' => 'change', 'data-id' => $itemProp->item_prop_id));
+        $class = $itemProp->is_color_prop ? 'change color-prop' : 'change';
+        echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name, 'class' => $class, 'data-id' => $itemProp->item_prop_id));
         $thead .= '<th><span id="thop_' . $i++ . '">' . $itemProp->prop_name . '</span></th>';
     }
 }
@@ -53,3 +64,11 @@ foreach ($itemProps as $itemProp) {
         </table>
     </div>
 </div>
+<script type="text/javascript">
+    $(function() {
+//        $('.color-prop').click(function() {
+//            var html = '<div id="browse-image-btn" class="img-plus">&#43;</div>';
+//            $(this).parent().after(html);
+//        });
+    });
+</script>

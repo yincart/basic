@@ -113,4 +113,9 @@ class ItemImg extends CActiveRecord
         $this->create_time = time();
         return parent::beforeSave();
     }
+
+    public function defaultScope()
+    {
+        return array('order' => 'position');
+    }
 } 

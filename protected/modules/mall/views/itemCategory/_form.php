@@ -14,7 +14,7 @@ if ($model->hasErrors()): ?>
 <div class="control-group"><p class="help-block">带 <span class="required">*</span> 的字段为必填项.</p></div>
 <?php
 $parent_id = $model->isNewRecord ? 0 : $model->parent()->find()->category_id;
-$data = Category::model()->getSelectOptions(3);
+$data = Category::model()->getSelectOptions(3, true);
 echo TbHtml::dropDownListControlGroup('Category[node]', $parent_id, $data, array('label' => 'Parent Category'));
 echo $form->textFieldControlGroup($model, 'name');
 echo $form->inlineRadioButtonListControlGroup($model, 'label', $model->getLabelList());
@@ -23,14 +23,11 @@ echo $form->textFieldControlGroup($model, 'url');
 <div class="control-group">
     <?php echo $form->labelEx($model, 'pic', array('class' => 'control-label')); ?>
     <div class="controls">
-        <?php
-        $this->widget('ext.yii-elFinder.ServerFileInput', array(
-                'model' => $model,
-                'attribute' => 'pic',
-                'connectorRoute' => 'mall/elfinder/connector',
-            )
-        );
-        ?>
+        <?php $this->widget('ext.elfinder.ServerFileInput', array(
+            'model' => $model,
+            'attribute' => 'pic',
+            'filebrowserBrowseUrl' => Yii::app()->createUrl('mall/elfinder/view'),
+        )); ?>
     </div>
 </div>
 <?php

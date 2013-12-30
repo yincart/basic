@@ -43,7 +43,7 @@ $this->menu = array(
             )
         )
     );
-    echo Category::model()->getTree(3, $options, 'name');
+    echo Category::model()->getTree(3, $options, 'getLabel');
     $this->endWidget();
     ?>
 </div>

@@ -24,39 +24,15 @@ class AdController extends Controller {
      */
     public function actionCreate() {
         $model = new Ad('create');
-        $action = 'ad';
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Ad'])) {
             $model->attributes = $_POST['Ad'];
-            // file handling
-            $imageUploadFile = CUploadedFile::getInstance($model, 'pic');
-            if ($imageUploadFile !== null) { // only do if file is really uploaded
-                $imageFileExt = $imageUploadFile->extensionName;
-
-                $save_path = dirname(Yii::app()->basePath) . '/upload/' . $action . '/';
-                if (!file_exists($save_path)) {
-                    mkdir($save_path, 0777, true);
-                }
-                $ymd = date("Ymd");
-                $save_path .= $ymd . '/';
-                if (!file_exists($save_path)) {
-                    mkdir($save_path, 0777, true);
-                }
-                $img_prefix = date("YmdHis") . '_' . rand(10000, 99999);
-                $imageFileName = $img_prefix . '.' . $imageFileExt;
-                $model->pic = $ymd . '/' . $imageFileName;
-                $save_path .= $imageFileName;
-            }
             if ($model->save()) {
-                if ($imageUploadFile !== null) { // validate to save file
-                    $imageUploadFile->saveAs($save_path);
-                }
                 $this->redirect(array('view', 'id' => $model->id));
             }
-            return true;
         }
 
         $this->render('create', array(

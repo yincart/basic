@@ -334,18 +334,18 @@ class Item extends YActiveRecord
      * @return mixed
      * @author milkyway(yhxxlm@gmail.com)
      */
-    public function getMainPic($width = '310', $height = '310')
-    {
-        $img = $this->getMainPicPath();
-        if (file_exists($this->getMainPicOriginalPath())) {
-            $img_thumb = F::baseUrl() . ImageHelper::thumb($width, $height, $img, array('method' => 'resize'));
-            $img_thumb = str_replace('/upload', 'http://' . F::sg('site', 'imageDomain'), $img_thumb);
-            $img_thumb_now = CHtml::image($img_thumb, $this->title);
-            return CHtml::link($img_thumb_now, $this->getUrl(), array('title' => $this->title));
-        } else {
-            return CHtml::link(CHtml::image($this->getHolderJs($width, $height)), $this->getUrl(), array('title' => $this->title));
-        }
-    }
+//    public function getMainPic($width = '310', $height = '310')
+//    {
+//        $img = $this->getMainPicPath();
+//        if (file_exists($this->getMainPicOriginalPath())) {
+//            $img_thumb = F::baseUrl() . ImageHelper::thumb($width, $height, $img, array('method' => 'resize'));
+//            $img_thumb = str_replace('/upload', 'http://' . F::sg('site', 'imageDomain'), $img_thumb);
+//            $img_thumb_now = CHtml::image($img_thumb, $this->title);
+//            return CHtml::link($img_thumb_now, $this->getUrl(), array('title' => $this->title));
+//        } else {
+//            return CHtml::link(CHtml::image($this->getHolderJs($width, $height)), $this->getUrl(), array('title' => $this->title));
+//        }
+//    }
 
     /**
      * get item image gallery
@@ -446,5 +446,43 @@ class Item extends YActiveRecord
         $data = $arr[0] . ":" . $arr[1] . ":" . F::strip_prop_strto_csv($op->prop_name) . ":" . F::strip_prop_strto_csv($opv->value_name);
 
         return $data;
+    }
+
+    /**
+     * get items by category, include children category items
+     * @param $category
+     * @param $limit
+     * @return CActiveRecord[]
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    public function getItemsByCategory($category, $limit = -1)
+    {
+        $categoryIds = $category->getDescendantIds();
+        $cri = new CDbCriteria();
+        $cri->addInCondition('category_id', $categoryIds);
+        $cri->limit = $limit;
+        return self::model()->findAll($cri);
+    }
+
+    /**
+     * get item pic url list
+     * @return array
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    public function getItemPic()
+    {
+        $itemImgs = ItemImg::model()->findAllByAttributes(array('item_id' => $this->item_id));
+        return CHtml::listData($itemImgs, 'item_img_id', 'pic');
+    }
+
+    /**
+     * get item main pic (position = 0)
+     * @return mixed
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    public function getMainPic()
+    {
+        $itemImg = ItemImg::model()->findByAttributes(array('item_id' => $this->item_id, 'position' => 0));
+        return $itemImg->pic;
     }
 }

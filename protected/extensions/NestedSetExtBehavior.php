@@ -119,12 +119,13 @@ class NestedSetExtBehavior extends CActiveRecordBehavior
     /**
      * get select options
      * @param $descendants
+     * @param bool $hasRoot
      * @param string $name
      * @param array $separators
      * @return array
      * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
-    public function getSelectOptions($descendants, $name = 'name', $separators = array('--|--', '--|--', '--|--', '--|--'))
+    public function getSelectOptions($descendants, $hasRoot = false, $name = 'name', $separators = array('--|--', '--|--', '--|--', '--|--'))
     {
         if (is_integer($descendants)) {
             $root = $this->owner->findByPk($descendants);
@@ -134,6 +135,7 @@ class NestedSetExtBehavior extends CActiveRecordBehavior
         $level = 1;
         $prefix = array('');
         $options = array();
+        if ($hasRoot) $options[$root->{$this->id}] = $root->{$name};
         foreach ($descendants as $n => $descendant) {
             if (!$descendant->isRoot()) {
                 if ($descendant->next()->find()) {

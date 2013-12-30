@@ -1,19 +1,23 @@
 <?php
 
-class CatalogController extends Controller
+class CatalogController extends YController
 {
-    public $layout = '//layouts/catalog';
-
     public function actionIndex($key = 3, $prop = '')
     {
         $category = is_numeric($key) ? Category::model()->findByPk($key) : Category::model()->findByAttributes(array('url' => $key));
         if (empty($category) || $category->root != 3) {
             throw new CHttpException(404, 'The requested page does not exist.');
         }
-        $childs = $category->descendants()->findAll();
+        $temp_categroy = $category;
+        while(!$temp_categroy->isRoot()) {
+            array_unshift($this->breadcrumbs, array('name' => $temp_categroy->name, 'url' => Yii::app()->createUrl('catalog/index', array('key' => $temp_categroy->getUrl()))));
+            $temp_categroy = $temp_categroy->parent();
+        }
+
+        $descendants = $category->descendants()->findAll();
         $ids = array($category->id);
-        foreach ($childs as $child)
-            $ids[] = $child->id;
+        foreach ($descendants as $descendant)
+            $ids[] = $descendant->id;
         $criteria = new CDbCriteria();
         $criteria->addInCondition('category_id', $ids);
         if(!empty($prop)) {
@@ -50,16 +54,10 @@ class CatalogController extends Controller
         $pages->pageSize = 20;
         $pages->applyLimit($criteria);
         $items = Item::model()->findAll($criteria);
-        $criteria = new CDbCriteria();
-        $criteria->addInCondition('category_id', $ids);
-        $criteria->addCondition('is_hot = 1');
-        $criteria->limit = 4;
-        $hotItems = Item::model()->findAll($criteria);
         $this->render('index', array(
             'category' => $category,
             'items' => $items,
             'pages' => $pages,
-            'hotItems' => $hotItems,
             'key' => $key
         ));
     }

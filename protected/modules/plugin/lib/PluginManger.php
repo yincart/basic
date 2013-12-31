@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Yii-Plugin module
+ * 
+ * @author Viking Robin <healthlolicon@gmail.com> 
+ * @link https://github.com/health901/yii-plugin
+ * @license https://github.com/health901/yii-plugins/blob/master/LICENSE
+ * @version 1.0
+ */
 class PluginManger {
 
 	protected $pluginCache;
@@ -22,7 +30,7 @@ class PluginManger {
 	}
 
 	public function Uninstall($plugin) {
-		if (!$plugin->Uninstall()) {
+		if (!$plugin->Uninstall() && !$plugin->clear()) {
 			return FALSE;
 		}
 		if (!$this->UnregisterPlugin($plugin)) {

@@ -33,55 +33,29 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         ),
         'category.name',
         'title',
-        'sn',
-//        'unit',
         'stock',
         'min_number',
-        'market_price',
-        'shop_price',
-//        'currency',
+        'price',
         array(
             'name' => 'is_show',
-            'value' => '$data->getShow()',
+            'value' => '$data->isShow()',
         ),
         array(
             'name' => 'is_promote',
-            'value' => '$data->getPromote()',
+            'value' => '$data->isPromote()',
         ),
         array(
             'name' => 'is_new',
-            'value' => '$data->getNew()',
+            'value' => '$data->isNew()',
         ),
         array(
             'name' => 'is_hot',
-            'value' => '$data->getHot()',
+            'value' => '$data->isHot()',
         ),
         array(
             'name' => 'is_best',
-            'value' => '$data->getBest()',
+            'value' => '$data->isBest()',
         ),
-        array(
-            'name' => 'is_discount',
-            'value' => '$data->getDiscount()',
-        ),
-        /*
-          'skus',
-          'props',
-          'props_name',
-          'item_imgs',
-          'prop_imgs',
-          'pic_url',
-          'desc',
-          'location',
-          'post_fee',
-          'express_fee',
-          'ems_fee',
-          'click_count',
-          'sort_order',
-          'create_time',
-          'update_time',
-          'language',
-         */
         array(
             'class' => 'bootstrap.widgets.TbButtonColumn',
         ),
@@ -93,7 +67,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         <?php
         echo CHtml::radioButtonList('act', '', array(
                 'delete' => '删除产品',
-                'if_show' => '上架',
+                'is_show' => '上架',
                 'un_show' => '下架',
                 'is_promote' => '促销',
                 'un_promote' => '取消促销',
@@ -103,8 +77,6 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                 'un_hot' => '取消热卖',
                 'best' => '精品',
                 'un_best' => '取消精品',
-                'discount' => '折扣',
-                'un_discount' => '取消折扣',
             ), array('separator' => '&nbsp;')
         )
         ?>

@@ -162,12 +162,10 @@
             TbHtml::resetButton('Reset'),
         )); ?>
     </div>
-    <iframe style="width:500px" scrolling="yes" src="<?php echo $this->createUrl('order/add_goods') ; ?>"></iframe>
     <?php $this->endWidget(); ?>
     <div class="item-form">
-
         <?php $this->renderPartial('itemView', array(
-'order_item'=>$order_item,
+            'order_item' => $order_item,
         )); ?>
     </div>
 </div><!-- form -->
@@ -192,40 +190,45 @@
     .space {
         margin-top: 15px;
     }
-    .overlay-popup{
-        width:100%;
-        height:100%;
-        background-color:#000;
-        opacity:0.3;
-        filter:alpha(opacity=30);
-        position:fixed;
-        top:0;
-        left:0;
-        z-index:2000;
+
+    .overlay-popup {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2000;
     }
-    .popup-container{
-        width:1000px;
-        height:500px;
-        margin-top:-250px;
-        margin-left:-500px;
-        position:fixed;
-        top:50%;
-        left:50%;
-        z-index:3000;
-        background-color:#fff;
-        border:1px solid #ccc;
-        border-radius:10px;
-        padding:25px 0 0 0;
+
+    .popup-container {
+        width: 1000px;
+        height: 618px;
+        margin-top: -250px;
+        margin-left: -500px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 3000;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 25px 0 0 0;
     }
-    .popup-container .close{
-        position:absolute;
-        right:15px;
-        top:10px;
+
+    .popup-container .close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
     }
-   .popup-iframe{
-       display:block;margin:20px auto;
-width:90%;
-       height: 90%;
+
+    .popup-iframe {
+        display: block;
+        margin: 20px auto;
+        width: 95%;
+        height: 90%;
     }
 
 </style>
@@ -235,13 +238,13 @@ width:90%;
             showPopup('<?php echo $this->createUrl('order/add_goods') ; ?>');
         });
     });
-    function showPopup(url){
+    function showPopup(url) {
         var $popup = $('#overlay-popup');
-        if($popup.length){ // if popup has existed, use it
+        if ($popup.length) { // if popup has existed, use it
             $popup.show();
-        }else{ // if popup has not been created, create it
+        } else { // if popup has not been created, create it
             $popup = $('<div id="overlay-popup"><div class="overlay-popup"></div><div class="popup-container"><b class="close">X</b><iframe class="popup-iframe" src="' + url + '"></iframe></div></div>').appendTo('body')
-                .on('click', '.close', function(){
+                .on('click', '.close', function () {
                     $(this).parent().parent().hide();
                 });
         }

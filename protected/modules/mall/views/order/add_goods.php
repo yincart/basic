@@ -1,5 +1,13 @@
-<link type="text/css" rel="stylesheet"
-      href="<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css"/>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="language" content="en"/>
+    <link type="text/css" rel="stylesheet"
+          href="<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css"/>
+    <?php Yii::app()->bootstrap->register(); ?>
+</head>
+<body>
 <div class="goods-form">
     <?php $this->widget('bootstrap.widgets.TbGridView', array(
         'id' => 'goods-grid',
@@ -20,9 +28,20 @@
             'currency',
             'price',
             'desc',
-            'create_time',
-            'update_time',
+            array(
+                'name'=>'create_time',
+                'value'=>'date("Y-m-d H:i;s",$data->create_time+8*3600)'
+            ),
+            array(
+                'name'=>'update_time',
+                'value'=>'date("Y-m-d H:i;s",$data->update_time+8*3600)'
+            ),
+
         )
     ))
     ?>
 </div>
+
+</body>
+</html>
+

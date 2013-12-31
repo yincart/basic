@@ -184,6 +184,15 @@ class Item extends YActiveRecord
         return parent::model($className);
     }
 
+    public function beforeSave()
+    {
+        if ($this->isNewRecord)
+            $this->create_time = $this->update_time = time();
+        else
+            $this->update_time = time();
+        return parent::beforeSave();
+    }
+
     /**
      * @param string $name
      * @param array $parameters
@@ -225,15 +234,68 @@ class Item extends YActiveRecord
         return $areasData;
     }
 
-    public function beforeSave()
+    /**
+     * get items by category, include children category items
+     * @param $category
+     * @param $limit
+     * @return CActiveRecord[]
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    public function getItemsByCategory($category, $limit = -1)
     {
-        if ($this->isNewRecord)
-            $this->create_time = $this->update_time = time();
-        else
-            $this->update_time = time();
-        return parent::beforeSave();
+        $categoryIds = $category->getDescendantIds();
+        $cri = new CDbCriteria();
+        $cri->addInCondition('category_id', $categoryIds);
+        $cri->limit = $limit;
+        return self::model()->findAll($cri);
     }
 
+    /**
+     * get item pic url list
+     * @return array
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    public function getItemPics()
+    {
+        $itemImgs = ItemImg::model()->findAllByAttributes(array('item_id' => $this->item_id));
+        return CHtml::listData($itemImgs, 'item_img_id', 'pic');
+    }
+
+    /**
+     * get item main pic (position = 0)
+     * @return mixed
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    public function getMainPic()
+    {
+        $itemImg = ItemImg::model()->findByAttributes(array('item_id' => $this->item_id, 'position' => 0));
+        return $itemImg->pic;
+    }
+
+    public function defaultScope()
+    {
+        return array('condition' => 't.is_show = 1');
+    }
+
+    public function scopes()
+    {
+        return array(
+            'promote' => array(
+                'condition' => 't.is_promote = 1'
+            ),
+            'new' => array(
+                'condition' => 't.is_new = 1'
+            ),
+            'hot' => array(
+                'condition' => 't.is_hot = 1'
+            ),
+            'best' => array(
+                'condition' => 't.is_best = 1'
+            ),
+        );
+    }
+
+    #region to delete
     /**
      * get item title
      * @return string
@@ -447,42 +509,5 @@ class Item extends YActiveRecord
 
         return $data;
     }
-
-    /**
-     * get items by category, include children category items
-     * @param $category
-     * @param $limit
-     * @return CActiveRecord[]
-     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
-     */
-    public function getItemsByCategory($category, $limit = -1)
-    {
-        $categoryIds = $category->getDescendantIds();
-        $cri = new CDbCriteria();
-        $cri->addInCondition('category_id', $categoryIds);
-        $cri->limit = $limit;
-        return self::model()->findAll($cri);
-    }
-
-    /**
-     * get item pic url list
-     * @return array
-     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
-     */
-    public function getItemPic()
-    {
-        $itemImgs = ItemImg::model()->findAllByAttributes(array('item_id' => $this->item_id));
-        return CHtml::listData($itemImgs, 'item_img_id', 'pic');
-    }
-
-    /**
-     * get item main pic (position = 0)
-     * @return mixed
-     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
-     */
-    public function getMainPic()
-    {
-        $itemImg = ItemImg::model()->findByAttributes(array('item_id' => $this->item_id, 'position' => 0));
-        return $itemImg->pic;
-    }
+    #endregion
 }

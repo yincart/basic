@@ -8,19 +8,22 @@ class CatalogController extends YController
         if (empty($category) || $category->root != 3) {
             throw new CHttpException(404, 'The requested page does not exist.');
         }
-        $temp_categroy = $category;
-        while(!$temp_categroy->isRoot()) {
-            array_unshift($this->breadcrumbs, array('name' => $temp_categroy->name, 'url' => Yii::app()->createUrl('catalog/index', array('key' => $temp_categroy->getUrl()))));
-            $temp_categroy = $temp_categroy->parent();
+        $parentCategories = $category->parent()->findAll();
+        $parentCategories = array_reverse($parentCategories);
+        $categoryIds = array($category->category_id);
+        foreach ($parentCategories as $cate) {
+            if (!$cate->isRoot()) {
+                $this->breadcrumbs[] = array('name' => $cate->name . '>>', 'url' => Yii::app()->createUrl('catalog/index', array('key' => $cate->getUrl())));
+                $categoryIds[] = $cate->category_id;
+            }
         }
+        $this->breadcrumbs[] = array('name' => $category->name, 'url' => Yii::app()->createUrl('catalog/index', array('key' => $category->getUrl())));
+        Yii::app()->params['categoryIds'] = $categoryIds;
 
-        $descendants = $category->descendants()->findAll();
-        $ids = array($category->id);
-        foreach ($descendants as $descendant)
-            $ids[] = $descendant->id;
+        $descendantIds = $category->getDescendantIds();
         $criteria = new CDbCriteria();
-        $criteria->addInCondition('category_id', $ids);
-        if(!empty($prop)) {
+        $criteria->addInCondition('category_id', $descendantIds);
+        if (!empty($prop)) {
             $pvids = array();
             $props = explode(';', $prop);
             foreach ($props as $p) {
@@ -51,14 +54,14 @@ class CatalogController extends YController
         $count = Item::model()->count($criteria);
         $pages = new CPagination($count);
         // results per page
-        $pages->pageSize = 20;
+        $pages->pageSize = 12;
         $pages->applyLimit($criteria);
         $items = Item::model()->findAll($criteria);
         $this->render('index', array(
+            'key' => $key,
             'category' => $category,
             'items' => $items,
             'pages' => $pages,
-            'key' => $key
         ));
     }
 }

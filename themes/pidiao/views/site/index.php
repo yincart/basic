@@ -33,333 +33,141 @@ EOF;
     </div>
 </div>
 <div class="warp_contant">
-<div class="float">
-    <div class="float_button">
-        <a href="">联系<br/>在线客服</a>
-    </div>
-</div>
-<div class="warp_tab">
-    <div class="warp_tab_con">
-        <div class="warp_tab_t">
-            <ul class="tab_t_list">
-                <?php
-                $i = 1;
-                $class = 'current';
-                foreach ($hotCategories as $hotCategory) {
-                    echo '<li class="' . $class . '" onclick="change_bg(' . $i++ . ');">' . $hotCategory->name . '</li>';
-                    $class = '';
-                }
-                $i = 1;
-                ?>
-            </ul>
+    <div class="float">
+        <div class="float_button">
+            <a href="">联系<br/>在线客服</a>
         </div>
-        <?php foreach ($hotItems as $hotItemList) { ?>
-            <div class="warp_tab_c" id="pop_<?php echo $i; ?>">
-                <?php foreach ($hotItemList as $hotItem) {
-                    $itemUrl = Yii::app()->createUrl('item/index', array('id' => $hotItem->item_id));
+    </div>
+    <div class="warp_tab">
+        <div class="warp_tab_con">
+            <div class="warp_tab_t">
+                <ul class="tab_t_list">
+                    <?php
+                    $i = 1;
+                    $class = 'current';
+                    foreach ($hotCategories as $hotCategory) {
+                        echo '<li class="' . $class . '" onclick="change_bg(' . $i++ . ');">' . $hotCategory->name . '</li>';
+                        $class = '';
+                    }
+                    $i = 1;
                     ?>
-                    <div class="warp_tab_list">
-                        <div class="tab_img"><a href="<?php echo $itemUrl; ?>"><img alt="<?php echo $hotItem->title; ?>"
-                                                                                    src="<?php echo $hotItem->getMainPic(); ?>"
-                                                                                    width="220" height="220"></a></div>
-                        <div class="tab_name"><a href="<?php echo $itemUrl; ?>"><?php echo $hotItem->title; ?></a></div>
-                        <div class="tab_price">
-                            <div class="tab_price_n"><?php echo $hotItem->currency . $hotItem->price ?></div>
-                            <div class="tab_price_p"><?php echo $hotItem->currency . $hotItem->price ?></div>
-                            <div class="tab_price_v"><a
-                                    href="<?php echo $itemUrl; ?>">详情点击</a>
+                </ul>
+            </div>
+            <?php foreach ($hotItems as $hotItemList) { ?>
+                <div class="warp_tab_c" id="pop_<?php echo $i; ?>">
+                    <?php foreach ($hotItemList as $hotItem) {
+                        $itemUrl = Yii::app()->createUrl('item/index', array('id' => $hotItem->item_id));
+                        ?>
+                        <div class="warp_tab_list">
+                            <div class="tab_img"><a href="<?php echo $itemUrl; ?>">
+                                    <img alt="<?php echo $hotItem->title; ?>"
+                                         src="<?php echo $hotItem->getMainPic(); ?>" width="220" height="220"></a></div>
+                            <div class="tab_name">
+                                <a href="<?php echo $itemUrl; ?>"><?php echo $hotItem->title; ?></a>
+                            </div>
+                            <div class="tab_price">
+                                <div class="tab_price_n"><?php echo $hotItem->currency . $hotItem->price ?></div>
+                                <div class="tab_price_p"><?php echo $hotItem->currency . $hotItem->price ?></div>
+                                <div class="tab_price_v"><a
+                                        href="<?php echo $itemUrl; ?>">详情点击</a>
+                                </div>
                             </div>
                         </div>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+        </div>
+        <div class="warp_news">
+            <div class="news_tit"><a href="">更多>></a></div>
+            <div class="news_c">
+                <div class="news_img">
+                    <img alt="" src="" width="180" height="180"/>
+                </div>
+                <ul class="news_list">
+                    <?php
+                    $class = 'current';
+                    foreach ($articles as $article) {
+                        echo '<li class="' . $class . '"><a href="' . Yii::app()->createUrl('article/view', array('id' => $article->article_id)) . '">' . $article->title . '</a></li>';
+                        $class = '';
+                    } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="warp_product">
+        <div class="product_new">
+            <div class="product_new_tit"><a href="">更多新品>></a></div>
+            <div class="product_c">
+                <div class="product_new_b">
+                    <?php if (isset($newItems[0][0])) {
+                        $newItem = $newItems[0][0]; ?>
+                        <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
+                                <img alt="<?php echo $newItem->title; ?>" src="<?php echo $newItem->getMainPic(); ?>"
+                                     width="470" height="530"></a>
+                        </div>
+                        <div class="product_name">
+                            <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
+                        </div>
+                        <div class="product_price">
+                            <div class="product_price_n"><?php echo $newItem->currency . $newItem->price ?></div>
+                            <div class="product_price_p"><?php echo $newItem->currency . $newItem->price ?></div>
+                            <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="product_list">
+                    <?php for ($i = 1, $count = count($newItems[0]); $i < $count; $i++) {
+                        $newItem = $newItems[0][$i];
+                        $itemUrl = Yii::app()->createUrl('item/index', array('id' => $newItem->item_id));
+                        ?>
+                        <div class="product_d">
+                            <div class="product_img"><a href="<?php echo $itemUrl; ?>">
+                                    <img alt="<?php echo $newItem->title; ?>"
+                                         src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
+                            </div>
+                            <div class="product_price">
+                                <div class="product_price_n"><?php echo $newItem->currency . $newItem->price ?></div>
+                                <div class="product_price_p"><?php echo $newItem->currency . $newItem->price ?></div>
+                                <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+        <?php for ($i = 1, $count = count($newItems); $i < $count; $i++) { ?>
+            <div class="product_cate">
+                <div class="product_cate_tit1"><a href="">更多新品>></a></div>
+                <div class="product_ca">
+                    <div class="product_list_ca">
+                        <?php foreach ($newItems[$i] as $newItem) {
+                            $itemUrl = Yii::app()->createUrl('item/index', array('id' => $newItem->item_id));
+                            ?>
+                            <div class="product_d">
+                                <div class="product_img"><a href="<?php echo $itemUrl; ?>">
+                                        <img alt="<?php echo $newItem->title; ?>"
+                                             src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+                                </div>
+                                <div class="product_name">
+                                    <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
+                                </div>
+                                <div class="product_price">
+                                    <div
+                                        class="product_price_n"><?php echo $newItem->currency . $newItem->price ?></div>
+                                    <div
+                                        class="product_price_p"><?php echo $newItem->currency . $newItem->price ?></div>
+                                    <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
-                <?php } ?>
+                </div>
             </div>
         <?php } ?>
     </div>
-    <div class="warp_news">
-        <div class="news_tit"><a href="">更多>></a></div>
-        <div class="news_c">
-            <div class="news_img">
-                <img alt="" src="" width="180" height="180"/>
-            </div>
-            <ul class="news_list">
-                <?php
-                $class = 'current';
-                foreach ($articles as $article) {
-                    echo '<li class="'.$class.'"><a href="'.Yii::app()->createUrl('article/view', array('id' => $article->article_id)).'">'.$article->title.'</a></li>';
-                    $class = '';
-                } ?>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="warp_product">
-<div class="product_new">
-    <div class="product_new_tit"><a href="">更多新品>></a></div>
-    <div class="product_c">
-        <div class="product_new_b">
-            <div class="product_img_b"><a href=""><img alt=""
-                                                       src="<?php echo Yii::app()->theme->baseUrl; ?>/image/new_pro.png"
-                                                       width="470" height="530"></a></div>
-            <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-            <div class="product_price">
-                <div class="product_price_n">￥3000.00</div>
-                <div class="product_price_p">￥3000.00</div>
-                <div class="product_price_v"><a href="">详情点击</a></div>
-            </div>
-        </div>
-        <div class="product_list">
-            <div class="product_b">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_b">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_b">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_b">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_b">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_b">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="product_cate">
-    <div class="product_cate_tit1"><a href="">更多新品>></a></div>
-    <div class="product_ca">
-        <div class="product_list_ca">
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="product_cate">
-    <div class="product_cate_tit2"><a href="">更多新品>></a></div>
-    <div class="product_ca">
-        <div class="product_list_ca">
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-            <div class="product_d">
-                <div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
-                <div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
-                <div class="product_price">
-                    <div class="product_price_n">￥3000.00</div>
-                    <div class="product_price_p">￥3000.00</div>
-                    <div class="product_price_v"><a href="">详情点击</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
 </div>
 <script type="text/javascript">
     //保证导航栏背景与图片轮播背景一起显示

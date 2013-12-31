@@ -14,6 +14,6 @@ class Tbfunction {
     }
     public function add_user($id)
     {
-        echo  CHtml::link('<div class="btn btn-primary">Add</div>',array('create','user_id'=>$id));
+        echo  CHtml::link('Add',array('create','user_id'=>$id),array('class'=>'btn btn-primary'));
     }
 }

@@ -23,7 +23,7 @@
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'total_fee', array('class' => 'input-group-addon')); ?>
         <?php echo $form->textField($model, 'total_fee', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control form-control1')); ?>
-        <div id="add_goods" class="btn btn-info" style="float:right">添加物品</div>
+        <div id="add_goods" data-url="<?php echo $this->createUrl('order/add_goods') ; ?>" class="btn btn-info" style="float:right">添加物品</div>
     </div>
 
     <div class="input-group space">
@@ -169,84 +169,3 @@
         )); ?>
     </div>
 </div><!-- form -->
-<style>
-    .orderform {
-        width: 40%;
-        text-align: center;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .input-group-addon {
-        height: 40px;
-        width: 90px !important;
-    }
-
-    .form-control1 {
-        height: 40px !important;
-        width: 343px !important;
-    }
-
-    .space {
-        margin-top: 15px;
-    }
-
-    .overlay-popup {
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        opacity: 0.3;
-        filter: alpha(opacity=30);
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 2000;
-    }
-
-    .popup-container {
-        width: 1000px;
-        height: 618px;
-        margin-top: -250px;
-        margin-left: -500px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        z-index: 3000;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 25px 0 0 0;
-    }
-
-    .popup-container .close {
-        position: absolute;
-        right: 15px;
-        top: 10px;
-    }
-
-    .popup-iframe {
-        display: block;
-        margin: 20px auto;
-        width: 95%;
-        height: 90%;
-    }
-
-</style>
-<script>
-    $(document).ready(function () {
-        $('#add_goods').click(function () {
-            showPopup('<?php echo $this->createUrl('order/add_goods') ; ?>');
-        });
-    });
-    function showPopup(url) {
-        var $popup = $('#overlay-popup');
-        if ($popup.length) { // if popup has existed, use it
-            $popup.show();
-        } else { // if popup has not been created, create it
-            $popup = $('<div id="overlay-popup"><div class="overlay-popup"></div><div class="popup-container"><b class="close">X</b><iframe class="popup-iframe" src="' + url + '"></iframe></div></div>').appendTo('body')
-                .on('click', '.close', function () {
-                    $(this).parent().parent().hide();
-                });
-        }
-    }
-</script>

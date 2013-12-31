@@ -3,18 +3,7 @@ $this->breadcrumbs=array(
 	'Orders'=>array('index'),
 	'Manage',
 );
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('order-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
+
 ?>
 <!--是前面的东西的代码 表示路径的代码  /Orders/Manage-->
 

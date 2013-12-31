@@ -5,7 +5,7 @@
  *
  * Copyright: jinmmd <jinmmd@gmail.com>
  * Based on Joe Chu's <http://about.me/aidai524> KindEditor <https://github.com/aidai524/yii-kindeditor> widget.
- * 
+ *
  * GNU LESSER GENERAL PUBLIC LICENSE
  *
  * This program is free software: you can redistribute it and/or modify
@@ -30,7 +30,7 @@
  *
  * Usage:
  * <?php $this->widget('ext.kindeditor.KindEditorWidget',array(
- *   'id'=>'Article_content',	# Textarea id
+ *   'id'=>'Article_content',    # Textarea id
  *
  *   # Additional Parameters (Check http://www.kindsoft.net/docs/option.html)
  *   'config' => array(
@@ -52,82 +52,81 @@
  */
 class KindEditorWidget extends CInputWidget
 {
-	public $id;
-	public $language = '';
-        public $options = array();
-        public $forceCopyAssets = false;
+    public $id;
+    public $language = '';
+    public $options = array();
+    public $forceCopyAssets = false;
 
-	/**
-	 * @var array the kindeditor items configuration.
-	 */
-	public $items = array();
+    /**
+     * @var array the kindeditor items configuration.
+     */
+    public $items = array();
 
-	/**
-	 * Initializes the widget.
-	 */
-	public function init()
-	{
-		// Prevents the extension from registering scripts and publishing assets when ran from the command line.
-		if (Yii::app() instanceof CConsoleApplication)
-			return;
+    /**
+     * Initializes the widget.
+     */
+    public function init()
+    {
+        // Prevents the extension from registering scripts and publishing assets when ran from the command line.
+        if (Yii::app() instanceof CConsoleApplication)
+            return;
 
-		/** @var CClientScript $cs */
-		$cs = Yii::app()->getClientScript();
-		$cs->registerCssFile($this->assetsUrl.'/themes/default/default.css');
-		$cs->registerCssFile($this->assetsUrl.'/themes/simple/simple.css');
+        /** @var CClientScript $cs */
+        $cs = Yii::app()->getClientScript();
+        $cs->registerCssFile($this->assetsUrl . '/themes/default/default.css');
+        $cs->registerCssFile($this->assetsUrl . '/themes/simple/simple.css');
 //                $cs->registerCssFile($this->assetsUrl.'/themes/qq/simple.css');
-		$cs->registerScriptFile($this->assetsUrl.'/kindeditor.js', CClientScript::POS_HEAD);
-	}
+        $cs->registerScriptFile($this->assetsUrl . '/kindeditor.js', CClientScript::POS_HEAD);
+    }
 
-	/**
-	 * Runs the widget.
-	 */
-	public function run()
-	{
-		$script = $script.'KindEditor.ready(function(K){var editor=K.create("textarea[id='.$this->id.']", {'.$this->renderItems($this->items).$this->renderOptions($this->options).'})});';
-		/** @var CClientScript $cs */
-		$cs = Yii::app()->getClientScript();
-		$cs->registerScript($this->id, $script);
-		$cs->registerScriptFile($this->assetsUrl.'/lang/'.$this->language.'.js', CClientScript::POS_HEAD);
-	}
+    /**
+     * Runs the widget.
+     */
+    public function run()
+    {
+        $script = $script . 'KindEditor.ready(function(K){var editor=K.create("textarea[id=' . $this->id . ']", {' . $this->renderItems($this->items) . $this->renderOptions($this->options) . '})});';
+        /** @var CClientScript $cs */
+        $cs = Yii::app()->getClientScript();
+        $cs->registerScript($this->id, $script);
+        $cs->registerScriptFile($this->assetsUrl . '/lang/' . $this->language . '.js', CClientScript::POS_HEAD);
+    }
 
-	/**
-	 * Renders the items.
-	 * @param array $items the item configuration.
-	 */
-	protected function renderItems($items)
-	{
-		$script = '';
-		foreach ($items as $key => $item)
-		{
-			if(is_array($item))
-			{
-				$script = $script."'$key':[";
-				foreach ($item as $value)
-					$script = $script."'$value',";
-				$script = $script."],";
-			} else
-				$script = $script."'$key':'$item',";
-		}
-		return $script;
-	}
-	protected function renderOptions($items)
-	{
-		$script = "'extraFileUploadParams':{";
-			if(is_array($items))
-			{
-				foreach ($items as $key=>$value)
-					$script = $script."'$key':'$value',";
-				$script = $script;
-			} else
-				$script = $script."'$items',";
-		
-		return $script."},";
-	}
-	public function getAssetsUrl()
-	{
-		$assetsPath = Yii::getPathOfAlias('ext.kindeditor.assets');
-		$assetsUrl = Yii::app()->assetManager->publish($assetsPath, false, -1, $this->forceCopyAssets);
-		return $assetsUrl;
-	}
+    /**
+     * Renders the items.
+     * @param array $items the item configuration.
+     */
+    protected function renderItems($items)
+    {
+        $script = '';
+        foreach ($items as $key => $item) {
+            if (is_array($item)) {
+                $script = $script . "'$key':[";
+                foreach ($item as $value)
+                    $script = $script . "'$value',";
+                $script = $script . "],";
+            } else
+                $script = $script . "'$key':'$item',";
+        }
+        return $script;
+    }
+
+    protected function renderOptions($items)
+    {
+        $script = "'extraFileUploadParams':{";
+        if (is_array($items)) {
+            foreach ($items as $key => $value)
+                $script = $script . "'$key':'$value',";
+            $script = $script;
+        } else
+            $script = $script . "'$items',";
+
+        return $script . "},";
+    }
+
+    public function getAssetsUrl()
+    {
+        $assetsPath = Yii::getPathOfAlias('ext.kindeditor.assets');
+        $assetsUrl = Yii::app()->assetManager->publish($assetsPath, false, -1, $this->forceCopyAssets);
+        return $assetsUrl;
+    }
 }

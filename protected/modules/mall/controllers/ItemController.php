@@ -1,181 +1,20 @@
 <?php
 
-Yii::import("xupload.models.XUploadForm");
-
-class ItemController extends Controller
+class ItemController extends MallBaseController
 {
-
-    /**
-     * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-     * using two-column layout. See 'protected/views/layouts/column2.php'.
-     */
-    public $layout = '//layouts/mall';
-
-//     public function actions() {
-//	return array(
-//	    'upload' => array(
-//		'class' => 'xupload.actions.XUploadAction',
-//		'path' => Yii::app()->getBasePath() . "/../upload/item/image",
-//		"publicPath" => 'http://img.'.F::sg('site', 'domain'). "/item/image",
-//	));
-//    }
-
-    /**
-     * @return array action filters
-     */
-    public function filters()
-    {
-        return array(
-            'accessControl', // perform access control for CRUD operations
-        );
-    }
-
     /**
      * Specifies the access control rules.
      * This method is used by the 'accessControl' filter.
      * @return array access control rules
      */
-//    public function accessRules() {
-//	return array(
-//	    array('allow', // allow all users to perform 'index' and 'view' actions
-//		'actions' => array('index', 'view'),
-//		'users' => array('*'),
-//	    ),
-//	    array('allow', // allow authenticated user to perform 'create' and 'update' actions
-//		'actions' => array('create', 'update', 'getPropValues', 'bulk'),
-//		'users' => array('@'),
-//	    ),
-//	    array('allow', // allow admin user to perform 'admin' and 'delete' actions
-//		'actions' => array('list', 'delete', 'getPropValues', 'bulk', 'upload', 'itemImgDel'),
-//		'users' => array('@'),
-//	    ),
-//	    array('deny', // deny all users
-//		'users' => array('*'),
-//	    ),
-//	);
-//    }
-
-    /**
-     * Displays a particular model.
-     * @param integer $id the ID of the model to be displayed
-     */
-    public function actionView($id)
+    public function accessRules()
     {
-        $this->render('view', array(
-            'model' => $this->loadModel($id),
-        ));
-    }
-
-    /**
-     * upload images
-     * @throws CHttpException
-     * @author milkyway(yhxxlm@gmail.com)
-     */
-    public function actionUpload($token)
-    {
-        Yii::import("xupload.models.XUploadForm");
-        //Here we define the paths where the files will be stored temporarily
-        //remove realpath
-        $store_id = isset($_SESSION['store']['store_id']) ? $_SESSION['store']['store_id'] : 0;
-        $path = Yii::app()->getBasePath() . "/../upload/store/" . $store_id . "/item/image" . "/";
-        $publicPath = 'http://' . F::sg('site', 'imageDomain') . "/store/" . $store_id . "/item/image/";
-
-        if (!file_exists($path)) {
-            mkdir($path, 0777, true);
-        }
-        $ymd = date("Ymd");
-        $path .= $ymd . '/';
-        if (!file_exists($path)) {
-            mkdir($path, 0777, true);
-        }
-
-
-        //This is for IE which doens't handle 'Content-type: application/json' correctly
-        header('Vary: Accept');
-        if (isset($_SERVER['HTTP_ACCEPT']) && (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false)) {
-            header('Content-type: application/json');
-        } else {
-            header('Content-type: text/plain');
-        }
-
-        //Here we check if we are deleting and uploaded file
-        if (isset($_GET["_method"])) {
-            if ($_GET["_method"] == "delete") {
-                if ($_GET["file"][0] !== '.') {
-                    $file = $path . $_GET["file"];
-                    if (is_file($file)) {
-                        unlink($file);
-                    }
-                }
-                echo json_encode(true);
-            }
-        } else {
-            $model = new XUploadForm;
-            $model->file = CUploadedFile::getInstance($model, 'file');
-//We check that the file was successfully uploaded
-            if ($model->file !== null) {
-//Grab some data
-                $model->mime_type = $model->file->getType();
-                $model->size = $model->file->getSize();
-                $model->name = $model->file->getName();
-//(optional) Generate a random name for our file
-
-
-                $filename = date("YmdHis") . '_' . rand(10000, 99999);
-                $filename .= "." . $model->file->getExtensionName();
-//		$filename =  $ymd . '/' . $filename;
-
-                if ($model->validate()) {
-//Move our file to our temporary dir
-                    $model->file->saveAs($path . $filename);
-                    chmod($path . $filename, 0777);
-//here you can also generate the image versions you need 
-//using something like PHPThumb
-//Now we need to save this path to the user's session
-                    if (Yii::app()->user->hasState('images_' . $token)) {
-                        $userImages = Yii::app()->user->getState('images_' . $token);
-                    } else {
-                        $userImages = array();
-                    }
-                    $userImages[] = array(
-                        "path" => $path . $filename,
-                        //the same file or a thumb version that you generated
-                        "thumb" => $path . $filename,
-                        "filename" => $filename,
-                        "url" => $ymd . '/' . $filename,
-                        'size' => $model->size,
-                        'mime' => $model->mime_type,
-                        'name' => $model->name,
-                    );
-                    Yii::app()->user->setState('images_' . $token, $userImages);
-
-//Now we need to tell our widget that the upload was succesfull
-//We do so, using the json structure defined in
-// https://github.com/blueimp/jQuery-File-Upload/wiki/Setup
-                    echo json_encode(array(array(
-                        "name" => $model->name,
-                        "type" => $model->mime_type,
-                        "size" => $model->size,
-                        "url" => $publicPath . $ymd . '/' . $filename,
-                        "thumbnail_url" => $publicPath . $ymd . '/' . "$filename",
-                        "delete_url" => $this->createUrl("upload", array(
-                                "_method" => "delete",
-                                "file" => $filename
-                            )),
-                        "delete_type" => "POST"
-                    )));
-                } else {
-//If the upload failed for some reason we log some data and let the widget know
-                    echo json_encode(array(
-                        array("error" => $model->getErrors('file'),
-                        )));
-                    Yii::log("XUploadAction: " . CVarDumper::dumpAsString($model->getErrors()), CLogger::LEVEL_ERROR, "xupload.actions.XUploadAction"
-                    );
-                }
-            } else {
-                throw new CHttpException(500, "Could not upload file");
-            }
-        }
+        return array_merge(array(
+                array('allow',
+                    'users' => array('@'),
+                )
+            ), parent::accessRules()
+        );
     }
 
     /**
@@ -184,95 +23,16 @@ class ItemController extends Controller
      */
     public function actionCreate()
     {
-        Yii::import("xupload.models.XUploadForm");
-        $model = new Item('create');
-        $upload = new XUploadForm;
-        $image = new ItemImg;
-// Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValidation($model);
-        $action = 'item';
+        $model = new Item();
         if (isset($_POST['Item'])) {
+            $this->handlePostData();
             $model->attributes = $_POST['Item'];
-//	    $model->sn = 'YC' . date('Ymd') . mt_rand(10000, 99999);
-            $model->store_id = $_SESSION['store']['store_id'];
-            if ($_POST['Item']['props']) {
-//		foreach ($_POST['Item']['props'] as $key => $value) {
-//		    $p = ItemProp::model()->findByPk($key);
-//		    
-//		    if ($p->type == 'multiCheck') {
-////			$values = implode($value, ',');
-//			$p_arr[] = $value;
-//			foreach ($value as $kk => $vv) {
-//			    $v = PropValue::model()->findByPk($vv);
-//			    $value_name[] = $v->value_name;
-//			}
-//			$value_names = implode($value_name, ',');
-//			$v_arr[] = $p->prop_name . ':' . $value_names;
-//		    } elseif ($p->type == 'optional') {
-//			$v_o = $value ? explode(':', $value) : 0;
-//			$p_arr[] = $key . ':' .($v_o != 0 ? $v_o[1] : 0);
-//			$v = PropValue::model()->findByPk($value);
-//			$v_arr[] = $p->prop_name . ':' . $v->value_name;
-//		    } elseif ($p->type == 'input') {
-//		    //如果是文本框输入的话 不纳入搜索
-//		    //也就不纳入到props里 只保存到prop_names里
-//			$p_arr[] = $key . ':' . $value;
-//			$v_arr[] = $p->prop_name . ':' . $value;
-//		    }
-//		}
-//		$props = implode($p_arr, ';');
-                $model->props = CJSON::encode($_POST['Item']['props']);
-//		$props_name = implode($v_arr, ';');
-//		$model->props_name = $props_name;
-            }
-
-            if ($_POST['Item']['skus']) {
-//			foreach ($_POST['Item']['skus'] as $s_key => $s_value) {
-//			    $skus[] = implode($s_value['props'], ';').';'.$s_value['quantity'].';'.$s_value['price'];
-//			}
-                $model->skus = CJSON::encode($_POST['Item']['skus']);
-//			$model->skus = implode($skus, ',');
-            }
-
-            $transaction = Yii::app()->db->beginTransaction();
-
-//	    print_r($_POST);
-//	    exit;
-            try {
-                if ($model->save()) {
-                    $skuIds = array();
-                    if ($_POST['Item']['skus']) {
-                        foreach ($_POST['Item']['skus']['table'] as $s_key => $s_value) {
-                            $sku = new Sku;
-                            $sku->item_id = $model->item_id;
-                            $sku->props = CJSON::encode(($s_value['props']));
-                            $sku->quantity = $s_value['quantity'];
-                            $sku->price = $s_value['price'];
-                            $sku->outer_id = $s_value['outer_id'];
-                            $sku->status = $s_value ? 'normal' : 'deleted';
-                            $sku->save();
-                            if ($sku->sku_id > 0) $skuIds[] = $sku->sku_id;
-                        }
-                    }
-                    $transaction->commit();
-                    $skus_data = implode(",", $skuIds); //储存为淘宝sku[]格式。
-
-                    $sql = 'UPDATE {{item}} SET `skus_data`="' . $skus_data . '" WHERE item_id=' . $model->item_id;
-
-                    Yii::app()->db->createCommand($sql)->execute();
-
-                    $this->redirect(array('view', 'id' => $model->item_id));
-                }
-            } catch (Exception $e) {
-                $transaction->rollback();
-                Yii::app()->handleException($e);
+            if ($model->save()) {
+                $this->redirect(array('view', 'id' => $model->item_id));
             }
         }
-
         $this->render('create', array(
             'model' => $model,
-            'image' => $image,
-            'upload' => $upload
         ));
     }
 
@@ -284,86 +44,15 @@ class ItemController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->loadModel($id);
-        $model->scenario = 'update';
-        $upload = new XUploadForm;
-        $image = new ItemImg;
-// Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValisdation($model);
-// Uncomment the following line if AJAX validation is needed
-// $this->performAjaxValidation($model);
-        $action = 'item';
-
-        $skuIds = array();
-
         if (isset($_POST['Item'])) {
+            $this->handlePostData();
             $model->attributes = $_POST['Item'];
-
-
-            if ($_POST['Item']['props']) {
-
-                $model->props = CJSON::encode($_POST['Item']['props']);
-
-            }
-
-            if ($_POST['Item']['skus']) {
-                $model->skus = CJSON::encode($_POST['Item']['skus']);
-                foreach ($_POST['Item']['skus']['table'] as $s_key => $s_value) {
-                    if ($s_value['sku_id'] > 0) {
-                        $sku = Sku::model()->findByPk($s_value['sku_id']);
-                        $sku->props = CJSON::encode(($s_value['props']));
-                        $sku->quantity = $s_value['quantity'];
-                        $sku->price = $s_value['price'];
-                        $sku->outer_id = $s_value['outer_id'];
-                        $sku->status = $s_value ? 'normal' : 'deleted';
-                        $sku->save();
-                        $skuIds[] = $sku->sku_id;
-                    } else {
-                        $jsp = CJSON::encode(($s_value['props']));
-                        $sku = Sku::model()->findByAttributes(array("props" => $jsp, "item_id" => $model->item_id));
-                        if (!$sku) {
-                            $sku = new Sku;
-                            $sku->item_id = $model->item_id;
-                        }
-
-                        $sku->props = $jsp;
-                        $sku->quantity = $s_value['quantity'];
-                        $sku->price = $s_value['price'];
-                        $sku->outer_id = $s_value['outer_id'];
-                        $sku->status = $s_value ? 'normal' : 'deleted';
-                        $sku->save();
-                        if ($sku->sku_id > 0) $skuIds[] = $sku->sku_id;
-                    }
-
-
-                }
-
-                //删除
-                $rawData = Sku::model()->findAll('item_id = ' . $model->item_id);
-                $delArr = array();
-                foreach ($rawData as $k1 => $v1) {
-                    if (!in_array($v1->sku_id, $skuIds)) {
-                        $delArr[] = $v1->sku_id;
-                    }
-                }
-
-                if (count($delArr)) {
-                    Sku::model()->updateAll(array("status" => "deleted"), 'sku_id IN (' . implode(', ', $delArr) . ')');
-                }
-            }
-
-
-            $model->skus_data = implode(",", $skuIds);
-
             if ($model->save()) {
-
-                //$this->redirect(array('view', 'id' => $model->item_id));
+                $this->redirect(array('view', 'id' => $model->item_id));
             }
         }
-
         $this->render('update', array(
             'model' => $model,
-            'image' => $image,
-            'upload' => $upload
         ));
     }
 
@@ -395,17 +84,6 @@ class ItemController extends Controller
     }
 
     /**
-     * Lists all models.
-     */
-    public function actionIndex()
-    {
-        $dataProvider = new CActiveDataProvider('Item');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
-    }
-
-    /**
      * Manages all models.
      */
     public function actionAdmin()
@@ -429,29 +107,18 @@ class ItemController extends Controller
      */
     public function loadModel($id)
     {
-        $model = Item::model()->with(array('image' => array('order' => 'position ASC')))->findByPk($id);
+        $model = Item::model()->with(array('itemImgs' => array('order' => 'position ASC')))->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
     }
 
-    /**
-     * Performs the AJAX validation.
-     * @param CModel the model to be validated
-     */
-    protected function performAjaxValidation($model)
-    {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'item-form') {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
-        }
-    }
 
 //批量操作
     public function actionBulk()
     {
-//        print_r($_POST);
-
+        print_r($_POST);
+        exit;
         $ids = $_POST['item-grid_c0'];
 //        print_r($ids);
 //        exit;
@@ -668,219 +335,124 @@ class ItemController extends Controller
         }
     }
 
-    /**
-     * ajax 成功后一般返回json数据
-     * 然后jquery读取出来
-     * 在写个function, 转为html
-     */
-    public function actionGetPropValues()
-    {
-        $category_id = $_POST['category_id'] ? $_POST['category_id'] : NULL;
-        $item_id = $_POST['item_id'] ? $_POST['item_id'] : NULL;
-        $item = Item::model()->findByPk($item_id);
-        $props_arr = CJSON::decode($item->props, TRUE);
-        $skus_arr = CJSON::decode($item->skus, TRUE);
-//	$props_arr = explode(';', $props_list->props);
-//	foreach ($props_arr as $k => $v) {
-//	    $arr[] = explode(':', $v);
-//	    if(is_array($arr)){
-//		
-//	    }
-//	}
-//	foreach ($newarr as $k => $v) {
-//	    $v_arr = explode(',', $v[1]);
-//	    $arr[$v[0]] = $v_arr;
-//	}
-//        $arr = array('3'=>'106', '1'=>'78', '2'=>'82');
-//	关键属性
-        $cri = new CDbCriteria(array('condition' => 'is_key_prop=1 and category_id =' . $category_id));
-        $props = ItemProp::model()->findAll($cri);
-        foreach ($props as $p) {
-            echo '<div class="row">';
-            if ($p->must == 1) {
-                echo '<label class="span2 control-label" for="">' . $p->prop_name . '<span class="required">*</span></label>';
-            } else {
-                echo '<label class="span2 control-label" for="">' . $p->prop_name . '</label>';
-            }
-            echo '<div class="span10">';
-            if ($p->type == 'input') {
-                echo $p->getPropTextFieldValues($p->prop_name, $props_arr[$p->prop_id]);
-            } elseif ($p->type == 'optional') {
-                echo $p->getPropOptionValues($p->prop_name, $props_arr[$p->prop_id]);
-            } elseif ($p->type == 'multiCheck') {
-                echo $p->getPropCheckBoxListValues($p->prop_name, $props_arr[$p->prop_id]);
-            }
-            echo '</div>';
-            echo '</div>';
-        }
-
-//	非关键属性
-
-        $cri = new CDbCriteria(array(
-            'condition' => 'is_key_prop=0 and is_sale_prop=0 and category_id =' . $category_id,
-        ));
-        $props = ItemProp::model()->findAll($cri);
-
-        foreach ($props as $p) {
-            echo '<div class="row">';
-            if ($p->must == 1) {
-                echo '<label class="span2 control-label" for="">' . $p->prop_name . '<span class="required">*</span></label>';
-            } else {
-                echo '<label class="span2 control-label" for="">' . $p->prop_name . '</label>';
-            }
-            echo '<div class="span9">';
-            if ($p->type == 'input') {
-                echo $p->getPropTextFieldValues($p->prop_name, $props_arr[$p->prop_id][0]);
-            } elseif ($p->type == 'optional') {
-                echo $p->getPropOptionValues($p->prop_name, $props_arr[$p->prop_id]);
-            } elseif ($p->type == 'multiCheck') {
-                echo $p->getPropCheckBoxListValues($p->prop_name, $props_arr[$p->prop_id]);
-            }
-            echo '</div>';
-            echo '</div>';
-        }
-
-        //销售属性
-        $cri = new CDbCriteria(array(
-            'condition' => 'is_sale_prop=1 and category_id =' . $category_id,
-        ));
-        $props = ItemProp::model()->findAll($cri);
-
-        if ($props) {
-            echo '<div class="row">';
-            echo '<label class="span2 control-label" for="">商品规格</label>';
-            echo '<div class="span9">';
-            echo '<div class="sku-wrap">';
-            $ii = 0;
-            foreach ($props as $p) {
-
-                echo '<div class="sku-group"><label class="sku-head">' . $p->prop_name . '</label>';
-                echo '<div class="sku-box  sku-color">';
-                if ($p->type == 'multiCheck') {
-                    echo $p->getPropCheckBoxListValues($p->prop_name, $skus_arr['checkbox'][$p->prop_id], 'change', 'skus', 'checkbox');
-                }
-
-                $thead .= '<th> <span id="thop_' . $ii . '">' . $p->prop_name . '</span></th>';
-                $ii++;
-                echo '</div></div>';
-            }
-
-            echo '<p id="output"></p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-
-            echo <<<EOF
-	    <div class="row" style='margin-bottom:10px' style="visibility:hidden">
-	    <div class="span2">&nbsp;</div>
-	    <div class="span9" style="padding-left:0">
-	    <div class="sku-map">
-	    <table id="sku" class="table table-bordered">
-	    <thead>
-	    <tr>
-		{$thead}
-		<th>价格</th><th>数量</th><th>商家编码</th><th>操作</th></tr>
-	    </thead>
-	    <tbody>
-	    </tbody>
-	    </table>
-	    </div>
-	</div>
-    </div>
-EOF;
-        }
-    }
-
     public function actionGetItemSpec()
     {
         $skus = $_POST['Item']['skus'];
         foreach ($skus as $key => $value) {
             $sku[] = $_POST['Item']['skus'][$key];
         }
-        $options = CJavaScript::encode($sku);
-
         echo json_encode($sku);
-//        $config = <<<EOD
-//           var array = {$options}
-//EOD;
-//$cs = Yii::app()->getClientScript();
-//        $cs->registerScript($config, CClientScript::POS_HEAD);
-//	$sku_count = count($sku);
-//	
-//	for($i=0;$i<$sku_count;$i++){
-//	   $sku =  $sku[$i];
-//	}
-//	$ch = $sku[0];
-//	$color = $sku[1];
-//	
-//	$ch = $_POST['Item']['props'][3];
-//	$color = $_POST['Item']['props'][4];
-//	$num = count($color);
-//	if (!$ch || !$color)
-//	    exit;
-//	foreach ($ch as $v) {
-//	    $v_list = PropValue::model()->findByPk($v);
-//	    $out .= "<div class='one'>
-//  	 <tr>
-//    <td rowspan=" . $num . "> $v_list->value_name </td> 
-//";
-//	    if ($color) {
-//		$i = 0;
-//		foreach ($color as $c) {
-//		    $c_list = PropValue::model()->findByPk($c);
-//		    if ($i == 0) {
-//			$out .=" 
-//			    <td> $c_list->value_name </td>
-//			    <td> <input name='price[]'></td>
-//			    <td> <input name='quantity[]'></td>
-//			    <td> <input name='outer_id[]'></td>
-//			   ";
-//		    } else {
-//			$out .="</tr>";
-//			$out .=" 
-//		  	<tr>
-//			    <td> $c_list->value_name </td>
-//			    <td> <input name='price[]'></td>
-//			    <td> <input name='quantity[]'></td>
-//			    <td> <input name='outer_id[]'></td>
-//			  </tr>";
-//		    }
-//		    $i++;
-//		}
-//	    }
-//	    $out .="</tr></div>";
-//	}
-//	echo <<<EOF
-//
-//<table class="table table-bordered">
-//  <tr>
-//    <td>尺寸</td>
-//    <td>颜色</td>
-//    <td style="width:100px">价格</td>
-//    <td style="width:100px">数量</td>
-//    <td style="width:100px">商家编码</td>
-//  </tr>
-//$out
-//  
-//</table>
-//EOF;
-//    }
     }
 
 
     public function actionAjaxGetSkus()
     {
 
-        if (!Yii::app()->request->isAjaxRequest) {
-            exit();
+        if (!Yii::app()->request->isAjaxRequest && empty($_POST['item_id'])) {
+            return;
         }
-
-        $id = $_POST["item_id"];
-        $skus = Sku::getSkusData($id);
-
-        echo CJSON::encode($skus, true);
-
-        Yii::app()->end();
+        $skus = Sku::model()->findAllByAttributes(array("item_id"=>$_POST["item_id"]));
+        $data = array();
+        foreach($skus as $sku){
+            $arr = array();
+            $arr['sku_id'] = $sku->sku_id;
+            $arr['props'] = F::convert_props_js_id($sku->props);
+//            $arr['props'] = str_replace(":","-",$arr['props']);
+            $arr['price'] = $sku->price;
+            $arr['stock'] = $sku->stock;
+            $arr['outer_id'] = $sku->outer_id;
+            $data[] = $arr;
+        }
+        echo json_encode($data);
     }
 
+    /**
+     * format post props value
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    protected function handlePostData()
+    {
+        $itemProps = array();
+        if (isset($_POST['ItemProp']) && is_array($_POST['ItemProp'])) {
+            $itemProps = $_POST['ItemProp'];
+            unset($_POST['ItemProp']);
+        }
+        if (isset($_POST['Item']['skus']['checkbox']) && is_array($_POST['Item']['skus']['checkbox'])) {
+            $itemProps = CMap::mergeArray($itemProps, $_POST['Item']['skus']['checkbox']);
+        }
+        list($_POST['Item']['props'], $_POST['Item']['props_name']) = $this->handleItemProps($itemProps);
+
+        if (isset($_POST['Item']['skus']['table']) && is_array($_POST['Item']['skus']['table'])) {
+            $skus = array();
+            foreach ($_POST['Item']['skus']['table'] as $pid => $sku) {
+                list($sku['props'], $sku['props_name']) = $this->handleItemProps($sku['props']);
+                $sku['status'] = 1;
+                $skus[] = $sku;
+            }
+            $_POST['Item']['skus'] = $skus;
+        }
+
+        if (isset($_POST['ItemImg']['pic']) && isset($_POST['ItemImg']['item_img_id']) && is_array($_POST['ItemImg']['pic']) && is_array($_POST['ItemImg']['item_img_id'])) {
+            $pics = $_POST['ItemImg']['pic'];
+            $ids = $_POST['ItemImg']['item_img_id'];
+            if ($count = count($pics) === count($ids)) {
+                $itemImgs = array();
+                for ($i = 0, $count = count($pics); $i < $count; $i++) {
+                    $itemImgs[] = array(
+                        'item_img_id' => $ids[$i],
+                        'pic' => $pics[$i],
+                        'position' => $i,
+                    );
+                }
+                unset($_POST['ItemImg']);
+                $_POST['Item']['itemImgs'] = $itemImgs;
+            }
+        }
+    }
+
+    /**
+     * format item prop data to json format from post
+     * @param $itemProps
+     * @return array
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    protected function handleItemProps($itemProps)
+    {
+        $props = array();
+        $props_name = array();
+        foreach ($itemProps as $pid => $vid) {
+            $itemProp = ItemProp::model()->findByPk($pid);
+            $pname = $itemProp->prop_name;
+            if (is_array($vid)) {
+                $props[$pid] = array();
+                $props_name[$pname] = array();
+                foreach ($vid as $v) {
+                    $props[$pid][] = $pid . ':' . $v;
+                    $propValue = PropValue::model()->findByPk($v);
+                    $vname = $propValue ? $propValue->value_name : $v;
+                    $props_name[$pname][] = $pname . ':' . $vname;
+                }
+            } else {
+                $props[$pid] = $pid . ':' . $vid;
+                $propValue = PropValue::model()->findByPk($v);
+                $vname = $propValue ? $propValue->value_name : $v;
+                $props_name[$pname] = $pname . ':' . $vname;
+            }
+        }
+        return array(json_encode($props), json_encode($props_name));
+    }
+
+    public function actionItemProps($category_id, $item_id)
+    {
+        $itemProps = ItemProp::model()->with(array('propValues'))->findAllByAttributes(array('category_id' => $category_id));
+        $item = Item::model()->findByPk($item_id);
+        $this->renderPartial('_form_prop', array('itemProps' => $itemProps, 'item' => $item), false, true);
+    }
+
+    public function actionGetChildAreas($parent_id)
+    {
+        $areas = Area::model()->findAllByAttributes(array('parent_id' => $parent_id));
+        $areasData = CHtml::listData($areas, 'area_id', 'name');
+        echo json_encode(CMap::mergeArray(array('0' => ''), $areasData));
+    }
 }

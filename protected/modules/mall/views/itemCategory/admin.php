@@ -12,7 +12,14 @@ $this->menu = array(
 <h1>管理分类</h1>
 
 <div class="well well-large">
-    <?php $options = array(
+    <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+            'id' => 'horizontalForm',
+            'htmlOptions' => array(
+                'class' => 'form-horizontal',
+            )
+        )
+    );
+    $options = array(
         array(
             'text' => '商品',
             'url' => '/mall/item/admin',
@@ -36,9 +43,7 @@ $this->menu = array(
             )
         )
     );
-
-    $root = Category::model()->findByPk('3');
-    $descendants = $root->descendants()->findAll();
-    echo Category::model()->getTree($descendants, $options, 'name');
+    echo Category::model()->getTree(3, $options, 'getLabel');
+    $this->endWidget();
     ?>
 </div>

@@ -24,6 +24,7 @@ $cs->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery.blockUI.1.33.
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/backtop/js/scrolltop.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
 	<script type="text/javascript" src="<?php echo F::baseUrl(); ?>/js/holder.js"></script>
+        
     </head>
     <script type="text/javascript">
         var SITE_URL = "<?php echo Yii::app()->request->baseUrl ?>";

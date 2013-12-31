@@ -15856,3 +15856,82 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/mall/order/update/id/undefined
 HTTP_REFERER=http://localhost/basic/backend.php/mall/order/update/id/7
 ---
+2013/12/31 05:20:37 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 D:\wamp\www\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/basic/backend.php
+---
+2013/12/31 05:20:40 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in D:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AdminUserController), 'bootstrap.widge...', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\themes\backend\views\layouts\user.php(16): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\basic\protected\backend\controllers\AdminUserController.php(141): CController->render('admin', Array)
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminUserController->actionAdmin()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('adminUser/admin')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/adminUser/admin
+HTTP_REFERER=http://localhost/basic/backend.php
+---
+2013/12/31 05:20:44 [error] [php] include(WMainMenu.php): failed to open stream: No such file or directory (D:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWidgetFactory.php(146): import()
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): AssignmentController->createWidget()
+#3 D:\wamp\www\basic\protected\views\layouts\main.php(23): AssignmentController->widget()
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): AssignmentController->renderInternal()
+#6 D:\wamp\www\yii\framework\web\CController.php(784): AssignmentController->renderFile()
+#7 D:\wamp\www\basic\protected\backend\modules\auth\controllers\AssignmentController.php(27): AssignmentController->render()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AssignmentController->actionIndex()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\CController.php(286): AssignmentController->runAction()
+#11 D:\wamp\www\yii\framework\web\CController.php(265): AssignmentController->runActionWithFilters()
+#12 D:\wamp\www\yii\framework\web\CWebApplication.php(282): AssignmentController->run()
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/auth/assignment/index
+in D:\wamp\www\basic\protected\views\layouts\main.php (23)
+in D:\wamp\www\basic\protected\backend\modules\auth\controllers\AssignmentController.php (27)
+in D:\wamp\www\basic\backend.php (14)

@@ -19,18 +19,25 @@
                 <?php
                 $root = Category::model()->findByPk(3);
                 $children = $root->children()->findAll();
+                $params = array();
+                if (!empty($_GET['key'])) {
+                    $params['key'] = $_GET['key'];
+                }
                 foreach ($children as $child) {
-                    echo '<div class="pd_l_ca"><a href="' . Yii::app()->createUrl('catalog/index', array('key' => $child->getUrl())) . '">' . $child->name . '</a></div>';
+                    $params['cat'] = $child->getUrl();
+                    echo '<div class="pd_l_ca"><a href="' . Yii::app()->createUrl('catalog/index', $params) . '">' . $child->name . '</a></div>';
                     echo '<ul class="pd_ca_list" >';
                     $leafs = $child->children()->findAll();
                     foreach ($leafs as $leaf) {
-                        echo '<li><a href="' . Yii::app()->createUrl('catalog/index', array('key' => $leaf->getUrl())) . '">' . $leaf->name . '</a></li>';
+                        $params['cat'] = $leaf->getUrl();
+                        echo '<li><a href="' . Yii::app()->createUrl('catalog/index', $params) . '">' . $leaf->name . '</a></li>';
                     }
                     echo '</ul>';
                 } ?>
             </div>
             <div class="pd_l_slider">
                 <h2>推荐产品</h2>
+
                 <div class="pd_slider_img">
                     <div id="xxx">
                         <script>
@@ -48,8 +55,6 @@
                     </div>
                 </div>
                 <div class="pd_slider_arr">
-
-
                 </div>
             </div>
         </div>
@@ -58,30 +63,30 @@
                 款供您选择
             </div>
             <div class="pd_select">
-                <ul>
-                    <li>品牌：</li>
-                    <li><a href="">品牌1</a></li>
-                    <li><a href="">品牌2</a></li>
-                    <li><a href="">品牌3</a></li>
-                </ul>
-                <ul>
-                    <li>类型：</li>
-                    <li><a href="">类型1</a></li>
-                    <li><a href="">类型2</a></li>
-                    <li><a href="">类型3</a></li>
-                </ul>
-                <ul>
-                    <li>用途：</li>
-                    <li><a href="">用途1</a></li>
-                    <li><a href="">用途2</a></li>
-                    <li><a href="">用途3</a></li>
-                </ul>
-                <ul>
-                    <li>价格：</li>
-                    <li><a href="">0-1000</a></li>
-                    <li><a href="">1000-10000</a></li>
-                    <li><a href="">10000-50000</a></li>
-                </ul>
+                <?php if ($categories) { ?>
+                    <ul>
+                        <li>分类：</li>
+                        <?php foreach ($categories as $cate) {
+                            $params['cat'] = $cate->getUrl();
+                            echo '<li><a href="' . Yii::app()->createUrl('catalog/index', $params) . '">' . $cate->name . '</a></li>';
+                        } ?>
+                    </ul>
+                <?php
+                }
+                $params = $_GET;
+                if ($itemProps) {
+                    foreach ($itemProps as $itemProp) {
+                        ?>
+                        <ul>
+                            <li><?php echo $itemProp->prop_name; ?>：</li>
+                            <?php foreach ($itemProp->propValues as $propValue) {
+                                echo '<li><a href="' . Yii::app()->createUrl('catalog/index', $params) . '">' . $propValue->value_name . '</a></li>';
+                            } ?>
+                        </ul>
+                    <?php
+                    }
+                }
+                ?>
             </div>
             <div class="pd_sort">
                 <div class="pd_sort_sold current">销量</div>
@@ -127,13 +132,13 @@
                 <?php } ?>
             </div>
             <div class="page_p">
-                <span class="end"><a href="" class="page_p"><img alt="" src=""/>首页</a></a></span>
+                <span class="end"><a href="<?php echo $this->createUrl(''); ?>" class="page_p">
+                        <img alt="" src=""/>首页</a></a></span>
                 <span class="end"><a href="" class="page_p"><img alt="" src=""/>上一页</a></a></span>
-                <span class="current"><a href="">1</a></span>
-                <span><a href="">2</a></span>
-                <span><a href="">3</a></span>
-                <span><a href="">4</a></span>
-                <span><a href="">5</a></span>
+                <?php for ($i = 1; $pager->pageCount; $i++) {
+                    $class = $i == $pager->currentPage ? 'current' : '';
+                    echo '<span class="' . $class . '"><a href="' . $this->createUrl('') . '">' . $i . '</a></span>';
+                } ?>
                 <span><a href="" class="page_n">下一页</a></span>
                 <span><a href="" class="page_n">末页</a></span>
             </div>

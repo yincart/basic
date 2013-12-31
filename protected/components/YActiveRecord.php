@@ -1,4 +1,5 @@
 <?php
+
 /**
  * add save relation model
  * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
@@ -34,16 +35,16 @@ Class YActiveRecord extends CActiveRecord
     public function save($runValidation = true, $attributes = null)
     {
         $db = $this->getDbConnection();
-        if($db->getCurrentTransaction()===null)
-            $transaction=$db->beginTransaction();
+        if ($db->getCurrentTransaction() === null)
+            $transaction = $db->beginTransaction();
         try {
             $return = parent::save($runValidation, $attributes);
-            if(isset($transaction))
+            if (isset($transaction))
                 $transaction->commit();
             return $return;
         } catch (Exception $e) {
             $this->addError('Exception', $e);
-            if(isset($transaction))
+            if (isset($transaction))
                 $transaction->rollback();
             else
                 throw new CDbException('YActiveRecord Save Model Error', 0, $this);
@@ -77,7 +78,7 @@ Class YActiveRecord extends CActiveRecord
                     $model->attributes = $value;
                     $model->$foreignKey = $this->$foreignKey;
                     if (!$model->save())
-                        throw new CDbException(Yii::t('base','Save relations fail!'), 0, $model);
+                        throw new CDbException(Yii::t('base', 'Save relations fail!'), 0, $model);
                 }
                 if ($savedModelList) {
                     $cri = new CDbCriteria();

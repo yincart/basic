@@ -82,7 +82,7 @@
 
 <div class="container-fluid" id="page">
 
-    <?php echo $content; ?>
+    <?php  echo $content; ?>
 
     <div class="clear"></div>
 

@@ -35,15 +35,15 @@
     <div class="logo"><a href="<?php echo Yii::app()->baseUrl; ?>"><img alt=""
                                                                         src=""
                                                                         width="227" height="80"></a></div>
-    <div class="search">
+    <form class="search" method="get">
         <div class="search_box">
-            <input type="text" value=""/>
+            <input name="key" type="text" value="<?php echo isset($_GET['key']) ? $_GET['key'] : ''; ?>"/>
             <button></button>
         </div>
         <div class="search_hot">
             热门搜索：<a href="">皮雕</a> <a href="">软皮</a> <a href="">压花</a>
         </div>
-    </div>
+    </form>
     <div class="shopping_car">
         购物车有<span class="cor_red bold">0</span>件商品
     </div>
@@ -55,7 +55,7 @@
         $categories = Category::model()->findAllByAttributes(array('root' => '3', 'level' => 2));
         foreach ($categories as $cate) {
             $class = isset(Yii::app()->params['categoryIds']) && in_array($cate->category_id, Yii::app()->params['categoryIds']) ? 'current' : '';
-            echo '<li class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array('key' => $cate->category_id)) . '">' . $cate->name . '</a></li>';
+            echo '<li class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array('cat' => $cate->category_id)) . '">' . $cate->name . '</a></li>';
         }
         ?>
     </ul>

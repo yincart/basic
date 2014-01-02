@@ -63,7 +63,7 @@ class Brand extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'value_id' => 'Value',
+			'value_id' => Yii::t('mall', 'Value'),
 			'value_name' => 'Value Name',
 			'prop_id' => 'Prop',
 			'prop_name' => 'Prop Name',

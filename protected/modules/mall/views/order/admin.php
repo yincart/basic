@@ -5,16 +5,14 @@ $this->breadcrumbs=array(
 );
 
 ?>
-<!--是前面的东西的代码 表示路径的代码  /Orders/Manage-->
-
 <h1>Manage Orders</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
-<?php echo CHtml::link('<div class="btn btn-primary">Create Order</div>','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
+<?php echo CHtml::link('Create Order','#',array('id'=>'select-user','class'=>'btn btn-primary')); ?>
+<div id="select-form" style="display:none">
 
     <?php $this->renderPartial('select_user',array(
         'users'=>$users,
@@ -60,31 +58,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
      'name' => 'create_time',
      'value' => 'date("Y年m月d日 H:i:s",$data->create_time +(8 * 3600))',
  ),
-
-		/*
-		'total_fee',
-		'ship_fee',
-
-		'ship_method',
-		'receiver_name',
-		'receiver_country',
-		'receiver_state',
-		'receiver_city',
-		'receiver_district',
-		'receiver_address',
-		'receiver_zip',
-		'receiver_mobile',
-		'receiver_phone',
-		'memo',
-		'pay_time',
-		'ship_time',
-		'create_time',
-		'update_time',
-		*/
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
-        //是后面那三个标志。
 	),
 ));
 ?>

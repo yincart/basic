@@ -31,12 +31,6 @@
         <?php echo $form->dropdownlist($model, 'pay_status', array('0' => '未支付', '1' => '已付款'),
             array(
                 'class' => 'form-control form-control1',
-//                'ajax' => array(
-//                    'type' => 'GET', //request type
-//                    'url' => CController::createUrl('dynamicpay_status'), //url to call
-//                    'update' => '#Order_payment_method_id,#Order_shipping_method_id', //selector to update
-//                    'data' => 'js:"pay_status="+jQuery(this).val()',
-//                )
             ));
         ?>
     </div>

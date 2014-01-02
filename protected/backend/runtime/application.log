@@ -16295,3 +16295,1496 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/user/admin/admin
 HTTP_REFERER=http://localhost/basic/backend.php/mall/elfinder/admin
 ---
+2013/12/31 07:39:23 [error] [exception.CException] exception 'CException' with message '属性 "Payment.pay_id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pay_id')
+#1 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('pay_id')
+#2 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Payment), 'pay_id')
+#3 D:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Payment), 'pay_id', Array)
+#4 D:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Payment), 'pay_id', Array)
+#5 D:\wamp\www\basic\protected\modules\mall\views\payment\_search.php(10): CActiveForm->textField(Object(Payment), 'pay_id', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\views\payment\admin.php(37): CController->renderPartial('_search', Array)
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#11 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#12 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#13 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 D:\wamp\www\basic\protected\modules\mall\controllers\PaymentController.php(111): CController->render('admin', Array)
+#15 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentController->actionAdmin()
+#16 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/payment/ad...')
+#21 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/mall/payment/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2013/12/31 07:45:07 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2013/12/31 07:45:07 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2013/12/31 07:46:34 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2013/12/31 07:46:34 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2013/12/31 07:46:50 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2013/12/31 07:46:50 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2013/12/31 07:47:19 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2013/12/31 07:47:19 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2013/12/31 07:47:37 [error] [exception.CException] exception 'CException' with message '属性 "PaymentMethod.id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 D:\wamp\www\basic\protected\modules\mall\models\PaymentMethod.php(96): CActiveRecord->__get('id')
+#2 D:\wamp\www\basic\protected\modules\mall\views\paymentMethod\admin.php(17): PaymentMethod->search()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\PaymentMethodController.php(111): CController->render('admin', Array)
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentMethodController->actionAdmin()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/paymentMet...')
+#14 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/basic/backend.php/mall/paymentMethod/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/elfinder/admin
+---
+2013/12/31 08:32:19 [error] [exception.CException] exception 'CException' with message '属性 "Payment.pay_id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pay_id')
+#1 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('pay_id')
+#2 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Payment), 'pay_id')
+#3 D:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Payment), 'pay_id', Array)
+#4 D:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Payment), 'pay_id', Array)
+#5 D:\wamp\www\basic\protected\modules\mall\views\payment\_search.php(10): CActiveForm->textField(Object(Payment), 'pay_id', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\views\payment\admin.php(37): CController->renderPartial('_search', Array)
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#11 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#12 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#13 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 D:\wamp\www\basic\protected\modules\mall\controllers\PaymentController.php(111): CController->render('admin', Array)
+#15 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentController->actionAdmin()
+#16 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/payment/ad...')
+#21 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/mall/payment/admin
+HTTP_REFERER=http://localhost/basic/backend.php
+---
+2013/12/31 08:37:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft.
+in D:\wamp\www\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in D:\wamp\www\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in D:\wamp\www\basic\backend.php (14)
+2013/12/31 08:37:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 D:\wamp\www\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/basic/backend.php/cms/page/admin
+---
+2013/12/31 08:37:56 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\backend\views\theme\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\backend\views\theme\_search.php(6): TbActiveForm->textFieldRow(Object(Theme), 'theme', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\backend\views\theme\admin.php(37): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\basic\protected\backend\controllers\ThemeController.php(148): CController->render('admin', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+HTTP_REFERER=http://localhost/basic/backend.php
+---
+2013/12/31 08:37:59 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 D:\wamp\www\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/basic/backend.php
+---
+2013/12/31 09:22:47 [error] [exception.CException] exception 'CException' with message '属性 "PaymentMethod.id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id')
+#1 D:\wamp\www\basic\protected\modules\mall\models\PaymentMethod.php(96): CActiveRecord->__get('id')
+#2 D:\wamp\www\basic\protected\modules\mall\views\paymentMethod\admin.php(17): PaymentMethod->search()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\controllers\PaymentMethodController.php(111): CController->render('admin', Array)
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentMethodController->actionAdmin()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/paymentMet...')
+#14 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/basic/backend.php/mall/paymentMethod/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemProp/admin
+---
+2014/01/02 00:40:16 [error] [exception.CException] exception 'CException' with message '属性 "Payment.pay_id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pay_id')
+#1 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('pay_id')
+#2 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Payment), 'pay_id')
+#3 D:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Payment), 'pay_id', Array)
+#4 D:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Payment), 'pay_id', Array)
+#5 D:\wamp\www\basic\protected\modules\mall\views\payment\_search.php(10): CActiveForm->textField(Object(Payment), 'pay_id', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\views\payment\admin.php(37): CController->renderPartial('_search', Array)
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#11 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#12 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#13 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 D:\wamp\www\basic\protected\modules\mall\controllers\PaymentController.php(111): CController->render('admin', Array)
+#15 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentController->actionAdmin()
+#16 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/payment/ad...')
+#21 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/mall/payment/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/order/admin
+---
+2014/01/02 00:53:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index.php" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/i...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/itemProp/index.php
+---
+2014/01/02 00:57:43 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemPropController.php (55)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 00:57:43 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/02 00:57:43 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/02 00:59:46 [warning] [application] Failed to set unsafe attribute "propValues" of "ItemProp".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemPropController.php (55)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 00:59:46 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/02 00:59:46 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/02 00:59:46 [warning] [application] Failed to set unsafe attribute "prop_value_id" of "PropValue".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemPropController.php (57)
+2014/01/02 00:59:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in D:\wamp\www\yii\framework\web\CController.php:1118
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#9 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/itemProp/d...')
+#10 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/basic/backend.php/mall/itemProp/delete/id/4
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemProp/admin
+---
+2014/01/02 01:13:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "Order_sort" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('Order_sort')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('Order_sort')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/order/Orde...')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/order/Order_sort/order_id
+---
+2014/01/02 01:20:48 [error] [exception.CException] exception 'CException' with message '属性 "Payment.pay_id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pay_id')
+#1 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('pay_id')
+#2 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Payment), 'pay_id')
+#3 D:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Payment), 'pay_id', Array)
+#4 D:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Payment), 'pay_id', Array)
+#5 D:\wamp\www\basic\protected\modules\mall\views\payment\_search.php(10): CActiveForm->textField(Object(Payment), 'pay_id', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\views\payment\admin.php(37): CController->renderPartial('_search', Array)
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#11 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#12 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#13 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 D:\wamp\www\basic\protected\modules\mall\controllers\PaymentController.php(111): CController->render('admin', Array)
+#15 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentController->actionAdmin()
+#16 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/payment/ad...')
+#21 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/mall/payment/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemProp/update/id/4
+---
+2014/01/02 01:43:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php:112
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php(72): ItemController->loadModel('data("url")')
+#1 [internal function]: MallBaseController->actionView('data("url")')
+#2 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#3 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#4 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/view/...')
+#14 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/basic/backend.php/mall/item/view/id/data(%22url%22)?category_id=110&YII_CSRF_TOKEN=067c04eb3db312683d02e2251160016a5516aa0c&item_id=6
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/view/id/6
+---
+2014/01/02 01:55:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "<" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('<')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('<')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/<')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/item/%3C?php%20echo%20$this-%3EcreateUrl(%22/mall/item/itemProps%22)?%3E&category_id=110&YII_CSRF_TOKEN=067c04eb3db312683d02e2251160016a5516aa0c&item_id=
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/create
+---
+2014/01/02 01:55:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "<" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('<')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('<')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/<')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/item/%3C?php%20echo%20$this-%3EcreateUrl(%22/mall/item/itemProps%22)?%3E&category_id=111&YII_CSRF_TOKEN=067c04eb3db312683d02e2251160016a5516aa0c&item_id=
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/create
+---
+2014/01/02 01:55:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "<" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('<')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('<')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/<')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/item/%3C?php%20echo%20$this-%3EcreateUrl(%22/mall/item/itemProps%22)?%3E&category_id=110&YII_CSRF_TOKEN=067c04eb3db312683d02e2251160016a5516aa0c&item_id=
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/create
+---
+2014/01/02 01:56:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "<" 动作.' in D:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('<')
+#1 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('<')
+#2 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/<')
+#3 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/basic/backend.php/mall/item/%3C?php%20echo%20$this-%3EcreateUrl(%22/mall/item/itemProps%22)?%3E&category_id=110&YII_CSRF_TOKEN=067c04eb3db312683d02e2251160016a5516aa0c&item_id=
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/create
+---
+2014/01/02 01:58:34 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:01:06 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:01:06 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:03:14 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:03:14 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:03:14 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\models\Item.php (388)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+2014/01/02 02:03:14 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\models\Item.php (388)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+2014/01/02 02:03:14 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\models\Item.php (388)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+2014/01/02 02:03:15 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php(73): ItemController->render()
+#6 unknown(0): ItemController->actionView()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/view/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php (73)
+2014/01/02 02:03:40 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php(56): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/update/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (56)
+2014/01/02 02:03:45 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php(73): ItemController->render()
+#6 unknown(0): ItemController->actionView()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/view/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php (73)
+2014/01/02 02:04:52 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbBreadcrumbs" 无效。请确认它指向一个存在的PHP文件。' in D:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ItemController), 'bootstrap.widge...', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php(73): CController->render('view', Array)
+#8 [internal function]: MallBaseController->actionView('35')
+#9 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#10 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/view/...')
+#21 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/mall/item/view/id/35
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/admin
+---
+2014/01/02 02:05:04 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php(73): ItemController->render()
+#6 unknown(0): ItemController->actionView()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/view/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php (73)
+2014/01/02 02:06:18 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php(73): ItemController->render()
+#6 unknown(0): ItemController->actionView()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/view/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php (73)
+2014/01/02 02:06:43 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php(73): ItemController->render()
+#6 unknown(0): ItemController->actionView()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/view/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php (73)
+2014/01/02 02:07:16 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php(73): ItemController->render()
+#6 unknown(0): ItemController->actionView()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/view/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php (73)
+2014/01/02 02:09:04 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php(73): ItemController->render()
+#6 unknown(0): ItemController->actionView()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/view/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\components\MallBaseController.php (73)
+2014/01/02 02:09:50 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\refund\admin.php(37): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/admin
+---
+2014/01/02 02:10:28 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:10:28 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:10:28 [warning] [application] Failed to set unsafe attribute "item_img_id" of "ItemImg".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\models\Item.php (388)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+2014/01/02 02:10:28 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (70)
+in D:\wamp\www\basic\protected\models\Item.php (388)
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (37)
+2014/01/02 02:10:40 [error] [exception.CException] exception 'CException' with message '属性 "ItemImg.url" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('url')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('url')
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php(72): CModel->offsetGet('url')
+#3 [internal function]: ItemController->actionDelete('34')
+#4 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/item/delete/id/34?ajax=item-grid
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/admin
+---
+2014/01/02 02:10:50 [error] [exception.CException] exception 'CException' with message '属性 "ItemImg.url" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('url')
+#1 D:\wamp\www\yii\framework\base\CModel.php(596): CActiveRecord->__get('url')
+#2 D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php(72): CModel->offsetGet('url')
+#3 [internal function]: ItemController->actionDelete('34')
+#4 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ItemController), Array)
+#5 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ItemController), Object(ReflectionMethod), Array)
+#6 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\wamp\www\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/delet...')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/mall/item/delete/id/34?ajax=item-grid
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/admin
+---
+2014/01/02 02:11:40 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php(56): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/update/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (56)
+2014/01/02 02:11:52 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php(56): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/update/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (56)
+2014/01/02 02:12:11 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php(56): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/update/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (56)
+2014/01/02 02:12:19 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php(56): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/update/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (56)
+2014/01/02 02:13:10 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php(56): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/update/id/35
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (56)
+2014/01/02 02:13:21 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (D:\wamp\www\yii\framework\web\helpers\CHtml.php:103)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CBaseController.php(173): TbBreadcrumb->run()
+#1 D:\wamp\www\basic\themes\backend\views\layouts\mall.php(38): ItemController->widget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): ItemController->renderInternal()
+#4 D:\wamp\www\yii\framework\web\CController.php(784): ItemController->renderFile()
+#5 D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php(56): ItemController->render()
+#6 unknown(0): ItemController->actionUpdate()
+#7 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): ItemController->runAction()
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): ItemController->filterAccessControl()
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): ItemController->runActionWithFilters()
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): ItemController->run()
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/mall/item/update/id/36
+in D:\wamp\www\basic\protected\extensions\bootstrap\widgets\TbBreadcrumb.php (70)
+in D:\wamp\www\basic\themes\backend\views\layouts\mall.php (38)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (56)
+2014/01/02 02:15:46 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:15:46 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:16:06 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:16:39 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:16:39 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:17:19 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:17:19 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:18:39 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:18:39 [warning] [application] Failed to set unsafe attribute "itemImgs" of "Item".
+in D:\wamp\www\basic\protected\components\YActiveRecord.php (23)
+in D:\wamp\www\basic\protected\modules\mall\controllers\ItemController.php (29)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:21:08 [error] [exception.CException] exception 'CException' with message '属性 "Shipping.user_id" 未被定义.' in D:\wamp\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('user_id')
+#1 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('user_id')
+#2 D:\wamp\www\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Shipping), 'user_id')
+#3 D:\wamp\www\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Shipping), 'user_id', Array)
+#4 D:\wamp\www\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Shipping), 'user_id', Array)
+#5 D:\wamp\www\basic\protected\modules\mall\views\shipping\_search.php(20): CActiveForm->textField(Object(Shipping), 'user_id', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\basic\protected\modules\mall\views\shipping\admin.php(37): CController->renderPartial('_search', Array)
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#11 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#12 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#13 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#14 D:\wamp\www\basic\protected\modules\mall\controllers\ShippingController.php(111): CController->render('admin', Array)
+#15 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ShippingController->actionAdmin()
+#16 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/shipping/a...')
+#21 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/basic/backend.php/mall/shipping/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/02 02:21:15 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft.
+in D:\wamp\www\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in D:\wamp\www\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:21:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 D:\wamp\www\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/basic/backend.php
+---
+2014/01/02 02:21:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft.
+in D:\wamp\www\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in D:\wamp\www\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:21:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 D:\wamp\www\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/basic/backend.php/cms/page/admin
+---
+2014/01/02 02:22:07 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 D:\wamp\www\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/02 02:22:09 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in D:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AdminUserController), 'bootstrap.widge...', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\themes\backend\views\layouts\user.php(16): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\basic\protected\backend\controllers\AdminUserController.php(141): CController->render('admin', Array)
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminUserController->actionAdmin()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('adminUser/admin')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/adminUser/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/02 02:22:18 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\backend\views\menu\_form.php(61): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\backend\views\menu\_form.php(61): TbActiveForm->textFieldRow(Object(Menu), 'name', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\backend\views\menu\update.php(17): CController->renderPartial('_form', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#10 D:\wamp\www\basic\protected\backend\controllers\MenuController.php(121): CController->render('update', Array)
+#11 [internal function]: MenuController->actionUpdate('20')
+#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MenuController), Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MenuController), Object(ReflectionMethod), Array)
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#23 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('menu/update')
+#24 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/basic/backend.php/menu/update/20
+HTTP_REFERER=http://localhost/basic/backend.php/menu/admin
+---
+2014/01/02 02:22:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` ORDER BY t.root, t.lft.
+in D:\wamp\www\basic\protected\backend\views\category\admin.php (19)
+in D:\wamp\www\basic\protected\backend\controllers\CategoryController.php (169)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:22:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` ORDER BY t.root, t.lft' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\backend\views\category\admin.php(19): CActiveRecord->findAll(Object(CDbCriteria))
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 D:\wamp\www\basic\protected\backend\controllers\CategoryController.php(169): CController->render('admin', Array)
+#9 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionAdmin()
+#10 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/admin')
+#20 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/basic/backend.php/category/admin
+HTTP_REFERER=http://localhost/basic/backend.php/menu/admin
+---
+2014/01/02 02:23:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` ORDER BY t.root, t.lft.
+in D:\wamp\www\basic\protected\backend\views\category\admin.php (19)
+in D:\wamp\www\basic\protected\backend\controllers\CategoryController.php (169)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/02 02:23:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` ORDER BY t.root, t.lft' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 D:\wamp\www\basic\protected\backend\views\category\admin.php(19): CActiveRecord->findAll(Object(CDbCriteria))
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 D:\wamp\www\basic\protected\backend\controllers\CategoryController.php(169): CController->render('admin', Array)
+#9 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): CategoryController->actionAdmin()
+#10 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('category/admin')
+#20 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/basic/backend.php/category/admin
+HTTP_REFERER=http://localhost/basic/backend.php/menu/admin
+---
+2014/01/02 02:23:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "cck/node/admin"。' in D:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cck/node/admin')
+#1 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/basic/backend.php/cck/node/admin
+HTTP_REFERER=http://localhost/basic/backend.php/menu/admin
+---
+2014/01/02 02:23:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "cck/node/admin"。' in D:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cck/node/admin')
+#1 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/basic/backend.php/cck/node/admin?item_id=%3C%3Fphp+echo+%24model-%3Eitem_id%3B+%3F%3E
+HTTP_REFERER=http://localhost/basic/backend.php/cck/node/admin
+---
+2014/01/02 02:23:13 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\backend\views\theme\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\backend\views\theme\_search.php(6): TbActiveForm->textFieldRow(Object(Theme), 'theme', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\backend\views\theme\admin.php(37): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\basic\protected\backend\controllers\ThemeController.php(148): CController->render('admin', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ThemeController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('theme/admin')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/theme/admin
+HTTP_REFERER=http://localhost/basic/backend.php/menu/admin
+---
+2014/01/02 02:36:10 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\backend\views\menu\_form.php(61): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\backend\views\menu\_form.php(61): TbActiveForm->textFieldRow(Object(Menu), 'name', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\backend\views\menu\update.php(17): CController->renderPartial('_form', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#10 D:\wamp\www\basic\protected\backend\controllers\MenuController.php(121): CController->render('update', Array)
+#11 [internal function]: MenuController->actionUpdate('6')
+#12 D:\wamp\www\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MenuController), Array)
+#13 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MenuController), Object(ReflectionMethod), Array)
+#14 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#23 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('menu/update')
+#24 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/basic/backend.php/menu/update/6
+HTTP_REFERER=http://localhost/basic/backend.php/menu/admin
+---
+2014/01/02 02:39:07 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 D:\wamp\www\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/02 02:39:34 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 D:\wamp\www\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemCategory/admin
+---
+2014/01/02 02:42:56 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 D:\wamp\www\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/admin
+---
+2014/01/02 02:43:03 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in D:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AdminUserController), 'bootstrap.widge...', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\themes\backend\views\layouts\user.php(16): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\basic\protected\backend\controllers\AdminUserController.php(141): CController->render('admin', Array)
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminUserController->actionAdmin()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('adminUser/admin')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/adminUser/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/item/admin
+---
+2014/01/02 03:09:35 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\www\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\user\views\admin\_search.php(8): TbActiveForm->textFieldRow(Object(User), 'id')
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\user\views\admin\index.php(36): CController->renderPartial('_search', Array)
+#6 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#10 D:\wamp\www\basic\protected\modules\user\controllers\AdminController.php(49): CController->render('index', Array)
+#11 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminController->actionAdmin()
+#12 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user/admin/admi...')
+#22 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/basic/backend.php/user/admin/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemProp/admin
+---
+2014/01/02 03:09:38 [error] [exception.CException] exception 'CException' with message '别名 "bootstrap.widgets.TbMenu" 无效。请确认它指向一个存在的PHP文件。' in D:\wamp\www\yii\framework\YiiBase.php:322
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('bootstrap.widge...', true)
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AdminUserController), 'bootstrap.widge...', Array)
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\wamp\www\basic\themes\backend\views\layouts\user.php(16): CBaseController->widget('bootstrap.widge...', Array)
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#6 D:\wamp\www\yii\framework\web\CController.php(784): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#7 D:\wamp\www\basic\protected\backend\controllers\AdminUserController.php(141): CController->render('admin', Array)
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AdminUserController->actionAdmin()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 D:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 D:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 D:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 D:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#18 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('adminUser/admin')
+#19 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 D:\wamp\www\basic\backend.php(14): CApplication->run()
+#21 {main}
+REQUEST_URI=/basic/backend.php/adminUser/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/itemProp/admin
+---
+2014/01/02 03:09:42 [error] [php] include(WMainMenu.php): failed to open stream: No such file or directory (D:\wamp\www\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\wamp\www\yii\framework\web\CWidgetFactory.php(146): import()
+#1 D:\wamp\www\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget()
+#2 D:\wamp\www\yii\framework\web\CBaseController.php(172): AssignmentController->createWidget()
+#3 D:\wamp\www\basic\protected\views\layouts\main.php(23): AssignmentController->widget()
+#4 D:\wamp\www\yii\framework\web\CBaseController.php(126): require()
+#5 D:\wamp\www\yii\framework\web\CBaseController.php(95): AssignmentController->renderInternal()
+#6 D:\wamp\www\yii\framework\web\CController.php(784): AssignmentController->renderFile()
+#7 D:\wamp\www\basic\protected\backend\modules\auth\controllers\AssignmentController.php(27): AssignmentController->render()
+#8 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): AssignmentController->actionIndex()
+#9 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\wamp\www\yii\framework\web\CController.php(286): AssignmentController->runAction()
+#11 D:\wamp\www\yii\framework\web\CController.php(265): AssignmentController->runActionWithFilters()
+#12 D:\wamp\www\yii\framework\web\CWebApplication.php(282): AssignmentController->run()
+#13 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\wamp\www\basic\backend.php(14): CWebApplication->run()
+REQUEST_URI=/basic/backend.php/auth/assignment/index
+in D:\wamp\www\basic\protected\views\layouts\main.php (23)
+in D:\wamp\www\basic\protected\backend\modules\auth\controllers\AssignmentController.php (27)
+in D:\wamp\www\basic\backend.php (14)

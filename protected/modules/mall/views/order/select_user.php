@@ -11,13 +11,6 @@
             array(
                 'value'=>'Tbfunction::add_user($data->id)'
             ),
-//            array(
-//                'class' => 'bootstrap.widgets.TbButtonColumn',
-//                'template' => 'choose',
-//                'buttons' => array(
-//                    'link' => $data->userlink() ,
-//                ),
-//            ),
         ),
     ));
     ?>

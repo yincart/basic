@@ -279,7 +279,7 @@
 	font-size:14px;
 	text-align:right;
 	float:left;
-	width:60px;
+	width:100px;
 	line-height:32px;
 }
 .form_c input[type="text"]{
@@ -289,6 +289,14 @@
 	border:1px solid #D2D2D2;
 	padding:7px;
 	outline:none;
+}
+.form_c input[type="password"]{
+    float:left;
+    margin-left:15px;
+    width:270px;
+    border:1px solid #D2D2D2;
+    padding:7px;
+    outline:none;
 }
 .form_tip{
 	margin-left:80px;

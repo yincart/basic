@@ -52,7 +52,7 @@
 
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'shipping_method_id', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'shipping_method_id', array('' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS'), array('class' => 'form-control form-control1')); ?>
+        <?php echo $form->dropdownlist($model, 'shipping_method_id', array('0' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS'), array('class' => 'form-control form-control1')); ?>
         <?php echo $form->error($model, 'shipping_method_id', array('style' => 'color:red;float:right')); ?>
     </div>
 
@@ -60,6 +60,10 @@
         <?php echo $form->labelEx($model, 'ship_fee', array('class' => 'input-group-addon')); ?>
         <?php echo $form->textField($model, 'ship_fee', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control form-control1')); ?>
     </div>
+
+
+
+
 
     <div style="float:left"> 联系方式：</div>
 

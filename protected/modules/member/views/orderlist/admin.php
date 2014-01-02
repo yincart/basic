@@ -52,7 +52,7 @@ $this->breadcrumbs = array(
                   'update_time',
                  */
                 array(
-                    'class' => 'CButtonColumn',
+                    'value' => 'Tbfunction::view_user($data->order_id)',
                 ),
             ),
         ));

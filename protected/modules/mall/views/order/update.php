@@ -15,6 +15,6 @@ $this->menu=array(
     <link type="text/css" rel="stylesheet"
           href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css"/>
 
-
+<h1 align="center">Update Order</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -51,8 +51,14 @@ $(document).ready(function () {
         showPopup($(this).data('url'));
     });
 
-    $('#select-user').click(function(){
-        $('#select-form').toggle();
+    $('.search-button').click(function(){
+        $('.search-form').toggle();
+        return false;
+    });
+    $('.search-form form').submit(function(){
+        $.fn.yiiGridView.update('shipping-grid', {
+            data: $(this).serialize()
+        });
         return false;
     });
 });

@@ -6,6 +6,7 @@
     <link type="text/css" rel="stylesheet"
           href="<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css"/>
     <?php Yii::app()->bootstrap->register(); ?>
+
 </head>
 <body>
 <div class="goods-form">
@@ -15,7 +16,7 @@
         'filter' => $goods,
         'columns' => array(
             array(
-                'value' => 'Tbfunction::add_goods($date->item_id)'
+                'value' => 'Tbfunction::add_goods($data->item_id)'
             ),
             'item_id',
             array(
@@ -45,3 +46,10 @@
 </body>
 </html>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#goods-grid').on('click','button',function(){
+                alert(  $(this).data('items'));
+            });
+    });
+</script>

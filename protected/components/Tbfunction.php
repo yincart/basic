@@ -10,7 +10,7 @@
 class Tbfunction {
     static public function add_goods($id)
     {
-        echo  CHtml::link('Add',array('#','item_id'=>$id),array('class'=>'btn btn-primary'));
+        echo '<button type="button" class="btn btn-primary" id="add_items" data-items=" '.$id.'">Add</button>';
     }
     public function add_user($id)
     {

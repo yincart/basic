@@ -51,14 +51,12 @@
 		<?php echo $form->error($model,'result'); ?>
 	</div>
 
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-			'buttonType'=>'submit',
-			'type'=>'primary',
-			'label'=>$model->isNewRecord ? 'Create' : 'Save',
-		)); ?>
-	</div>
-
+    <div class="form-actions">
+        <?php  echo TbHtml::formActions(array(
+            TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
+            TbHtml::resetButton('Reset'),
+        )); ?>
+    </div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

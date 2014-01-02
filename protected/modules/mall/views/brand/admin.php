@@ -8,19 +8,6 @@ $this->menu=array(
 	array('label'=>'List Brand', 'icon'=>'list', 'url'=>array('index')),
 	array('label'=>'Create Brand', 'icon'=>'plus','url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('brand-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h3>Manage Brands</h3>

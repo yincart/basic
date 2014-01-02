@@ -7,6 +7,7 @@
     <meta http-equiv="Cache-Control" content="max-age=7200"/>
     <meta content="IE=7" http-equiv="X-UA-Compatible"/>
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css'/>
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
     <title><?php echo Yii::app()->params['title']; ?></title>
 <body>

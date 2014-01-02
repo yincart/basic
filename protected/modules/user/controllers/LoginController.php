@@ -9,7 +9,7 @@ class LoginController extends Controller
 	 */
 	public function actionLogin()
 	{
-		if (Yii::app()->user->isGuest) {
+//		if (Yii::app()->user->isGuest) {
 			$model=new UserLogin;
 			// collect user input data
 			if(isset($_POST['UserLogin']))
@@ -26,8 +26,8 @@ class LoginController extends Controller
 			}
 			// display the login form
 			$this->render('/user/login',array('model'=>$model));
-		} else
-			$this->redirect(Yii::app()->controller->module->returnUrl);
+//		} else
+//			$this->redirect(Yii::app()->controller->module->returnUrl);
 	}
 	
 	private function lastViset() {

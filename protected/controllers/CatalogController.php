@@ -67,7 +67,7 @@ class CatalogController extends YController
             }
             foreach ($pvids as $pid => $vids) {
                 if (is_array($vids)) {
-                    $where = [];
+                    $where = array();
                     foreach ($vids as $vid) {
                         $where[] = "props like '%$pid:$vid%'";
                     }

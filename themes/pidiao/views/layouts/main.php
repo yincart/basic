@@ -53,7 +53,7 @@
 <div class="nav">
     <ul class="nav_list">
         <?php $class = isset(Yii::app()->params['categoryIds']) ? '' : 'current';
-        echo '<li class="' . $class . '"><a href="' . Yii::app()->request->baseUrl() . '">首页</a></li>';
+        echo '<li class="' . $class . '"><a href="' . Yii::app()->getBaseUrl(true) . '">首页</a></li>';
         $categories = Category::model()->findAllByAttributes(array('root' => '3', 'level' => 2));
         foreach ($categories as $cate) {
             $class = isset(Yii::app()->params['categoryIds']) && in_array($cate->category_id, Yii::app()->params['categoryIds']) ? 'current' : '';

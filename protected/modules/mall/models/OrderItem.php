@@ -37,8 +37,9 @@ class OrderItem extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('order_id, item_id, title, desc, pic, props_name, price, quantity, total_price', 'required'),
+            array('order_id, item_id, title, desc, props_name, price, quantity, total_price', 'required'),
             array('order_id', 'length', 'max'=>20),
+            array('pic','safe'),
             array('item_id, price, quantity, total_price', 'length', 'max'=>10),
             array('title, pic', 'length', 'max'=>255),
             // The following rule is used by search().

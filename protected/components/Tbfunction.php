@@ -8,9 +8,9 @@
  */
 
 class Tbfunction {
-    static public function add_goods($id)
+    static public function add_button()
     {
-        echo '<button type="button" class="btn btn-primary" id="add_items" data-items=" '.$id.'">Add</button>';
+        echo '<button class="btn btn-primary">Add</button>';
     }
     public function add_user($id)
     {

@@ -1,6 +1,6 @@
 <link type="text/css" rel="stylesheet"
       href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css"/>
-<div class="orderform">
+<div id="orderform" class='orderform'>
     <?php $form = $this->beginWidget('CActiveForm', array(
         'id' => 'order-form',
         'enableAjaxValidation' => false,
@@ -149,6 +149,23 @@
         <?php echo $form->labelEx($model, 'memo', array('class' => 'input-group-addon')); ?>
         <?php echo $form->textArea($model, 'memo', array('rows' => 6, 'cols' => 50, 'class' => 'form-control')); ?>
     </div>
+    <table id="item-table" class="table table-striped">
+
+ <tr>
+     <td></td>
+     <td>item_id</td>
+     <td>category_id</td>
+     <td>outer_id</td>
+     <td>title</td>
+     <td>stock</td>
+     <td>min_number</td>
+     <td>currency</td>
+     <td>price</td>
+     <td>desc</td>
+     <td>create_time</td>
+     <td>update_time</td>
+ </tr>
+        </table>
 
     <div class="form-actions space" style="width: 65%">
         <?php echo TbHtml::formActions(array(
@@ -157,9 +174,4 @@
         )); ?>
     </div>
     <?php $this->endWidget(); ?>
-    <div class="item-form">
-        <?php $this->renderPartial('itemView', array(
-            'order_item' => $order_item,
-        )); ?>
-    </div>
 </div><!-- form -->

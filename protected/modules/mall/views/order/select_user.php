@@ -1,6 +1,6 @@
 <div class="wide form">
     <?php $this->widget('bootstrap.widgets.TbGridView', array(
-        'id' => 'user-grid',
+        'id' => 'users-grid',
         'dataProvider' => $users->normalusers(),
         'filter' => $users,
         'columns' => array(

@@ -1,7 +1,4 @@
 <?php
-$cs = Yii::app()->clientScript;
-$cs->registerScriptFile(Yii::app()->baseUrl . '/js/jquery.form.js', CClientScript::POS_END);
-$cs->registerScriptFile(Yii::app()->baseUrl . '/js/skus.js', CClientScript::POS_END);
 $data = Category::model()->getSelectOptions(3);
 echo $form->dropDownListControlGroup($model, 'category_id', $data, array('data-url' => '/basic/backend.php/mall/item/itemProps'));
 ?>

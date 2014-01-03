@@ -27,19 +27,39 @@ class OrderController extends Controller
     {
         $model = new Order;
         $model->user_id = $user_id;
-        $order_item = new OrderItem('search');
-        $order_item->unsetAttributes();
+        $item = new Item;
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-        if (isset($_POST['Order'])) {
-            $model->attributes = $_POST['Order'];
-            $model->create_time = time();
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->order_id));
-        }
+        // $this->performAjaxValidation($model)
 
+
+        if (isset($_POST['Order']) && isset($_POST['Item'])) {
+            $transaction = $model->dbConnection->beginTransaction();
+            try {
+                $model->attributes = $_POST['Order'];
+                $model->create_time = time();
+                $model->save();
+                foreach ($_POST['Item']['item_id'] as $itemId) {
+                    $items = Item::model()->findByPk($itemId);
+                    $orderItem = new OrderItem;
+                    $orderItem->item_id = $itemId;
+                    $orderItem->title = $items->title;
+                    $orderItem->desc = $items->desc;
+//                    $orderItem->pic = $items->getMainPic();   //need update;
+                    $orderItem->props_name = $items->props_name;
+                    $orderItem->price = $items->price;
+                    $orderItem->quantity = 1; //need to update
+                    $orderItem->total_price = $orderItem->price * $orderItem->quantity;
+                    $orderItem->order_id = $model->order_id;
+                    $orderItem->save();
+                }
+                $transaction->commit();
+                $this->redirect(array('view', 'id' => $model->order_id));
+            } catch (Exception $e) {
+                $transaction->rollBack();
+            }
+        }
         $this->render('create', array(
-            'model' => $model,'order_item'=>$order_item
+            'model' => $model, 'item' => $item
         ));
     }
 
@@ -51,32 +71,22 @@ class OrderController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->loadModel($id);
-        $order_item = new OrderItem('search');
-        $order_item->unsetAttributes();
+        $item = new Item('search');
+        $item->unsetAttributes();
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Order'])) {
             $model->attributes = $_POST['Order'];
+//            $item->attributes = $_POST['Item'];
             $model->update_time = time();
-            $trans = Yii::app()->db->beginTransaction();
-            try
-            {
-                if ($model->save()) {
-                    //save order items
-                    $this->redirect(array('view', 'id' => $model->order_id));
-                } else {
-                    throw new Exception();
-                }
-                $trans->commit();
-            }
-            catch(Exception $e)
-            {
-                $trans->rollback();
+            if ($model->save()) {
+                //save order items
+                $this->redirect(array('view', 'id' => $model->order_id));
             }
         }
         $this->render('update', array(
-            'model' => $model,'order_item'=>$order_item
+            'model' => $model, 'item' => $item
         ));
     }
 
@@ -179,7 +189,7 @@ class OrderController extends Controller
 
     public function actionAdd_goods()
     {
-        $this->layout='/';
+        $this->layout = '/';
         $goods = new Item('search');
         $goods->unsetAttributes();
         if (isset($_GET['Item'])) {

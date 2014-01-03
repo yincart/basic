@@ -1,5 +1,16 @@
 $(document).ready(function () {
-//
+    $('#goods-form').on('click','button',function(){
+        var tr= $(this).closest('tr').clone();
+        tr.find('td').eq(0).remove();
+
+        var td1 = tr.find('td').eq(0).html();
+       var html='<tr><td><input  type="hidden" name="Item[item_id][]" id="Item_item_id" value="'+td1+'" /></td>';
+        for(var i=0;i<11;i++)
+            html=html+'<td>'+tr.find('td').eq(i).html()+'</td>';
+        $(window.parent.document).find('#item-table').append(html+'</tr>');
+        $(this).closest('tr').remove();
+     });
+
     $('#add_prop').dynoTable({
         removeClass: '.row-remover', //class for the clickable row remover
         cloneClass: '.row-cloner', //class for the clickable row cloner
@@ -73,7 +84,6 @@ function showPopup(url) {
             });
     }
 }
-
 $(function () {
     var getItemProps = function () {
         $.get($('#Item_category_id').data('url'),

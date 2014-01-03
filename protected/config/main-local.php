@@ -11,7 +11,7 @@ return array(
             'connectionString' => 'mysql:host=localhost;dbname=yincart-basic',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => 'vps123',
+            'password' => '',
             'charset' => 'utf8',
             'tablePrefix' => ''
         )

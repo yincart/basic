@@ -244,7 +244,6 @@
 	margin:10px 0;
 	background:#F6F5F5;
 	width:750px;
-	height:529px;
 	float:left;
 }
 .login_tit{
@@ -298,6 +297,21 @@
     padding:7px;
     outline:none;
 }
+.form_c p{
+    margin-left:115px;
+}
+.form_v{
+    width: 300px;
+    overflow: hidden;
+}
+.form_v a, .form_v img{
+    margin-left: 15px;
+    margin-bottom: 5px;
+    float: left;
+}
+.form_v a{
+    margin-top: 25px;
+}
 .form_tip{
 	margin-left:80px;
 }
@@ -337,7 +351,6 @@
 }
 .psw_safe{
 	width:150px;
-	background:#d2d2d2;
 	float:left;
 	overflow:hidden;
 	height:20px;
@@ -372,3 +385,9 @@
 .login_ct{
 	overflow:hidden;
 }
+/*****login nav ***/
+ .login-nav,.lang{float:right;margin:0 10px;}
+.lang a.current{color:#ff0000;}
+.login-nav a,.lang a{color:#797979;}
+.buy_car{background:url(../images/buy.png) no-repeat left;padding-left:22px;float:right;margin:0 10px;}
+.go_pay a{background:url(../images/g_botton.png) no-repeat;display:block;text-align:center;color:#F37E00;font-weight:700;width:43px;line-height:19px;float:right;}

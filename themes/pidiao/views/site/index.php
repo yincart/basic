@@ -100,7 +100,9 @@ EOF;
             <div class="product_c">
                 <div class="product_new_b">
                     <?php if (isset($newItems[0][0])) {
-                        $newItem = $newItems[0][0]; ?>
+                        $newItem = $newItems[0][0];
+                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
+                        ?>
                         <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
                                 <img alt="<?php echo $newItem->title; ?>" src="<?php echo $newItem->getMainPic(); ?>"
                                      width="470" height="530"></a>

@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="max-age=7200"/>
     <meta content="IE=7" http-equiv="X-UA-Compatible"/>
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css'/>
-    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css' />
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
@@ -29,7 +29,12 @@
             <a href="" class="online_ser">在线客服</a>
         </div>
         <div class="top_right">
-            <?php $this->widget('widgets.default.WTopNav');?>
+            <span>您好，欢饮来到皮雕软包耗材批发商城！</span>
+            <a href="" class="cor_red">登陆</a>
+            <a href="" class="cor_red">注册享好礼</a>
+            <div class="top_center">我的账户<i>arrow</i></div>
+            <div class="top_daohang">网站导航<i>arrow</i></div>
+            <?php //$this->widget('widgets.default.WTopNav');?>
         </div>
     </div>
 </div>

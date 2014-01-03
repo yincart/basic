@@ -36,3 +36,5 @@ protected/runtime/*
 protected/backend/runtime/*
 
 upload/*
+
+protected/config/main-local.php

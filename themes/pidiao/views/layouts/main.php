@@ -35,7 +35,7 @@
 </div>
 <div class="head">
     <div class="logo"><a href="<?php echo Yii::app()->baseUrl; ?>"><img alt=""
-                                                                        src="<?php Yii::app()->theme->baseUrl ?>/image/logo.png"
+                                                                        src="<?php echo Yii::app()->theme->baseUrl ?>/image/logo.png"
                                                                         width="227" height="80"></a></div>
     <form class="search" method="get" action="<?php echo Yii::app()->createUrl('catalog/index'); ?>">
         <div class="search_box">

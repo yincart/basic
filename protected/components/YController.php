@@ -31,7 +31,8 @@ class YController extends CController {
         Yii::app()->params['title'] = Yii::app()->name;
     }
 
-    public function afterAction($action) {
-        Yii::app()->end();
+    public function afterAction($action)
+    {
+        
     }
 }

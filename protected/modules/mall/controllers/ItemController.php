@@ -359,7 +359,6 @@ class ItemController extends MallBaseController
             $skus = array();
             foreach ($_POST['Item']['skus']['table'] as $pid => $sku) {
                 list($sku['props'], $sku['props_name']) = $this->handleItemProps($sku['props']);
-                $sku['status'] = 1;
                 $skus[] = $sku;
             }
             $_POST['Item']['skus'] = $skus;
@@ -404,11 +403,12 @@ class ItemController extends MallBaseController
                     $propValue = PropValue::model()->findByPk($v);
                     $vname = $propValue ? $propValue->value_name : $v;
                     $props_name[$pname][] = $pname . ':' . $vname;
+
                 }
             } else {
                 $props[$pid] = $pid . ':' . $vid;
-                $propValue = PropValue::model()->findByPk($v);
-                $vname = $propValue ? $propValue->value_name : $v;
+                $propValue = PropValue::model()->findByPk($vid);
+                $vname = $propValue ? $propValue->value_name : $vid;
                 $props_name[$pname] = $pname . ':' . $vname;
             }
         }

@@ -35,7 +35,7 @@
     <div class="logo"><a href="<?php echo Yii::app()->baseUrl; ?>"><img alt=""
                                                                         src=""
                                                                         width="227" height="80"></a></div>
-    <form class="search" method="get">
+    <form class="search" method="get" action="<?php echo Yii::app()->createUrl('catalog/index'); ?>">
         <div class="search_box">
             <input name="key" type="text" value="<?php echo isset($_GET['key']) ? $_GET['key'] : ''; ?>"/>
             <button></button>

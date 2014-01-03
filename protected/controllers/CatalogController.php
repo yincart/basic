@@ -28,9 +28,9 @@ class CatalogController extends YController
         }
         if (!empty($_GET['sort'])) {
             switch ($_GET['sort']) {
-                case 'sales':
+                case 'sold':
                     break;
-                case 'salesd':
+                case 'soldd':
                     break;
                 case 'price':
                     $criteria->order = 't.price';
@@ -94,7 +94,7 @@ class CatalogController extends YController
         foreach ($parentCategories as $cate) {
             if (!$cate->isRoot()) {
                 $params['cat'] = $cate->getUrl();
-                $this->breadcrumbs[] = array('name' => $cate->name . '>>', 'url' => Yii::app()->createUrl('catalog/index', $params));
+                $this->breadcrumbs[] = array('name' => $cate->name . '>> ', 'url' => Yii::app()->createUrl('catalog/index', $params));
                 $categoryIds[] = $cate->category_id;
             }
         }

@@ -37,6 +37,7 @@ return array(
         'application.modules.user.components.*',
         'application.modules.translate.TranslateModule',
         'bootstrap.helpers.TbHtml',
+        'ext.shoppingCart.*'
     ),
     // path aliases
     'aliases' => array(
@@ -153,7 +154,7 @@ return array(
             'class' => 'yiiwheels.YiiWheels',
         ),
         'cart' => array(
-            'class' => 'ext.Cart',
+            'class' => 'ext.shoppingCart.EShoppingCart',
         ),
         'mailer' => array(
             'class' => 'ext.mailer.EMailer',

@@ -50,12 +50,7 @@ class OrderController extends Controller {
 //        exit;
         if(Yii::app()->user->id){
         $cart = Yii::app()->cart;
-        $mycart = $cart->contents();
-        $total = $cart->total();
-        $this->render('checkout', array(
-            'mycart' => $mycart,
-            'total' => $total
-        ));
+        $this->render('checkout', array('cart' => Yii::app()->cart));
         }else{
             $this->redirect(array('/user/login'));
         }

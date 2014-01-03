@@ -74,13 +74,24 @@
                 <?php
                 }
                 $params = $_GET;
+                $getprops = empty($params['props']) ? array() : array_flip(explode(';', $params['props']));
                 if ($itemProps) {
                     foreach ($itemProps as $itemProp) {
                         ?>
                         <ul>
                             <li><?php echo $itemProp->prop_name; ?>：</li>
                             <?php foreach ($itemProp->propValues as $propValue) {
-                                echo '<li><a href="' . Yii::app()->createUrl('catalog/index', $params) . '">' . $propValue->value_name . '</a></li>';
+                                $props = $getprops;
+                                $pvid = $propValue->item_prop_id . ':' . $propValue->prop_value_id;
+                                if (array_key_exists($pvid, $props)) {
+                                    unset($props[$pvid]);
+                                    $class = 'prop-select';
+                                } else {
+                                    $props[$pvid] = '';
+                                    $class = '';
+                                }
+                                $params['props'] = implode(';', array_keys($props));
+                                echo '<li><a class="' . $class . '" href="' . Yii::app()->createUrl('catalog/index', $params) . '">' . $propValue->value_name . '</a></li>';
                             } ?>
                         </ul>
                     <?php
@@ -89,31 +100,56 @@
                 ?>
             </div>
             <div class="pd_sort">
-                <div class="pd_sort_sold current">销量</div>
-                <div class="pd_sort_price">价格</div>
-                <div class="pd_sort_new">最新</div>
+                <a href="<?php echo Yii::app()->createUrl('catalog/index', array_merge($_GET, array('sort' => 'soldd'))); ?>">
+                    <div class="pd_sort_sold current">销量</div>
+                </a>
+                <a href="<?php echo Yii::app()->createUrl('catalog/index', array_merge($_GET, array('sort' => 'priced'))); ?>">
+                    <div class="pd_sort_price">价格</div>
+                </a>
+                <a href="<?php echo Yii::app()->createUrl('catalog/index', array_merge($_GET, array('sort' => 'newd'))); ?>">
+                    <div class="pd_sort_new">最新</div>
+                </a>
+
                 <div class="pd_search">
-                    <form>
+                    <form method="get">
                         价格
-                        <input type="text"/>
+                        <input id="floor_price" name="floor_price" type="text"
+                               value="<?php echo empty($_GET['floor_price']) ? '' : $_GET['floor_price']; ?>"/>
                         到
-                        <input type="text"/>
-                        <input type="submit" value="确定"/>
+                        <input id="top_price" name="top_price" type="text"
+                               value="<?php echo empty($_GET['top_price']) ? '' : $_GET['top_price']; ?>"/>
+                        <input id="price_search" type="submit" value="确定" data-url="<?php echo json_encode($_GET); ?>"/>
+                        <?php foreach ($_GET as $key => $value) {
+                            if (!in_array($key, array('floor_price', 'top_price')))
+                                echo '<input type="hidden" name="' . $key . '" value="' . $value . '" />';
+                        } ?>
                     </form>
                 </div>
                 <div class="pd_check">
-                    <input type="checkbox" value="checked"/>
-                    仅显示有货
+                    <label><input id="has_stock" name="has_stock" type="checkbox"
+                                  <?php echo !empty($_GET['has_stock']) && $_GET['has_stock'] ? 'checked' : ''; ?>
+                                  data-url="<?php echo Yii::app()->createUrl('catalog/index', array_merge($_GET, array('has_stock' => !empty($_GET['has_stock']) && $_GET['has_stock'] ? 0 : 1))) ?>"/>
+                        仅显示有货</label>
                 </div>
                 <div class="pd_page">
-                    <span class="end"><a href="" class="page_p"><img alt="" src=""/>上一页</a></span>
-                    1/10
-                    <span><a href="" class="page_n">下一页</a></span>
+                    <?php if ($pager->pageCount > 1 || true) {
+                        if ($pager->currentPage == 0 && false) {
+                            echo '<span class="end"><a href="javascript:void(0)" class="page_p"><img alt="" src=""/>上一页</a></a></span>';
+                        } else {
+                            echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $pager->currentPage))) . '" class="page_p"><img alt="" src=""/>上一页</a></a></span>';
+                        }
+                        echo ($pager->currentPage + 1) . '/' . $pager->pageCount;
+                        if ($pager->currentPage >= $pager->pageCount - 1 && false) {
+                            echo '<span class="end"><a href="javascript:void(0)" class="page_n"><img alt="" src=""/>下一页</a></a></span>';
+                        } else {
+                            echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $pager->currentPage))) . '" class="page_n"><img alt="" src=""/>下一页</a></a></span>';
+                        }
+                    } ?>
                 </div>
             </div>
             <div class="pd_pd">
                 <?php foreach ($items as $item) {
-                    $itemUrl = Yii::app()->createUrl('item/index', array('id' => $item->item_id));
+                    $itemUrl = Yii::app()->createUrl('item/view', array('id' => $item->item_id));
                     ?>
                     <div class="product_pd">
                         <div class="product_img"><a href="<?php echo $itemUrl; ?>">
@@ -132,16 +168,35 @@
                 <?php } ?>
             </div>
             <div class="page_p">
-                <span class="end"><a href="<?php echo $this->createUrl(''); ?>" class="page_p">
-                        <img alt="" src=""/>首页</a></a></span>
-                <span class="end"><a href="" class="page_p"><img alt="" src=""/>上一页</a></a></span>
-                <?php for ($i = 1; $pager->pageCount; $i++) {
-                    $class = $i == $pager->currentPage ? 'current' : '';
-                    echo '<span class="' . $class . '"><a href="' . $this->createUrl('') . '">' . $i . '</a></span>';
-                } ?>
-                <span><a href="" class="page_n">下一页</a></span>
-                <span><a href="" class="page_n">末页</a></span>
+                <?php if ($pager->pageCount > 1 || true) {
+                    if ($pager->currentPage == 0 && false) {
+                        echo '<span class="end"><a href="javascript:void(0)" class="page_p"><img alt="" src=""/>首页</a></a></span>';
+                        echo '<span class="end"><a href="javascript:void(0)" class="page_p"><img alt="" src=""/>上一页</a></a></span>';
+                    } else {
+                        echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => 0))) . '" class="page_p"><img alt="" src=""/>首页</a></a></span>';
+                        echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $pager->currentPage))) . '" class="page_p"><img alt="" src=""/>上一页</a></a></span>';
+                    }
+                    for ($i = 0; $i < $pager->pageCount; $i++) {
+                        $class = $i == $pager->currentPage ? 'current' : '';
+                        echo '<span class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $i))) . '">' . ($i + 1) . '</a></span>';
+                    }
+                    if ($pager->currentPage >= $pager->pageCount - 1 && false) {
+                        echo '<span class="end"><a href="javascript:void(0)" class="page_n"><img alt="" src=""/>下一页</a></a></span>';
+                        echo '<span class="end"><a href="javascript:void(0)" class="page_n"><img alt="" src=""/>末页</a></a></span>';
+                    } else {
+                        echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $pager->currentPage))) . '" class="page_n"><img alt="" src=""/>下一页</a></a></span>';
+                        echo '<span><a href="' . Yii::app()->createUrl('catalog/index', array_merge($_GET, array('page' => $pager->pageCount - 1))) . '" class="page_n"><img alt="" src=""/>末页</a></a></span>';
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $('#has_stock').click(function () {
+            window.location.href = $(this).data('url');
+        });
+    });
+</script>

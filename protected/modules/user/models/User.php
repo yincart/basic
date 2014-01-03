@@ -96,6 +96,7 @@ class User extends CActiveRecord {
             'lastvisit_at' => UserModule::t("Last visit"),
             'superuser' => UserModule::t("Superuser"),
             'status' => UserModule::t("Status"),
+            'QQ'=> 'QQ',
         );
     }
 

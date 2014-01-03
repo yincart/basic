@@ -220,7 +220,7 @@ return array(
             'dbEngine' => 'InnoDB',
         ),
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=yincart',
+            'connectionString' => 'mysql:host=localhost;dbname=yincart-basic',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',

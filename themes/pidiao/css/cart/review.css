@@ -2,6 +2,61 @@
     color: rgb(64, 64, 64);
     clear: both;
 }
+
+.rate {
+    float: left;
+    width: 220px;
+    padding: 20px 0px 0px;
+    text-align: center;
+    border-right: 1px solid rgb(228, 228, 228);
+}
+.rate strong {
+    font: 400 46px/30px arial;
+    color: rgb(228, 57, 60);
+}
+.rate strong span {
+    font-size: 24px;
+    color: rgb(228, 57, 60);
+}
+.rate span {
+    color: rgb(153, 153, 153);
+    font-family: arial;
+}
+.percent {
+    float: left;
+    width: 350px;
+    padding: 8px 0px;
+    margin-left: 50px;
+
+}
+.percent dl {
+    padding: 2px 0px;
+    overflow: hidden;
+    margin: 0;
+}
+.percent dt {
+    float: left;
+    width: 150px;
+}
+.percent span {
+    color: rgb(156, 154, 156);
+}
+.percent dd {
+    float: left;
+    width: 150px;
+    height: 10px;
+    margin-top: 6px;
+    overflow: hidden;
+    background: none repeat scroll 0% 0% rgb(239, 239, 239);
+}
+.percent dd div {
+    overflow: hidden;
+    height: 10px;
+    width: 0px;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#ed0000),to(#a50000));
+    background: -moz-linear-gradient(top,#ed0000,#a50000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed0000', endColorstr='#a50000');
+}
  .tb-r-filter {
     position: relative;
     padding: 10px 0px;
@@ -14,6 +69,7 @@
 }
  .tb-taglist {
     padding-left: 10px;
+     text-align: center;
 }
  .tb-taglist li.tb-long {
     min-width: 80px;
@@ -197,4 +253,7 @@ img{
 }
 #reply {
     display: none;
+}
+.r-c-title{
+    cursor:pointer;
 }

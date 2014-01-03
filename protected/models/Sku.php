@@ -115,4 +115,10 @@ class Sku extends CActiveRecord
     {
         return parent::model($className);
     }
+
+    public function beforeSave()
+    {
+        $this->status = 1;
+        return parent::beforeSave();
+    }
 }

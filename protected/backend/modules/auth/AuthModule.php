@@ -5,7 +5,7 @@
  * @copyright Copyright &copy; Christoffer Niska 2012-
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package auth
- * @version 1.7.0
+ * @version 1.6.0
  */
 
 /**
@@ -22,7 +22,7 @@ class AuthModule extends CWebModule
      * @var string name of the user model class.
      * Change this if your user model name is different than the default value.
      */
-    public $userClass = 'User';
+    public $userClass = 'adminUser';
     /**
      * @var string name of the user id column.
      * Change this if the id column in your user table is different than the default value.
@@ -32,12 +32,12 @@ class AuthModule extends CWebModule
      * @var string name of the user name column.
      * Change this if the name column in your user table is different than the default value.
      */
-    public $userNameColumn = 'name';
+    public $userNameColumn = 'username';
     /**
      * @var string the application layout.
      * Change this if you wish to use a different layout with the module.
      */
-    public $defaultLayout = 'application.views.layouts.main';
+    public $defaultLayout = '//layouts/auth';
     /**
      * @var array map of flash message keys to use for the module.
      */

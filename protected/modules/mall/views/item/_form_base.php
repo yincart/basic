@@ -13,22 +13,3 @@ echo $form->dropDownListControlGroup($model, 'country', $countryAreas,
 echo $form->dropDownListControlGroup($model, 'state', $stateAreas, array('class' => 'area area-state', 'data-child-area' => 'area-city', 'data-url' => $url));
 echo $form->dropDownListControlGroup($model, 'city', $citeAreas, array('class' => 'area-city'));
 ?>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.area').change(function () {
-            var area = $(this);
-            $.get($(this).data('url'), {'parent_id': $(this).val()}, function (options) {
-                var html = '';
-                for (var value in options) {
-                    html += '<option value="' + value + '">' + options[value] + '</option>';
-                }
-                var childArea = $('.' + area.data('child-area'));
-                childArea.html(html);
-                while(childArea.data('child-area')) {
-                    childArea = $('.' + childArea.data('child-area'));
-                    childArea.html('');
-                }
-            }, 'json');
-        });
-    });
-</script>

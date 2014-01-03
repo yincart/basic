@@ -15,10 +15,10 @@
 		<?php echo $form->textField($model,'order_id',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
+<!--	<div class="row">-->
+<!--		--><?php //echo $form->label($model,'user_id'); ?>
+<!--		--><?php //echo $form->textField($model,'user_id',array('size'=>45,'maxlength'=>45)); ?>
+<!--	</div>-->
 
 	<div class="row">
 		<?php echo $form->label($model,'ship_sn'); ?>

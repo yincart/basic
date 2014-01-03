@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Payments'=>array('index'),
-	$model->pay_id=>array('view','id'=>$model->pay_id),
+	$model->payment_id=>array('view','id'=>$model->payment_id),
 	'Update',
 );
 

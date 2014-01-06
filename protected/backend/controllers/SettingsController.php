@@ -22,25 +22,25 @@ class SettingsController extends Controller {
      * This method is used by the 'accessControl' filter.
      * @return array access control rules
      */
-    public function accessRules() {
-        return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'users' => array('*'),
-            ),
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'list'),
-                'users' => array('@'),
-            ),
-            array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete', 'list'),
-                'users' => array('admin'),
-            ),
-            array('deny', // deny all users
-                'users' => array('*'),
-            ),
-        );
-    }
+//    public function accessRules() {
+//        return array(
+//            array('allow', // allow all users to perform 'index' and 'view' actions
+//                'actions' => array('index', 'view'),
+//                'users' => array('*'),
+//            ),
+//            array('allow', // allow authenticated user to perform 'create' and 'update' actions
+//                'actions' => array('create', 'update', 'list'),
+//                'users' => array('@'),
+//            ),
+//            array('allow', // allow admin user to perform 'admin' and 'delete' actions
+//                'actions' => array('admin', 'delete', 'list'),
+//                'users' => array('admin'),
+//            ),
+//            array('deny', // deny all users
+//                'users' => array('*'),
+//            ),
+//        );
+//    }
 
     public function actionIndex() {
         $settings = Yii::app()->settings;
@@ -69,5 +69,16 @@ class SettingsController extends Controller {
     public function actionList() {
         $this->render('list');
     }
-
+    public function actionClearBackend() {
+        Yii::app()->cache->flush();
+        $this->redirect('/basic/backend.php/settings/index');
+    }
+    public function actionClearFrontend() {
+        $local=require('./protected/config/main-local.php');
+        $base=require('./protected/config/main.php');
+        $config=CMap::mergeArray($base, $local);
+        Yii::setApplication(null);
+        Yii::createWebApplication($config)->cache->flush();
+        $this->redirect('/basic/backend.php/settings/index');
+    }
 }

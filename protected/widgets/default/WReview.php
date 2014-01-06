@@ -26,7 +26,7 @@ class WReview extends CWidget
 
     public function reviewData(){
         if(isset($this->_itemId)){
-            if(isset($this->_rating)){
+            if($this->_rating!=0){
                 $model=Review::model()->reviewFind($this->_itemId,$this->_entityId,$this->_rating);
             }else
                 $model=Review::model()->reviewFind($this->_itemId,$this->_entityId,'');

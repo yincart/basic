@@ -50,12 +50,7 @@ class OrderController extends Controller {
 //        exit;
         if(Yii::app()->user->id){
         $cart = Yii::app()->cart;
-        $mycart = $cart->contents();
-        $total = $cart->total();
-        $this->render('checkout', array(
-            'mycart' => $mycart,
-            'total' => $total
-        ));
+        $this->render('checkout', array('cart' => Yii::app()->cart));
         }else{
             $this->redirect(array('/user/login'));
         }
@@ -80,7 +75,6 @@ class OrderController extends Controller {
         }else{
         if (isset($_POST)) {
             $model->attributes = $_POST;
-            $model->order_id = F::get_order_id();
             $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
             $model->create_time = time();
             
@@ -97,25 +91,25 @@ class OrderController extends Controller {
             $model->receiver_zip = $address->zipcode ;
             $model->receiver_mobile = $address->mobile_phone;
             $model->receiver_phone = $address->phone;
-            
+//            var_dump($model);die;
             if ($model->save()) {
                 $cart = Yii::app()->cart;
-                $mycart = $cart->contents();
-                foreach ($mycart as $mc) {
+                $items = $cart->getPositions();
+                foreach ($items as $item) {
                     $OrderItem = new OrderItem;
-                    $OrderItem->order_id = $model->order_id;
-                    $OrderItem->item_id = $mc['id'];
-                    $OrderItem->title = $mc['title'];
-                    $OrderItem->pic_url = serialize($mc['pic_url']);
-                    $OrderItem->sn = $mc['sn'];
-                    $OrderItem->num = $mc['qty'];
-                    $OrderItem->price = $mc['price'];
-                    $OrderItem->amount = $mc['subtotal'];
+                    $OrderItem->order_id=$model->order_id;
+                    $OrderItem->item_id=$item['item_id'];
+                    $OrderItem->title=$item['title'];
+                    $OrderItem->desc=$item['desc'];
+                    $OrderItem->props_name=$item['props_name'];
+                    $OrderItem->price=$item['price'];
+                    $OrderItem->quantity=$_POST['Item']['quantity'];
+                    $OrderItem->total_price=  $OrderItem->quantity*$OrderItem->price;
+                                        var_dump($OrderItem);die;
                     $OrderItem->save();
                 }
-                    
                 $cart->destroy();
-                $this->redirect(array('success'));
+              echo '<script>alert("success!") </script>' ;
             }
           }
         }

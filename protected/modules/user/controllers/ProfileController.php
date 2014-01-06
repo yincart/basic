@@ -47,7 +47,7 @@ class ProfileController extends Controller
 				$model->save();
 				$profile->save();
 				Yii::app()->user->setFlash('profileMessage',UserModule::t("Changes is saved."));
-				$this->redirect(array('/user/profile'));
+				$this->redirect(array('/member'));
 			} else $profile->validate();
 		}
 
@@ -79,7 +79,7 @@ class ProfileController extends Controller
 						$new_password->activkey=UserModule::encrypting(microtime().$model->password);
 						$new_password->save();
 						Yii::app()->user->setFlash('profileMessage',UserModule::t("New password is saved."));
-						$this->redirect(array("profile"));
+						$this->redirect(array("edit"));
 					}
 			}
 			$this->render('changepassword',array('model'=>$model));

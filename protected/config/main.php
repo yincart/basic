@@ -22,10 +22,10 @@ Yii::setPathOfAlias('xupload', $extDir . DIRECTORY_SEPARATOR . 'xupload'); // Ch
 return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
-    'language' => 'en',
+    'language' => 'zh_cn',
     'theme' => 'pidiao',
     // preloading 'log' component
-    'preload' => array('log', 'translate'),
+    'preload' => array('log'),//, 'translate'),
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
@@ -35,8 +35,9 @@ return array(
         'application.modules.mall.models.*',
         'application.modules.user.models.*',
         'application.modules.user.components.*',
-        'application.modules.translate.TranslateModule',
+//        'application.modules.translate.TranslateModule',
         'bootstrap.helpers.TbHtml',
+        'ext.shoppingCart.*'
     ),
     // path aliases
     'aliases' => array(
@@ -87,7 +88,7 @@ return array(
         'install',
         // uncomment the following to enable the Gii tool
         'member',
-        'translate',
+//        'translate',
         'cms' => array(
             'class' => 'application.modules.cms.CmsModule'
         ),
@@ -153,7 +154,7 @@ return array(
             'class' => 'yiiwheels.YiiWheels',
         ),
         'cart' => array(
-            'class' => 'ext.Cart',
+            'class' => 'ext.shoppingCart.EShoppingCart',
         ),
         'mailer' => array(
             'class' => 'ext.mailer.EMailer',
@@ -169,8 +170,8 @@ return array(
             'showScriptName' => false,
             'rules' => array(
                 'page/<key:\w+>' => 'page/index',
-                'catalog/<key:\w+>' => 'catalog/index',
-                'catalog/<key:\w+>/<prop:.*?>' => 'catalog/index',
+//                'catalog/<cat:\w+>' => 'catalog/index',
+//                'catalog/<cat:\w+>/<prop:.*?*>' => 'catalog/index',
                 'list/<category_id:\d+>' => 'item/index',
                 'item-list-<key:\w+>' => 'item/list',
 //                        'item-<id:\d+>' => 'item/view',
@@ -187,24 +188,25 @@ return array(
 
         /* setup message translation method */
         'messages' => array(
-            'class' => 'CDbMessageSource',
-            'onMissingTranslation' => array('Ei18n', 'missingTranslation'),
-            'sourceMessageTable' => 'source_message',
-            'translatedMessageTable' => 'message'
+            'class' => 'CPhpMessageSource',
+//            'basePath' => 'protected/messages',
+//            'onMissingTranslation' => array('Ei18n', 'missingTranslation'),
+//            'sourceMessageTable' => 'source_message',
+//            'translatedMessageTable' => 'message'
         ),
         /* setup global translate application component */
-        'translate' => array(
-            'class' => 'translate.components.Ei18n',
-            'createTranslationTables' => true,
-            'connectionID' => 'db',
-            'languages' => array(
-                'en' => 'English',
-                'de' => 'German',
-                'zh_cn' => 'Chinese',
-                'en_us' => 'America',
-                'ru' => 'Russian'
-            )
-        ),
+//        'translate' => array(
+//            'class' => 'translate.components.Ei18n',
+//            'createTranslationTables' => true,
+//            'connectionID' => 'db',
+//            'languages' => array(
+//                'en' => 'English',
+//                'de' => 'German',
+//                'zh_cn' => 'Chinese',
+//                'en_us' => 'America',
+//                'ru' => 'Russian'
+//            )
+//        ),
         'cache' => array(
             'class' => 'system.caching.CFileCache',
         ),
@@ -219,7 +221,7 @@ return array(
             'dbEngine' => 'InnoDB',
         ),
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=yincart',
+            'connectionString' => 'mysql:host=localhost;dbname=yincart-basic',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',

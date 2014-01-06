@@ -207,14 +207,4 @@ class Category extends CActiveRecord
         ));
         return $this;
     }
-
-    public function getDescendantIds()
-    {
-        $descendants = $this->descendants()->findAll();
-        $descendantIds = array($this->category_id);
-        foreach ($descendants as $descendant) {
-            $descendantIds[] = $descendant->category_id;
-        }
-        return $descendantIds;
-    }
 }

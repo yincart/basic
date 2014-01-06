@@ -1,13 +1,15 @@
 <?php
-Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/themes/default/css/review.css');
+Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/themes/pidiao/css/cart/review.css');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/themes/default/js/review.js');
 Yii::app()->clientScript->registerCoreScript('jquery');
 $reviewDatas=$reviewReply[0];
 $pages=$reviewReply[1];
+echo "<a style='font-size:20px' href=".Yii::app()->baseUrl."/item/".$_REQUEST['itemId'].">Back to menu</a>"
 ?>
+<div id="review" url="<?php echo Yii::app()->baseUrl?>" >
 <li class="tb-r-review">
     <div class="tb-r-buyer">
-        <div class="tb-r-b-photo"><img src="#"></img></div>
+        <div class="tb-r-b-photo"><img src="#"></div>
         <div class="tb-r-b-user">
             <?php $customer = User::model()->find(array(
                 'select' => 'username',
@@ -34,7 +36,7 @@ $pages=$reviewReply[1];
                 if(isset($photos[$a]->path)){
                     ?>
                     <td><a class="comment-show-pic-wrap">
-                            <img src="<?php echo Yii::app()->baseUrl.$photos[$a]->path?>"></img></a>
+                            <img src="<?php echo Yii::app()->baseUrl.$photos[$a]->path?>"></a>
                     </td>
                 <?php
                 }
@@ -61,14 +63,14 @@ $pages=$reviewReply[1];
         </a>
     </div>
         <div id="reply" reply-id="<?php print_r($review->review_id);?>" style="display: block">
-            <div class="reply-list">
+            <div class="reply-list" reply_list_id="0">
                 <div class="reply-wrap">
                     <p><em>回复:&nbsp</em><span class="u-name"><?php print_r($customer['username']);?> </span></p>
                     <div class="reply-input">
                         <div class="fl">
                             <input type="text"   replyId="<?php print_r($review->review_id);?>" url="<?php echo Yii::app()->baseUrl?>">
                         </div>
-                        <a href="#none" class="btn-reply-customer"  data-replyid="<?php print_r($review->review_id);?>">&nbsp&nbsp回复</a>
+                        <a href="#none" class="btn-reply-customer"  data-replyid="<?php print_r($review->review_id);?>" reply_list_b_id="0">&nbsp&nbsp回复</a>
                         <div class="clr">
                         </div>
                     </div>
@@ -103,4 +105,4 @@ foreach($reviewDatas as $reviewData){
 echo "</div>";
 echo " </li>";
 ?>
-
+</div>

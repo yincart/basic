@@ -7,14 +7,12 @@
     <meta http-equiv="Cache-Control" content="max-age=7200"/>
     <meta content="IE=7" http-equiv="X-UA-Compatible"/>
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css'/>
-        <link type='text/css' rel='stylesheet' href='
-    <?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
-        <link type='text/css' rel='stylesheet' href='
-    <?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->baseUrl; ?>/css/form.css'/>
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
-        <script type="text/javascript" src="
-    <?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
     <title><?php echo Yii::app()->params['title']; ?></title>
 <body>
 <div class="top">
@@ -46,7 +44,7 @@
         </a></div>
     <?php echo CHtml::beginForm(Yii::app()->createUrl('catalog/index'), 'get', array('class' => 'search')); ?>
     <div class="search_box">
-        <?php echo Chtml::textField('key', isset($_GET['key']) ? $_GET['key'] : ''); ?>
+        <?php echo CHtml::textField('key', isset($_GET['key']) ? $_GET['key'] : ''); ?>
         <button></button>
     </div>
     <div class="search_hot">

@@ -43,10 +43,11 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                     <tr><?php
                         echo CHtml::hiddenField('item_id[]', $item->item_id);
                         echo CHtml::hiddenField('props[]', empty($item->sku) ? '' : implode(';', json_decode($item->sku->props, true)));
+                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $item->item_id));
                         ?>
-                        <td><?php echo CHtml::checkBox('position[]', false, array('value' => $key)); ?></td>
-                        <td><?php echo CHtml::image($item->getMainPic(), $item->title, array('width' => '80px', 'height' => '80px')); ?></td>
-                        <td><?php echo $item->title; ?></td>
+                        <td><?php echo CHtml::checkBox('position[]', false, array('value' => $key, 'data-url' => Yii::app()->createUrl('cart/getPrice'))); ?></td>
+                        <td><a href="<?php echo $itemUrl; ?>"><?php echo CHtml::image($item->getMainPic(), $item->title, array('width' => '80px', 'height' => '80px')); ?></a></td>
+                        <td><?php echo CHtml::link($item->title, $itemUrl); ?></td>
                         <td><?php echo empty($item->sku) ? '' : implode(';', json_decode($item->sku->props_name, true)); ?></td>
                         <td><?php echo $item->getPrice(); ?></td>
                         <td><?php echo CHtml::textField('qty[]', $item->getQuantity(), array('size' => '4', 'maxlength' => '5', 'data-url' => Yii::app()->createUrl('cart/update'))); ?></td>
@@ -57,7 +58,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 }
             } ?>
             <tr>
-                <td colspan="8" style="padding:10px;text-align:right">总计：<?php echo $cart->getCost() ?> 元</td>
+                <td colspan="8" style="padding:10px;text-align:right">总计：<label id="total_price">0</label>元</td>
             </tr>
             <tr>
                 <td colspan="8" style="vertical-align:middle"><span
@@ -86,14 +87,23 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             window.location.reload();
         }, 'json');
     });
-    $('#checkAllPosition').click(function() {
+    function getprice() {
+        var positions = [];
+        $('[name="position[]"]:checked').each(function () {
+            positions.push($(this).val());
+        });
+        $.get($(this).data('url'), {'positions': positions}, function (response) {
+            if (!response.msg) {
+                $('#total_price').text(response.total);
+            }
+        }, 'json');
+    }
+    $('#checkAllPosition').click(function () {
         if ($(this).attr('checked')) {
             $('[name="position[]"]').attr('checked', 'checked');
         } else {
             $('[name="position[]"]').removeAttr('checked');
         }
     });
-    $('#cartForm').on('click', '[name="position[]"]', function() {
-        console.log($(this));
-    });
+    $('#cartForm').on('click', '[name="position[]"]', getprice);
 </script>

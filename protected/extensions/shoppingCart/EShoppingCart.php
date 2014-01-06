@@ -16,8 +16,10 @@ class EShoppingCart extends CMap {
     public $refresh = true;
 
     public $discounts = array();
-	
+
 	public $cartId = __CLASS__;
+
+    public $profile;
 
     /**
      * Cart-wide discount sum
@@ -38,11 +40,20 @@ class EShoppingCart extends CMap {
      * Restores the shopping cart from the session
      */
     public function restoreFromSession() {
+        $this->restoreFromDB();
         $data = unserialize(Yii::app()->getUser()->getState($this->cartId));
         if (is_array($data) || $data instanceof Traversable)
             foreach ($data as $key => $product)
                 parent::add($key, $product);
+    }
 
+    public function restoreFromDB() {
+        if (Yii::app()->user->id) {
+            $this->profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
+        }
+        if ($this->profile) {
+            Yii::app()->getUser()->setState($this->cartId, $this->profile->cart);
+        }
     }
 
     /**
@@ -101,7 +112,7 @@ class EShoppingCart extends CMap {
             throw new InvalidArgumentException('invalid argument 1, product must implement CComponent interface');
 
         $key = $position->getId();
-		
+
 		$position->detachBehavior("CartPosition");
         $position->attachBehavior("CartPosition", new ECartPositionBehaviour());
         $position->setRefresh($this->refresh);
@@ -124,6 +135,11 @@ class EShoppingCart extends CMap {
      */
     protected function saveState() {
         Yii::app()->getUser()->setState($this->cartId, serialize($this->toArray()));
+        if ($this->profile) {
+            $this->profile->cart = serialize($this->toArray());
+            $this->profile->save();
+            var_dump($this->profile);
+        }
     }
 
     /**

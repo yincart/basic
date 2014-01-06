@@ -1,4 +1,5 @@
 <?php
+
  $this->beginContent('//layouts/main'); ?>
 <div class="big-box">
     <div class="big-box-left">

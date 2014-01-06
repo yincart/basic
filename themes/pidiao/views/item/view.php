@@ -139,48 +139,31 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     <div class="pd_l">
         <div class="pd_l_fl">
             <div class="pd_l_nv">
-                <div class="pd_l_ti"><a href="">首页>></a><a href="">分类一</a></div>
+                <div class="pd_l_ti">
+                    <a href="<?php echo Yii::app()->baseUrl; ?>">首页>></a>
+                    <?php foreach ($this->breadcrumbs as $breadcrumb) {
+                        echo '<a href="' . $breadcrumb['url'] . '">' . $breadcrumb['name'] . '</a>';
+                    } ?>
+                </div>
                 <h2>所有分类</h2>
-
-                <div class="pd_l_ca">
-                    分类A
-                </div>
-                <ul class="pd_ca_list">
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                </ul>
-                <div class="pd_l_ca">
-                    分类A
-                </div>
-                <ul class="pd_ca_list">
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                </ul>
-                <div class="pd_l_ca">
-                    分类A
-                </div>
-                <ul class="pd_ca_list">
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                    <li><a href="">分类B</a></li>
-                </ul>
+                <?php
+                $root = Category::model()->findByPk(3);
+                $children = $root->children()->findAll();
+                $params = array();
+                if (!empty($_GET['key'])) {
+                    $params['key'] = $_GET['key'];
+                }
+                foreach ($children as $child) {
+                    $params['cat'] = $child->getUrl();
+                    echo '<div class="pd_l_ca"><a href="' . Yii::app()->createUrl('catalog/index', $params) . '">' . $child->name . '</a></div>';
+                    echo '<ul class="pd_ca_list" >';
+                    $leafs = $child->children()->findAll();
+                    foreach ($leafs as $leaf) {
+                        $params['cat'] = $leaf->getUrl();
+                        echo '<li><a href="' . Yii::app()->createUrl('catalog/index', $params) . '">' . $leaf->name . '</a></li>';
+                    }
+                    echo '</ul>';
+                } ?>
             </div>
             <div class="pd_l_intr">
                 <h2>推荐产品</h2>

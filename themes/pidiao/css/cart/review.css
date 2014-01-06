@@ -191,7 +191,7 @@ ul, ol {
     display: block;
     width: 100%;
 }
-img{
+#review img{
     max-width:128px;
     max-height:96px;
     overflow: hidden;

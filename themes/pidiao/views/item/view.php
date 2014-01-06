@@ -4,6 +4,9 @@ $cs->registerCssFile(Yii::app()->theme->baseUrl . '/css/deal.css');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/lrtk.js');
 $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/lrtk.js');
+Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl.'/themes/pidiao/css/cart/review.css');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/themes/default/js/review.js');
+Yii::app()->clientScript->registerCoreScript('jquery');
 ?>
 <script type="text/javascript">
     function describe(n) {
@@ -210,7 +213,11 @@ $cs->registerScriptFile(Yii::app()->theme->baseUrl . '/js/lrtk.js');
                 <?php echo $item->desc; ?>
             </div>
             <div class="deal_describe" id="describe_2" style="display:none;">
-                <img src="" alt="顾客评价" width="980" height="800">
+             <?php    $this->widget('widgets.default.WReview',array(
+                '_itemId'=> $item->item_id,
+                '_entityId'=>'1',
+                ))?>
+<!--                <img src="" alt="顾客评价" width="980" height="800">-->
             </div>
             <div class="deal_describe" id="describe_3" style="display:none;">
                 <img src="" alt="月成交记录" width="980" height="800">

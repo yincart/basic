@@ -51,6 +51,9 @@ $(document).ready(function(){
     /***hidden review***/
     $('.tb-revbd').on('click',".btn-reply",function(event){
           var data_id=$(event.target).attr('data-id');
+          if(data_id==undefined){
+              data_id=$(event.target).parent().attr('data-id');
+          }
           $("[reply-id="+data_id+"]").toggle();
     });
 

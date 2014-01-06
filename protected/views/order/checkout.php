@@ -5,14 +5,6 @@ $this->breadcrumbs=array(
 );
 Yii::app()->clientScript->registerCoreScript('jquery');
 ?>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#confirmOrder").click(function (event) {
-            $('#orderForm').submit(); 
-        });
-    });
-    
-</script>
 <?php echo CHtml::beginForm(array('/order/create'), 'POST', array('id'=>'orderForm')) ?>
 <div class="box">
     <div class="box-title"><span style="float:right"><?php echo CHtml::link('管理收货地址', array('/member/delivery_address/admin'))?></span>收货地址</div>

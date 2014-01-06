@@ -15,11 +15,11 @@
 		<?php echo $form->error($model,'order_id'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'user_id'); ?>
-	</div>
+<!--	<div class="row">-->
+<!--		--><?php //echo $form->labelEx($model,'user_id'); ?>
+<!--		--><?php //echo $form->textField($model,'user_id',array('size'=>45,'maxlength'=>45)); ?>
+<!--		--><?php //echo $form->error($model,'user_id'); ?>
+<!--	</div>-->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ship_sn'); ?>
@@ -93,13 +93,12 @@
 		<?php echo $form->error($model,'update_time'); ?>
 	</div>
 
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-			'buttonType'=>'submit',
-			'type'=>'primary',
-			'label'=>$model->isNewRecord ? 'Create' : 'Save',
-		)); ?>
-	</div>
+    <div class="form-actions">
+        <?php  echo TbHtml::formActions(array(
+            TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
+            TbHtml::resetButton('Reset'),
+        )); ?>
+    </div>
 
 <?php $this->endWidget(); ?>
 

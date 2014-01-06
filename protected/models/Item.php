@@ -229,7 +229,7 @@ class Item extends YActiveRecord
                 $areasData[] = CMap::mergeArray(array('0' => ''), CHtml::listData($areas, 'area_id', 'name'));
             }
         } else {
-            $areasData = CMap::mergeArray($areasData, array(array('0' => ''),array('0' => '')));
+            $areasData = CMap::mergeArray($areasData, array(array('0' => ''), array('0' => '')));
         }
         return $areasData;
     }
@@ -509,5 +509,6 @@ class Item extends YActiveRecord
 
         return $data;
     }
+
     #endregion
 }

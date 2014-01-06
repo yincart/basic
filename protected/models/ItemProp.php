@@ -144,8 +144,8 @@ class ItemProp extends YActiveRecord
     public function defaultScope()
     {
         return array(
-            'condition' => 't.`status` = 1',
-            'order' => 't.`sort_order` asc'
+//            'condition' => $this->getTableAlias() . '.status = 1',
+//            'order' => $this->getTableAlias() . '.sort_order desc',
         );
     }
 

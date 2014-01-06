@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="max-age=7200"/>
     <meta content="IE=7" http-equiv="X-UA-Compatible"/>
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css'/>
-    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css' />
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
@@ -29,23 +29,28 @@
             <a href="" class="online_ser">在线客服</a>
         </div>
         <div class="top_right">
-            <?php $this->widget('widgets.default.WTopNav');?>
+            <span>您好，欢饮来到皮雕软包耗材批发商城！</span>
+            <a href="" class="cor_red">登陆</a>
+            <a href="" class="cor_red">注册享好礼</a>
+            <div class="top_center">我的账户<i>arrow</i></div>
+            <div class="top_daohang">网站导航<i>arrow</i></div>
+            <?php //$this->widget('widgets.default.WTopNav');?>
         </div>
     </div>
 </div>
 <div class="head">
     <div class="logo"><a href="<?php echo Yii::app()->baseUrl; ?>"><img alt=""
-                                                                        src=""
+                                                                        src="<?php echo Yii::app()->theme->baseUrl ?>/image/logo.png"
                                                                         width="227" height="80"></a></div>
-    <div class="search">
+    <form class="search" method="get" action="<?php echo Yii::app()->createUrl('catalog/index'); ?>">
         <div class="search_box">
-            <input type="text" value=""/>
+            <input name="key" type="text" value="<?php echo isset($_GET['key']) ? $_GET['key'] : ''; ?>"/>
             <button></button>
         </div>
         <div class="search_hot">
             热门搜索：<a href="">皮雕</a> <a href="">软皮</a> <a href="">压花</a>
         </div>
-    </div>
+    </form>
     <div class="shopping_car">
         购物车有<span class="cor_red bold">0</span>件商品
     </div>
@@ -53,11 +58,11 @@
 <div class="nav">
     <ul class="nav_list">
         <?php $class = isset(Yii::app()->params['categoryIds']) ? '' : 'current';
-        echo '<li class="' . $class . '"><a href="' . Yii::app()->baseUrl . '">首页</a></li>';
+        echo '<li class="' . $class . '"><a href="' . Yii::app()->getBaseUrl(true) . '">首页</a></li>';
         $categories = Category::model()->findAllByAttributes(array('root' => '3', 'level' => 2));
         foreach ($categories as $cate) {
             $class = isset(Yii::app()->params['categoryIds']) && in_array($cate->category_id, Yii::app()->params['categoryIds']) ? 'current' : '';
-            echo '<li class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array('key' => $cate->category_id)) . '">' . $cate->name . '</a></li>';
+            echo '<li class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array('cat' => $cate->category_id)) . '">' . $cate->name . '</a></li>';
         }
         ?>
     </ul>

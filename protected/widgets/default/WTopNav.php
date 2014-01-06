@@ -8,9 +8,10 @@
 class WTopNav extends CWidget {
 
     public function getCount(){
-        $cart = Yii::app()->cart;
-        $count = $cart->total_items();
-        return $count;
+//        $cart = Yii::app()->cart;
+//        $count = $cart->total_items();
+//        return $count;
+        return 0;
     }
     public function run() {
         $this->render('topNav');

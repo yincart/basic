@@ -56,7 +56,7 @@ EOF;
             <?php foreach ($hotItems as $hotItemList) { ?>
                 <div class="warp_tab_c" id="pop_<?php echo $i; ?>">
                     <?php foreach ($hotItemList as $hotItem) {
-                        $itemUrl = Yii::app()->createUrl('item/index', array('id' => $hotItem->item_id));
+                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $hotItem->item_id));
                         ?>
                         <div class="warp_tab_list">
                             <div class="tab_img"><a href="<?php echo $itemUrl; ?>">
@@ -100,7 +100,9 @@ EOF;
             <div class="product_c">
                 <div class="product_new_b">
                     <?php if (isset($newItems[0][0])) {
-                        $newItem = $newItems[0][0]; ?>
+                        $newItem = $newItems[0][0];
+                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
+                        ?>
                         <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
                                 <img alt="<?php echo $newItem->title; ?>" src="<?php echo $newItem->getMainPic(); ?>"
                                      width="470" height="530"></a>
@@ -118,7 +120,7 @@ EOF;
                 <div class="product_list">
                     <?php for ($i = 1, $count = count($newItems[0]); $i < $count; $i++) {
                         $newItem = $newItems[0][$i];
-                        $itemUrl = Yii::app()->createUrl('item/index', array('id' => $newItem->item_id));
+                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
                         ?>
                         <div class="product_d">
                             <div class="product_img"><a href="<?php echo $itemUrl; ?>">
@@ -144,7 +146,7 @@ EOF;
                 <div class="product_ca">
                     <div class="product_list_ca">
                         <?php foreach ($newItems[$i] as $newItem) {
-                            $itemUrl = Yii::app()->createUrl('item/index', array('id' => $newItem->item_id));
+                            $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
                             ?>
                             <div class="product_d">
                                 <div class="product_img"><a href="<?php echo $itemUrl; ?>">

@@ -16,8 +16,11 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
 	'attributes'=>array(
 		'order_id',
         'user_id',
-        'status',
         array(
+            'name' => 'status',
+            'value' => 'Order::showStatus',
+        ),
+            array(
             'name' => 'ship_status',
             'value' => 'Order::showShipState',
         ),
@@ -33,11 +36,11 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
 		'ship_fee',
 		'pay_fee',
         array(
-            'name' => 'pay_method',
+            'name' => 'payment_method_id',
             'value' => 'Order::showPayMethod',
         ),
         array(
-            'name' => 'ship_method',
+            'name' => 'shipping_method_id',
             'value' => 'Order::showShipMethod',
         ),
 		'receiver_name',

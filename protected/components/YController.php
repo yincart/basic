@@ -30,4 +30,9 @@ class YController extends CController {
         EThemePicker::setTheme();
         Yii::app()->params['title'] = Yii::app()->name;
     }
+
+    public function afterAction($action)
+    {
+        
+    }
 }

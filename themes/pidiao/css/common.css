@@ -63,7 +63,7 @@ a.online_ser{
 	font-size:14px;
 }
 .top_right{
-
+	float:right;
 	overflow:hidden;
 	margin:5px 0;
 }

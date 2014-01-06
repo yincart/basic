@@ -54,25 +54,52 @@ Yii::app()->clientScript->registerCoreScript('jquery');
         </div>
     </div>
     <div class="box">
-        <div class="box-title">购物车</div>
+        <div class="box-title">商品列表</div>
         <div class="box-content cart">
             <table width="100%" border="1" cellspacing="1" cellpadding="0" style="text-align:center;vertical-align:middle">
-                <?php $this->renderPartial('/cart/_content'); ?>
+                <tr>
+                    <th width="15%">图片</th>
+                    <th width="15%">名称</th>
+                    <th width="15%">属性</th>
+                    <th width="15%">价格</th>
+                    <th width="15%">数量</th>
+                    <th width="15%">小计</th>
+                </tr>
+                <?php
+                $cart = Yii::app()->cart;
+                $items = $cart->getPositions();
+                if (empty($items)) {
+                    ?>
+                    <tr>
+                        <td colspan="6" style="padding:10px">您的购物车是空的!</td>
+                    </tr>
+                <?php
+                } else {
+                    foreach ($keys as $key) {
+                        if (!isset($items[$key])) continue;
+                        $item = $items[$key];
+                        ?>
+                        <tr><?php
+                            echo CHtml::hiddenField('item_id[]', $item->item_id);
+                            echo CHtml::hiddenField('props[]', empty($item->sku) ? '' : implode(';', json_decode($item->sku->props, true)));
+                            ?>
+                            <td><?php echo CHtml::image($item->getMainPic(), $item->title, array('width' => '80px', 'height' => '80px')); ?></td>
+                            <td><?php echo $item->title; ?></td>
+                            <td><?php echo empty($item->sku) ? '' : implode(';', json_decode($item->sku->props_name, true)); ?></td>
+                            <td><?php echo $item->getPrice(); ?></td>
+                            <td><?php echo $item->getQuantity(); ?></td>
+                            <td><?php echo $item->getSumPrice() ?>元</td>
+                        </tr>
+                    <?php
+                    }
+                } ?>
+                <tr>
+                    <td colspan="6" style="padding:10px;text-align:right">总计：<?php echo $cart->getCost(); ?> 元</td>
+                </tr>
             </table>
         </div>
         <div class="box-content">
             <div class="memo" style="float:left"><h3>给卖家留言：</h3><?php echo CHtml::textArea('memo','', array('rows'=>'1', 'cols'=>'60', 'placeholder' => '选填，可以告诉卖家您对商品的特殊要求，如：颜色、尺码等'));?></div>
-            <div class="express" style="float:right">
-                运送方式：
-                <?php
-                $cri = new CDbCriteria(array(
-                    'condition'=>'enabled = 1'
-                ));
-                $shippingMethod = ShippingMethod::model()->findAll($cri);
-                $list = CHtml::listData($shippingMethod, 'id', 'name');
-                echo CHtml::dropDownList('ship_method', '', $list);
-                ?>
-            </div>
         </div>
     </div>
 

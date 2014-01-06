@@ -8,12 +8,16 @@
  */
 
 class Tbfunction {
-    static public function add_button()
+    static public function add_goods($id)
     {
-        echo '<button class="btn btn-primary">Add</button>';
+        echo  CHtml::link('<div class="btn btn-primary">Add</div>',array('create','item_id'=>$id));
     }
     public function add_user($id)
     {
-        echo  CHtml::link('Add',array('create','user_id'=>$id),array('class'=>'btn btn-primary'));
+        echo  CHtml::link('<div class="btn btn-primary">Add</div>',array('create','user_id'=>$id));
+    }
+
+    public function view_user($id){
+        echo CHtml::link('view',array('detail','id'=>$id),array('class'=>'btn btn-primary'));
     }
 }

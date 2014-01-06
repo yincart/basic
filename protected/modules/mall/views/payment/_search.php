@@ -30,11 +30,6 @@
 		<?php echo $form->textField($model,'order_id',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
-<!--	<div class="row">-->
-<!--		--><?php //echo $form->label($model,'payment_method'); ?>
-<!--		--><?php //echo $form->textField($model,'payment_method',array('size'=>45,'maxlength'=>45)); ?>
-<!--	</div>-->
-
 	<div class="row">
 		<?php echo $form->label($model,'user_id'); ?>
 		<?php echo $form->textField($model,'user_id',array('size'=>10,'maxlength'=>10)); ?>

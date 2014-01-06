@@ -41,15 +41,15 @@ class OrderLog extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('order_id, op_id', 'numerical', 'integerOnly'=>true),
+			array('order_id ', 'numerical', 'integerOnly'=>true),
 			array('op_name', 'length', 'max'=>45),
 			array('action_time', 'length', 'max'=>10),
-			array('behavior', 'length', 'max'=>20),
+			array('user_id', 'length', 'max'=>20),
 			array('result', 'length', 'max'=>7),
 			array('log_text', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('log_id, order_id, op_id, op_name, log_text, action_time, behavior, result', 'safe', 'on'=>'search'),
+			array('log_id, order_id, op_name, log_text, action_time, behavior, result', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,11 +72,10 @@ class OrderLog extends CActiveRecord
 		return array(
 			'log_id' => 'Log',
 			'order_id' => 'Order',
-			'op_id' => 'Op',
 			'op_name' => 'Op Name',
 			'log_text' => 'Log Text',
 			'action_time' => 'Action Time',
-			'behavior' => 'Behavior',
+			'user_id' => 'User_id',
 			'result' => 'Result',
 		);
 	}
@@ -94,15 +93,27 @@ class OrderLog extends CActiveRecord
 
 		$criteria->compare('log_id',$this->log_id,true);
 		$criteria->compare('order_id',$this->order_id);
-		$criteria->compare('op_id',$this->op_id);
 		$criteria->compare('op_name',$this->op_name,true);
 		$criteria->compare('log_text',$this->log_text,true);
 		$criteria->compare('action_time',$this->action_time,true);
-		$criteria->compare('behavior',$this->behavior,true);
+		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('result',$this->result,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
+
+    protected function beforeSave(){
+        $this->action_time = time();
+        $this->user_id = Yii::app()->user->id;
+        return parent::beforeSave();
+    }
+
+    public function showOp($log_id){
+        $logOp = OrderLog::model()->findByPk($log_id);
+        $username =
+        $op = 'User ' .$logOp->user_id . ' ' .$logOp->op_name .  " order " .$logOp->order_id;
+        return $op;
+    }
 }

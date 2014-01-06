@@ -22127,3 +22127,15 @@ Stack trace:
 REQUEST_URI=/yincart/basic/backend.php/mall/item/itemProps?category_id=129&YII_CSRF_TOKEN=d3cdf27a0f7af227ac77c14e4633cda6e516d8e3
 HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/35
 ---
+2014/01/06 08:58:37 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in E:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (49)
+in E:\wamp\www\yincart\basic\backend.php (15)
+2014/01/06 08:58:37 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in E:\wamp\www\yincart\basic\protected\models\Item.php (450)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/06 08:58:37 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in E:\wamp\www\yincart\basic\protected\models\Item.php (450)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)

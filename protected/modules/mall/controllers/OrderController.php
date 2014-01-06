@@ -30,8 +30,6 @@ class OrderController extends Controller
         $item = new Item;
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model)
-
-
         if (isset($_POST['Order']) && isset($_POST['Item'])) {
             $transaction = $model->dbConnection->beginTransaction();
             try {
@@ -53,6 +51,7 @@ class OrderController extends Controller
                             $orderItem->total_price = $orderItem->price * $orderItem->quantity;
                             $orderItem->order_id = $model->order_id;
                             if (!$orderItem->save()) {
+
                                 throw new Exception('save order item fail');
                             }
                         }
@@ -200,7 +199,7 @@ class OrderController extends Controller
     public function actionDynamiccities()
     {
         echo CHtml::tag("option", array("value" => ''), CHtml::encode(''), true);
-        echo $_GET['receiver_state'];
+//        echo $_GET['receiver_state'];
         $data = Area::model()->findAll("parent_id=:parent_id", array(":parent_id" => $_GET['receiver_state']));
         $data = CHtml::listData($data, "area_id", "name");
         foreach ($data as $value => $name) {

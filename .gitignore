@@ -35,4 +35,6 @@ assets/*
 protected/runtime/*
 protected/backend/runtime/*
 
-upload/*
+#upload/*
+
+protected/config/main-local.php

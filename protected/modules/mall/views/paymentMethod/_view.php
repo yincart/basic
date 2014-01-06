@@ -1,7 +1,7 @@
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('payment_method_id')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->payment_method_id), array('view', 'id'=>$data->payment_method_id)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('code')); ?>:</b>

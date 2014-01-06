@@ -1,9 +1,6 @@
 <?php
-$cs = Yii::app()->clientScript;
-$cs->registerScriptFile(Yii::app()->baseUrl . '/js/jquery.form.js', CClientScript::POS_END);
-$cs->registerScriptFile(Yii::app()->baseUrl . '/js/skus.js', CClientScript::POS_END);
 $data = Category::model()->getSelectOptions(3);
-echo $form->dropDownListControlGroup($model, 'category_id', $data);
+echo $form->dropDownListControlGroup($model, 'category_id', $data, array('data-url' => Yii::app()->createUrl('/mall/item/itemProps'), 'data-item_id' => $model->item_id ? $model->item_id : 0));
 ?>
 <div id="item_prop_values"></div>
 <input type="hidden" id="currentRow" value="0"/>
@@ -18,25 +15,5 @@ echo $form->dropDownListControlGroup($model, 'category_id', $data);
         <a class="btn btn-info cancel" id="btnPopCancel" href="javascript:void(0)">取消</a>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var getItemProps = function () {
-            $.get('<?php echo Yii::app()->createUrl('/mall/item/itemProps'); ?>',
-                {
-                    "category_id": $("#Item_category_id").select().val(),
-                    "YII_CSRF_TOKEN": $("[name=YII_CSRF_TOKEN]").val(),
-                    "item_id": "<?php echo $model->item_id; ?>"
-                }, function (response) {
-                    $('#item_prop_values').empty();
-                    $('#item_prop_values').append(response);
-                    renderTable();
-                });
-        };
-        getItemProps();
-        $('#Item_category_id').change(function () {
-            getItemProps();
-        });
-    });
-</script>
 
 

@@ -37,14 +37,15 @@ class Category extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('left, right, root, level, name, pic', 'required'),
-            array('label, is_show', 'numerical', 'integerOnly'=>true),
-            array('left, right, root, level', 'length', 'max'=>10),
-            array('name, url', 'length', 'max'=>200),
-            array('pic', 'length', 'max'=>255),
+            array('name, pic', 'required'),
+            array('label, is_show', 'numerical', 'integerOnly' => true),
+            array('left, right, root, level', 'length', 'max' => 10),
+            array('name, url', 'length', 'max' => 200),
+            array('pic', 'length', 'max' => 255),
+            array('left, right, root, level', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('category_id, left, right, root, level, name, label, url, pic, is_show', 'safe', 'on'=>'search'),
+            array('category_id, left, right, root, level, name, label, url, pic, is_show', 'safe', 'on' => 'search'),
         );
     }
 
@@ -96,21 +97,21 @@ class Category extends CActiveRecord
     {
         // @todo Please modify the following code to remove attributes that should not be searched.
 
-        $criteria=new CDbCriteria;
+        $criteria = new CDbCriteria;
 
-        $criteria->compare('category_id',$this->category_id,true);
-        $criteria->compare('left',$this->left,true);
-        $criteria->compare('right',$this->right,true);
-        $criteria->compare('root',$this->root,true);
-        $criteria->compare('level',$this->level,true);
-        $criteria->compare('name',$this->name,true);
-        $criteria->compare('label',$this->label);
-        $criteria->compare('url',$this->url,true);
-        $criteria->compare('pic',$this->pic,true);
-        $criteria->compare('is_show',$this->is_show);
+        $criteria->compare('category_id', $this->category_id, true);
+        $criteria->compare('left', $this->left, true);
+        $criteria->compare('right', $this->right, true);
+        $criteria->compare('root', $this->root, true);
+        $criteria->compare('level', $this->level, true);
+        $criteria->compare('name', $this->name, true);
+        $criteria->compare('label', $this->label);
+        $criteria->compare('url', $this->url, true);
+        $criteria->compare('pic', $this->pic, true);
+        $criteria->compare('is_show', $this->is_show);
 
         return new CActiveDataProvider($this, array(
-            'criteria'=>$criteria,
+            'criteria' => $criteria,
         ));
     }
 
@@ -120,7 +121,7 @@ class Category extends CActiveRecord
      * @param string $className active record class name.
      * @return Category the static model class
      */
-    public static function model($className=__CLASS__)
+    public static function model($className = __CLASS__)
     {
         return parent::model($className);
     }
@@ -172,5 +173,38 @@ class Category extends CActiveRecord
             '1' => '<span class="label label-info">New</span>',
             '2' => '<span class="label label-important">Hot!</span>',
         );
+    }
+
+    public function getUrl()
+    {
+        return $this->url ? $this->url : $this->category_id;
+    }
+
+    public function scopes()
+    {
+        return array(
+            'new' => array(
+                'condition' => 't.label = 1'
+            ),
+            'hot' => array(
+                'condition' => 't.label = 2'
+            ),
+        );
+    }
+
+    public function limit($limit = 3)
+    {
+        $this->getDbCriteria()->mergeWith(array(
+            'limit' => $limit,
+        ));
+        return $this;
+    }
+
+    public function level($level = 2)
+    {
+        $this->getDbCriteria()->mergeWith(array(
+            'condition' => 't.level = ' . $level
+        ));
+        return $this;
     }
 }

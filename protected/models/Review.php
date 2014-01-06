@@ -144,7 +144,7 @@ class Review extends CActiveRecord
         }
         $count=self::model()->count($criteria);
         $pages=new CPagination($count);
-        $pages->pageSize=5;
+        $pages->pageSize=10;
         $pages->applyLimit($criteria);
         $review = self::model()->findall($criteria);
         $data[0]=$review;$data[1]=$pages;
@@ -152,7 +152,7 @@ class Review extends CActiveRecord
     }
 
     /***
-     * count different kinds  review
+     * count different kinds of review
      * @param $productId
      * @param $entityId :the type of target.'1' :product .'2' :review
      * @param $flag  "1": count three kinds of review; '2' : count  picture ;'3':count tags ;'4':count  reply for review

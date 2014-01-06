@@ -50,12 +50,7 @@ class OrderController extends Controller {
 //        exit;
         if(Yii::app()->user->id){
         $cart = Yii::app()->cart;
-        $mycart = $cart->contents();
-        $total = $cart->total();
-        $this->render('checkout', array(
-            'mycart' => $mycart,
-            'total' => $total
-        ));
+        $this->render('checkout', array('cart' => Yii::app()->cart));
         }else{
             $this->redirect(array('/user/login'));
         }
@@ -184,13 +179,12 @@ class OrderController extends Controller {
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new Order('search');
+        $model = new Order;
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['Order']))
             $model->attributes = $_GET['Order'];
-
         $this->render('admin', array(
-            'model' => $model,
+            'model' => $model
         ));
     }
 

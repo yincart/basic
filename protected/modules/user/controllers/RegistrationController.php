@@ -30,7 +30,6 @@ class RegistrationController extends Controller
             echo UActiveForm::validate(array($model,$profile));
             Yii::app()->end();
         }
-
         if (Yii::app()->user->id) {
             $this->redirect(Yii::app()->controller->module->profileUrl);
         } else {

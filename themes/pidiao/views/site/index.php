@@ -3,8 +3,7 @@
     <div id="slides" class="banner">
         <div class="banner_l">
             <a class="prev" href="#">
-                <img alt="上一页" src="<?php echo Yii::app()->theme->baseUrl; ?>/image/banner_l.png"
-                     width="43" height="43">
+                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/image/banner_l.png', '上一页', array('width' => '43', 'height' => '43')); ?>
             </a>
         </div>
         <div class="bannerImg">
@@ -26,8 +25,7 @@ EOF;
         </div>
         <div class="banner_r">
             <a class="next" href="#">
-                <img alt="下一页" src="<?php echo Yii::app()->theme->baseUrl; ?>/image/banner_r.png" width="43"
-                     height="43">
+                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/image/banner_r.png', '下一页', array('width' => '43', 'height' => '43')); ?>
             </a>
         </div>
     </div>
@@ -56,21 +54,19 @@ EOF;
             <?php foreach ($hotItems as $hotItemList) { ?>
                 <div class="warp_tab_c" id="pop_<?php echo $i; ?>">
                     <?php foreach ($hotItemList as $hotItem) {
-                        $itemUrl = Yii::app()->createUrl('item/index', array('id' => $hotItem->item_id));
+                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $hotItem->item_id));
                         ?>
                         <div class="warp_tab_list">
                             <div class="tab_img"><a href="<?php echo $itemUrl; ?>">
-                                    <img alt="<?php echo $hotItem->title; ?>"
-                                         src="<?php echo $hotItem->getMainPic(); ?>" width="220" height="220"></a></div>
+                                    <?php echo CHtml::image($hotItem->getMainPic(), $hotItem->title, array('width' => 220, 'height' => '220')) ?>
+                                </a></div>
                             <div class="tab_name">
-                                <a href="<?php echo $itemUrl; ?>"><?php echo $hotItem->title; ?></a>
+                                <?php echo CHtml::link($hotItem->title, $itemUrl); ?>
                             </div>
                             <div class="tab_price">
                                 <div class="tab_price_n"><?php echo $hotItem->currency . $hotItem->price ?></div>
                                 <div class="tab_price_p"><?php echo $hotItem->currency . $hotItem->price ?></div>
-                                <div class="tab_price_v"><a
-                                        href="<?php echo $itemUrl; ?>">详情点击</a>
-                                </div>
+                                <div class="tab_price_v"><?php echo CHtml::link('详情点击', $itemUrl); ?></div>
                             </div>
                         </div>
                     <?php } ?>
@@ -78,7 +74,7 @@ EOF;
             <?php } ?>
         </div>
         <div class="warp_news">
-            <div class="news_tit"><a href="">更多>></a></div>
+            <div class="news_tit"><?php echo CHtml::link('更多>>', Yii::app()->createUrl('catalog/index', array())); ?></div>
             <div class="news_c">
                 <div class="news_img">
                     <img alt="" src="" width="180" height="180"/>
@@ -100,7 +96,9 @@ EOF;
             <div class="product_c">
                 <div class="product_new_b">
                     <?php if (isset($newItems[0][0])) {
-                        $newItem = $newItems[0][0]; ?>
+                        $newItem = $newItems[0][0];
+                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
+                        ?>
                         <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
                                 <img alt="<?php echo $newItem->title; ?>" src="<?php echo $newItem->getMainPic(); ?>"
                                      width="470" height="530"></a>
@@ -118,7 +116,7 @@ EOF;
                 <div class="product_list">
                     <?php for ($i = 1, $count = count($newItems[0]); $i < $count; $i++) {
                         $newItem = $newItems[0][$i];
-                        $itemUrl = Yii::app()->createUrl('item/index', array('id' => $newItem->item_id));
+                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
                         ?>
                         <div class="product_d">
                             <div class="product_img"><a href="<?php echo $itemUrl; ?>">
@@ -144,7 +142,7 @@ EOF;
                 <div class="product_ca">
                     <div class="product_list_ca">
                         <?php foreach ($newItems[$i] as $newItem) {
-                            $itemUrl = Yii::app()->createUrl('item/index', array('id' => $newItem->item_id));
+                            $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
                             ?>
                             <div class="product_d">
                                 <div class="product_img"><a href="<?php echo $itemUrl; ?>">
@@ -177,7 +175,7 @@ EOF;
         //滚动Banner图片的显示
         $('#slides').slides({
             preload: false,
-            preloadImage: <?php Yii::app()->theme->baseUrl; ?>'/images/loading.gif',
+            preloadImage: '/images/loading.gif',
             effect: 'fade',
             slideSpeed: 400,
             fadeSpeed: 100,

@@ -45,10 +45,10 @@
 
         <div class="btns">
             <a class="btn-reply" style="cursor:pointer;" data-id="<?php print_r($reviewData->review_id); ?>" >
-                reply(
+                reply(<em>
                     <?php $num= Review::model()->reviewSummary($reviewData->review_id, Review::ENTITY_REVIEW, '4');echo $num;
                     ?>
-                )
+                </em>)
             </a>
         </div>
 <?php

@@ -8,19 +8,6 @@ $this->menu=array(
 	array('label'=>'List ShippingMethod', 'icon'=>'list', 'url'=>array('index')),
 	array('label'=>'Create ShippingMethod', 'icon'=>'plus','url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('shipping-method-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Manage Shipping Methods</h1>

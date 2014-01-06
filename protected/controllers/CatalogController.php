@@ -2,30 +2,57 @@
 
 class CatalogController extends YController
 {
-    public function actionIndex($key = 3, $prop = '')
+    public function actionIndex()
     {
-        $category = is_numeric($key) ? Category::model()->findByPk($key) : Category::model()->findByAttributes(array('url' => $key));
+        $cat = isset($_GET['cat']) ? $_GET['cat'] : 3;
+        $category = is_numeric($cat) ? Category::model()->findByPk($cat) : Category::model()->findByAttributes(array('url' => $cat));
         if (empty($category) || $category->root != 3) {
             throw new CHttpException(404, 'The requested page does not exist.');
         }
-        $parentCategories = $category->parent()->findAll();
-        $parentCategories = array_reverse($parentCategories);
-        $categoryIds = array($category->category_id);
-        foreach ($parentCategories as $cate) {
-            if (!$cate->isRoot()) {
-                $this->breadcrumbs[] = array('name' => $cate->name . '>>', 'url' => Yii::app()->createUrl('catalog/index', array('key' => $cate->getUrl())));
-                $categoryIds[] = $cate->category_id;
-            }
-        }
-        $this->breadcrumbs[] = array('name' => $category->name, 'url' => Yii::app()->createUrl('catalog/index', array('key' => $category->getUrl())));
-        Yii::app()->params['categoryIds'] = $categoryIds;
 
         $descendantIds = $category->getDescendantIds();
         $criteria = new CDbCriteria();
         $criteria->addInCondition('category_id', $descendantIds);
-        if (!empty($prop)) {
+
+        if (!empty($_GET['key'])) {
+            $criteria->addCondition("(t.title LIKE '%{$_GET['key']}%' AND t.desc LIKE '%{$_GET['key']}%')");
+        }
+        if (!empty($_GET['floor_price'])) {
+            $criteria->addCondition("t.price >= '{$_GET['floor_price']}'");
+        }
+        if (!empty($_GET['top_price'])) {
+            $criteria->addCondition("t.price <= '{$_GET['top_price']}'");
+        }
+        if (!empty($_GET['has_stock']) && $_GET['has_stock']) {
+            $criteria->addCondition("t.stock > 0");
+        }
+        if (!empty($_GET['sort'])) {
+            switch ($_GET['sort']) {
+                case 'sold':
+                    break;
+                case 'soldd':
+                    break;
+                case 'price':
+                    $criteria->order = 't.price';
+                    break;
+                case 'priced':
+                    $criteria->order = 't.price desc';
+                    break;
+                case 'new':
+                    $criteria->order = 't.update_time';
+                    break;
+                case 'newd':
+                    $criteria->order = 't.update_time desc';
+                    break;
+                default:
+                    $criteria->order = 't.click_count desc';
+                    break;
+            }
+        }
+
+        if (!empty($_GET['props'])) {
             $pvids = array();
-            $props = explode(';', $prop);
+            $props = explode(';', $_GET['props']);
             foreach ($props as $p) {
                 $ids = explode(':', $p);
                 if (count($ids) >= 2) {
@@ -40,7 +67,7 @@ class CatalogController extends YController
             }
             foreach ($pvids as $pid => $vids) {
                 if (is_array($vids)) {
-                    $where = [];
+                    $where = array();
                     foreach ($vids as $vid) {
                         $where[] = "props like '%$pid:$vid%'";
                     }
@@ -52,16 +79,39 @@ class CatalogController extends YController
             }
         }
         $count = Item::model()->count($criteria);
-        $pages = new CPagination($count);
-        // results per page
-        $pages->pageSize = 12;
-        $pages->applyLimit($criteria);
+        $pager = new CPagination($count);
+        $pager->pageSize = 12;
+        $pager->applyLimit($criteria);
         $items = Item::model()->findAll($criteria);
+
+        $parentCategories = $category->parent()->findAll();
+        $parentCategories = array_reverse($parentCategories);
+        $categoryIds = array($category->category_id);
+        $params = array();
+        if (!empty($_GET['key'])) {
+            $params['key'] = $_GET['key'];
+        }
+        foreach ($parentCategories as $cate) {
+            if (!$cate->isRoot()) {
+                $params['cat'] = $cate->getUrl();
+                $this->breadcrumbs[] = array('name' => $cate->name . '>> ', 'url' => Yii::app()->createUrl('catalog/index', $params));
+                $categoryIds[] = $cate->category_id;
+            }
+        }
+        $params['cat'] = $category->getUrl();
+        $this->breadcrumbs[] = array('name' => $category->name, 'url' => Yii::app()->createUrl('catalog/index', $params));
+        Yii::app()->params['categoryIds'] = $categoryIds;
+
+        $categories = $category->children()->findAll();
+        $itemProps = ItemProp::model()->with('propValues')->findAll(new CDbCriteria(array('condition' => "t.`category_id` = $category->category_id AND t.`type` > 1")));
+
         $this->render('index', array(
-            'key' => $key,
+            'cat' => $cat,
             'category' => $category,
             'items' => $items,
-            'pages' => $pages,
+            'pager' => $pager,
+            'categories' => $categories,
+            'itemProps' => $itemProps,
         ));
     }
 }

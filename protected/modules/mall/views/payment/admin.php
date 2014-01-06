@@ -8,19 +8,6 @@ $this->menu=array(
 	array('label'=>'List Payment', 'icon'=>'list', 'url'=>array('index')),
 	array('label'=>'Create Payment', 'icon'=>'plus','url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('payment-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Manage Payments</h1>
@@ -42,12 +29,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'pay_id',
-		'pay_sn',
+		'payment_id',
+		'payment_sn',
 		'money',
 		'currency',
 		'order_id',
-		'pay_method',
+//		'pay_method',
 		/*
 		'user_id',
 		'account',

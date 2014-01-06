@@ -64,11 +64,3 @@ foreach ($itemProps as $itemProp) {
         </table>
     </div>
 </div>
-<script type="text/javascript">
-    $(function() {
-//        $('.color-prop').click(function() {
-//            var html = '<div id="browse-image-btn" class="img-plus">&#43;</div>';
-//            $(this).parent().after(html);
-//        });
-    });
-</script>

@@ -3,8 +3,11 @@ $this->breadcrumbs=array(
 	UserModule::t("Registration"),
 );
 ?>
-
-<h1><?php echo UserModule::t("Registration"); ?></h1>
+<?php CHtml::$afterRequiredLabel = '';?>
+<div class="login_box">
+    <div class="login_tit">
+        <a class="current"><?php echo UserModule::t("Registration"); ?></a>
+    </div>
 
 <?php if(Yii::app()->user->hasFlash('registration')): ?>
 <div class="success">
@@ -98,3 +101,4 @@ $this->breadcrumbs=array(
 <?php $this->endWidget(); ?>
 </div><!-- form -->
 <?php endif; ?>
+    </div>

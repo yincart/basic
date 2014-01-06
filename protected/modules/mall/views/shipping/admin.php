@@ -8,19 +8,6 @@ $this->menu=array(
 	array('label'=>'List Shipping', 'icon'=>'list', 'url'=>array('index')),
 	array('label'=>'Create Shipping', 'icon'=>'plus','url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('shipping-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Manage Shippings</h1>
@@ -44,7 +31,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'ship_id',
 		'order_id',
-		'user_id',
+//		'user_id',
 		'ship_sn',
 		'type',
 		'ship_method',

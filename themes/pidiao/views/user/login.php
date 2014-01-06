@@ -6,7 +6,9 @@ $this->breadcrumbs=array(
 ?>
 <?php CHtml::$afterRequiredLabel = '';?>
 <div class="login_box">
-    <h1><?php echo UserModule::t("Login"); ?></h1>
+    <div class="login_tit">
+        <a class="current"><?php echo UserModule::t("Login"); ?></a>
+    </div>
 
 <?php if(Yii::app()->user->hasFlash('loginMessage')): ?>
 

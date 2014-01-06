@@ -2,8 +2,8 @@
 <?php $this->beginContent('//layouts/main'); ?>
 
 <div id="sidebar-nav">
-        <?php $this->widget('bootstrap.widgets.TbMenu', array(
-    'type'=>'list',
+        <?php $this->widget('bootstrap.widgets.TbNav', array(
+    'type'=>TbHtml::NAV_TYPE_LIST,
     'items'=>array_merge(array(
         array('label'=>'MAIN MENU'),
         array('label'=>'控制面板', 'icon'=>'home', 'url'=>array('/site/index')),
@@ -20,7 +20,7 @@
 	<div class="span12">
 	    <?php if (isset($this->breadcrumbs)): ?>
                 <?php
-                $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
+                $this->widget('bootstrap.widgets.TbBreadcrumb', array(
                     'links' => $this->breadcrumbs,
                 ));
                 ?><!-- breadcrumbs -->

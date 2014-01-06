@@ -20,7 +20,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'ship_id',
 		'order_id',
-		'user_id',
+//		'user_id',
 		'ship_sn',
 		'type',
 		'ship_method',

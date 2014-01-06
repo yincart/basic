@@ -1,5 +1,5 @@
 <?php
-$this->widget('ext.elfinder.ServerFileInput', array(
+$this->widget('ext.elFinder.ServerFileInput', array(
     'model' => new ItemImg(),
     'attribute' => 'pic',
     'models' => $model->itemImgs,

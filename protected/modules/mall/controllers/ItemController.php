@@ -57,33 +57,6 @@ class ItemController extends MallBaseController
     }
 
     /**
-     * Deletes a particular model.
-     * If deletion is successful, the browser will be redirected to the 'admin' page.
-     * @param integer $id the ID of the model to be deleted
-     * @throws CHttpException
-     */
-    public function actionDelete($id)
-    {
-        if (Yii::app()->request->isPostRequest) {
-// we only allow deletion via POST request
-            $model = $this->loadModel($id);
-            $images = ItemImg::model()->findAllByAttributes(array('item_id' => $id));
-            foreach ($images as $k => $v) {
-                $img = $v['url'];
-// we only allow deletion via POST request
-                ItemImg::model()->deleteAllByAttributes(array('item_id' => $id));
-                @unlink(dirname(Yii::app()->basePath) . '/upload/item/image/' . $img);
-            }
-            $model->delete();
-
-// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-            if (!isset($_GET['ajax']))
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        } else
-            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
-    }
-
-    /**
      * Manages all models.
      */
     public function actionAdmin()
@@ -351,9 +324,9 @@ class ItemController extends MallBaseController
         if (!Yii::app()->request->isAjaxRequest && empty($_POST['item_id'])) {
             return;
         }
-        $skus = Sku::model()->findAllByAttributes(array("item_id"=>$_POST["item_id"]));
+        $skus = Sku::model()->findAllByAttributes(array("item_id" => $_POST["item_id"]));
         $data = array();
-        foreach($skus as $sku){
+        foreach ($skus as $sku) {
             $arr = array();
             $arr['sku_id'] = $sku->sku_id;
             $arr['props'] = F::convert_props_js_id($sku->props);
@@ -386,7 +359,6 @@ class ItemController extends MallBaseController
             $skus = array();
             foreach ($_POST['Item']['skus']['table'] as $pid => $sku) {
                 list($sku['props'], $sku['props_name']) = $this->handleItemProps($sku['props']);
-                $sku['status'] = 1;
                 $skus[] = $sku;
             }
             $_POST['Item']['skus'] = $skus;
@@ -431,11 +403,12 @@ class ItemController extends MallBaseController
                     $propValue = PropValue::model()->findByPk($v);
                     $vname = $propValue ? $propValue->value_name : $v;
                     $props_name[$pname][] = $pname . ':' . $vname;
+
                 }
             } else {
                 $props[$pid] = $pid . ':' . $vid;
-                $propValue = PropValue::model()->findByPk($v);
-                $vname = $propValue ? $propValue->value_name : $v;
+                $propValue = PropValue::model()->findByPk($vid);
+                $vname = $propValue ? $propValue->value_name : $vid;
                 $props_name[$pname] = $pname . ':' . $vname;
             }
         }

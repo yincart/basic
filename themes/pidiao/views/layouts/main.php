@@ -7,12 +7,11 @@
     <meta http-equiv="Cache-Control" content="max-age=7200"/>
     <meta content="IE=7" http-equiv="X-UA-Compatible"/>
     <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css'/>
-    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->baseUrl; ?>/css/form.css'/>
-    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
-    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
+        <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
+        <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
-    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
+        <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
     <title><?php echo Yii::app()->params['title']; ?></title>
 <body>
 <div class="top">
@@ -25,14 +24,9 @@
             <span class="cor_red bold font14">Tel: 13967414054</span>
             <?php echo CHtml::link('在线客服', Yii::app()->createUrl('contact'), array('class' => "online_ser")); ?>
         </div>
-        <div class="top_right">
-            <span>您好，欢饮来到皮雕软包耗材批发商城！</span>
-            <?php echo CHtml::link('登陆', Yii::app()->createUrl('user/login/index'), array('class' => "cor_red"));
-            echo CHtml::link('注册享好礼', Yii::app()->createUrl('user/register/index'), array('class' => "cor_red")); ?>
-            <div class="top_center">我的账户<i>arrow</i></div>
-            <div class="top_daohang">网站导航<i>arrow</i></div>
-            <!--            --><?php //$this->widget('widgets.default.WTopNav');?>
-        </div>
+
+        <?php $this->widget('widgets.default.WTopNav');?>
+
     </div>
 </div>
 <div class="head">
@@ -44,7 +38,7 @@
         </a></div>
     <?php echo CHtml::beginForm(Yii::app()->createUrl('catalog/index'), 'get', array('class' => 'search')); ?>
     <div class="search_box">
-        <?php echo CHtml::textField('key', isset($_GET['key']) ? $_GET['key'] : ''); ?>
+        <?php echo Chtml::textField('key', isset($_GET['key']) ? $_GET['key'] : ''); ?>
         <button></button>
     </div>
     <div class="search_hot">

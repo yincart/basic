@@ -48,8 +48,8 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 'condition'=>'enabled = 1'
             ));
             $paymentMethod = PaymentMethod::model()->findAll($cri);
-            $list = CHtml::listData($paymentMethod, 'id', 'name');
-            echo CHtml::radioButtonList('pay_method', '1', $list);
+            $list = CHtml::listData($paymentMethod, 'payment_method_id', 'name');
+            echo CHtml::radioButtonList('payment_method_id', '1', $list);
             ?>
         </div>
     </div>
@@ -62,17 +62,6 @@ Yii::app()->clientScript->registerCoreScript('jquery');
         </div>
         <div class="box-content">
             <div class="memo" style="float:left"><h3>给卖家留言：</h3><?php echo CHtml::textArea('memo','', array('rows'=>'1', 'cols'=>'60', 'placeholder' => '选填，可以告诉卖家您对商品的特殊要求，如：颜色、尺码等'));?></div>
-            <div class="express" style="float:right">
-                运送方式：
-                <?php
-                $cri = new CDbCriteria(array(
-                    'condition'=>'enabled = 1'
-                ));
-                $shippingMethod = ShippingMethod::model()->findAll($cri);
-                $list = CHtml::listData($shippingMethod, 'id', 'name');
-                echo CHtml::dropDownList('ship_method', '', $list);
-                ?>
-            </div>
         </div>
     </div>
 

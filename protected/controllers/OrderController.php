@@ -75,7 +75,6 @@ class OrderController extends Controller {
         }else{
         if (isset($_POST)) {
             $model->attributes = $_POST;
-            $model->order_id = F::get_order_id();
             $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
             $model->create_time = time();
             
@@ -92,7 +91,7 @@ class OrderController extends Controller {
             $model->receiver_zip = $address->zipcode ;
             $model->receiver_mobile = $address->mobile_phone;
             $model->receiver_phone = $address->phone;
-            
+            var_dump($model);die;
             if ($model->save()) {
                 $cart = Yii::app()->cart;
                 $mycart = $cart->contents();
@@ -108,9 +107,8 @@ class OrderController extends Controller {
                     $OrderItem->amount = $mc['subtotal'];
                     $OrderItem->save();
                 }
-                    
                 $cart->destroy();
-                $this->redirect(array('success'));
+              echo '<script>alert("success!") </script>' ;
             }
           }
         }

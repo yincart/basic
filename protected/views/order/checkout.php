@@ -94,7 +94,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
         $list = CHtml::listData($shippingMethod, 'id', 'name');
         echo CHtml::dropDownList('ship_method', '', $list);
         ?></div>
-        
+
     </div>
     <div class="clear"></div>
     <div class="order-confirm"><span style="float:right;padding:5px 10px;"><?php echo CHtml::link('确认订单', '#', array('id'=>'confirmOrder', 'class'=>'btn1'))?></span></div>

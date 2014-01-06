@@ -50,7 +50,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                         <td><?php echo CHtml::link($item->title, $itemUrl); ?></td>
                         <td><?php echo empty($item->sku) ? '' : implode(';', json_decode($item->sku->props_name, true)); ?></td>
                         <td><?php echo $item->getPrice(); ?></td>
-                        <td><?php echo CHtml::textField('qty[]', $item->getQuantity(), array('size' => '4', 'maxlength' => '5', 'data-url' => Yii::app()->createUrl('cart/update'))); ?></td>
+                        <td><?php echo CHtml::textField('quantity[]', $item->getQuantity(), array('size' => '4', 'maxlength' => '5', 'data-url' => Yii::app()->createUrl('cart/update'))); ?></td>
                         <td><?php echo $item->getSumPrice() ?>元</td>
                         <td><?php echo CHtml::link('移除', array('/cart/remove', 'key' => $item->getId())) ?></td>
                     </tr>
@@ -78,7 +78,7 @@ Yii::app()->clientScript->registerCoreScript('jquery');
     </div>
 </div>
 <script type="text/javascript">
-    $('[name="qty[]"]').change(function () {
+    $('[name="quantity[]"]').change(function () {
         var item_id = $(this).parents('tr').find('[name="item_id[]"]').val();
         var props = $(this).parents('tr').find('[name="props[]"]').val();
         var qty = $(this).val();

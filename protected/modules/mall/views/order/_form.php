@@ -5,8 +5,8 @@
         'id' => 'order-form',
         'enableAjaxValidation' => false,
 //        'method'=>'GET'
-    )); ?>
-
+    ));
+    ?>
     <div class="input-group space">
         <?php if ($model->order_id) {
             echo $form->labelEx($model, 'order_id', array('class' => 'input-group-addon'));
@@ -23,7 +23,9 @@
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'total_fee', array('class' => 'input-group-addon')); ?>
         <?php echo $form->textField($model, 'total_fee', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control form-control1')); ?>
-        <div id="add_goods" data-url="<?php echo $this->createUrl('order/add_goods') ; ?>" class="btn btn-info" style="float:right">添加物品</div>
+        <div id="add_goods" data-url="<?php echo $this->createUrl('order/add_goods'); ?>" class="btn btn-info"
+             style="float:right">添加物品
+        </div>
     </div>
 
     <div class="input-group space">
@@ -151,21 +153,39 @@
     </div>
     <table id="item-table" class="table table-striped">
 
- <tr>
-     <td></td>
-     <td>item_id</td>
-     <td>category_id</td>
-     <td>outer_id</td>
-     <td>title</td>
-     <td>stock</td>
-     <td>min_number</td>
-     <td>currency</td>
-     <td>price</td>
-     <td>desc</td>
-     <td>create_time</td>
-     <td>update_time</td>
- </tr>
-        </table>
+        <tr>
+            <td></td>
+            <td>item_id</td>
+            <td>category_id</td>
+            <td>outer_id</td>
+            <td>title</td>
+            <td>stock</td>
+            <td>min_number</td>
+            <td>currency</td>
+            <td>price</td>
+            <td>desc</td>
+            <td>create_time</td>
+            <td>update_time</td>
+            <td>action</td>
+        </tr>
+        <?php if(isset($item)){ foreach ($item as $items){ ?>
+        <tr>
+            <td><input  type="hidden" name="Item[item_id][]" id="Item_item_id" value="<?php echo $items->item_id?>" /></td>
+            <td><?php echo $items->item_id; ?></td>
+            <td><?php echo $items->category_id; ?></td>
+            <td><?php echo $items->outer_id; ?></td>
+            <td><?php echo $items->title; ?></td>
+            <td><?php echo $items->stock; ?></td>
+            <td><?php echo $items->min_number; ?></td>
+            <td><?php echo $items->currency; ?></td>
+            <td><?php echo $items->price; ?></td>
+            <td><?php echo $items->desc; ?></td>
+            <td><?php echo $items->create_time; ?></td>
+            <td><?php echo $items->update_time; ?></td>
+<td><div class="btn btn-danger" id='delete'>Delete</div></td>
+            <?php }} ?>
+        </tr>
+    </table>
 
     <div class="form-actions space" style="width: 65%">
         <?php echo TbHtml::formActions(array(

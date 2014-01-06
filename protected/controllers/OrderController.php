@@ -7,7 +7,7 @@ class OrderController extends Controller
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = '//layouts/column2';
+//    public $layout = '//layouts/column2';
 
     /**
      * @return array action filters
@@ -70,64 +70,75 @@ class OrderController extends Controller
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
-
-//        print_r($_POST);       
-//        exit;
         if (!$_POST['delivery_address']) {
             echo '<script>alert("您还没有添加收货地址！")</script>';
             echo '<script type="text/javascript">history.go(-1)</script>';
-            die;
         } else {
             if (isset($_POST)) {
-                $model->attributes = $_POST;
-                $model->order_id = F::get_order_id();
-                $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
-                $model->create_time = time();
-
-                $cri = new CDbCriteria(array(
-                    'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
-                ));
-                $address = AddressResult::model()->find($cri);
-                $model->receiver_name = $address->contact_name;
-                $model->receiver_country = $address->country;
-                $model->receiver_state = $address->state;
-                $model->receiver_city = $address->city;
-                $model->receiver_district = $address->district;
-                $model->receiver_address = $address->address;
-                $model->receiver_zip = $address->zipcode;
-                $model->receiver_mobile = $address->mobile_phone;
-                $model->receiver_phone = $address->phone;
-
-                if ($model->save()) {
+                $transaction = $model->dbConnection->beginTransaction();
+                try {
+                    $model->attributes = $_POST;
+                    $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
+                    $model->create_time = time();
                     $cart = Yii::app()->cart;
-                    $mycart = $cart->contents();
-                    foreach ($mycart as $mc) {
-                        $OrderItem = new OrderItem;
-                        $OrderItem->order_id = $model->order_id;
-                        $OrderItem->item_id = $mc['id'];
-                        $OrderItem->title = $mc['title'];
-                        $OrderItem->pic_url = serialize($mc['pic_url']);
-                        $OrderItem->sn = $mc['sn'];
-                        $OrderItem->num = $mc['qty'];
-                        $OrderItem->price = $mc['price'];
-                        $OrderItem->amount = $mc['subtotal'];
-                        $OrderItem->save();
+                    $items = array();
+                    foreach ($_POST['keys'] as $key)
+                        $items[] = $cart->itemAt($key);
+                    $cri = new CDbCriteria(array(
+                        'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
+                    ));
+                    $address = AddressResult::model()->find($cri);
+                    $model->receiver_name = $address->contact_name;
+                    $model->receiver_country = $address->country;
+                    $model->receiver_state = $address->state;
+                    $model->receiver_city = $address->city;
+                    $model->receiver_district = $address->district;
+                    $model->receiver_address = $address->address;
+                    $model->receiver_zip = $address->zipcode;
+                    $model->receiver_mobile = $address->mobile_phone;
+                    $model->receiver_phone = $address->phone;
+                    $model->total_fee = 0;
+                    foreach ($items as $item) {
+                        $model->total_fee += $item['quantity'] * $item['price'];
                     }
-
-                    $cart->destroy();
+                    if ($model->save()) {
+                        foreach ($items as $item) {
+                            $OrderItem = new OrderItem;
+                            $OrderItem->order_id = $model->order_id;
+                            $OrderItem->item_id = $item['item_id'];
+                            $OrderItem->title = $item['title'];
+                            $OrderItem->desc = $item['desc'];
+                            $OrderItem->props_name = $item['props_name'];
+                            $OrderItem->price = $item['price'];
+                            $OrderItem->quantity = $item['quantity'];
+                            $OrderItem->total_price = $OrderItem->quantity * $OrderItem->price;
+                            if (!$OrderItem->save()) {
+                                throw new Exception('save order item fail');
+                            }
+                        }
+                        foreach ($_POST['keys'] as $key) {
+                            $cart->remove($key);
+                        }
+                    } else {
+                        throw new Exception('save order fail');
+                    }
+                    $transaction->commit();
                     $this->redirect(array('success'));
+                } catch (Exception $e) {
+                    $transaction->rollBack();
                 }
             }
         }
 
+    }
+
 //        $this->render('create', array(
 //            'model' => $model,
 //        ));
-    }
+
 
     public function actionSuccess()
     {
-
         $this->render('success');
     }
 

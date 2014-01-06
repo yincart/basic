@@ -22139,3 +22139,46 @@ in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
 in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
 in E:\wamp\www\yincart\basic\protected\models\Item.php (450)
 in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/06 15:21:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yincart-basic`.`order`, CONSTRAINT `fk_order_payment_method1` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`status`, `pay_status`, `ship_status`, `refund_status`, `comment_status`, `total_fee`, `ship_fee`, `pay_fee`, `payment_method_id`, `shipping_method_id`, `user_id`, `receiver_state`, `receiver_city`, `receiver_district`, `receiver_zip`, `receiver_address`, `receiver_name`, `receiver_mobile`, `receiver_phone`, `memo`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20).
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (38)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/06 15:21:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yincart-basic`.`order`, CONSTRAINT `fk_order_payment_method1` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`status`, `pay_status`, `ship_status`, `refund_status`, `comment_status`, `total_fee`, `ship_fee`, `pay_fee`, `payment_method_id`, `shipping_method_id`, `user_id`, `receiver_state`, `receiver_city`, `receiver_district`, `receiver_zip`, `receiver_address`, `receiver_name`, `receiver_mobile`, `receiver_phone`, `memo`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20).
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (38)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/06 15:22:51 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yincart-basic`.`order`, CONSTRAINT `fk_order_payment_method1` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`status`, `pay_status`, `ship_status`, `refund_status`, `comment_status`, `total_fee`, `ship_fee`, `pay_fee`, `payment_method_id`, `shipping_method_id`, `user_id`, `receiver_state`, `receiver_city`, `receiver_district`, `receiver_zip`, `receiver_address`, `receiver_name`, `receiver_mobile`, `receiver_phone`, `memo`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20).
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (38)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/06 15:23:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yincart-basic`.`order`, CONSTRAINT `fk_order_payment_method1` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`status`, `pay_status`, `ship_status`, `refund_status`, `comment_status`, `total_fee`, `ship_fee`, `pay_fee`, `payment_method_id`, `shipping_method_id`, `user_id`, `receiver_state`, `receiver_city`, `receiver_district`, `receiver_zip`, `receiver_address`, `receiver_name`, `receiver_mobile`, `receiver_phone`, `memo`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20).
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (38)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/06 15:38:22 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yincart-basic`.`order`, CONSTRAINT `fk_order_payment_method1` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`status`, `pay_status`, `ship_status`, `refund_status`, `comment_status`, `total_fee`, `ship_fee`, `pay_fee`, `payment_method_id`, `shipping_method_id`, `user_id`, `receiver_state`, `receiver_city`, `receiver_district`, `receiver_zip`, `receiver_address`, `receiver_name`, `receiver_mobile`, `receiver_phone`, `memo`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20).
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (38)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/06 15:38:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yincart-basic`.`order`, CONSTRAINT `fk_order_payment_method1` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`status`, `pay_status`, `ship_status`, `refund_status`, `comment_status`, `total_fee`, `ship_fee`, `pay_fee`, `payment_method_id`, `shipping_method_id`, `user_id`, `receiver_state`, `receiver_city`, `receiver_district`, `receiver_zip`, `receiver_address`, `receiver_name`, `receiver_mobile`, `receiver_phone`, `memo`, `create_time`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20).
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (38)
+in D:\wamp\www\basic\backend.php (15)
+2014/01/06 17:23:15 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in D:\wamp\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): CComponent->__call('textFieldRow', Array)
+#1 D:\wamp\www\basic\protected\modules\mall\views\refund\_search.php(6): TbActiveForm->textFieldRow(Object(Refund), 'refund_id', Array)
+#2 D:\wamp\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#3 D:\wamp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#4 D:\wamp\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#5 D:\wamp\www\basic\protected\modules\mall\views\refund\admin.php(25): CController->renderPartial('_search', Array)
+#6 D:\wamp\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\bas...')
+#7 D:\wamp\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\bas...', Array, true)
+#8 D:\wamp\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\bas...', Array, true)
+#9 D:\wamp\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 D:\wamp\www\basic\protected\modules\mall\controllers\RefundController.php(112): CController->render('admin', Array)
+#11 D:\wamp\yii\framework\web\actions\CInlineAction.php(49): RefundController->actionAdmin()
+#12 D:\wamp\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\wamp\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\wamp\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\wamp\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#16 D:\wamp\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/refund/adm...')
+#17 D:\wamp\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\wamp\www\basic\backend.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/basic/backend.php/mall/refund/admin
+HTTP_REFERER=http://localhost/basic/backend.php/mall/shipping/admin
+---

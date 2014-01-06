@@ -1,17 +1,19 @@
 <?php
 
-class OrderController extends Controller {
+class OrderController extends Controller
+{
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = '//layouts/column2';
+//    public $layout = '//layouts/column2';
 
     /**
      * @return array action filters
      */
-    public function filters() {
+    public function filters()
+    {
         return array(
             'accessControl', // perform access control for CRUD operations
         );
@@ -22,7 +24,8 @@ class OrderController extends Controller {
      * This method is used by the 'accessControl' filter.
      * @return array access control rules
      */
-    public function accessRules() {
+    public function accessRules()
+    {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'actions' => array('index', 'view'),
@@ -39,16 +42,15 @@ class OrderController extends Controller {
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
      */
-    public function actionView($id) {
+    public function actionView($id)
+    {
         $this->render('view', array(
             'model' => $this->loadModel($id),
         ));
     }
 
-    public function actionCheckout() {
-//        echo Yii::app()->user->id;
-//        exit;
-
+    public function actionCheckout()
+    {
         $keys = isset($_REQUEST['position']) ? (is_array($_REQUEST['position']) ? $_REQUEST['position'] : explode('_', $_REQUEST['position'])) : array();
         if (Yii::app()->user->id) {
             $this->render('checkout', array('keys' => $keys));
@@ -62,67 +64,81 @@ class OrderController extends Controller {
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
-    public function actionCreate() {
+    public function actionCreate()
+    {
         $model = new Order;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
-        
-//        print_r($_POST);       
-//        exit;
-        if(!$_POST['delivery_address']){
+        if (!$_POST['delivery_address']) {
             echo '<script>alert("您还没有添加收货地址！")</script>';
             echo '<script type="text/javascript">history.go(-1)</script>';
-            die;
-        }else{
-        if (isset($_POST)) {
-            $model->attributes = $_POST;
-            $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
-            $model->create_time = time();
-            
-            $cri = new CDbCriteria(array(
-               'condition'=>'contact_id ='.$_POST['delivery_address'].' AND user_id = '.Yii::app()->user->id
-            ));
-            $address = AddressResult::model()->find($cri);
-            $model->receiver_name = $address->contact_name;
-            $model->receiver_country = $address->country;
-            $model->receiver_state = $address->state;
-            $model->receiver_city = $address->city;
-            $model->receiver_district = $address->district;
-            $model->receiver_address = $address->address;
-            $model->receiver_zip = $address->zipcode ;
-            $model->receiver_mobile = $address->mobile_phone;
-            $model->receiver_phone = $address->phone;
-//            var_dump($model);die;
-            if ($model->save()) {
-                $cart = Yii::app()->cart;
-                $items = $cart->getPositions();
-                foreach ($items as $item) {
-                    $OrderItem = new OrderItem;
-                    $OrderItem->order_id=$model->order_id;
-                    $OrderItem->item_id=$item['item_id'];
-                    $OrderItem->title=$item['title'];
-                    $OrderItem->desc=$item['desc'];
-                    $OrderItem->props_name=$item['props_name'];
-                    $OrderItem->price=$item['price'];
-                    $OrderItem->quantity=$_POST['Item']['quantity'];
-                    $OrderItem->total_price=  $OrderItem->quantity*$OrderItem->price;
-                                        var_dump($OrderItem);die;
-                    $OrderItem->save();
+        } else {
+            if (isset($_POST)) {
+                $transaction = $model->dbConnection->beginTransaction();
+                try {
+                    $model->attributes = $_POST;
+                    $model->user_id = Yii::app()->user->id ? Yii::app()->user->id : '0';
+                    $model->create_time = time();
+                    $cart = Yii::app()->cart;
+                    $items = array();
+                    foreach ($_POST['keys'] as $key)
+                        $items[] = $cart->itemAt($key);
+                    $cri = new CDbCriteria(array(
+                        'condition' => 'contact_id =' . $_POST['delivery_address'] . ' AND user_id = ' . Yii::app()->user->id
+                    ));
+                    $address = AddressResult::model()->find($cri);
+                    $model->receiver_name = $address->contact_name;
+                    $model->receiver_country = $address->country;
+                    $model->receiver_state = $address->state;
+                    $model->receiver_city = $address->city;
+                    $model->receiver_district = $address->district;
+                    $model->receiver_address = $address->address;
+                    $model->receiver_zip = $address->zipcode;
+                    $model->receiver_mobile = $address->mobile_phone;
+                    $model->receiver_phone = $address->phone;
+                    $model->total_fee = 0;
+                    foreach ($items as $item) {
+                        $model->total_fee += $item['quantity'] * $item['price'];
+                    }
+                    if ($model->save()) {
+                        foreach ($items as $item) {
+                            $OrderItem = new OrderItem;
+                            $OrderItem->order_id = $model->order_id;
+                            $OrderItem->item_id = $item['item_id'];
+                            $OrderItem->title = $item['title'];
+                            $OrderItem->desc = $item['desc'];
+                            $OrderItem->props_name = $item['props_name'];
+                            $OrderItem->price = $item['price'];
+                            $OrderItem->quantity = $item['quantity'];
+                            $OrderItem->total_price = $OrderItem->quantity * $OrderItem->price;
+                            if (!$OrderItem->save()) {
+                                throw new Exception('save order item fail');
+                            }
+                        }
+                        foreach ($_POST['keys'] as $key) {
+                            $cart->remove($key);
+                        }
+                    } else {
+                        throw new Exception('save order fail');
+                    }
+                    $transaction->commit();
+                    $this->redirect(array('success'));
+                } catch (Exception $e) {
+                    $transaction->rollBack();
                 }
-                $cart->destroy();
-              echo '<script>alert("success!") </script>' ;
             }
-          }
         }
+
+    }
 
 //        $this->render('create', array(
 //            'model' => $model,
 //        ));
-    }
 
-    public function actionSuccess() {
 
+    public function actionSuccess()
+    {
         $this->render('success');
     }
 
@@ -131,7 +147,8 @@ class OrderController extends Controller {
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
-    public function actionUpdate($id) {
+    public function actionUpdate($id)
+    {
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
@@ -153,7 +170,8 @@ class OrderController extends Controller {
      * If deletion is successful, the browser will be redirected to the 'admin' page.
      * @param integer $id the ID of the model to be deleted
      */
-    public function actionDelete($id) {
+    public function actionDelete($id)
+    {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
             $this->loadModel($id)->delete();
@@ -161,15 +179,15 @@ class OrderController extends Controller {
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        }
-        else
+        } else
             throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
     }
 
     /**
      * Lists all models.
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $dataProvider = new CActiveDataProvider('Order');
         $this->render('index', array(
             'dataProvider' => $dataProvider,
@@ -179,9 +197,10 @@ class OrderController extends Controller {
     /**
      * Manages all models.
      */
-    public function actionAdmin() {
+    public function actionAdmin()
+    {
         $model = new Order;
-        $model->unsetAttributes();  // clear any default values
+        $model->unsetAttributes(); // clear any default values
         if (isset($_GET['Order']))
             $model->attributes = $_GET['Order'];
         $this->render('admin', array(
@@ -194,7 +213,8 @@ class OrderController extends Controller {
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer the ID of the model to be loaded
      */
-    public function loadModel($id) {
+    public function loadModel($id)
+    {
         $model = Order::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
@@ -205,7 +225,8 @@ class OrderController extends Controller {
      * Performs the AJAX validation.
      * @param CModel the model to be validated
      */
-    protected function performAjaxValidation($model) {
+    protected function performAjaxValidation($model)
+    {
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'order-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();

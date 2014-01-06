@@ -1,5 +1,5 @@
 <div class="box">
-    <div class="box-title"><?php echo UserModule::t('personal data'); ?></div>
+    <div class="box-title"><?php echo UserModule::t("personal data"); ?></div>
     <div class="box-content">
         <?php if (Yii::app()->user->hasFlash('profileMessage')): ?>
             <div class="success">

@@ -22,7 +22,7 @@ Yii::setPathOfAlias('xupload', $extDir . DIRECTORY_SEPARATOR . 'xupload'); // Ch
 return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
-    'language' => 'en',
+    'language' => 'zh_cn',
     'theme' => 'pidiao',
     // preloading 'log' component
     'preload' => array('log', 'translate'),

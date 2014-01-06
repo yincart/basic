@@ -113,8 +113,9 @@ class OrderController extends Controller
                             $orderItem->price = $items->price;
                             $orderItem->quantity = 1; //need to update
                             $orderItem->total_price = $orderItem->price * $orderItem->quantity;
+                            $orderItem->order_id = $model->order_id;
                             if (!$orderItem->save()) {
-                                throw new Exception('save order item fail', 0, $orderItem);
+                                throw new Exception('save order item fail');
                             }
                         }
                     }

@@ -23241,3 +23241,51 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/mall/order/view/id?item_id=%3C%3Fphp+echo+%24model-%3Eitem_id%3B+%3F%3E
 HTTP_REFERER=http://localhost/basic/backend.php/mall/order/view/id
 ---
+2014/01/06 03:52:05 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:52:19 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:52:27 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:52:58 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:53:23 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:55:03 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:56:07 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:56:12 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:56:22 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:56:34 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:56:44 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:57:06 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:57:14 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:57:22 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:57:40 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)
+2014/01/06 03:57:49 [warning] [application] Failed to set unsafe attribute "order_id" of "Order".
+in D:\wamp\www\basic\protected\modules\mall\controllers\OrderController.php (86)
+in D:\wamp\www\basic\backend.php (14)

@@ -6,7 +6,6 @@
         'enableAjaxValidation' => false,
 //        'method'=>'GET'
     ));
-    echo $form->errorSummary($model);
     ?>
     <div class="input-group space">
         <?php if ($model->order_id) {

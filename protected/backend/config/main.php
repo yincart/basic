@@ -77,7 +77,7 @@ return array(
             'loginUrl' => array('/site/login'),
             'stateKeyPrefix' => 'back_',
             'class' => 'auth.components.AuthWebUser',
-            'admins' => array('admin', 'foo', 'bar'), // users with full access
+            'admins' => array('admin','demo', 'bar'), // users with full access
         ),
         'themeManager' => array(
             'basePath' => $root . '/themes',

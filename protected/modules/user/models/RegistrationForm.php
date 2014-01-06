@@ -26,5 +26,4 @@ class RegistrationForm extends User {
 		array_push($rules,array('verifyPassword', 'compare', 'compareAttribute'=>'password', 'message' => UserModule::t("Retype Password is incorrect.")));
 		return $rules;
 	}
-	
 }

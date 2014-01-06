@@ -1,12 +1,12 @@
 <div id="reply" reply-id="<?php print_r($review_id);?>">
-<div class="reply-list">
+<div class="reply-list" reply_list_id="<?php echo $i;?>">
     <div class="reply-wrap">
-        <p><em>回复:&nbsp</em><span class="u-name"><?php print_r($username);?> </span></p>
+        <p><em>reply:&nbsp</em><span class="u-name"><?php print_r($username);?> </span></p>
         <div class="reply-input">
             <div class="fl">
-                <input type="text"   replyId="<?php print_r($review_id);?>" url="<?php echo Yii::app()->baseUrl?>">
+                <input type="text"   replyId="<?php print_r($review_id);?>" >
             </div>
-            <a href="#none" class="btn-reply-customer"  data-replyid="<?php print_r($review_id);?>">&nbsp&nbsp回复</a>
+            <a href="#none" class="btn-reply-customer" style="cursor:pointer;" data-replyid="<?php print_r($review_id);?>" reply_list_b_id="<?php echo $i;?>">&nbsp&nbspreply</a>
             <div class="clr">
             </div>
         </div>
@@ -43,9 +43,9 @@ if($reviewCount>0){
 <?php
         }
     }
-    if($num>5){
+    if($num>10){
         echo "<div class='ac' style='text-align:center'>";
-        echo CHtml::link("查看更多",'../review/default/reviewDetail?reviewId='.$review_id);
+        echo CHtml::link("more",'../review/default/reviewDetail?reviewId='.$review_id.'&itemId='.$itemId);
         echo "</div>";
     }
 

@@ -37,6 +37,7 @@ return array(
         'application.modules.user.components.*',
         'application.modules.translate.TranslateModule',
         'bootstrap.helpers.TbHtml',
+        'ext.shoppingCart.*'
     ),
     // path aliases
     'aliases' => array(
@@ -153,7 +154,7 @@ return array(
             'class' => 'yiiwheels.YiiWheels',
         ),
         'cart' => array(
-            'class' => 'ext.Cart',
+            'class' => 'ext.shoppingCart.EShoppingCart',
         ),
         'mailer' => array(
             'class' => 'ext.mailer.EMailer',
@@ -169,8 +170,8 @@ return array(
             'showScriptName' => false,
             'rules' => array(
                 'page/<key:\w+>' => 'page/index',
-                'catalog/<key:\w+>' => 'catalog/index',
-                'catalog/<key:\w+>/<prop:.*?>' => 'catalog/index',
+//                'catalog/<cat:\w+>' => 'catalog/index',
+//                'catalog/<cat:\w+>/<prop:.*?*>' => 'catalog/index',
                 'list/<category_id:\d+>' => 'item/index',
                 'item-list-<key:\w+>' => 'item/list',
 //                        'item-<id:\d+>' => 'item/view',
@@ -219,7 +220,7 @@ return array(
             'dbEngine' => 'InnoDB',
         ),
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=yincart',
+            'connectionString' => 'mysql:host=localhost;dbname=yincart-basic',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',

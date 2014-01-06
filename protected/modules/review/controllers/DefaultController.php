@@ -11,11 +11,11 @@ class DefaultController extends Controller
 	public function actionIndex()
 	{
 
-        if($_GET['product_id']){
+        if($_REQUEST['product_id']){
                 $this->render('index',array(
-                   'product_id'=>$_GET['product_id'],
-                    'entity_id'=>$_GET['entity_id'],
-                    'rating'=>$_GET['rating'],
+                   'product_id'=>$_REQUEST['product_id'],
+                    'entity_id'=>$_REQUEST['entity_id'],
+                    'rating'=>$_REQUEST['rating'],
                 ));
         }else return false;
 	}
@@ -32,7 +32,7 @@ class DefaultController extends Controller
                 if($model->save()){
                     return ture;
                 }
-            }         else return false;
+            }else return false;
         }else return false;
     }
     /**

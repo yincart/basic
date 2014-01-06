@@ -1,15 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta http-equiv="content-language"  content="zh"/>
-    <meta http-equiv="Cache-Control" content="max-age=7200" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="content-language" content="zh"/>
+    <meta http-equiv="Cache-Control" content="max-age=7200"/>
     <meta content="IE=7" http-equiv="X-UA-Compatible"/>
-    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css' />
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css'/>
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/product.css'/>
+    <link type='text/css' rel='stylesheet' href='<?php echo Yii::app()->theme->baseUrl; ?>/css/member.css'/>
     <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/passwordCheck.js"></script>
     <title><?php echo Yii::app()->params['title']; ?></title>
 <body>
-
+<div class="float">
+    <div class="float_button">
+        <a href="">联系<br/>在线客服</a>
+    </div>
+</div>
 <div class="top">
     <div class="top_contant">
         <div class="top_left">
@@ -26,32 +34,35 @@
             <a href="" class="cor_red">注册享好礼</a>
             <div class="top_center">我的账户<i>arrow</i></div>
             <div class="top_daohang">网站导航<i>arrow</i></div>
+            <?php //$this->widget('widgets.default.WTopNav');?>
         </div>
     </div>
 </div>
 <div class="head">
-    <div class="logo"><a href="#"><img alt="" src="<?php echo Yii::app()->theme->baseUrl; ?>/image/logo.png" width="227" height="80"></a></div>
-    <div class="search">
+    <div class="logo"><a href="<?php echo Yii::app()->baseUrl; ?>"><img alt=""
+                                                                        src="<?php echo Yii::app()->theme->baseUrl ?>/image/logo.png"
+                                                                        width="227" height="80"></a></div>
+    <form class="search" method="get" action="<?php echo Yii::app()->createUrl('catalog/index'); ?>">
         <div class="search_box">
-            <input type="text" value=""/>
+            <input name="key" type="text" value="<?php echo isset($_GET['key']) ? $_GET['key'] : ''; ?>"/>
             <button></button>
         </div>
         <div class="search_hot">
-            热门搜索：<a href="">皮雕</a>  <a href="">软皮</a>  <a href="">压花</a>
+            热门搜索：<a href="">皮雕</a> <a href="">软皮</a> <a href="">压花</a>
         </div>
-    </div>
+    </form>
     <div class="shopping_car">
         购物车有<span class="cor_red bold">0</span>件商品
     </div>
 </div>
 <div class="nav">
     <ul class="nav_list">
-        <?php
+        <?php $class = isset(Yii::app()->params['categoryIds']) ? '' : 'current';
+        echo '<li class="' . $class . '"><a href="' . Yii::app()->getBaseUrl(true) . '">首页</a></li>';
         $categories = Category::model()->findAllByAttributes(array('root' => '3', 'level' => 2));
-        $current = 'current';
-        foreach ($categories as $category) {
-            echo '<li class="'.$current.'"><a href="">'.$category->name.'</a></li>';
-            $current = '';
+        foreach ($categories as $cate) {
+            $class = isset(Yii::app()->params['categoryIds']) && in_array($cate->category_id, Yii::app()->params['categoryIds']) ? 'current' : '';
+            echo '<li class="' . $class . '"><a href="' . Yii::app()->createUrl('catalog/index', array('cat' => $cate->category_id)) . '">' . $cate->name . '</a></li>';
         }
         ?>
     </ul>
@@ -102,13 +113,17 @@
         </div>
         <div class="foot_call">
             <p class="font14 bold">咨询电话</p>
+
             <p class="font14 bold cor_r">13967414054</p>
         </div>
     </div>
     <div class="foot_u">
-        <p class="foot_link"><a href="">关于我们</a>|<a href="">联系我们</a>|<a href="">人才招聘</a>|<a href="">商家入驻</a>|<a href="">广告服务</a>|<a href="">手机商城</a>|<a href="">友情链接</a>|<a href="">销售联盟</a>|<a href="">皮雕社区</a>|<a href="">资源交流</a></p>
-        <p>Copyright ? 2013 - 2015 皮雕软包耗材批发商城 All Rights Reserved.   <a href="">站长统计</a></p>
-        <p>银河方舟  全程技术支持</p>
+        <p class="foot_link"><a href="">关于我们</a>|<a href="">联系我们</a>|<a href="">人才招聘</a>|<a href="">商家入驻</a>|<a href="">广告服务</a>|<a
+                href="">手机商城</a>|<a href="">友情链接</a>|<a href="">销售联盟</a>|<a href="">皮雕社区</a>|<a href="">资源交流</a></p>
+
+        <p>Copyright ? 2013 - 2015 皮雕软包耗材批发商城 All Rights Reserved. <a href="">站长统计</a></p>
+
+        <p>银河方舟 全程技术支持</p>
     </div>
 </div>
 </body>

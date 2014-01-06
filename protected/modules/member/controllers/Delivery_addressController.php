@@ -62,9 +62,9 @@ class Delivery_addressController extends Controller {
             $model->attributes = $_POST['AddressResult'];
             if ($model->save())
                 $this->redirect(array('admin'));
-        }
+        };
 
-        $this->render('create', array(
+        $this->render('admin', array(
             'model' => $model,
         ));
     }
@@ -123,10 +123,10 @@ class Delivery_addressController extends Controller {
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new AddressResult('search');
-        $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['AddressResult']))
-            $model->attributes = $_GET['AddressResult'];
+        $model = new AddressResult;
+   //     $model->unsetAttributes();  // clear any default values
+        if (isset($_REQUEST['AddressResult']))
+            $model->attributes = $_REQUEST['AddressResult'];
 
         $this->render('admin', array(
             'model' => $model,
@@ -160,7 +160,7 @@ class Delivery_addressController extends Controller {
         echo $_GET['AddressResult_state'];
         $data = Area::model()->findAll("parent_id=:parent_id", array(":parent_id" => $_GET['AddressResult_state']));
 
-        $data = CHtml::listData($data, "id", "name");
+        $data = CHtml::listData($data, "area_id", "name");
         echo CHtml::tag("option", array("value" => ''), '', true);
         foreach ($data as $value => $name) {
             echo CHtml::tag("option", array("value" => $value), CHtml::encode($name), true);
@@ -171,7 +171,7 @@ class Delivery_addressController extends Controller {
         if ($_GET["AddressResult_city"]) {
             $data = Area::model()->findAll("parent_id=:parent_id", array(":parent_id" => $_GET["AddressResult_city"]));
 
-            $data = CHtml::listData($data, "id", "name");
+            $data = CHtml::listData($data, "area_id", "name");
             foreach ($data as $value => $name) {
                 echo CHtml::tag("option", array("value" => $value), CHtml::encode($name), true);
             }

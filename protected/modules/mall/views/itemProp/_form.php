@@ -1,42 +1,3 @@
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery.dynotable.js'); ?>
-<script type="text/javascript">
-    $(document).ready(function () {
-        /*
-         * dynoTable configuration options
-         * These are the options that are available with their default values
-         */
-        $('#t1').dynoTable({
-            removeClass: '.row-remover', //class for the clickable row remover
-            cloneClass: '.row-cloner', //class for the clickable row cloner
-            addRowTemplateId: '#add-template', //id for the "add row template"
-            addRowButtonId: '#add-row', //id for the clickable add row button, link, etc
-            lastRowRemovable: true, //If true, ALL rows in the table can be removed, otherwise there will always be at least one row
-            orderable: true, //If true, table rows can be rearranged
-            dragHandleClass: ".drag-handle", //class for the click and draggable drag handle
-            insertFadeSpeed: "slow", //Fade in speed when row is added
-            removeFadeSpeed: "fast", //Fade in speed when row is removed
-            hideTableOnEmpty: true, //If true, table is completely hidden when empty
-            onRowRemove: function () {
-                //Do something when a row is removed
-            },
-            onRowClone: function (clonedRow) {
-                //Do something when a row is cloned
-                clonedRow.find('input[name="PropValue[prop_value_id][]"]').val("");
-            },
-            onRowAdd: function () {
-                //Do something when a row is added
-            },
-            onTableEmpty: function () {
-                //Do something when ALL rows have been removed
-            },
-            onRowReorder: function () {
-                //Do something when table rows have been rearranged
-            }
-        });
-    });
-</script>
-
 <?php
 $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id' => 'item-prop-form',
@@ -68,7 +29,7 @@ foreach (array('is_key_prop' => 'allKey', 'is_sale_prop' => 'allSale', 'is_color
 <fieldset>
     <legend>属性值</legend>
     <div class="PropValues">
-        <table id="t1" class="example">
+        <table id="add_prop" class="example">
             <tr>
                 <th>移动</th>
                 <th>属性值名称</th>

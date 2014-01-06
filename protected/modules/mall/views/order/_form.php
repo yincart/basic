@@ -1,6 +1,6 @@
-<div class="orderform">
-    <h1 style="text-align:left">Update Order <?php echo $model->order_id; ?></h1>
-
+<link type="text/css" rel="stylesheet"
+      href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css"/>
+<div id="orderform" class='orderform'>
     <?php $form = $this->beginWidget('CActiveForm', array(
         'id' => 'order-form',
         'enableAjaxValidation' => false,
@@ -8,38 +8,36 @@
     )); ?>
 
     <div class="input-group space">
-        <?php echo $form->labelEx($model, 'order_id', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->textField($model, 'order_id', array('size' => 20, 'maxlength' => 20, 'class' => 'form-control form-control1','readonly'=>"true")); ?>
+        <?php if ($model->order_id) {
+            echo $form->labelEx($model, 'order_id', array('class' => 'input-group-addon'));
+            echo $form->textField($model, 'order_id', array('size' => 20, 'maxlength' => 20, 'class' => 'form-control form-control1', 'readOnly' => true));
+        }?>
     </div>
 
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'user_id', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->textField($model, 'user_id', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control form-control1','readonly'=>"true")); ?>
+        <?php echo $form->textField($model, 'user_id', array('size' => 20, 'maxlength' => 20, 'class' => 'form-control form-control1', 'readOnly' => true));
+        ?>
     </div>
 
     <div class="input-group space">
-        <?php echo $form->labelEx($model, 'status', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'status',array('0'=>'未支付','1'=>'已支付'), array('class' => 'form-control form-control1')); ?>
+        <?php echo $form->labelEx($model, 'total_fee', array('class' => 'input-group-addon')); ?>
+        <?php echo $form->textField($model, 'total_fee', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control form-control1')); ?>
+        <div id="add_goods" data-url="<?php echo $this->createUrl('order/add_goods') ; ?>" class="btn btn-info" style="float:right">添加物品</div>
     </div>
 
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'pay_status', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'pay_status',array('0'=>'待付款','1'=>'已付款'), array('class' => 'form-control form-control1')); ?>
+        <?php echo $form->dropdownlist($model, 'pay_status', array('0' => '未支付', '1' => '已付款'),
+            array(
+                'class' => 'form-control form-control1',
+            ));
+        ?>
     </div>
 
     <div class="input-group space">
-        <?php echo $form->labelEx($model, 'ship_status', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'ship_status' ,array('0'=>'未发货','1'=>'已发货') , array('class' => 'form-control form-control1')); ?>
-    </div>
-
-    <div class="input-group space">
-        <?php echo $form->labelEx($model, 'refund_status', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'refund_status'  ,array('0'=>'未退货','1'=>'已退货') , array('class' => 'form-control form-control1')); ?>
-    </div>
-
-    <div class="input-group space">
-        <?php echo $form->labelEx($model, 'ship_fee', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->textField($model, 'ship_fee', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control form-control1')); ?>
+        <?php echo $form->labelEx($model, 'payment_method_id', array('class' => 'input-group-addon')); ?>
+        <?php echo $form->dropdownlist($model, 'payment_method_id', array('0' => '请选择', '1' => '支付宝', '2' => '银行卡'), array('class' => 'form-control form-control1')); ?>
     </div>
 
     <div class="input-group space">
@@ -48,30 +46,25 @@
     </div>
 
     <div class="input-group space">
-        <?php echo $form->labelEx($model, 'pay_method', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'pay_method'  ,array('0'=>'支付宝','1'=>'银行卡') , array( 'class' => 'form-control form-control1')); ?>
+        <?php echo $form->labelEx($model, 'shipping_method_id', array('class' => 'input-group-addon')); ?>
+        <?php echo $form->dropdownlist($model, 'shipping_method_id', array('' => '请选择', '1' => '平邮', '2' => '快递', '3' => 'EMS'), array('class' => 'form-control form-control1')); ?>
+        <?php echo $form->error($model, 'shipping_method_id', array('style' => 'color:red;float:right')); ?>
     </div>
 
     <div class="input-group space">
-        <?php echo $form->labelEx($model, 'ship_method', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->dropdownlist($model, 'ship_method' , array('1'=>'平邮','2'=>'快递' ,'3'=>'EMS') , array( 'class' => 'form-control form-control1')); ?>
+        <?php echo $form->labelEx($model, 'ship_fee', array('class' => 'input-group-addon')); ?>
+        <?php echo $form->textField($model, 'ship_fee', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control form-control1')); ?>
     </div>
 
-    <div class="input-group space">
-        <?php echo $form->labelEx($model, 'receiver_name', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->textField($model, 'receiver_name', array('size' => 45, 'maxlength' => 45, 'class' => 'form-control form-control1')); ?>
-    </div>
+    <div style="float:left"> 联系方式：</div>
 
-    <div class="input-group space">
-        <?php echo $form->labelEx($model, 'receiver_country', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->textField($model, 'receiver_country', array('size' => 45, 'maxlength' => 45, 'class' => 'form-control form-control1')); ?>
-    </div>
+    <div style="clear:left"></div>
 
     <div class="input-group space">
         <?php
         $state_data = Area::model()->findAll("grade=:grade",
             array(":grade" => 1));
-        $state = CHtml::listData($state_data, "id", "name");
+        $state = CHtml::listData($state_data, "area_id", "name");
         $s_default = $model->isNewRecord ? '' : $model->receiver_state;
         echo $form->labelEx($model, 'receiver_state', array('class' => 'input-group-addon'));
         echo CHtml::dropDownList('Order[receiver_state]', $s_default, $state,
@@ -92,7 +85,7 @@
         if (!$model->isNewRecord) {
             $city_data = Area::model()->findAll("parent_id=:parent_id",
                 array(":parent_id" => $model->receiver_state));
-            $city = CHtml::listData($city_data, "id", "name");
+            $city = CHtml::listData($city_data, "area_id", "name");
         }
         $city_update = $model->isNewRecord ? array() : $city;
         echo $form->labelEx($model, 'receiver_city', array('class' => 'input-group-addon'));
@@ -105,7 +98,7 @@
                     'url' => CController::createUrl('dynamicdistrict'), //url to call
                     'update' => '#Order_receiver_district', //selector to update
                     'data' => 'js:"receiver_city="+jQuery(this).val()',
-               )));
+                )));
         ?>
     </div>
     <div class="input-group">
@@ -114,7 +107,7 @@
         if (!$model->isNewRecord) {
             $district_data = Area::model()->findAll("parent_id=:parent_id",
                 array(":parent_id" => $model->receiver_city));
-            $district = CHtml::listData($district_data, "id", "name");
+            $district = CHtml::listData($district_data, "area_id", "name");
         }
         $district_update = $model->isNewRecord ? array() : $district;
         echo $form->labelEx($model, 'receiver_district', array('class' => 'input-group-addon'));
@@ -126,12 +119,11 @@
         );
         ?>
     </div>
-    <div class="input-group">
-        <?php
-        echo $form->labelEx($model, '&nbsp;邮政编号', array('class' => 'input-group-addon'));
-        echo $form->textField($model, 'receiver_zip', array('class' => 'form-control form-control1')); ?>
-    </div>
 
+    <div class="input-group space">
+        <?php echo $form->labelEx($model, 'receiver_zip', array('class' => 'input-group-addon')); ?>
+        <?php echo $form->textField($model, 'receiver_zip', array('size' => 45, 'maxlength' => 45, 'class' => 'form-control form-control1')); ?>
+    </div>
 
     <div class="input-group space">
         <?php echo $form->labelEx($model, 'receiver_address', array('class' => 'input-group-addon')); ?>
@@ -139,8 +131,8 @@
     </div>
 
     <div class="input-group space">
-        <?php echo $form->labelEx($model, 'receiver_zip', array('class' => 'input-group-addon')); ?>
-        <?php echo $form->textField($model, 'receiver_zip', array('size' => 45, 'maxlength' => 45, 'class' => 'form-control form-control1')); ?>
+        <?php echo $form->labelEx($model, 'receiver_name', array('class' => 'input-group-addon')); ?>
+        <?php echo $form->textField($model, 'receiver_name', array('size' => 45, 'maxlength' => 45, 'class' => 'form-control form-control1')); ?>
     </div>
 
     <div class="input-group space">
@@ -157,6 +149,23 @@
         <?php echo $form->labelEx($model, 'memo', array('class' => 'input-group-addon')); ?>
         <?php echo $form->textArea($model, 'memo', array('rows' => 6, 'cols' => 50, 'class' => 'form-control')); ?>
     </div>
+    <table id="item-table" class="table table-striped">
+
+ <tr>
+     <td></td>
+     <td>item_id</td>
+     <td>category_id</td>
+     <td>outer_id</td>
+     <td>title</td>
+     <td>stock</td>
+     <td>min_number</td>
+     <td>currency</td>
+     <td>price</td>
+     <td>desc</td>
+     <td>create_time</td>
+     <td>update_time</td>
+ </tr>
+        </table>
 
     <div class="form-actions space" style="width: 65%">
         <?php echo TbHtml::formActions(array(
@@ -164,29 +173,5 @@
             TbHtml::resetButton('Reset'),
         )); ?>
     </div>
-
     <?php $this->endWidget(); ?>
-
 </div><!-- form -->
-<style>
-    .orderform {
-        width: 40%;
-        text-align: center;
-        margin-right:auto ;
-        margin-left: auto;
-    }
-
-    .input-group-addon {
-        height: 40px;
-        width: 90px !important;
-    }
-
-    .form-control1 {
-        height: 40px !important;
-        width: 343px !important;
-    }
-
-    .space {
-        margin-top: 15px;
-    }
-</style>

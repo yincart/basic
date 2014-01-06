@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs = array(
     '商品列表' => array('list'),
-    $model->title => array('view', 'id' => $model->item_id),
+//    $model->title => array('view', 'id' => $model->item_id),
     '更新',
 );
 

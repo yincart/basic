@@ -153,4 +153,19 @@ class NestedSetExtBehavior extends CActiveRecordBehavior
         }
         return $options;
     }
+
+    /**
+     * get descendant Ids
+     * @return array
+     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     */
+    public function getDescendantIds()
+    {
+        $descendants = $this->owner->descendants()->findAll();
+        $descendantIds = array($this->owner->category_id);
+        foreach ($descendants as $descendant) {
+            $descendantIds[] = $descendant->category_id;
+        }
+        return $descendantIds;
+    }
 }

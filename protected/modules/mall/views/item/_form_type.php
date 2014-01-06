@@ -1,6 +1,6 @@
 <?php
 $data = Category::model()->getSelectOptions(3);
-echo $form->dropDownListControlGroup($model, 'category_id', $data, array('data-url' => Yii::app()->createUrl('/mall/item/itemProps')));
+echo $form->dropDownListControlGroup($model, 'category_id', $data, array('data-url' => Yii::app()->createUrl('/mall/item/itemProps'), 'data-item_id' => $model->item_id ? $model->item_id : 0));
 ?>
 <div id="item_prop_values"></div>
 <input type="hidden" id="currentRow" value="0"/>

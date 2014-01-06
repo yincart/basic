@@ -22055,3 +22055,75 @@ in E:\wamp\www\yincart\basic\backend.php (15)
 in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
 in E:\wamp\www\yincart\basic\protected\models\Item.php (450)
 in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/06 08:36:56 [warning] [application] Failed to set unsafe attribute "skus" of "Item".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (24)
+in E:\wamp\www\yincart\basic\protected\modules\mall\controllers\ItemController.php (49)
+in E:\wamp\www\yincart\basic\backend.php (15)
+2014/01/06 08:36:56 [warning] [application] Failed to set unsafe attribute "sku_id" of "Sku".
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (78)
+in E:\wamp\www\yincart\basic\protected\models\Item.php (450)
+in E:\wamp\www\yincart\basic\protected\components\YActiveRecord.php (41)
+2014/01/06 08:45:36 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in E:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#4 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('itemProps')
+#7 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/itemP...')
+#8 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/itemProps?category_id=129&YII_CSRF_TOKEN=d3cdf27a0f7af227ac77c14e4633cda6e516d8e3
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/35
+---
+2014/01/06 08:45:40 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in E:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#4 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('itemProps')
+#7 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/itemP...')
+#8 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/itemProps?category_id=129&YII_CSRF_TOKEN=d3cdf27a0f7af227ac77c14e4633cda6e516d8e3
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/35
+---
+2014/01/06 08:45:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in E:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#4 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('itemProps')
+#7 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/itemP...')
+#8 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/itemProps?category_id=129&YII_CSRF_TOKEN=d3cdf27a0f7af227ac77c14e4633cda6e516d8e3
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/35
+---
+2014/01/06 08:47:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message '您的请求无效。' in E:\wamp\www\yii\framework\web\CController.php:336
+Stack trace:
+#0 E:\wamp\www\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 E:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CFilter->filter(Object(CFilterChain))
+#4 E:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#5 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('itemProps')
+#7 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/item/itemP...')
+#8 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/item/itemProps?category_id=129&YII_CSRF_TOKEN=d3cdf27a0f7af227ac77c14e4633cda6e516d8e3
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/item/update/id/35
+---

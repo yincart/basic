@@ -48,10 +48,12 @@ class OrderController extends Controller {
     public function actionCheckout() {
 //        echo Yii::app()->user->id;
 //        exit;
-        if(Yii::app()->user->id){
-        $cart = Yii::app()->cart;
-        $this->render('checkout', array('cart' => Yii::app()->cart));
-        }else{
+
+        $keys = isset($_REQUEST['position']) ? (is_array($_REQUEST['position']) ? $_REQUEST['position'] : explode('_', $_REQUEST['position'])) : array();
+        if (Yii::app()->user->id) {
+            $this->render('checkout', array('keys' => $keys));
+        } else {
+            Yii::app()->user->returnUrl = Yii::app()->createUrl('order/checkout', array('position' => implode('_', $keys)));
             $this->redirect(array('/user/login'));
         }
     }

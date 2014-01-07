@@ -19,8 +19,6 @@ class EShoppingCart extends CMap {
 
 	public $cartId = __CLASS__;
 
-    public $profile;
-
     /**
      * Cart-wide discount sum
      * @var float
@@ -40,7 +38,6 @@ class EShoppingCart extends CMap {
      * Restores the shopping cart from the session
      */
     public function restoreFromSession() {
-        $this->restoreFromDB();
         $data = unserialize(Yii::app()->getUser()->getState($this->cartId));
         if (is_array($data) || $data instanceof Traversable)
             foreach ($data as $key => $product)
@@ -49,8 +46,15 @@ class EShoppingCart extends CMap {
 
     public function restoreFromDB() {
         if (Yii::app()->user->id) {
-            $this->profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
-            Yii::app()->getUser()->setState($this->cartId, $this->profile->cart);
+            $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
+            if ($profile) {
+                $data = unserialize($this->profile->cart);
+                if (is_array($data) || $data instanceof Traversable)
+                    foreach ($data as $key => $product)
+                        if (!$this->contains($key))
+                            parent::add($key, $product);
+                $this->saveState();
+            }
         }
     }
 
@@ -133,10 +137,12 @@ class EShoppingCart extends CMap {
      */
     protected function saveState() {
         Yii::app()->getUser()->setState($this->cartId, serialize($this->toArray()));
-        if ($this->profile) {
-            $this->profile->cart = serialize($this->toArray());
-            $this->profile->save();
-            var_dump($this->profile);
+        if (Yii::app()->user->id) {
+            $profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
+            if ($profile) {
+                $this->profile->cart = serialize($this->toArray());
+                $this->profile->save();
+            }
         }
     }
 

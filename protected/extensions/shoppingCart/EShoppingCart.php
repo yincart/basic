@@ -50,8 +50,6 @@ class EShoppingCart extends CMap {
     public function restoreFromDB() {
         if (Yii::app()->user->id) {
             $this->profile = Profile::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
-        }
-        if ($this->profile) {
             Yii::app()->getUser()->setState($this->cartId, $this->profile->cart);
         }
     }

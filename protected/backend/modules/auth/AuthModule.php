@@ -22,7 +22,7 @@ class AuthModule extends CWebModule
      * @var string name of the user model class.
      * Change this if your user model name is different than the default value.
      */
-    public $userClass = 'adminUser';
+    public $userClass = 'AdminUser';
     /**
      * @var string name of the user id column.
      * Change this if the id column in your user table is different than the default value.

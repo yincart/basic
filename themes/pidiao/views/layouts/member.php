@@ -4,16 +4,20 @@
 <div class="big-box">
     <div class="big-box-left">
         <div class="box">
-            <div class="box-title">Menu</div>
+            <div class="box-title">My account</div>
             <div class="box-content">
                 <ul>
                     <li><?php echo CHtml::link('personal data', array('/user/profile/edit')) ?></li>
                     <li><?php echo CHtml::link('delivery address', array('/member/delivery_address/admin')) ?></li>
                     <li><?php echo CHtml::link('change password', array('/user/profile/changepassword')) ?></li>
-                    <li><?php echo CHtml::link('我的订单', array('/member/orderlist/admin')) ?></li>
-
-                    <li><?php echo CHtml::link('我的收藏', array('/member/wishlist/admin')) ?></li>
-
+                </ul>
+            </div>
+            <div class="box-title">My deal</div>
+            <div class="box-content">
+                <ul>
+                    <li><?php echo CHtml::link('my order', array('/member/orderlist/admin')) ?></li>
+                    <li><?php echo CHtml::link('my collect', array('/member/wishlist/admin')) ?></li>
+                    <li><?php echo CHtml::link('cart', array('//cart')) ?></li>
                 </ul>
             </div>
         </div>

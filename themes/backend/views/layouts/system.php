@@ -9,8 +9,6 @@
                 array('label' => '控制面板', 'icon' => 'home', 'url' => array('/site/index')),
                 array('label' => '菜单管理', 'icon' => 'list', 'url' => array('/menu/admin')),
                 array('label' => '分类管理', 'icon' => 'leaf', 'url' => array('/category/admin')),
-                array('label' => '节点管理', 'icon' => 'leaf', 'url' => array('/cck/node/admin')),
-                array('label' => '节点字段', 'icon' => 'leaf', 'url' => array('/cck/nodeField/admin')),
                 array('label' => '皮肤管理', 'icon' => 'cog', 'url' => array('/theme/admin')),
                 array('label' => '语言管理', 'icon' => 'flag', 'url' => array('/language/admin')),
                 array('label' => '货币管理', 'icon' => 'cog', 'url' => array('/currency/admin')),

@@ -91,37 +91,26 @@ EOF;
         </div>
     </div>
     <div class="warp_product">
-        <div class="product_new">
-            <div class="product_new_tit"><a href="">更多新品>></a></div>
-            <div class="product_c">
-                <div class="product_new_b">
-                    <?php if (isset($newItems[0][0])) {
-                        $newItem = $newItems[0][0];
-                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
-                        ?>
-                        <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
-                                <img alt="<?php echo $newItem->title; ?>" src="<?php echo $newItem->getMainPic(); ?>"
-                                     width="470" height="530"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
-                        </div>
-                        <div class="product_price">
-                            <div class="product_price_n"><?php echo $newItem->currency . $newItem->price ?></div>
-                            <div class="product_price_p"><?php echo $newItem->currency . $newItem->price ?></div>
-                            <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>
-                        </div>
-                    <?php } ?>
-                </div>
-                <div class="product_list">
-                    <?php for ($i = 1, $count = count($newItems[0]); $i < $count; $i++) {
-                        $newItem = $newItems[0][$i];
-                        $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
-                        ?>
-                        <div class="product_d">
-                            <div class="product_img"><a href="<?php echo $itemUrl; ?>">
-                                    <img alt="<?php echo $newItem->title; ?>"
-                                         src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+        <?php $isFrist = true;
+        $num = 0;
+        foreach ($newItems as $category_name => $items) {
+            if ($isFrist) { ?>
+                <div class="product_new">
+                    <div class="product_new_tit"><label><?php echo $category_name; ?></label><a href="">更多新品>></a></div>
+                    <div class="product_c">
+                        <div class="product_new_b">
+                            <?php $newItem = $items[0];
+                            $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
+                            ?>
+                            <div class="product_img_b"><a href="<?php echo $itemUrl; ?>">
+                                    <?php
+                                    if( $newItem->getMainPic()){
+                                        $picUrl=$image->thumb('220','220', $newItem->getMainPic());
+                                        $picUrl=Yii::app()->baseUrl.$picUrl;
+                                    }else $picUrl='';
+                                    ?>
+                                    <img alt="<?php echo $newItem->title; ?>" src="<?php echo $picUrl; ?>"
+                                         width="220" height="220"></a>
                             </div>
                             <div class="product_name">
                                 <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
@@ -132,39 +121,61 @@ EOF;
                                 <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>
                             </div>
                         </div>
-                    <?php } ?>
-                </div>
-            </div>
-        </div>
-        <?php for ($i = 1, $count = count($newItems); $i < $count; $i++) { ?>
-            <div class="product_cate">
-                <div class="product_cate_tit1"><a href="">更多新品>></a></div>
-                <div class="product_ca">
-                    <div class="product_list_ca">
-                        <?php foreach ($newItems[$i] as $newItem) {
-                            $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
-                            ?>
-                            <div class="product_d">
-                                <div class="product_img"><a href="<?php echo $itemUrl; ?>">
-                                        <img alt="<?php echo $newItem->title; ?>"
-                                             src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+                        <div class="product_list">
+                            <?php for ($i = 1, $count = count($items); $i < $count; $i++) {
+                                $newItem = $items[$i];
+                                $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
+                                ?>
+                                <div class="product_d">
+                                    <div class="product_img"><a href="<?php echo $itemUrl; ?>">
+                                            <img alt="<?php echo $newItem->title; ?>"
+                                                 src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+                                    </div>
+                                    <div class="product_name">
+                                        <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
+                                    </div>
+                                    <div class="product_price">
+                                        <div class="product_price_n"><?php echo $newItem->currency . $newItem->price ?></div>
+                                        <div class="product_price_p"><?php echo $newItem->currency . $newItem->price ?></div>
+                                        <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>
+                                    </div>
                                 </div>
-                                <div class="product_name">
-                                    <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
-                                </div>
-                                <div class="product_price">
-                                    <div
-                                        class="product_price_n"><?php echo $newItem->currency . $newItem->price ?></div>
-                                    <div
-                                        class="product_price_p"><?php echo $newItem->currency . $newItem->price ?></div>
-                                    <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>
-                                </div>
-                            </div>
-                        <?php } ?>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php } ?>
+           <?php } else { ?>
+                <div class="product_cate">
+                    <div class="product_cate_tit<?php echo $num; ?>"><label><?php echo $category_name; ?></label><a href="">更多新品>></a></div>
+                    <div class="product_ca">
+                        <div class="product_list_ca">
+                            <?php foreach ($items as $newItem) {
+                                $itemUrl = Yii::app()->createUrl('item/view', array('id' => $newItem->item_id));
+                                ?>
+                                <div class="product_d">
+                                    <div class="product_img"><a href="<?php echo $itemUrl; ?>">
+                                            <img alt="<?php echo $newItem->title; ?>"
+                                                 src="<?php echo $newItem->getMainPic(); ?>" width="220" height="220"></a>
+                                    </div>
+                                    <div class="product_name">
+                                        <a href="<?php echo $itemUrl; ?>"><?php echo $newItem->title; ?></a>
+                                    </div>
+                                    <div class="product_price">
+                                        <div
+                                            class="product_price_n"><?php echo $newItem->currency . $newItem->price ?></div>
+                                        <div
+                                            class="product_price_p"><?php echo $newItem->currency . $newItem->price ?></div>
+                                        <div class="product_price_v"><a href="<?php echo $itemUrl; ?>">详情点击</a></div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            <?php }
+            $num++;
+            $isFrist = false;
+        } ?>
     </div>
 </div>
 <script type="text/javascript">

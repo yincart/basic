@@ -255,7 +255,7 @@ class Item extends YActiveRecord
      * @return array
      * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
-    public function getItemPics()
+    public function getItemPics($width = 200, $height = 200)
     {
         $itemImgs = ItemImg::model()->findAllByAttributes(array('item_id' => $this->item_id));
         return CHtml::listData($itemImgs, 'item_img_id', 'pic');
@@ -266,15 +266,16 @@ class Item extends YActiveRecord
      * @return mixed
      * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
-    public function getMainPic()
+    public function getMainPic($width = 200, $height = 200)
     {
         $itemImg = ItemImg::model()->findByAttributes(array('item_id' => $this->item_id, 'position' => 0));
         return $itemImg->pic;
+        return ImageHelper::thumb($width, $height, $itemImg->pic);
     }
 
     public function defaultScope()
     {
-        return array('condition' => 't.is_show = 1');
+        return array('condition' => 'is_show = 1');
     }
 
     public function scopes()

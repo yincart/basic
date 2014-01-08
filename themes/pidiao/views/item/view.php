@@ -40,14 +40,18 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             <div>
                 <ul id="idNum" class="hdnum">
                     <?php foreach ($item->itemImgs as $itemImg) {
-                        echo '<li><img src="' . $itemImg->pic . '" width="70" height="70"></li>';
+                        $image=new ImageHelper();
+                        $picUrl=$image->thumb('70','70',$itemImg->pic);
+                         echo '<li><img src="' .yii::app()->baseUrl. $picUrl . '" width="70" height="70"></li>';
                     } ?>
                 </ul>
             </div>
             <div style="height: 450px; overflow: hidden;" id=idTransformView>
                 <ul id=idSlider class=slider>
                     <?php foreach ($item->itemImgs as $itemImg) {
-                        echo '<div><a href="javascript:void(0)" target="_blank"><img alt="' . $item->title . '" src="' . $itemImg->pic . '" width="450" height="450"/></a></div>';
+                        $image=new ImageHelper();
+                        $picUrl=$image->thumb('450','450',$itemImg->pic);
+                        echo '<div><a href="javascript:void(0)" target="_blank"><img alt="' . $item->title . '" src="'  .yii::app()->baseUrl.$picUrl . '" width="450" height="450"/></a></div>';
                     } ?>
                 </ul>
             </div>
@@ -168,21 +172,28 @@ Yii::app()->clientScript->registerCoreScript('jquery');
             <div class="pd_l_intr">
                 <h2>推荐产品</h2>
                 <ul class="pd_intr_list">
-                    <li>
-                        <div class="intr_list_img"><a href=""><img alt="" src="" width="180" height="180"/></a></div>
-                        <div class="intr_list_tit"><a href="">商品名称商品名称</a></div>
-                        <div class="intr_list_price"><span class="cor_red bold">￥ 3000.00</span></div>
-                    </li>
-                    <li>
-                        <div class="intr_list_img"><a href=""><img alt="" src="" width="180" height="180"/></a></div>
-                        <div class="intr_list_tit"><a href="">商品名称商品名称</a></div>
-                        <div class="intr_list_price"><span class="cor_red bold">￥ 3000.00</span></div>
-                    </li>
-                    <li>
-                        <div class="intr_list_img"><a href=""><img alt="" src="" width="180" height="180"/></a></div>
-                        <div class="intr_list_tit"><a href="">商品名称商品名称</a></div>
-                        <div class="intr_list_price"><span class="cor_red bold">￥ 3000.00</span></div>
-                    </li>
+                    <?php
+                        $recommendItems=Item::model()->best()->findAll(array(
+                            'limit'=>3,
+                        ));
+                        $num=count(recommendItems);
+                        if($num>0){
+                            foreach($recommendItems as $value){
+                                if($value->getMainPic()){
+                                    $picUrl=$image->thumb('180','180',$value->getMainPic());
+                                    $picUrl=Yii::app()->baseUrl.$picUrl;
+                                }else $picUrl='';
+                                ?>
+                                <li>
+                                    <div class="intr_list_img"><a href=""><img alt="" src="<?php echo $picUrl?>" width="180" height="180"/></a></div>
+                                    <div class="intr_list_tit"><a href=""><?php echo $value->getTitle()?></a></div>
+                                    <div class="intr_list_price"><span class="cor_red bold"><?php echo $value->price?></span></div>
+                                </li>
+                    <?php
+                            }
+                        }else echo"No data";
+                    ?>
+
                 </ul>
             </div>
         </div>
@@ -200,10 +211,42 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 '_itemId'=> $item->item_id,
                 '_entityId'=>'1',
                 ))?>
-<!--                <img src="" alt="顾客评价" width="980" height="800">-->
             </div>
             <div class="deal_describe" id="describe_3" style="display:none;">
-                <img src="" alt="月成交记录" width="980" height="800">
+                <?php
+                $num=count($item->orderItems);
+                if($num>0){
+                    $dataprovider=new CActiveDataProvider('OrderItem',array(
+                        'criteria'=>array(
+                           'condition'=>'item_id='.$item->item_id,
+                        ),
+                        'pagination'=>array(
+                            'pageSize'=>10,
+                        ),
+                    ));
+                    $this->widget('zii.widgets.grid.CGridView',array(
+                        'dataProvider' =>$dataprovider,
+                        'columns' => array(
+                            array(
+                                'name'=>'user',
+                                'value'=>'$data->getUser($data->order_id)',
+                            ),
+                            'title',
+                            'price',
+                            'quantity',
+                            array(
+                                'name'=>'time',
+                                'value'=>'date("M j, Y",$data->order->create_time)',
+                            ),
+                            array(
+                                'name'=>'status',
+                                'value'=>'$data->order->status?finished:unfinished',
+                            ),
+                        )
+                    ));
+                }
+               else echo "No data";
+                ?>
             </div>
         </div>
     </div>
@@ -256,11 +299,14 @@ Yii::app()->clientScript->registerCoreScript('jquery');
                 $('.deal_size').addClass('prop-div-select');
             } else {
                 $('.deal_size').removeClass('prop-div-select');
-                $.post($(this).data('url'), $('#deal').serialize(), function(response) {
-                    if (response.msg) {
-                        alert(response.msg);
-                    }
-                }, 'json');
+                $.post($(this).data('url'), $('#deal').serialize(), function(response,status) {
+                        alert(status) ;
+                        if(status=='success'){
+                            var num=$('.shopping_car').children().text();
+                            num=parseInt(num)+1;
+                            $('.shopping_car').children().text(num);
+                        }
+                });
             }
         });
     });

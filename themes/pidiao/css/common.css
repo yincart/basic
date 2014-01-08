@@ -90,6 +90,21 @@ a.online_ser{
 	text-indent:-9999px;
 	float:right;
 }
+.login-nav,.login-nav2{
+    float:left;
+    cursor:pointer;
+    overflow:hidden;
+    margin-right:10px;
+}
+.login-nav2{
+    width:118px;
+}
+.personal-list a{
+    display: none;
+}
+.personal-center a{
+    diaplay:inline;
+}
 .head{
 	width:1180px;
 	margin:0 auto;

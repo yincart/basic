@@ -46,4 +46,16 @@ class CartController extends YController
         $item->cartProps = empty($_POST['props']) ? '' : $_POST['props'];
         return $item;
     }
+
+    public function actionGetPrice()
+    {
+        $positions = isset($_GET['positions']) ? $_GET['positions'] : array();
+        $cart = Yii::app()->cart;
+        $totalPrice = 0;
+        foreach ($positions as $key) {
+            $item = $cart->itemAt($key);
+            $totalPrice += $item->getSumPrice();
+        }
+        echo json_encode(array('total' => $totalPrice));
+    }
 }

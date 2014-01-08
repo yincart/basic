@@ -1,15 +1,16 @@
 .big-box{
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
+    width: 1180px;
     min-height: 400px;
+    margin-top:10px;
 }
 .big-box-left{
     width: 150px;
     float:left;
 }
 .big-box-right{
-    width: 830px;
+    width: 900px;
     float:right;
 }
 .clr{

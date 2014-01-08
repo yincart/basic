@@ -1,16 +1,20 @@
 $(document).ready(function () {
-    $('#goods-form').on('click','button',function(){
-        var tr= $(this).closest('tr').clone();
+    $('#goods-form').on('click', 'button', function () {
+        var tr = $(this).closest('tr').clone();
         tr.find('td').eq(0).remove();
-
         var td1 = tr.find('td').eq(0).html();
-       var html='<tr><td><input  type="hidden" name="Item[item_id][]" id="Item_item_id" value="'+td1+'" /></td>';
-        for(var i=0;i<11;i++)
-            html=html+'<td>'+tr.find('td').eq(i).html()+'</td>';
-        $(window.parent.document).find('#item-table').append(html+'</tr>');
+        var html = '<tr><td><input  type="hidden" name="Item[item_id][]" id="Item_item_id" value="' + td1 + '" /></td>';
+        for (var i = 0; i < 11; i++) {
+            html = html + '<td>' + tr.find('td').eq(i).html() + '</td>';
+        }
+        html += '<td><div class="btn btn-danger" id="delete">Delete</div></td>';
+        $(window.parent.document).find('#item-table').append(html + '</tr>');
         $(this).closest('tr').remove();
-     });
-
+    });
+    $('#item-table').on('click', '#delete', function () {
+        var tr = $(this).closest('tr');
+        tr.remove();
+    });
     $('#add_prop').dynoTable({
         removeClass: '.row-remover', //class for the clickable row remover
         cloneClass: '.row-cloner', //class for the clickable row cloner
@@ -49,24 +53,25 @@ $(document).ready(function () {
             }
             var childArea = $('.' + area.data('child-area'));
             childArea.html(html);
-            while(childArea.data('child-area')) {
+            while (childArea.data('child-area')) {
                 childArea = $('.' + childArea.data('child-area'));
                 childArea.html('');
             }
         }, 'json');
-    });        $("#confirmOrder").click(function (event) {
-            $('#orderForm').submit();
-        });
+    });
+    $("#confirmOrder").click(function (event) {
+        $('#orderForm').submit();
+    });
 
     $('#add_goods').click(function () {
         showPopup($(this).data('url'));
     });
 
-    $('.search-button').click(function(){
+    $('.search-button').click(function () {
         $('.search-form').toggle();
         return false;
     });
-    $('.search-form form').submit(function(){
+    $('.search-form form').submit(function () {
         $.fn.yiiGridView.update('shipping-grid', {
             data: $(this).serialize()
         });
@@ -102,13 +107,13 @@ $(function () {
     $('#Item_category_id').change(function () {
         getItemProps();
     });
-    function setChbGroupCount(){
+    function setChbGroupCount() {
         var $chb = $('input.change'),
             nameArr = [];
-        $chb.each(function(){
+        $chb.each(function () {
             var i;
-            for(i in nameArr){
-                if(this.name === nameArr[i]){
+            for (i in nameArr) {
+                if (this.name === nameArr[i]) {
                     return;
                 }
             }

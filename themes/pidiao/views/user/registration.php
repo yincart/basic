@@ -91,18 +91,20 @@ $this->breadcrumbs=array(
             }
         }
         ?>
-        <?php if (UserModule::doCaptcha('registration')){ ?>
-            <div class="form_c">
-                <div class="form_l"><?php echo $form->labelEx($model,'verifyCode'); ?></div>
-                <div class="form_v">
-                    <?php $this->widget('CCaptcha'); ?>
-                    <?php echo $form->textField($model,'verifyCode'); ?>
-                    <?php echo $form->error($model,'verifyCode'); ?>
+        <?php if (UserModule::doCaptcha('registration')): ?>
+            <div class="">
+                <div class="form_c">
+                <div class="form_1"> <?php echo $form->labelEx($model,'verifyCode'); ?></div>
+                <?php echo $form->textField($model,'verifyCode'); ?>
                 </div>
+                <?php $this->widget('CCaptcha'); ?>
+
+                <?php echo $form->error($model,'verifyCode'); ?>
+
                 <p class="hint"><?php echo UserModule::t("Please enter the letters as they are shown in the image above."); ?>
                     <br/><?php echo UserModule::t("Letters are not case-sensitive."); ?></p>
             </div>
-        <?php } ?>
+        <?php endif; ?>
 
         <div class="form_c">
         <div class="form_submit">

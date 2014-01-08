@@ -5,8 +5,9 @@ $this->breadcrumbs=array(
 );
 ?>
 <div class="login_box">
-
-<h1><?php echo UserModule::t("Restore"); ?></h1>
+    <div class="login_tit">
+        <a class="current"><?php echo UserModule::t("Restore"); ?></a>
+    </div>
     <div class="login_ct">
         <div class="login">
             <div class="login_form">
@@ -22,11 +23,14 @@ $this->breadcrumbs=array(
 	<?php echo CHtml::errorSummary($form); ?>
 	
 	<div class="form_c">
-		<div class="form_1"> <?php echo CHtml::activeLabel($form,'login_or_email'); ?></div>
-		<?php echo CHtml::activeTextField($form,'login_or_email') ?></>
-		<div class="form_1"> <p class="hint"><?php echo UserModule::t("Please enter your login or email addres."); ?></p></div>
+		<div class="form_1"><?php echo CHtml::activeLabel($form,'username'); ?></div>
+		<?php echo CHtml::activeTextField($form,'login_or_email') ?>
 	</div>
-	
+    <div class="form_c">
+        <div class="form_1"> <?php echo CHtml::activeLabel($form,'login_or_email'); ?></div>
+        <?php echo CHtml::activeTextField($form,'login_or_email') ?>
+    </div>
+
 	<div class="form_submit">
 		<?php echo CHtml::submitButton(UserModule::t("Restore")); ?>
 	</div>
@@ -39,5 +43,4 @@ $this->breadcrumbs=array(
         <div class="logo_b">
             <img alt="" src="<?php echo Yii::app()->theme->baseUrl; ?>/image/logo_b.png" width="257" height="152"/>
         </div>
-</div>
 </div>

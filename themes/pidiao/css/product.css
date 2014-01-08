@@ -245,7 +245,7 @@
 /*login*/
 
 .login{
-	margin:10px 0;
+	margin:0px 0;
 	background:#F6F5F5;
 	width:750px;
 	height:529px;
@@ -254,6 +254,7 @@
 .login_tit{
 	background:#fff;
 	overflow:hidden;
+    margin-top: 9px;
 }
 .login_tit a{
 	width:100px;
@@ -279,6 +280,26 @@
 	overflow:hidden;
 	margin:20px 0 0;
 }
+.form_cd{
+    overflow:hidden;
+    margin:20px 0 0;
+
+}
+.form_cd input{
+    float:left;
+    margin-left:15px;
+    width:100px;
+    border:1px solid #D2D2D2;
+    padding:7px;
+    outline:none;
+}
+.form_vd{
+    height: 32px;
+}
+.form_vcd{
+    float: left;
+
+}
 .form_l {
 	font-size:14px;
 	text-align:right;
@@ -294,6 +315,14 @@
 	padding:7px;
 	outline:none;
 }
+.form_c input[type="password"]{
+    float:left;
+    margin-left:15px;
+    width:270px;
+    border:1px solid #D2D2D2;
+    padding:7px;
+    outline:none;
+}
 .form_tip{
 	margin-left:80px;
 }
@@ -308,6 +337,7 @@
 	color:#a8a8a8;
 }
 .form_submit{
+    color:rgb(163, 95, 35);
 	margin-left:80px;
 	margin-top:40px;
 }
@@ -333,7 +363,7 @@
 }
 .psw_safe{
 	width:150px;
-	background:#d2d2d2;
+
 	float:left;
 	overflow:hidden;
 	height:20px;
@@ -385,8 +415,9 @@
     margin: 3px 10px !important;
 }
 
-.login-nav,.lang{float:right;margin:0 10px;}
-.lang a.current{color:#ff0000;}
-.login-nav a,.lang a{color:#797979;}
-.buy_car{background:url(../images/buy.png) no-repeat left;padding-left:22px;float:right;margin:0 10px;}
-.go_pay a{background:url(../images/g_botton.png) no-repeat;display:block;text-align:center;color:#F37E00;font-weight:700;width:43px;line-height:19px;float:right;}
+#login-nav{
+    float: right;
+    overflow: hidden;
+    margin: 5px 0;
+    width:555px;
+}

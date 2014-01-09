@@ -22322,3 +22322,138 @@ Stack trace:
 REQUEST_URI=/yincart/basic/backend.php/mall/paymentMethod/admin?PaymentMethod%5Bpayment_method_id%5D=&PaymentMethod%5Bname%5D=wuliu&PaymentMethod%5Bdesc%5D=asdaw&PaymentMethod%5Benabled%5D=1&PaymentMethod_page=1&ajax=payment-method-grid
 HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/paymentMethod/admin
 ---
+2014/01/09 11:32:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft.
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in E:\wamp\www\site-yincart\basic\backend.php (15)
+2014/01/09 11:32:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\site-yincart\basic\backend.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2014/01/09 11:32:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft.
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in E:\wamp\www\site-yincart\basic\backend.php (15)
+2014/01/09 11:32:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\site-yincart\basic\backend.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php/site/index
+---
+2014/01/09 11:32:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft.
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in E:\wamp\www\site-yincart\basic\backend.php (15)
+2014/01/09 11:32:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\site-yincart\basic\backend.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2014/01/09 11:32:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft.
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in E:\wamp\www\site-yincart\basic\backend.php (15)
+2014/01/09 11:32:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lft' in 'order clause'. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY lft' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\site-yincart\basic\backend.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---
+2014/01/09 11:34:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY left.
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php (15)
+in E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php (125)
+in E:\wamp\www\site-yincart\basic\backend.php (15)
+2014/01/09 11:34:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM `category` `t` WHERE root=1 ORDER BY left' in E:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\wamp\www\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 E:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 E:\wamp\www\site-yincart\basic\protected\modules\cms\views\contentCategory\admin.php(15): CActiveRecord->findAll(Array)
+#4 E:\wamp\www\yii\framework\web\CBaseController.php(126): require('E:\wamp\www\sit...')
+#5 E:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\wamp\www\sit...', Array, true)
+#6 E:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\wamp\www\sit...', Array, true)
+#7 E:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 E:\wamp\www\site-yincart\basic\protected\modules\cms\controllers\ContentCategoryController.php(125): CController->render('admin', Array)
+#9 E:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): ContentCategoryController->actionAdmin()
+#10 E:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#14 E:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cms/contentCate...')
+#15 E:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 E:\wamp\www\site-yincart\basic\backend.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/site-yincart/basic/backend.php/cms/contentCategory/admin
+HTTP_REFERER=http://localhost/site-yincart/basic/backend.php
+---

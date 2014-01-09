@@ -12,7 +12,7 @@ $this->menu = array(
 <div class="well well-large">
 <?php
 
-$descendants=Category::model()->findAll(array('condition'=>'root=1','order'=>'lft'));
+$descendants=Category::model()->findAll(array('condition'=>'root=1','order'=>'`left`'));
 $level = 0;
 
 foreach ($descendants as $category) {

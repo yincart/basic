@@ -7,10 +7,10 @@
     <orderEntry type="module-library">
       <library name="PHP">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../yii/framework" />
+          <root url="file://$MODULE_DIR$/../../yii/framework" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../yii/framework" />
+          <root url="file://$MODULE_DIR$/../../yii/framework" />
         </SOURCES>
       </library>
     </orderEntry>

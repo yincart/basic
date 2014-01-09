@@ -12,7 +12,9 @@ class CartController extends YController
     {
         $item = $this->loadItem();
         $quantity = empty($_POST['qty']) ? 1 : intval($_POST['qty']);
-        Yii::app()->cart->put($item, $quantity);
+        if(Yii::app()->cart->put($item, $quantity))
+            return true;
+
     }
 
     public function actionUpdate()

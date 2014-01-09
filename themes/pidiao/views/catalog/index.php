@@ -46,10 +46,20 @@
                             box.height = 178;//高度
                             box.autoplayer = 5;//自动播放间隔时间
                             //box.add({"url":"图片地址","title":"悬浮标题","href":"链接地址"})
-                            box.add({"url": "image/tu3.jpg", "href": "", "title": "悬浮提示标题1"})
-                            box.add({"url": "image/tu2.jpg", "href": "", "title": "悬浮提示标题2"})
-                            box.add({"url": "image/tu3.jpg", "href": "", "title": "悬浮提示标题3"})
-                            box.add({"url": "image/tu2.jpg", "href": "", "title": "悬浮提示标题4"})
+                            <?php
+                              $recommendItems=Item::model()->findAll(array(
+                                  'condition'=>'is_best=?',
+                                  'params'=>array('1'),
+                                  'limit'=>3,
+                              ));
+                              $num=count(recommendItems);
+                              if($num>0){
+                                  foreach($recommendItems as $value){?>
+                                         box.add({"url": "<?php echo $value->getMainPic()?>", "href": "", "title": "<?php echo $value->title?>"});
+                                    <?php
+                                            }
+                                        }else echo 'box.add({"url": "image/tu2.jpg", "href": "", "title": "no data"});';
+                            ?>
                             box.show();
                         </script>
                     </div>

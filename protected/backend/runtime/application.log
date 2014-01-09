@@ -22182,3 +22182,143 @@ Stack trace:
 REQUEST_URI=/basic/backend.php/mall/refund/admin
 HTTP_REFERER=http://localhost/basic/backend.php/mall/shipping/admin
 ---
+2014/01/08 09:54:54 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc LIKE '%d%')' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `payment_method` `t` WHERE ((payment_method_id LIKE :ycp0) AND (name LIKE :ycp1)) AND (desc LIKE :ycp2).
+in D:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbGridView.php (50)
+in D:\wamp\www\yincart\basic\protected\modules\mall\views\paymentMethod\admin.php (35)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\PaymentMethodController.php (111)
+2014/01/08 09:54:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc LIKE '%d%')' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `payment_method` `t` WHERE ((payment_method_id LIKE :ycp0) AND (name LIKE :ycp1)) AND (desc LIKE :ycp2)' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 D:\wamp\www\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 D:\wamp\www\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 D:\wamp\www\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 D:\wamp\www\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 D:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 D:\wamp\www\yincart\basic\protected\modules\mall\views\paymentMethod\admin.php(35): CBaseController->widget('bootstrap.widge...', Array)
+#12 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#13 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#14 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#15 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#16 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\PaymentMethodController.php(111): CController->render('admin', Array)
+#17 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentMethodController->actionAdmin()
+#18 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/paymentMet...')
+#23 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#25 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/paymentMethod/admin?PaymentMethod%5Bpayment_method_id%5D=test&PaymentMethod%5Bname%5D=wuliu&PaymentMethod%5Bdesc%5D=d&PaymentMethod%5Benabled%5D=&PaymentMethod_page=1&ajax=payment-method-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/paymentMethod/admin
+---
+2014/01/08 09:55:00 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc LIKE '%asdaw%')' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `payment_method` `t` WHERE ((payment_method_id LIKE :ycp0) AND (name LIKE :ycp1)) AND (desc LIKE :ycp2).
+in D:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbGridView.php (50)
+in D:\wamp\www\yincart\basic\protected\modules\mall\views\paymentMethod\admin.php (35)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\PaymentMethodController.php (111)
+2014/01/08 09:55:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc LIKE '%asdaw%')' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `payment_method` `t` WHERE ((payment_method_id LIKE :ycp0) AND (name LIKE :ycp1)) AND (desc LIKE :ycp2)' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 D:\wamp\www\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 D:\wamp\www\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 D:\wamp\www\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 D:\wamp\www\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 D:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 D:\wamp\www\yincart\basic\protected\modules\mall\views\paymentMethod\admin.php(35): CBaseController->widget('bootstrap.widge...', Array)
+#12 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#13 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#14 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#15 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#16 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\PaymentMethodController.php(111): CController->render('admin', Array)
+#17 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentMethodController->actionAdmin()
+#18 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/paymentMet...')
+#23 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#25 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/paymentMethod/admin?PaymentMethod%5Bpayment_method_id%5D=test&PaymentMethod%5Bname%5D=wuliu&PaymentMethod%5Bdesc%5D=asdaw&PaymentMethod%5Benabled%5D=&PaymentMethod_page=1&ajax=payment-method-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/paymentMethod/admin
+---
+2014/01/08 09:55:14 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc LIKE '%asdaw%')) AND (enabled='1')' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `payment_method` `t` WHERE (((payment_method_id LIKE :ycp0) AND (name LIKE :ycp1)) AND (desc LIKE :ycp2)) AND (enabled=:ycp3).
+in D:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbGridView.php (50)
+in D:\wamp\www\yincart\basic\protected\modules\mall\views\paymentMethod\admin.php (35)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\PaymentMethodController.php (111)
+2014/01/08 09:55:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc LIKE '%asdaw%')) AND (enabled='1')' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `payment_method` `t` WHERE (((payment_method_id LIKE :ycp0) AND (name LIKE :ycp1)) AND (desc LIKE :ycp2)) AND (enabled=:ycp3)' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 D:\wamp\www\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 D:\wamp\www\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 D:\wamp\www\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 D:\wamp\www\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 D:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 D:\wamp\www\yincart\basic\protected\modules\mall\views\paymentMethod\admin.php(35): CBaseController->widget('bootstrap.widge...', Array)
+#12 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#13 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#14 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#15 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#16 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\PaymentMethodController.php(111): CController->render('admin', Array)
+#17 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentMethodController->actionAdmin()
+#18 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/paymentMet...')
+#23 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#25 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/paymentMethod/admin?PaymentMethod%5Bpayment_method_id%5D=test&PaymentMethod%5Bname%5D=wuliu&PaymentMethod%5Bdesc%5D=asdaw&PaymentMethod%5Benabled%5D=1&PaymentMethod_page=1&ajax=payment-method-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/paymentMethod/admin
+---
+2014/01/08 09:55:59 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc LIKE '%asdaw%')) AND (enabled='1')' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `payment_method` `t` WHERE ((name LIKE :ycp0) AND (desc LIKE :ycp1)) AND (enabled=:ycp2).
+in D:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbGridView.php (50)
+in D:\wamp\www\yincart\basic\protected\modules\mall\views\paymentMethod\admin.php (35)
+in D:\wamp\www\yincart\basic\protected\modules\mall\controllers\PaymentMethodController.php (111)
+2014/01/08 09:55:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc LIKE '%asdaw%')) AND (enabled='1')' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `payment_method` `t` WHERE ((name LIKE :ycp0) AND (desc LIKE :ycp1)) AND (enabled=:ycp2)' in D:\wamp\www\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\wamp\www\yii\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\wamp\www\yii\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 D:\wamp\www\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#3 D:\wamp\www\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 D:\wamp\www\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#5 D:\wamp\www\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 D:\wamp\www\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#7 D:\wamp\www\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#8 D:\wamp\www\yincart\basic\protected\extensions\bootstrap\widgets\TbGridView.php(50): CGridView->init()
+#9 D:\wamp\www\yii\framework\web\CBaseController.php(147): TbGridView->init()
+#10 D:\wamp\www\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('bootstrap.widge...', Array)
+#11 D:\wamp\www\yincart\basic\protected\modules\mall\views\paymentMethod\admin.php(35): CBaseController->widget('bootstrap.widge...', Array)
+#12 D:\wamp\www\yii\framework\web\CBaseController.php(126): require('D:\wamp\www\yin...')
+#13 D:\wamp\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\wamp\www\yin...', Array, true)
+#14 D:\wamp\www\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\wamp\www\yin...', Array, true)
+#15 D:\wamp\www\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#16 D:\wamp\www\yincart\basic\protected\modules\mall\controllers\PaymentMethodController.php(111): CController->render('admin', Array)
+#17 D:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): PaymentMethodController->actionAdmin()
+#18 D:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 D:\wamp\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 D:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 D:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#22 D:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('mall/paymentMet...')
+#23 D:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#24 D:\wamp\www\yincart\basic\backend.php(15): CApplication->run()
+#25 {main}
+REQUEST_URI=/yincart/basic/backend.php/mall/paymentMethod/admin?PaymentMethod%5Bpayment_method_id%5D=&PaymentMethod%5Bname%5D=wuliu&PaymentMethod%5Bdesc%5D=asdaw&PaymentMethod%5Benabled%5D=1&PaymentMethod_page=1&ajax=payment-method-grid
+HTTP_REFERER=http://localhost/yincart/basic/backend.php/mall/paymentMethod/admin
+---

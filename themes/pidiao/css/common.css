@@ -340,6 +340,12 @@ a.online_ser{
 	height:34px;
 	line-height:34px;
 }
+.product_new_tit label,.product_cate_tit1 label,.product_cate_tit2 label{
+    float: left;
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight:bold;
+}
 .product_cate_tit1{
 	background:url(../image/product_tit2.png) no-repeat;
 	height:34px;

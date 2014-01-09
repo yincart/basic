@@ -4,44 +4,68 @@ $this->breadcrumbs=array(
 	$model->order_id,
 );
 
-$this->menu=array(
-	array('label'=>'List Order', 'icon'=>'list', 'url'=>array('index')),
-	array('label'=>'Create Order', 'icon'=>'plus','url'=>array('create')),
-	array('label'=>'Update Order', 'icon'=>'pencil','url'=>array('update', 'id'=>$model->order_id)),
-	array('label'=>'Delete Order', 'icon'=>'trash', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->order_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Order', 'icon'=>'cog','url'=>array('admin')),
-);
+
 ?>
 
 <h1>View Order #<?php echo $model->order_id; ?></h1>
 
-<?php $this->widget('bootstrap.widgets.TbDetailView', array(
+<?php
+$this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'order_id',
-		'user_id',
-		'status',
-		'pay_status',
-		'ship_status',
-		'refund_status',
+        'user_id',
+        array(
+            'name' => 'status',
+            'value' => 'Order::showStatus',
+        ),
+        array(
+            'name' => 'ship_status',
+            'value' => 'Order::showShipState',
+        ),
+        array(
+            'name' => 'refund_status',
+            'value' => 'Order::showRefundState',
+        ),
+        array(
+            'name' => 'pay_status',
+            'value' => 'Order::showPayState',
+        ),
 		'total_fee',
 		'ship_fee',
 		'pay_fee',
-		'pay_method',
-		'ship_method',
+        array(
+            'name' => 'payment_method_id',
+            'value' => 'Order::showPayMethod',
+        ),
+        array(
+            'name' => 'shipping_method_id',
+            'value' => 'Order::showShipMethod',
+        ),
 		'receiver_name',
-		'receiver_country',
-		'receiver_state',
-		'receiver_city',
-		'receiver_district',
-		'receiver_address',
+        array(
+            'name' => 'detail_address',
+            'value' => 'Order::showDetailAddress',
+        ),
 		'receiver_zip',
 		'receiver_mobile',
 		'receiver_phone',
 		'memo',
-		'pay_time',
-		'ship_time',
-		'create_time',
-		'update_time',
+        array(
+            'name' => 'pay_time',
+            'value' => date('Y-m-d H:i:s',$model->pay_time +(8 * 3600)),
+        ),
+        array(
+            'name' => 'ship_time',
+            'value' => date('Y-m-d H:i:s',$model->ship_time +(8 * 3600)),
+        ),
+        array(
+            'name' => 'create_time',
+            'value' => date('Y-m-d H:i:s',$model->create_time +(8 * 3600)),
+        ),
+        array(
+            'name' => 'update_time',
+            'value' => date('Y-m-d H:i:s',$model->update_time +(8 * 3600)),
+        ),
 	),
 )); ?>

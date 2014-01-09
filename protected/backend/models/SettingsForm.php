@@ -7,7 +7,6 @@ class SettingsForm extends CFormModel
         'name' => '',
         'domain' => '',
         'googleAPIKey' => '',
-        'numSearchResults' => '',
         'defaultLanguage' => '',
         'defaultCurrency' => '',
         'about' => '',
@@ -26,12 +25,18 @@ class SettingsForm extends CFormModel
         'port' => '',
         'user' => '',
         'password' => '',
-        'ssl' => '',
     );
     public $filter = array(
         'priceLower'=>'',
         'priceUpper'=>'',
     );
+    /*zejun*/
+
+    public $maintain = array(
+        "maintain"=>'',
+    );
+
+    /*zejun*/
  
     /**
      * Declares customized attribute labels.
@@ -40,15 +45,14 @@ class SettingsForm extends CFormModel
      */
     public function getAttributesLabels($key)
     {
-        $keys = array(
-            'googleAPIKey' => 'Google API Key',
-            'numSearchResults' => 'Number of search results at one page',
-            'mainTitle' => 'Main Page Title',
-            'mainKwrds' => 'Default Keywords (Meta Tag)',
-            'mainDescr' => 'Default Description (Meta Tag)',
-            'statistics' => 'Third-party statistical code',
-        );
- 
+            $keys = array(
+                'googleAPIKey' => 'Google API Key',
+                'mainTitle' => 'Main Page Title',
+                'mainKwrds' => 'Default Keywords (Meta Tag)',
+                'mainDescr' => 'Default Description (Meta Tag)',
+                'statistics' => 'Third-party statistical code',
+            );
+
         if(array_key_exists($key, $keys))
             return $keys[$key];
  
@@ -59,6 +63,7 @@ class SettingsForm extends CFormModel
             $label = substr($label, 0, -3);
  
         return ucwords($label);
+
     }
  
     /**

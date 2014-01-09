@@ -6,8 +6,15 @@ $cs->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery.blockUI.1.33.
 <!doctype html>
 <html>
     <head>
-        <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+        <title><?php //echo CHtml::encode($this->pageTitle); ?><?php echo F::sg('seo', 'mainTitle');?></title>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+        <meta name="description" content=" <?php echo F::sg('seo','mainDescr')?>"/>
+
+        <meta name="Keywords" content="<?php echo F::sg('seo','mainKwrds')?>"/>
+
+
+
         <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/common.css"/>
         <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/main.css"/>
         <link type="text/css" rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/box.css"/>
@@ -17,6 +24,7 @@ $cs->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery.blockUI.1.33.
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/backtop/js/scrolltop.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
 	<script type="text/javascript" src="<?php echo F::baseUrl(); ?>/js/holder.js"></script>
+        
     </head>
     <script type="text/javascript">
         var SITE_URL = "<?php echo Yii::app()->request->baseUrl ?>";
@@ -77,17 +85,13 @@ $cs->registerScriptFile(Yii::app()->request->baseUrl . '/js/jquery.blockUI.1.33.
                     <?php //$this->widget('widgets.default.WFriendLink')  ?>
                 </div>
                 <div class="foot_copyright">
-                    <p>Copyright © 2012-2015 <?php echo CHtml::link('Yincart', 'http://yincart.com', array('target' => '_blank')) ?>.All Rights Reserved.</p>
+                    <p>Copyright &copy; <?php echo date('Y'); ?> by <?php echo F::sg('site', 'name'); ?>.All Rights Reserved.</p><?php echo F::sg('site','statistics')  ?>
                 </div>
-                <div class="theme_change">
-                    <?php
-                        $this->widget('comext.ThemePicker.EThemePicker');
-                    ?>
-                </div>
+
             </div>
         </div>
         <?php $this->widget('widgets.default.WCustomerService') ?>
-        <?php //echo Yii::app()->translate->renderMissingTranslationsEditor(); ?>
+        <?php echo Yii::app()->translate->renderMissingTranslationsEditor(); ?>
         <div style="display:none" id="goTopBtn"><a title="返回顶部" class="ui-scrolltop" id="J_ScrollTopBtn">返回顶部</a></div>
         <script type="text/javascript">goTopEx();</script>
         <script type="text/javascript" src="http://js.tongji.linezing.com/2863871/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2863871/tongji.gif"/></a></noscript>

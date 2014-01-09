@@ -6,13 +6,13 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'pay_id'); ?>
-		<?php echo $form->textField($model,'pay_id',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->label($model,'payment_id'); ?>
+		<?php echo $form->textField($model,'payment_id',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'pay_sn'); ?>
-		<?php echo $form->textField($model,'pay_sn',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->label($model,'payment_sn'); ?>
+		<?php echo $form->textField($model,'payment_sn',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">
@@ -28,11 +28,6 @@
 	<div class="row">
 		<?php echo $form->label($model,'order_id'); ?>
 		<?php echo $form->textField($model,'order_id',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'pay_method'); ?>
-		<?php echo $form->textField($model,'pay_method',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">

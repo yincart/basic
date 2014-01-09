@@ -6,6 +6,10 @@ $this->breadcrumbs=array(
 ?>
 
 <h3>Site Settings</h3>
+<?php
+    echo  ('Clear The&nbsp').CHtml::link('Foreground Cache', Yii::app()->createUrl('settings/clearFrontend')).'&nbsp;/&nbsp;'.CHtml::link('Background Cache',Yii::app()->createUrl('settings/clearBackend')).('&nbsp&nbsp&nbsp (notice: In order to make the Changes teke effect ,please clear the Cache )');
+    echo('<br/><br/>');
+?>
 
 <?php echo CHtml::errorSummary($model); ?>
 <?php
@@ -41,3 +45,4 @@ $i = 0;
 <?php
 echo CHtml::submitButton('Submit', array('class' => 'btn'));
 echo CHtml::endForm();
+?>

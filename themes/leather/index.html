@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="content-language"  content="zh"/>
+<meta http-equiv="Cache-Control" content="max-age=7200" />
+<title>团购网，团购网站大全 - 大淘团</title>
+<meta content="IE=7" http-equiv="X-UA-Compatible"/>
+<link type='text/css' rel='stylesheet' href='css/common.css' />
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/slides.jquery.js"></script>
+<script>
+	//保证导航栏背景与图片轮播背景一起显示
+	$("#mainbody").removeClass();
+	$("#mainbody").addClass("index_bg05");
+</script>
+<script>
+	$(function(){
+		//滚动Banner图片的显示
+		$('#slides').slides({
+			preload: false,
+			preloadImage: '/images/loading.gif',
+			effect: 'fade',
+			slideSpeed: 400,
+			fadeSpeed: 100,
+			play: 3000,
+			pause: 100,
+			hoverPause: true
+		});
+        	//$('#js-news').ticker();
+    	});
+		function change_bg(n){
+			var tnum=$(".tab_t_list>li").length;
+			for(i=1;i<=tnum;i++){
+				if(i==n){$("#pop_"+i).css("display","");
+					$(".tab_t_list>li")[i-1].className="current";
+				}else{
+					$("#pop_"+i).css("display","none");
+					$(".tab_t_list>li")[i-1].className="";}
+				}
+		}
+	</script>
+</head>
+<body>
+	<div class="top">
+		<div class="top_contant">
+			<div class="top_left">
+				<a href="">收藏网站</a>
+				<span>官网</span>
+				<a href="" class="sina">新浪</a>
+				<a href="" class="mart">商城</a>
+				<span class="cor_red bold font14">Tel: 13967414054</span>
+				<a href="" class="online_ser">在线客服</a>
+			</div>
+			<div class="top_right">
+				<span>您好，欢饮来到皮雕软包耗材批发商城！</span>
+				<a href="" class="cor_red">登陆</a>
+				<a href="" class="cor_red">注册享好礼</a>
+				<div class="top_center">我的账户<i>arrow</i></div>
+				<div class="top_daohang">网站导航<i>arrow</i></div>
+			</div>
+		</div>
+	</div>
+	<div class="head">
+		<div class="logo"><a href="#"><img alt="" src="image/logo.png" width="227" height="80"></a></div>
+		<div class="search">
+			<div class="search_box">
+				<input type="text" value=""/>
+				<button></button>
+			</div>
+			<div class="search_hot">
+				热门搜索：<a href="">皮雕</a>  <a href="">软皮</a>  <a href="">压花</a>
+			</div>
+		</div>
+		<div class="shopping_car">
+			购物车有<span class="cor_red bold">0</span>件商品
+		</div>
+	</div>
+	<div class="nav">
+		<ul class="nav_list">
+			<li class="current"><a href="">分类一</a> </li>
+			<li><a href="">分类二</a> </li>
+			<li><a href="">分类三</a> </li>
+			<li><a href="">分类四</a> </li>
+			<li><a href="">分类五</a> </li>
+			<li><a href="">分类六</a> </li>
+			<li><a href="">分类七</a> </li>
+			<li><a href="">分类八</a> </li>
+			<li><a href="">分类九</a> </li>
+		</ul>
+	</div>
+	<div class="warp_banner index_bg05" id="mainbody">
+		<div id="slides" class="banner">
+			<div class="banner_l"><a class="prev" href="#"><img alt="上一"页 src="image/banner_l.png" width="43" height="43"></a></div>
+			<div class="bannerImg">
+				<div class="slides_container">
+					<div id="banner_pic_1"><a href="http://www.lanrentuku.com/" target="_blank"><img alt="" src="image/banner05.jpg" width="1180" height="500"></a></div>
+					<div style="display: none" id="banner_pic_2"><a href="#" target="_blank"><img alt="" src="image/banner01.gif" width="1180" height="500"></a></div>
+					<div style="display: none" id="banner_pic_3"><a href="#" target="_blank"><img alt="" src="image/banner02.jpg" width="1180" height="500"></a></div>
+					<div style="display: none" id="banner_pic_4"><a href="#" target="_blank"><img alt="" src="image/banner03.jpg" width="1180" height="500"></a></div>
+					<div style="display: none" id="banner_pic_5"><a href="#" target="_blank"><img alt="" src="image/banner04.jpg" width="1180" height="500"></a></div>
+				</div>
+			</div>
+			<div class="banner_r"><a class="next" href="#"><img alt="下一页" src="image/banner_r.png" width="43" height="43"></a></div>
+			</div>
+	</div>
+	<div class="warp_contant">
+		<div class="float">
+			<div class="float_button">
+				<a href="">联系<br/>在线客服</a>
+			</div>
+		</div>
+	
+		<div class="warp_tab">
+			<div class="warp_tab_con">
+				<div class="warp_tab_t">
+					<ul class="tab_t_list">
+						<li class="current" onclick="change_bg(1);">艺术浮雕系列</li>
+						<li onclick="change_bg(2);">布料凹凸压花模具 </li>
+						<li onclick="change_bg(3);">街道吸塑招牌</li>
+					</ul>
+				</div>
+				<div class="warp_tab_c" id="pop_1">
+					<div class="warp_tab_list" >
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="warp_tab_list">
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="warp_tab_list">
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="warp_tab_list">
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="warp_tab_c" id="pop_2" style="display:none;">
+					<div class="warp_tab_list" >
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="warp_tab_list">
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="warp_tab_list">
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="warp_tab_list">
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="warp_tab_c" id="pop_3" style="display:none;">
+					<div class="warp_tab_list" >
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="warp_tab_list">
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="warp_tab_list">
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="warp_tab_list">
+						<div class="tab_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+						<div class="tab_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="tab_price">
+							<div class="tab_price_n">￥3000.00</div>
+							<div class="tab_price_p">￥3000.00</div>
+							<div class="tab_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="warp_news">
+				<div class="news_tit"><a href="">更多>></a></div>
+				<div class="news_c">
+					<div class="news_img">
+						<img alt="" src="" width="180" height="180"/>
+					</div>
+					<ul class="news_list">
+						<li class="current"><a href="">12月12日公司新闻公司新闻公...</a></li>
+						<li><a href="">12月12日公司新闻公司新闻公...</a></li>
+						<li><a href="">12月12日公司新闻公司新闻公...</a></li>
+						<li><a href="">12月12日公司新闻公司新闻公...</a></li>
+						<li><a href="">12月12日公司新闻公司新闻公...</a></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		<div class="warp_product">
+			<div class="product_new">
+				<div class="product_new_tit"><a href="">更多新品>></a></div>
+				<div class="product_c">
+					<div class="product_new_b">
+						<div class="product_img_b"><a href=""><img alt="" src="image/new_pro.png" width="470" height="530"></a></div>
+						<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+						<div class="product_price">
+							<div class="product_price_n">￥3000.00</div>
+							<div class="product_price_p">￥3000.00</div>
+							<div class="product_price_v"><a href="">详情点击</a></div>
+						</div>
+					</div>
+					<div class="product_list">
+						<div class="product_b">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_b">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_b">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_b">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_b">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_b">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="product_cate">
+				<div class="product_cate_tit1"><a href="">更多新品>></a></div>
+				<div class="product_ca">
+					<div class="product_list_ca">
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="product_cate">
+				<div class="product_cate_tit2"><a href="">更多新品>></a></div>
+				<div class="product_ca">
+					<div class="product_list_ca">
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+						<div class="product_d">
+							<div class="product_img"><a href=""><img alt="" src="image/" width="220" height="220"></a></div>
+							<div class="product_name"><a href="">皮雕软包/皮革液压压花机 </a></div>
+							<div class="product_price">
+								<div class="product_price_n">￥3000.00</div>
+								<div class="product_price_p">￥3000.00</div>
+								<div class="product_price_v"><a href="">详情点击</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		
+		</div>
+		
+	</div>
+	<div class="footer">
+		<div class="foot_c">
+			<div class="foot_new">
+				<ul>
+					<li><span class="font14 bold">新手指南</span></li>
+					<li><a href="">注册新用户</a></li>
+					<li><a href="">如何订购</a></li>
+					<li><a href="">如果修改订单</a></li>
+				</ul>
+			</div>
+			<div class="foot_pay">
+				<ul>
+					<li><span class="font14 bold">支付方式</span></li>
+					<li><a href="">支付方式</a></li>
+					<li><a href="">账户提现及退款时效</a></li>
+					<li><a href="">查看账户余额</a></li>
+				</ul>
+			</div>
+			<div class="foot_set">
+				<ul>
+					<li><span class="font14 bold">配送方式</span></li>
+					<li><a href="">配送费用及收费标准</a></li>
+					<li><a href="">配送范围及配送时效</a></li>
+					<li><a href="">签收注意事项</a></li>
+				</ul>
+			</div>
+			<div class="foot_back">
+				<ul>
+					<li><span class="font14 bold">退换货服务</span></li>
+					<li><a href="">退换货政策</a></li>
+					<li><a href="">退换货流程</a></li>
+					<li><a href="">隐私申明</a></li>
+				</ul>
+			</div>
+			<div class="foot_help">
+				<ul>
+					<li><span class="font14 bold">帮助中心</span></li>
+					<li><a href="">忘记密码</a></li>
+					<li><a href="">常见问题</a></li>
+					<li><a href="">在线客服</a></li>
+					<li><a href="">联系我们</a></li>
+				</ul>
+			</div>
+			<div class="foot_call">
+				<p class="font14 bold">咨询电话</p>
+				<p class="font14 bold cor_r">13967414054</p>
+			</div>
+		</div>
+		<div class="foot_u">
+			<p class="foot_link"><a href="">关于我们</a>|<a href="">联系我们</a>|<a href="">人才招聘</a>|<a href="">商家入驻</a>|<a href="">广告服务</a>|<a href="">手机商城</a>|<a href="">友情链接</a>|<a href="">销售联盟</a>|<a href="">皮雕社区</a>|<a href="">资源交流</a></p>
+			<p>Copyright © 2013 - 2015 皮雕软包耗材批发商城 All Rights Reserved.   <a href="">站长统计</a></p>
+			<p>银河方舟  全程技术支持</p>
+		</div>
+	</div>
+	
+</body>
+</html>

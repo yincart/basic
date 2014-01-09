@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Yii-Plugin module
+ * 
+ * @author Viking Robin <healthlolicon@gmail.com> 
+ * @link https://github.com/health901/yii-plugin
+ * @license https://github.com/health901/yii-plugins/blob/master/LICENSE
+ * @version 1.0
+ */
 class PluginController extends CController {
 
 	public $layout = '/';
@@ -11,13 +19,13 @@ class PluginController extends CController {
 		$id = $_GET['id'];
 		$plugin = Plugins::model()->findbyAttributes(array('identify' => $id, 'enable' => 1));
 		if (!$plugin) {
-			$this->render('miss', array('name', $id));
+			$this->render('miss', array('name' => $id));
 			exit;
 		}
 		if (!isset($_GET['action'])) {
-			$action = $plugin->identify;
+			$action = strtolower($plugin->identify);
 		} else {
-			$action = $_GET['action'];
+			$action = strtolower($_GET['action']);
 		}
 		$class = $this->_loadPlugin($plugin);
 		$method = 'action' . $action;
@@ -25,7 +33,7 @@ class PluginController extends CController {
 			$class->$method();
 			Yii:app()->end();
 		}
-		$actions = $class->Actions();
+		$actions = array_change_key_case($class->Actions(),CASE_LOWER);
 		if ($action) {
 			if (isset($actions[$action])) {
 				$actionClass = $this->_loadAction($actions[$action], $plugin);

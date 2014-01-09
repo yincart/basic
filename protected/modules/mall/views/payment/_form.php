@@ -10,9 +10,9 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'pay_sn'); ?>
-		<?php echo $form->textField($model,'pay_sn',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'pay_sn'); ?>
+		<?php echo $form->labelEx($model,'payment_sn'); ?>
+		<?php echo $form->textField($model,'payment_sn',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'payment_sn'); ?>
 	</div>
 
 	<div class="row">
@@ -34,9 +34,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'pay_method'); ?>
-		<?php echo $form->textField($model,'pay_method',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'pay_method'); ?>
+		<?php echo $form->labelEx($model,'payment_method_id'); ?>
+		<?php echo $form->textField($model,'payment_id',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'payment_method_id'); ?>
 	</div>
 
 	<div class="row">
@@ -74,14 +74,12 @@
 		<?php echo $form->textField($model,'create_time',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'create_time'); ?>
 	</div>
-
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-			'buttonType'=>'submit',
-			'type'=>'primary',
-			'label'=>$model->isNewRecord ? 'Create' : 'Save',
-		)); ?>
-	</div>
+    <div class="form-actions">
+        <?php  echo TbHtml::formActions(array(
+            TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
+            TbHtml::resetButton('Reset'),
+        )); ?>
+    </div>
 
 <?php $this->endWidget(); ?>
 

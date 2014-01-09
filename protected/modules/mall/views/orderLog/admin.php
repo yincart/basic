@@ -8,19 +8,6 @@ $this->menu=array(
 	array('label'=>'List OrderLog', 'icon'=>'list', 'url'=>array('index')),
 	array('label'=>'Create OrderLog', 'icon'=>'plus','url'=>array('create')),
 );
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('order-log-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Manage Order Logs</h1>
@@ -44,10 +31,16 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'log_id',
 		'order_id',
-		'op_id',
+        'user_id',
 		'op_name',
-		'log_text',
-		'action_time',
+        array(
+            'name' => 'op_name',
+            'value' => 'OrderLog::showOp($data->log_id)',
+        ),
+        array(
+            'name' => 'action_time',
+            'value' => 'date("Y-m-d H:i:s",$data->action_time +(8 * 3600))',
+        ),
 		/*
 		'behavior',
 		'result',

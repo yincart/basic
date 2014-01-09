@@ -1,54 +1,24 @@
 <?php
-$this->breadcrumbs=array(
-	'商品列表'=>array('list'),
-	$model->title,
+$this->breadcrumbs = array(
+    '商品列表' => array('list'),
+//    $model->title => array('view', 'id' => $model->item_id),
+    '更新',
 );
 
-$this->menu=array(
-array('label'=>'创建商品','icon'=>'plus','url'=>array('create')),
-array('label'=>'更新商品','icon'=>'pencil','url'=>array('update','id'=>$model->item_id)),
-array('label'=>'删除商品','icon'=>'trash','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->item_id),'confirm'=>'Are you sure you want to delete this item?')),
-array('label'=>'查看商品','icon'=>'cog','url'=>array('admin')),
+$this->menu = array(
+    array('label' => '创建商品', 'icon' => 'plus', 'url' => array('create')),
+    array('label' => '更新商品', 'icon' => 'eye-open', 'url' => array('update', 'id' => $model->item_id)),
+    array('label' => '管理商品', 'icon' => 'cog', 'url' => array('admin')),
 );
 ?>
 
-<h1>查看商品 #<?php echo $model->item_id; ?></h1>
-
-<?php $this->widget('bootstrap.widgets.TbDetailView',array(
-'data'=>$model,
-'attributes'=>array(
-		'item_id',
-		'category_id',
-		'type_id',
-		'title',
-		'sn',
-		'unit',
-		'stock',
-		'min_number',
-		'market_price',
-		'shop_price',
-		'currency',
-		'skus',
-		'props',
-		'props_name',
-		'item_imgs',
-		'prop_imgs',
-		'pic_url',
-		'desc',
-		'location',
-		'post_fee',
-		'express_fee',
-		'ems_fee',
-		'is_show',
-		'is_promote',
-		'is_new',
-		'is_hot',
-		'is_best',
-		'is_discount',
-		'click_count',
-		'sort_order',
-		'create_time',
-		'update_time',
-		'language',
-),
-)); ?>
+<div id="loading-header">
+    <div class="header-row">
+        <header>
+            <h3 class="header-main"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;查看商品 #<?php echo $model->item_id; ?></h3>
+        </header>
+    </div> <!-- /.header-row -->
+</div>
+<div class="col-lg-12 main-content">
+    <?php echo $this->renderPartial('_form', array('model'=>$model, 'image'=>$image, 'upload'=>$upload, 'is_view' => true)); ?>
+</div>

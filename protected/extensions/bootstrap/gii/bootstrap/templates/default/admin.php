@@ -18,8 +18,8 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(
-	array('label'=>'List <?php echo $this->modelClass; ?>', 'icon'=>'list', 'url'=>array('index')),
-	array('label'=>'Create <?php echo $this->modelClass; ?>', 'icon'=>'plus', 'url'=>array('create')),
+	array('label'=>'List <?php echo $this->modelClass; ?>', 'url'=>array('index')),
+	array('label'=>'Create <?php echo $this->modelClass; ?>', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

@@ -7,7 +7,7 @@
 
             $item = Item::model()->findByPk($item_id);
             ?>
-            <li><div class="i-img"><?php echo $item->getRecentThumb() ?></div><div class="i-name"><?php echo $item->getTitle()  ?></div></li>
+            <li><div class="i-img"><?php echo $item->getMainPic() ?></div><div class="i-name"><?php echo $item->getTitle()  ?></div></li>
                     <?php
                 }
             } else {

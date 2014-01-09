@@ -1,10 +1,10 @@
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('pay_id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->pay_id), array('view', 'id'=>$data->pay_id)); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('payment_id')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->payment_id), array('view', 'payment_id'=>$data->payment_id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('pay_sn')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('payment_sn')); ?>:</b>
 	<?php echo CHtml::encode($data->pay_sn); ?>
 	<br />
 
@@ -20,9 +20,9 @@
 	<?php echo CHtml::encode($data->order_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('pay_method')); ?>:</b>
-	<?php echo CHtml::encode($data->pay_method); ?>
-	<br />
+<!--	<b>--><?php //echo CHtml::encode($data->getAttributeLabel('payment_method')); ?><!--:</b>-->
+<!--	--><?php //echo CHtml::encode($data->payment_method); ?>
+<!--	<br />-->
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
 	<?php echo CHtml::encode($data->user_id); ?>

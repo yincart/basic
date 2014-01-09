@@ -25,4 +25,8 @@ class MallModule extends CWebModule
 		else
 			return false;
 	}
+
+    public function afterControllerAction($controller, $action) {
+        Yii::app()->end();
+    }
 }

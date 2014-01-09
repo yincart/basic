@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Shanghai');
 error_reporting(E_ALL & ~(E_STRICT | E_NOTICE));
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/../yii/framework/yii.php';

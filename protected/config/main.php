@@ -23,7 +23,7 @@ return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示购物网',
     'language' => 'zh_cn',
-    'theme' => 'pidiao',
+    'theme' => 'leather',
     // preloading 'log' component
     'preload' => array('log'),//, 'translate'),
     // autoloading model and component classes

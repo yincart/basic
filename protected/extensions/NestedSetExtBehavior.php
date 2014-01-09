@@ -12,17 +12,21 @@ class NestedSetExtBehavior extends CActiveRecordBehavior
 
     /**
      * create category view tree html
-     * @param $descendants, if input is int, findByPk in db as root
-     * @param array $options, show options for action
-     * @param string $name, show display name, can also input function name
+     * @param $descendants , if input is int, findByPk in db as root
+     * @param array $options , show options for action
+     * @param string $name , show display name, can also input function name
      * @return string,
      * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
     public function getTree($descendants, $options = array(), $name = 'name')
     {
         if (is_integer($descendants)) {
-            $root = $this->owner->findByPk($descendants);
-            $descendants = $root->descendants()->findAll();
+            if ($descendants) {
+                $root = $this->owner->findByPk($descendants);
+                $descendants = $root->descendants()->findAll();
+            } else {
+                $descendants = $this->owner->findAll();
+            }
         }
 
         $html = '';

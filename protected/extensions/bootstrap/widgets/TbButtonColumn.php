@@ -29,7 +29,6 @@ class TbButtonColumn extends CButtonColumn
      */
     public $deleteButtonIcon = TbHtml::ICON_TRASH;
 
-    //这里对应的图片标签是在TbHtml.php里面定义的
     /**
      * Initializes the default buttons (view, update and delete).
      */

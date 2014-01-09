@@ -68,7 +68,7 @@ class MenuController extends Controller {
             if ($parent_node != 0) {
                 $node = Menu::model()->findByPk($parent_node);
                 $model->appendTo($node);
-//            print_r($_POST['DealMenu']);
+//            ($_POST['DealMenu']);
 //            exit;
             }
             if ($model->saveNode())

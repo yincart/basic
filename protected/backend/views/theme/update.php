@@ -10,6 +10,7 @@ $this->menu=array(
 	array('label'=>'Create Theme','icon'=>'plus','url'=>array('create')),
 	array('label'=>'View Theme','icon'=>'eye-open','url'=>array('view','id'=>$model->theme)),
 	array('label'=>'Manage Theme','icon'=>'cog','url'=>array('admin')),
+    array('label'=>'Set Theme','icon'=>'cog','url'=>array('set','id'=>$model->theme)),
 );
 ?>
 

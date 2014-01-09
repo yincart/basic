@@ -24,10 +24,10 @@ return array(
     'preload' => array('log', 'bootstrap'),
     // autoloading model and component classes
     'import' => array(
-        'backend.models.*',
-        'backend.components.*',
         'application.models.*',
         'application.components.*',
+        'backend.models.*',
+        'backend.components.*',
         'application.modules.user.models.*',
         'bootstrap.helpers.TbHtml',
     ),
@@ -100,8 +100,8 @@ return array(
             'urlFormat' => 'path',
 //            'showScriptName' => false,
             'rules' => array(
+                '<_c:\w+>/<_a:\w+>/<id:\w+>' => '<_c>/<_a>',
                 '<_c:\w+>/<id:\d+>' => '<_c>/view',
-                '<_c:\w+>/<_a:\w+>/<id:\d+>' => '<_c>/<_a>',
                 '<_c:\w+>/<_a:\w+>' => '<_c>/<_a>',
             ),
         ),

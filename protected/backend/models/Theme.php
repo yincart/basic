@@ -112,6 +112,7 @@ class Theme extends CActiveRecord {
     }
 
     public function beforeSave() {
+        Yii::import('ext.timeHelper.Time');
         if (parent::beforeSave()) {
             if ($this->isNewRecord) {
                 $this->create_time = $this->update_time = time();

@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="content-language" content="zh"/>
+    <meta http-equiv="Cache-Control" content="max-age=7200"/>
+    <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/bootstrap.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/common.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/css/common.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/css/form.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/product.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/member.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/grid.css'/>
+    <script type="text/javascript" src="/basic/themes/leather/js/jquery.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/common.js"></script>
+    <script type="text/javascript" src="/basic/js/common.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/passwordCheck.js"></script>
+    <script type="text/javascript" src="/basic/js/holder.js"></script>
+    <link rel="stylesheet" type="text/css" href="/basic/assets/488f6928/listview/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/basic/assets/2b30688b/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="/basic/assets/dc6dbc95/pager.css" />
+    <script type="text/javascript" src="/basic/assets/2e76bf2c/jquery.js"></script>
+    <script type="text/javascript" src="/basic/assets/2e76bf2c/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/login_nav.js"></script>
+    <title></title>
+
+
+    <style type="text/css">
+        *{margin:0;padding:0;}
+    </style>
+</head>
+<body style="background:#eeeeee">
+<div class="top">
+    <div class="top_contant">
+        <div class="top_left">
+            <a rel="sidebar" onclick="addFavorite();" href="http://127.0.0.1/basic/">收藏网站</a><a href="http://localhost/basic">官网</a><a class="sina" href="http://www.sina.com.cn/">新浪</a><a class="mart" href="http://localhost/basic">商城</a>            <span class="cor_red bold font14">Tel: 13967414054</span>
+            <a href="/basic/page/contact?key=help">在线客服</a>        </div>
+
+        <div class="top_right">
+            <span>您好，欢迎来到演示商城！</span>
+            <div class="login-nav"><a href="/basic/user/login">登录</a>            |<a href="/basic/user/registration">注册</a></div>
+
+            <div class="top_daohang">
+                <li id="daohang" >网站导航<i>arrow</i>
+                    <div class="daohang_box" style="width:250px; display:none;position:absolute;padding:6px; border:0px;box-shadow:0 1px 2px #666;background:#f9f9f9;z-index:10;font-size:12px;">
+                        <a href="/"> 官方网站 </a><span style="width: 0;">|</span>
+                        <a href="/"> 热卖信息 </a><span style="width: 0;">|</span>
+                        <a href="/"> 合作伙伴 </a> <br>
+                        <a href="/"> 官方网站 </a><span style="width: 0;">|</span>
+                        <a href="/"> 热卖信息 </a><span style="width: 0;">|</span>
+                        <a href="/"> 合作伙伴 </a> <br>
+                    </div>
+                </li>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="head">
+    <div class="logo">
+        <a href="http://localhost/basic">
+            <img alt=""
+                 src="/basic/themes/leather/image/logo.png"
+                 width="227" height="80">
+        </a></div>
+    <form class="search" action="/basic/catalog/index" method="get">    <div class="search_box">
+        <input type="text" value="" name="key" id="key" />        <button></button>
+    </div>
+        <div class="search_hot">
+            热门搜索：
+            <a href="/basic/catalog/index?key=%E7%9A%AE%E9%9B%95">皮雕</a><a href="/basic/catalog/index?key=%E8%BD%AF%E7%9A%AE">软皮</a><a href="/basic/catalog/index?key=%E5%8E%8B%E8%8A%B1">压花</a>    </div>
+    </form>    <a href="/basic/cart/index">
+    <div class="shopping_car">
+        购物车有<span class="cor_red bold">0</span>件商品
+    </div>
+</a>
+</div>
+<div class="nav">
+    <ul class="nav_list" id="yw3">
+        <li><a href="/basic/site/index">首页</a></li>
+        <li><a href="/basic/catalog/index?cat=110">布艺软饰</a></li>
+        <li><a href="/basic/catalog/index?cat=111">床上用品</a></li>
+        <li><a href="/basic/catalog/index?cat=126">数码产品</a></li>
+        <li><a href="/basic/catalog/index?cat=129">精品男装</a></li>
+        <li><a href="/basic/catalog/index?cat=130">精品女装</a></li>
+        <li class="current"><a href="/basic/post/index">新闻</a></li>
+    </ul></div>
+
+<div class="container_24">
+
+    <div class="clearfix"></div>
+    <div class="container" style="overflow: hidden">
+        <div class="grid_18 alpha">
+            <div id="content" style="background: #ffffff;padding: 20px;font-size: 14px;">
+                <p>
+                    <a class="news-link" href="/basic/site/index">首页</a>>><a href="/basic/post/index" class="news-link">新闻列表</a>>> Web 开发者必备的 14 个 JavaScript 音频库
+                </p>
+                <h3  style="background:#2d2d2d; color: white">Web 开发者必备的 14 个 JavaScript 音频库 </h3>
+                <div>
+                    <p>
+                    <p><a href="http://www.icultivator.com/p/tag/%e7%bd%91%e9%a1%b5%e8%ae%be%e8%ae%a1" title="查看 网页设计 中的全部文章" target="_blank" class="tag_link">网页设计</a>可能是现在最有趣的领域之一了。这块的东西对所有的人，不管是知识储备里有料没料的，都敞开大门，机会多多。 其最大的特点就是随着时间的推移，实践的深入，你可以慢慢学习着成为一个大鸟。 涉足这个领域，Google将会是你最好的导师，同时她也将毫无偏颇的对你的水平进行评价。设计并不全是铁定的要为应用程序的创建或者编程语言的一些逻辑应用进行大量的编码工作。她更像是创造力同逻辑代码的结合，从而可以使您开发出可以用美丽来评价的东西。</p>
+                    <p>在网页设计的领域，玩转你手中<a href="http://www.icultivator.com/p/tag/%e5%b7%a5%e5%85%b7" title="查看 工具 中的全部文章" target="_blank" class="tag_link">工具</a>的过程中也蕴藏着巨大的机遇。有趣的是，特定开发者存在的原因就在于并不是每一个人都同时具备编写逻辑代码的技能，并且拥有风格的艺术创造能力。 因此，在这种情况下我们就可以理直气壮的认为拥有两种技能的人机遇最大，他们 在这个领域比其他人更有机会收获成功。现在需要意识到的一个最重要的问题就是一个人类，或者让我称之为人，不会同时拥有所有的素质。这就是为什么从主要的编程语言角度来考虑，我们也会有对开发方面需求的原因。 这意味着更好更新的代码段和工具将会对开发者有帮助。一个开发的部分的 存在，在这个领域中就相应会有大量对新事物的需求，就像我们在这里将要讨论的<a href="http://www.icultivator.com/p/tag/%e9%9f%b3%e9%a2%91" title="查看 音频 中的全部文章" target="_blank" class="tag_link">音频</a>效果。</p>
+                    <p>老实说，向站点中加入音频效果会很有用处，这仍然是目前最好的开发者需要经历的一个发展阶段之一。现在喜爱使用Javascript进行设计的人拥有了发挥音频特性的基础设施，这就证明了它是一个可以推动网页设计向前发展的巨大舞台。这可能是网页设计领域加入的最新的也是最酷的东西之一，并且毫无疑问的事实是它将保持一个更长的发展时期。</p>
+                    <h3 id="content_h3_4_5">1) <a href="http://www.icultivator.com/p/tag/javascript" title="查看 JavaScript 中的全部文章" target="_blank" class="tag_link">JavaScript</a> 音频库 –  <a href="http://buzz.jaysalvat.com/" target="_blank" rel="nofollow">Buzz</a></h3>
+                    <p>Buzz 是一个小而强的 Javascript 库，能让你方便的利用上新的  HTML5 音频元素. 在非现代<a href="http://www.icultivator.com/p/tag/%e6%b5%8f%e8%a7%88%e5%99%a8" title="查看 浏览器 中的全部文章" target="_blank" class="tag_link">浏览器</a>上它会悄悄的消失掉。</p>
+                    <p><img class="box" alt="c39402b68500fa89eab29a5a2d7144bd" src="http://www.icultivator.com/wp-content/uploads/2014/02/c39402b68500fa89eab29a5a2d7144bd.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_4_11">2) JavaScript 音频库 - <a href="http://mohayonao.github.io/timbre/" target="_blank" rel="nofollow">Timbre js</a></h3>
+                    <p>Timbre.js 提供了一种采用像jQuery和Node.js采用的那种现代Javascript使用方式来处理和合成音频的功能. 他有许多的 <strong>T-Object</strong> (正式的称呼是: 音色对象Timbre Object)，可以连接起来为整体的音效渲染定义基于图形的路由。</p>
+                    <p><img class="box" alt="8afed0f288137f7d887eb3ca23d6c8be" src="http://www.icultivator.com/wp-content/uploads/2014/02/8afed0f288137f7d887eb3ca23d6c8be.png" width="550" height="334" /></p>
+                    <h3>3) JavaScript 音频库 - <a href="http://jplayer.org/" target="_blank" rel="nofollow">jPlayer</a></h3>
+                    <p><img class="box" alt="a04b1639de16161159e889f3c6cd03c6" src="http://www.icultivator.com/wp-content/uploads/2014/02/a04b1639de16161159e889f3c6cd03c6.png" width="550" height="334" /></p>
+                    <h3>4) JavaScript 音频库 - <a href="https://www.talater.com/annyang/" target="_blank" rel="nofollow">Annyang</a></h3>
+                    <p>Annyang 是一个可以让你的访问者用语音命令操作你的站点页面的小巧的<a href="http://www.icultivator.com/p/tag/js%e5%ba%93" title="查看 js库 中的全部文章" target="_blank" class="tag_link">js库</a>. Annyang 支持多种语言，但是没有其他依赖，仅重2kb，并且免费。</p>
+                    <p><img class="box" alt="8f11560e29e993ca37099d0fa3638910" src="http://www.icultivator.com/wp-content/uploads/2014/02/8f11560e29e993ca37099d0fa3638910.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_5_17">5) JavaScript 音频库 - <a href="http://www.schillmania.com/projects/soundmanager2/" target="_blank" rel="nofollow">Sound Manager 2</a></h3>
+                    <p>With the help of在 HTML5 和 Flash 功能的帮助下, SoundManager 2 基于单一的Javascript <a href="http://www.icultivator.com/p/tag/api" title="查看 API 中的全部文章" target="_blank" class="tag_link">API</a>提供可靠的跨平台音频支持。</p>
+                    <p><img class="box" alt="66a2e0b28c2e90d6cefb5adba3bc2c29" src="http://www.icultivator.com/wp-content/uploads/2014/02/66a2e0b28c2e90d6cefb5adba3bc2c29.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_5_23">6) JavaScript 音频库 - <a href="http://plivo.com/docs/sdk/web/" target="_blank" rel="nofollow">Plivo</a></h3>
+                    <p>Plivo WebSDK 允许你直接从任意的web浏览器发送和接收声音. 他们提供了一个页面 SDK ，而在  SDK 的帮助下你可以创建像 Click to Call, Conferencing Apps 以及甚至像 Webphones 那样的应用程序。</p>
+                    <p><img class="box" alt="ff7d7f1ff5216224b9dfcf6d877b3c25" src="http://www.icultivator.com/wp-content/uploads/2014/02/ff7d7f1ff5216224b9dfcf6d877b3c25.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_6_5">7) JavaScript音频库 - <a href="http://www.createjs.com/#%21/SoundJS" target="_blank" rel="nofollow">SoundJS</a></h3>
+                    <p>Javascript音频库SoundJs提供了简单的API和强大的功能，适合用于处理音频。</p>
+                    <p><img class="box" alt="a15408d183b73839e301e9a6e949b575" src="http://www.icultivator.com/wp-content/uploads/2014/02/a15408d183b73839e301e9a6e949b575.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_6_12">8) JavaScript音频库 - <a href="http://01org.github.io/jWebAudio/" target="_blank" rel="nofollow">jWebAudio</a></h3>
+                    <p>Web Audio可以被用于网络应用中声音的处理和同步。jWebAudio隐藏了Web Audio的技术细节，让控制音频变得更容易。</p>
+                    <p><img class="box" alt="a9e85b3aa57f59c495d811d0340935c1" src="http://www.icultivator.com/wp-content/uploads/2014/02/a9e85b3aa57f59c495d811d0340935c1.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_6_18">9) JavaScript音频库 -<a href="http://ionden.com/a/plugins/ion.sound/en.html" target="_blank" rel="nofollow"> ION Sound</a></h3>
+                    <p><img class="box" alt="b29e60d8c74469442eba638c203024bb" src="http://www.icultivator.com/wp-content/uploads/2014/02/b29e60d8c74469442eba638c203024bb.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_6_23">10) <a href="http://goldfirestudios.com/blog/104/howler.js-Modern-Web-Audio-Javascript-Library" target="_blank" rel="nofollow">Howler js</a> - 现代Javascript网络音频库</h3>
+                    <p><img class="box" alt="b61db401bc6d50ccff75dfbc9b6f2d16" src="http://www.icultivator.com/wp-content/uploads/2014/02/b61db401bc6d50ccff75dfbc9b6f2d16.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_6_28">11) JavaScript音频库 - <a href="https://github.com/f5io/fifer-js" target="_blank" rel="nofollow">Fifer js</a></h3>
+                    <p><img class="box" alt="5f1a8ac4cda887832b4dd80ff2f59f91" src="http://www.icultivator.com/wp-content/uploads/2014/02/5f1a8ac4cda887832b4dd80ff2f59f91.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_7_5">12) JavaScript音频库 - <a href="https://www.twilio.com/docs/client/twilio-js" target="_blank" rel="nofollow">Twilio js</a></h3>
+                    <p>Twilio.js让你在浏览器和Twilio应用之间建立音频连接。你可以在浏览器里使用主动或被动音频连接，以此构建网络电话、对讲机、网络会议、即时通话系统等等应用。</p>
+                    <p><img class="box" alt="f40f72fa170157645cd39c91ac575ef0" src="http://www.icultivator.com/wp-content/uploads/2014/02/f40f72fa170157645cd39c91ac575ef0.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_7_12">13) JavaScript音频库 - <a href="http://oampo.github.io/Audiolet/" target="_blank" rel="nofollow">Audiolet</a></h3>
+                    <p><img class="box" alt="977decd6055fa154e76d8524d260b216" src="http://www.icultivator.com/wp-content/uploads/2014/02/977decd6055fa154e76d8524d260b216.png" width="550" height="334" /></p>
+                    <h3 id="content_h3_7_17">14) JavaScript音频库 - <a href="https://github.com/audiocogs/pitch.js" target="_blank" rel="nofollow">Pitch js</a></h3>
+                    <p><img class="box" alt="3df2fce84413d5a2684804b6b54d4538" src="http://www.icultivator.com/wp-content/uploads/2014/02/3df2fce84413d5a2684804b6b54d4538.png" width="550" height="334" /></p>
+                    <div class="wumii-hook">
+                        <input type="hidden" name="wurl" value="http://www.icultivator.com/p/9023.html" /><br />
+                        <input type="hidden" name="wtitle" value="Web 开发者必备的 14 个 JavaScript 音频库" /><br />
+                        <input type="hidden" name="wpic" value="http://www.icultivator.com/wp-content/uploads/2014/02/c39402b68500fa89eab29a5a2d7144bd.png" />
+
+                    </p>
+                </div>
+                <!-- content -->
+            </div>
+
+            <div class="box">
+
+
+                <div>
+                </div>
+            </div>
+            <!-- sidebar -->
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="foot_c">
+        <div class="foot_new">
+            <ul>
+                <li><span class="font14 bold">新手指南</span></li>
+                <li><a href="/basic/user/registration">注册新用户</a></li>
+                <li><a href="/basic/page/process">如何订购</a></li>
+                <li><a href="/basic/page/modify_order">如何修改订单</a></li>
+            </ul>
+        </div>
+        <div class="foot_pay">
+            <ul>
+                <li><span class="font14 bold">支付方式</span></li>
+                <li><a href="/basic/page/payment">支付方式</a></li>
+                <li><a href="/basic/page/onlinepayment">账户提现及退款时效</a></li>
+                <li><a href="/basic/page/process">查看账户余额</a></li>
+            </ul>
+        </div>
+        <div class="foot_set">
+            <ul>
+                <li><span class="font14 bold">配送方式</span></li>
+                <li><a href="/basic/page/shipping">配送费用及收费标准</a></li>
+                <li><a href="/basic/page/shipping">配送范围及配送时效</a></li>
+                <li><a href="/basic/page/shippinginfo">签收注意事项</a></li>
+            </ul>
+        </div>
+        <div class="foot_back">
+            <ul>
+                <li><span class="font14 bold">退换货服务</span></li>
+                <li><a href="/basic/page/return">退换货政策</a></li>
+                <li><a href="/basic/page/return">退换货流程</a></li>
+                <li><a href="/basic/page/privacy">隐私申明</a></li>
+            </ul>
+        </div>
+        <div class="foot_help">
+            <ul>
+                <li><span class="font14 bold">帮助中心</span></li>
+                <li><a href="/basic/page/problems">常见问题</a></li>
+                <li><a href="/basic/page/contact">在线客服</a></li>
+                <li><a href="/basic/page/about">关于我们</a></li>
+            </ul>
+        </div>
+        <div class="foot_call">
+            <p class="font14 bold">咨询电话</p>
+
+            <p class="font14 bold cor_r">13967414054</p>
+        </div>
+    </div>
+    <div class="foot_u">
+        <p class="foot_link">
+            <a href="/basic/page/about">关于我们</a>|
+            <a href="/basic/page/contact">联系我们</a>|
+            <a href="">人才招聘</a>|
+            <a href="/basic/page/join">商家入驻</a>|
+            <a href="">广告服务</a>|
+            <a href="">手机商城</a>|
+            <a href="">友情链接</a>|
+            <a href="">销售联盟</a>|
+            <a href="/basic/index.php">皮雕社区</a>|
+            <a href="">资源交流</a>
+        </p>
+
+        <p>Copyright ? 2013 - 2015 演示商城 All Rights Reserved. <a href="">站长统计</a></p>
+
+        <p>银河方舟 全程技术支持</p>
+    </div>
+</div>
+<script type="text/javascript" src="/basic/assets/488f6928/listview/jquery.yiilistview.js"></script>
+<script type="text/javascript">
+    /*<![CDATA[*/
+    jQuery(function($) {
+        jQuery('#yw0').yiiListView({'ajaxUpdate':['yw0'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'list-view-loading','sorterClass':'sorter','enableHistory':false});
+    });
+    /*]]>*/
+</script>
+</body>
+</html>

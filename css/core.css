@@ -1,0 +1,122 @@
+/* 
+    Document   : core
+    Created on : 2012-5-11, 16:59:23
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.TreeList .cat1 {
+    font-weight: 700;
+    padding-left: 3px;
+}
+.TreeList .cat2 {
+    background:url("../images/arrs.gif") no-repeat scroll 10px -83px transparent;
+    color: #000000;
+    padding: 0 0 0 25px;
+}
+.pageWrap h2 {
+    color: #666666;
+    margin: 15px 0;
+    font-size:16px;
+}
+.pageWrap h4 {
+    background: url("../images/arrowleft-orange.gif") no-repeat scroll 0 5px transparent;
+    border-bottom: 1px solid #DDDDDD;
+    margin: 10px 0;
+    padding-left: 14px;
+}
+.pageWrap ol li {
+    color: #666666;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    font-weight: normal;
+}
+table, td, th {
+    vertical-align:top;
+}
+.cart table, td, th {
+    vertical-align:middle;
+    border:solid 1px #DDDDDD;
+}
+.span-4 {
+    width: 150px;
+}
+.span-6 {
+    width: 230px;
+}
+.ColColorGray {
+    background: none repeat scroll 0 0 #EFEFEF;
+}
+.liststyle {
+    border: 1px solid #DDDDDD;
+    margin: 0;
+    width: 100%;
+}
+.liststyle a {
+    padding-right: 5px;
+    text-decoration: underline;
+}
+.liststyle a.lnk {
+    text-decoration: none;
+}
+.liststyle thead th {
+    background: url("../images/tablethbg.gif") repeat scroll 0 0 transparent;
+    border-color: #FFFFFF #DDDDDD #CCCCCC #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 3px;
+    text-align: center;
+    white-space: nowrap;
+}
+.liststyle td, .liststyle th {
+    border-color: #FFFFFF #DDDDDD #DDDDDD #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    padding: 4px;
+    text-align: center;
+}
+.liststyle.data td, .liststyle.data th {
+}
+.liststyle.data tbody th {
+    color: #000000;
+    font-size: 14px;
+    text-align: right;
+}
+.liststyle.data td {
+    text-align: left;
+}
+.liststyle.data .colspan {
+    border-bottom: 1px solid #AAAAAA;
+    border-top: 1px solid #FFFFFF;
+    color: #000000;
+    font-weight: 700;
+    text-align: center;
+}
+.liststyle_option th, .liststyle_option td {
+    background: none repeat scroll 0 0 #EEEEEE;
+    padding: 5px;
+    text-align: left;
+}
+.liststyle .viewpic {
+    background: url("../images/goodsgallary_icon.gif") no-repeat scroll 0 -25px transparent;
+    display: block;
+    height: 20px;
+    text-indent: -9999px;
+    width: 20px;
+}
+.liststyle .addtocart {
+    background: url("../images/goodsgallary_icon.gif") no-repeat scroll 0 -100px transparent;
+    display: block;
+    height: 20px;
+    text-indent: -9999px;
+    width: 20px;
+}

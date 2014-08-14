@@ -1,0 +1,261 @@
+#review {
+    color: rgb(64, 64, 64);
+    clear: both;
+}
+
+.rate {
+    float: left;
+    width: 220px;
+    padding: 20px 0px 0px;
+    text-align: center;
+    border-right: 1px solid rgb(228, 228, 228);
+}
+.rate strong {
+    font: 400 46px/30px arial;
+    color: rgb(228, 57, 60);
+}
+.rate strong span {
+    font-size: 24px;
+    color: rgb(228, 57, 60);
+}
+.rate span {
+    color: rgb(153, 153, 153);
+    font-family: arial;
+}
+.percent {
+    float: left;
+    width: 350px;
+    padding: 8px 0px;
+    margin-left: 50px;
+
+}
+.percent dl {
+    padding: 2px 0px;
+    overflow: hidden;
+    margin: 0;
+}
+.percent dt {
+    float: left;
+    width: 150px;
+}
+.percent span {
+    color: rgb(156, 154, 156);
+}
+.percent dd {
+    float: left;
+    width: 150px;
+    height: 10px;
+    margin-top: 6px;
+    overflow: hidden;
+    background: none repeat scroll 0% 0% rgb(239, 239, 239);
+}
+.percent dd div {
+    overflow: hidden;
+    height: 10px;
+    width: 0px;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#ed0000),to(#a50000));
+    background: -moz-linear-gradient(top,#ed0000,#a50000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed0000', endColorstr='#a50000');
+}
+ .tb-r-filter {
+    position: relative;
+    z-index: 1;
+    border-top: 2px solid rgb(233, 233, 233);
+    background: none repeat scroll 0% 0% rgb(252, 252, 252);
+    color: rgb(64, 64, 64);
+    margin-top: -1px;
+    min-height: 15px;
+}
+ .tb-taglist {
+    padding-left: 10px;
+     margin: 3px 0px 1px 0px;
+}
+ .tb-taglist li.tb-long {
+    min-width: 80px;
+}
+ .tb-taglist li {
+     display: inline-block;
+    margin-right: 10px;
+}
+.tb-taglist li:hover {
+    background-color:rgb(156, 154, 156);
+}
+ .tb-taglist li span {
+    vertical-align: middle;
+}
+ .tb-revbd {
+    min-height: 120px;
+    border-top: 1px solid rgb(237, 237, 237);
+}
+ .tb-r-review {
+    list-style: none outside none;
+    outline: 0px none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+ .tb-r-review {
+    list-style: none outside none;
+}
+.tb-r-buyer {
+    padding-top: 18px;
+    margin-right: 10px;
+    float: left;
+    width: 130px;
+}
+.tb-r-b-photo{
+    width:80px;
+    height:65px;
+    margin-left:20px;
+}
+.tb-r-b-user{
+   text-align: center;
+}
+.tb-r-bd {
+    overflow: hidden;
+    padding: 10px 0px 0px 10px;
+    min-height: 60px;
+
+}
+.tb-r-cnt,.tb-r-reply {
+    word-wrap: break-word;
+    font-size: 14px;
+    color: rgb(63, 63, 63);
+}
+.tb-r-act-bar {
+    margin: 10px 0px;
+    float: left;
+    font-size: 12px;
+    color: rgb(176, 176, 176);
+}
+
+.btns {
+    clear: both;
+    padding: 10px 0px 5px;
+    overflow: hidden;
+    line-height: 20px;
+}
+ul, ol {
+    list-style: none outside none;
+}
+
+.btn-reply, .btn-agree{
+    display: block;
+    height: 20px;
+    padding: 0px 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(213, 213, 213);
+    text-decoration: none;
+    text-align: center;
+    background: -moz-linear-gradient(center top , rgb(250, 250, 250), rgb(242, 242, 242)) repeat scroll 0% 0% transparent;
+    margin-right: 0px;
+    border-radius: 3px;
+    float: right;
+}
+.btn-reply-customer{
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    float: left;
+    margin-left: 5px;
+    width: 51px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(213, 213, 213);
+}
+.btn-agree{
+    float: left;
+    margin-right: 10px;
+    display: inline;
+}
+
+/****photos***/
+.tb-r-photos{
+    margin-top:7px;
+}
+.comment-show-pic {
+    overflow: hidden;
+}
+#review td {
+    width: 128px;
+    height: 96px;
+    border: 1px solid rgb(211, 211, 211);
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+}
+.comment-show-pic-wrap {
+    color: rgb(0, 94, 167);
+    margin-right: 5px;
+    float: left;
+    display: block;
+    width: 100%;
+}
+#review img{
+    max-width:128px;
+    max-height:96px;
+    overflow: hidden;
+}
+
+/*reply*/
+.reply-list {
+    padding: 5px;
+}
+.reply-wrap {
+    border: 1px solid rgb(217, 217, 217);
+    background: none repeat scroll 0% 0% rgb(245, 245, 245);
+    padding: 0px 10px 10px;
+    margin-bottom: 5px;
+    clear: both;
+}
+.reply-wrap p {
+    height: 30px;
+    line-height: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+.reply-wrap em, .reply-con em {
+    color: rgb(153, 153, 153);
+}
+
+.fl {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+.reply-input input {
+    width: 440px;
+    height: 15px;
+    line-height: 12px;
+    padding: 4px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(170, 170, 170) rgb(221, 221, 221) rgb(221, 221, 221) rgb(170, 170, 170);
+}
+.clr {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    height: 0px;
+    line-height: 0;
+    font-size: 0px;
+}
+.item-reply {
+    border-top: 1px dotted rgb(247, 231, 198);
+    padding-left: 50px;
+}
+.reply-meta {
+    padding: 5px;
+    margin: 0px;
+}
+.reply-left {
+    color: rgb(156, 154, 156);
+}
+#reply {
+    display: none;
+}
+.r-c-title{
+    cursor:pointer;
+}

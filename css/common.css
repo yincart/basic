@@ -1,0 +1,135 @@
+.space {
+    margin-top: 15px;
+}
+.overlay-popup {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+.popup-container {
+    width: 360px;
+    height: 158px;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    border-radius: 5px;
+    z-index: 3000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+}
+
+.popup-container .close {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
+
+.popup-iframe {
+    display: block;
+    margin: 20px auto;
+    width: 95%;
+    height: 90%;
+}
+
+.message {
+width: 90%;
+    height: 80%;
+}
+
+.error-message {
+    margin: 10% ;
+    font-size: 15px;
+    color:#040404;
+}
+#table-th{
+    text-align: center;
+    background: #CCCCCC;
+}
+#describe_3{
+    text-align: center;
+}
+.slidesjs-container div a{
+    display:block;
+
+    height:500px;
+}
+#mainbody{
+    height:500px;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+}
+.nav{
+    margin-bottom:0px;
+}
+#stock{
+    font-size: 12px;
+}
+p{
+    padding:6px;
+}
+
+
+
+input[type="radio"], input[type="checkbox"]{
+
+    margin:0px 0 0;
+}
+
+#cartForm{
+
+    width:95%
+}
+h2{font-size: 20px;}
+#shipping-method-form input{
+    width: 220px;
+    height: 30px;
+}
+#shipping-method-form textarea{
+    width: 220px;
+}
+/*#feedback-form{margin-left:50px}*/
+/*#feedback-form input{*/
+    /*height: 25px;*/
+/*}*/
+/*#feedback-form input[type='submit']{*/
+    /*background: green;*/
+    /*color: #ffffff;*/
+    /*font-size: 15px;*/
+    /*border-radius: 4px;*/
+/*}*/
+.video-img{
+    position: relative;
+    width: 370px;
+    height: 300px;
+}
+.video-tubiao{
+   font-size: 70px;
+    color:#6f6f6f;
+   display:none;
+    position: absolute;
+   left: 120px;
+   top: 115px;
+}
+.video-list li{
+    float: left;
+    margin: 15px;
+
+}
+#myTab{
+    background: white;
+}
+#myTab li{
+    width: 80px;
+}
+.login-nav2 ul a{
+    background-color: #F5F4F2;
+}

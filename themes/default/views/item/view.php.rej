@@ -1,0 +1,9 @@
+diff a/themes/leather/views/item/view.php b/themes/leather/views/item/view.php	(rejected hunks)
+@@ -193,6 +193,7 @@
+                                               <s id="mymodal-1-png" class="pull-left"></s> <span class="pull-left">成功加入购物车！</span>
+ 
+                                                <button class="close pull-right" aria-hidden="true" data-dismiss="modal" type="button">×</button>
++<!--                                               <button class="btn btn-success center-block" aria-hidden="true" data-dismiss="modal">确定</btn>-->
+                                               </div><!-- /.modal-content -->
+                                           </div><!-- /.modal-dialog -->
+                                       </div>

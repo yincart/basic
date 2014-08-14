@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="content-language" content="zh"/>
+    <meta http-equiv="Cache-Control" content="max-age=7200"/>
+    <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/bootstrap.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/common.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/css/common.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/css/form.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/product.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/member.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/grid.css'/>
+    <script type="text/javascript" src="/basic/themes/leather/js/jquery.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/common.js"></script>
+    <script type="text/javascript" src="/basic/js/common.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/passwordCheck.js"></script>
+    <script type="text/javascript" src="/basic/js/holder.js"></script>
+    <link rel="stylesheet" type="text/css" href="/basic/assets/488f6928/listview/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/basic/assets/2b30688b/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="/basic/assets/dc6dbc95/pager.css" />
+    <script type="text/javascript" src="/basic/assets/2e76bf2c/jquery.js"></script>
+    <script type="text/javascript" src="/basic/assets/2e76bf2c/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/login_nav.js"></script>
+    <title></title>
+
+
+    <style type="text/css">
+        *{margin:0;padding:0;}
+    </style>
+</head>
+<body style="background:#eeeeee">
+<div class="top">
+    <div class="top_contant">
+        <div class="top_left">
+            <a rel="sidebar" onclick="addFavorite();" href="http://127.0.0.1/basic/">收藏网站</a><a href="http://localhost/basic">官网</a><a class="sina" href="http://www.sina.com.cn/">新浪</a><a class="mart" href="http://localhost/basic">商城</a>            <span class="cor_red bold font14">Tel: 13967414054</span>
+            <a href="/basic/page/contact?key=help">在线客服</a>        </div>
+
+        <div class="top_right">
+            <span>您好，欢迎来到演示商城！</span>
+            <div class="login-nav"><a href="/basic/user/login">登录</a>            |<a href="/basic/user/registration">注册</a></div>
+
+            <div class="top_daohang">
+                <li id="daohang" >网站导航<i>arrow</i>
+                    <div class="daohang_box" style="width:250px; display:none;position:absolute;padding:6px; border:0px;box-shadow:0 1px 2px #666;background:#f9f9f9;z-index:10;font-size:12px;">
+                        <a href="/"> 官方网站 </a><span style="width: 0;">|</span>
+                        <a href="/"> 热卖信息 </a><span style="width: 0;">|</span>
+                        <a href="/"> 合作伙伴 </a> <br>
+                        <a href="/"> 官方网站 </a><span style="width: 0;">|</span>
+                        <a href="/"> 热卖信息 </a><span style="width: 0;">|</span>
+                        <a href="/"> 合作伙伴 </a> <br>
+                    </div>
+                </li>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="head">
+    <div class="logo">
+        <a href="http://localhost/basic">
+            <img alt=""
+                 src="/basic/themes/leather/image/logo.png"
+                 width="227" height="80">
+        </a></div>
+    <form class="search" action="/basic/catalog/index" method="get">    <div class="search_box">
+        <input type="text" value="" name="key" id="key" />        <button></button>
+    </div>
+        <div class="search_hot">
+            热门搜索：
+            <a href="/basic/catalog/index?key=%E7%9A%AE%E9%9B%95">皮雕</a><a href="/basic/catalog/index?key=%E8%BD%AF%E7%9A%AE">软皮</a><a href="/basic/catalog/index?key=%E5%8E%8B%E8%8A%B1">压花</a>    </div>
+    </form>    <a href="/basic/cart/index">
+    <div class="shopping_car">
+        购物车有<span class="cor_red bold">0</span>件商品
+    </div>
+</a>
+</div>
+<div class="nav">
+    <ul class="nav_list" id="yw3">
+        <li><a href="/basic/site/index">首页</a></li>
+        <li><a href="/basic/catalog/index?cat=110">布艺软饰</a></li>
+        <li><a href="/basic/catalog/index?cat=111">床上用品</a></li>
+        <li><a href="/basic/catalog/index?cat=126">数码产品</a></li>
+        <li><a href="/basic/catalog/index?cat=129">精品男装</a></li>
+        <li><a href="/basic/catalog/index?cat=130">精品女装</a></li>
+        <li class="current"><a href="/basic/post/index">新闻</a></li>
+    </ul></div>
+
+<div class="container_24">
+
+    <div class="clearfix"></div>
+    <div class="container" style="overflow: hidden">
+        <div class="grid_18 alpha">
+            <div id="content" style="background: #ffffff;padding: 20px;font-size: 14px;">
+                <p>
+                    <a class="news-link" href="/basic/site/index">首页</a>>><a href="/basic/post/index" class="news-link">新闻列表</a>>>jquery ajax回调函数中调用$(this)的问题
+                </p>
+                <h3  style="background:#2d2d2d; color: white">jquery ajax回调函数中调用$(this)的问题 </h3>
+                <div>
+                    <p>
+                    <p>今天在用jquery的<a href="http://www.icultivator.com/p/tag/ajax" title="查看 ajax 中的全部文章" target="_blank" class="tag_link">ajax</a>的<a href="http://www.icultivator.com/p/tag/%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0" title="查看 回调函数 中的全部文章" target="_blank" class="tag_link">回调函数</a>时出现了问题，就是在回调函数中不能使用$(<a href="http://www.icultivator.com/p/tag/this" title="查看 this 中的全部文章" target="_blank" class="tag_link">this</a>)。这个问题一直弄了很久，怎么也解决不了，后来是在调用函数前先把$(this)存入变量，然后再在回调函数中使用就没问题了，在这作一下笔记。</p>
+<pre>$(document).ready(function(){
+    $(“.del”).click(function () {
+        obj=$(this).parent();//回调函数前先写入变量;
+        delid=$(this).attr(‘delid’);
+        $.get(‘drag.php’,{‘op’ : ‘del’,'id’ : delid},function(data){
+            if(data==1){
+                alert(‘删除成功’);
+                obj.remove();//直接写$(this).parent()不会起作用。
+            }else{
+                alert(‘删除失败’);
+            }
+        });
+    });
+});</pre>
+                    <p><em>注：本文转自网络。</em></p>
+                    <div class="wumii-hook">
+                        <input type="hidden" name="wurl" value="http://www.icultivator.com/p/8892.html" /><br />
+                        <input type="hidden" name="wtitle" value="jquery ajax回调函数中调用$(this)的问题" /><br />
+                        <input type="hidden" name="wpic" value="http://www.icultivator.com/wp-content/uploads/2014/02/jquery.png" />
+
+                    </p>
+                </div>
+                <!-- content -->
+            </div>
+
+            <div class="box">
+
+
+                <div>
+                </div>
+            </div>
+            <!-- sidebar -->
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="foot_c">
+        <div class="foot_new">
+            <ul>
+                <li><span class="font14 bold">新手指南</span></li>
+                <li><a href="/basic/user/registration">注册新用户</a></li>
+                <li><a href="/basic/page/process">如何订购</a></li>
+                <li><a href="/basic/page/modify_order">如何修改订单</a></li>
+            </ul>
+        </div>
+        <div class="foot_pay">
+            <ul>
+                <li><span class="font14 bold">支付方式</span></li>
+                <li><a href="/basic/page/payment">支付方式</a></li>
+                <li><a href="/basic/page/onlinepayment">账户提现及退款时效</a></li>
+                <li><a href="/basic/page/process">查看账户余额</a></li>
+            </ul>
+        </div>
+        <div class="foot_set">
+            <ul>
+                <li><span class="font14 bold">配送方式</span></li>
+                <li><a href="/basic/page/shipping">配送费用及收费标准</a></li>
+                <li><a href="/basic/page/shipping">配送范围及配送时效</a></li>
+                <li><a href="/basic/page/shippinginfo">签收注意事项</a></li>
+            </ul>
+        </div>
+        <div class="foot_back">
+            <ul>
+                <li><span class="font14 bold">退换货服务</span></li>
+                <li><a href="/basic/page/return">退换货政策</a></li>
+                <li><a href="/basic/page/return">退换货流程</a></li>
+                <li><a href="/basic/page/privacy">隐私申明</a></li>
+            </ul>
+        </div>
+        <div class="foot_help">
+            <ul>
+                <li><span class="font14 bold">帮助中心</span></li>
+                <li><a href="/basic/page/problems">常见问题</a></li>
+                <li><a href="/basic/page/contact">在线客服</a></li>
+                <li><a href="/basic/page/about">关于我们</a></li>
+            </ul>
+        </div>
+        <div class="foot_call">
+            <p class="font14 bold">咨询电话</p>
+
+            <p class="font14 bold cor_r">13967414054</p>
+        </div>
+    </div>
+    <div class="foot_u">
+        <p class="foot_link">
+            <a href="/basic/page/about">关于我们</a>|
+            <a href="/basic/page/contact">联系我们</a>|
+            <a href="">人才招聘</a>|
+            <a href="/basic/page/join">商家入驻</a>|
+            <a href="">广告服务</a>|
+            <a href="">手机商城</a>|
+            <a href="">友情链接</a>|
+            <a href="">销售联盟</a>|
+            <a href="/basic/index.php">皮雕社区</a>|
+            <a href="">资源交流</a>
+        </p>
+
+        <p>Copyright ? 2013 - 2015 演示商城 All Rights Reserved. <a href="">站长统计</a></p>
+
+        <p>银河方舟 全程技术支持</p>
+    </div>
+</div>
+<script type="text/javascript" src="/basic/assets/488f6928/listview/jquery.yiilistview.js"></script>
+<script type="text/javascript">
+    /*<![CDATA[*/
+    jQuery(function($) {
+        jQuery('#yw0').yiiListView({'ajaxUpdate':['yw0'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'list-view-loading','sorterClass':'sorter','enableHistory':false});
+    });
+    /*]]>*/
+</script>
+</body>
+</html>

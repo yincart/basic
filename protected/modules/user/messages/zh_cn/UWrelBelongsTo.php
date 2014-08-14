@@ -1,0 +1,1 @@
+<?phpreturn array(	'Model Name'=>'模型名',	'Lable field name'=>'Lable字段名',	'Empty item name'=>'空项目名称',	'Profile model relation name'=>'资料模型关系的名称',);

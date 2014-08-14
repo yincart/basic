@@ -1,0 +1,255 @@
+.big-box{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1180px;
+    min-height: 400px;
+    margin-top:10px;
+}
+.big-box-left{
+    width: 150px;
+    float:left;
+}
+.big-box-right{
+    width: 900px;
+    float:right;
+}
+.clr{
+    clear: both;
+}
+
+.box{
+    border: 1px solid #ececec;
+    margin: 0;
+    padding: 0;
+}
+.box-title{
+    background:#E5E5E5;
+    height:29px;
+    line-height:29px;
+    font-weight:bold;
+    font-size:14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.box-title span{
+    float: right;
+    padding-right: 10px
+}
+.box-title a{
+    text-decoration: none;
+    color: #0069D6;
+}
+.box-title a:hover{
+    color: #0099FF
+}
+.box-content{
+    margin:10px auto;
+    padding:10px;
+    overflow:hidden;
+    display:block;
+}
+.box-inside{
+    overflow:hidden;
+    width: 688px;
+}
+.box-content a{
+    text-decoration: none;
+}
+.box-content a:hover{
+    color: #0099FF
+}
+.portlet-content ul li{
+    line-height: 24px;
+}
+.row{
+    line-height: 25px;
+    position: relative;
+    padding-left: 100px;
+    padding-top:10px;
+}
+.row label{
+    position: absolute;
+    vertical-align: middle;
+    left: 0;
+    height: 26px;
+    line-height: 26px;
+    display: block;
+}
+td,table,tr{
+    padding:0;
+    margin:0;
+
+}
+#table{
+    width:800px;
+    height:80px;
+    text-align:center;
+    border-radius:5px;
+    border:1px solid #AEC7E5;
+    border-radius:5px;
+}
+#tr-first{
+           background:#dff1fe;
+           height:30px;
+           border-bottom: 1px solid #AEC7E5;
+           border-top: 1px solid #A2CBFF;
+}
+
+.th:hover{
+     border:2px solid #7bb8e3;
+      border-radius:3px;
+
+}
+#item{
+      text-align:left;
+      font-size:12px;
+      color:#FC6210;
+      font-weight:700;
+}
+#tr-second{
+        border-bottom: 1px solid #AEC7E5;
+        border-top: 1px solid #A2CBFF;
+
+}
+#tr-second:hover{
+
+           background:#7bb8e3;
+}
+
+
+
+span[class="required"]{
+    color: red;
+}
+
+.news-img{
+
+    text-align: center;
+    height: 200px;
+
+   padding: 35px 0;
+
+
+}
+.news-link{
+    color:#0069d6;
+
+}
+.news-summary{
+    color: #808080;
+}
+.news-outside {
+    margin: 0px 5px;
+    border-bottom:1px solid darkgray ;
+    height: 230px;
+
+}
+#news-pag li a{
+   text-indent: 0px;
+    height: 35px;
+    width: 35px;
+}
+#news-pag-two li a{
+    text-indent: 0px;
+    height: 35px;
+    width: 35px;
+}
+#news-hot li{
+   margin: 5px 0px;
+}
+#comments-list li{
+    margin: 30px 10px 0px;
+    padding-bottom: 15px;
+
+    height:auto;
+
+}
+#comments-list{
+    padding-bottom: 20px;
+}
+#copy{
+    display:none;
+}
+.col-name{
+    padding: 0px;
+}
+.col-name th {
+    background: #EFF3F7;
+    text-align: center;
+    padding: 14px 10px 6px!important;
+}
+ .skin-gray{
+     background: #F3F3F3;
+ }
+ .order-hd{
+     background:#E8F2FF;
+ }
+.skin-gray a{
+    display:inline-block;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    color: #3366CC;
+}
+.sep-row td{
+    padding: 0px!important;
+    height: 6px;
+
+}
+.baobei-name{
+    color:#3366CC!important;
+}
+.desc span{
+    color:#808080!important;
+}
+.xiangqing td{
+    text-align: center;
+    vertical-align: middle;}
+.my-order-table a{
+    color:#3366CC!important ;
+}
+.my-order-table a:hover{
+    color: red!important;
+    text-decoration: underline;
+}
+#changepassword-form input{
+    width: 200px;
+}
+#changepassword-form{
+    padding: 0px 50px;
+}
+.my-sidenav {
+    background: #F7F5FA;
+    font-size: 14px !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+}
+.my-sidenav ul li{
+    margin: 10px;
+}
+.remind-box ul li{
+    float: left;
+    display: inline-block;
+}
+.remind-box ul{
+    display: inline-block;
+}
+#Comment_author{
+    width:500px!important;
+    border-radius: 5px;
+    height: 30px;
+}
+#Comment_email{
+    width:500px!important;
+    border-radius: 5px;
+    height: 30px;
+}
+#a123{
+    width: 500px!important;
+    border-radius: 5px;
+}
+#comments{
+   margin-left: 50px;
+}
+#content .box .box-content #yw0{
+    padding: 0!important;
+ margin-bottom:-30px ;
+}

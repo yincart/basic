@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="content-language" content="zh"/>
+    <meta http-equiv="Cache-Control" content="max-age=7200"/>
+    <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/bootstrap.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/common.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/css/common.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/css/form.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/product.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/member.css'/>
+    <link type='text/css' rel='stylesheet' href='/basic/themes/leather/css/grid.css'/>
+    <script type="text/javascript" src="/basic/themes/leather/js/jquery.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/common.js"></script>
+    <script type="text/javascript" src="/basic/js/common.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/passwordCheck.js"></script>
+    <script type="text/javascript" src="/basic/js/holder.js"></script>
+    <link rel="stylesheet" type="text/css" href="/basic/assets/488f6928/listview/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/basic/assets/2b30688b/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="/basic/assets/dc6dbc95/pager.css" />
+    <script type="text/javascript" src="/basic/assets/2e76bf2c/jquery.js"></script>
+    <script type="text/javascript" src="/basic/assets/2e76bf2c/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="/basic/themes/leather/js/login_nav.js"></script>
+    <title></title>
+
+
+    <style type="text/css">
+        *{margin:0;padding:0;}
+    </style>
+</head>
+<body style="background:#eeeeee">
+<div class="top">
+    <div class="top_contant">
+        <div class="top_left">
+            <a rel="sidebar" onclick="addFavorite();" href="http://127.0.0.1/basic/">收藏网站</a><a href="http://localhost/basic">官网</a><a class="sina" href="http://www.sina.com.cn/">新浪</a><a class="mart" href="http://localhost/basic">商城</a>            <span class="cor_red bold font14">Tel: 13967414054</span>
+            <a href="/basic/page/contact?key=help">在线客服</a>        </div>
+
+        <div class="top_right">
+            <span>您好，欢迎来到演示商城！</span>
+            <div class="login-nav"><a href="/basic/user/login">登录</a>            |<a href="/basic/user/registration">注册</a></div>
+
+            <div class="top_daohang">
+                <li id="daohang" >网站导航<i>arrow</i>
+                    <div class="daohang_box" style="width:250px; display:none;position:absolute;padding:6px; border:0px;box-shadow:0 1px 2px #666;background:#f9f9f9;z-index:10;font-size:12px;">
+                        <a href="/"> 官方网站 </a><span style="width: 0;">|</span>
+                        <a href="/"> 热卖信息 </a><span style="width: 0;">|</span>
+                        <a href="/"> 合作伙伴 </a> <br>
+                        <a href="/"> 官方网站 </a><span style="width: 0;">|</span>
+                        <a href="/"> 热卖信息 </a><span style="width: 0;">|</span>
+                        <a href="/"> 合作伙伴 </a> <br>
+                    </div>
+                </li>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="head">
+    <div class="logo">
+        <a href="http://localhost/basic">
+            <img alt=""
+                 src="/basic/themes/leather/image/logo.png"
+                 width="227" height="80">
+        </a></div>
+    <form class="search" action="/basic/catalog/index" method="get">    <div class="search_box">
+        <input type="text" value="" name="key" id="key" />        <button></button>
+    </div>
+        <div class="search_hot">
+            热门搜索：
+            <a href="/basic/catalog/index?key=%E7%9A%AE%E9%9B%95">皮雕</a><a href="/basic/catalog/index?key=%E8%BD%AF%E7%9A%AE">软皮</a><a href="/basic/catalog/index?key=%E5%8E%8B%E8%8A%B1">压花</a>    </div>
+    </form>    <a href="/basic/cart/index">
+    <div class="shopping_car">
+        购物车有<span class="cor_red bold">0</span>件商品
+    </div>
+</a>
+</div>
+<div class="nav">
+    <ul class="nav_list" id="yw3">
+        <li><a href="/basic/site/index">首页</a></li>
+        <li><a href="/basic/catalog/index?cat=110">布艺软饰</a></li>
+        <li><a href="/basic/catalog/index?cat=111">床上用品</a></li>
+        <li><a href="/basic/catalog/index?cat=126">数码产品</a></li>
+        <li><a href="/basic/catalog/index?cat=129">精品男装</a></li>
+        <li><a href="/basic/catalog/index?cat=130">精品女装</a></li>
+        <li class="current"><a href="/basic/post/index">新闻</a></li>
+    </ul></div>
+
+<div class="container_24">
+
+    <div class="clearfix"></div>
+    <div class="container" style="overflow: hidden">
+        <div class="grid_18 alpha">
+            <div id="content" style="background: #ffffff;padding: 20px;font-size: 14px;">
+                <p>
+                    <a class="news-link" href="/basic/site/index">首页</a>>><a href="/basic/post/index" class="news-link">新闻列表</a>>> 如何用PhotoShop制作网站的favicon.ico
+                </p>
+                <h3  style="background:#2d2d2d; color: white">如何用PhotoShop制作网站的favicon.ico </h3>
+                <div>
+                    <p>
+                    <p>所谓fav<a href="http://www.icultivator.com/p/tag/icon" title="查看 icon 中的全部文章" target="_blank" class="tag_link">icon</a>，即Favorites Icon的缩写，顾名思义，便是其可以让浏览器的收藏夹中除显示相应的标题外，还以图标的方式区别不同的网站。当然，这不仅仅是Favicon的全部，根据浏览器的不同，Favicon显示也有所区别：在大多数主流浏览器如FireFox和Internet Explorer (5.5及以上版本)中，favicon不仅在收藏夹中显示，还会同时出现在地址栏上，这时用户可以拖曳favicon到桌面以建立到网站的快捷方式；除此之外，标签式浏览器甚至还有不少扩展的功能，如FireFox甚至支持动画格式的favicon等。</p>
+                    <p>favicon.ico不仅仅能够起到识别网站的作用，有什么漂亮的favicon.ico还能打造网站品牌，给用户带来良好的体验。</p>
+                    <p>那么如何用 PhotoShop 制作 favicon.ico 呢？</p>
+                    <p><a href="http://www.icultivator.com/p/tag/photoshop" title="查看 Photoshop 中的全部文章" target="_blank" class="tag_link">Photoshop</a>本身是不支持将图片保存为.ico格式的，所以我们首先要下载能将图片保存为.ico格式的Photoshop插件。下面搬运了下：</p>
+                    <p>64位下载：<a href="http://www.nowamagic.net/librarys/webapp/ICOFormat-2.1b1-win64.zip" target="_blank">ICOFormat-2.1b1-win64.zip</a>，32位的可以自己搜索。然后把插件放在 PS 的安装路径下大概这个位置（CS 5）： PhotoShopCS5\Adobe Photoshop CS5 (64 Bit)\Plug-ins\File Formats\。</p>
+                    <p>我设计的整个过程是一开始先在纸上画出我想要设计的几种样式，之后挑选出自己满意的一个设计方案后，再在Photoshop中开始设计。由于 16×16像素的画布太小，不便于创建图标，所以我们先来创建一个64×64像素的文档，设计完成之后再使用Photoshop中的image（图 像） -&gt; image size（图像大小）命令，在弹出的对话框的下拉菜单中选择“Bicubic Sharper”（两次立方（较锐利）选项，将图片还原为16像素大小。”</p>
+                    <p>Bicubic Sharper”这个选项将会确保你的图片依然清晰，不会模糊。这里需要注意的是，也许在64像素大小的画布中你的图像的显示质量看上去不错，但是并不代 表你将图片的大小更改为16像素时，图片的质量依然很好。所以，你要注意观察16像素的图片质量，如果看上去不令你满意，那么你就要考虑更改64像素图片 的样式了。具体的样式由你自己设计，根据自己的喜好来。</p>
+                    <p>设计好图案，另存为 ico 就可以了。</p>
+                    <p><img class="box" alt="2013_08_06_01" src="http://www.icultivator.com/wp-content/uploads/2014/02/2013_08_06_01.png" width="442" height="209" /></p>
+                    <p>有没有发现你的 ico 文件很模糊，不清晰？其实这个.ico格式的图片，是可以将不同大小的图片 打包放置于一个.ico图标文件之内的。</p>
+                    <p>如果你设计的是16像素大小的.ico文件，那么你在windows下查看它的时候会发现它是模糊的，为了避免这个问题，我 们需要将设计好的64像素大小的图片再保存为不同的几种格式。起码要有一个48像素大小的.ico格式，这样放入主题文件包中的时候看上去才足够美观。当 然，你只需要在Photoshop中创建一个64像素大小的图标，之后使用Sib Icon Studio软件完成打包的工作。首先在Sib Icon Studio软件中打开已经做好64像素大小的文件，然后点击New Image Farmat（新图片格式）图标，在弹出的对话框中分别选择48像素和16像素大小，添加到软件界面右侧的侧边栏中，保存文件即可，这样我们就已经将三种 不同大小的图标文件放入了一个.ico格式的文件中，打包完成。</p>
+                    <p>Sib Icon Studio 可以自己搜索下载，也可以使用其它同类软件。</p>
+                    <p>icon 做好了之后，就可以用</p>
+                    <pre>&lt;link rel="shortcut icon" href="/images/favicon.ico" type=”image/x-icon”&gt;</pre>
+                    <p>显示在网页上了，有个性吧？</p>
+
+                    </p>
+                </div>
+                <!-- content -->
+            </div>
+
+            <div class="box">
+
+
+                <div>
+                </div>
+            </div>
+            <!-- sidebar -->
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="foot_c">
+        <div class="foot_new">
+            <ul>
+                <li><span class="font14 bold">新手指南</span></li>
+                <li><a href="/basic/user/registration">注册新用户</a></li>
+                <li><a href="/basic/page/process">如何订购</a></li>
+                <li><a href="/basic/page/modify_order">如何修改订单</a></li>
+            </ul>
+        </div>
+        <div class="foot_pay">
+            <ul>
+                <li><span class="font14 bold">支付方式</span></li>
+                <li><a href="/basic/page/payment">支付方式</a></li>
+                <li><a href="/basic/page/onlinepayment">账户提现及退款时效</a></li>
+                <li><a href="/basic/page/process">查看账户余额</a></li>
+            </ul>
+        </div>
+        <div class="foot_set">
+            <ul>
+                <li><span class="font14 bold">配送方式</span></li>
+                <li><a href="/basic/page/shipping">配送费用及收费标准</a></li>
+                <li><a href="/basic/page/shipping">配送范围及配送时效</a></li>
+                <li><a href="/basic/page/shippinginfo">签收注意事项</a></li>
+            </ul>
+        </div>
+        <div class="foot_back">
+            <ul>
+                <li><span class="font14 bold">退换货服务</span></li>
+                <li><a href="/basic/page/return">退换货政策</a></li>
+                <li><a href="/basic/page/return">退换货流程</a></li>
+                <li><a href="/basic/page/privacy">隐私申明</a></li>
+            </ul>
+        </div>
+        <div class="foot_help">
+            <ul>
+                <li><span class="font14 bold">帮助中心</span></li>
+                <li><a href="/basic/page/problems">常见问题</a></li>
+                <li><a href="/basic/page/contact">在线客服</a></li>
+                <li><a href="/basic/page/about">关于我们</a></li>
+            </ul>
+        </div>
+        <div class="foot_call">
+            <p class="font14 bold">咨询电话</p>
+
+            <p class="font14 bold cor_r">13967414054</p>
+        </div>
+    </div>
+    <div class="foot_u">
+        <p class="foot_link">
+            <a href="/basic/page/about">关于我们</a>|
+            <a href="/basic/page/contact">联系我们</a>|
+            <a href="">人才招聘</a>|
+            <a href="/basic/page/join">商家入驻</a>|
+            <a href="">广告服务</a>|
+            <a href="">手机商城</a>|
+            <a href="">友情链接</a>|
+            <a href="">销售联盟</a>|
+            <a href="/basic/index.php">皮雕社区</a>|
+            <a href="">资源交流</a>
+        </p>
+
+        <p>Copyright ? 2013 - 2015 演示商城 All Rights Reserved. <a href="">站长统计</a></p>
+
+        <p>银河方舟 全程技术支持</p>
+    </div>
+</div>
+<script type="text/javascript" src="/basic/assets/488f6928/listview/jquery.yiilistview.js"></script>
+<script type="text/javascript">
+    /*<![CDATA[*/
+    jQuery(function($) {
+        jQuery('#yw0').yiiListView({'ajaxUpdate':['yw0'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'list-view-loading','sorterClass':'sorter','enableHistory':false});
+    });
+    /*]]>*/
+</script>
+</body>
+</html>

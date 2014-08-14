@@ -1,0 +1,1 @@
+<?php$this->pageTitle = Yii::app()->name . ' - 联系我们';$this->breadcrumbs = array(    '联系我们',);?><div class="box">    <div class="box-title">联系我们</div>    <div class="box-content">    </div></div>

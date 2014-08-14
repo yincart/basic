@@ -1,0 +1,12 @@
+diff a/protected/modules/mall/views/itemProp/_form.php b/protected/modules/mall/views/itemProp/_form.php	(rejected hunks)
+@@ -16,7 +16,9 @@
+ <div class="control-group"><p class="help-block">带 <span class="required">*</span> 的字段为必填项.</p></div>
+ <?php
+ echo $form->dropDownListControlGroup($model, 'category_id', $model->getCategory());
+-echo $form->dropDownListControlGroup($model, 'parent_prop_id', $props);
++//echo '<option value="">请选择分类</option>';
++    // dropDownListControlGroup.SelectedValue=请选择;
++echo $form->dropDownListControlGroup($model, 'parent_prop_id', $model->getCategory1());
+ echo $form->textFieldControlGroup($model, 'prop_name');
+ echo $form->textFieldControlGroup($model, 'prop_alias');
+ echo $form->inlineRadioButtonListControlGroup($model, 'type', $model->allType());

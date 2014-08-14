@@ -1,0 +1,13 @@
+diff a/protected/models/ItemProp.php b/protected/models/ItemProp.php	(rejected hunks)
+@@ -216,7 +216,10 @@
+     {
+         return Category::model()->getSelectOptions($root);
+     }
+-
++    public function getCategory1($root = 3)
++    {
++        return Category::model()->getSelectOptions1($root);
++    }
+     public function getPropValues()
+     {
+         $cri = new CDbCriteria(array(

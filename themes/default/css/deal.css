@@ -1,0 +1,373 @@
+.deal{
+     margin-top:10px;
+     overflow:hidden;
+    position:relative;
+ }
+.deal_tip{
+    border-bottom:1px solid #a35f23;
+    padding:5px;
+}
+.deal_pic{
+    float:left;
+    width:600px;
+    margin-top:10px;
+    overflow:hidden;
+    margin-right:50px;
+}
+.hdnum{
+    float:left;
+    margin-left:10px;
+    margin-right:30px;
+}
+.idtransformview{
+    margin-top:10px;
+    margin-left:40px;
+}
+.slider{
+    margin-top:0px;
+    margin-left:0px;
+}
+.hdnum li{
+    margin-bottom:20px;
+    cursor:pointer;
+}
+.deal_info{
+    float:left;
+    margin-top:10px;
+}
+.deal_tit{
+    font-size:14px;
+    font-weight:700;
+}
+.deal_price{
+    margin:20px 0;
+}
+.font30{
+    font-size:30px;
+    font-family:Arial;
+}
+.deal_sold{
+    padding:5px;
+    border-bottom:1px dotted #CECDCD;
+}
+.deal_size{
+    margin-top: 20px;
+    margin-left:-2px;
+}
+.deal_size p{
+    margin:5px;
+    overflow:hidden;
+}
+.deal_size p span{
+    float:left;
+}
+.deal_size p a{
+    float:left;
+    margin:-5px 5px;
+    padding:5px 7px
+}
+.deal_num{
+    margin-top:30px;
+    overflow:hidden;
+    padding:0 5px;
+}
+.deal_num_cart{
+    overflow:hidden;
+    padding:0 5px;
+}
+.deal_num_cart span{
+    float:left;
+    overflow:hidden;
+    line-height:21px;
+}
+.deal_num span{
+    float:left;
+    overflow:hidden;
+    line-height:21px;
+}
+.deal_num_c{
+    background:url(../image/deal_num.png) no-repeat;
+    width:65px;
+    height:21px;
+    text-align:center;
+    margin:0 10px;
+}
+.minus{
+    width:18px;
+    display:block;
+    float:left;
+    height:21px;
+}
+.add{
+    width:22px;
+    display:block;
+    float:right;
+    height:21px;
+}
+.deal_add_car{
+    margin-top:30px;
+    font-size: 20px;
+    border: 1px #000000;
+    border-radius: 10px;
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+}
+.deal_add_car a{
+    /*display:block;*/
+    /*background:url(../image/add_s_car.png) no-repeat;*/
+    color: white;
+    /*text-indent:-9999px;*/
+}
+
+.deal_add{
+    margin-left: 10px;
+    border-radius: 10px;
+    margin-top:30px;
+    font-size: 16px;
+    border: 1px #000000;
+    background-color: wheat;
+    padding: 13px;
+    text-align: center;
+    display: inline-block;
+}
+
+.deal_collect{
+    margin-left: 10px;
+    margin-top:30px;
+    border-radius: 10px;
+    font-size: 16px;
+    border: 1px #000000;
+    background-color: wheat;
+    padding: 13px;
+    text-align: center;
+    display: inline-block;
+}
+
+.pd_l_intr{
+    border:1px solid #e2dfdf;
+}
+
+.intr_list_tit{
+    text-align: center;
+    margin-right: 25px;
+}
+
+.intr_list_price{
+    margin-left: 150px;
+}
+
+.pd_l_intr h2{
+    border-bottom: 2px solid #a35f23;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.pd_intr_list{
+    margin-top:20px;
+}
+
+.pd_intr_list li{
+    margin-left: 0px;
+    border-bottom:1px dotted #cdcdcd;
+    padding:0 4px 10px 4px;
+    margin-bottom:10px;
+    line-height:25px;
+   text-align:center;
+}
+
+.deal_describe_tit{
+    border-top:3px solid #2D2D2D;
+    overflow:hidden;
+    border-right:1px solid #D0D0D0;
+    border-bottom:1px solid #D0D0D0;
+    border-left:1px solid #D0D0D0;
+    margin-left:10px;
+}
+.deal_describe_tit li{
+    float:left;
+    cursor:pointer;
+    padding:5px 15px;
+    border-right:1px solid #D0D0D0;
+}
+.deal_describe_tit li.current{
+    background:#2D2D2D;
+    color:#fff;
+}
+.deal_describe{
+    padding: 20px;
+}
+
+#warning-load{
+    width:350px;
+    height:320px;
+    right: 189px;
+    top: 96px;
+    font-size:16px;
+    font-weight:bold;
+    margin:10px;
+    position:absolute;
+    background:rgb(255,255,255);
+
+
+
+
+}
+#btn{
+    width:130px;
+    height:45px;
+    margin:8px auto;
+    display:block;
+    background-color:#ce0606;
+    font-size:12px;
+    font-weight:bold;
+    font-family:"Arial Black", arial-black;
+    color:white;
+    border:1px solid gray;
+    border-radius:5px;
+
+}
+#btn:hover{
+    background:#f72b2b;
+}
+.txt{
+    width:250px;
+    height:40px;
+    display:block:
+
+}
+.user{
+    height:50px;
+    width:250px;
+    margin:10px auto;
+
+}
+#safe{
+    font-size:12px;
+    font-family:arial, verdana, sans-serif;
+    font-weight:bold;
+    color:gray;
+    padding-left:50px;
+}
+#logo{
+    width:350px;
+    height:40px;
+    background-color:#AF733D;
+    font-size:25px;
+    font-family:Georgia, Times, "Times New Roman", serif;
+    text-align:center;
+    font-weight:bold;
+    color:white;
+}
+#register{
+    width:350px;
+    text-align:right;
+
+}
+.link{
+    text-align:right;
+    color:#139ff7;
+    font-size:12px;
+    font-weight:normal;
+
+}
+#modal{
+    width:370px;
+    height:340px;
+    position:fixed;
+}
+
+
+#myModal .form-control{
+    height: 32px;
+    margin:  5px 0;
+}
+#form-checkbox{
+
+    margin:auto 5px;
+    margin-right:-20px;
+}
+
+.modal-header {
+    padding: 2px 2px;
+    border-bottom: 0px solid #eee;
+}
+
+#log-btn-div{
+    position: absolute;
+    display:block;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    left: 50px;
+    bottom: 80px;
+    background: #AF733D;
+    font-size:20px;
+    font-weight: bold;
+    color: white;
+    border:1px solid lightgray;
+}
+#log-btn-div:hover{
+   background: #EA7E22;
+   border:1px solid #AF733D;
+}
+#register{
+    width: 300px;
+position:absolute;
+ bottom: 50px;
+   padding-right: 50px;
+}
+#log-out-box{
+    position: relative;
+}
+#log-out-close{
+    position: absolute;
+    top: 101px;
+    left: 380px;
+    color: rgb(0, 0, 0);
+    z-index: 11111;
+    font-size: 25px;
+}
+#mymodal-1-png{
+    background-image: url('http://a.tbcdn.cn/apps/tmall/mui/msg/img/msg.png');
+    background-position: 0 -66px;
+    background-repeat: no-repeat;
+    width: 34px;
+    height: 56px;
+    display: inline-block;
+
+}
+#myModal-1-content span,#myModal-2-content span{
+    display:block;
+    height: 56px;
+    line-height: 56px;
+    font-size: 15px;
+    color: green;
+}
+
+#myModal-1-content{
+    top: 255px;
+    left: 0px;
+}
+#look-collect{
+    padding: 1px 34px;
+}
+.li-img{
+    width:70px;
+    height: 70px;
+}
+#myModal-2-content{
+
+    left:167px;
+    top: 225px;
+}
+#num{
+    font-size: 12px;
+    font-weight: normal;
+}
+.minus{
+    margin-left:5px;
+    margin-right:0;
+    padding-right:0;
+}

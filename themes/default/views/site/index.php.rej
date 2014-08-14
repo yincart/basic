@@ -1,0 +1,10 @@
+diff a/themes/leather/views/site/index.php b/themes/leather/views/site/index.php	(rejected hunks)
+@@ -1,5 +1,8 @@
+ <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/slides.jquery.js'); ?>
+ <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/pptBox.js'); ?>
++
++<?php $imageHelper=new ImageHelper();?>
++
+ <div class="warp_contant">
+     <div class="float">
+         <div class="float_button">

@@ -1,0 +1,1 @@
+<?php/*  * To change this template, choose Tools | Templates * and open the template in the editor. */class WSearch extends CWidget {    public function init() {        parent::init();    }    public function run() {        $this->render('search');    }}

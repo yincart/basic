@@ -1,7 +1,8 @@
 <?php
-header("Content-Type: text/html;charset=utf-8");
+//header("Content-Type: text/html;charset=utf-8");
 class ItemController extends MallBaseController
 {
+    public $content_title = '商品列表';
     /**
      * Specifies the access control rules.
      * This method is used by the 'accessControl' filter.

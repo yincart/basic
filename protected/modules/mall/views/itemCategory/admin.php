@@ -9,9 +9,6 @@ $this->menu = array(
 );
 ?>
 
-<h1><?php echo Yii::t('main','Manage Category');?></h1>
-
-<div class="well well-large">
     <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
             'id' => 'horizontalForm',
             'htmlOptions' => array(
@@ -46,4 +43,3 @@ $this->menu = array(
     echo Category::model()->getTree(3, $options, 'getLabel');
     $this->endWidget();
     ?>
-</div>

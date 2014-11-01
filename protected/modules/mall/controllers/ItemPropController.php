@@ -2,6 +2,7 @@
 
 class ItemPropController extends MallBaseController
 {
+    public $content_title = '商品属性';
     /**
      * get prop values by category id
      * @param int $category_id

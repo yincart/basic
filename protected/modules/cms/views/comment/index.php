@@ -1,17 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-    Yii::t('main', 'Comments'),
-);
-
-$this->menu=array(
-	array('label'=>Yii::t('main', 'Create Comments'),'icon'=>'plus','url'=>array('create')),
-	array('label'=>Yii::t('main', 'Manage Comments'),'icon'=>'cog','url'=>array('admin')),
+	'Comments',
 );
 ?>
 
-<h1><?php echo Yii::t('main','Comments');?></h1>
+<h3>评论</h3>
 
-<?php $this->widget('bootstrap.widgets.TbListView',array(
+<?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>

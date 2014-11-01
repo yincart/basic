@@ -9,15 +9,12 @@ $this->menu = array(
 );
 ?>
 
-
-<h1><?php echo Yii::t('main','Manage ItemSku');?></h1>
-
 <?php
 $this->widget('bootstrap.widgets.TbGridView', array(
     'id' => 'item-prop-grid',
     'type' => 'striped bordered condensed',
     'dataProvider' => $model->search(),
-    'filter' => $model,
+//    'filter' => $model,
     'columns' => array(
         'item_prop_id',
         'category.name',

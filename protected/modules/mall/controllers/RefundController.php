@@ -6,7 +6,7 @@ class RefundController extends MallBaseController
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/mall';
+    public $content_title = '退货方式';
 
 	/**
 	 * Displays a particular model.

@@ -25,7 +25,7 @@ $this->menu=array(
     'data'=>$model,
     'attributes'=>array(
 		'subscriber_id',
-		'customer_id',
+//		'customer_id',
 		'email',
 		'status',
 		'confirm_code',

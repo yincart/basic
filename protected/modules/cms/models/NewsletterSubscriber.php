@@ -99,6 +99,14 @@ class NewsletterSubscriber extends CActiveRecord
 		));
 	}
 
+    public function getStatus() {
+        if($this->status == 0){
+            echo "已订阅";
+        }else{
+            echo "未订阅";
+        }
+    }
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

@@ -1,7 +1,7 @@
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'anli-form',
+	'id'=>'Anli-form',
         'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 	'enableAjaxValidation'=>false,
 )); ?>

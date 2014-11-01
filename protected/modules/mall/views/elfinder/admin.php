@@ -7,7 +7,6 @@ $this->breadcrumbs = array(
 $this->menu = array();
 ?>
 
-    <h1>管理图片</h1>
 <?php
 // ElFinder widget
 $this->widget('ext.elFinder.ElFinderWidget', array(

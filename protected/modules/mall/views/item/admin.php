@@ -9,7 +9,6 @@ $this->menu = array(
 );
 ?>
 
-    <h1><?php echo Yii::t('main','Manage Item');?></h1>
 <?php
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'item-form',
@@ -17,13 +16,12 @@ $form = $this->beginWidget('CActiveForm', array(
     'htmlOptions' => array('enctype' => 'multipart/form-data'),
     'enableAjaxValidation' => false,
 ));
-?>
-<?php
+
 $this->widget('bootstrap.widgets.TbGridView', array(
     'id' => 'item-grid',
     'type' => 'striped bordered condensed',
     'dataProvider' => $model->search(),
-    'filter' => $model,
+//    'filter' => $model,
     'selectableRows' => 2,
     'enableHistory' => 'true',
     'columns' => array(

@@ -5,7 +5,7 @@
  */
 class NewsController extends Controller {
 
-    public $layout = '//layouts/cms';
+    public $layout = '//layouts/content';
     public $content_title = '新闻管理';
 
     /**

@@ -5,7 +5,7 @@ class CaseController extends Controller {
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/cms';
+	public $layout='//layouts/content';
     public $content_title = '案例管理';
 
     /**
@@ -62,14 +62,14 @@ class CaseController extends Controller {
 	 */
 	public function actionCreate()
 	{
-		$model=new anli;
+		$model=new Anli;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['anli']))
+		if(isset($_POST['Anli']))
 		{
-			$model->attributes=$_POST['anli'];
+			$model->attributes=$_POST['Anli'];
                          $img = CUploadedFile::getInstance($model, 'image');
                         if($img){
                         if($img->size > 2000000){
@@ -115,11 +115,11 @@ class CaseController extends Controller {
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['anli']))
+		if(isset($_POST['Anli']))
 		{
-			$model->attributes=$_POST['anli'];
-                        $anli = anli::model()->findByPk($id);
-                        $img = $_FILES['anli']['name']['image'];
+			$model->attributes=$_POST['Anli'];
+                        $Anli = Anli::model()->findByPk($id);
+                        $img = $_FILES['Anli']['name']['image'];
                         if($img !== ''){
                         $img = CUploadedFile::getInstance($model, 'image');
                         $extensionName = explode('.', $img->getName());
@@ -134,13 +134,13 @@ class CaseController extends Controller {
                         $img1 = md5(time()) .'.'. $extensionName;
                         $model->image = $time_path.$img1;
                         }else{
-                        $model->image = $anli->image;
+                        $model->image = $Anli->image;
                         }
 
                         //$model->cate_id = $_POST['Caigou']['cate_id'];
 			if($model->save()){
                             if($img !== ''){
-                            @unlink(dirname(Yii::app()->basePath).'/upload/case/'.$anli->image);
+                            @unlink(dirname(Yii::app()->basePath).'/upload/case/'.$Anli->image);
                             //$model->default_image->saveAs(dirname(Yii::app()->basePath) .'/upload/caigou/'.$pic_name,true);
                             $img -> saveAs($img_src);
                             }
@@ -178,7 +178,7 @@ class CaseController extends Controller {
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('anli');
+		$dataProvider=new CActiveDataProvider('Anli');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -189,10 +189,10 @@ class CaseController extends Controller {
 	 */
 	public function actionAdmin()
 	{
-		$model=new anli('search');
+		$model=new Anli('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['anli']))
-			$model->attributes=$_GET['anli'];
+		if(isset($_GET['Anli']))
+			$model->attributes=$_GET['Anli'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -206,7 +206,7 @@ class CaseController extends Controller {
 	 */
 	public function loadModel($id)
 	{
-		$model=anli::model()->findByPk((int)$id);
+		$model=Anli::model()->findByPk((int)$id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -218,7 +218,7 @@ class CaseController extends Controller {
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='anli-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='Anli-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

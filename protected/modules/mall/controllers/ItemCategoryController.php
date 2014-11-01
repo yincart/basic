@@ -2,6 +2,7 @@
 
 class ItemCategoryController extends MallBaseController
 {
+    public $content_title="商品分类";
 
     /**
      * Creates a new model.

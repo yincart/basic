@@ -27,7 +27,7 @@ class ElFinderWidget extends CWidget
 
         // jQuery and jQuery UI
 //        $cs->registerCssFile($cs->getCoreScriptUrl() . '/jui/css/base/jquery-ui.css');
-        $cs->registerCssFile('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css');
+        $cs->registerCssFile($this->assetsDir .'/css/jquery-ui.css');
         $cs->registerCoreScript('jquery');
         $cs->registerCoreScript('jquery.ui');
 

@@ -6,7 +6,7 @@ class AdController extends Controller {
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = '//layouts/cms';
+    public $layout = '//layouts/content';
     public $content_title = '广告管理';
 
     /**

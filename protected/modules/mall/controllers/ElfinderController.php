@@ -5,7 +5,7 @@
 
 class ElfinderController extends MallBaseController
 {
-    public $layout = '//layouts/mall';
+    public $content_title = '图片空间';
 
     public function actions()
     {

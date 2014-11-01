@@ -316,7 +316,7 @@
             </a>
         </li>
         <li class=''>
-            <a href='<?php echo Yii::app()->createUrl('/cms/comment/admin') ?>'>
+            <a href='<?php echo Yii::app()->createUrl('/cms/comment/index') ?>'>
                 <i class='icon-caret-right'></i>
                 <span>评论管理</span>
             </a>
@@ -373,25 +373,25 @@
     </a>
     <ul class='nav nav-stacked'>
         <li class=''>
-            <a href='ui_elements.html'>
+            <a href='<?php echo Yii::app()->createUrl('/mall/itemCategory/admin') ?>'>
                 <i class='icon-caret-right'></i>
                 <span>商品分类</span>
             </a>
         </li>
         <li class=''>
-            <a href='widgets.html'>
+            <a href='<?php echo Yii::app()->createUrl('/mall/itemProp/admin') ?>'>
                 <i class='icon-caret-right'></i>
                 <span>商品属性</span>
             </a>
         </li>
         <li class=''>
-            <a href='widgets.html'>
+            <a href='<?php echo Yii::app()->createUrl('/mall/item/admin') ?>'>
                 <i class='icon-caret-right'></i>
                 <span>商品列表</span>
             </a>
         </li>
         <li class=''>
-            <a href='widgets.html'>
+            <a href='<?php echo Yii::app()->createUrl('/mall/elfinder/admin') ?>'>
                 <i class='icon-caret-right'></i>
                 <span>图片空间</span>
             </a>

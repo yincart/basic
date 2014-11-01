@@ -11,5 +11,4 @@ $this->menu = array(
 );
 ?>
 
-<h1><?php echo Yii::t('main','Update Content Category');?> #<?php echo $model->category_id;?></h1>
 <?php echo $this->renderPartial('_form', array('model' => $model)); ?>

@@ -6,6 +6,7 @@
 class NewsController extends Controller {
 
     public $layout = '//layouts/cms';
+    public $content_title = '新闻管理';
 
     /**
      * @return array action filters

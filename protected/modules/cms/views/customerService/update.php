@@ -17,6 +17,4 @@ $this->menu=array(
 );
 ?>
 
-    <h1><?php echo Yii::t('main','Update CustomerService ');?><?php echo $model->title; ?></h1>
-
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

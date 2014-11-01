@@ -18,8 +18,6 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('main','View FriendLink') ?> #<?php echo $model->title; ?></h1>
-
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
         'class' => 'table table-striped table-condensed table-hover',

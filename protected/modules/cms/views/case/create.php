@@ -9,6 +9,4 @@ $this->menu=array(
 );
 ?>
 
-<h1>创建案例</h1>
-
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

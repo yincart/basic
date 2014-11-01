@@ -9,5 +9,4 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('main','Create Flash Ads');?></h1>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

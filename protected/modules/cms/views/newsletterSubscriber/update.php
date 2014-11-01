@@ -18,6 +18,4 @@ $this->menu=array(
 );
 ?>
 
-    <h1><?php echo Yii::t('main','Update NewsletterSubscriber') ?> <?php echo $model->subscriber_id; ?></h1>
-
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -13,8 +13,6 @@ array('label'=>'Manage Video','icon'=>'cog','url'=>array('admin')),
 );
 ?>
 
-<h1>View Video #<?php echo $model->video_id; ?></h1>
-
 <?php $this->widget('bootstrap.widgets.TbDetailView',array(
 'data'=>$model,
 'attributes'=>array(

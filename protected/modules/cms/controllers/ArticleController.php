@@ -6,6 +6,7 @@
 class ArticleController extends Controller {
 
     public $layout = '//layouts/cms';
+    public $content_title = '文章管理';
 
     /**
      * @return array action filters

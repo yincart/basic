@@ -15,6 +15,4 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php Yii::t('main','Create NewsletterSubscriber')?></h1>
-
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

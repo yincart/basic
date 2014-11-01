@@ -15,6 +15,4 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('main','Create CustomerService');?></h1>
-
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

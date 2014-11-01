@@ -18,6 +18,4 @@ $this->menu=array(
 );
 ?>
 
-    <h1><?php echo Yii::t('main','Update FriendLink') ?> #<?php echo $model->link_id; ?></h1>
-
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

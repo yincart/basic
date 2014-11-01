@@ -13,8 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>View anli #<?php echo $model->id; ?></h1>
-
 <?php $this->widget('bootstrap.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(

@@ -8,9 +8,8 @@ $this->menu = array(
     array('label' => Yii::t('main', 'Create Content Category'), 'icon' => 'plus', 'url' => array('create')),
 );
 ?>
-<h1><?php echo Yii::t('main','Content Category');?></h1>
-<div class="well well-large">
-    <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+
+<?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
             'id' => 'contentForm',
             'htmlOptions' => array(
                 'class' => 'form-horizontal',
@@ -34,4 +33,3 @@ $options = array(
 echo Category::model()->getTree(1, $options, 'getLabel');
     $this->endWidget();
 ?>
-</div>

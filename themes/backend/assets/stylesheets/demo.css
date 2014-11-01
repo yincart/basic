@@ -1,0 +1,15 @@
+#stats-chart1, #stats-chart2, #stats-chart3, #stats-chart7, #stats-chart8 {
+  height: 200px; }
+
+.color-settings .color-title {
+  font-weight: bold;
+  padding-left: 10px; }
+
+.box-nomargin {
+  margin-bottom: 20px; }
+  @media screen and (min-width: 768px) {
+    .box-nomargin {
+      margin-bottom: 0; } }
+
+.wysihtml5-sandbox {
+  box-sizing: border-box; }

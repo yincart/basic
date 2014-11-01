@@ -13,8 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('main','View News') ?> #<?php echo $model->title; ?></h1>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(

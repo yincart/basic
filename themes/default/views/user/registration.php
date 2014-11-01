@@ -128,7 +128,7 @@ $this->breadcrumbs=array(
 
   </div>
         <div class="logo_b col-lg-6">
-            <img alt="" src="<?php echo Yii::app()->theme->baseUrl; ?>/image/logo_b.png" width="257" height="152"/>
+            <img alt="" src="<?php echo Yii::app()->request->baseUrl; ?>/images/login_logo.png" width="257" height="152"/>
         </div>
 </div>
     </div>

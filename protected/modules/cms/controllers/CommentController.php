@@ -7,6 +7,7 @@ class CommentController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/cms';
+    public $content_title = '评论管理';
 
 	/**
 	 * @return array action filters

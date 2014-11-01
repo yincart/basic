@@ -11,8 +11,6 @@ $this->breadcrumbs=array(
 	array('label'=>'View Video','icon'=>'eye-open','url'=>array('view','id'=>$model->video_id)),
 	array('label'=>'Manage Video','icon'=>'cog','url'=>array('admin')),
 	);
-	?>
-
-	<h1>Update Video <?php echo $model->video_id; ?></h1>
+?>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>

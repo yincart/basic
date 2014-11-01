@@ -15,7 +15,7 @@ $this->menu=array(
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'comment-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+//	'filter'=>$model,
 	'columns'=>array(
 		'id',
 		'content',

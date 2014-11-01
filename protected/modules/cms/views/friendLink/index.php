@@ -14,8 +14,6 @@ $this->menu=array(
 );
 ?>
 
-<h1 align="center"><?php echo Yii::t('main','Friend Links'); ?></h1>
-
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',

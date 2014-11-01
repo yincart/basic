@@ -11,6 +11,4 @@ $this->menu=array(
 );
 ?>
 
-<h1>更新案例 <?php echo $model->id; ?></h1>
-
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

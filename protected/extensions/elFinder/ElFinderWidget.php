@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by JetBrains PhpStorm.
  * User: z_bodya
@@ -27,7 +28,7 @@ class ElFinderWidget extends CWidget
 
         // jQuery and jQuery UI
 //        $cs->registerCssFile($cs->getCoreScriptUrl() . '/jui/css/base/jquery-ui.css');
-        $cs->registerCssFile($this->assetsDir .'/css/jquery-ui.css');
+        $cs->registerCssFile($this->assetsDir . '/css/jquery-ui.css');
         $cs->registerCoreScript('jquery');
         $cs->registerCoreScript('jquery.ui');
 
@@ -37,9 +38,9 @@ class ElFinderWidget extends CWidget
 
         // elFinder JS
         if (YII_DEBUG) {
-            $cs->registerScriptFile($this->assetsDir . '/js/elfinder.full.js');
+            $cs->registerScriptFile($this->assetsDir . '/js/elfinder.full.js', CClientScript::POS_END);
         } else {
-            $cs->registerScriptFile($this->assetsDir . '/js/elfinder.min.js');
+            $cs->registerScriptFile($this->assetsDir . '/js/elfinder.min.js', CClientScript::POS_END);
         }
         // elFinder translation
         $langs = array('bg', 'jp', 'sk', 'cs', 'ko', 'th', 'de', 'lv', 'tr', 'el', 'nl', 'uk',
@@ -62,7 +63,7 @@ class ElFinderWidget extends CWidget
 
         $this->settings['url'] = Yii::app()->createUrl($this->connectorRoute);
         $this->settings['lang'] = Yii::app()->language;
-        $this->settings['onlyMimes']='image';
+        $this->settings['onlyMimes'] = 'image';
         if (Yii::app()->getRequest()->enableCsrfValidation) {
             $this->settings['customData'] = array(Yii::app()->request->csrfTokenName => Yii::app()->request->csrfToken);
         }

@@ -30,6 +30,14 @@ return array(
         'application.models.*',
         'application.components.*',
         'application.modules.user.models.*',
+        'application.modules.core.models.*',
+        'application.modules.marketplace.models.*',
+        'application.modules.catalog.models.*',
+        'application.modules.payment.models.*',
+        'application.modules.review.models.*',
+        'application.modules.sale.models.*',
+        'application.modules.shipping.models.*',
+        'application.modules.review.models.*',
         'bootstrap.helpers.TbHtml',
     ),
     // path aliases
@@ -48,14 +56,11 @@ return array(
             'ipFilters' => array('127.0.0.1', '::1'),
         ),
         'auth' => array(
-            'class' => 'backend.modules.auth.AuthModule' // Path to module in backend.
+            'class' => 'application.modules.auth.AuthModule' // Path to module in backend.
         ),
         // uncomment the following to enable the Gii tool
         'cms' => array(
             'class' => 'application.modules.cms.CmsModule',
-        ),
-        'mall' => array(
-            'class' => 'application.modules.mall.MallModule',
         ),
         'user' => array(
             'class' => 'application.modules.user.UserModule',
@@ -64,6 +69,30 @@ return array(
             'class' => 'application.modules.plugin.PluginModule',
             'pluginRoot' => 'application.plugin', # 插件目录，默认为 application.plugin
             // 'layout' => ''		# 后台插件管理页面主layout文件,默认为 //layouts/main
+        ),
+        'core' => array(
+            'class' => 'application.modules.core.CoreModule',
+        ),
+        'marketplace' => array(
+            'class' => 'application.modules.marketplace.MarketplaceModule',
+        ),
+        'catalog' => array(
+            'class' => 'application.modules.catalog.CatalogModule',
+        ),
+        'marketing' => array(
+            'class' => 'application.modules.marketing.MarketingModule',
+        ),
+        'payment' => array(
+            'class' => 'application.modules.payment.PaymentModule',
+        ),
+        'sale' => array(
+            'class' => 'application.modules.sale.SaleModule',
+        ),
+        'shipping' => array(
+            'class' => 'application.modules.shipping.ShippingModule',
+        ),
+        'review' => array(
+            'class' => 'application.modules.review.ReviewModule',
         ),
     ),
     // application components

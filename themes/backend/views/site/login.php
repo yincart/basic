@@ -101,20 +101,20 @@
                 </label>
                 <button class='btn btn-block'>Sign in</button>
             </form>
-            <div class='text-center'>
-                <hr class='hr-normal'>
-                <a href='forgot_password.html'>Forgot your password?</a>
-            </div>
+<!--            <div class='text-center'>-->
+<!--                <hr class='hr-normal'>-->
+<!--                <a href='forgot_password.html'>Forgot your password?</a>-->
+<!--            </div>-->
             <?php $this->endWidget(); ?>
         </div>
     </div>
-    <div class='login-action text-center'>
-        <a href='<?php echo Yii::app()->createUrl('/site/sign_up') ?>'>
-            <i class='icon-user'></i>
-            New to Yincart?
-            <strong>Sign up</strong>
-        </a>
-    </div>
+<!--    <div class='login-action text-center'>-->
+<!--        <a href='--><?php //echo Yii::app()->createUrl('/site/sign_up') ?><!--'>-->
+<!--            <i class='icon-user'></i>-->
+<!--            New to Yincart?-->
+<!--            <strong>Sign up</strong>-->
+<!--        </a>-->
+<!--    </div>-->
 </div>
 <!-- / jquery -->
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/javascripts/jquery/jquery.min.js" type="text/javascript"></script>

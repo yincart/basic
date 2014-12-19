@@ -4,12 +4,15 @@
  * This is the model class for table "video".
  *
  * The followings are the available columns in table 'video':
- * @property integer $video_id
+ * @property string $video_id
+ * @property string $category_id
  * @property string $title
- * @property string $url
  * @property string $content
+ * @property string $url
  * @property integer $create_time
  * @property integer $update_time
+ * @property string $author
+ * @property string $pic
  */
 class Video extends CActiveRecord
 {
@@ -29,12 +32,14 @@ class Video extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('category_id, title, content, url, create_time, update_time, author, pic', 'required'),
 			array('create_time, update_time', 'numerical', 'integerOnly'=>true),
-			array('title, url', 'length', 'max'=>255),
-			array('author, content', 'safe'),
+			array('category_id, author', 'length', 'max'=>50),
+			array('title, url', 'length', 'max'=>100),
+			array('pic', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('video_id, title, url, content, create_time, update_time', 'safe', 'on'=>'search'),
+			array('video_id, category_id, title, content, url, create_time, update_time, author, pic', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,13 +60,15 @@ class Video extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'video_id' => 'Video',
-			'title' => 'Title',
-			'url' => 'Url',
-            'author' => 'Author',
-			'content' => 'Content',
+			'video_id' => 'ID',
+			'category_id' => '视频分类',
+			'title' => '标题',
+			'content' => '描述',
+			'url' => '视频地址',
 			'create_time' => 'Create Time',
 			'update_time' => 'Update Time',
+			'author' => 'Author',
+			'pic' => 'Pic',
 		);
 	}
 
@@ -83,12 +90,15 @@ class Video extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('video_id',$this->video_id);
+		$criteria->compare('video_id',$this->video_id,true);
+		$criteria->compare('category_id',$this->category_id,true);
 		$criteria->compare('title',$this->title,true);
-		$criteria->compare('url',$this->url,true);
 		$criteria->compare('content',$this->content,true);
+		$criteria->compare('url',$this->url,true);
 		$criteria->compare('create_time',$this->create_time);
 		$criteria->compare('update_time',$this->update_time);
+		$criteria->compare('author',$this->author,true);
+		$criteria->compare('pic',$this->pic,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -105,18 +115,4 @@ class Video extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-
-
-    public function beforeSave() {
-        if (parent::beforeSave()) {
-            if ($this->isNewRecord) {
-                $this->create_time = $this->update_time = time();
-            }
-            else
-                $this->update_time = time();
-            return true;
-        }
-        else
-            return false;
-    }
 }

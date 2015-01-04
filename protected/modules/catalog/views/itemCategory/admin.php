@@ -19,22 +19,22 @@ $this->menu = array(
     $options = array(
         array(
             'text' => '商品',
-            'url' => '/mall/item/admin',
+            'url' => '/catalog/item/admin',
             'id' => 'Item[category_id]',
         ),
         array(
             'text' => '属性',
-            'url' => '/mall/itemProp/admin',
+            'url' => '/catalog/itemProp/admin',
             'id' => 'ItemProp[category_id]',
         ),
         array(
             'text' => '更新',
-            'url' => '/mall/itemCategory/update',
+            'url' => '/catalog/itemCategory/update',
         ),
         array(
             'text' => '删除',
             'htmlOptions' => array(
-                'submit' => '/mall/itemCategory/delete',
+                'submit' => '/catalog/itemCategory/delete',
                 'style' => 'cursor:pointer',
                 'confirm' => 'Are you sure you want to delete this item?'
             )

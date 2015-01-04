@@ -5,7 +5,7 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => Yii::t('main','Create Item'), 'icon' => 'plus', 'url' => array('create')),
+    array('label' => Yii::t('frontend','Create Item'), 'icon' => 'plus', 'url' => array('create')),
 );
 ?>
 
@@ -32,7 +32,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         ),
         array(
             'name' =>   'category.name',
-            'header' => '商品分类',
+            'header' => Yii::t('backend','Item Categories'),
         ),
         array(
             'name' => 'title',

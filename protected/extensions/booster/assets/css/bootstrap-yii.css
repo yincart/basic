@@ -1,0 +1,568 @@
+.ct-form-control {
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555555;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    min-width: 250px;
+}
+.input-group .ct-form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+	border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.input-group .ct-form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group > .btn, .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child), .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+	border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child), .input-group .ct-form-control:not(:first-child):not(:last-child) {
+	border-radius: 0;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.hide-text {
+    font: 0 / 0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.input-block-level {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+table.table {
+	margin: 0;
+}
+
+.grid-view {
+    padding-top: 20px;
+}
+
+.grid-view table.items th a {
+    display: block;
+    position: relative;
+}
+
+.grid-view table.items th a .caret {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 8px;
+}
+
+.grid-view table.items th a.asc .caret {
+	border-top: 8px solid;
+	border-bottom: none;
+    display: block;
+}
+
+.grid-view table.items th a.desc .caret {
+    border-bottom: 8px solid;
+    border-top: none;
+    display: block;
+}
+
+.grid-view table.items th:hover a.sort-link:after {
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    content: "\e094";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -4px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: text-top;
+    /* background-image: url("../bootstrap/img/glyphicons-halflings.png"); */
+    background-position: -312px -96px;
+    background-repeat: no-repeat;
+}
+
+.grid-view table.items th:hover a.asc:after {
+    /* background-position: -289px -96px; */
+    content: "\e093";
+}
+
+.grid-view table.items tr.selected td {
+    background: #eeeeee;
+}
+
+.grid-view .filters .filter-container {
+    padding: 0;
+}
+
+.grid-view .filters input, .grid-view .filters select {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.grid-view .button-column {
+    text-align: center;
+    width: 67px;
+}
+
+.grid-view .checkbox-column {
+    width: 15px;
+}
+
+.grid-view .summary {
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.grid-view .pager {
+    margin-top: 5px;
+}
+
+.grid-view .empty {
+    font-style: italic;
+}
+
+.grid-view-loading {
+    background: url(../img/loading.gif) no-repeat;
+}
+
+.list-view {
+    padding-top: 20px;
+}
+
+.list-view .summary {
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.list-view .pager {
+    margin-top: 5px;
+}
+
+.list-view .sorter {
+    margin: 0 0 5px 0;
+    text-align: right;
+}
+
+.list-view .sorter ul {
+    display: inline;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-view .sorter li {
+    display: inline;
+    margin: 0 0 0 5px;
+    padding: 0;
+}
+
+.list-view .sorter a .caret {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+}
+
+.list-view .sorter a .caret.desc .caret {
+    border-bottom: 4px solid #000000;
+    border-top: none;
+}
+
+.list-view-loading {
+    background: url(../img/loading.gif) no-repeat;
+}
+
+.detail-view .null {
+    color: #ffc0cb;
+}
+
+.detail-view th {
+    text-align: right;
+    width: 160px;
+}
+
+span.required {
+    color: #ff0000;
+}
+
+.form-inline .controls-inline {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+.form-inline label.error, .form-horizontal label.error, .form-vertical label.error {
+    color: #b94a48;
+}
+
+.form-inline select.error, .form-inline input.error, .form-inline textarea.error, .form-inline .controls-inline.error select, .form-inline .controls-inline.error input, .form-inline .controls-inline.error textarea, .form-horizontal select.error, .form-horizontal input.error, .form-horizontal textarea.error, .form-vertical select.error, .form-vertical input.error, .form-vertical textarea.error {
+    border-color: #b94a48;
+    color: #b94a48;
+}
+
+.form-inline select.error:focus, .form-inline input.error:focus, .form-inline textarea.error:focus, .form-inline .controls-inline.error select:focus, .form-inline .controls-inline.error input:focus, .form-inline .controls-inline.error textarea:focus, .form-horizontal select.error:focus, .form-horizontal input.error:focus, .form-horizontal textarea.error:focus, .form-vertical select.error:focus, .form-vertical input.error:focus, .form-vertical textarea.error:focus {
+    border-color: #953b39;
+    -webkit-box-shadow: 0 0 6px #d59392;
+    -moz-box-shadow: 0 0 6px #d59392;
+    box-shadow: 0 0 6px #d59392;
+}
+
+.form-inline .help-block.error, .form-inline .help-inline.error, .form-horizontal .help-block.error, .form-horizontal .help-inline.error, .form-vertical .help-block.error, .form-vertical .help-inline.error {
+    color: #b94a48;
+}
+
+.select2-container {
+    margin-bottom: 9px;
+}
+
+.select2-container-multi .select2-choices {
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid #CCCCCC;
+    color: #555555;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.select2-container-multi.select2-dropdown-open .select2-choices {
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+/* Responsive Tables */
+table th {
+    font-weight: bold;
+}
+
+table td, table th {
+    padding: 9px 10px;
+    text-align: left;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+
+    table.responsive {
+        margin-bottom: 0;
+    }
+
+    .pinned {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #fff;
+        width: 35%;
+        overflow: hidden;
+        overflow-x: scroll;
+        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+
+    .pinned table {
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+    .pinned table th, .pinned table td {
+        white-space: nowrap;
+    }
+
+    .pinned td:last-child {
+        border-bottom: 0;
+    }
+
+    div.table-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+        border-right: 1px solid #ccc;
+    }
+
+    div.table-wrapper div.scrollable table {
+        margin-left: 35%;
+    }
+
+    div.table-wrapper div.scrollable {
+        overflow: scroll;
+        overflow-y: hidden;
+    }
+
+    table.responsive td, table.responsive th {
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td {
+        display: none;
+    }
+
+}
+
+input.form-control[type="file"] {
+	border: none;
+	border-radius: 0;
+    box-shadow: none;
+	padding: 0;
+}
+
+.form-inline .form-group {
+	vertical-align: top;
+}
+
+.select2-container {
+	min-width: 150px;
+}
+
+/*
+
+http://stackoverflow.com/questions/9618630/how-to-create-a-buttons-group-with-one-button-having-dropdown-menu
+
+Twitter Bootstrap CSS modifications for having dropdown menus in
+buttons groups.
+Dropdowns menus are well positionned, under their buttons.
+
+LESS code at bottom
+
+Kure2012.
+
+*/
+.btn-group.group-dropdown {
+  margin: 0px;
+  padding: 0px;
+  margin-left: -1px;
+}
+.btn-group.group-dropdown .dropdown-toggle {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.btn-group.group-dropdown:first-child {
+  margin: 0px;
+  padding: 0px;
+  margin-right: -1px;
+}
+.btn-group.group-dropdown:first-child .dropdown-toggle {
+  -webkit-border-top-left-radius: 4px !important;
+  -moz-border-radius-topleft: 4px !important;
+  border-top-left-radius: 4px !important;
+  -webkit-border-bottom-left-radius: 4px !important;
+  -moz-border-radius-bottomleft: 4px !important;
+  border-bottom-left-radius: 4px !important;
+}
+.btn-group.group-dropdown:first-child .dropdown-toggle.btn-large {
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-left-radius: 6px;
+}
+.btn-group.group-dropdown:last-child {
+  margin: 0px;
+  padding: 0px;
+  margin-left: -1px;
+}
+.btn-group.group-dropdown:last-child .dropdown-toggle {
+  -webkit-border-top-right-radius: 4px !important;
+  -moz-border-radius-topright: 4px !important;
+  border-top-right-radius: 4px !important;
+  -webkit-border-bottom-right-radius: 4px !important;
+  -moz-border-radius-bottomright: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+.btn-group.group-dropdown:last-child .dropdown-toggle.btn-large {
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* And the LESS Code :
+.btn-group{
+    &.group-dropdown{
+        margin:0px;
+        padding:0px;
+        margin-left:-1px;
+        .dropdown-toggle{
+            .border-radius(0);
+        }
+        &:first-child{
+            margin:0px;
+            padding:0px;
+            margin-right:-1px;
+            .dropdown-toggle{
+                .border-top-left-radius(4px);
+                .border-bottom-left-radius(4px);
+                &.btn-large{
+                    .border-top-left-radius(6px);
+                    .border-bottom-left-radius(6px);
+                }
+            }                
+        }
+        &:last-child{
+            margin:0px;
+            padding:0px;
+            margin-left:-1px;
+            .dropdown-toggle{
+                .border-top-right-radius(4px);
+                .border-bottom-right-radius(4px);
+                &.btn-large{
+                    .border-top-right-radius(6px);
+                    .border-bottom-right-radius(6px);
+                }
+            }
+        }
+    }    
+}
+*/
+
+.btn-group {
+	margin: 0px 5px;
+}
+
+.toggle-column {
+	text-align: center;
+	width: 20px;
+}
+
+/* tabs placement */
+.tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.tabs-below > .nav-tabs {
+  border-top: 1px solid #ddd;
+}
+
+.tabs-below > .nav-tabs > li {
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+
+.tabs-below > .nav-tabs > li > a {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+}
+
+.tabs-below > .nav-tabs > li > a:hover,
+.tabs-below > .nav-tabs > li > a:focus {
+  border-top-color: #ddd;
+  border-bottom-color: transparent;
+}
+
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus {
+  border-color: transparent #ddd #ddd #ddd;
+}
+
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+}
+
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: #ffffff;
+}
+
+.tabs-right > .nav-tabs {
+  float: right;
+  margin-left: 19px;
+  border-left: 1px solid #ddd;
+}
+
+.tabs-right > .nav-tabs > li > a {
+  margin-left: -1px;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+}
+
+.tabs-right > .nav-tabs > li > a:hover,
+.tabs-right > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+}
+
+.tabs-right > .nav-tabs .active > a,
+.tabs-right > .nav-tabs .active > a:hover,
+.tabs-right > .nav-tabs .active > a:focus {
+  border-color: #ddd #ddd #ddd transparent;
+  *border-left-color: #ffffff;
+}
+
+/* Gii */
+.form.gii .tooltip {
+    opacity: 1;
+    font-size: 1em;
+}

@@ -24,7 +24,7 @@ return array(
     'name' => 'Yincart演示商城',
 
     'language' => 'zh_cn',
-    'theme' => 'default',
+    'theme' => 'flatastic',
     // preloading 'log' component
     'preload' => array('log'),//, 'translate'),
     // autoloading model and component classes
@@ -101,6 +101,7 @@ return array(
         'install',
         // uncomment the following to enable the Gii tool
         'member',
+        'site',
 //        'translate',
         'cms' => array(
             'class' => 'application.modules.cms.CmsModule'

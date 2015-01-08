@@ -9,7 +9,7 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('main','List Menus');?></h1>
+<!--<h1>--><?php //echo Yii::t('main','List Menus');?><!--</h1>-->
 
 <div class="well well-large">
 <?php
@@ -41,8 +41,8 @@ foreach ($menu as $n => $m) {
 
     echo CHtml::openTag('li');
     echo CHtml::encode($m->name).'<span style="float:right">['.
-            CHtml::link('更新', array('/menu/update', 'id'=>$m->id)).']['.
-            CHtml::link('删除', '', array('submit'=>array('/menu/delete','id'=>$m->id),'style'=>'cursor:pointer', 'confirm'=>'Are you sure you want to delete this item?')).']</span>';
+            CHtml::link('更新', array('/core/menu/update', 'id'=>$m->id)).']['.
+            CHtml::link('删除', '', array('submit'=>array('/core/menu/delete','id'=>$m->id),'style'=>'cursor:pointer', 'confirm'=>'Are you sure you want to delete this item?')).']</span>';
     $level = $m->level;
 }
 

@@ -8,6 +8,22 @@
                 </div>
             </form>
         </div>
+        <?php
+//        $this->widget('bootstrap.widgets.TbNav', array(
+//            'type' => TbHtml::NAV_TYPE_LIST,
+//            'items' => array(
+//                array('label' => 'List header'),
+//                array('label' => 'Home', 'url' => '#', 'active' => true),
+//                array('label' => 'Library', 'url' => '#'),
+//                array('label' => 'Applications', 'url' => '#'),
+//                array('label' => 'Another list header'),
+//                array('label' => 'Profile', 'url' => '#'),
+//                array('label' => 'Settings', 'url' => '#'),
+//                TbHtml::menuDivider(),
+//                array('label' => 'Help', 'url' => '#'),
+//            )
+//        ));
+        ?>
         <ul class='nav nav-stacked'>
             <li class='active'>
                 <a href='<?php echo Yii::app()->createUrl('/site/index') ?>'>

@@ -49,7 +49,7 @@ class ServerFileInput extends CInputWidget
 EOF;
         } else {
             echo "<div>upload picture:&nbsp;&nbsp;&nbsp;&nbsp;<button type='button' id='openElfinder'>upload</button></div>";
-            echo "<div id='browse-image-btn' class='img-item' style='cursor: pointer'>";
+            echo "<div id='browse-image-btn' class='img-item' style='cursor: pointer;padding-top: 10px'>";
             echo CHtml::image($this->model->{$this->attribute});
             echo CHtml::activeHiddenField($this->model, $this->attribute);
             echo "</div>";
@@ -95,7 +95,7 @@ EOF;
 
     .img-item,
     .img-item img {
-        width: 60px;
+        width: auto;
         height: 60px;
         display: inline-block;
     }

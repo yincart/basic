@@ -7,7 +7,16 @@
  */
 
 class WLeftMenu extends CWidget {
+
     public function run() {
-        $this->render('left_menu');
+        $cat = isset($_GET['cat']) ? $_GET['cat'] : 3;
+        $model = Category::model()->findByAttributes(array('url' => $cat,'root' => 3));
+        $childs=$model->children()->findAll();
+//        foreach($childs as $child)
+//            $ids[] = $child->id;
+        $this->render('left_menu', array(
+            'model' => $childs,
+        ));
     }
+
 }

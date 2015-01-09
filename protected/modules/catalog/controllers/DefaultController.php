@@ -6,6 +6,7 @@ class DefaultController extends Controller
 	{
 		$cat = isset($_GET['cat']) ? $_GET['cat'] : 3;
 		$category = is_numeric($cat) ? Category::model()->findByPk($cat) : Category::model()->findByAttributes(array('url' => $cat));
+
 		if (empty($category) || $category->root != 3) {
 			throw new CHttpException(404, 'The requested page does not exist.');
 		}

@@ -10,7 +10,7 @@
 <body>
 <?php
 $this->widget('ext.elFinder.ElFinderWidget', array(
-        'connectorRoute' => '/mall/elfinder/connector',
+        'connectorRoute' => '/catalog/elfinder/connector',
     )
 );
 ?>

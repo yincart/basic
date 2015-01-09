@@ -59,16 +59,6 @@ echo '</select>';
 
 	<?php echo $form->textFieldControlGroup($model,'name',array('class'=>'span5','maxlength'=>100)); ?>
 
-	<?php echo $form->textFieldControlGroup($model,'url',array('class'=>'span5','maxlength'=>255)); ?>
-
-	<?php echo $form->fileFieldControlGroup($model,'pic',array('class'=>'span5','maxlength'=>255)); ?>
-
-<!--	--><?php //echo $form->textFieldControlGroup($model,'position',array('class'=>'span5','maxlength'=>45)); ?>
-
-	<?php echo $form->dropDownListControlGroup($model,'is_show',array('1'=>'是', '0'=>'否')); ?>
-
-<!--	--><?php //echo $form->textAreaControlGroup($model,'memo',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
-
 	<div class="form-actions">
 		<?php echo TbHtml::formActions(array(
             TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),

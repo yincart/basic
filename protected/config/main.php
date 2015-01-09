@@ -185,7 +185,7 @@ return array(
         ),
         'errorHandler' => array(
             // use 'site/error' action to display errors
-            'errorAction' => 'site/default/error',
+            'errorAction' => '/site/default/error',
         ),
         
         'urlManager' => array(
@@ -193,7 +193,7 @@ return array(
             'showScriptName' => false,
             'rules' => array(
                 'page/<key:\w+>' => 'site/page/index',
-//                'catalog/<cat:\w+>' => 'catalog/index',
+                'catalog/<cat:\w+>' => 'catalog/default/index',
 //                'catalog/<cat:\w+>/<prop:.*?*>' => 'catalog/index',
                 'list/<category_id:\d+>' => 'item/index',
                 'item-list-<key:\w+>' => 'item/list',

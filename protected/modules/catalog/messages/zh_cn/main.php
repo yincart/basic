@@ -19,7 +19,7 @@
 return array (
   'Category' => '',
   'Create' => '',
-  'Create Category' => '',
+  'Create Category' => '创建分类',
   'Create Item' => '',
   'Create ItemSku' => '',
   'ItemSku' => '',

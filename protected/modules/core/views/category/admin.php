@@ -22,34 +22,34 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 $options = array(
     array(
         'text' => '更新',
-        'url' => '/category/update',
+        'url' => '/core/category/update',
     ),
     array(
             'text' => '删除',
             'htmlOptions' => array(
-                'submit' => '/category/delete',
+                'submit' => '/core/category/delete',
                 'style' => 'cursor:pointer',
                 'confirm' => 'Are you sure you want to delete this item?'
             )
         )
 );
-echo Category::model()->getTree(1, $options, 'getLabel');
+echo Category::model()->getTree(0, $options, 'getLabel', 1);
 
-$options = array(
-    array(
-        'text' => '更新',
-        'url' => '/mall/itemCategory/update',
-    ),
-    array(
-        'text' => '删除',
-        'htmlOptions' => array(
-            'submit' => '/mall/itemCategory/delete',
-            'style' => 'cursor:pointer',
-            'confirm' => 'Are you sure you want to delete this item?'
-        )
-    )
-);
-echo Category::model()->getTree(3, $options, 'getLabel');
+//$options = array(
+//    array(
+//        'text' => '更新',
+//        'url' => '/mall/itemCategory/update',
+//    ),
+//    array(
+//        'text' => '删除',
+//        'htmlOptions' => array(
+//            'submit' => '/mall/itemCategory/delete',
+//            'style' => 'cursor:pointer',
+//            'confirm' => 'Are you sure you want to delete this item?'
+//        )
+//    )
+//);
+//echo Category::model()->getTree(3, $options, 'getLabel');
 $this->endWidget();
 ?>
 </div>

@@ -2,11 +2,9 @@
 
 class SettingsForm extends CFormModel
 {
-    public  $logo = '';
-
     public function  getLogo()
     {
-        return $this->logo;
+        return $this->site['logo'];
     }
     public $site = array(
         'name' => '',

@@ -74,10 +74,10 @@ class Category extends CActiveRecord
             'root' => 'Root',
             'level' => 'Level',
             'name' =>Yii::t('backend','名字'),
-            'label' => 'Label',
+            'label' => '标签',
             'url' => 'Url',
-            'pic' => 'Pic',
-            'is_show' => 'Is Show',
+            'pic' => '图片',
+            'is_show' => '是否显示',
         );
     }
 

@@ -15,23 +15,30 @@ class NestedSetExtBehavior extends CActiveRecordBehavior
      * @param $descendants , if input is int, findByPk in db as root
      * @param array $options , show options for action
      * @param string $name , show display name, can also input function name
-     * @return string,
-     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
+     * @param int $maxLevel
+     * @return string
      */
-    public function getTree($descendants, $options = array(), $name = 'name')
+    public function getTree($descendants, $options = array(), $name = 'name', $maxLevel = 0)
     {
         if (is_integer($descendants)) {
             if ($descendants) {
                 $root = $this->owner->findByPk($descendants);
-                $descendants = $root->descendants()->findAll();
+                if ($maxLevel) {
+                    $descendants = $root->descendants()->findAll(new CDbCriteria(array('condition' => 'level <= ' . $maxLevel)));
+                } else {
+                    $descendants = $root->descendants()->findAll();
+                }
             } else {
-                $descendants = $this->owner->findAll();
+                if ($maxLevel) {
+                    $descendants = $this->owner->findAll(new CDbCriteria(array('condition' =>  'level <= ' . $maxLevel)));
+                } else {
+                    $descendants = $this->owner->findAll();
+                }
             }
         }
 
         $html = '';
         $level = 0;
-
         foreach ($descendants as $n => $descendant) {
             if ($descendant->level == $level)
                 $html .= CHtml::closeTag('li') . "\n";
@@ -65,7 +72,6 @@ class NestedSetExtBehavior extends CActiveRecordBehavior
             }
             $html .= '</span>';
 
-            $level = $descendant->level;
             $level = $descendant->level;
         }
 

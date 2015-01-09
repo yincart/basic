@@ -2,67 +2,41 @@
     <!--widgets-->
     <figure class="widget shadow r_corners wrapper m_bottom_30">
         <figcaption>
-            <h3 class="color_light">Categories</h3>
+            <h3 class="color_light">商品分类</h3>
         </figcaption>
         <div class="widget_content">
             <!--Categories list-->
             <ul class="categories_list">
-                <li class="active">
+                <?php
+                foreach ($model as $c):
+                ?>
+                <li class="">
                     <a href="#" class="f_size_large scheme_color d_block relative">
-                        <b>Women</b>
+                        <b><?php echo $c->name ?></b>
                         <span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
                     </a>
                     <!--second level-->
                     <ul>
-                        <li class="active">
+                        <?php
+                        $model = Category::model()->findByPk($c->category_id);
+                                                $cc = $model ? $model->children()->findAll() : '';
+                                                foreach ($cc as $cc):
+                        ?>
+                        <li class="">
                             <a href="#" class="d_block f_size_large color_dark relative">
-                                Dresses<span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
+                                <?php echo $cc->name ?><span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
                             </a>
                             <!--third level-->
-                            <ul>
-                                <li><a href="#" class="color_dark d_block">Evening Dresses</a></li>
-                                <li><a href="#" class="color_dark d_block">Casual Dresses</a></li>
-                                <li><a href="#" class="color_dark d_block">Party Dresses</a></li>
-                            </ul>
+<!--                            <ul>-->
+<!--                                <li><a href="#" class="color_dark d_block">Evening Dresses</a></li>-->
+<!--                                <li><a href="#" class="color_dark d_block">Casual Dresses</a></li>-->
+<!--                                <li><a href="#" class="color_dark d_block">Party Dresses</a></li>-->
+<!--                            </ul>-->
                         </li>
-                        <li>
-                            <a href="#" class="d_block f_size_large color_dark relative">
-                                Accessories<span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d_block f_size_large color_dark relative">
-                                Tops<span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                            </a>
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </li>
-                <li>
-                    <a href="#" class="f_size_large color_dark d_block relative">
-                        <b>Men</b>
-                        <span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                    </a>
-                    <!--second level-->
-                    <ul class="d_none">
-                        <li>
-                            <a href="#" class="d_block f_size_large color_dark relative">
-                                Shorts<span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                            </a>
-                            <!--third level-->
-                            <ul class="d_none">
-                                <li><a href="#" class="color_dark d_block">Evening</a></li>
-                                <li><a href="#" class="color_dark d_block">Casual</a></li>
-                                <li><a href="#" class="color_dark d_block">Party</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="f_size_large color_dark d_block relative">
-                        <b>Kids</b>
-                        <span class="bg_light_color_1 r_corners f_right color_dark talign_c"></span>
-                    </a>
-                </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </figure>

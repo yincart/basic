@@ -2,8 +2,8 @@
     <section class="breadcrumbs">
         <div class="container">
             <ul class="horizontal_list clearfix bc_list f_size_medium">
-                <li class="m_right_10 current"><a href="#" class="default_t_color">Home<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
-                <li><a href="#" class="default_t_color">Women</a></li>
+                <li class="m_right_10 current"><a href="<?php echo F::url('/site/default/index') ?>" class="default_t_color">首页<i class="fa fa-angle-right d_inline_middle m_left_10"></i></a></li>
+                <li><a href="#" class="default_t_color"><?php echo $category->name  ?></a></li>
             </ul>
         </div>
     </section>
@@ -15,15 +15,15 @@
             <?php $this->widget('application.modules.catalog.widgets.WLeftMenu') ?>
             <!--right column-->
             <section class="col-lg-9 col-md-9 col-sm-9">
-                <h2 class="tt_uppercase color_dark m_bottom_25">Women</h2>
-                <img class="r_corners m_bottom_40" src="<?php echo F::themeUrl() ?>/images//category_img_1.jpg" alt="">
+                <h2 class="tt_uppercase color_dark m_bottom_25"><?php echo $category->name  ?></h2>
+                <?php echo $category->pic ? CHtml::image(F::baseUrl().$category->pic, '', array('class'=>'r_corners m_bottom_40')): ''?>
                 <!--categories nav-->
                 <nav class="m_bottom_40">
                     <ul class="horizontal_list clearfix categories_nav_list m_xs_right_0 t_mxs_align_c">
                         <li class="m_right_15 f_mxs_none w_mxs_auto d_mxs_inline_b m_mxs_bottom_20">
                             <a href="#" class="d_block photoframe tr_all_hover shadow color_dark r_corners">
 											<span class="d_block wrapper">
-												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images//category_img_2.jpg" alt="">
+												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images/category_img_2.jpg" alt="">
 											</span>
                                 Dresses
                             </a>
@@ -31,7 +31,7 @@
                         <li class="m_right_15 f_mxs_none w_mxs_auto d_mxs_inline_b m_mxs_bottom_20">
                             <a href="#" class="d_block photoframe tr_all_hover shadow color_dark r_corners">
 											<span class="d_block wrapper">
-												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images//category_img_3.jpg" alt="">
+												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images/category_img_3.jpg" alt="">
 											</span>
                                 Tops
                             </a>
@@ -39,7 +39,7 @@
                         <li class="m_right_15 f_mxs_none w_mxs_auto d_mxs_inline_b m_mxs_bottom_20">
                             <a href="#" class="d_block photoframe tr_all_hover shadow color_dark r_corners">
 											<span class="d_block wrapper">
-												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images//category_img_4.jpg" alt="">
+												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images/category_img_4.jpg" alt="">
 											</span>
                                 Skirts
                             </a>
@@ -47,7 +47,7 @@
                         <li class="m_right_15 f_mxs_none w_mxs_auto d_mxs_inline_b m_mxs_bottom_20">
                             <a href="#" class="d_block photoframe tr_all_hover shadow color_dark r_corners">
 											<span class="d_block wrapper">
-												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images//category_img_5.jpg" alt="">
+												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images/category_img_5.jpg" alt="">
 											</span>
                                 Pants
                             </a>
@@ -55,7 +55,7 @@
                         <li class="m_right_15 f_mxs_none w_mxs_auto d_mxs_inline_b m_mxs_bottom_20">
                             <a href="#" class="d_block photoframe tr_all_hover shadow color_dark r_corners">
 											<span class="d_block wrapper">
-												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images//category_img_6.jpg" alt="">
+												<img class="tr_all_long_hover" src="<?php echo F::themeUrl() ?>/images/category_img_6.jpg" alt="">
 											</span>
                                 Shorts
                             </a>

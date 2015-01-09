@@ -142,7 +142,10 @@
     <!--copyright part-->
     <div class="footer_bottom_part">
         <div class="container clearfix t_mxs_align_c">
-            <p class="f_left f_mxs_none m_mxs_bottom_10">&copy; 2014 <span class="color_light"><?php echo F::sg('site', 'name') ?></span>. All Rights Reserved. Powered by <a href="http://yincart.com">Yincart</a></p>
+            <p class="f_left f_mxs_none m_mxs_bottom_10">&copy; 2014 <span class="color_light">
+                    <?php echo F::sg('site', 'name') ?></span>. All Rights Reserved. Powered by <a href="http://yincart.com">Yincart</a>
+                <?php echo CHtml::link('清除缓存', array('/site/default/clear'), array('style'=>'color:grey'))?>
+            </p>
             <ul class="f_right horizontal_list clearfix f_mxs_none d_mxs_inline_b">
                 <li><img src="<?php echo F::themeUrl() ?>/images/payment_img_1.png" alt=""></li>
                 <li class="m_left_5"><img src="<?php echo F::themeUrl() ?>/images/payment_img_2.png" alt=""></li>

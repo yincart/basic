@@ -23,10 +23,11 @@ return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示商城',
 
-    'language' => 'zh_cn',
+    'language' => 'en',
+    'sourceLanguage' => 'en',
     'theme' => 'flatastic',
     // preloading 'log' component
-    'preload' => array('log'),//, 'translate'),
+    'preload' => array('log'),// 'translate'),
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
@@ -46,6 +47,8 @@ return array(
         'application.modules.sale.models.*',
         'application.modules.shipping.models.*',
         'application.modules.review.models.*',
+        'application.modules.translate.TranslateModule',
+        'application.modules.blog.models.*',
     ),
     // path aliases
     'aliases' => array(
@@ -102,6 +105,8 @@ return array(
         // uncomment the following to enable the Gii tool
         'member',
         'site',
+        'catalog',
+        'blog',
 //        'translate',
         'cms' => array(
             'class' => 'application.modules.cms.CmsModule'
@@ -180,14 +185,14 @@ return array(
         ),
         'errorHandler' => array(
             // use 'site/error' action to display errors
-            'errorAction' => 'site/error',
+            'errorAction' => 'site/default/error',
         ),
         
         'urlManager' => array(
             'urlFormat' => 'path',
             'showScriptName' => false,
             'rules' => array(
-                'page/<key:\w+>' => 'page/index',
+                'page/<key:\w+>' => 'site/page/index',
 //                'catalog/<cat:\w+>' => 'catalog/index',
 //                'catalog/<cat:\w+>/<prop:.*?*>' => 'catalog/index',
                 'list/<category_id:\d+>' => 'item/index',
@@ -205,24 +210,19 @@ return array(
         ),
 
         /* setup message translation method */
-        'messages' => array(
-            'class' => 'CPhpMessageSource',
-//            'basePath' => 'protected/messages',
-//            'onMissingTranslation' => array('Ei18n', 'missingTranslation'),
+//        'messages' => array(
+//            'class' => 'CPhpMessageSource',
+//            'onMissingTranslation' => array('TranslateModule', 'missingTranslation'),
 //            'sourceMessageTable' => 'source_message',
 //            'translatedMessageTable' => 'message'
-        ),
+//        ),
         /* setup global translate application component */
 //        'translate' => array(
-//            'class' => 'translate.components.Ei18n',
-//            'createTranslationTables' => true,
-//            'connectionID' => 'db',
-//            'languages' => array(
+//            'class' => 'translate.components.MPTranslate',
+//            'acceptedLanguages' => array(
 //                'en' => 'English',
 //                'de' => 'German',
 //                'zh_cn' => 'Chinese',
-//                'en_us' => 'America',
-//                'ru' => 'Russian'
 //            )
 //        ),
         'cache' => array(
@@ -238,14 +238,6 @@ return array(
             'createTable' => true,
             'dbEngine' => 'InnoDB',
         ),
-//        'db' => array(
-//            'connectionString' => 'mysql:host=localhost;dbname=yincart',
-//            'emulatePrepare' => true,
-//            'username' => 'yincart',
-//            'password' => 'yincart!@#',
-//            'charset' => 'utf8',
-//            'tablePrefix' => ''
-//        ),
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(

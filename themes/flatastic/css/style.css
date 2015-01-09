@@ -87,7 +87,7 @@ html,body{
 ------------------------------------- */
 
 body{
-	font:300 14px/21px 'Roboto', 'sans-serif';
+	font:500 14px/21px 'Roboto', 'sans-serif';
 	color:#696e6e;
 	background:#232830;
 	letter-spacing: 0.1px;
@@ -2307,7 +2307,7 @@ hr{
 	padding:14px 15px 20px;
 }
 .page_content_offset{
-	padding:60px 0;
+	padding:20px 0;
 }
 .product_item,.owl-item > .photoframe{
 	margin:15px;

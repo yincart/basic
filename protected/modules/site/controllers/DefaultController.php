@@ -137,8 +137,10 @@ class DefaultController extends YController {
 	public function actionClear() {
 		if(Yii::app()->cache->flush()){
 			echo 'Yes';
+			$this->redirect('/site');
 		}else{
 			echo 'No';
+			$this->redirect('/site');
 		}
 	}
 

@@ -36,7 +36,34 @@ class YController extends CController {
                $this->redirect('install/install');
            }
         }
+
+
+        if(isset($_GET['lang'])&&$_GET['lang']!=""){                    //當點擊轉換語言時  
+            Yii::app()->user->setState("language",$_GET['lang']);            //相當於與設置一個cookie  
+            Yii::app()->language = Yii::app()->user->getState("language");    //轉換成相應的記錄語言  
+        }
+
+        if(Yii::app()->user->getState("language")){                      //如果設置了有session記錄  
+            Yii::app()->language = Yii::app()->user->getState("language");    //轉換成相應的記錄語言  
+        }else {
+            Yii::app()->user->setState("language", "en_us");              //沒有session則設置一個session.默認語言為en_us
+            Yii::app()->language = Yii::app()->user->getState("language"); //轉換成相應的記錄語言
+        }
+
     }
+
+//    public function actionSetLanguage ($language,$redirect)
+//    {
+//        Yii::app()->setLanguage($language);
+//        $this->redirect($redirect);
+//    }
+//
+//    public function createUrl($route, $params = array(), $ampersand = '&') {
+//        return parent::createUrl($route, array_merge(
+//            array('lang' => Yii::app()->language), $params
+//        ), $ampersand);
+//    }
+
 
     public function afterAction($action)
     {

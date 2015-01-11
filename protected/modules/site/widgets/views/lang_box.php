@@ -16,7 +16,7 @@
             <?php echo CHtml::link(CHtml::image(F::themeUrl().'/images/flag_zh_cn.jpg', '', array('class'=>'d_inline_middle')).'Chinese', array('/site/default/index', 'lang'=>'zh_cn'), array('class'=>'tr_delay_hover color_light')) ?>
         </li>
         <li>
-            <?php echo CHtml::link(CHtml::image(F::themeUrl().'/images/flag_en.jpg', '', array('class'=>'d_inline_middle')).'English', array('/site/default/index', 'lang'=>'en'), array('class'=>'tr_delay_hover color_light')) ?>
+            <?php echo CHtml::link(CHtml::image(F::themeUrl().'/images/flag_en_us.jpg', '', array('class'=>'d_inline_middle')).'English', array('/site/default/index', 'lang'=>'en_us'), array('class'=>'tr_delay_hover color_light')) ?>
         </li>
         <li>
             <?php echo CHtml::link(CHtml::image(F::themeUrl().'/images/flag_de.jpg', '', array('class'=>'d_inline_middle')).'German', array('/site/default/index', 'lang'=>'de'), array('class'=>'tr_delay_hover color_light')) ?>

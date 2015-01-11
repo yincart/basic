@@ -15,7 +15,8 @@ class WLeftMenu extends CWidget {
 //        foreach($childs as $child)
 //            $ids[] = $child->id;
         $this->render('left_menu', array(
-            'model' => $childs,
+            'childs' => $childs,
+            'model' => $model
         ));
     }
 

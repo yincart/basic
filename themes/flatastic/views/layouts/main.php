@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo F::themeUrl() ?>/css/owl.transitions.css">
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo F::themeUrl() ?>/css/jquery.custom-scrollbar.css">
     <link rel="stylesheet" type="text/css" media="all" href="<?php echo F::themeUrl() ?>/css/style.css">
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo F::themeUrl() ?>/css/custom.css">
     <!--font include-->
     <link href="<?php echo F::themeUrl() ?>/css/font-awesome.min.css" rel="stylesheet">
     <script src="<?php echo F::themeUrl() ?>/js/modernizr.js"></script>

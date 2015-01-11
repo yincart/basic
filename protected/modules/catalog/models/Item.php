@@ -312,8 +312,10 @@ class Item extends YActiveRecord
     public function getMainPic($width = 200, $height = 200)
     {
         $itemImg = ItemImg::model()->findByAttributes(array('item_id' => $this->item_id, 'position' => 0));
-        return $itemImg->pic;
-        return ImageHelper::thumb($width, $height, $itemImg->pic);
+
+        return $itemImg->pic;;
+
+//        return ImageHelper::thumb($width, $height, $itemImg->pic);
     }
 
 //    public function defaultScope()
@@ -362,7 +364,7 @@ class Item extends YActiveRecord
             $title = $pinyin->full2();
             $title = str_replace('/', '-', $title);
         }
-        return Yii::app()->createUrl('item/view', array(
+        return Yii::app()->createUrl('catalog/item/view', array(
             'id' => $this->item_id,
             'title' => $title,
         ));

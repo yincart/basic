@@ -36,42 +36,46 @@ $('.search-form form').submit(function(){
     ?>
 </div><!-- search-form -->
 
-<?php
-$this->widget('bootstrap.widgets.TbGridView', array(
-    'id' => 'user-grid',
-    'dataProvider' => $model->search(),
-    'filter' => $model,
-    'columns' => array(
-	array(
-	    'name' => 'id',
-	    'type' => 'raw',
-	    'value' => 'CHtml::link(CHtml::encode($data->id),array("admin/update","id"=>$data->id))',
-	),
-	array(
-	    'name' => 'username',
-	    'type' => 'raw',
-	    'value' => 'CHtml::link(UHtml::markSearch($data,"username"),array("admin/view","id"=>$data->id))',
-	),
-	array(
-	    'name' => 'email',
-	    'type' => 'raw',
-	    'value' => 'CHtml::link(UHtml::markSearch($data,"email"), "mailto:".$data->email)',
-	),
-	'create_at',
-	'lastvisit_at',
-	array(
-	    'name' => 'superuser',
-	    'value' => 'User::itemAlias("AdminStatus",$data->superuser)',
-	    'filter' => User::itemAlias("AdminStatus"),
-	),
-	array(
-	    'name' => 'status',
-	    'value' => 'User::itemAlias("UserStatus",$data->status)',
-	    'filter' => User::itemAlias("UserStatus"),
-	),
-	array(
-	    'class' => 'bootstrap.widgets.TbButtonColumn',
-	),
-    ),
-));
-?>
+<div>
+	<?php
+	$this->widget('bootstrap.widgets.TbGridView', array(
+		'id' => 'user-grid',
+		'dataProvider' => $model->search(),
+		'filter' => $model,
+		'columns' => array(
+			array(
+				'name' => 'id',
+				'type' => 'raw',
+				'value' => 'CHtml::link(CHtml::encode($data->id),array("admin/update","id"=>$data->id))',
+				'htmlOptions'=>array('style'=>"width:30px !important"),
+			),
+			array(
+				'name' => 'username',
+				'type' => 'raw',
+				'value' => 'CHtml::link(UHtml::markSearch($data,"username"),array("admin/view","id"=>$data->id))',
+			),
+			array(
+				'name' => 'email',
+				'type' => 'raw',
+				'value' => 'CHtml::link(UHtml::markSearch($data,"email"), "mailto:".$data->email)',
+			),
+			'create_at',
+			'lastvisit_at',
+			array(
+				'name' => 'superuser',
+				'value' => 'User::itemAlias("AdminStatus",$data->superuser)',
+				'filter' => User::itemAlias("AdminStatus"),
+			),
+			array(
+				'name' => 'status',
+				'value' => 'User::itemAlias("UserStatus",$data->status)',
+				'filter' => User::itemAlias("UserStatus"),
+			),
+			array(
+				'class' => 'bootstrap.widgets.TbButtonColumn',
+			),
+		),
+	));
+	?>
+
+</div>

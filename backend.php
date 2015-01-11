@@ -10,6 +10,6 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
 $local=require('./protected/config/main-local.php');
-$base=require('./protected/backend/config/main.php');
+$base=require('./protected/config/main-back.php');
 $config=CMap::mergeArray($base, $local);
 Yii::createWebApplication($config)->run();

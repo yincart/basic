@@ -2,13 +2,13 @@
     <!--widgets-->
     <figure class="widget shadow r_corners wrapper m_bottom_30">
         <figcaption>
-            <h3 class="color_light">商品分类</h3>
+            <h3 class="color_light"><?php echo $model->name ?></h3>
         </figcaption>
         <div class="widget_content">
             <!--Categories list-->
             <ul class="categories_list">
                 <?php
-                foreach ($model as $c):
+                foreach ($childs as $c):
                 ?>
                 <li class="">
                     <a href="#" class="f_size_large scheme_color d_block relative">

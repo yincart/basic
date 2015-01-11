@@ -2,6 +2,8 @@
 
 class DefaultController extends Controller
 {
+    public $content_title = '用户管理';
+
     /**
      * @return array action filters
      */
@@ -34,7 +36,7 @@ class DefaultController extends Controller
 
     public function actionIndex()
 	{
-        $this->layout = '//layouts/user';
+        $this->layout = '//layouts/content';
 		$dataProvider=new CActiveDataProvider('User', array(
 			'criteria'=>array(
 		        'condition'=>'status>'.User::STATUS_BANNED,

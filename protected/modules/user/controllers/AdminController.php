@@ -3,7 +3,8 @@
 class AdminController extends Controller
 {
 	public $defaultAction = 'admin';
-	public $layout='//layouts/user';
+	public $layout='//layouts/content';
+	public $content_title = '用户管理';
 	
 	private $_model;
 

@@ -8,7 +8,8 @@ class ProfileFieldController extends Controller {
     private $_model;
     private static $_widgets = array();
     public $defaultAction = 'admin';
-    public $layout = '//layouts/user';
+	public $layout='//layouts/content';
+	public $content_title = '用户资料栏目';
 
     /**
      * @return array action filters

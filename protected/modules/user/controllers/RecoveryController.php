@@ -59,7 +59,7 @@ class RecoveryController extends Controller
 			    			$this->refresh();
 			    		}
 			    	}
-		    		$this->render('//user/recovery',array('form'=>$form));
+		    		$this->render('/user/recovery',array('form'=>$form));
 		    	}
 		    }
 	}

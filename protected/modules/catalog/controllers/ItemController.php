@@ -1,473 +1,1 @@
-<?php
-//header("Content-Type: text/html;charset=utf-8");
-class ItemController extends MallBaseController
-{
-    public $content_title = '商品列表';
-    /**
-     * Specifies the access control rules.
-     * This method is used by the 'accessControl' filter.
-     * @return array access control rules
-     */
-    public function accessRules()
-    {
-        return array_merge(array(
-                array('allow',
-                    'users' => array('@'),
-                )
-            ), parent::accessRules()
-        );
-    }
-
-    /**
-     * Creates a new model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     */
-    public function actionCreate()
-    {
-        $model = new Item();
-        //var_dump($model);exit;
-        if (isset($_POST['Item'])) {
-            $this->handlePostData();
-            $model->attributes = $_POST['Item'];
-           // var_dump($model->attributes);exit;
-            if ($model->save()) {
-                $this->redirect(array('view', 'id' => $model->item_id));
-            }
-        }
-        $this->render('create', array(
-            'model' => $model,
-        ));
-    }
-
-    /**
-     * delete a item
-     */
-    public function actionDelete($id)
-    {
-        $item = Item::model()->findByPk($id);
-        $images = ItemImg::model()->findAllByAttributes(array('item_id' => $item->item_id));
-        //                    var_dump($images);exit;
-        foreach ($images as $k => $v) {
-            $img = $v['pic'];
-    // we only allow deletion via POST request
-            ItemImg::model()->deleteAllByAttributes(array('item_id' => $item->item_id));
-            @unlink(dirname(Yii::app()->basePath) . '/upload/item/image/' . $img);
-        }
-
-        $skus = Sku::model()->findAllByAttributes(array('item_id' => $item->item_id));
-        foreach($skus as $sk => $sku)
-        {
-            Sku::model()->deleteAllByAttributes(array('item_id' => $item->item_id));
-        }        var_dump(Yii::app()->request->urlReferrer);
-        Item::model()->deleteByPk($id);
-        $this->redirect(Yii::app()->request->urlReferrer);
-    }
-    /**
-     * Updates a particular model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id the ID of the model to be updated
-     */
-    public function actionUpdate($id)
-    {
-        $model = $this->loadModel($id);
-        if (isset($_POST['Item'])) {
-            $this->handlePostData();
-            $model->attributes = $_POST['Item'];
-            if ($model->save()) {
-                $this->redirect(array('view', 'id' => $model->item_id));
-            }
-        }
-        $this->render('update', array(
-            'model' => $model,
-        ));
-    }
-
-    /**
-     * Manages all models.
-     */
-    public function actionAdmin()
-    {
-        $model = new Item('search');
-        $model->unsetAttributes(); // clear any default values
-        if (isset($_GET['Item']))
-            $model->attributes = $_GET['Item'];
-
-        $this->render('admin', array(
-            'model' => $model,
-        ));
-    }
-
-    /**
-     * Returns the data model based on the primary key given in the GET variable.
-     * If the data model is not found, an HTTP exception will be raised.
-     * @param integer the ID of the model to be loaded
-     * @return CActiveRecord
-     * @throws CHttpException
-     */
-    public function loadModel($id)
-    {
-        $model = Item::model()->with(array('itemImgs' => array('order' => 'position ASC')))->findByPk($id);
-        if ($model === null)
-            throw new CHttpException(404, 'The requested page does not exist.');
-        return $model;
-    }
-
-
-//批量操作
-    public function actionBulk()
-    {
-//        print_r($_POST);
-//        exit;
-        $ids = $_POST['item-grid_c0'];
-//        print_r($ids);
-//        exit;
-        $count = count($ids);
-        if ($count == 0) {
-            echo '<script>alert("请至少选择1个项目.")</script>';
-            echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-            die;
-        } elseif ($count > 0 && NULL == $_POST['act']) {
-            echo '<script>alert("请选择操作类型.")</script>';
-            echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-            die;
-        } else {
-            if ('delete' == $_POST['act']) { //批量删除
-                if ($count == 1) {
-                    $item = Item::model()->findByPk($ids);
-                    $images = ItemImg::model()->findAllByAttributes(array('item_id' => $item->item_id));
-//                    var_dump($images);exit;
-                    foreach ($images as $k => $v) {
-                        $img = $v['pic'];
-// we only allow deletion via POST request
-                        ItemImg::model()->deleteAllByAttributes(array('item_id' => $item->item_id));
-                        @unlink(dirname(Yii::app()->basePath) . '/upload/item/image/' . $img);
-                    }
-
-                    $skus = Sku::model()->findAllByAttributes(array('item_id' => $item->item_id));
-                    foreach($skus as $sk => $sku)
-                    {
-                        Sku::model()->deleteAllByAttributes(array('item_id' => $item->item_id));
-                    }
-
-                    Item::model()->deleteByPk($ids);
-                    echo '<script>alert("删除成功.")</script>';
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $item = Item::model()->findAllByPk($ids);
-                    foreach ($item as $i) {
-                        $images = ItemImg::model()->findAllByAttributes(array('item_id' => $i->item_id));
-                        foreach ($images as $k => $v) {
-                            $img = $v['pic'];
-// we only allow deletion via POST request
-                            ItemImg::model()->deleteAllByAttributes(array('item_id' => $i->item_id));
-                            @unlink(dirname(Yii::app()->basePath) . '/upload/item/image/' . $img);
-
-                        }
-                        $skus = Sku::model()->findAllByAttributes(array('item_id' => $i->item_id));
-                        foreach($skus as $sk => $sku)
-                        {
-                            Sku::model()->deleteAllByAttributes(array('item_id' => $i->item_id));
-                        }
-                    }
-
-                    Item::model()->deleteAllByAttributes(array('item_id' => $ids));
-                    echo '<script>alert("删除成功.")</script>';
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('is_show' == $_POST['act']) { //批量上架
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_show" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_show" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('un_show' == $_POST['act']) { //批量下架
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_show" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_show" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('is_promote' == $_POST['act']) { //批量特价
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_promote" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_promote" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('un_promote' == $_POST['act']) { //取消特价
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_promote" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_promote" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('is_new' == $_POST['act']) { //批量新品
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_new" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_new" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('un_new' == $_POST['act']) { //取消新品
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_new" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_new" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('hot' == $_POST['act']) { //批量推荐
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_hot" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_hot" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('un_hot' == $_POST['act']) { //取消推荐
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_hot" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_hot" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('best' == $_POST['act']) { //批量精品
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_best" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_best" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('un_best' == $_POST['act']) { //取消精品
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_best" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_best" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('discount' == $_POST['act']) { //批量折扣
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_discount" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_discount" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            } elseif ('un_discount' == $_POST['act']) { //取消折扣
-                if ($count == 1) {
-                    Item::model()->updateByPk($ids, array("is_discount" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                } else {
-                    $id = implode(',', $ids);
-                    $criteria = new CDbCriteria(array(
-                        'condition' => 'item_id in (' . $id . ')'
-                    ));
-                    Item::model()->updateAll(array("is_discount" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
-                    die;
-                }
-            }
-        }
-    }
-
-    public function actionGetItemSpec()
-    {
-        $skus = $_POST['Item']['skus'];
-        foreach ($skus as $key => $value) {
-            $sku[] = $_POST['Item']['skus'][$key];
-        }
-        echo json_encode($sku);
-    }
-
-
-    public function actionAjaxGetSkus()
-    {
-
-        if (!Yii::app()->request->isAjaxRequest && empty($_POST['item_id'])) {
-            return;
-        }
-        $skus = Sku::model()->findAllByAttributes(array("item_id" => $_POST["item_id"]));
-        $data = array();
-        foreach ($skus as $sku) {
-            $arr = array();
-            $arr['sku_id'] = $sku->sku_id;
-            $arr['props'] = F::convert_props_js_id($sku->props);
-//            $arr['props'] = str_replace(":","-",$arr['props']);
-            $arr['price'] = $sku->price;
-            $arr['stock'] = $sku->stock;
-            $arr['outer_id'] = $sku->outer_id;
-            $data[] = $arr;
-        }
-        echo json_encode($data);
-    }
-
-    /**
-     * format post props value
-     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
-     */
-    protected function handlePostData()
-    {
-        $stock = null;
-        $itemProps = array();
-        if (isset($_POST['ItemProp']) && is_array($_POST['ItemProp'])) {
-            $itemProps = $_POST['ItemProp'];
-            unset($_POST['ItemProp']);
-        }
-        if (isset($_POST['Item']['skus']['checkbox']) && is_array($_POST['Item']['skus']['checkbox'])) {
-            $itemProps = CMap::mergeArray($itemProps, $_POST['Item']['skus']['checkbox']);
-        }
-        list($_POST['Item']['props'], $_POST['Item']['props_name']) = $this->handleItemProps($itemProps);
-
-        if (isset($_POST['Item']['skus']['table']) && is_array($_POST['Item']['skus']['table'])) {
-            $skus = array();
-            foreach ($_POST['Item']['skus']['table'] as $pid => $sku) {
-                list($sku['props'], $sku['props_name']) = $this->handleItemProps($sku['props']);
-                $stock = $sku['stock'] + $stock;
-                $skus[] = $sku;
-            }
-        $_POST['Item']['skus'] = $skus;
-        $_POST['Item']['stock'] = $stock;
-        }
-        if (isset($_POST['ItemImg']['pic']) && isset($_POST['ItemImg']['item_img_id']) && is_array($_POST['ItemImg']['pic']) && is_array($_POST['ItemImg']['item_img_id'])) {
-            $pics = $_POST['ItemImg']['pic'];
-            $ids = $_POST['ItemImg']['item_img_id'];
-            if ($count = count($pics) === count($ids)) {
-                $itemImgs = array();
-                for ($i = 0, $count = count($pics); $i < $count; $i++) {
-                    $itemImgs[] = array(
-                        'item_img_id' => $ids[$i],
-                        'pic' => $pics[$i],
-                        'position' => $i,
-                    );
-                }
-                unset($_POST['ItemImg']);
-                $_POST['Item']['itemImgs'] = $itemImgs;
-            }
-        }
-    }
-
-    /**
-     * format item prop data to json format from post
-     * @param $itemProps
-     * @return array
-     * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
-     */
-    protected function handleItemProps($itemProps)
-    {
-        $props = array();
-        $props_name = array();
-        foreach ($itemProps as $pid => $vid) {
-            $itemProp = ItemProp::model()->findByPk($pid);
-            $pname = $itemProp->prop_name;
-            if (is_array($vid)) {
-                $props[$pid] = array();
-                $props_name[$pname] = array();
-                foreach ($vid as $v) {
-                    $props[$pid][] = $pid . ':' . $v;
-                    $propValue = PropValue::model()->findByPk($v);
-                    $vname = $propValue ? $propValue->value_name : $v;
-                    $props_name[$pname][] = $pname . ':' . $vname;
-
-                }
-            } else {
-                $props[$pid] = $pid . ':' . $vid;
-                $propValue = PropValue::model()->findByPk($vid);
-                $vname = $propValue ? $propValue->value_name : $vid;
-                $props_name[$pname] = $pname . ':' . $vname;
-            }
-        }
-        return array(json_encode($props), json_encode($props_name));
-    }
-
-    public function actionItemProps($category_id, $item_id)
-    {
-        $itemProps = ItemProp::model()->with(array('propValues'))->findAllByAttributes(array('category_id' => $category_id));
-        $item = Item::model()->findByPk($item_id);
-        $this->renderPartial('_form_prop', array('itemProps' => $itemProps, 'item' => $item), false, true);
-    }
-
-    public function actionGetChildAreas($parent_id)
-    {
-        $areas = Area::model()->findAllByAttributes(array('parent_id' => $parent_id));
-        $areasData = CHtml::listData($areas, 'area_id', 'name');
-        echo json_encode(CMap::mergeArray(array('0' => ''), $areasData));
-    }
-}
+<?phpclass ItemController extends YController{    public function actionIndex()    {        $id = $_REQUEST['category_id'];        $price = $_REQUEST['price'];        $category = Category::model()->findByPk($id);        if ($id) {            $category = Category::model()->findByPk($id);            $childs = $category->descendants()->findAll();            $ids = array($id);            foreach ($childs as $child)                $ids[] = $child->id;            $cid = implode(',', $ids);            $condition = $id ? 'is_show = 1 and category_id in (' . $cid . ')' : 'is_show = 1';        }        if ($price) {            if ($price && $id) {                $catmodel = new Category();                $ids = $catmodel->getMeChildsId($id);                $cid = implode(',', $ids);                $condition = $id ? 'is_show = 1 and  shop_price=' . $price . ' and category_id in (' . $cid . ')' : 'is_show = 1';            }        }//        $keyword = $_REQUEST['keyword'];//        if ($keyword) {//            $condition = $keyword ? 'is_show = 1 and title like' . "'%$keyword%'" . 'or sn like' . "'%$keyword%'" : 'is_show = 1';//        }        $criteria = new CDbCriteria(array(            'condition' => $condition,//            'order' => 'sort_order asc, item_id desc'        ));        $count = Item::model()->count($criteria);        $pages = new CPagination($count);        // results per page        $pages->pageSize = 20;        $pages->applyLimit($criteria);        $items = Item::model()->findAll($criteria);        $this->render('index', array(            'items' => $items,            'pages' => $pages,            'keyword' => $keyword,            'category' => $category        ));    }    public function actionList($key)    {        $category = Category::model()->findByPk(3);        $descendants = $category->children()->findAll();        $this->render('list', array(            'categories' => $descendants,            'key' => $key        ));    }    /**     * Displays a particular model.     * @param integer $id the ID of the model to be displayed     */    public function actionView($id)    {        $item = $this->loadModel($id);        /* 记录浏览历史 */        if (isset(Yii::app()->request->cookies['history'])) {            $history = explode(',', Yii::app()->request->cookies['history']->value);            array_unshift($history, $id);            $history = array_unique($history);            while (count($history) > 5) {                array_pop($history);            }            $cookie = new CHttpCookie('history', implode(',', $history));            $cookie->expire = F::gmtime() + 3600 * 24 * 30;            Yii::app()->request->cookies['history'] = $cookie;        } else {            $cookie = new CHttpCookie('history', $id);            $cookie->expire = F::gmtime() + 3600 * 24 * 30;            Yii::app()->request->cookies['history'] = $cookie;        }        /* 更新点击次数 */        $item->click_count = $item->click_count + 1;        $item->save();        //show sku//        $skus = CJSON::decode($model->skus);//        $sku_data = array('checkbox' => array());//        if (!empty($skus['checkbox'])) {//            foreach ($skus['checkbox'] as $k => $v) {//                if (!is_array($v)) continue;//                $item_prop = ItemProp::model()->findByPk($k);//                if (!$item_prop) continue;//                $vids = array();//                foreach ($v as $kk => $vv) {//                    $ids = explode(':', $vv);//                    if (!empty($ids[1])) {//                        $vids[$vv] = $ids[1];//                    }//                }//                if (empty($vids)) continue;//                $cri = new CDbCriteria();//                $cri->addInCondition('value_id', $vids);//                $cri->select = 'value_id, value_name';//                $prop_values = PropValue::model()->findAll($cri);//                $prop_value_names = array();//                $vids = array_flip($vids);//                foreach ($prop_values as $prop_value) {//                    $prop_value_names[$vids[$prop_value->value_id]] = $prop_value->value_name;//                }//                $sku_data['checkbox'][$item_prop->prop_name] = $prop_value_names;//            }//        }//        $sku_data['table'] = !empty($skus['table']) ? $skus['table'] : array();        $category = $item->category;        $parentCategories = $category->parent()->findAll();        $parentCategories = array_reverse($parentCategories);        $categoryIds = array($category->category_id);        foreach ($parentCategories as $cate) {            if (!$cate->isRoot()) {                $params['cat'] = $cate->getUrl();                $this->breadcrumbs[] = array('name' => $cate->name . '>> ', 'url' => Yii::app()->createUrl('catalog/index', array('cat' => $cate->getUrl())));                $categoryIds[] = $cate->category_id;            }        }        $params['cat'] = $category->getUrl();        $this->breadcrumbs[] = array('name' => $category->name . '>> ', 'url' => Yii::app()->createUrl('catalog/index', array('cat' => $category->getUrl())));        $this->breadcrumbs[] = array('name' => $item->title, 'url' => Yii::app()->createUrl('item/view', array('id' => $item->item_id)));        Yii::app()->params['categoryIds'] = $categoryIds;//        Yii::app()->params['keywords'] = $item->Keywords;//        Yii::app()->params['description'] = $item->description;//        Yii::app()->params['title1']=$item->title1;        $this->render('view', array(            'item' => $item,//            'sku_data' => $sku_data,        ));    }    public function actionClearHistory()    {        unset(Yii::app()->request->cookies['history']);    }    /**     * Returns the data model based on the primary key given in the GET variable.     * If the data model is not found, an HTTP exception will be raised.     * @param integer the ID of the model to be loaded     */    public function loadModel($id)    {        $model = Item::model()->findByPk((int)$id);        if ($model === null)            throw new CHttpException(404, 'The requested page does not exist.');        return $model;    }    // Uncomment the following methods and override them if needed    /*      public function filters()      {      // return the filter configuration for this controller, e.g.:      return array(      'inlineFilterName',      array(      'class'=>'path.to.FilterClass',      'propertyName'=>'propertyValue',      ),      );      }      public function actions()      {      // return external action classes, e.g.:      return array(      'action1'=>'path.to.ActionClass',      'action2'=>array(      'class'=>'path.to.AnotherActionClass',      'propertyName'=>'propertyValue',      ),      );      }     */}

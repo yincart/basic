@@ -62,7 +62,7 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-        $this->layout = '//layouts/user';
+        $this->layout = '//layouts/content';
 		$dataProvider=new CActiveDataProvider('User', array(
 			'criteria'=>array(
 		        'condition'=>'status>'.User::STATUS_BANNED,

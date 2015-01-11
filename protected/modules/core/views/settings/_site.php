@@ -9,7 +9,7 @@
             $this->widget('ext.elFinder.ServerFileInput', array(
                 'model' => $model,
                 'attribute' => 'logo',
-                'filebrowserBrowseUrl' => Yii::app()->createUrl('/catalog/elfinder/view'),
+                'filebrowserBrowseUrl' => Yii::app()->createUrl('/core/elfinder/view'),
             ));
         }
         else

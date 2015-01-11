@@ -59,6 +59,7 @@
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/assets/stylesheets/light-theme.css" media="all" id="color-settings-body-color" rel="stylesheet" type="text/css" />
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/assets/stylesheets/theme-colors.css" media="all" rel="stylesheet" type="text/css" />
     <link href="<?php echo Yii::app()->theme->baseUrl; ?>/assets/stylesheets/demo.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="<?php echo Yii::app()->theme->baseUrl; ?>/assets/stylesheets/custom.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body class='contrast-purple fixed-header fixed-navigation'>
 <header>
@@ -255,7 +256,7 @@
             </li>
             <li class='divider'></li>
             <li>
-                <a href='<?php echo Yii::app()->createUrl('/site/logout')?>'>
+                <a href='<?php echo F::Url('/core/default/logout')?>'>
                     <i class='icon-signout'></i>
                     Sign out
                 </a>

@@ -17,7 +17,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
             <?php $this->widget('ext.elFinder.ServerFileInput', array(
                 'model' => $model,
                 'attribute' => 'pic',
-                'filebrowserBrowseUrl' => Yii::app()->createUrl('mall/elfinder/view'),
+                'filebrowserBrowseUrl' => Yii::app()->createUrl('core/elfinder/view'),
             )); ?>
         </div>
     </div>

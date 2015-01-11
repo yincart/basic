@@ -12,7 +12,7 @@
                 array('label' => '商品分类', 'icon' => 'bookmark', 'url' => array('/mall/itemCategory/admin')),
                 array('label' => '商品属性', 'icon' => 'list-alt', 'url' => array('/mall/itemProp/admin')),
                 array('label' => '商品列表', 'icon' => 'list-alt', 'url' => array('/mall/item/admin')),
-                array('label' => '图片空间', 'icon' => 'list-alt', 'url' => array('/mall/elfinder/admin')),
+                array('label' => '图片空间', 'icon' => 'list-alt', 'url' => array('/core/elfinder/admin')),
                 array('label' => '支付'),
                 array('label' => '支付方式', 'icon' => 'magnet', 'url' => array('/mall/paymentMethod/admin')),
                 array('label' => '配送方式', 'icon' => 'plane', 'url' => array('/mall/shippingMethod/admin')),

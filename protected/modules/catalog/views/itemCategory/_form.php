@@ -28,7 +28,7 @@ echo $form->textFieldControlGroup($model, 'url');
         <?php $this->widget('ext.elFinder.ServerFileInput', array(
             'model' => $model,
             'attribute' => 'pic',
-            'filebrowserBrowseUrl' => Yii::app()->createUrl('catalog/elfinder/view'),
+            'filebrowserBrowseUrl' => Yii::app()->createUrl('core/elfinder/view'),
         )); ?>
     </div>
 </div>

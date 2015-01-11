@@ -125,15 +125,9 @@
                         </a>
                     </li>
                     <li class=''>
-                        <a href='<?php echo Yii::app()->createUrl('/catalog/item/admin') ?>'>
+                        <a href='<?php echo Yii::app()->createUrl('/catalog/itemBackend/admin') ?>'>
                             <i class='icon-caret-right'></i>
                             <span>商品列表</span>
-                        </a>
-                    </li>
-                    <li class=''>
-                        <a href='<?php echo Yii::app()->createUrl('/catalog/elfinder/admin') ?>'>
-                            <i class='icon-caret-right'></i>
-                            <span>图片空间</span>
                         </a>
                     </li>
                 </ul>
@@ -251,27 +245,9 @@
                 </a>
                 <ul class='nav nav-stacked'>
                     <li class=''>
-                        <a href='javascript:void(0)'>
+                        <a href='<?php echo F::url('/user/admin') ?>'>
                             <i class='icon-caret-right'></i>
-                            <span>用户组</span>
-                        </a>
-                    </li>
-                    <li class=''>
-                        <a href='javascript:void(0)'>
-                            <i class='icon-caret-right'></i>
-                            <span>客户列表</span>
-                        </a>
-                    </li>
-                    <li class=''>
-                        <a href='javascript:void(0)'>
-                            <i class='icon-caret-right'></i>
-                            <span>员工列表</span>
-                        </a>
-                    </li>
-                    <li class=''>
-                        <a href='javascript:void(0)'>
-                            <i class='icon-caret-right'></i>
-                            <span>供应商</span>
+                            <span>会员列表</span>
                         </a>
                     </li>
                     <li class=''>
@@ -311,6 +287,13 @@
                         <a href='<?php echo Yii::app()->createUrl('/core/menu/admin') ?>'>
                             <i class='icon-caret-right'></i>
                             <span>菜单管理</span>
+                        </a>
+                    </li>
+
+                    <li class=''>
+                        <a href='<?php echo Yii::app()->createUrl('/core/elfinder/admin') ?>'>
+                            <i class='icon-caret-right'></i>
+                            <span>图片空间</span>
                         </a>
                     </li>
                     <li class=''>

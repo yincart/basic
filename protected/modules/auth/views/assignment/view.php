@@ -16,7 +16,7 @@ $this->breadcrumbs = array(
     <small><?php echo Yii::t('AuthModule.main', 'Assignments'); ?></small>
 </h1>
 
-<div class="row">
+<div class="">
 
     <div class="span6">
 

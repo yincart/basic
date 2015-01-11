@@ -1,0 +1,57 @@
+/*Item Css*/
+.clear {
+    clear: both;
+}
+/*item search*/
+.item_props_search {
+    border: solid 1px #dddddd;
+}
+.item_props_search_title {
+    height: 30px;
+    padding: 0 10px;
+    /*border-bottom: 1px solid #ddd;*/
+    /*border-bottom: 0;*/
+    background: #F7F7F7;
+    line-height: 30px;
+}
+.item_props_search_title h3 {
+    float: left;
+    height: 30px;
+    font: 400 15px/30px \5fae\8f6f\96c5\9ed1;
+    color: #E4393C;
+}
+.item_props_search_title h3 strong
+{
+    margin-right: 10px;
+    font: 400 15px/30px \5fae\8f6f\96c5\9ed1;
+    color: #333;
+}
+.item_props_search_params {
+    padding: 4px 0 2px;
+    overflow: hidden;
+    zoom: 1;
+    border-top: 1px dotted #ccc;
+    margin-top: 10px;
+}
+.item_props_search_params .prop_name {
+    float: left;
+    width: 100px;
+    font-weight: 700;
+    text-align: right;
+}
+.item_props_search_params .prop_values {
+    float: left;
+    position: relative;
+    /*padding-right: 120px;*/
+}
+.item_props_search_params .prop_values ul li{
+    float: left;
+    overflow: hidden;
+    width: 110px;
+    margin-right: 15px;
+}
+
+.prop-select {
+    color: #ffffff;
+    background: #323a45 ;
+}

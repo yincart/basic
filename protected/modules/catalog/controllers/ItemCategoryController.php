@@ -1,6 +1,6 @@
 <?php
 
-class ItemCategoryController extends MallBaseController
+class ItemCategoryController extends BackendController
 {
     public $content_title="商品分类";
 

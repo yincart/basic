@@ -86,7 +86,7 @@ class DefaultController extends Controller
 		}
 		$count = Item::model()->count($criteria);
 		$pager = new CPagination($count);
-		$pager->pageSize =8;
+		$pager->pageSize =4;
 		$pager->applyLimit($criteria);
 		$items = Item::model()->findAll($criteria);
 //        var_dump($criteria);die;
@@ -119,7 +119,7 @@ class DefaultController extends Controller
 			'count' => $count,
 			'category' => $category,
 			'items' => $items,
-			'pager' => $pager,
+			'pages' => $pager,
 			'categories' => $categories,
 			'itemProps' => $itemProps,
 			'sort' => $_GET['sort'],

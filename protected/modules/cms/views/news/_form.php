@@ -63,7 +63,7 @@ echo '</select>';
 <?php $this->widget('ext.elFinder.ServerFileInput', array(
     'model' => $model,
     'attribute' => 'pic_url',
-    'filebrowserBrowseUrl' => Yii::app()->createUrl('mall/elfinder/view'),
+    'filebrowserBrowseUrl' => Yii::app()->createUrl('core/elfinder/view'),
 ));?>
 
 <?php echo $form->textAreaControlGroup($model, 'summary', array('class' => 'span5', 'style'=>'height:100px')); ?>

@@ -23,8 +23,8 @@ return array(
     'basePath' => $frontend,
     'name' => 'Yincart演示商城',
 
-    'language' => 'en',
-    'sourceLanguage' => 'en',
+    'language' => 'en_us',
+    'sourceLanguage' => 'en_us',
     'theme' => 'flatastic',
     // preloading 'log' component
     'preload' => array('log'),// 'translate'),
@@ -111,6 +111,14 @@ return array(
         'cms' => array(
             'class' => 'application.modules.cms.CmsModule'
         ),
+        'auth' => array(
+            'strictMode' => true, // when enabled authorization items cannot be assigned children of the same type.
+            'userClass' => 'User', // the name of the user model class.
+            'userIdColumn' => 'id', // the name of the user id column.
+            'userNameColumn' => 'username', // the name of the user name column.
+            'defaultLayout' => 'application.views.layouts.main', // the layout used by the module.
+            'viewDir' => null, // the path to view files to use with this module.
+        ),
         'user' => array(
             'class' => 'application.modules.user.UserModule',
             # encrypting method (php hash function)
@@ -157,9 +165,18 @@ return array(
         'user' => array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
-            'class' => 'WebUser',
+//            'class' => 'WebUser',
+            'class' => 'auth.components.AuthWebUser',
             'loginUrl' => array('/user/login'),
             'stateKeyPrefix' => 'front_',
+            'admins' => array('admin'), // users with full access
+        ),
+        'authManager' => array(
+            'behaviors' => array(
+                'auth' => array(
+                    'class' => 'auth.components.AuthBehavior',
+                ),
+            ),
         ),
 //        'bootstrap' => array(
 //            'class' => 'bootstrap.components.Bootstrap',
@@ -185,9 +202,9 @@ return array(
         ),
         'errorHandler' => array(
             // use 'site/error' action to display errors
-            'errorAction' => '/site/default/error',
+            'errorAction' => 'site/error',
         ),
-        
+
         'urlManager' => array(
             'urlFormat' => 'path',
             'showScriptName' => false,

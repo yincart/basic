@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs = array(
-    Yii::t('main', 'ItemSku') => array('admin'),
+    Yii::t('main', 'ItemProp') => array('admin'),
     Yii::t('main', 'Manage'),
 );
 
 $this->menu = array(
-    array('label' => Yii::t('main','Create ItemSku'), 'icon' => 'plus', 'url' => array('create')),
+    array('label' => Yii::t('main','Create ItemProp'), 'icon' => 'plus', 'url' => array('create')),
 );
 ?>
 

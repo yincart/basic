@@ -20,7 +20,7 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
             'value' => $data[0]['name'],
         ),
         array(
-           'name'=> Yii::t('backend','品牌名'),
+           'name'=>'属性值',
            'value' => $propstr,
         ),
         array(
@@ -59,6 +59,5 @@ $this->widget('bootstrap.widgets.TbDetailView', array(
             'name' => 'sort_order',
             'label' => '排序',
         ),
-        'item_propcol',
     )
 ));

@@ -145,7 +145,7 @@ return array(
             'class' => 'system.caching.CFileCache',
         ),
         'settings' => array(
-            'class' => 'frontend.extensions.CmsSettings',
+            'class' => 'application.extensions.CmsSettings',
             'cacheComponentId' => 'cache',
             'cacheId' => 'global_website_settings',
             'cacheTime' => 0,

@@ -78,7 +78,7 @@ class ItemProp extends YActiveRecord
             'parent_prop_id' => Yii::t('backend','父属性'),
             'parent_value_id' => Yii::t('backend','属性值'),
             'prop_name' => Yii::t('backend','属性名字'),
-            'prop_alias' => 'Prop Alias',
+            'prop_alias' => '属性别名',
             'type' => Yii::t('backend','类型'),
             'is_key_prop' => Yii::t('backend','是否关键属性'),
             'is_sale_prop' => Yii::t('backend','是否销售属性'),

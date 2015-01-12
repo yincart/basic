@@ -1,6 +1,6 @@
 <?php
 
-class ItemPropController extends MallBaseController
+class ItemPropController extends BackendController
 {
     public $content_title = '商品属性';
     /**

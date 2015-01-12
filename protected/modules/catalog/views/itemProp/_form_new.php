@@ -1,0 +1,222 @@
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>-->
+<?php
+//echo CGoogleApi::init();
+//echo CHtml::script(CGoogleApi::load('jquery', '1.4.2'));
+//echo CHtml::script(CGoogleApi::load("jqueryui", "1.8.2"));
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/assets/javascripts/jquery_ui/jquery-ui.min.js', CClientScript::POS_HEAD);
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/assets/javascripts/jquery.dynotable.js');
+?>
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+         * dynoTable configuration options
+         * These are the options that are available with their default values
+         */
+        $('#add_prop').dynoTable({
+            removeClass: '.row-remover', //class for the clickable row remover
+            cloneClass: '.row-cloner', //class for the clickable row cloner
+            addRowTemplateId: '#add-template', //id for the "add row template"
+            addRowButtonId: '#add-row', //id for the clickable add row button, link, etc
+            lastRowRemovable: true, //If true, ALL rows in the table can be removed, otherwise there will always be at least one row
+            orderable: true, //If true, table rows can be rearranged
+            dragHandleClass: ".drag-handle", //class for the click and draggable drag handle
+            insertFadeSpeed: "slow", //Fade in speed when row is added
+            removeFadeSpeed: "fast", //Fade in speed when row is removed
+            hideTableOnEmpty: true, //If true, table is completely hidden when empty
+            onRowRemove: function() {
+                //Do something when a row is removed
+            },
+            onRowClone: function(clonedRow) {
+                //Do something when a row is cloned
+                clonedRow.find('input[name="PropValue[value_id][]"]').val("");
+            },
+            onRowAdd: function() {
+                //Do something when a row is added
+            },
+            onTableEmpty: function() {
+                //Do something when ALL rows have been removed
+            },
+            onRowReorder: function() {
+                //Do something when table rows have been rearranged
+            }
+        });
+    });
+</script>
+<div style="padding:20px">
+    <?php
+    $form = $this->beginWidget('booster.widgets.TbActiveForm', array(
+        'id' => 'item-prop-form',
+        'htmlOptions' => array(
+            'class' => 'form-horizontal',
+        ),
+        'enableAjaxValidation' => false,
+    ));
+    $form = new TbActiveForm();
+
+    if ($model->hasErrors()): ?>
+
+        <div class="control-group">
+            <?php echo $form->errorSummary($model); ?>
+        </div>
+    <?php endif; ?>
+
+    <div class="control-group"><p class="help-block">带 <span class="required">*</span> 的字段为必填项.</p></div>
+    <?php
+    $item = New Item;
+    echo $form->dropDownListGroup(
+        $model,
+        'category_id',
+        array(
+            'wrapperHtmlOptions' => array(
+                'class' => 'col-sm-5',
+            ),
+            'widgetOptions' => array(
+                'data' => $item->attrCategory(3),
+                'htmlOptions' => array('class'=>'col-sm-5'),
+            )
+        ));
+    echo $form->dropDownListGroup(
+        $model,
+        'parent_prop_id',
+        array(
+            'wrapperHtmlOptions' => array(
+                'class' => 'col-sm-5',
+            ),
+            'widgetOptions' => array(
+                'data' => $props,
+                'htmlOptions' => array('class'=>'col-sm-5'),
+            )
+        ));
+
+    echo $form->textFieldGroup($model, 'prop_name');
+    echo $form->textFieldGroup($model, 'prop_alias');
+    echo $form->radioButtonListGroup(
+        $model,
+        'type',
+        array(
+            'widgetOptions' => array(
+                'data' => $model->attrType()
+            )
+        )
+    );
+    foreach (array('is_key_prop' => 'allKey', 'is_sale_prop' => 'allSale', 'is_color_prop' => 'allColor', 'must' => 'allMust', 'multi' => 'allMulti', 'status' => 'allStatus') as $k => $v) {
+//    echo $form->dropDownListGroup($model, $k, call_user_func(array($model, $v)));
+        echo $form->dropDownListGroup(
+            $model,
+            $k,
+            array(
+                'wrapperHtmlOptions' => array(
+                    'class' => 'col-sm-5',
+                ),
+                'widgetOptions' => array(
+                    'data' => call_user_func(array($model, $v)),
+                    'htmlOptions' => array('class'=>'col-sm-5'),
+                )
+            ));
+    }
+    ?>
+
+    <h2><a id="add-row" href="#">添加属性值</a></h2>
+
+    <legend>属性值</legend>
+    <div class="PropValues">
+        <table id="add_prop" class="example">
+            <tr>
+                <th>移动</th>
+                <th>属性值名称</th>
+                <th>克隆</th>
+                <th>删除</th>
+            </tr>
+            <?php if ($model->isNewRecord) { ?>
+                <tr id="add-template">
+                    <td class="icons">
+                        <img class="drag-handle"
+                             src="<?php echo Yii::app()->theme->baseUrl ?>/assets/images/small_icons/drag.png"
+                             alt="click and drag to rearrange"/>
+                    </td>
+                    <td>
+                        <input id="tf1" type="text" name="PropValue[value_name][]"/>
+                    </td>
+                    <td class="icons">
+                        <img class="row-cloner"
+                             src="<?php echo Yii::app()->theme->baseUrl ?>/assets/images/small_icons/clone.png"
+                             alt="Clone Row"/>
+                    </td>
+                    <td class="icons">
+                        <img class="row-remover"
+                             src="<?php echo Yii::app()->theme->baseUrl ?>/assets/images/small_icons/remove.png"
+                             alt="Remove Row"/>
+                    </td>
+                </tr>
+            <?php
+            } else {
+                $cri = new CDbCriteria(array(
+                    'condition' => 'prop_id =' . $model->prop_id,
+                    'order' => 'sort_order asc, value_id asc'
+                ));
+                $propValues = PropValue::model()->findAll($cri);
+
+                foreach ($propValues as $k => $sv) {
+                    ?>
+                    <tr id="update-template">
+                        <td class="icons">
+                            <img class="drag-handle"
+                                 src="<?php echo Yii::app()->theme->baseUrl ?>/assets/images/small_icons/drag.png"
+                                 alt="click and drag to rearrange"/>
+                        </td>
+                        <td>
+                            <input type="hidden" name="PropValue[value_id][]"
+                                   value="<?php echo $sv->value_id; ?>"/>
+                            <input id="tf1__c" type="text" name="PropValue[value_name][]"
+                                   value="<?php echo $sv->value_name ?>"/>
+                        </td>
+                        <td class="icons">
+                            <img class="row-cloner"
+                                 src="<?php echo Yii::app()->theme->baseUrl ?>/assets/images/small_icons/clone.png"
+                                 alt="Clone Row"/>
+                        </td>
+                        <td class="icons">
+                            <img class="row-remover"
+                                 src="<?php echo Yii::app()->theme->baseUrl ?>/assets/images/small_icons/remove.png"
+                                 alt="Remove Row"/>
+                        </td>
+                    </tr>
+                <?php } ?>
+
+                <tr id="add-template">
+                    <td class="icons">
+                        <img class="drag-handle"
+                             src="<?php echo Yii::app()->theme->baseUrl ?>/assets/images/small_icons/drag.png"
+                             alt="click and drag to rearrange"/>
+                    </td>
+                    <td>
+                        <input type="hidden" name="PropValue[value_id][]"/>
+                        <input id="tf1" type="text" name="PropValue[value_name][]"/>
+                    </td>
+                    <td class="icons">
+                        <img class="row-cloner"
+                             src="<?php echo Yii::app()->theme->baseUrl ?>/assets/images/small_icons/clone.png"
+                             alt="Clone Row"/>
+                    </td>
+                    <td class="icons">
+                        <img class="row-remover"
+                             src="<?php echo Yii::app()->theme->baseUrl ?>/assets/images/small_icons/remove.png"
+                             alt="Remove Row"/>
+                    </td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
+    </fieldset>
+
+    <?php
+    if (!$is_view) {
+        echo TbHtml::formActions(array(
+            TbHtml::submitButton('Submit', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)),
+            TbHtml::resetButton('Reset'),
+        ));
+    }
+    $this->endWidget();
+    ?>
+
+</div>

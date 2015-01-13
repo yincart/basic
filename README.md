@@ -1,4 +1,4 @@
-yincart test test
+yincart beta
 =======
 
 Why call yincart, not yiicart. Yincart means Yii in cart, or u can call it "yi niu", lol.

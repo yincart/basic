@@ -1,4 +1,4 @@
-yincart beta
+﻿yincart beta to test git
 =======
 
 Why call yincart, not yiicart. Yincart means Yii in cart, or u can call it "yi niu", lol.

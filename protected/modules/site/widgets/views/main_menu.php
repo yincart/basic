@@ -5,9 +5,10 @@ $descendants = $menu->children()->findAll();
 /*
  * 单级菜单
  */
+
 foreach($descendants as $model){
     $items[] = array('label'=>'<b>'.$model->name.'</b>', 'url'=>$model->url ? Yii::app()->request->baseUrl.'/'.$model->url : '#',
-        'active'=>Tbfunction::mainMenu(Yii::app()->baseUrl.'/'.$model->url),
+        'active'=>(Yii::app()->baseUrl.'/'.$model->url) == Yii::app()->request->url ? ture : false,
         'linkOptions'=>array('class'=>'tr_delay_hover color_light tt_uppercase'),
 //        'template'=>'<b>111</b>'
 //        'template'=>'<a href="" class="tr_delay_hover color_light tt_uppercase"><b>{@item}</b></a>')

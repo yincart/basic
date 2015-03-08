@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row clearfix">
             <div class="col-lg-4 col-md-4 col-sm-3 t_xs_align_c">
-                <p class="f_size_medium"><?php echo Yii::t('site', 'Welcome visitor can you')?>	<a href="#" data-popup="#login_popup"><?php echo Yii::t('site', 'Log In') ?></a> <?php echo Yii::t('site', 'or') ?><a href="#"><?php echo Yii::t('site', 'Create an Account') ?></a> </p>
+                <p class="f_size_medium"><?php echo Yii::t('site', 'Welcome visitor can you')?>	<a href="#" data-popup="#login_popup"><?php echo Yii::t('site', 'Log In') ?></a> <?php echo Yii::t('site', 'or') ?><a href="#"> <?php echo Yii::t('site', 'Create an Account') ?></a> </p>
             </div>
             <nav class="col-lg-4 col-md-4 col-sm-6 t_align_c t_xs_align_c">
                 <ul class="d_inline_b horizontal_list clearfix f_size_medium users_nav">

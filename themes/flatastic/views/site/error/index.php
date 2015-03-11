@@ -17,8 +17,8 @@ $this->breadcrumbs=array(
 <!--content-->
 <div class="page_content_offset">
     <div class="container m_bottom_45">
-        <blockquote class="r_corners shadow f_size_large relative m_bottom_30">
+<!--        <blockquote class="r_corners shadow f_size_large relative m_bottom_30">-->
             <?php echo CHtml::encode($message); ?>
-        </blockquote>
+<!--        </blockquote>-->
     </div>
 </div>

@@ -146,6 +146,7 @@
                     <?php echo F::sg('site', 'name') ?></span>. All Rights Reserved. Powered by <a href="http://yincart.com">Yincart</a>
                 <?php echo CHtml::link('清除缓存', array('/site/default/clear'), array('style'=>'color:grey'))?>
             </p>
+            <script type="text/javascript" src="http://js.tongji.linezing.com/2863871/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2863871/tongji.gif"/></a></noscript>
             <ul class="f_right horizontal_list clearfix f_mxs_none d_mxs_inline_b">
                 <li><img src="<?php echo F::themeUrl() ?>/images/payment_img_1.png" alt=""></li>
                 <li class="m_left_5"><img src="<?php echo F::themeUrl() ?>/images/payment_img_2.png" alt=""></li>

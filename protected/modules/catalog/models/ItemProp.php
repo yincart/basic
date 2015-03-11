@@ -4,7 +4,7 @@
  * This is the model class for table "item_prop".
  *
  * The followings are the available columns in table 'item_prop':
- * @property string $item_prop_id
+ * @property string $prop_id
  * @property string $category_id
  * @property string $parent_prop_id
  * @property string $parent_value_id
@@ -18,7 +18,6 @@
  * @property integer $multi
  * @property string $status
  * @property integer $sort_order
- * @property string $item_propcol
  *
  * The followings are the available model relations:
  * @property Category $category
@@ -47,10 +46,9 @@ class ItemProp extends YActiveRecord
             array('category_id, parent_prop_id, parent_value_id', 'length', 'max' => 10),
             array('prop_name, prop_alias', 'length', 'max' => 100),
             array('status', 'length', 'max' => 7),
-            array('item_propcol', 'length', 'max' => 45),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('item_prop_id, category_id, parent_prop_id, parent_value_id, prop_name, prop_alias, type, is_key_prop, is_sale_prop, is_color_prop, must, multi, status, sort_order, item_propcol', 'safe', 'on' => 'search'),
+            array('prop_id, category_id, parent_prop_id, parent_value_id, prop_name, prop_alias, type, is_key_prop, is_sale_prop, is_color_prop, must, multi, status, sort_order', 'safe', 'on' => 'search'),
         );
     }
 
@@ -63,7 +61,7 @@ class ItemProp extends YActiveRecord
         // class name for the relations automatically generated below.
         return array(
             'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
-            'propValues' => array(self::HAS_MANY, 'PropValue', 'item_prop_id'),
+            'propValues' => array(self::HAS_MANY, 'PropValue', 'prop_id'),
         );
     }
 
@@ -73,8 +71,8 @@ class ItemProp extends YActiveRecord
     public function attributeLabels()
     {
         return array(
-            'item_prop_id' =>Yii::t('backend','属性编号'),
-            'category_id' => Yii::t('backend','分类'),
+            'prop_id' =>'属性ID',
+            'category_id' => '分类',
             'parent_prop_id' => Yii::t('backend','父属性'),
             'parent_value_id' => Yii::t('backend','属性值'),
             'prop_name' => Yii::t('backend','属性名字'),
@@ -87,7 +85,6 @@ class ItemProp extends YActiveRecord
             'multi' => Yii::t('backend','是否可以多选'),
             'status' => Yii::t('backend','状态'),
             'sort_order' =>Yii::t('backend','排序') ,
-            'item_propcol' => 'Item Propcol',
         );
     }
 
@@ -108,8 +105,9 @@ class ItemProp extends YActiveRecord
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
+        $criteria->order = 'prop_id desc';
 
-        $criteria->compare('item_prop_id', $this->item_prop_id, true);
+        $criteria->compare('prop_id', $this->prop_id, true);
         $criteria->compare('category_id', $this->category_id, true);
         $criteria->compare('parent_prop_id', $this->parent_prop_id, true);
         $criteria->compare('parent_value_id', $this->parent_value_id, true);
@@ -123,7 +121,6 @@ class ItemProp extends YActiveRecord
         $criteria->compare('multi', $this->multi);
         $criteria->compare('status', $this->status, true);
         $criteria->compare('sort_order', $this->sort_order);
-        $criteria->compare('item_propcol', $this->item_propcol, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -220,8 +217,8 @@ class ItemProp extends YActiveRecord
     public function getPropValues()
     {
         $cri = new CDbCriteria(array(
-            'condition' => 'item_prop_id =' . $this->item_prop_id,
-            'order' => 'sort_order asc, prop_value_id asc'
+            'condition' => 'prop_id =' . $this->prop_id,
+            'order' => 'sort_order asc, value_id asc'
         ));
         $PropValues = PropValue::model()->findAll($cri);
 
@@ -229,32 +226,32 @@ class ItemProp extends YActiveRecord
             echo $sv->value_name . ',';
         }
     }
-
+//
     public function getPropOptionValues($label = '', $selected = '')
     {
         $cri = new CDbCriteria(array(
-            'condition' => 'item_prop_id =' . $this->item_prop_id,
-            'order' => 'sort_order asc, prop_value_id asc'
+            'condition' => 'prop_id =' . $this->prop_id,
+            'order' => 'sort_order asc, value_id asc'
         ));
         $PropValues = PropValue::model()->findAll($cri);
-        $list = CHtml::listData($PropValues, 'prop_value_id', 'value_name');
+        $list = CHtml::listData($PropValues, 'value_id', 'value_name');
         $data = array();
         foreach ($list as $k => $v) {
-            $data[$this->item_prop_id . ':' . $k] = $v;
+            $data[$this->prop_id . ':' . $k] = $v;
         }
-        echo CHtml::DropDownList('Item[props][' . $this->item_prop_id . ']', $selected, $data, array('empty' => '请选择', 'label' => $label));
+        echo CHtml::DropDownList('Item[props][' . $this->prop_id . ']', $selected, $data, array('empty' => '请选择', 'label' => $label));
     }
 
     public function getPropTextFieldValues($label = '', $value = '')
     {
-        echo CHtml::textField('Item[props][' . $this->item_prop_id . ']', $value, array('label' => $label));
+        echo CHtml::textField('Item[props][' . $this->prop_id . ']', $value, array('label' => $label));
     }
 
     public function getPropArrayValues()
     {
         $cri = new CDbCriteria(array(
-            'condition' => 'item_prop_id =' . $this->item_prop_id,
-            'order' => 'sort_order asc, prop_value_id asc'
+            'condition' => 'prop_id =' . $this->prop_id,
+            'order' => 'sort_order asc, value_id asc'
         ));
         $PropValues = PropValue::model()->findAll($cri);
         foreach ($PropValues as $sv) {
@@ -266,21 +263,21 @@ class ItemProp extends YActiveRecord
     public function getPropCheckBoxListValues($label = '', $selected = '', $class = '', $type = 'props', $child_type = '')
     {
         $cri = new CDbCriteria(array(
-            'condition' => 'item_prop_id =' . $this->item_prop_id,
-            'order' => 'sort_order asc, prop_value_id asc'
+            'condition' => 'prop_id =' . $this->prop_id,
+            'order' => 'sort_order asc, value_id asc'
         ));
         $PropValues = PropValue::model()->findAll($cri);
 
-        $list = CHtml::listData($PropValues, 'prop_value_id', 'value_name');
+        $list = CHtml::listData($PropValues, 'value_id', 'value_name');
         foreach ($list as $k => $v) {
-            $data[$this->item_prop_id . ':' . $k] = $v;
+            $data[$this->prop_id . ':' . $k] = $v;
         }
         echo '<ul class="sku-list">';
         if ($child_type) {
-            echo CHtml::checkBoxList('Item[' . $type . '][' . $child_type . '][' . $this->item_prop_id . ']', $selected, $data,
+            echo CHtml::checkBoxList('Item[' . $type . '][' . $child_type . '][' . $this->prop_id . ']', $selected, $data,
                 array('template' => '<label class="checkbox inline">{input}{label}</label>', 'label' => $label, 'separator' => '', 'class' => $class, 'labelOptions' => array('class' => 'labelForRadio')));
         } else {
-            echo CHtml::checkBoxList('Item[' . $type . '][' . $this->item_prop_id . ']', $selected, $data,
+            echo CHtml::checkBoxList('Item[' . $type . '][' . $this->prop_id . ']', $selected, $data,
                 array('template' => '<label class="checkbox inline">{input}{label}</label>', 'label' => $label, 'separator' => '', 'class' => $class, 'labelOptions' => array('class' => 'labelForRadio')));
         }
         echo '</ul>';
@@ -307,4 +304,41 @@ class ItemProp extends YActiveRecord
         }
 
     }
+
+    /*
+     * 循环遍历SpecValue[spec_value][]插入数据库
+     * 群Zend Framework(95700611) zwp(279795206)友情提示
+     */
+
+    public function setPropValues($PropValues) {
+        if (is_array($PropValues['value_name']) && count($PropValues['value_name'])) {
+            $count = count($PropValues['value_name']);
+            for ($i = 0; $i < $count; $i++) {
+                $model = empty($PropValues['value_id'][$i]) ? new PropValue : PropValue::model()->findByPk($PropValues['value_id'][$i]);
+                $model->prop_id = $this->prop_id;
+                $model->value_name = $PropValues['value_name'][$i];
+//				$model->category_id = $PropValues['category_id'][$i];
+                $model->sort_order = $i;
+                $model->save();
+
+                $PropValues['value_id'][$i] = $model->value_id;
+            }
+
+            //删除
+            $models = PropValue::model()->findAll('prop_id = ' . $this->prop_id);
+            $delArr = array();
+            foreach ($models as $k1 => $v1) {
+                if (!in_array($v1->value_id, $PropValues['value_id'])) {
+                    $delArr[] = $v1->value_id;
+                }
+            }
+            if (count($delArr)) {
+                PropValue::model()->deleteAll('value_id IN (' . implode(', ', $delArr) . ')');
+            }
+        } else {//已经没有属性了，要清除数据表内容
+            PropValue::model()->deleteAll('prop_id = ' . $this->prop_id);
+        }
+    }
+
+
 }

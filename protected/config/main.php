@@ -210,6 +210,7 @@ return array(
             'showScriptName' => false,
             'rules' => array(
                 'page/<key:\w+>' => 'site/page/index',
+                'catalog/index' => 'catalog/default/index',
                 'catalog/<cat:\w+>' => 'catalog/default/index',
 //                'catalog/<cat:\w+>/<prop:.*?*>' => 'catalog/index',
                 'list/<category_id:\d+>' => 'item/index',

@@ -6,7 +6,7 @@
  * Time: 2:47 PM
  */
 $data = Category::model()->findAllByAttributes(array('category_id'=>$model->category_id));
-$propValues = PropValue::model()->findAllByAttributes(array('item_prop_id'=> $model->item_prop_id));
+$propValues = PropValue::model()->findAllByAttributes(array('prop_id'=> $model->prop_id));
 $propstr = '';
 foreach($propValues as $propvalue)
 {

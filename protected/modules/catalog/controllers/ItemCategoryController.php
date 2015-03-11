@@ -71,9 +71,8 @@ class ItemCategoryController extends BackendController
     }
 
     /**
-     * Deletes a particular model.
-     * If deletion is successful, the browser will be redirected to the 'admin' page.
-     * @param integer $id the ID of the model to be deleted
+     * @param $id
+     * @throws CHttpException
      */
     public function actionDelete($id)
     {
@@ -97,9 +96,9 @@ class ItemCategoryController extends BackendController
     }
 
     /**
-     * Returns the data model based on the primary key given in the GET variable.
-     * If the data model is not found, an HTTP exception will be raised.
-     * @param integer the ID of the model to be loaded
+     * @param $id
+     * @return static
+     * @throws CHttpException
      */
     public function loadModel($id)
     {

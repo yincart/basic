@@ -5,6 +5,8 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta content='text/html;charset=utf-8' http-equiv='content-type'>
     <meta content='Flat administration template for Twitter Bootstrap.' name='description'>
+    <!-- / jquery -->
+    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/javascripts/jquery/jquery.min.js" type="text/javascript"></script>
     <link href='<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/meta_icons/favicon.ico' rel='shortcut icon' type='image/x-icon'>
     <link href='<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/meta_icons/apple-touch-icon.png' rel='apple-touch-icon-precomposed'>
     <link href='<?php echo Yii::app()->theme->baseUrl; ?>/assets/images/meta_icons/apple-touch-icon-57x57.png' rel='apple-touch-icon-precomposed' sizes='57x57'>
@@ -281,8 +283,6 @@
 </div>
 </section>
 </div>
-<!-- / jquery -->
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/javascripts/jquery/jquery.min.js" type="text/javascript"></script>
 <!-- / jquery mobile events (for touch and slide) -->
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/javascripts/plugins/mobile_events/jquery.mobile-events.min.js" type="text/javascript"></script>
 <!-- / jquery migrate (for compatibility with new jquery) -->
@@ -384,5 +384,13 @@
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/javascripts/demo/inplace_editing.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/javascripts/demo/charts.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/javascripts/demo/demo.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common.js"></script>
+
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.dynotable.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/common.js"></script>
+<?php
+$cs = Yii::app()->clientScript;
+$cs->registerScriptFile(Yii::app()->baseUrl . '/js/jquery.form.js', CClientScript::POS_END);
+$cs->registerScriptFile(Yii::app()->baseUrl . '/js/skus.js', CClientScript::POS_END);?>
 </body>
 </html>

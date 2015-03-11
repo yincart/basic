@@ -16,7 +16,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
     'dataProvider' => $model->search(),
 //    'filter' => $model,
     'columns' => array(
-        'item_prop_id',
+        'prop_id',
         'category.name',
         'prop_name',
         array(
@@ -25,7 +25,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         ),
         array(
             'name' => 'prop.prop_values',
-            'header' =>Yii::t('main','Sku'),
+            'header' => '属性值',
             'value' => '$data->getPropValues()',
             'htmlOptions' => array('width'=>'600'),
         ),

@@ -2,6 +2,9 @@
 
 class CoreModule extends CWebModule
 {
+    public $returnUrl = '/backend.php?r=core/default/index';
+    public $rememberMeTime = 3600;
+
 	public function init()
 	{
 		// this method is called when the module is being created

@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'item_img':
  * @property string $item_img_id
  * @property string $item_id
+ * @property string $sku_id
  * @property string $pic
  * @property integer $position
  * @property string $create_time
@@ -33,7 +34,7 @@ class ItemImg extends CActiveRecord
         return array(
             array('item_id, pic, position', 'required'),
             array('position', 'numerical', 'integerOnly'=>true),
-            array('item_id, create_time', 'length', 'max'=>10),
+            array('item_id, sku_id, create_time', 'length', 'max'=>10),
             array('pic', 'length', 'max'=>255),
             array('create_time', 'safe'),
             // The following rule is used by search(). 
@@ -51,6 +52,7 @@ class ItemImg extends CActiveRecord
         // class name for the relations automatically generated below. 
         return array(
             'item' => array(self::BELONGS_TO, 'Item', 'item_id'),
+            'sku' => array(self::BELONGS_TO, 'Sku', 'sku_id'),
         );
     }
 
@@ -62,6 +64,7 @@ class ItemImg extends CActiveRecord
         return array(
             'item_img_id' => 'Item Img',
             'item_id' => 'Item',
+            'Sku_id' => 'Sku',
             'pic' => 'Pic',
             'position' => 'Position',
             'create_time' => 'Create Time',

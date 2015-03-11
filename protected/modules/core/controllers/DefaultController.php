@@ -1,16 +1,19 @@
 <?php
 
-class DefaultController extends Controller
+class DefaultController extends BackendController
 {
-//	public function filters()
-//	{
-//		return array(
-//			array('auth.filters.AuthFilter')
-//		);
-//	}
+    public $content_title = '控制面板';
+
+	public function filters()
+	{
+		return array(
+			array('auth.filters.AuthFilter - login')
+		);
+	}
 
 	public function actionIndex()
 	{
+        $this->layout = '//layouts/dashboard';
 		$this->render('index');
 	}
 

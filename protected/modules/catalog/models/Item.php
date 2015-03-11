@@ -57,13 +57,13 @@ class Item extends YActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('category_id, title, price, currency, props, props_name, desc, language, country, state, city', 'required'),
+            array('category_id, title, props, props_name, desc, language', 'required'),
             array('is_show, is_promote, is_new, is_hot, is_best', 'numerical', 'integerOnly' => true),
             array('category_id, stock, min_number, price, shipping_fee, click_count, wish_count, review_count,deal_count,create_time, update_time, country, state, city', 'length', 'max' => 10),
             array('outer_id, language', 'length', 'max' => 45),
             array('title', 'length','max' => 255),
             array('currency', 'length', 'max' => 20),
-            array('create_time, update_time', 'safe'),
+            array('country, state, city, create_time, update_time', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('item_id, category_id, outer_id, title, stock, min_number, price, currency, props, props_name, desc, shipping_fee, is_show, is_promote, is_new, is_hot, is_best, click_count, wish_count, create_time, update_time, language, country, state, city', 'safe', 'on' => 'search'),
@@ -79,9 +79,9 @@ class Item extends YActiveRecord
         // class name for the relations automatically generated below.
         return array(
             'category' => array(self::BELONGS_TO, 'Category', 'category_id'),
-            'countryArea' => array(self::BELONGS_TO, 'Area', 'country'),
-            'stateArea' => array(self::BELONGS_TO, 'Area', 'state'),
-            'cityArea' => array(self::BELONGS_TO, 'Area', 'city'),
+//            'countryArea' => array(self::BELONGS_TO, 'Area', 'country'),
+//            'stateArea' => array(self::BELONGS_TO, 'Area', 'state'),
+//            'cityArea' => array(self::BELONGS_TO, 'Area', 'city'),
             'itemImgs' => array(self::HAS_MANY, 'ItemImg', 'item_id'),
             'orderItems' => array(self::HAS_MANY, 'OrderItem', 'item_id'),
             'propImgs' => array(self::HAS_MANY, 'PropImg', 'item_id'),
@@ -95,28 +95,28 @@ class Item extends YActiveRecord
     public function attributeLabels()
     {
         return array(
-            'item_id' => 'Item',
-            'category_id' => 'Category',
+            'item_id' => '商品ID',
+            'category_id' => '分类',
             'outer_id' => 'Outer',
-            'title' => 'Title',
-            'stock' => 'Stock',
-            'min_number' => 'Min Number',
-            'price' => 'Price',
-            'currency' => 'Currency',
-            'props' => 'Props',
-            'props_name' => 'Props Name',
-            'desc' => 'Desc',
-            'shipping_fee' => 'Shipping Fee',
-            'is_show' => 'Is Show',
-            'is_promote' => 'Is Promote',
-            'is_new' => 'Is New',
-            'is_hot' => 'Is Hot',
-            'is_best' => 'Is Best',
-            'click_count' => 'Click Count',
-            'wish_count' => 'Wish Count',
+            'title' => '标题',
+            'stock' => '库存',
+            'min_number' => '最小订货量',
+            'price' => '价格',
+            'currency' => '货币',
+            'props' => '属性',
+            'props_name' => '属性名称',
+            'desc' => '详细描述',
+            'shipping_fee' => '运费',
+            'is_show' => '是否显示',
+            'is_promote' => '是否促销',
+            'is_new' => '是否新品',
+            'is_hot' => '是否热销',
+            'is_best' => '是否精品',
+            'click_count' => '点击数',
+            'wish_count' => '喜欢数',
             'create_time' => 'Create Time',
             'update_time' => 'Update Time',
-            'language' => 'Language',
+            'language' => '语言',
             'country' => 'Country',
             'state' => 'State',
             'city' => 'City',
@@ -140,6 +140,8 @@ class Item extends YActiveRecord
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria = new CDbCriteria;
+
+        $criteria->order = 'item_id desc';
 
         $criteria->compare('item_id', $this->item_id, true);
         $criteria->compare('category_id', $this->category_id, true);
@@ -557,4 +559,16 @@ class Item extends YActiveRecord
     }
 
     #endregion
+
+    public function getPropNames($onlyValue = false, $separator = ' ')
+    {
+        $propNames = json_decode($this->props_name, true);
+        if ($onlyValue) {
+            $propNames = array_map(function($name) {
+                $names = explode(':', $name);
+                return $names[1];
+            }, $propNames);
+        }
+        return implode($separator, $propNames);
+    }
 }

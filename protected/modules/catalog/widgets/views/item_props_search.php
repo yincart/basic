@@ -18,7 +18,7 @@
             <ul>
             <?php foreach ($itemProp->propValues as $propValue) {
                 $props = $getprops;
-                $pvid = $propValue->item_prop_id . ':' . $propValue->prop_value_id;
+                $pvid = $propValue->prop_id . ':' . $propValue->value_id;
                 if (array_key_exists($pvid, $props)) {
                     unset($props[$pvid]);
                     $class = 'prop-select';

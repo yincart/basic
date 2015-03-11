@@ -4,21 +4,29 @@ $itemSkus = $item->skus;
 foreach ($itemProps as $itemProp) {
     if (!$itemProp->is_sale_prop) {
         $itemPropValue =  '';
-        if (isset($itemPropValues[$itemProp->item_prop_id])) {
-            $values = explode(':', $itemPropValues[$itemProp->item_prop_id]);
-            $itemPropValue = $values[1];
+        if (isset($itemPropValues[$itemProp->prop_id])) {
+            if (is_array($itemPropValues[$itemProp->prop_id])) {
+                $itemPropValue = array();
+                foreach ($itemPropValues[$itemProp->prop_id] as $value) {
+                    $values = explode(':', $value);
+                    $itemPropValue[] = $values[1];
+                }
+            } else {
+                $values = explode(':', $itemPropValues[$itemProp->prop_id]);
+                $itemPropValue = $values[1];
+            }
         }
-        $name = 'ItemProp[' . $itemProp->item_prop_id . ']';
+        $name = 'ItemProp[' . $itemProp->prop_id . ']';
         switch ($itemProp->type) {
             case 1:
                 echo TbHtml::textFieldControlGroup($name, $itemPropValue, array('label' => $itemProp->prop_name));
                 break;
             case 2:
-                $propValueData = CHtml::listData($itemProp->propValues, 'prop_value_id', 'value_name');
+                $propValueData = CHtml::listData($itemProp->propValues, 'value_id', 'value_name');
                 echo TbHtml::dropDownListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name));
                 break;
             case 3:
-                $propValueData = CHtml::listData($itemProp->propValues, 'prop_value_id', 'value_name');
+                $propValueData = CHtml::listData($itemProp->propValues, 'value_id', 'value_name');
                 echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name));
                 break;
         }
@@ -32,16 +40,16 @@ $i = 0;
 foreach ($itemProps as $itemProp) {
     if ($itemProp->is_sale_prop) {
         $itemPropValue =  array();
-        if (isset($itemPropValues[$itemProp->item_prop_id]) && is_array($itemPropValues[$itemProp->item_prop_id])) {
-            foreach ($itemPropValues[$itemProp->item_prop_id] as $value) {
+        if (isset($itemPropValues[$itemProp->prop_id]) && is_array($itemPropValues[$itemProp->prop_id])) {
+            foreach ($itemPropValues[$itemProp->prop_id] as $value) {
                 $values = explode(':', $value);
                 $itemPropValue[] = $values[1];
             }
         }
-        $name = 'Item[skus][checkbox][' . $itemProp->item_prop_id . ']';
-        $propValueData = CHtml::listData($itemProp->propValues, 'prop_value_id', 'value_name');
+        $name = 'Item[skus][checkbox][' . $itemProp->prop_id . ']';
+        $propValueData = CHtml::listData($itemProp->propValues, 'value_id', 'value_name');
         $class = $itemProp->is_color_prop ? 'change color-prop' : 'change';
-        echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name, 'class' => $class, 'data-id' => $itemProp->item_prop_id));
+        echo TbHtml::inlineCheckBoxListControlGroup($name, $itemPropValue, $propValueData, array('label' => $itemProp->prop_name, 'class' => $class, 'data-id' => $itemProp->prop_id));
         $thead .= '<th><span id="thop_' . $i++ . '">' . $itemProp->prop_name . '</span></th>';
     }
 }
@@ -54,6 +62,7 @@ foreach ($itemProps as $itemProp) {
             <thead>
             <tr>
                 <?php echo $thead; ?>
+                <th>标签</th>
                 <th>价格</th>
                 <th>数量</th>
                 <th>商家编码</th>

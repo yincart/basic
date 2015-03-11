@@ -12,7 +12,7 @@ $this->menu = array(
 <?php
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'item-form',
-    'action' => 'bulk',
+    'action' => F::url('/catalog/itemBackend/bulk'),
     'htmlOptions' => array('enctype' => 'multipart/form-data'),
     'enableAjaxValidation' => false,
 ));
@@ -32,24 +32,24 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         ),
         array(
             'name' =>   'category.name',
-            'header' => Yii::t('backend','Item Categories'),
+            'header' => '商品分类',
         ),
         array(
             'name' => 'title',
-            'header' => '商品名字',
+            'header' => '商品标题',
         ),
-        array(
-            'name' => 'stock',
-            'header' => '库存',
-        ),
-        array(
-            'name' => 'min_number',
-            'header'=> '最小数量',
-        ),
-        array(
-            'name'=> 'price',
-            'header' => '价格',
-        ),
+//        array(
+//            'name' => 'stock',
+//            'header' => '库存',
+//        ),
+//        array(
+//            'name' => 'min_number',
+//            'header'=> '最小数量',
+//        ),
+//        array(
+//            'name'=> 'price',
+//            'header' => '价格',
+//        ),
         array(
             'name' => 'is_show',
             'header' => '上架',

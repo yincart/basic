@@ -14,7 +14,7 @@ class ItemPropController extends BackendController
         $item_props = ItemProp::model()->findAllByAttributes(array('category_id' => $category_id));
         $props = array('请选择');
         foreach ($item_props as $item_prop) {
-            $props[$item_prop->item_prop_id] = $item_prop->prop_name;
+            $props[$item_prop->prop_id] = $item_prop->prop_name;
         }
         return $props;
     }
@@ -32,7 +32,7 @@ class ItemPropController extends BackendController
             $model->attributes = $_POST['ItemProp'];
 
             if ($model->save()) {
-                $this->redirect(array('view', 'id' => $model->item_prop_id));
+                $this->redirect(array('view', 'id' => $model->prop_id));
             }
         }
 
@@ -56,7 +56,7 @@ class ItemPropController extends BackendController
             $model->attributes = $_POST['ItemProp'];
 
             if ($model->save()) {
-                $this->redirect(array('view', 'id' => $model->item_prop_id));
+                $this->redirect(array('view', 'id' => $model->prop_id));
             }
         }
 
@@ -119,7 +119,7 @@ class ItemPropController extends BackendController
             if (is_array($propValues['value_name']) && $count = count($propValues['value_name'])) {
                 for ($i = 0; $i < $count; $i++) {
                     $_POST['ItemProp']['propValues'][] = array(
-                        'prop_value_id' => $propValues['prop_value_id'][$i],
+                        'value_id' => $propValues['value_id'][$i],
                         'value_name' => $propValues['value_name'][$i],
                         'sort_order' => $i,
                         'value_alias' => $propValues['value_name'][$i],
@@ -128,5 +128,19 @@ class ItemPropController extends BackendController
                 }
             }
         }
+    }
+
+    /**
+     * Deletes a particular model.
+     * If deletion is successful, the browser will be redirected to the 'admin' page.
+     * @param integer $id the ID of the model to be deleted
+     */
+    public function actionDelete($id)
+    {
+        $this->loadModel($id)->delete();
+
+        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+        if(!isset($_GET['ajax']))
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
 }

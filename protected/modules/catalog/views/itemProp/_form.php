@@ -247,8 +247,8 @@ foreach (array('is_key_prop' => 'allKey', 'is_sale_prop' => 'allSale', 'is_color
             <?php
             } else {
                 $cri = new CDbCriteria(array(
-                    'condition' => 'item_prop_id =' . $model->item_prop_id,
-                    'order' => 'sort_order asc, prop_value_id asc'
+                    'condition' => 'prop_id =' . $model->prop_id,
+                    'order' => 'sort_order asc, value_id asc'
                 ));
                 $propValues = PropValue::model()->findAll($cri);
 
@@ -261,8 +261,8 @@ foreach (array('is_key_prop' => 'allKey', 'is_sale_prop' => 'allSale', 'is_color
                                  alt="click and drag to rearrange"/>
                         </td>
                         <td>
-                            <input type="hidden" name="PropValue[prop_value_id][]"
-                                   value="<?php echo $sv->prop_value_id; ?>"/>
+                            <input type="hidden" name="PropValue[value_id][]"
+                                   value="<?php echo $sv->value_id; ?>"/>
                             <input id="tf1__c" type="text" name="PropValue[value_name][]"
                                    value="<?php echo $sv->value_name ?>"/>
                         </td>
@@ -286,7 +286,7 @@ foreach (array('is_key_prop' => 'allKey', 'is_sale_prop' => 'allSale', 'is_color
                              alt="click and drag to rearrange"/>
                     </td>
                     <td>
-                        <input type="hidden" name="PropValue[prop_value_id][]"/>
+                        <input type="hidden" name="PropValue[value_id][]"/>
                         <input id="tf1" type="text" name="PropValue[value_name][]"/>
                     </td>
                     <td class="icons">

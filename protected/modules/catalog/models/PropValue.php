@@ -4,8 +4,8 @@
  * This is the model class for table "prop_value".
  *
  * The followings are the available columns in table 'prop_value':
- * @property string $prop_value_id
- * @property string $item_prop_id
+ * @property string $value_id
+ * @property string $prop_id
  * @property string $value_name
  * @property string $value_alias
  * @property integer $status
@@ -32,13 +32,13 @@ class PropValue extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('item_prop_id, value_name, value_alias, status', 'required'),
+            array('prop_id, value_name, value_alias, status', 'required'),
             array('status, sort_order', 'numerical', 'integerOnly'=>true),
-            array('item_prop_id', 'length', 'max'=>10),
+            array('prop_id', 'length', 'max'=>10),
             array('value_name, value_alias', 'length', 'max'=>45),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('prop_value_id, item_prop_id, value_name, value_alias, status, sort_order', 'safe', 'on'=>'search'),
+            array('value_id, prop_id, value_name, value_alias, status, sort_order', 'safe', 'on'=>'search'),
         );
     }
 
@@ -50,7 +50,7 @@ class PropValue extends CActiveRecord
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'itemProp' => array(self::BELONGS_TO, 'ItemProp', 'item_prop_id'),
+            'itemProp' => array(self::BELONGS_TO, 'ItemProp', 'prop_id'),
         );
     }
 
@@ -60,8 +60,8 @@ class PropValue extends CActiveRecord
     public function attributeLabels()
     {
         return array(
-            'prop_value_id' => 'Prop Value',
-            'item_prop_id' => 'Item Prop',
+            'value_id' => 'Prop Value',
+            'prop_id' => 'Item Prop',
             'value_name' => 'Value Name',
             'value_alias' => 'Value Alias',
             'status' => 'Status',
@@ -87,8 +87,8 @@ class PropValue extends CActiveRecord
 
         $criteria=new CDbCriteria;
 
-        $criteria->compare('prop_value_id',$this->prop_value_id,true);
-        $criteria->compare('item_prop_id',$this->item_prop_id,true);
+        $criteria->compare('value_id',$this->value_id,true);
+        $criteria->compare('prop_id',$this->prop_id,true);
         $criteria->compare('value_name',$this->value_name,true);
         $criteria->compare('value_alias',$this->value_alias,true);
         $criteria->compare('status',$this->status);

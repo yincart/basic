@@ -12,4 +12,4 @@ $this->menu = array(
 );
 ?>
 
-    <?php echo $this->renderPartial('_form', array('model'=>$model, 'image'=>$image, 'upload'=>$upload ,'is_view' => false)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model, 'image'=>$image, 'upload'=>$upload ,'is_view' => false)); ?>

@@ -20,8 +20,9 @@ class ItemBackendController extends BackendController
         //var_dump($model);exit;
         if (isset($_POST['Item'])) {
             $this->handlePostData();
+//            print_r($_POST['Item']);exit;
             $model->attributes = $_POST['Item'];
-           // var_dump($model->attributes);exit;
+
             if ($model->save()) {
                 $this->redirect(array('view', 'id' => $model->item_id));
             }
@@ -116,11 +117,11 @@ class ItemBackendController extends BackendController
         $count = count($ids);
         if ($count == 0) {
             echo '<script>alert("请至少选择1个项目.")</script>';
-            echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+            echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
             die;
         } elseif ($count > 0 && NULL == $_POST['act']) {
             echo '<script>alert("请选择操作类型.")</script>';
-            echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+            echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
             die;
         } else {
             if ('delete' == $_POST['act']) { //批量删除
@@ -143,7 +144,7 @@ class ItemBackendController extends BackendController
 
                     Item::model()->deleteByPk($ids);
                     echo '<script>alert("删除成功.")</script>';
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $item = Item::model()->findAllByPk($ids);
@@ -165,13 +166,13 @@ class ItemBackendController extends BackendController
 
                     Item::model()->deleteAllByAttributes(array('item_id' => $ids));
                     echo '<script>alert("删除成功.")</script>';
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('is_show' == $_POST['act']) { //批量上架
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_show" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -179,13 +180,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_show" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('un_show' == $_POST['act']) { //批量下架
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_show" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -193,13 +194,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_show" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('is_promote' == $_POST['act']) { //批量特价
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_promote" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -207,13 +208,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_promote" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('un_promote' == $_POST['act']) { //取消特价
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_promote" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -221,13 +222,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_promote" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('is_new' == $_POST['act']) { //批量新品
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_new" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -235,13 +236,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_new" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('un_new' == $_POST['act']) { //取消新品
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_new" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -249,13 +250,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_new" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('hot' == $_POST['act']) { //批量推荐
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_hot" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -263,13 +264,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_hot" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('un_hot' == $_POST['act']) { //取消推荐
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_hot" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -277,13 +278,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_hot" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('best' == $_POST['act']) { //批量精品
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_best" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -291,13 +292,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_best" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('un_best' == $_POST['act']) { //取消精品
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_best" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -305,13 +306,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_best" => 0), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('discount' == $_POST['act']) { //批量折扣
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_discount" => 1));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -319,13 +320,13 @@ class ItemBackendController extends BackendController
                         'condition' => 'item_id in (' . $id . ')'
                     ));
                     Item::model()->updateAll(array("is_discount" => 1), $criteria);
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 }
             } elseif ('un_discount' == $_POST['act']) { //取消折扣
                 if ($count == 1) {
                     Item::model()->updateByPk($ids, array("is_discount" => 0));
-                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/mall/item/admin') . '"\',10);</script>';
+                    echo '<script type="text/javascript">setTimeout(\'location.href="' . Yii::app()->createUrl('/catalog/itemBackend/admin') . '"\',10);</script>';
                     die;
                 } else {
                     $id = implode(',', $ids);
@@ -364,8 +365,9 @@ class ItemBackendController extends BackendController
             $arr['props'] = F::convert_props_js_id($sku->props);
 //            $arr['props'] = str_replace(":","-",$arr['props']);
             $arr['price'] = $sku->price;
-            $arr['stock'] = $sku->stock;
+            $arr['stock'] = $sku->quantity;
             $arr['outer_id'] = $sku->outer_id;
+            $arr['tag'] = $sku->tag;
             $data[] = $arr;
         }
         echo json_encode($data);
@@ -392,11 +394,11 @@ class ItemBackendController extends BackendController
             $skus = array();
             foreach ($_POST['Item']['skus']['table'] as $pid => $sku) {
                 list($sku['props'], $sku['props_name']) = $this->handleItemProps($sku['props']);
-                $stock = $sku['stock'] + $stock;
+                $stock = $sku['quantity'] + $stock;
                 $skus[] = $sku;
             }
-        $_POST['Item']['skus'] = $skus;
-        $_POST['Item']['stock'] = $stock;
+            $_POST['Item']['skus'] = $skus;
+            $_POST['Item']['stock'] = $stock;
         }
         if (isset($_POST['ItemImg']['pic']) && isset($_POST['ItemImg']['item_img_id']) && is_array($_POST['ItemImg']['pic']) && is_array($_POST['ItemImg']['item_img_id'])) {
             $pics = $_POST['ItemImg']['pic'];
@@ -413,6 +415,9 @@ class ItemBackendController extends BackendController
                 unset($_POST['ItemImg']);
                 $_POST['Item']['itemImgs'] = $itemImgs;
             }
+        }
+        if (!isset($_POST['Item']['itemImgs'])) {
+            $_POST['Item']['itemImgs'] = [];
         }
     }
 

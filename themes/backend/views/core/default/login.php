@@ -99,9 +99,9 @@
             </div>
             <label class='checkbox' for='remember_me'>
                 <input id='LoginForm_rememberMe' name='UserLogin[rememberMe]' type='checkbox' value='1'>
-                Remember me
+                记住我
             </label>
-            <button class='btn btn-block'>Sign in</button>
+            <button class='btn btn-block'>登录</button>
             </form>
             <div class='text-center'>
                 <hr class='hr-normal'>
@@ -110,13 +110,14 @@
             <?php $this->endWidget(); ?>
         </div>
     </div>
-<!--    <div class='login-action text-center'>-->
+    <div class='login-action text-center'>
 <!--        <a href='--><?php //echo Yii::app()->createUrl('/site/sign_up') ?><!--'>-->
 <!--            <i class='icon-user'></i>-->
 <!--            New to Yincart?-->
 <!--            <strong>Sign up</strong>-->
 <!--        </a>-->
-<!--    </div>-->
+        <span style="color:#ffffff">后台管理员账号：admin 密码：admin123</span>
+    </div>
 </div>
 <!-- / jquery -->
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/javascripts/jquery/jquery.min.js" type="text/javascript"></script>

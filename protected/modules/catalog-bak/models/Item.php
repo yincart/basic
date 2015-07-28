@@ -284,7 +284,7 @@ class Item extends YActiveRecord
      * @return CActiveRecord[]
      * @author Lujie.Zhou(gao_lujie@live.cn, qq:821293064).
      */
-    public function getItemsByCategory($category, $limit = -1)
+    static public function getItemsByCategory($category, $limit = -1)
     {
         $categoryIds = $category->getDescendantIds();
         $cri = new CDbCriteria();
